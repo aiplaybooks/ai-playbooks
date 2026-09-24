@@ -131,8 +131,11 @@ class Run:
         ids = [n for n, _, _ in FLOWS[self.s["kind"]]]
         with LOCK:
             for n in ids[ids.index(nid):]:
-                self.s["nodes"][n] = {"status": "idle"}
-                (self.dir / f"{n}.log").unlink(missing_ok=True)
+                old = self.s["nodes"][n]; tries = old.get("attempts", [])
+                if old.get("started"):  # keep earlier attempts: they count in the time breakdown
+                    tries = tries + [{k: old.get(k) for k in ("started", "ended", "status", "msg")}]
+                    self.log(n, f"\n----- yeni deneme {iso()} -----")
+                self.s["nodes"][n] = {"status": "idle", **({"attempts": tries} if tries else {})}
             self.save()
 
 
@@ -308,7 +311,8 @@ def publish_step(step):
 def n_log(run):
     publish_step("log")(run)
     rel = run.s["content"]
-    for args in (["add", rel, "publish_log.jsonl", "research"],
+    record_timings(run, "published")
+    for args in (["add", rel, "publish_log.jsonl", "research", "stats"],
                  ["commit", "-q", "-m", f"post: {content_path(run).stem}\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"],
                  ["push", "-q"]):
         r = subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace",
@@ -320,6 +324,46 @@ def n_log(run):
              if isinstance(v, dict) and v.get("link")}
     notify("AI Playbooks", "Paylaşıldı: " + (links.get("ig_carousel") or run.s["content"]))
     return "GitHub'a kaydedildi"
+
+
+PHASES = {"trigger": "scan", "collect": "scan", "scout": "scan", "choose": "wait", "write": "production",
+          "carousel": "production", "reel": "production", "qa": "production", "approve": "wait", "upload": "publish",
+          "ig_carousel": "publish", "ig_reel": "publish", "fb_photos": "publish", "fb_reel": "publish", "log": "publish"}
+
+
+def secs_between(a, b):
+    if not a: return 0
+    return max(0, round(((datetime.fromisoformat(b) if b else now()) - datetime.fromisoformat(a)).total_seconds()))
+
+
+def timings(run):
+    """Per-node time of a post run (+ its scan), earlier attempts included; totals per phase."""
+    flows = []
+    scan = Run(run.s["scan"]) if run.s.get("scan") and (RUNS / run.s["scan"] / "state.json").exists() else None
+    if scan and scan.s: flows.append(scan.s)
+    flows.append(run.s)
+    rows, first, last = [], None, None
+    for s in flows:
+        for nid, label, _ in FLOWS[s["kind"]]:
+            n = s["nodes"][nid]
+            tries = n.get("attempts", []) + ([n] if n.get("started") else [])
+            secs = sum(secs_between(t.get("started"), t.get("ended")) for t in tries)
+            for t in tries:
+                if t.get("started") and (not first or t["started"] < first): first = t["started"]
+                end = t.get("ended") or (iso() if t.get("started") else None)
+                if end and (not last or end > last): last = end
+            rows.append({"node": nid, "label": label, "phase": PHASES[nid], "secs": secs, "attempts": len(tries),
+                         "status": n["status"]})
+    tot = {ph: sum(r["secs"] for r in rows if r["phase"] == ph) for ph in ("scan", "wait", "production", "publish")}
+    return {"run": run.id, "post": pathlib.Path(run.s["content"]).stem, "title": run.s.get("title"),
+            "nodes": rows, "phases": tot, "machine": tot["scan"] + tot["production"] + tot["publish"],
+            "waiting": tot["wait"], "wall": secs_between(first, last), "start": first, "end": last}
+
+
+def record_timings(run, outcome):
+    (ROOT / "stats").mkdir(exist_ok=True)
+    with (ROOT / "stats" / "timings.jsonl").open("a", encoding="utf-8") as f:
+        f.write(json.dumps({"date": iso(), "outcome": outcome, **timings(run)}, ensure_ascii=False) + "\n")
 
 
 NODES = {"trigger": n_trigger, "collect": n_collect, "scout": n_scout, "choose": n_choose,
@@ -408,13 +452,16 @@ def scheduler():
 
 
 def recover():
-    """After a restart: runs that were mid-node become errors (retry from the UI); queued posts are requeued."""
+    """After a restart: runs that were mid-node resume from that node (every step is safe to rerun, publish.py never
+    posts twice); queued posts are requeued."""
     for s in all_runs():
         run = Run(s["id"])
         if s["status"] == "running":
-            for nid, n in s["nodes"].items():
-                if n["status"] == "running": run.node(nid, status="error", msg="Studio yeniden başladı: tekrar dene")
-            run.status("error")
+            nid = next((n for n, v in s["nodes"].items() if v["status"] == "running"), None)
+            if nid: run.reset_from(nid)
+            slog("resuming after restart:", run.id, nid)
+            if s["kind"] == "scan": threading.Thread(target=execute, args=(run,), daemon=True).start()
+            else: enqueue(run)
         elif s["status"] == "queued" and s["kind"] == "post":
             POST_Q.put(s["id"])
 
@@ -458,6 +505,7 @@ def reject(rid):
     if c.exists(): shutil.move(str(c), str(run.dir / c.name))  # keep it out of content/ (dedupe, voice rotation)
     run.node("approve", status="error", ended=iso(), msg="Reddedildi")
     run.status("rejected")
+    record_timings(run, "rejected")
 
 
 def retry(rid, nid):

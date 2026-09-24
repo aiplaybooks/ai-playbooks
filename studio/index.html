@@ -145,7 +145,8 @@ ul.clean li{margin-bottom:4px}
 .mh h2{font-size:17px;flex:1}
 .mb{padding:18px 20px;overflow:auto}
 .mf{padding:14px 20px;border-top:1px solid var(--line);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.apv{display:grid;grid-template-columns:1fr 330px;gap:22px}
+.apv{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:22px}
+.apv>div{min-width:0}
 .strip{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px}
 .strip img{height:340px;border-radius:8px;border:1px solid var(--line);cursor:zoom-in}
 .cap{white-space:pre-wrap;background:var(--panel2);border-radius:10px;padding:12px;font-size:13.5px}
@@ -161,6 +162,20 @@ ul.clean li{margin-bottom:4px}
 .toast.on{display:block}
 .times{display:flex;flex-direction:column;gap:8px}
 .times div{display:flex;gap:8px}
+.tcards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px}
+.tcard{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:11px 13px}
+.tcard small{display:block;font-size:11.5px;color:var(--muted)}
+.tcard b{font-size:20px;font-weight:750;letter-spacing:-.3px}
+.tcard.main{border-color:#ff6d5a88}
+table.tt{width:100%;border-collapse:collapse;font-size:13px}
+table.tt td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+table.tt tr.ph td{padding-top:14px;font-size:11.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);border-bottom:1px solid #4a4a58}
+table.tt td.n{white-space:nowrap}
+table.tt td.d{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;width:90px}
+table.tt td.p{text-align:right;color:var(--muted);width:48px;font-variant-numeric:tabular-nums}
+.bar{height:10px;border-radius:5px;background:#3a3a46;overflow:hidden;min-width:160px}
+.bar i{display:block;height:100%;border-radius:5px}
+.tnote{font-size:12px;color:var(--muted);margin-top:12px}
 .switch{display:flex;align-items:center;gap:10px;margin-top:16px;cursor:pointer}
 .switch input{width:18px;height:18px}
 @media (max-width:1100px){aside{width:300px;min-width:300px}#drawer{width:360px}.apv{grid-template-columns:1fr}}
@@ -173,6 +188,7 @@ ul.clean li{margin-bottom:4px}
   <span class="pill" id="gatePill"></span>
   <div class="grow"></div>
   <select id="postSel" title="Gösterilen üretim"></select>
+  <button id="timeBtn" title="Adım adım süre dökümü">⏱ Süreler</button>
   <button class="primary" id="scanBtn">⟳ Şimdi tara</button>
   <button id="setBtn" title="Ayarlar">⚙</button>
 </header>
@@ -223,6 +239,11 @@ ul.clean li{margin-bottom:4px}
     <p style="font-size:12.5px;color:var(--muted);margin-top:8px">Kapalıyken seçtiğin haber kontrol edilip doğrudan paylaşılır. Kalite kontrol bir sorun bulursa yine de onay istenir.</p>
   </div>
   <div class="mf"><button class="primary" id="setSave">Kaydet</button></div>
+</div></div>
+
+<div class="modal" id="tmModal"><div class="mbox" style="width:min(820px,100%)">
+  <div class="mh"><h2 id="tmTitle">Süre dökümü</h2><button id="tmClose">✕</button></div>
+  <div class="mb" id="tmBody"></div>
 </div></div>
 
 <div id="lightbox"><img alt=""></div>
@@ -494,6 +515,54 @@ $("#setSave").onclick=async()=>{
   try{await api("/api/settings",{scan_times:times,approval:$("#gate").checked});$("#setModal").classList.remove("on");await refresh()}catch(e){toast(e.message)}};
 $("#scanBtn").onclick=async()=>{try{const r=await api("/api/scan",{});scanId=r.run;tab="cands";await refresh();openNode("collect")}catch(e){toast(e.message)}};
 
+/* ---------------- timings ---------------- */
+const PH={scan:["Tarama","var(--trigger)"],wait:["Senin bekleme süren","var(--human)"],production:["Üretim","var(--ai)"],publish:["Yayın","var(--publish)"]};
+const PHASE={trigger:"scan",collect:"scan",scout:"scan",choose:"wait",write:"production",carousel:"production",reel:"production",qa:"production",
+  approve:"wait",upload:"publish",ig_carousel:"publish",ig_reel:"publish",fb_photos:"publish",fb_reel:"publish",log:"publish"};
+const secsOf=t=>t.started?Math.max(0,((t.ended?new Date(t.ended):new Date())-new Date(t.started))/1000):0;
+function hms(s){s=Math.round(s);if(s<60)return s+" sn";const m=Math.floor(s/60),r=s%60;if(m<60)return m+" dk "+String(r).padStart(2,"0")+" sn";
+  return Math.floor(m/60)+" sa "+String(m%60).padStart(2,"0")+" dk";}
+function timingRows(){
+  const po=runById(postId),sc=po?runById(po.scan):runById(scanId),rows=[];let first=null,last=null;
+  for(const [r,f] of [[sc,"scan"],[po,"post"]]) if(r) for(const m of S.flows[f]){
+    const n=r.nodes[m.id],tries=[...(n.attempts||[]),...(n.started?[n]:[])];
+    for(const t of tries){if(!t.started)continue;const e=t.ended||new Date().toISOString();
+      if(!first||t.started<first)first=t.started;if(!last||new Date(e)>new Date(last))last=e;}
+    rows.push({id:m.id,label:m.label,phase:PHASE[m.id],secs:tries.reduce((a,t)=>a+secsOf(t),0),tries:tries.length,status:n.status});
+  }
+  return {po,sc,rows,wall:first?(new Date(last)-new Date(first))/1000:0};
+}
+function renderTimings(){
+  const {po,sc,rows,wall}=timingRows();
+  $("#tmTitle").textContent="Süre dökümü"+(po?" · "+(po.title||""):sc?" · tarama "+fmtT(sc.created):"");
+  if(!rows.length){$("#tmBody").innerHTML=`<div class="empty">Henüz ölçülecek bir iş yok.</div>`;return;}
+  const tot=k=>rows.filter(r=>r.phase===k).reduce((a,r)=>a+r.secs,0);
+  const machine=tot("scan")+tot("production")+tot("publish"),max=Math.max(...rows.map(r=>r.secs),1);
+  const live=rows.some(r=>r.status==="running"||r.status==="waiting");
+  let h=`<div class="tcards">
+    <div class="tcard main"><small>Toplam (baştan sona)</small><b>${hms(wall)}</b></div>
+    <div class="tcard"><small>Makine süresi</small><b>${hms(machine)}</b></div>
+    <div class="tcard"><small>Senin bekleme süren</small><b>${hms(tot("wait"))}</b></div>
+    <div class="tcard"><small>Durum</small><b style="font-size:15px">${po?statusTr(po.status):statusTr(sc.status)}${live?' <span class="spin"></span>':""}</b></div></div>
+   <table class="tt">`;
+  for(const ph of ["scan","wait","production","publish"]){
+    const rs=rows.filter(r=>r.phase===ph);if(!rs.length)continue;
+    const order=ph==="wait"?["choose","approve"]:null;
+    h+=`<tr class="ph"><td colspan="2">${PH[ph][0]}</td><td class="d">${hms(tot(ph))}</td><td class="p">${machine+tot("wait")?Math.round(tot(ph)*100/(machine+tot("wait"))):0}%</td></tr>`;
+    for(const r of (order?order.map(i=>rs.find(x=>x.id===i)).filter(Boolean):rs)){
+      const st={running:" ▶",waiting:" ⏸",error:" !"}[r.status]||"";
+      h+=`<tr><td class="n">${ICONS[r.id]} ${esc(r.label)}${r.tries>1?` <span class="pill" style="padding:1px 7px">${r.tries} deneme</span>`:""}${st}</td>
+        <td><div class="bar"><i style="width:${(r.secs/max*100).toFixed(1)}%;background:${PH[ph][1]}"></i></div></td>
+        <td class="d">${r.tries?hms(r.secs):"—"}</td><td class="p">${r.tries&&machine+tot("wait")?Math.round(r.secs*100/(machine+tot("wait"))):""}${r.tries?"%":""}</td></tr>`;
+    }
+  }
+  h+=`</table><p class="tnote">Toplam = taramanın başladığı andan son adımın bittiği (ya da şu) ana kadar geçen süre. Makine süresi = sistemin çalıştığı süre;
+    bekleme = haberi seçmen ve onay vermen için geçen süre. Tekrar denenen/revize edilen adımlarda tüm denemeler sayılır. Her iş bitince döküm <b>stats/timings.jsonl</b> dosyasına kaydedilir.</p>`;
+  $("#tmBody").innerHTML=h;
+}
+$("#timeBtn").onclick=()=>{renderTimings();$("#tmModal").classList.add("on")};
+$("#tmClose").onclick=()=>$("#tmModal").classList.remove("on");
+
 /* ---------------- main loop ---------------- */
 function renderAll(forceSide){
   const sc=scans(),po=posts();
@@ -509,6 +578,7 @@ function renderAll(forceSide){
   const running=sc.some(r=>["running","queued"].includes(r.status));$("#scanBtn").disabled=running;$("#scanBtn").textContent=running?"Taranıyor…":"⟳ Şimdi tara";
   renderCanvas();renderSide(forceSide);
   if(sel)renderDrawer();
+  if($("#tmModal").classList.contains("on"))renderTimings();
   const w=wait.find(p=>!dismissed.has(p.id));if(w&&!$("#apModal").classList.contains("on")){postId=w.id;renderCanvas();openApproval(w.id)}
 }
 async function refresh(){try{S=await api("/api/state");renderAll(false)}catch(e){toast("Studio'ya bağlanılamadı: "+e.message)}}
