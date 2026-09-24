@@ -37,6 +37,10 @@ music.py           procedural royalty-free background track: python music.py out
 news.py            daily news collector (stdlib only): RSS/Atom feeds, changelog pages, Hacker News -> research/<date>.json
 publish.py         IG carousel + Reel and FB Page photo post + Reel via Graph API v25.0; media via gh-pages.
                    Resumable/idempotent (output/<name>/publish.json); --dry-run checks token + quota, posts nothing
+metrics.py         performance collector (YouTube Data+Analytics, IG media + insights, FB page/post/reel) -> runs/metrics.json
+                   (local only, 30-day history; Studio runs it every 6 h; UI: 📊 Performans). Missing Meta permission:
+                   pages_read_user_content (FB photo-post reactions/comments) -> listed under "needs"
+yt_token.py        one-time YouTube OAuth -> YT_* in .env
 studio.py          AI Playbooks Studio: local workflow engine + web UI at http://localhost:8787 (see below)
 studio/index.html  the n8n-style UI (vanilla JS, no build)
 prompts/           scout.md, write.md, qa.md: prompts for the headless `claude -p` steps of the Studio

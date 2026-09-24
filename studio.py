@@ -441,8 +441,30 @@ def next_slot(times, t):
     return min(s for s in slots if s > t)
 
 
+METRICS_LOCK = threading.Lock()
+
+
+def refresh_metrics():
+    """metrics.py in a subprocess (keeps the server independent of API hiccups); one at a time."""
+    if not METRICS_LOCK.acquire(blocking=False): return False
+    def work():
+        try:
+            r = subprocess.run([PY, "metrics.py"], cwd=ROOT, capture_output=True, text=True, encoding="utf-8",
+                               errors="replace", creationflags=NO_WINDOW, env=dict(os.environ, PYTHONIOENCODING="utf-8"))
+            if r.returncode: slog("metrics failed:", (r.stderr or r.stdout)[-300:])
+        finally:
+            METRICS_LOCK.release()
+    threading.Thread(target=work, daemon=True).start()
+    return True
+
+
 def scheduler():
     while True:
+        try:
+            m = read_json(RUNS / "metrics.json", {}) or {}
+            if not m.get("updated") or now() - datetime.fromisoformat(m["updated"]) > timedelta(hours=6): refresh_metrics()
+        except Exception as ex:
+            slog("metrics schedule error:", ex)
         try:
             s = settings(); t = now(); slot = last_slot(s["scan_times"], t)
             if slot and (not s["last_slot"] or s["last_slot"] < slot.isoformat()):
@@ -582,6 +604,8 @@ class H(BaseHTTPRequestHandler):
             if u.path == "/api/state": return self.send(200, state())
             if u.path == "/api/run": return self.send(200, run_detail(q["id"]))
             if u.path == "/api/history": return self.send(200, history())
+            if u.path == "/api/metrics":
+                return self.send(200, {**(read_json(RUNS / "metrics.json", {}) or {}), "refreshing": METRICS_LOCK.locked()})
             if u.path == "/api/research":
                 return self.send(200, read_json(ROOT / "research" / f"{q.get('day') or f'{now():%Y-%m-%d}'}.json", {}))
             if u.path == "/api/log":
@@ -632,6 +656,7 @@ class H(BaseHTTPRequestHandler):
             if u.path == "/api/reject": reject(b["run"]); return self.send(200, {"ok": True})
             if u.path == "/api/retry": retry(b["run"], b["node"]); return self.send(200, {"ok": True})
             if u.path == "/api/cancel": cancel(b["run"]); return self.send(200, {"ok": True})
+            if u.path == "/api/metrics/refresh": return self.send(200, {"started": refresh_metrics()})
             if u.path == "/api/settings":
                 s = settings()
                 if "approval" in b: s["approval"] = bool(b["approval"])

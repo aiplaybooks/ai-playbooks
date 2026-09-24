@@ -176,6 +176,17 @@ table.tt td.p{text-align:right;color:var(--muted);width:48px;font-variant-numeri
 .bar{height:10px;border-radius:5px;background:#3a3a46;overflow:hidden;min-width:160px}
 .bar i{display:block;height:100%;border-radius:5px}
 .tnote{font-size:12px;color:var(--muted);margin-top:12px}
+.pcards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px}
+.post{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.post .hd{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.post .hd b{font-size:15px}.post .hd small{color:var(--muted)}
+.plats{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.plat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 11px;font-size:12.5px}
+.plat h6{font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);margin-bottom:5px;display:flex;justify-content:space-between}
+.plat .big{font-size:19px;font-weight:750}
+.plat .kv2{color:var(--muted);line-height:1.5}.plat .kv2 b{color:var(--text);font-weight:600}
+.plat.none{opacity:.45}
+@media (max-width:1100px){.plats{grid-template-columns:repeat(2,1fr)}.pcards{grid-template-columns:repeat(2,1fr)}}
 .switch{display:flex;align-items:center;gap:10px;margin-top:16px;cursor:pointer}
 .switch input{width:18px;height:18px}
 @media (max-width:1100px){aside{width:300px;min-width:300px}#drawer{width:360px}.apv{grid-template-columns:1fr}}
@@ -188,6 +199,7 @@ table.tt td.p{text-align:right;color:var(--muted);width:48px;font-variant-numeri
   <span class="pill" id="gatePill"></span>
   <div class="grow"></div>
   <select id="postSel" title="Gösterilen üretim"></select>
+  <button id="perfBtn" title="Gönderilerin performansı">📊 Performans</button>
   <button id="timeBtn" title="Adım adım süre dökümü">⏱ Süreler</button>
   <button class="primary" id="scanBtn">⟳ Şimdi tara</button>
   <button id="setBtn" title="Ayarlar">⚙</button>
@@ -244,6 +256,11 @@ table.tt td.p{text-align:right;color:var(--muted);width:48px;font-variant-numeri
 <div class="modal" id="tmModal"><div class="mbox" style="width:min(820px,100%)">
   <div class="mh"><h2 id="tmTitle">Süre dökümü</h2><button id="tmClose">✕</button></div>
   <div class="mb" id="tmBody"></div>
+</div></div>
+
+<div class="modal" id="pfModal"><div class="mbox">
+  <div class="mh"><h2>Performans</h2><span class="pill" id="pfUpd"></span><button id="pfRef">⟳ Yenile</button><button id="pfClose">✕</button></div>
+  <div class="mb" id="pfBody"></div>
 </div></div>
 
 <div id="lightbox"><img alt=""></div>
@@ -563,6 +580,44 @@ function renderTimings(){
 }
 $("#timeBtn").onclick=()=>{renderTimings();$("#tmModal").classList.add("on")};
 $("#tmClose").onclick=()=>$("#tmModal").classList.remove("on");
+
+/* ---------------- performance ---------------- */
+const fmtN=v=>v===undefined||v===null?"—":Number(v).toLocaleString("tr-TR");
+const PL=[["yt_short","YouTube Short","views","izlenme",[["watch_minutes","izlenme dk"],["avg_view_sec","ort. sn"],["avg_view_pct","ort. %"],["likes","beğeni"],["comments","yorum"],["shares","paylaşım"],["subs_gained","abone +"]]],
+  ["ig_reel","Instagram Reel","views","izlenme",[["reach","erişim"],["likes","beğeni"],["comments","yorum"],["saved","kaydetme"],["shares","paylaşım"]]],
+  ["ig_carousel","IG carousel","views","görüntülenme",[["reach","erişim"],["likes","beğeni"],["comments","yorum"],["saved","kaydetme"],["shares","paylaşım"]]],
+  ["fb_reel","Facebook Reel","plays","oynatma",[["avg_view_sec","ort. sn"],["likes","beğeni"],["comments","yorum"]]],
+  ["fb_photos","FB gönderi","reactions","tepki",[["comments","yorum"],["shares","paylaşım"],["reach","erişim"]]]];
+const NEEDS={pages_read_user_content:"Facebook gönderi tepkileri/yorumları",read_insights:"Facebook erişim verileri",instagram_manage_insights:"Instagram erişim/kaydetme verileri"};
+async function renderPerf(){
+  const d=await api("/api/metrics"),B=$("#pfBody");
+  $("#pfUpd").textContent=d.refreshing?"yenileniyor…":d.updated?"güncellendi "+fmtT(d.updated):"henüz veri yok";
+  if(!d.posts){B.innerHTML=`<div class="empty">${d.refreshing?'<span class="spin"></span> İlk veriler çekiliyor…':"Henüz veri yok. <b>Yenile</b>'ye bas."}</div>`;return;}
+  const c=d.channel||{},tot=k=>d.posts.reduce((a,p)=>a+(((p.m||{})[k[0]]||{})[k[1]]||0),0);
+  const allViews=tot(["yt_short","views"])+tot(["ig_reel","views"])+tot(["ig_carousel","views"])+tot(["fb_reel","plays"]);
+  let h=`<div class="pcards">
+    <div class="tcard main"><small>Toplam izlenme (tüm platformlar)</small><b>${fmtN(allViews)}</b></div>
+    <div class="tcard"><small>YouTube abone</small><b>${fmtN(c.youtube?.subscribers)}</b></div>
+    <div class="tcard"><small>Instagram takipçi</small><b>${fmtN(c.instagram?.followers)}</b></div>
+    <div class="tcard"><small>Facebook takipçi</small><b>${fmtN(c.facebook?.followers)}</b></div></div>`;
+  if((d.needs||[]).length)h+=`<div class="note">Eksik izin: ${d.needs.map(n=>`<b>${esc(n)}</b> (${esc(NEEDS[n]||"")})`).join(", ")}. Bu veriler "—" görünür; izni ekleyince otomatik gelir.</div>`;
+  if((d.errors||[]).length)h+=`<div class="note" style="color:#ffc9c9">Bazı veriler alınamadı: ${d.errors.map(esc).join(" · ")}</div>`;
+  for(const p of d.posts){
+    h+=`<div class="post"><div class="hd"><b>${esc(p.topic||p.post)}</b><small>${fmtT(p.date)} · ${esc(p.theme||"")}</small></div><div class="plats">`;
+    for(const [k,name,main,mainL,rest] of PL){
+      const m=(p.m||{})[k],link=(p.links||{})[k];
+      if(!m){h+=`<div class="plat none"><h6>${name}</h6>${p.ids?.[k]?"veri yok":"paylaşılmadı"}</div>`;continue;}
+      h+=`<div class="plat"><h6>${name}${link?`<a href="${esc(link)}" target="_blank">aç ↗</a>`:""}</h6><div class="big">${fmtN(m[main])}</div><div class="kv2">${mainL}</div>
+        <div class="kv2" style="margin-top:5px">${rest.filter(([f])=>m[f]!==undefined).map(([f,l])=>`${l} <b>${fmtN(m[f])}</b>`).join("<br>")}</div></div>`;
+    }
+    h+=`</div></div>`;
+  }
+  h+=`<p class="tnote">Veriler 6 saatte bir otomatik yenilenir ve sadece bu bilgisayarda saklanır (en fazla 30 günlük geçmiş). YouTube Analytics verileri (izlenme süresi, abone +) YouTube tarafında 1-3 gün gecikmeyle gelir.</p>`;
+  B.innerHTML=h;
+}
+$("#perfBtn").onclick=()=>{$("#pfModal").classList.add("on");renderPerf()};
+$("#pfClose").onclick=()=>$("#pfModal").classList.remove("on");
+$("#pfRef").onclick=async()=>{await api("/api/metrics/refresh",{});renderPerf();const t=setInterval(async()=>{await renderPerf();const d=await api("/api/metrics");if(!d.refreshing)clearInterval(t)},3000)};
 
 /* ---------------- main loop ---------------- */
 function renderAll(forceSide){
