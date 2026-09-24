@@ -59,12 +59,14 @@ rules, voices, safe claims). Today is {date}.
        xAI/Grok: Elon Musk, Microsoft/Copilot: Satya Nadella, Meta: Mark Zuckerberg, Nvidia: Jensen Huang, ...) or the
        person the news is about. The pipeline fetches a freely licensed photo from Wikimedia Commons and credits it.
        The headline must not put words in their mouth or suggest they endorse our post. `null` only when nobody fits.
-     - `scene`: always write it too (English image prompt for when no photo is found): a cinematic scene about the
+     - `scene`: always write it too (English image prompt, used when Commons has no usable photo): a cinematic scene about the
        topic, no text, no logos, no real people.
    - `caption`: English, hook in the first line, 2-4 short lines, a save/follow nudge, 4-8 relevant hashtags.
      Financial topics: add "Not financial advice."
    - `sources`: the official URLs you used.
-   - No `voiceover` / `voice` needed: carousel posts don't get their own Reel any more (Reels are viral clips now).
+   - `voiceover` on every slide: conversational, 7-15 words, only verified claims; whole video ~30-40 s (it becomes
+     a YouTube Short; Instagram/Facebook get only the carousel).
+   - Leave out `voice` (reel.py assigns one).
    - Keep texts short enough for the slide design (look at how long the fields are in the example files).
 4. Write `{result}`: `{{"content": "{content}", "verified": ["claim -> source url", ...], "left_out": ["claims you
    could not verify"]}}`.

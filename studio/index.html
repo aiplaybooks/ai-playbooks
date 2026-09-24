@@ -125,6 +125,9 @@ aside{width:380px;min-width:380px;border-right:1px solid var(--line);background:
 .legend i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:5px;vertical-align:0}
 .runinfo{position:absolute;left:14px;top:14px;font-size:12.5px;color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:7px 11px;max-width:60%}
 .runinfo b{color:var(--text)}
+.fsw{display:inline-flex;gap:4px;margin-right:10px;vertical-align:middle}
+.fsw button{font-size:12px;padding:3px 9px;border-radius:6px}
+.fsw button.on{background:var(--ai);color:#fff;border-color:transparent}
 
 /* drawer */
 #drawer{position:absolute;right:0;top:0;bottom:0;width:460px;border-left:1px solid var(--line);background:var(--panel);display:none;flex-direction:column;z-index:5;box-shadow:-12px 0 30px #0006}
@@ -281,12 +284,13 @@ const ICONS={trigger:"⏰",collect:"📰",scout:"🧠",choose:"👤",write:"✍�
   upload:"☁️",ig_carousel:"📸",ig_reel:"🎞️",fb_photos:"📘",fb_reel:"📘",yt_short:"▶️",log:"📒",fetch:"⬇️",hook:"🪝",frame:"🎬"};
 const LAYOUT={
   post:{trigger:[0,40],collect:[270,40],scout:[540,40],choose:[810,40],
-    write:[0,230],cover:[270,230],carousel:[540,230],qa:[810,230],
-    approve:[0,420],upload:[270,420],ig_carousel:[540,420],fb_photos:[810,420],log:[0,610]},
+    write:[0,230],cover:[270,230],carousel:[540,230],reel:[810,230],
+    qa:[0,420],approve:[270,420],upload:[540,420],ig_carousel:[810,420],
+    fb_photos:[0,610],yt_short:[270,610],log:[540,610]},
   clip:{trigger:[0,40],collect:[270,40],scout:[540,40],choose:[810,40],
     fetch:[0,230],hook:[270,230],frame:[540,230],approve:[810,230],
     upload:[0,420],ig_reel:[270,420],fb_reel:[540,420],log:[810,420]}};
-const GROUPS={post:[["① Tarama","scan",0,0],["② Carousel üretimi","post",0,190],["③ Onay & yayın","pub",0,380]],
+const GROUPS={post:[["① Tarama","scan",0,0],["② Carousel üretimi","post",0,190],["③ Kontrol, onay & yayın","pub",0,380]],
   clip:[["① Tarama","scan",0,0],["② Viral Reel üretimi","post",0,190],["③ Yayın","pub",0,380]]};
 const kind=()=>runById(postId)?.kind==="clip"?"clip":"post";
 const POS=new Proxy({},{get:(_,id)=>LAYOUT[kind()][id]||[0,0]});
@@ -370,7 +374,11 @@ function renderCanvas(){
   document.querySelector('[data-g=scan] span').textContent=sc?`${fmtT(sc.created)} · ${sc.trigger_msg||""}`:"henüz tarama yok";
   document.querySelector('[data-g=post] span').textContent=po?(po.title||""):"soldan bir haber seç ya da Viral sekmesinden link yapıştır";
   document.querySelector('[data-g=pub] span').textContent=po?({done:"paylaşıldı",rejected:"reddedildi"}[po.status]||(S.settings.approval?"onay açık":"onay kapalı")):"";
-  $("#runinfo").innerHTML=po?`Üretim: <b>${esc(po.title||po.id)}</b> · ${statusTr(po.status)}`:"Henüz üretim yok. Soldan bir aday seçince burada canlı akar.";
+  const sw=`<span class="fsw">${[["post","🖼️ Carousel akışı"],["clip","🎞 Viral Reel akışı"]].map(([k,l])=>`<button data-flow="${k}" class="${kind()===k?"on":""}">${l}</button>`).join("")}</span>`;
+  $("#runinfo").innerHTML=sw+(po?`Üretim: <b>${esc(po.title||po.id)}</b> · ${statusTr(po.status)}`:"Henüz üretim yok. Soldan bir aday seçince burada canlı akar.");
+  $("#runinfo").querySelectorAll("[data-flow]").forEach(b=>b.onclick=()=>{const r=posts().find(p=>(p.kind==="clip"?"clip":"post")===b.dataset.flow);
+    if(!r)return toast(b.dataset.flow==="clip"?"Henüz viral Reel yok: Viral sekmesinden bir link yapıştır.":"Henüz carousel üretimi yok: Adaylar'dan bir haber seç.");
+    postId=r.id;sel=null;$("#drawer").classList.remove("on");renderAll(true)});
   if(!fitted){fit();fitted=true;}
 }
 function statusTr(s){return{queued:"sırada",running:"çalışıyor",waiting:"seni bekliyor",done:"tamamlandı",error:"hata",rejected:"reddedildi",canceled:"durduruldu"}[s]||s}

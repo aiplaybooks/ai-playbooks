@@ -1,5 +1,5 @@
 """Cover image for a carousel post: a freely licensed photo of the person the post is about (Wikimedia Commons),
-or a Flux scene (Forge API) when no person fits. carousel.py then draws the hook cover (themes/hookcover.py) with it.
+or, when no person fits or Commons has no usable photo, a Flux scene (Forge API). carousel.py then draws the hook cover (themes/hookcover.py) with it.
 
 Usage:
     python cover.py content/<post>.json
@@ -63,7 +63,7 @@ def candidates(person, forced=None):
 
 def photo(person, forced, dest):
     c = candidates(person, forced)
-    if not c: raise SystemExit(f"no freely licensed Commons photo found for {forced or person!r}")
+    if not c: return None
     best = c[0]
     with urllib.request.urlopen(urllib.request.Request(best["url"], headers=UA), timeout=60) as r: dest.write_bytes(r.read())
     print(f"photo: {best['file']} ({best['license']}, {best['author']}) score {best['score']}")
@@ -100,11 +100,13 @@ def main():
     if not cv.get("headline"): sys.exit("content JSON has no cover.headline")
     out = ROOT / "output" / content.stem; out.mkdir(parents=True, exist_ok=True)
     dest = out / "cover_image.jpg"
-    if cv.get("person") or cv.get("photo_file"):
-        cv["photo"] = photo(cv.get("person"), cv.get("photo_file"), dest)
-        data["caption"] = credit_caption(data.get("caption", ""), cv["photo"])
-    else:
-        if not cv.get("scene"): sys.exit("cover needs `person` or `scene`")
+    ph = photo(cv.get("person"), cv.get("photo_file"), dest) if cv.get("person") or cv.get("photo_file") else None
+    if ph:
+        cv["photo"] = ph
+        data["caption"] = credit_caption(data.get("caption", ""), ph)
+    else:  # no person, or no freely licensed photo of them: a Flux scene
+        if cv.get("person"): print(f"no freely licensed Commons photo of {cv.get('photo_file') or cv['person']!r}: using Flux")
+        if not cv.get("scene"): sys.exit("no photo and no `scene` for Flux")
         cv.pop("photo", None)
         data["caption"] = "\n".join(l for l in data.get("caption", "").split("\n") if not l.startswith(CREDIT))
         flux(cv["scene"], dest)

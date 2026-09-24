@@ -8,9 +8,10 @@ Three workflows:
     scan  (scheduled, default 08:00 + 18:00; missed slots run at startup)
           trigger -> collect (news.py) -> scout (Claude: web search, verify, rank) -> choose (owner picks in the UI)
     post  (one per picked candidate, one at a time)
-          write (Claude: verify + content JSON) -> cover (Wikimedia photo or Flux) -> carousel -> qa (Claude looks
-          at the output, fixes) -> approve (owner: publish / revise / reject; can be switched off) -> upload
-          -> ig_carousel -> fb_photos -> log (publish_log.jsonl + git commit/push)
+          write (Claude: verify + content JSON) -> cover (Wikimedia photo, else Flux) -> carousel -> reel (the
+          carousel as a voiced video, only for YouTube) -> qa (Claude looks at the output, fixes) -> approve (owner:
+          publish / revise / reject; can be switched off) -> upload -> ig_carousel -> fb_photos -> yt_short
+          -> log (publish_log.jsonl + git commit/push)
     clip  (viral Reel: the owner pastes an X/post link)
           fetch (yt-dlp) -> hook (Claude watches frames, writes hook + caption) -> frame (clip.py) -> approve
           -> upload -> ig_reel -> fb_reel -> log
@@ -34,9 +35,10 @@ CLAUDE_TOOLS = ["WebSearch", "WebFetch", "Read", "Write", "Edit", "Glob", "Grep"
 SCAN = [("trigger", "Zamanlayıcı", "trigger"), ("collect", "Haber topla", "code"),
         ("scout", "Ara, doğrula, sırala", "ai"), ("choose", "Senin seçimin", "human")]
 POST = [("write", "Doğrula & yaz", "ai"), ("cover", "Kapak görseli", "code"), ("carousel", "Carousel", "code"),
-        ("qa", "Kalite kontrol", "ai"), ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"),
+        ("reel", "Video · ses + müzik (YouTube)", "code"), ("qa", "Kalite kontrol", "ai"),
+        ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"),
         ("ig_carousel", "Instagram carousel", "publish"), ("fb_photos", "Facebook gönderi", "publish"),
-        ("log", "Kayıt & GitHub", "code")]
+        ("yt_short", "YouTube Short", "publish"), ("log", "Kayıt & GitHub", "code")]
 CLIP = [("fetch", "Videoyu indir", "code"), ("hook", "Hook & caption", "ai"), ("frame", "Reel çerçevesi", "code"),
         ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"), ("ig_reel", "Instagram Reel", "publish"),
         ("fb_reel", "Facebook Reel", "publish"), ("log", "Kayıt & GitHub", "code")]
@@ -77,7 +79,12 @@ def read_json(p, default=None):
 
 def write_json(p, data):
     p = pathlib.Path(p); tmp = p.with_suffix(".tmp")
-    tmp.write_text(json.dumps(data, indent=1, ensure_ascii=False), encoding="utf-8"); os.replace(tmp, p)
+    tmp.write_text(json.dumps(data, indent=1, ensure_ascii=False), encoding="utf-8")
+    for i in range(20):  # Windows: the target can be open for a moment (UI read, antivirus) -> PermissionError
+        try: os.replace(tmp, p); return
+        except PermissionError:
+            if i == 19: raise
+            time.sleep(0.1)
 
 
 def settings():
@@ -304,7 +311,9 @@ def reel_frames(run):
 
 
 def n_qa(run):
-    claude(run, "qa", "qa", content=run.s["content"], name=content_path(run).stem, result=f"runs/{run.id}/qa.json")
+    frames = reel_frames(run)
+    claude(run, "qa", "qa", content=run.s["content"], name=content_path(run).stem,
+           frames=", ".join(frames) or "none", result=f"runs/{run.id}/qa.json")
     r = read_json(run.dir / "qa.json")
     if r is None: raise StepError("qa.json yazılmadı")
     return "sorun yok" if r.get("ok") else "dikkat: " + "; ".join(r.get("problems", []))[:120]
