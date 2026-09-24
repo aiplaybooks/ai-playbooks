@@ -19,6 +19,8 @@ everything after the pick is automatic, so the list must be accurate and ready t
    with `"seen_before": true`.
 6. Always add 2 evergreen candidates (no news needed) that fit the page and were not posted in the last 30 days:
    e.g. "7 prompts for X", Claude Code / Codex / Cursor tips, a tool comparison, a workflow.
+   Give evergreen candidates `sources` too: the official docs / help pages the post will be based on (e.g. the Claude
+   Code docs page for Claude Code tips), so the owner can open and check them.
 
 ## Output: `{out}` (JSON, UTF-8), nothing else to write
 ```

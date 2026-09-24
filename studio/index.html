@@ -52,6 +52,8 @@ aside{width:380px;min-width:380px;border-right:1px solid var(--line);background:
 .cand h4{font-size:14.5px;line-height:1.3;margin-bottom:6px}
 .cand h4 a.ttl{color:var(--text);text-decoration:none;border-bottom:1px dashed #6d6d7c}
 .cand h4 a.ttl:hover{color:#8fb8ff;border-bottom-color:#8fb8ff}
+.cand .more{font-size:12.5px;color:#cfcfda;background:var(--panel2);border-radius:8px;padding:8px 10px;margin:4px 0 8px}
+.cand .moreBtn{font-size:12px;display:inline-block;margin-bottom:6px}
 .cand p{font-size:13px;color:#cfcfda;margin-bottom:6px}
 .cand .why{color:var(--muted);font-size:12.5px}
 .chips{display:flex;flex-wrap:wrap;gap:5px;margin:7px 0}
@@ -382,7 +384,7 @@ function fit(){
 document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{tab=b.dataset.tab;document.querySelectorAll(".tabs button").forEach(x=>x.classList.toggle("on",x===b));renderSide(true)});
 $("#scanSel").onchange=e=>{scanId=e.target.value;renderAll(true)};
 $("#postSel").onchange=e=>{postId=e.target.value;renderAll(true)};
-let rawCache={};
+let rawCache={};const openMore=new Set();
 async function renderSide(force){
   const L=$("#list");
   $("#scanHead").style.display=tab==="hist"?"none":"flex";
@@ -416,7 +418,9 @@ async function renderSide(force){
    <div class="cand ${chosen[k.id]?"chosen":""}">
     <div class="top"><span class="score">${esc(k.score)}</span><span class="tag ${k.kind==="news"?"news":""}">${k.kind==="news"?"HABER":"EVERGREEN"}</span>
       ${k.published?`<span>${esc(k.published)}</span>`:""}${k.seen_before?`<span title="Önceki taramada da listelenmişti">↺ önceden</span>`:""}</div>
-    <h4>${(k.sources||[])[0]?`<a class="ttl" href="${esc(k.sources[0])}" target="_blank" title="Resmi kaynağı aç">${esc(k.title)} ↗</a>`:esc(k.title)}</h4><p>${esc(k.summary_tr)}</p>${k.why_tr?`<p class="why">💡 ${esc(k.why_tr)}</p>`:""}
+    <h4>${(k.sources||[])[0]?`<a class="ttl" href="${esc(k.sources[0])}" target="_blank" title="Resmi kaynağı aç">${esc(k.title)} ↗</a>`:`<a class="ttl" href="#" data-more="${esc(k.id)}" title="Detayı göster">${esc(k.title)} ▾</a>`}</h4><p>${esc(k.summary_tr)}</p>
+    <div class="more" id="more-${esc(k.id)}" ${openMore.has(k.id)?"":"hidden"}><b>Gönderi planı:</b> ${esc(k.angle||"—")}${k.published?`<br><b>Tarih:</b> ${esc(k.published)}`:""}${(k.sources||[]).length?"":"<br><i>Bu bir evergreen fikir: belirli bir habere dayanmıyor, içerik yazılırken resmi dokümanlardan doğrulanacak.</i>"}</div>
+    ${(k.sources||[])[0]?`<a href="#" class="moreBtn" data-more="${esc(k.id)}">${openMore.has(k.id)?"Detayı gizle":"Gönderi planını göster"}</a>`:""}${k.why_tr?`<p class="why">💡 ${esc(k.why_tr)}</p>`:""}
     <div class="chips">${(k.tools||[]).map(t=>`<span class="chip">${esc(t)}</span>`).join("")}</div>
     <div class="srcs">${(k.sources||[]).length?"Kaynaklar: ":""}${(k.sources||[]).map(u=>`<a href="${esc(u)}" target="_blank">${esc(host(u))}</a>`).join("")}${(k.hints||[]).map(u=>`<a href="${esc(u)}" target="_blank" style="color:var(--muted)" title="Resmi olmayan ipucu kaynağı">${esc(host(u))}</a>`).join("")}</div>
     ${chosen[k.id]?`<button data-run="${esc(chosen[k.id])}">✓ Seçildi · üretimi göster</button>`:`<button class="primary" data-pick="${esc(k.id)}">Bu haberi seç</button>`}
@@ -428,6 +432,8 @@ async function renderSide(force){
     try{const r=await api("/api/select",{scan:scanId,candidate:k.id});postId=r.run;await refresh();openNode("write");}catch(e){toast(e.message);b.disabled=false}
   });
   L.querySelectorAll("[data-run]").forEach(b=>b.onclick=()=>{postId=b.dataset.run;renderAll(true)});
+  L.querySelectorAll("[data-more]").forEach(a=>a.onclick=e=>{e.preventDefault();const id=a.dataset.more;
+    openMore.has(id)?openMore.delete(id):openMore.add(id);renderSide(true)});
 }
 
 /* ---------------- drawer ---------------- */
