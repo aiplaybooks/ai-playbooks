@@ -206,13 +206,13 @@ def main():
             w.writeframes((np.clip(track, -1, 1) * 32767).astype(np.int16).tobytes())
         # music sits under the voice and ducks further while it speaks; then normalise to IG loudness
         cmd += ["-i", str(out / "voice.wav"), "-filter_complex",
-                "[2:a]aresample=44100,pan=stereo|c0=c0|c1=c0,asplit=2[vo][sc];"
-                "[1:a]aresample=44100,volume=0.45[mu];"
+                "[2:a]aresample=48000,pan=stereo|c0=c0|c1=c0,asplit=2[vo][sc];"
+                "[1:a]aresample=48000,volume=0.45[mu];"
                 "[mu][sc]sidechaincompress=threshold=0.02:ratio=8:attack=20:release=400[duck];"
-                "[duck][vo]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11,aresample=44100[a]",
+                "[duck][vo]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]",
                 "-map", "0:v", "-map", "[a]"]
     cmd += ["-c:v", "libx264", "-preset", "slow", "-crf", "18", "-pix_fmt", "yuv420p",
-            "-profile:v", "high", "-r", str(FPS), "-c:a", "aac", "-b:a", "192k", "-shortest",
+            "-profile:v", "high", "-r", str(FPS), "-c:a", "aac", "-ar", "48000", "-b:a", "192k", "-shortest",
             "-movflags", "+faststart", str(out / "reel.mp4")]
     subprocess.run(cmd, check=True)
     shutil.rmtree(frames, ignore_errors=True)
