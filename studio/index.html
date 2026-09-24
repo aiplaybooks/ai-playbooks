@@ -287,14 +287,13 @@ const LAYOUT={
     write:[0,230],cover:[270,230],carousel:[540,230],reel:[810,230],
     qa:[0,420],approve:[270,420],upload:[540,420],ig_carousel:[810,420],
     fb_photos:[0,610],yt_short:[270,610],log:[540,610]},
-  clip:{trigger:[0,40],collect:[270,40],scout:[540,40],choose:[810,40],
-    fetch:[0,230],hook:[270,230],frame:[540,230],qa:[810,230],
-    approve:[0,420],upload:[270,420],ig_reel:[540,420],fb_reel:[810,420],log:[0,610]}};
+  clip:{fetch:[0,40],hook:[270,40],frame:[540,40],qa:[810,40],
+    approve:[0,230],upload:[270,230],ig_reel:[540,230],fb_reel:[810,230],log:[0,420]}};
 const GROUPS={post:[["① Tarama","scan",0,0],["② Carousel üretimi","post",0,190],["③ Kontrol, onay & yayın","pub",0,380]],
-  clip:[["① Tarama","scan",0,0],["② Viral Reel üretimi","post",0,190],["③ Onay & yayın","pub",0,380]]};
+  clip:[["① Viral Reel üretimi (link yapıştırınca başlar, taramadan bağımsız)","post",0,0],["② Kontrol sonrası onay & yayın","pub",0,190]]};
 const kind=()=>runById(postId)?.kind==="clip"?"clip":"post";
 const POS=new Proxy({},{get:(_,id)=>LAYOUT[kind()][id]||[0,0]});
-const WW=810+224,WH=610+78;
+const WW=810+224;let WH=610+78;
 const NW=224,NH=78;
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -316,7 +315,7 @@ function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clea
 const scans=()=>S.runs.filter(r=>r.kind==="scan");
 const posts=()=>S.runs.filter(r=>r.kind==="post"||r.kind==="clip");
 const runById=id=>S.runs.find(r=>r.id===id);
-const flowOf=nid=>S.flows.scan.some(n=>n.id===nid)?"scan":kind();
+const flowOf=nid=>kind()!=="clip"&&S.flows.scan.some(n=>n.id===nid)?"scan":kind();
 
 /* ---------------- canvas ---------------- */
 function build(){
@@ -325,7 +324,7 @@ function build(){
     const g=document.createElement("div");g.className="group";g.style.left=x+"px";g.style.top=y+"px";g.dataset.g=key;
     g.innerHTML=esc(label)+"<span></span>";w.appendChild(g);
   }
-  for(const f of ["scan",kind()]) for(const n of S.flows[f]){
+  for(const f of kind()==="clip"?["clip"]:["scan","post"]) for(const n of S.flows[f]){
     const d=document.createElement("div");d.className="node k-"+n.kind+" s-idle";d.id="n-"+n.id;
     const [x,y]=POS[n.id];d.style.left=x+"px";d.style.top=y+"px";
     d.innerHTML=`<div class="ico">${ICONS[n.id]}</div><div class="tx"><b>${esc(n.label)}</b><small>Bekliyor</small></div><span class="badge"></span><i class="port in"></i><i class="port out"></i>`;
@@ -334,7 +333,7 @@ function build(){
   }
   built=true;
 }
-const ORDER=()=>[...S.flows.scan,...S.flows[kind()]].map(n=>n.id);
+const ORDER=()=>(kind()==="clip"?S.flows.clip:[...S.flows.scan,...S.flows.post]).map(n=>n.id);
 function edgePath(a,b){
   const [ax,ay]=POS[a],[bx,by]=POS[b];const x1=ax+NW,y1=ay+NH/2,x2=bx,y2=by+NH/2;
   if(x2>x1) {const c=Math.max(40,(x2-x1)/2);return `M${x1},${y1} C${x1+c},${y1} ${x2-c},${y2} ${x2},${y2}`;}
@@ -358,7 +357,7 @@ function subText(nid,n){
   return n.msg||n.status;
 }
 function renderCanvas(){
-  if(!built||builtKind!==kind())build();
+  if(!built||builtKind!==kind()){build();fitted=false;}
   const ids=ORDER();let paths="";
   for(let i=0;i<ids.length-1;i++){
     const a=nodeState(ids[i]),b=nodeState(ids[i+1]);
@@ -373,7 +372,7 @@ function renderCanvas(){
     el.title=subText(id,n);
   }
   const sc=runById(scanId),po=shownPost();
-  document.querySelector('[data-g=scan] span').textContent=sc?`${fmtT(sc.created)} · ${sc.trigger_msg||""}`:"henüz tarama yok";
+  const gs=document.querySelector('[data-g=scan] span');if(gs)gs.textContent=sc?`${fmtT(sc.created)} · ${sc.trigger_msg||""}`:"henüz tarama yok";
   document.querySelector('[data-g=post] span').textContent=po?(po.title||""):"soldan bir haber seç ya da Viral sekmesinden link yapıştır";
   document.querySelector('[data-g=pub] span').textContent=po?({done:"paylaşıldı",rejected:"reddedildi"}[po.status]||(S.settings.approval?"onay açık":"onay kapalı")):"";
   const sw=`<span class="fsw">${[["post","🖼️ Carousel akışı"],["clip","🎞 Viral Reel akışı"]].map(([k,l])=>`<button data-flow="${k}" class="${kind()===k?"on":""}">${l}</button>`).join("")}</span>`;
@@ -386,6 +385,7 @@ function renderCanvas(){
 function statusTr(s){return{queued:"sırada",running:"çalışıyor",waiting:"seni bekliyor",done:"tamamlandı",error:"hata",rejected:"reddedildi",canceled:"durduruldu"}[s]||s}
 function apply(){$("#world").style.transform=`translate(${view.x}px,${view.y}px) scale(${view.k})`;}
 function fit(){
+  WH=(kind()==="clip"?420:610)+78;
   const vp=$("#vp").getBoundingClientRect(),W=WW,H=WH;
   const free=vp.width-($("#drawer").classList.contains("on")?470:0);view.k=Math.min(1.25,(free-80)/W,(vp.height-120)/H);view.x=Math.max(30,(free-W*view.k)/2);view.y=Math.max(64,(vp.height-H*view.k)/2+10);apply();
 }
