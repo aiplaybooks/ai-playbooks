@@ -22,6 +22,7 @@ Claude steps run `claude -p` (Claude Code headless) with the prompts in prompts/
 import sys, os, re, json, time, queue, shutil, pathlib, argparse, threading, subprocess, webbrowser, urllib.parse
 from datetime import datetime, timedelta
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
+import telegram_bot as TG
 
 ROOT = pathlib.Path(__file__).parent.resolve()
 RUNS = ROOT / "runs"
@@ -247,6 +248,7 @@ def n_scout(run):
     run.status(run.s["status"], candidates_file=str(out.relative_to(ROOT)))
     n = len(data["candidates"])
     notify("AI Playbooks", f"{n} yeni aday hazır. Studio'dan birini seç.")
+    TG.event("candidates", run)
     return f"{n} aday"
 
 
@@ -326,6 +328,7 @@ def n_approve(run):
     if settings()["approval"] or not qa.get("ok", True):
         run.node("approve", status="waiting", msg="Önizleme hazır: Yayınla / Revize et / Reddet")
         notify("AI Playbooks", f"Onay bekliyor: {(run.s.get('title') or '')[:80]}")
+        TG.event("approval", run)
         return None
     return "otomatik (onay kapalı)"
 
@@ -353,6 +356,7 @@ def n_log(run):
     links = {k: v.get("link") for k, v in read_json(out_dir(run) / "publish.json", {}).items()
              if isinstance(v, dict) and v.get("link")}
     notify("AI Playbooks", "Paylaşıldı: " + (links.get("ig_carousel") or links.get("ig_reel") or run.s["content"]))
+    TG.event("published", run, links=links)
     return "GitHub'a kaydedildi"
 
 
@@ -482,6 +486,7 @@ def execute(run):
             run.node(nid, status="error", ended=iso(), msg=str(ex)[:300]); run.status("error")
             slog(run.id, nid, "error:", ex)
             notify("AI Playbooks: hata", f"{label}: {str(ex)[:120]}")
+            TG.event("error", run, label=label, node=nid, msg=str(ex))
             return
         if run.s["nodes"][nid]["status"] == "waiting":
             run.status("waiting"); return
@@ -809,6 +814,7 @@ def main():
     recover()
     threading.Thread(target=post_worker, daemon=True).start()
     threading.Thread(target=scheduler, daemon=True).start()
+    TG.start(sys.modules[__name__])
     slog(f"Studio running at http://localhost:{a.port}")
     if not a.no_browser: webbrowser.open(f"http://localhost:{a.port}")
     srv.serve_forever()

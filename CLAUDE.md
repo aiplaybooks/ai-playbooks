@@ -65,6 +65,9 @@ publish.py         IG carousel + Reel and FB Page photo post + Reel via Graph AP
 metrics.py         performance collector (YouTube Data+Analytics, IG media + insights, FB page/post/reel) -> runs/metrics.json
                    (local only, 30-day history; Studio runs it every 6 h; UI: 📊 Performans). Missing Meta permission:
                    pages_read_user_content (FB photo-post reactions/comments) -> listed under "needs"
+telegram_bot.py    Telegram remote control inside the Studio (@aiplaybooks_studio_bot, owner-only: TELEGRAM_BOT_TOKEN +
+                   TELEGRAM_CHAT_ID in .env): candidates, approval previews, publish links, errors; text + voice commands
+stt.py             speech to text for voice commands (faster-whisper in the Pinokio TTS env, model cache in .cache/)
 yt_token.py        one-time YouTube OAuth -> YT_* in .env
 studio.py          AI Playbooks Studio: local workflow engine + web UI at http://localhost:8787 (see below)
 studio/index.html  the n8n-style UI (vanilla JS, no build)
