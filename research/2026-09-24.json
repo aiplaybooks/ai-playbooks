@@ -1,7 +1,15 @@
 {
- "generated": "2026-09-24T17:12+00:00",
+ "generated": "2026-09-24T19:54+00:00",
  "hours": 36.0,
  "items": [
+  {
+   "source": "Claude Code releases",
+   "tier": "official",
+   "title": "v2.1.282",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.282",
+   "date": "2026-09-24T18:38+00:00",
+   "summary": "What's changed Added a maxProseWidth setting that caps the width of Claude's prose in wide terminals while tables and code blocks keep the full width Added a startup notice, and /status and claude doctor entries, listing telemetry variables in a project's settings files that were ignored or that turned telemetry off Added the allowClaudeInChromeWithManagedMcp managed setting to let claude…"
+  },
   {
    "source": "Google DeepMind blog",
    "tier": "official",
@@ -200,7 +208,7 @@
    "title": "Codex changelog: Sep 23, 2026",
    "url": "https://developers.openai.com/codex/changelog",
    "date": "2026-09-23T00:00+00:00",
-   "summary": "Codex CLI 0.156.1 pre]:w-full [&>pre]:max-w-full [&>pre]:mb-0 pt-4\"> $ npm install -g @openai/codex@0.156.1 View details New Features Choose GPT-6 Sol or GPT-6 Luna from the model picker. The rate-limit switch prompt now recommends GPT-6 Luna. ( #47405 ) Changelog Full Changelog: rust-v0.156.0...rust-v0.156.1 #47405 [hotfix 0.156.0] Add GPT-6 Sol and Luna to the model catalog ( #47332 ) @imac-oai Full release on Github"
+   "summary": "ChatGPT for iOS 1.2026.258 New features Redesigned home screen. New iPad split view keeps your task list beside the open task in landscape. Added support for browsing changes inside nested Git repositories. Improvements and bug fixes Side chats now carry over attachments, selected text, and review comments. Fixed replies appearing blank or incomplete when the next queued prompt starts. New tasks preserve your selected computer and better recognize project checkouts and worktrees. More reliable file links, with clearer loading feedback when opening files and new tasks. Clearer error messages explain why task history could not load and what to try next. Smoother animations when adding photos from the camera or Photo Library. Fixed pairing failures caused by an incorrect device clock and SSH connection issues on Mac and Linux."
   },
   {
    "source": "Simon Willison",
@@ -221,10 +229,26 @@
   {
    "source": "Hacker News",
    "tier": "community",
+   "title": "Creatine uptake enhances antitumor immunity",
+   "url": "https://www.cell.com/iscience/fulltext/S2589-0042(26)00811-4",
+   "date": "2026-09-24T18:24+00:00",
+   "summary": "99 points, 106 comments · https://news.ycombinator.com/item?id=49834825"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: Whiteboard (YC W26) – An open-source IDE for thoughtful software design",
+   "url": "https://github.com/devdotfast/whiteboard",
+   "date": "2026-09-24T17:21+00:00",
+   "summary": "105 points, 32 comments · https://news.ycombinator.com/item?id=49833867"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
    "title": "GitHub has not removed malicious imitation software after 3 weeks",
    "url": "https://successfulsoftware.net/2026/09/24/github-has-not-removed-malicious-imitation-software-after-3-weeks/",
    "date": "2026-09-24T15:50+00:00",
-   "summary": "88 points, 27 comments · https://news.ycombinator.com/item?id=49832406"
+   "summary": "209 points, 86 comments · https://news.ycombinator.com/item?id=49832406"
   },
   {
    "source": "Hacker News",
@@ -232,7 +256,7 @@
    "title": "F-Droid 2.0",
    "url": "https://f-droid.org/2026/09/24/f-droid-2.0-a-new-chapter-for-android-freedom.html",
    "date": "2026-09-24T15:26+00:00",
-   "summary": "288 points, 76 comments · https://news.ycombinator.com/item?id=49831968"
+   "summary": "596 points, 182 comments · https://news.ycombinator.com/item?id=49831968"
   },
   {
    "source": "Hacker News",
@@ -240,7 +264,7 @@
    "title": "Disney+ and Hulu raise prices by up to 13 percent after doubling profits",
    "url": "https://arstechnica.com/gadgets/2026/09/disney-and-hulu-raise-prices-by-up-to-13-percent-after-doubling-profits/",
    "date": "2026-09-24T15:15+00:00",
-   "summary": "117 points, 141 comments · https://news.ycombinator.com/item?id=49831774"
+   "summary": "133 points, 167 comments · https://news.ycombinator.com/item?id=49831774"
   },
   {
    "source": "Hacker News",
@@ -248,7 +272,15 @@
    "title": "Best LLM for every budget, updated daily",
    "url": "https://bestmodelforyourbudget.terrydjony.com/",
    "date": "2026-09-24T14:09+00:00",
-   "summary": "131 points, 85 comments · https://news.ycombinator.com/item?id=49830866"
+   "summary": "150 points, 97 comments · https://news.ycombinator.com/item?id=49830866"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Oracle cites 'force majeure' to shield itself on controversial data center",
+   "url": "https://www.bloomberg.com/news/articles/2026-09-24/oracle-cites-force-majeure-to-shield-itself-on-controversial-data-center",
+   "date": "2026-09-24T13:04+00:00",
+   "summary": "127 points, 113 comments · https://news.ycombinator.com/item?id=49830037"
   },
   {
    "source": "Hacker News",
@@ -256,7 +288,7 @@
    "title": "'That's so AI ' What gen Alpha's biggest insult tells us",
    "url": "https://www.theguardian.com/society/2026/sep/24/thats-so-ai-what-gen-alphas-biggest-insult-tells-us",
    "date": "2026-09-24T12:23+00:00",
-   "summary": "90 points, 136 comments · https://news.ycombinator.com/item?id=49829650"
+   "summary": "93 points, 144 comments · https://news.ycombinator.com/item?id=49829650"
   },
   {
    "source": "Hacker News",
@@ -264,7 +296,7 @@
    "title": "Hackers influence ChatGPT and Gemini to direct users to scam centers",
    "url": "https://medium.com/@arielsimon/dark-sourcery-how-hackers-manipulate-ai-to-scam-you-88df434d2073",
    "date": "2026-09-24T11:54+00:00",
-   "summary": "101 points, 35 comments · https://news.ycombinator.com/item?id=49829387"
+   "summary": "127 points, 45 comments · https://news.ycombinator.com/item?id=49829387"
   },
   {
    "source": "Hacker News",
@@ -272,7 +304,7 @@
    "title": "The newest ESP32 can run Linux and it's getting close to a Raspberry Pi",
    "url": "https://www.xda-developers.com/newest-esp32-run-linux-close-to-raspberry-pi/",
    "date": "2026-09-24T11:08+00:00",
-   "summary": "159 points, 69 comments · https://news.ycombinator.com/item?id=49828969"
+   "summary": "193 points, 95 comments · https://news.ycombinator.com/item?id=49828969"
   },
   {
    "source": "Hacker News",
@@ -280,7 +312,7 @@
    "title": "Starlink ground station in Poland hit by fire in suspected arson attack",
    "url": "https://notesfrompoland.com/2026/09/24/starlink-ground-station-in-poland-hit-by-fire-in-suspected-arson-attack/",
    "date": "2026-09-24T09:52+00:00",
-   "summary": "153 points, 160 comments · https://news.ycombinator.com/item?id=49828409"
+   "summary": "157 points, 169 comments · https://news.ycombinator.com/item?id=49828409"
   },
   {
    "source": "Hacker News",
@@ -288,7 +320,7 @@
    "title": "Meta takes down a critical video about meta AI Glasses after filming at Meta",
    "url": "https://www.reddit.com/r/facebook/comments/1wotwrk/meta_takes_down_a_critical_video_about_meta_ai/",
    "date": "2026-09-24T08:23+00:00",
-   "summary": "553 points, 331 comments · https://news.ycombinator.com/item?id=49827794"
+   "summary": "578 points, 349 comments · https://news.ycombinator.com/item?id=49827794"
   },
   {
    "source": "Hacker News",
@@ -296,7 +328,7 @@
    "title": "Early rogue AI agent activity and attempts to hack found on urlquery.net",
    "url": "https://transluce.org/agent-activity",
    "date": "2026-09-24T05:21+00:00",
-   "summary": "200 points, 189 comments · https://news.ycombinator.com/item?id=49826565"
+   "summary": "206 points, 191 comments · https://news.ycombinator.com/item?id=49826565"
   },
   {
    "source": "Hacker News",
@@ -304,7 +336,7 @@
    "title": "Contrastive Language Models",
    "url": "https://contrastive-lm.notion.site/",
    "date": "2026-09-24T04:20+00:00",
-   "summary": "142 points, 41 comments · https://news.ycombinator.com/item?id=49826221"
+   "summary": "149 points, 48 comments · https://news.ycombinator.com/item?id=49826221"
   },
   {
    "source": "Hacker News",
@@ -312,7 +344,7 @@
    "title": "OpenAI agent hacked Australian government website, PM says",
    "url": "https://www.bbc.com/news/live/cvgl73pxgndwt",
    "date": "2026-09-24T02:44+00:00",
-   "summary": "241 points, 181 comments · https://news.ycombinator.com/item?id=49825580"
+   "summary": "247 points, 186 comments · https://news.ycombinator.com/item?id=49825580"
   },
   {
    "source": "Hacker News",
@@ -328,7 +360,7 @@
    "title": "Virtio-nvgpu: Near-native Nvidia GPU access inside a KVM guest",
    "url": "https://github.com/nestrilabs/virtio-nvgpu",
    "date": "2026-09-24T01:02+00:00",
-   "summary": "147 points, 59 comments · https://news.ycombinator.com/item?id=49824864"
+   "summary": "148 points, 64 comments · https://news.ycombinator.com/item?id=49824864"
   },
   {
    "source": "Hacker News",
@@ -336,7 +368,7 @@
    "title": "Feds Target AI Critics as \"Foreign Agents\"",
    "url": "https://www.kenklippenstein.com/p/feds-think-ai-critics-are-foreign",
    "date": "2026-09-24T00:41+00:00",
-   "summary": "352 points, 374 comments · https://news.ycombinator.com/item?id=49824686"
+   "summary": "361 points, 395 comments · https://news.ycombinator.com/item?id=49824686"
   },
   {
    "source": "Hacker News",
@@ -344,7 +376,7 @@
    "title": "Linux support is coming to Snapdragon X2 series",
    "url": "https://www.qualcomm.com/news/onq/2026/09/snapdragon-summit-agentic-ai-pcs-linux",
    "date": "2026-09-23T22:38+00:00",
-   "summary": "567 points, 239 comments · https://news.ycombinator.com/item?id=49823582"
+   "summary": "584 points, 247 comments · https://news.ycombinator.com/item?id=49823582"
   },
   {
    "source": "Hacker News",
@@ -352,7 +384,7 @@
    "title": "Mercury 2.5 LLM hits 770 tokens per second",
    "url": "https://artificialanalysis.ai/models/mercury-2-5",
    "date": "2026-09-23T22:16+00:00",
-   "summary": "142 points, 88 comments · https://news.ycombinator.com/item?id=49823348"
+   "summary": "144 points, 89 comments · https://news.ycombinator.com/item?id=49823348"
   },
   {
    "source": "Hacker News",
@@ -368,7 +400,7 @@
    "title": "OpenAI breaches Medicare, Albanese reveals",
    "url": "https://www.smh.com.au/politics/federal/openai-breaches-medicare-albanese-reveals-20260924-p6100u.html",
    "date": "2026-09-23T21:01+00:00",
-   "summary": "240 points, 247 comments · https://news.ycombinator.com/item?id=49822556"
+   "summary": "244 points, 251 comments · https://news.ycombinator.com/item?id=49822556"
   },
   {
    "source": "Hacker News",
@@ -376,7 +408,7 @@
    "title": "Once Claude can measure something, it can make it faster",
    "url": "https://claude.dev/blog/how-we-made-claude-ai-faster/",
    "date": "2026-09-23T19:23+00:00",
-   "summary": "217 points, 147 comments · https://news.ycombinator.com/item?id=49821196"
+   "summary": "220 points, 148 comments · https://news.ycombinator.com/item?id=49821196"
   },
   {
    "source": "Hacker News",
@@ -384,7 +416,7 @@
    "title": "Claude discovers a novel enzyme system with CRISPR-like repeats",
    "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
    "date": "2026-09-23T18:06+00:00",
-   "summary": "744 points, 747 comments · https://news.ycombinator.com/item?id=49820134"
+   "summary": "753 points, 770 comments · https://news.ycombinator.com/item?id=49820134"
   },
   {
    "source": "Hacker News",
@@ -392,7 +424,7 @@
    "title": "Making Tailscale Faster",
    "url": "https://tailscale.com/blog/making-tailscale-faster",
    "date": "2026-09-23T17:49+00:00",
-   "summary": "222 points, 90 comments · https://news.ycombinator.com/item?id=49819880"
+   "summary": "230 points, 94 comments · https://news.ycombinator.com/item?id=49819880"
   },
   {
    "source": "Hacker News",
@@ -400,7 +432,15 @@
    "title": "The science of Monkey Island: can grog dissolve a metal mug that fast?",
    "url": "https://jgeekstudies.org/2026/09/23/the-science-of-monkey-island-can-grog-actually-dissolve-a-metal-mug-that-fast/",
    "date": "2026-09-23T15:55+00:00",
-   "summary": "82 points, 15 comments · https://news.ycombinator.com/item?id=49818031"
+   "summary": "122 points, 29 comments · https://news.ycombinator.com/item?id=49818031"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Rails World 2026 Opening Keynote [video]",
+   "url": "https://www.youtube.com/watch?v=vDjW_dRyKXY",
+   "date": "2026-09-23T15:33+00:00",
+   "summary": "120 points, 93 comments · https://news.ycombinator.com/item?id=49817680"
   },
   {
    "source": "Hacker News",
@@ -408,7 +448,7 @@
    "title": "Gemini 3.8 text-to-speech",
    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/",
    "date": "2026-09-23T15:29+00:00",
-   "summary": "320 points, 144 comments · https://news.ycombinator.com/item?id=49817615"
+   "summary": "325 points, 145 comments · https://news.ycombinator.com/item?id=49817615"
   },
   {
    "source": "Hacker News",
@@ -416,7 +456,7 @@
    "title": "GPT-6 Astra has gained the ability to drive a car",
    "url": "https://drivingbench.com/",
    "date": "2026-09-23T15:14+00:00",
-   "summary": "306 points, 237 comments · https://news.ycombinator.com/item?id=49817404"
+   "summary": "307 points, 239 comments · https://news.ycombinator.com/item?id=49817404"
   },
   {
    "source": "Hacker News",
@@ -424,7 +464,7 @@
    "title": "Seattle City Council votes to ban surveillance pricing in sale of groceries",
    "url": "https://advocacy.consumerreports.org/press_release/seattle-city-council-votes-to-ban-surveillance-pricing-in-sale-of-groceries/",
    "date": "2026-09-23T14:04+00:00",
-   "summary": "371 points, 218 comments · https://news.ycombinator.com/item?id=49816374"
+   "summary": "377 points, 220 comments · https://news.ycombinator.com/item?id=49816374"
   },
   {
    "source": "Hacker News",
@@ -448,7 +488,7 @@
    "title": "The GitHub wiki is an anti-pattern (2022)",
    "url": "https://michaelheap.com/github-wiki-is-an-antipattern/",
    "date": "2026-09-23T13:05+00:00",
-   "summary": "171 points, 106 comments · https://news.ycombinator.com/item?id=49815484"
+   "summary": "172 points, 109 comments · https://news.ycombinator.com/item?id=49815484"
   },
   {
    "source": "Hacker News",
@@ -456,7 +496,7 @@
    "title": "OpenAI is enlisting an influencer army to make it look 'good for the world'",
    "url": "https://www.businessinsider.com/inside-open-ai-influencer-marketing-strategy-chatgpt-ads-sponsorships-instagram-2026-9",
    "date": "2026-09-23T12:32+00:00",
-   "summary": "213 points, 205 comments · https://news.ycombinator.com/item?id=49815127"
+   "summary": "214 points, 206 comments · https://news.ycombinator.com/item?id=49815127"
   },
   {
    "source": "Hacker News",
@@ -464,7 +504,7 @@
    "title": "Claude Code reads AGENTS.md only when telemetry is on [fixed]",
    "url": "https://blog.szypowi.cz/p/claude-code-reads-agents.md-only-when-telemetry-is-on/",
    "date": "2026-09-23T12:15+00:00",
-   "summary": "476 points, 277 comments · https://news.ycombinator.com/item?id=49814947"
+   "summary": "476 points, 279 comments · https://news.ycombinator.com/item?id=49814947"
   },
   {
    "source": "Hacker News",
@@ -472,7 +512,7 @@
    "title": "Two Git ignore files nobody told me about",
    "url": "https://mihai.dinculescu.dev/posts/two-git-ignore-files-nobody-told-me-about/",
    "date": "2026-09-23T11:28+00:00",
-   "summary": "92 points, 63 comments · https://news.ycombinator.com/item?id=49814432"
+   "summary": "93 points, 63 comments · https://news.ycombinator.com/item?id=49814432"
   },
   {
    "source": "Hacker News",
@@ -488,15 +528,7 @@
    "title": "I am done with this shit",
    "url": "https://www.reddit.com/r/ClaudeAI/comments/1wm5c21/i_am_done_with_this_shit/",
    "date": "2026-09-23T07:59+00:00",
-   "summary": "250 points, 196 comments · https://news.ycombinator.com/item?id=49812975"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "Jev in 25 Lines of Python",
-   "url": "https://www.nobodywho.ai/posts/jev-in-25-lines/",
-   "date": "2026-09-23T07:26+00:00",
-   "summary": "665 points, 208 comments · https://news.ycombinator.com/item?id=49812769"
+   "summary": "252 points, 197 comments · https://news.ycombinator.com/item?id=49812975"
   }
  ],
  "errors": [],

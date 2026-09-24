@@ -1,0 +1,182 @@
+{
+  "theme": "adaptive",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Meta AI × Smart Glasses",
+  "caption": "Meta just leveled up its smart glasses lineup. Ray-Ban Meta Audio (its first audio-only pair), a slimmer Gen 3 with a 12MP camera, and Muse — a hands-free personal AI agent. All powered by Meta AI.\n\nSave this for the full breakdown of prices, specs and rollout.\n\n#meta #metaai #rayban #smartglasses #ai #wearabletech #aitools",
+  "sources": [
+    "https://about.fb.com/news/2026/09/introducing-ray-ban-meta-audio-glasses-new-styles-plus-muse/"
+  ],
+  "design": {
+    "mood": "golden-hour eyewear studio: warm amber light on dark frames, a soft lens glow, a hint of teal for the AI voice",
+    "palette": {
+      "bg": "#1A1410",
+      "bg2": "#241B14",
+      "surface": "#2A2019",
+      "ink": "#FBF3E7",
+      "muted": "#C9B8A2",
+      "accent": "#FF9D52",
+      "accent2": "#4FD1C5"
+    },
+    "fonts": {
+      "display": "Sora",
+      "body": "Inter",
+      "mono": "JetBrains Mono"
+    },
+    "display": {
+      "weight": 700,
+      "case": "none",
+      "tracking": -2,
+      "scale": 1.0,
+      "italic_em": false
+    },
+    "shape": {
+      "radius": 40,
+      "border": 1.5,
+      "shadow": "glow"
+    },
+    "background": {
+      "pattern": "rings",
+      "pattern_opacity": 0.08,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "pill",
+    "prompt": "card",
+    "art": "<svg viewBox='0 0 900 460' xmlns='http://www.w3.org/2000/svg'><circle cx='330' cy='230' r='60' fill='var(--accent2)' opacity='0.25'/><circle cx='570' cy='230' r='60' fill='var(--accent)' opacity='0.25'/><circle cx='330' cy='230' r='120' fill='none' stroke='var(--ink)' stroke-width='14'/><circle cx='570' cy='230' r='120' fill='none' stroke='var(--ink)' stroke-width='14'/><path d='M450 220 q0 20 -35 20' fill='none' stroke='var(--ink)' stroke-width='14' stroke-linecap='round'/><path d='M210 210 q-60 -10 -80 20' fill='none' stroke='var(--ink)' stroke-width='14' stroke-linecap='round'/><path d='M690 210 q60 -10 80 20' fill='none' stroke='var(--ink)' stroke-width='14' stroke-linecap='round'/><g stroke='var(--accent)' stroke-width='14' stroke-linecap='round'><line x1='760' y1='230' x2='760' y2='230'/><line x1='790' y1='210' x2='790' y2='250'/><line x1='820' y1='180' x2='820' y2='280'/><line x1='850' y1='200' x2='850' y2='260'/></g><path d='M440 90 l10 25 l25 10 l-25 10 l-10 25 l-10 -25 l-25 -10 l25 -10 Z' fill='var(--accent)'/></svg>",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='6' cy='14' r='3.2'/><circle cx='18' cy='14' r='3.2'/><path d='M9.2 14h5.6'/><path d='M2.8 13 4 9.5c.3-.9 1.1-1.5 2-1.5h1'/><path d='M21.2 13 20 9.5c-.3-.9-1.1-1.5-2-1.5h-1'/></svg>"
+  },
+  "voice": "am_puck",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "NEW · SEP 23, 2026",
+      "title": "Meta's smart glasses just leveled up.",
+      "em": "smart glasses",
+      "sub": "Ray-Ban Meta Audio, a slimmer Gen 3, and Muse — all running Meta AI.",
+      "tools": [
+        "Meta AI",
+        "Ray-Ban Meta"
+      ],
+      "voiceover": "Meta just launched a whole new lineup of AI glasses at Connect."
+    },
+    {
+      "type": "facts",
+      "label": "What launched",
+      "title": "Three new products, one event",
+      "items": [
+        [
+          "Ray-Ban Meta Audio",
+          "Meta's first audio-only glasses, $349"
+        ],
+        [
+          "Ray-Ban Meta Gen 3",
+          "Slimmer camera glasses, $449"
+        ],
+        [
+          "New styles",
+          "Capri, Nova + Kylie Jenner and LISA editions"
+        ],
+        [
+          "Muse",
+          "A personal AI agent, hands-free"
+        ],
+        [
+          "Ships",
+          "Gen 3 today, Audio glasses October 13"
+        ]
+      ],
+      "voiceover": "Three new products: audio-only glasses, a slimmer Gen 3, and Muse."
+    },
+    {
+      "type": "compare",
+      "label": "Pick your pair",
+      "title": "Audio vs. Gen 3",
+      "cols": [
+        {
+          "name": "Ray-Ban Meta Audio",
+          "points": [
+            "$349",
+            "Music, calls, hands-free Meta AI",
+            "No camera",
+            "Ships Oct 13"
+          ]
+        },
+        {
+          "name": "Ray-Ban Meta Gen 3",
+          "points": [
+            "$449",
+            "12MP camera, 3K video",
+            "6-mic array + Dolby Atmos audio",
+            "Available today"
+          ]
+        }
+      ],
+      "voiceover": "The Audio glasses skip the camera; Gen 3 adds a 12 megapixel camera and 3K video."
+    },
+    {
+      "type": "list",
+      "label": "Meta AI on your face",
+      "title": "What the assistant does",
+      "items": [
+        [
+          "Hands-free assistant",
+          "Ask Meta AI without touching your phone"
+        ],
+        [
+          "Live translation",
+          "Real-time conversation translation"
+        ],
+        [
+          "Local info",
+          "Sports scores and restaurant picks on the spot"
+        ],
+        [
+          "Muse integration",
+          "Turns goals into hands-free action plans"
+        ]
+      ],
+      "voiceover": "Meta AI gives hands-free answers, live translation, and local recommendations."
+    },
+    {
+      "type": "stat",
+      "label": "Battery",
+      "value": "12h",
+      "title": "All-day audio",
+      "sub": "Plus 48 more hours from the charging case.",
+      "voiceover": "The audio glasses run twelve hours, plus forty-eight more from the case."
+    },
+    {
+      "type": "list",
+      "label": "The lineup",
+      "title": "Dozens of colors, a few specials",
+      "items": [
+        [
+          "27 combos",
+          "Gen 3 frame and lens options"
+        ],
+        [
+          "23 combos",
+          "Ray-Ban Meta Audio options"
+        ],
+        [
+          "Special editions",
+          "Kylie Jenner Starfire, LISA, Meta Adventurer at $249"
+        ]
+      ],
+      "voiceover": "There are dozens of color options, plus a Kylie Jenner special edition."
+    },
+    {
+      "type": "limits",
+      "label": "Before you buy",
+      "title": "Availability & fine print",
+      "items": [
+        "Live now in Singapore, South Korea, Mexico and the UAE",
+        "More countries, including Turkey, rolling out later this year",
+        "Prices start at $249 for the Adventurer style"
+      ],
+      "cta": "Follow for daily AI tool news",
+      "voiceover": "It's rolling out country by country, with prices starting at $249."
+    }
+  ]
+}
