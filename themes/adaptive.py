@@ -427,7 +427,7 @@ REEL_CSS = """
 .sub{font-size:38px !important}.tr .v{font-size:39px !important}.tr{padding:28px 0 !important}
 .step .t{font-size:41px !important}.step .d{font-size:31px !important}.pbox p{font-size:32px !important}.note{font-size:31px !important}
 .li{font-size:36px !important;padding:26px 0 !important}.col li{font-size:30px !important}.row .d{font-size:32px !important}
-.art{height:470px !important}
+.art{height:360px !important;margin-top:28px !important}.chips{margin-top:28px !important}
 .swipe{display:none !important}
 """
 
