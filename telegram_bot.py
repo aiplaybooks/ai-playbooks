@@ -243,7 +243,8 @@ def handle_text(text, spoken=False):
         return ask("reject", w["id"], f"Reddedilsin mi?\n{esc(w.get('title'))}") if w else send("Onay bekleyen gönderi yok.")
     # pick a candidate: "3", "3'ü seç", "üçüncüyü seç", "gemini'yi seç"
     sc = latest_scan(); cs = candidates(sc)
-    if cs and (re.search(r"\bseç", t) or re.fullmatch(r"\d{1,2}", t) or (spoken and number_in(t))):
+    short = len(t.split()) <= 4  # longer sentences ("bir sorum var, neden ...") are questions for Claude, not picks
+    if cs and short and (re.search(r"\bseç", t) or re.fullmatch(r"\d{1,2}", t) or (spoken and number_in(t))):
         n = number_in(t)
         if n and 1 <= n <= len(cs): c = cs[n - 1]
         else:
@@ -255,7 +256,92 @@ def handle_text(text, spoken=False):
         return ask("select", (sc["id"], c["id"]), f"Bu aday seçilsin mi?\n<b>{cs.index(c) + 1}.</b> {esc(c.get('title'))}")
     with LOCK: rid = PENDING_NOTE.pop(CHAT, None)
     if rid: return ask("revise", (rid, text.strip()), f"Revize edilsin mi?\n<i>{esc(text.strip())}</i>")
-    send(f"Anlayamadım{': <i>' + esc(text) + '</i>' if spoken else ''}. <b>yardım</b> yazarsan komutları gösteririm.")
+    ask_claude(text, spoken)
+
+
+# ---------------------------------------------------------------- free-form: Claude
+
+HISTORY = ROOT / "runs" / "telegram" / "history.json"
+CLAUDE_BUSY = threading.Lock()
+
+
+def state_summary():
+    runs = S.all_runs(); s = S.settings(); sc = latest_scan()
+    out = {"settings": {"scan_times": s["scan_times"], "approval": s["approval"]},
+           "next_scan": f"{S.next_slot(s['scan_times'], S.now()):%Y-%m-%d %H:%M}"}
+    if sc:
+        out["latest_scan"] = {"id": sc["id"], "status": sc["status"], "created": sc["created"],
+                              "chosen": [c["id"] for c in sc.get("chosen", [])],
+                              "candidates": [{"n": i, "id": c["id"], "title": c.get("title"), "tool": c.get("tool"),
+                                              "kind": c.get("kind"), "score": c.get("score")} for i, c in enumerate(candidates(sc), 1)]}
+    out["runs"] = []
+    for r in runs[:12]:
+        if r["kind"] == "scan": continue
+        cur = next(((n, v) for n, v in r["nodes"].items() if v["status"] in ("running", "waiting", "error")), (None, {}))
+        out["runs"].append({"id": r["id"], "kind": r["kind"], "status": r["status"], "title": r.get("title"),
+                            "created": r["created"], "content": r.get("content"), "step": cur[0], "step_msg": cur[1].get("msg")})
+    return out
+
+
+def history(add=None):
+    h = S.read_json(HISTORY, []) or []
+    if add:
+        h = (h + add)[-16:]; HISTORY.parent.mkdir(parents=True, exist_ok=True)
+        HISTORY.write_text(json.dumps(h, ensure_ascii=False), encoding="utf-8")
+    return h
+
+
+def ask_claude(text, spoken=False):
+    if not CLAUDE_BUSY.acquire(blocking=False):
+        return send("Bir önceki soruyu düşünüyorum, biter bitmez buna geçebilmen için birazdan tekrar yaz.")
+    def work():
+        try:
+            send("🤔 Bakıyorum… (15-60 sn)")
+            h = history()
+            prompt = (ROOT / "prompts" / "chat.md").read_text(encoding="utf-8").format(
+                now=f"{S.now():%Y-%m-%d %H:%M}", message=text, spoken="(voice message, transcribed: may contain small errors)" if spoken else "",
+                history="\n".join(f"{m['who']}: {m['text']}" for m in h) or "(none)",
+                state=json.dumps(state_summary(), ensure_ascii=False, indent=1))
+            envv = dict(os.environ, PYTHONIOENCODING="utf-8"); envv.pop("CLAUDECODE", None)
+            r = subprocess.run([S.CLAUDE, "-p", "--output-format", "json", "--allowedTools", "Read", "Glob", "Grep", "WebSearch", "WebFetch"],
+                               input=prompt, cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace",
+                               env=envv, creationflags=NO_WINDOW, timeout=420)
+            res = json.loads(r.stdout or "{}").get("result", "")
+            m = re.search(r"\{.*\}", res, re.S)
+            data = json.loads(m.group(0)) if m else {"reply": res or "Cevap alınamadı.", "actions": []}
+            reply = data.get("reply") or ""
+            send(reply or "Tamam.")
+            for a in (data.get("actions") or [])[:5]: propose(a)
+            history([{"who": "owner", "text": text}, {"who": "assistant", "text": reply}])
+        except Exception as ex:  # noqa: BLE001
+            log("claude chat failed", ex); send(f"⚠️ Claude'a soramadım: {esc(ex)}")
+        finally:
+            CLAUDE_BUSY.release()
+    threading.Thread(target=work, daemon=True).start()
+
+
+def propose(a):
+    t = a.get("type"); label = a.get("label") or t
+    if t == "scan": return ask("scan", None, f"👉 {esc(label)}")
+    if t == "select" and a.get("scan") and a.get("candidate"): return ask("select", (a["scan"], a["candidate"]), f"👉 {esc(label)}")
+    if t == "publish" and a.get("run"): return ask("publish", a["run"], f"👉 <b>{esc(label)}</b> (paylaşılır)")
+    if t == "reject" and a.get("run"): return ask("reject", a["run"], f"👉 {esc(label)}")
+    if t == "revise" and a.get("run") and a.get("note"): return ask("revise", (a["run"], a["note"]), f"👉 {esc(label)}\n<i>{esc(a['note'])}</i>")
+    if t == "retry" and a.get("run") and a.get("node"): return ask("retry", (a["run"], a["node"]), f"👉 {esc(label)}")
+    if t == "settings": return ask("settings", {k: a[k] for k in ("scan_times", "approval") if k in a}, f"👉 {esc(label)}")
+    if t == "clip" and a.get("url"): return ask("clip", a["url"], f"👉 {esc(label)}")
+    log("unknown action", a)
+
+
+def apply_settings(p):
+    s = S.settings()
+    if "approval" in p: s["approval"] = bool(p["approval"])
+    if "scan_times" in p:
+        times = sorted({t for t in p["scan_times"] if re.fullmatch(r"([01]\d|2[0-3]):[0-5]\d", str(t))})
+        if not times: raise ValueError("geçerli saat yok (SS:DD)")
+        s["scan_times"] = times; s["last_slot"] = (S.last_slot(times, S.now()) or S.now()).isoformat()
+    S.save_settings(s)
+    return f"Tarama saatleri {', '.join(s['scan_times'])} · onay {'açık' if s['approval'] else 'kapalı'}"
 
 
 PENDING_NOTE = {}
@@ -295,6 +381,10 @@ def on_callback(cq):
             return send("Ne değişsin? Bir sonraki mesajın (yazı ya da ses) revizyon notu olacak.")
         if kind == "revise": S.revise(*p); return send("✎ Revizyon gönderildi, yeniden üretiliyor.")
         if kind == "retry": S.retry(*p); return send("↻ Tekrar deneniyor.")
+        if kind == "scan":
+            return send("🔎 Tarama başladı." if S.start_scan("Telegram'dan başlatıldı") else "Zaten bir tarama çalışıyor.")
+        if kind == "settings": return send("⚙️ " + esc(apply_settings(p)))
+        if kind == "clip": rid = S.start_clip(p); return send(f"🎞 Viral Reel başladı.\n<code>{esc(rid)}</code>")
     except ValueError as ex:
         send(f"⚠️ {esc(ex)}")
 
