@@ -41,7 +41,8 @@ Every day the pipeline should:
 - **Reels = hook-framed viral clips, not the carousel's own Reel** (owner, 2026-09-25; refs: @chatgptips): black frame,
   brand line, hook text on top, the clip below, "Source: @creator on X" (`clip.py`). The owner picks the clip (pastes
   an X link); clip.py fetches that one post with yt-dlp. Risk the owner accepted: credit is not a license (takedowns
-  possible); ask creators for permission where possible. Don't upload these to YouTube. Discovery: `viral.py`
+  possible); ask creators for permission where possible. Don't upload these to YouTube: YouTube keeps getting the
+  carousel's own voiced video (owner, 2026-09-25). Discovery: `viral.py`
   (YouTube API = signal only, never downloaded; Reddit API needs manual approval since 2025-11 → not available).
   Hooks must stay truthful (no unverified $/follower claims from the source post), no fake verified badge.
 - No brand logo imitation, no exaggerated/false claims. Financial topics get a "not financial advice" line.
@@ -52,7 +53,7 @@ Every day the pipeline should:
 carousel.py        render carousel PNGs (1080x1350) + contact.png overview; slide 1 = themes/hookcover.py when the post
                    has a `cover` block + output/<post>/cover_image.jpg
 cover.py           cover image: Wikimedia Commons photo of `cover.person` (licensed, credited) or Flux scene via Forge
-reel.py            (not in the Studio pipeline any more) render animated Reel (typewriter prompts, staggered fade-ups, progress bar, music,
+reel.py            render the carousel as a voiced video: now only for YouTube Shorts (IG/FB Reels = viral clips) (typewriter prompts, staggered fade-ups, progress bar, music,
                    Kokoro voice-over + word-level burned-in captions + music ducking)
 voice.py           Kokoro TTS per slide -> vo_NN.wav + voice.json (word timings). Runs in Pinokio's env, called by reel.py
 clip.py            hook-frame Reel for a picked clip (file or X/post URL): python clip.py <src> --hook ".." [--title] [--credit]
@@ -185,9 +186,10 @@ candidate (and approves the preview), everything else is automatic.
 - **scan** flow, daily at `scan_times` (default 08:00 + 18:00, owner asked for 2 scans/day; a slot missed while the PC
   was off runs at startup): news.py → `claude -p` with prompts/scout.md → `research/<date>_<HHMM>_candidates.json`
   (4-8 candidates, Turkish summaries for the owner, official sources) → owner picks one in the UI.
-- **post** flow (one at a time): write (prompts/write.md → content JSON + runs/<id>/write.json) → cover (cover.py) →
-  carousel → qa (slides, prompts/qa.md, may fix + re-render) → approve (owner: Yayınla / Revize et (note → back to
-  write) / Reddet (content JSON moved into the run dir)) → publish.py steps (ig_carousel, fb_photos) → log (publish_log.jsonl + git commit/push).
+- **post** flow (one at a time): write (prompts/write.md → content JSON + runs/<id>/write.json) → cover (cover.py:
+  Wikimedia photo first, Flux when none) → carousel → reel (YouTube only) → qa (slides + video frames, prompts/qa.md,
+  may fix + re-render) → approve (owner: Yayınla / Revize et (note → back to
+  write) / Reddet (content JSON moved into the run dir)) → publish.py steps (ig_carousel, fb_photos, yt_short) → log (publish_log.jsonl + git commit/push).
 - **clip** flow (UI tab "Viral": owner pastes a link): fetch (yt-dlp + info.json + 8 frames) → hook (prompts/hook.md →
   content/clips/<date>_clip-<id>.json, "kind": "clip") → frame (clip.py) → approve → upload → ig_reel → fb_reel → log.
   Output in output/clips/<name>/. The scan's collect step also runs viral.py (YouTube trend signals for the Viral tab).
