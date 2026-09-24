@@ -32,7 +32,19 @@ Every day the pipeline should:
   the first (Gemini) post by hand.
 - **Images are code-rendered**, not AI-generated: HTML/CSS template → headless Chromium (Playwright) screenshot. Fonts are open-source (OFL/Inter license) and live in `fonts/`.
 - **Music is generated in code** (`music.py`, procedural lo-fi) → no copyright issues. Optional: a folder of royalty-free tracks (YouTube Audio Library / Pixabay) via `reel.py --music`.
-- **No real people's photos**, no brand logos imitation, no exaggerated/false claims. Financial topics get a "not financial advice" line.
+- **Carousel cover = a photo + big hook headline** (owner, 2026-09-25; refs: @chatgptips style): full-bleed image on
+  top, Anton upper-case headline with a yellow highlight, "SWIPE FOR MORE". The owner wants a **well-known person tied to
+  the topic** on the cover (e.g. the company's CEO) for reach. Only freely licensed real photos: Wikimedia Commons
+  (CC BY / CC BY-SA / public domain, via its API) with "Photo: <author> · <license>" on the cover and in the caption.
+  Never AI-generated likenesses of real people, no fake quotes/endorsements. No fitting person → Flux image
+  (Forge API, `flux1-schnell-fp8.safetensors`, ~85-90 s per image on the RTX 4060). Sample: output/flux-test/.
+- **Reels = hook-framed viral clips, not the carousel's own Reel** (owner, 2026-09-25; refs: @chatgptips): black frame,
+  brand line, hook text on top, the clip below, "Source: @creator on X" (`clip.py`). The owner picks the clip (pastes
+  an X link); clip.py fetches that one post with yt-dlp. Risk the owner accepted: credit is not a license (takedowns
+  possible); ask creators for permission where possible. Don't upload these to YouTube. Discovery: `viral.py`
+  (YouTube API = signal only, never downloaded; Reddit API needs manual approval since 2025-11 → not available).
+  Hooks must stay truthful (no unverified $/follower claims from the source post), no fake verified badge.
+- No brand logo imitation, no exaggerated/false claims. Financial topics get a "not financial advice" line.
 - Reels: 1080x1920, 30fps, H.264 + AAC. Content kept inside IG safe zones (top ~190px, bottom ~330px reserved).
 
 ## Repo layout
@@ -41,6 +53,8 @@ carousel.py        render carousel PNGs (1080x1350) + contact.png overview
 reel.py            render animated Reel (typewriter prompts, staggered fade-ups, progress bar, music,
                    Kokoro voice-over + word-level burned-in captions + music ducking)
 voice.py           Kokoro TTS per slide -> vo_NN.wav + voice.json (word timings). Runs in Pinokio's env, called by reel.py
+clip.py            hook-frame Reel for a picked clip (file or X/post URL): python clip.py <src> --hook ".." [--title] [--credit]
+viral.py           trending AI video finder -> research/<date>_viral.json (YouTube signal; Reddit when API approved)
 music.py           procedural royalty-free background track: python music.py out.wav <seconds>
 news.py            daily news collector (stdlib only): RSS/Atom feeds, changelog pages, Hacker News -> research/<date>.json
 publish.py         IG carousel + Reel and FB Page photo post + Reel via Graph API v25.0; media via gh-pages.
