@@ -12,11 +12,13 @@ Needs carousel.py + reel.py output in output/<name>/ and META_PAGE_TOKEN, FB_PAG
     ig_reel      Instagram Reel: REELS container -> poll until FINISHED -> media_publish
     fb_photos    Facebook Page multi-photo post: unpublished photos -> /feed with attached_media
     fb_reel      Facebook Page Reel: video_reels start -> rupload from the public URL -> finish
+    yt_short     YouTube Short: resumable upload of the Reel (YouTube Data API v3). Until the API project passes
+                 YouTube's audit, YouTube keeps API uploads private: then make it public in YouTube Studio.
     log          appends the post to publish_log.jsonl
 Progress is saved to output/<name>/publish.json after every step, so a rerun resumes and never posts twice.
 Token values are never printed.
 """
-import sys, os, json, time, shutil, pathlib, argparse, subprocess, urllib.request, urllib.parse, urllib.error
+import sys, os, re, json, time, shutil, pathlib, argparse, subprocess, urllib.request, urllib.parse, urllib.error
 from datetime import datetime, timezone
 from PIL import Image
 
@@ -26,7 +28,8 @@ RUPLOAD = "https://rupload.facebook.com/video-upload/v25.0"
 PAGES_URL = "https://aiplaybooks.github.io/ai-playbooks"
 PAGES_DIR = ROOT / ".pages"  # git worktree of the gh-pages branch (gitignored)
 LOG = ROOT / "publish_log.jsonl"
-STEPS = ["prepare", "upload", "ig_carousel", "ig_reel", "fb_photos", "fb_reel", "log"]
+STEPS = ["prepare", "upload", "ig_carousel", "ig_reel", "fb_photos", "fb_reel", "yt_short", "log"]
+POSTS = ["ig_carousel", "ig_reel", "fb_photos", "fb_reel", "yt_short"]
 
 
 class PublishError(Exception):
@@ -44,7 +47,7 @@ def read_env():
         for line in f.read_text(encoding="utf-8").splitlines():
             if "=" in line and not line.lstrip().startswith("#"):
                 k, v = line.split("=", 1); env[k.strip()] = v.strip().strip('"').strip("'")
-    for k in ("META_PAGE_TOKEN", "FB_PAGE_ID", "IG_USER_ID"):
+    for k in ("META_PAGE_TOKEN", "FB_PAGE_ID", "IG_USER_ID", "YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN"):
         if os.environ.get(k): env[k] = os.environ[k]
     return env
 
@@ -261,10 +264,60 @@ def fb_reel(p):
     p.done("fb_reel", id=vid, link=link, status=state)
 
 
+def yt_access(p):
+    missing = [k for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN") if not p.env.get(k)]
+    if missing: raise PublishError(f"missing in .env: {', '.join(missing)} (run yt_token.py)")
+    return api("POST", "https://oauth2.googleapis.com/token", {
+        "client_id": p.env["YT_CLIENT_ID"], "client_secret": p.env["YT_CLIENT_SECRET"],
+        "refresh_token": p.env["YT_REFRESH_TOKEN"], "grant_type": "refresh_token"})["access_token"]
+
+
+def yt_meta(p):
+    """Title (<=100 chars), description and tags for the Short, from the content JSON."""
+    cover = next((s for s in p.data["slides"] if s["type"] == "cover"), {})
+    title = (cover.get("title") or p.data.get("topic") or p.name).replace("<", "").replace(">", "").strip()
+    if len(title) > 90: title = title[:89].rsplit(" ", 1)[0] + "…"
+    cap = p.data["caption"].replace("<", "").replace(">", "")
+    tags = [t.lstrip("#") for t in re.findall(r"#\w+", cap)][:15]
+    desc = cap + "\n\n" + "\n".join(p.data.get("sources", [])[:3]) + "\n\n#Shorts"
+    return {"title": title + " #Shorts", "description": desc[:4900], "tags": tags, "categoryId": "28",
+            "defaultLanguage": "en", "defaultAudioLanguage": "en"}
+
+
+def yt_short(p):
+    vid = p.state.get("yt_short_video")
+    if not vid:  # one upload only: a retry after this point never uploads a second copy
+        tok = yt_access(p); f = p.pub / "reel.mp4"
+        if not f.exists(): prepare(p)
+        body = json.dumps({"snippet": yt_meta(p), "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False}}).encode()
+        req = urllib.request.Request("https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status",
+                                     data=body, method="POST", headers={
+            "Authorization": f"Bearer {tok}", "Content-Type": "application/json; charset=UTF-8",
+            "X-Upload-Content-Type": "video/mp4", "X-Upload-Content-Length": str(f.stat().st_size)})
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r: session = r.headers["Location"]
+        except urllib.error.HTTPError as ex:
+            raise PublishError(f"YouTube upload start: {(ex.read() or b'')[:400].decode('utf-8', 'replace')}") from None
+        req = urllib.request.Request(session, data=f.read_bytes(), method="PUT", headers={"Content-Type": "video/mp4"})
+        try:
+            with urllib.request.urlopen(req, timeout=600) as r: v = json.loads(r.read())
+        except urllib.error.HTTPError as ex:
+            raise PublishError(f"YouTube upload: {(ex.read() or b'')[:400].decode('utf-8', 'replace')}") from None
+        vid = v["id"]; p.state["yt_short_video"] = vid; p.save()
+    tok = yt_access(p)
+    req = urllib.request.Request(f"https://www.googleapis.com/youtube/v3/videos?part=status&id={vid}",
+                                 headers={"Authorization": f"Bearer {tok}"})
+    with urllib.request.urlopen(req, timeout=30) as r: items = json.loads(r.read()).get("items", [])
+    privacy = items[0]["status"]["privacyStatus"] if items else "unknown"
+    link = f"https://youtube.com/shorts/{vid}"
+    p.done("yt_short", id=vid, link=link, privacy=privacy, studio=f"https://studio.youtube.com/video/{vid}/edit")
+    say(f"yt_short: {link} ({privacy}" + (": YouTube Studio'dan herkese açık yap)" if privacy != "public" else ")"))
+
+
 def log(p):
     entry = {"date": datetime.now().astimezone().isoformat(timespec="minutes"), "post": p.name,
              "topic": p.data.get("topic"), "theme": p.data.get("theme"), "sources": p.data.get("sources", []),
-             **{s: {k: v for k, v in p.state[s].items() if k in ("id", "link")} for s in STEPS[2:6] if s in p.state}}
+             **{s: {k: v for k, v in p.state[s].items() if k in ("id", "link")} for s in POSTS if s in p.state}}
     with LOG.open("a", encoding="utf-8") as f: f.write(json.dumps(entry, ensure_ascii=False) + "\n")
     say(f"log: appended to {LOG.name}")
     p.done("log")
@@ -282,6 +335,11 @@ def dry_run(p):
               {"fields": "quota_usage,config", "access_token": p.token}).get("data", [{}])[0]
     say(f"token ok: Instagram @{ig.get('username')}, Facebook Page '{page.get('name')}'")
     say(f"Instagram quota: {lim.get('quota_usage')} / {lim.get('config', {}).get('quota_total')} posts in 24h")
+    tok = yt_access(p)
+    req = urllib.request.Request("https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true",
+                                 headers={"Authorization": f"Bearer {tok}"})
+    with urllib.request.urlopen(req, timeout=30) as r: ch = (json.loads(r.read()).get("items") or [{}])[0]
+    say(f"YouTube ok: {ch.get('snippet', {}).get('title')} ({ch.get('snippet', {}).get('customUrl')}); Short title: {yt_meta(p)['title']}")
     done = [s for s in STEPS if s in p.state]
     say(f"already done: {', '.join(done) or 'nothing'}")
     say("dry run ok: nothing was uploaded or posted")

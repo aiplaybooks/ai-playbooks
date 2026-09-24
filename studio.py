@@ -33,7 +33,7 @@ POST = [("write", "Doğrula & yaz", "ai"), ("carousel", "Carousel", "code"), ("r
         ("qa", "Kalite kontrol", "ai"), ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"),
         ("ig_carousel", "Instagram carousel", "publish"), ("ig_reel", "Instagram Reel", "publish"),
         ("fb_photos", "Facebook gönderi", "publish"), ("fb_reel", "Facebook Reel", "publish"),
-        ("log", "Kayıt & GitHub", "code")]
+        ("yt_short", "YouTube Short", "publish"), ("log", "Kayıt & GitHub", "code")]
 FLOWS = {"scan": SCAN, "post": POST}
 
 LOCK = threading.RLock()
@@ -104,6 +104,8 @@ class Run:
     def __init__(self, rid):
         self.id = rid; self.dir = RUNS / rid
         self.s = read_json(self.dir / "state.json")
+        if self.s:  # runs created before a node was added to the flow get it as idle
+            for n, _, _ in FLOWS[self.s["kind"]]: self.s["nodes"].setdefault(n, {"status": "idle"})
 
     @classmethod
     def create(cls, kind, rid, **extra):
@@ -328,7 +330,7 @@ def n_log(run):
 
 PHASES = {"trigger": "scan", "collect": "scan", "scout": "scan", "choose": "wait", "write": "production",
           "carousel": "production", "reel": "production", "qa": "production", "approve": "wait", "upload": "publish",
-          "ig_carousel": "publish", "ig_reel": "publish", "fb_photos": "publish", "fb_reel": "publish", "log": "publish"}
+          "ig_carousel": "publish", "ig_reel": "publish", "fb_photos": "publish", "fb_reel": "publish", "yt_short": "publish", "log": "publish"}
 
 
 def secs_between(a, b):
@@ -369,7 +371,8 @@ def record_timings(run, outcome):
 NODES = {"trigger": n_trigger, "collect": n_collect, "scout": n_scout, "choose": n_choose,
          "write": n_write, "carousel": n_carousel, "reel": n_reel, "qa": n_qa, "approve": n_approve,
          "upload": publish_step("upload"), "ig_carousel": publish_step("ig_carousel"), "ig_reel": publish_step("ig_reel"),
-         "fb_photos": publish_step("fb_photos"), "fb_reel": publish_step("fb_reel"), "log": n_log}
+         "fb_photos": publish_step("fb_photos"), "fb_reel": publish_step("fb_reel"),
+         "yt_short": publish_step("yt_short"), "log": n_log}
 
 
 def execute(run):

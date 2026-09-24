@@ -251,11 +251,11 @@ table.tt td.p{text-align:right;color:var(--muted);width:48px;font-variant-numeri
 
 <script>
 const ICONS={trigger:"⏰",collect:"📰",scout:"🧠",choose:"👤",write:"✍️",carousel:"🖼️",reel:"🎬",qa:"👁️",approve:"✅",
-  upload:"☁️",ig_carousel:"📸",ig_reel:"🎞️",fb_photos:"📘",fb_reel:"📘",log:"📒"};
+  upload:"☁️",ig_carousel:"📸",ig_reel:"🎞️",fb_photos:"📘",fb_reel:"📘",yt_short:"▶️",log:"📒"};
 const POS={trigger:[0,40],collect:[270,40],scout:[540,40],choose:[810,40],
   write:[0,230],carousel:[270,230],reel:[540,230],qa:[810,230],
   approve:[0,420],upload:[270,420],ig_carousel:[540,420],ig_reel:[810,420],
-  fb_photos:[0,610],fb_reel:[270,610],log:[540,610]};
+  fb_photos:[0,610],fb_reel:[270,610],yt_short:[540,610],log:[810,610]};
 const GROUPS=[["① Tarama","scan",0,0],["② Üretim","post",0,190],["③ Onay & yayın","pub",0,380]];
 const WW=810+224,WH=610+78;
 const NW=224,NH=78;
@@ -306,7 +306,7 @@ function edgePath(a,b){
 }
 function nodeState(nid){
   const r=runById(flowOf(nid)==="scan"?scanId:postId);
-  return r?r.nodes[nid]:{status:"idle"};
+  return (r&&r.nodes[nid])||{status:"idle"};
 }
 function dur(n){
   if(!n.started)return"";const e=n.ended?new Date(n.ended):new Date();const s=Math.max(0,Math.round((e-new Date(n.started))/1000));
@@ -372,7 +372,7 @@ async function renderSide(force){
     const h=await api("/api/history");
     L.innerHTML=h.length?h.map(e=>`<div class="hist"><b>${esc(e.topic||e.post)}</b><br><small>${fmtT(e.date)} · ${esc(e.theme||"")}</small><div class="srcs" style="margin:6px 0 0">
       ${e.ig_carousel?`<a href="${esc(e.ig_carousel.link)}" target="_blank">IG carousel</a>`:""}${e.ig_reel?`<a href="${esc(e.ig_reel.link)}" target="_blank">IG Reel</a>`:""}
-      ${e.fb_photos?`<a href="${esc(e.fb_photos.link)}" target="_blank">FB gönderi</a>`:""}${e.fb_reel?`<a href="${esc(e.fb_reel.link)}" target="_blank">FB Reel</a>`:""}</div></div>`).join(""):`<div class="empty">Henüz paylaşım yok.</div>`;
+      ${e.fb_photos?`<a href="${esc(e.fb_photos.link)}" target="_blank">FB gönderi</a>`:""}${e.fb_reel?`<a href="${esc(e.fb_reel.link)}" target="_blank">FB Reel</a>`:""}${e.yt_short?`<a href="${esc(e.yt_short.link)}" target="_blank">YouTube</a>`:""}</div></div>`).join(""):`<div class="empty">Henüz paylaşım yok.</div>`;
     return;
   }
   const sc=runById(scanId);
@@ -419,7 +419,7 @@ async function openNode(nid){
 }
 async function renderDrawer(){
   if(!sel)return;
-  const f=flowOf(sel),rid=f==="scan"?scanId:postId,r=runById(rid),n=r?r.nodes[sel]:{status:"idle"};
+  const f=flowOf(sel),rid=f==="scan"?scanId:postId,r=runById(rid),n=(r&&r.nodes[sel])||{status:"idle"};
   const meta=S.flows[f].find(x=>x.id===sel);
   $("#dIco").textContent=ICONS[sel];$("#dTitle").textContent=meta.label;
   const B=$("#dBody"),keepScroll=B.querySelector("pre.log");const atBottom=!keepScroll||keepScroll.scrollTop+keepScroll.clientHeight>=keepScroll.scrollHeight-20;
@@ -449,6 +449,7 @@ async function renderDrawer(){
       if((q.problems||[]).length)h+=`<h5>Kalan sorunlar</h5><ul class="clean">${q.problems.map(v=>`<li>${esc(v)}</li>`).join("")}</ul>`;
       if(d.qa_frames.length)h+=`<h5>Reel kareleri</h5><div class="thumbs">${d.qa_frames.map(s=>`<img src="${file(s)}" data-zoom>`).join("")}</div>`;}
     const pub=d.publish?.[sel];if(pub?.link)h+=`<h5>Link</h5><a href="${esc(pub.link)}" target="_blank">${esc(pub.link)}</a>`;
+    if(sel==="yt_short"&&pub?.privacy&&pub.privacy!=="public")h+=`<div class="qa bad" style="margin-top:10px">YouTube bu videoyu <b>${esc(pub.privacy)}</b> tuttu (API projesi henüz YouTube incelemesinden geçmedi). <a href="${esc(pub.studio)}" target="_blank">YouTube Studio'da aç</a> → Görünürlük → Herkese açık.</div>`;
   }
   if(f==="scan"&&r&&sel==="scout"&&r.candidates?.candidates)h+=`<h5>Sonuç</h5><div class="kv">${r.candidates.candidates.length} aday soldaki listede.</div>`;
   if(f==="scan"&&sel==="trigger")h+=`<h5>Plan</h5><div class="kv">Her gün ${S.settings.scan_times.join(" ve ")}. Sonraki: <b>${fmtT(S.next_scan)}</b>.<br><span>Bilgisayar o saatte kapalıysa tarama açılışta yapılır.</span></div>`;
@@ -518,14 +519,14 @@ $("#scanBtn").onclick=async()=>{try{const r=await api("/api/scan",{});scanId=r.r
 /* ---------------- timings ---------------- */
 const PH={scan:["Tarama","var(--trigger)"],wait:["Senin bekleme süren","var(--human)"],production:["Üretim","var(--ai)"],publish:["Yayın","var(--publish)"]};
 const PHASE={trigger:"scan",collect:"scan",scout:"scan",choose:"wait",write:"production",carousel:"production",reel:"production",qa:"production",
-  approve:"wait",upload:"publish",ig_carousel:"publish",ig_reel:"publish",fb_photos:"publish",fb_reel:"publish",log:"publish"};
+  approve:"wait",upload:"publish",ig_carousel:"publish",ig_reel:"publish",fb_photos:"publish",fb_reel:"publish",yt_short:"publish",log:"publish"};
 const secsOf=t=>t.started?Math.max(0,((t.ended?new Date(t.ended):new Date())-new Date(t.started))/1000):0;
 function hms(s){s=Math.round(s);if(s<60)return s+" sn";const m=Math.floor(s/60),r=s%60;if(m<60)return m+" dk "+String(r).padStart(2,"0")+" sn";
   return Math.floor(m/60)+" sa "+String(m%60).padStart(2,"0")+" dk";}
 function timingRows(){
   const po=runById(postId),sc=po?runById(po.scan):runById(scanId),rows=[];let first=null,last=null;
   for(const [r,f] of [[sc,"scan"],[po,"post"]]) if(r) for(const m of S.flows[f]){
-    const n=r.nodes[m.id],tries=[...(n.attempts||[]),...(n.started?[n]:[])];
+    const n=r.nodes[m.id]||{status:"idle"},tries=[...(n.attempts||[]),...(n.started?[n]:[])];
     for(const t of tries){if(!t.started)continue;const e=t.ended||new Date().toISOString();
       if(!first||t.started<first)first=t.started;if(!last||new Date(e)>new Date(last))last=e;}
     rows.push({id:m.id,label:m.label,phase:PHASE[m.id],secs:tries.reduce((a,t)=>a+secsOf(t),0),tries:tries.length,status:n.status});
