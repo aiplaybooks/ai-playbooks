@@ -103,6 +103,11 @@ Override with env vars `KOKORO_PYTHON` / `KOKORO_HF_HOME`. Read-only use — nev
 - Likely gotcha: Facebook posts made by an app in development mode may be visible only to app role users → the app
   probably has to be **published** (needs privacy policy URL, category, icon; host the policy on GitHub Pages).
 
+## Where we left off (2026-09-24)
+Meta app, tokens and GitHub Secrets are done (see above). **Next:** GitHub Pages for public media URLs → `publish.py`
+(IG carousel + Reel, same post to the FB Page, publish log) → first real test post **only after the owner approves it**
+→ check FB post visibility (dev mode) → then the daily run prompt (`prompts/daily.md`).
+
 ## Next steps (in order — owner's priority, 2026-09-24)
 1. ~~Voice-over with Kokoro~~ — done. ~~News sources + collector~~ — done (`news.py`, `sources.json`).
    Tiers: `official` can back a claim; `signal` (Simon Willison) and `community` (Hacker News) are hints only.
