@@ -35,5 +35,12 @@
     {"name": "Perplexity changelog", "url": "https://www.perplexity.ai/changelog", "why": "blocks scripts (403): check with web search"},
     {"name": "Microsoft Copilot", "url": "https://blogs.microsoft.com/", "why": "blocks scripts (403): check with web search"},
     {"name": "Official X accounts (@AnthropicAI, @OpenAI, @xai, @GoogleDeepMind, @cursor_ai)", "url": "https://x.com", "why": "X needs login / paid API: use web search for big announcements"}
-  ]
+  ],
+  "viral": {
+    "subreddits": ["aivideo", "singularity", "ChatGPT", "OpenAI", "artificial", "StableDiffusion", "midjourney", "ClaudeAI",
+                   "GeminiAI", "robotics", "accelerate", "ArtificialInteligence"],
+    "periods": ["day", "week"], "min_score": 300, "min_secs": 4, "max_secs": 90,
+    "youtube_queries": ["AI generated video", "AI video made with Veo", "Sora AI video", "Kling AI video", "humanoid robot video"],
+    "youtube_min_views": 100000
+  }
 }
