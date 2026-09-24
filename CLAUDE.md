@@ -101,10 +101,20 @@ Override with env vars `KOKORO_PYTHON` / `KOKORO_HF_HOME`. Read-only use — nev
   META_APP_ID, META_APP_SECRET, META_PAGE_TOKEN, FB_PAGE_ID, IG_USER_ID. GitHub Secrets: META_PAGE_TOKEN, FB_PAGE_ID, IG_USER_ID.
   Never print or commit token values. If the token dies (password change, permissions removed): new Explorer token → rerun meta_token.py → `gh secret set`.
 - Likely gotcha: Facebook posts made by an app in development mode may be visible only to app role users → the app
-  probably has to be **published** (needs privacy policy URL, category, icon; host the policy on GitHub Pages).
+  probably has to be **published** (needs privacy policy URL, category, icon).
+  Done 2026-09-24: Privacy Policy URL + Data deletion instructions URL set in App settings → Basic
+  (both `https://aiplaybooks.github.io/ai-playbooks/privacy.html`). Still missing before publishing: app icon (1024x1024).
+
+## GitHub Pages (public media URLs) — done 2026-09-24
+- Served from the orphan branch **`gh-pages`** (root), base URL **https://aiplaybooks.github.io/ai-playbooks/**.
+  Contents: `index.html`, `privacy.html` (privacy policy + data deletion section, for publishing the Meta app), `.nojekyll`,
+  `media/<post>/...` (media for Graph API; `media/test/slide.png` is a test file).
+- To add media: `git worktree add <tmp> gh-pages` → copy files → commit → push; the Pages build takes ~1 min, check the URL
+  returns 200 before handing it to Meta. Limits: 100 MB/file, ~1 GB site → prune old `media/` now and then.
+- Instagram `image_url` officially supports **JPEG only** → publish.py must convert the PNG slides to JPEG.
 
 ## Where we left off (2026-09-24)
-Meta app, tokens and GitHub Secrets are done (see above). **Next:** GitHub Pages for public media URLs → `publish.py`
+Meta app, tokens, GitHub Secrets and GitHub Pages are done (see above). **Next:** `publish.py`
 (IG carousel + Reel, same post to the FB Page, publish log) → first real test post **only after the owner approves it**
 → check FB post visibility (dev mode) → then the daily run prompt (`prompts/daily.md`).
 
