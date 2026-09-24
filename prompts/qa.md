@@ -9,6 +9,8 @@ Open `output/{name}/contact.png`, every `slide_NN.png` and the sampled Reel fram
 - empty or broken slides, wrong characters (� boxes), placeholder text left in
 - in Reel frames: text inside the Instagram safe zones (top ~190px, bottom ~330px), captions covering content
 - typos, and claims in the slides/caption that go beyond the `sources` of the content JSON
+- prompt packs (prompts theme): every prompt fully visible and readable, [PLACEHOLDERS] make sense, before/after
+  demo art clearly shows the edit
 - design (adaptive theme): does the look fit the topic (its `design.mood`)? Is the cover art clear and on-topic, not
   a meaningless blob, not overlapping text? Is every text readable against its background? If the art is weak or
   broken, redraw the SVG in `design.art`; if colors clash, adjust `design.palette`.

@@ -1,0 +1,39 @@
+{
+  "theme": "prompts",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Photo edits with AI",
+  "caption": "Test pack for the before/after demo.",
+  "sources": [],
+  "design": {
+    "mood": "darkroom: deep charcoal, a warm golden-hour glow",
+    "palette": {"bg": "#101014", "bg2": "#18161C", "surface": "#1C1B22", "ink": "#F5F3EF", "muted": "#A29E98", "accent": "#FF9F43", "accent2": "#6FC3FF"},
+    "fonts": {"display": "Syne", "body": "Manrope", "mono": "Space Mono"},
+    "background": {"pattern": "noise", "pattern_opacity": 0.1, "glow": true, "gradient": true}
+  },
+  "slides": [
+    {
+      "type": "cover",
+      "title": "photo edits you can do by just asking",
+      "em": "just asking",
+      "sub": "Upload a photo, paste the prompt, done.",
+      "tools": ["ChatGPT", "Gemini"]
+    },
+    {
+      "type": "prompt",
+      "name": "Change the time of day",
+      "sub": "Turn a midday shot into golden hour.",
+      "prompt": "Change this scene from [CURRENT TIME] to [GOLDEN HOUR / NIGHT]. Adjust the sky, light direction, color temperature, shadows and reflections so the whole scene matches, and keep everything else unchanged.",
+      "demo": {"kind": "before_after",
+        "before": "<svg viewBox='0 0 400 250'><rect width='400' height='250' fill='#8EC9F2'/><circle cx='320' cy='60' r='26' fill='#FFF6C8'/><path d='M0 170 L90 90 L160 150 L240 70 L400 190 V250 H0Z' fill='#5E8C6A'/><path d='M0 200 Q200 170 400 205 V250 H0Z' fill='#3F6B4C'/><rect x='70' y='175' width='60' height='45' fill='#F1E4CC'/><path d='M62 178 L100 150 L138 178Z' fill='#B5533C'/></svg>",
+        "after": "<svg viewBox='0 0 400 250'><defs><linearGradient id='s' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#3B2A5C'/><stop offset='.55' stop-color='#F08A4B'/><stop offset='1' stop-color='#FFD27A'/></linearGradient></defs><rect width='400' height='250' fill='url(#s)'/><circle cx='300' cy='150' r='30' fill='#FFE7A8'/><path d='M0 170 L90 90 L160 150 L240 70 L400 190 V250 H0Z' fill='#4A3A4E'/><path d='M0 200 Q200 170 400 205 V250 H0Z' fill='#2E2436'/><rect x='70' y='175' width='60' height='45' fill='#C98A5A'/><rect x='88' y='190' width='14' height='14' fill='#FFD27A'/><path d='M62 178 L100 150 L138 178Z' fill='#6E3A34'/></svg>"},
+      "tip": "Name the exact light you want: \"soft golden hour from the left\"."
+    },
+    {
+      "type": "cta",
+      "title": "Save this pack.",
+      "title2": "Edit like a pro.",
+      "lines": [["Save", "for your next photo"], ["Follow", "for new prompt packs"]]
+    }
+  ]
+}

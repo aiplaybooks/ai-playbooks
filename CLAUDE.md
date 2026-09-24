@@ -22,6 +22,9 @@ Every day the pipeline should:
   news itself. Default theme is `adaptive`: the write step (Claude) art-directs a `design` block per post (palette, font
   trio from the OFL pool, shape, pattern, label/prompt style, code-drawn SVG cover art + icon). `ledger`/`neon` stay as
   fixed looks but aren't the default.
+- **Two pillars: news AND copy-paste prompt packs** (owner, 2026-09-24): the first posts were all news; the page's
+  promise is also "copy-paste prompts". Scout adds 3 `kind: "prompts"` candidates per scan (different everyday areas);
+  write.md renders them with the `prompts` theme. Prompts are our own wording, never copied from other accounts.
 - **Reel/Short cover = the carousel's first slide** (owner, 2026-09-24): publish.py makes `cover.jpg` (9:16, slide centered
   on a blurred copy) → IG `cover_url`, FB reel thumbnail (needs pages_manage_engagement + pages_read_user_content; skipped
   until the token has them), YouTube thumbnails.set (works only once the channel may set Shorts covers; never fails the
@@ -57,6 +60,10 @@ themes/
   neon.py          dark bg, lime accent, chat-input prompt cards. slide types: cover, prompt, cta
   ledger.py        cream "newspaper/market terminal": serif headlines, mono labels, ticker tape,
                    terminal prompt boxes. slide types: cover, facts, steps, prompt, limits
+  prompts.py       copy-paste PROMPT PACK series ("7 prompts to ..."): fixed series layout (big number + card deck cover,
+                   chat-box prompt cards with COPY badge, code-drawn `demo`: example reply or before/after SVG), colors/
+                   fonts from the same `design` block as adaptive (default: banner violet + blue). slide types: cover,
+                   prompt, howto, cta (+ any adaptive type). Long prompts auto-shrink to fit. samples/prompts_*.json
   adaptive.py      DEFAULT. Whole look from the post's `design` block (see its docstring); validates fonts, fixes
                    low contrast, sanitizes SVG. slide types: cover, facts, steps, prompt, list, compare, stat, limits, cta
 fonts/             OFL pool (+ licenses): Inter, Manrope, DM Sans, Outfit, Sora, Space Grotesk, Unbounded, Syne,
@@ -91,6 +98,8 @@ Slide types (a theme supports a subset — see its docstring):
 - adaptive only: `list`: label, title, items [[title, detail], ...] · `compare`: label, title, cols [{name, points[]}]
   (2-3 cols) · `stat`: label, value (big number/word), title, sub. Adaptive `prompt`: label, name, prompt, note.
   Text in `backticks` renders as code. Top-level `design` block: see themes/adaptive.py docstring.
+- prompts theme: `prompt`: name, sub, prompt, tip, demo ({kind: reply, lines[]} | {kind: before_after, before, after
+  svg}) · `howto`: title, items [[title, detail], ...] · cover title without the number (drawn big; `count` overrides).
 
 ## Theme contract (for adding new themes)
 A theme module in `themes/` must export:

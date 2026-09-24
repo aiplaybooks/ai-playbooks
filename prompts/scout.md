@@ -28,8 +28,17 @@ everything after the pick is automatic, so the list must be accurate and ready t
    of today: {previous}. A topic that was already posted is dropped; one that was only offered earlier today stays,
    with `"seen_before": true`.
 7. Add 2 evergreen candidates (no news needed) that were not posted in the last 30 days, about tools from the list
-   that got few or no news today (not always Claude/ChatGPT): e.g. "7 prompts for X", tips, a comparison, a workflow.
+   that got few or no news today (not always Claude/ChatGPT): e.g. tips, a comparison, a workflow (prompt
+   collections go under step 8).
    Give them `sources` too: the official docs / help pages the post will be based on.
+8. Add 3 **prompt pack** candidates (`"kind": "prompts"`, `"tool": "Prompt pack"`): copy-paste prompt collections,
+   the page's core format next to news ("7 prompts to learn any language", "6 prompts that write your weekly report",
+   "5 photo edits you can do by just asking"). Pick everyday goals people search for, 3 different areas per scan:
+   learning & study, work & career, writing, productivity, money planning (post says "not financial advice"), travel,
+   coding, image editing / creation, research, small business ... Not an area (or a near-identical pack) posted in
+   the last 30 days. `tools` = the chat tools the prompts really work in; features a prompt relies on (image editing,
+   file upload, voice mode, web search) must exist in those tools: put their official help pages in `sources`.
+   `angle`: the pack plan in one line (the prompt names). Score them like the rest; a strong pack can beat weak news.
 
 ## Output: `{out}` (JSON, UTF-8), nothing else to write
 ```
@@ -38,8 +47,8 @@ everything after the pick is automatic, so the list must be accurate and ready t
   "candidates": [
     {{
       "id": "short-kebab-slug",
-      "tool": "one of: ChatGPT, Claude, Gemini, Grok, Codex, Cursor, Copilot, Perplexity, Meta AI, Mistral, DeepSeek, Open models",
-      "kind": "news" | "evergreen",
+      "tool": "one of: ChatGPT, Claude, Gemini, Grok, Codex, Cursor, Copilot, Perplexity, Meta AI, Mistral, DeepSeek, Open models, Prompt pack",
+      "kind": "news" | "evergreen" | "prompts",
       "title": "English headline as it could appear on the cover",
       "summary_tr": "1-2 Turkish sentences for the owner: what happened / what the post teaches",
       "why_tr": "one Turkish sentence: why this would do well for our audience",

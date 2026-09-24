@@ -49,6 +49,7 @@ aside{width:380px;min-width:380px;border-right:1px solid var(--line);background:
 .score{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:13px;color:#111;background:var(--wait);flex:none}
 .tag{font-size:10.5px;font-weight:700;letter-spacing:.6px;padding:2px 7px;border-radius:5px;background:#3a2f5c;color:#d0bfff}
 .tag.news{background:#123a52;color:#a5d8ff}
+.tag.pp{background:#4a2a12;color:#ffc98a}
 .cand h4{font-size:14.5px;line-height:1.3;margin-bottom:6px}
 .cand h4 a.ttl{color:var(--text);text-decoration:none;border-bottom:1px dashed #6d6d7c}
 .cand h4 a.ttl:hover{color:#8fb8ff;border-bottom-color:#8fb8ff}
@@ -428,7 +429,7 @@ async function renderSide(force){
   const shown=toolFilter?list.filter(k=>toolOf(k)===toolFilter):list;
   L.innerHTML=chips+(c.notes_tr?`<div class="note">${esc(c.notes_tr)}</div>`:"")+shown.map(k=>`
    <div class="cand ${chosen[k.id]?"chosen":""}">
-    <div class="top"><span class="score">${esc(k.score)}</span><span class="tag ${k.kind==="news"?"news":""}">${k.kind==="news"?"HABER":"EVERGREEN"}</span><span class="chip" style="font-size:11px;padding:0 7px">${esc(toolOf(k))}</span>
+    <div class="top"><span class="score">${esc(k.score)}</span><span class="tag ${k.kind==="news"?"news":k.kind==="prompts"?"pp":""}">${{news:"HABER",prompts:"PROMPT PAKETİ"}[k.kind]||"EVERGREEN"}</span><span class="chip" style="font-size:11px;padding:0 7px">${esc(toolOf(k))}</span>
       ${k.published?`<span>${esc(k.published)}</span>`:""}${k.seen_before?`<span title="Önceki taramada da listelenmişti">↺ önceden</span>`:""}</div>
     <h4>${(k.sources||[])[0]?`<a class="ttl" href="${esc(k.sources[0])}" target="_blank" title="Resmi kaynağı aç">${esc(k.title)} ↗</a>`:`<a class="ttl" href="#" data-more="${esc(k.id)}" title="Detayı göster">${esc(k.title)} ▾</a>`}</h4><p>${esc(k.summary_tr)}</p>
     <div class="more" id="more-${esc(k.id)}" ${openMore.has(k.id)?"":"hidden"}><b>Gönderi planı:</b> ${esc(k.angle||"—")}${k.published?`<br><b>Tarih:</b> ${esc(k.published)}`:""}${(k.sources||[]).length?"":"<br><i>Bu bir evergreen fikir: belirli bir habere dayanmıyor, içerik yazılırken resmi dokümanlardan doğrulanacak.</i>"}</div>

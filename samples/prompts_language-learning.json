@@ -1,0 +1,99 @@
+{
+  "theme": "prompts",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Learn a language with AI",
+  "caption": "7 copy-paste prompts that turn ChatGPT, Claude or Gemini into your personal language tutor 🗣️\n\nSwap [LANGUAGE] for the one you're learning and start today.\n\nSave this pack for your next study session.\n\n#languagelearning #chatgpt #claude #gemini #aiprompts #studytips",
+  "sources": [],
+  "design": {
+    "mood": "study desk: warm paper notebook, flashcards, a coral highlighter",
+    "palette": {"bg": "#F6F0E4", "bg2": "#EFE6D3", "surface": "#FFFBF3", "ink": "#1E2233", "muted": "#5E6072", "accent": "#E4572E", "accent2": "#2E6FE4"},
+    "fonts": {"display": "Fraunces", "body": "DM Sans", "mono": "IBM Plex Mono"},
+    "display": {"weight": 700, "tracking": -2, "italic_em": false},
+    "shape": {"radius": 26, "border": 2, "shadow": "hard"},
+    "background": {"pattern": "lines", "pattern_opacity": 0.09, "glow": false, "gradient": false},
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 5h9M8.5 3v2M6 5c0 4 3 7 6 8M11 5c-1 4-4 7-7 8'/><path d='M13 21l4-9 4 9M14.5 18h5'/></svg>"
+  },
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Copy-paste prompts",
+      "title": "prompts to learn any language with AI",
+      "em": "any language",
+      "sub": "Your private tutor, conversation partner and grammar coach in one chat.",
+      "tools": ["ChatGPT", "Claude", "Gemini"],
+      "voiceover": "Seven prompts that turn your AI chat into a private language tutor."
+    },
+    {
+      "type": "prompt",
+      "name": "The private tutor",
+      "sub": "Start from zero, one lesson at a time.",
+      "prompt": "You are my private [LANGUAGE] tutor and I'm a complete beginner. Build a learning path for me, then teach it one short lesson at a time: a simple explanation, real-life examples, pronunciation tips and a mini exercise. Only continue when I pass the exercise.",
+      "demo": {"kind": "reply", "lines": ["Lesson 1: greetings and introducing yourself", "5 key phrases with pronunciation", "Mini exercise: introduce yourself in 2 sentences"]},
+      "voiceover": "One. The private tutor. It teaches one short lesson at a time."
+    },
+    {
+      "type": "prompt",
+      "name": "The 90-day plan",
+      "sub": "A daily schedule that fits the time you really have.",
+      "prompt": "Make a 90-day plan for learning [LANGUAGE] with [MINUTES] minutes a day. Give each day a focus: vocabulary, grammar, listening, speaking, reading, writing or review. Add a weekly goal and a quick self-test so I can see my progress.",
+      "tip": "Paste the plan back each day and ask: \"Today is day [N]. Teach it.\"",
+      "voiceover": "Two. A ninety day plan built around the minutes you actually have."
+    },
+    {
+      "type": "prompt",
+      "name": "The conversation partner",
+      "sub": "Speak from day one, with gentle corrections.",
+      "prompt": "Be my [LANGUAGE] conversation partner. Start at beginner level and make it harder as I improve. After each of my replies, correct my mistakes, explain why in one line, show how a native speaker would say it, then keep the conversation going.",
+      "demo": {"kind": "reply", "lines": ["You wrote: \"I have 25 years.\"", "Natural: \"I'm 25.\" (age uses \"be\", not \"have\")", "So, what do you do for work?"]},
+      "voiceover": "Three. A conversation partner that corrects every mistake, then keeps talking."
+    },
+    {
+      "type": "prompt",
+      "name": "The vocabulary builder",
+      "sub": "The words you'll actually use, first.",
+      "prompt": "Teach me the 20 most useful [LANGUAGE] words and phrases for [SITUATION], like ordering food or asking for directions. For each one: meaning, an example sentence and a memory trick. End with a 5-question quiz.",
+      "tip": "Ask for the list as a table, then turn it into flashcards.",
+      "voiceover": "Four. Learn the words for real situations first, with memory tricks."
+    },
+    {
+      "type": "prompt",
+      "name": "The grammar simplifier",
+      "sub": "One rule at a time, compared with your language.",
+      "prompt": "Explain [LANGUAGE] grammar to me one rule at a time, in plain words, with 3 everyday examples. Compare each rule with [MY NATIVE LANGUAGE] when it helps. Then give me 3 exercises and explain every mistake I make.",
+      "voiceover": "Five. Grammar one rule at a time, compared with your own language."
+    },
+    {
+      "type": "prompt",
+      "name": "The immersion trip",
+      "sub": "Live the language without a plane ticket.",
+      "prompt": "Simulate a day in [CITY] in [LANGUAGE]: a café, a shop, a train station. Play every person I meet, ask me questions, bring in new words naturally and use less of my native language as I get better.",
+      "demo": {"kind": "reply", "lines": ["Barista: Good morning! What can I get you?", "New word: \"to go\" = take away"]},
+      "voiceover": "Six. A full day of role play in a city, without the flight."
+    },
+    {
+      "type": "prompt",
+      "name": "The weekly check-up",
+      "sub": "Find your weak spots before they stick.",
+      "prompt": "Test my [LANGUAGE] level with 10 mixed questions: vocabulary, grammar, reading and a short writing task. Grade my answers, tell me my 3 weakest areas and give me a study plan for next week.",
+      "voiceover": "Seven. A weekly test that finds your weak spots and plans the next week."
+    },
+    {
+      "type": "howto",
+      "title": "Make them work even better",
+      "items": [
+        ["Fill every [BRACKET]", "Language, level, minutes, city: the more specific, the better the lessons."],
+        ["Keep one chat per language", "The AI remembers your progress inside the conversation."],
+        ["Say it out loud", "Use your app's voice mode to practice speaking and listening."]
+      ],
+      "voiceover": "Fill in every bracket, keep one chat per language, and say it out loud."
+    },
+    {
+      "type": "cta",
+      "title": "Save this pack.",
+      "title2": "Your tutor is ready.",
+      "lines": [["Save", "for your next study session"], ["Share", "with a friend learning a language"], ["Follow", "for new prompt packs"]],
+      "voiceover": "Save this pack, and follow for more copy paste prompts."
+    }
+  ]
+}
