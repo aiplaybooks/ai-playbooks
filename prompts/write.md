@@ -46,13 +46,25 @@ rules, voices, safe claims). Today is {date}.
      reader fills in; never copy other accounts' prompts), plus `demo` or `tip` (not both on long prompts):
      `demo` shows what the prompt gives you: `{{"kind": "reply", "lines": [2-3 short lines of a realistic answer]}}`, or
      for image prompts `{{"kind": "before_after", "before": "<svg viewBox='0 0 400 250'>…", "after": "<svg …>"}}` (a
-     simple code-drawn scene showing the edit; no people, no real photos, no logos). Voice-over on prompt slides:
-     "One. The private tutor. ..." (number + name + what it does), not a reading of the prompt.
+     simple code-drawn scene showing the edit; no people, no real photos, no logos).
+   - **`cover` block (top level, required)**: the carousel's first slide is a photo + big hook headline (see CLAUDE.md,
+     "Carousel cover"). It replaces the theme's own cover slide, but still write slide 1 as a normal `cover` slide.
+     `{{"headline": "...", "em": "...", "person": "..." | null, "scene": "..."}}`
+     - `headline`: the scroll-stopping hook in the style of big AI news pages, 8-22 words, ends with ":" when the
+       carousel continues it ("Claude can now teach you any language like a private tutor. Here are 7 prompts to
+       try:", "Google's new Gemini TTS can clone your voice from a 30-second clip"). Punchy but TRUE: only verified
+       claims, no invented numbers, no "breaks the internet" hype. `em`: 1-4 words of it to highlight in yellow.
+     - `person`: the best-known real person directly tied to the topic, whose photo makes people stop: the company's
+       CEO/founder (OpenAI: Sam Altman, Google/Gemini: Sundar Pichai or Demis Hassabis, Anthropic/Claude: Dario Amodei,
+       xAI/Grok: Elon Musk, Microsoft/Copilot: Satya Nadella, Meta: Mark Zuckerberg, Nvidia: Jensen Huang, ...) or the
+       person the news is about. The pipeline fetches a freely licensed photo from Wikimedia Commons and credits it.
+       The headline must not put words in their mouth or suggest they endorse our post. `null` only when nobody fits.
+     - `scene`: always write it too (English image prompt for when no photo is found): a cinematic scene about the
+       topic, no text, no logos, no real people.
    - `caption`: English, hook in the first line, 2-4 short lines, a save/follow nudge, 4-8 relevant hashtags.
      Financial topics: add "Not financial advice."
    - `sources`: the official URLs you used.
-   - `voiceover` on every slide: conversational, 7-15 words, only verified claims; whole Reel ~30-40 s.
-   - Leave out `voice` (reel.py assigns one).
+   - No `voiceover` / `voice` needed: carousel posts don't get their own Reel any more (Reels are viral clips now).
    - Keep texts short enough for the slide design (look at how long the fields are in the example files).
 4. Write `{result}`: `{{"content": "{content}", "verified": ["claim -> source url", ...], "left_out": ["claims you
    could not verify"]}}`.

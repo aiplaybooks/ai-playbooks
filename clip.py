@@ -6,6 +6,8 @@ Usage:
 
 A URL (X / Reddit / ...) is fetched with yt-dlp: only for a single post the owner picked (see CLAUDE.md, viral Reels).
 `--title` is an optional bold first line above the hook. `--credit` adds a small "Source: @creator on X" line under the clip.
+    python clip.py content/clips/<name>.json      (Studio: hook/title/credit/source from the JSON; the clip is
+                                                  output/clips/<name>/source.mp4 if already fetched)
 Output: output/clips/<name>/reel.mp4 (+ header.png, cover.jpg = first frame, meta.json)
 Keeps the clip's own audio (loudness-normalised); max 90 s. Needs ffmpeg + ffprobe on PATH.
 """
@@ -18,6 +20,7 @@ W, H = 1080, 1920
 TOP = 250            # below the IG top safe zone (~190 px)
 BOTTOM_SAFE = 330    # IG caption/buttons area
 MAX_SECS = 90
+VIDEO = (".mp4", ".webm", ".mkv", ".mov")
 e = html.escape
 
 HEADER = """<!DOCTYPE html><html><head><meta charset="utf-8"><style>
@@ -53,7 +56,7 @@ def probe(f):
 def fetch(url, out):
     run([sys.executable, "-m", "yt_dlp", "-q", "--no-playlist", "-f", "bv*+ba/b", "--merge-output-format", "mp4",
          "-o", str(out / "source.%(ext)s"), url])
-    return next(out.glob("source.*"))
+    return next(f for f in out.glob("source.*") if f.suffix in VIDEO)
 
 
 def header(out, hook, title):
@@ -84,9 +87,15 @@ def badge(out, text):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("src"); ap.add_argument("--hook", required=True); ap.add_argument("--title")
+    ap.add_argument("src"); ap.add_argument("--hook"); ap.add_argument("--title")
     ap.add_argument("--credit"); ap.add_argument("--name")
     a = ap.parse_args()
+    if a.src.endswith(".json"):
+        d = json.loads(pathlib.Path(a.src).read_text(encoding="utf-8"))
+        a.name = pathlib.Path(a.src).stem; a.hook = d["hook"]; a.title = d.get("title"); a.credit = d.get("credit")
+        got = [f for f in sorted((ROOT / "output" / "clips" / a.name).glob("source.*")) if f.suffix in VIDEO]
+        a.src = str(got[0]) if got else d["source"]
+    if not a.hook: ap.error("--hook is required")
     name = a.name or re.sub(r"[^a-z0-9]+", "-", a.hook.lower()).strip("-")[:50]
     out = ROOT / "output" / "clips" / name; out.mkdir(parents=True, exist_ok=True)
     src = fetch(a.src, out) if re.match(r"https?://", a.src) else pathlib.Path(a.src)

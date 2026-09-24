@@ -49,8 +49,10 @@ Every day the pipeline should:
 
 ## Repo layout
 ```
-carousel.py        render carousel PNGs (1080x1350) + contact.png overview
-reel.py            render animated Reel (typewriter prompts, staggered fade-ups, progress bar, music,
+carousel.py        render carousel PNGs (1080x1350) + contact.png overview; slide 1 = themes/hookcover.py when the post
+                   has a `cover` block + output/<post>/cover_image.jpg
+cover.py           cover image: Wikimedia Commons photo of `cover.person` (licensed, credited) or Flux scene via Forge
+reel.py            (not in the Studio pipeline any more) render animated Reel (typewriter prompts, staggered fade-ups, progress bar, music,
                    Kokoro voice-over + word-level burned-in captions + music ducking)
 voice.py           Kokoro TTS per slide -> vo_NN.wav + voice.json (word timings). Runs in Pinokio's env, called by reel.py
 clip.py            hook-frame Reel for a picked clip (file or X/post URL): python clip.py <src> --hook ".." [--title] [--credit]
@@ -183,9 +185,12 @@ candidate (and approves the preview), everything else is automatic.
 - **scan** flow, daily at `scan_times` (default 08:00 + 18:00, owner asked for 2 scans/day; a slot missed while the PC
   was off runs at startup): news.py → `claude -p` with prompts/scout.md → `research/<date>_<HHMM>_candidates.json`
   (4-8 candidates, Turkish summaries for the owner, official sources) → owner picks one in the UI.
-- **post** flow (one at a time): write (prompts/write.md → content JSON + runs/<id>/write.json) → carousel → reel →
-  qa (8 Reel frames + slides, prompts/qa.md, may fix + re-render) → approve (owner: Yayınla / Revize et (note → back to
-  write) / Reddet (content JSON moved into the run dir)) → publish.py steps → log (publish_log.jsonl + git commit/push).
+- **post** flow (one at a time): write (prompts/write.md → content JSON + runs/<id>/write.json) → cover (cover.py) →
+  carousel → qa (slides, prompts/qa.md, may fix + re-render) → approve (owner: Yayınla / Revize et (note → back to
+  write) / Reddet (content JSON moved into the run dir)) → publish.py steps (ig_carousel, fb_photos) → log (publish_log.jsonl + git commit/push).
+- **clip** flow (UI tab "Viral": owner pastes a link): fetch (yt-dlp + info.json + 8 frames) → hook (prompts/hook.md →
+  content/clips/<date>_clip-<id>.json, "kind": "clip") → frame (clip.py) → approve → upload → ig_reel → fb_reel → log.
+  Output in output/clips/<name>/. The scan's collect step also runs viral.py (YouTube trend signals for the Viral tab).
 - Settings (UI ⚙): scan times, "Yayından önce onay" switch (owner wants it ON for now; if QA finds a problem the gate
   applies anyway). Windows toasts when candidates are ready / approval needed / errors.
 - Claude steps run with `--permission-mode acceptEdits` and an allowlist (web, file tools, python carousel/reel/news).

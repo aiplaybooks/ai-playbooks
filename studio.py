@@ -4,13 +4,16 @@ Usage:
     python studio.py [--port 8787] [--no-browser]
     then open http://localhost:8787
 
-Two workflows:
+Three workflows:
     scan  (scheduled, default 08:00 + 18:00; missed slots run at startup)
           trigger -> collect (news.py) -> scout (Claude: web search, verify, rank) -> choose (owner picks in the UI)
     post  (one per picked candidate, one at a time)
-          write (Claude: verify + content JSON) -> carousel -> reel -> qa (Claude looks at the output, fixes)
-          -> approve (owner: publish / revise / reject; can be switched off) -> upload -> ig_carousel -> ig_reel
-          -> fb_photos -> fb_reel -> log (publish_log.jsonl + git commit/push)
+          write (Claude: verify + content JSON) -> cover (Wikimedia photo or Flux) -> carousel -> qa (Claude looks
+          at the output, fixes) -> approve (owner: publish / revise / reject; can be switched off) -> upload
+          -> ig_carousel -> fb_photos -> log (publish_log.jsonl + git commit/push)
+    clip  (viral Reel: the owner pastes an X/post link)
+          fetch (yt-dlp) -> hook (Claude watches frames, writes hook + caption) -> frame (clip.py) -> approve
+          -> upload -> ig_reel -> fb_reel -> log
 State lives in runs/<run-id>/state.json, logs in runs/<run-id>/<node>.log; a failed node can be retried from the UI.
 Claude steps run `claude -p` (Claude Code headless) with the prompts in prompts/.
 """
@@ -25,16 +28,19 @@ PY = str(pathlib.Path(sys.executable).with_name("python.exe")) if sys.executable
 CLAUDE = shutil.which("claude") or "claude"
 NO_WINDOW = getattr(subprocess, "CREATE_NO_WINDOW", 0)
 CLAUDE_TOOLS = ["WebSearch", "WebFetch", "Read", "Write", "Edit", "Glob", "Grep",
-                "Bash(python carousel.py:*)", "Bash(python reel.py:*)", "Bash(python news.py:*)"]
+                "Bash(python carousel.py:*)", "Bash(python reel.py:*)", "Bash(python news.py:*)",
+                "Bash(python cover.py:*)", "Bash(python clip.py:*)"]
 
 SCAN = [("trigger", "Zamanlayıcı", "trigger"), ("collect", "Haber topla", "code"),
         ("scout", "Ara, doğrula, sırala", "ai"), ("choose", "Senin seçimin", "human")]
-POST = [("write", "Doğrula & yaz", "ai"), ("carousel", "Carousel", "code"), ("reel", "Reel · ses + müzik", "code"),
+POST = [("write", "Doğrula & yaz", "ai"), ("cover", "Kapak görseli", "code"), ("carousel", "Carousel", "code"),
         ("qa", "Kalite kontrol", "ai"), ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"),
-        ("ig_carousel", "Instagram carousel", "publish"), ("ig_reel", "Instagram Reel", "publish"),
-        ("fb_photos", "Facebook gönderi", "publish"), ("fb_reel", "Facebook Reel", "publish"),
-        ("yt_short", "YouTube Short", "publish"), ("log", "Kayıt & GitHub", "code")]
-FLOWS = {"scan": SCAN, "post": POST}
+        ("ig_carousel", "Instagram carousel", "publish"), ("fb_photos", "Facebook gönderi", "publish"),
+        ("log", "Kayıt & GitHub", "code")]
+CLIP = [("fetch", "Videoyu indir", "code"), ("hook", "Hook & caption", "ai"), ("frame", "Reel çerçevesi", "code"),
+        ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"), ("ig_reel", "Instagram Reel", "publish"),
+        ("fb_reel", "Facebook Reel", "publish"), ("log", "Kayıt & GitHub", "code")]
+FLOWS = {"scan": SCAN, "post": POST, "clip": CLIP}
 
 LOCK = threading.RLock()
 POST_Q = queue.Queue()
@@ -216,7 +222,10 @@ def n_trigger(run):
 
 def n_collect(run):
     tail = sh(run, "collect", [PY, "news.py", "--hours", "36"])
-    return next((t for t in reversed(tail) if "items" in t), "tamam").split("->")[0].strip()
+    msg = next((t for t in reversed(tail) if "items" in t), "tamam").split("->")[0].strip()
+    try: sh(run, "collect", [PY, "viral.py"])  # trending AI videos for the Viral tab; never fails the scan
+    except StepError as ex: run.log("collect", f"viral.py: {ex}")
+    return msg
 
 
 def n_scout(run):
@@ -244,6 +253,10 @@ def content_path(run):
     return ROOT / run.s["content"]
 
 
+def out_dir(run):
+    return ROOT / "output" / ("clips" if run.s["kind"] == "clip" else "") / content_path(run).stem
+
+
 def n_write(run):
     c = run.s["candidate"]
     note = ""
@@ -258,6 +271,12 @@ def n_write(run):
     if not 2 <= n <= 10: raise StepError(f"{n} slayt var (2-10 olmalı)")
     if not (ROOT / "themes" / f"{data.get('theme')}.py").exists(): raise StepError(f"tema yok: {data.get('theme')}")
     return f"{data['theme']} · {n} slayt"
+
+
+def n_cover(run):
+    tail = sh(run, "cover", [PY, "cover.py", run.s["content"]])
+    t = next((x for x in tail if x.startswith(("photo:", "flux:"))), "tamam")
+    return t.replace("photo: File:", "Foto: ").replace("flux:", "Flux sahnesi ·")[:120]
 
 
 def n_carousel(run):
@@ -285,9 +304,7 @@ def reel_frames(run):
 
 
 def n_qa(run):
-    frames = reel_frames(run)
-    claude(run, "qa", "qa", content=run.s["content"], name=content_path(run).stem,
-           frames=", ".join(frames) or "none", result=f"runs/{run.id}/qa.json")
+    claude(run, "qa", "qa", content=run.s["content"], name=content_path(run).stem, result=f"runs/{run.id}/qa.json")
     r = read_json(run.dir / "qa.json")
     if r is None: raise StepError("qa.json yazılmadı")
     return "sorun yok" if r.get("ok") else "dikkat: " + "; ".join(r.get("problems", []))[:120]
@@ -297,7 +314,7 @@ def n_approve(run):
     qa = read_json(run.dir / "qa.json", {})
     if settings()["approval"] or not qa.get("ok", True):
         run.node("approve", status="waiting", msg="Önizleme hazır: Yayınla / Revize et / Reddet")
-        notify("AI Playbooks", f"Onay bekliyor: {run.s['candidate'].get('title', '')[:80]}")
+        notify("AI Playbooks", f"Onay bekliyor: {(run.s.get('title') or '')[:80]}")
         return None
     return "otomatik (onay kapalı)"
 
@@ -305,7 +322,7 @@ def n_approve(run):
 def publish_step(step):
     def f(run):
         tail = sh(run, step, [PY, "publish.py", run.s["content"], "--steps", step])
-        st = read_json(ROOT / "output" / content_path(run).stem / "publish.json", {}).get(step, {})
+        st = read_json(out_dir(run) / "publish.json", {}).get(step, {})
         return st.get("link") or (tail[-1] if tail else "tamam")
     return f
 
@@ -315,20 +332,73 @@ def n_log(run):
     rel = run.s["content"]
     record_timings(run, "published")
     for args in (["add", rel, "publish_log.jsonl", "research", "stats"],
-                 ["commit", "-q", "-m", f"post: {content_path(run).stem}\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"],
+                 ["commit", "-q", "-m", f"{'clip' if run.s['kind'] == 'clip' else 'post'}: {content_path(run).stem}\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"],
                  ["push", "-q"]):
         r = subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace",
                            creationflags=NO_WINDOW)
         run.log("log", f"$ git {args[0]}\n{r.stdout}{r.stderr}")
         if r.returncode and not (args[0] == "commit" and "nothing to commit" in r.stdout + r.stderr):
             raise StepError(f"git {args[0]}: {(r.stderr or r.stdout).strip()[:200]}")
-    links = {k: v.get("link") for k, v in read_json(ROOT / "output" / content_path(run).stem / "publish.json", {}).items()
+    links = {k: v.get("link") for k, v in read_json(out_dir(run) / "publish.json", {}).items()
              if isinstance(v, dict) and v.get("link")}
-    notify("AI Playbooks", "Paylaşıldı: " + (links.get("ig_carousel") or run.s["content"]))
+    notify("AI Playbooks", "Paylaşıldı: " + (links.get("ig_carousel") or links.get("ig_reel") or run.s["content"]))
     return "GitHub'a kaydedildi"
 
 
-PHASES = {"trigger": "scan", "collect": "scan", "scout": "scan", "choose": "wait", "write": "production",
+def frames_of(video, dest, n=8):
+    dest.mkdir(parents=True, exist_ok=True)
+    for f in dest.glob("*.jpg"): f.unlink()
+    dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(video)],
+                               capture_output=True, text=True, creationflags=NO_WINDOW).stdout.strip() or 0)
+    out = []
+    for i in range(n):
+        f = dest / f"frame_{i + 1}.jpg"
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{dur * (i + 0.5) / n:.2f}", "-i", str(video),
+                        "-frames:v", "1", "-vf", "scale=720:-2", str(f)], creationflags=NO_WINDOW)
+        if f.exists(): out.append(f.relative_to(ROOT).as_posix())
+    return out, dur
+
+
+def n_fetch(run):
+    out = out_dir(run); out.mkdir(parents=True, exist_ok=True)
+    for f in out.glob("source.*"): f.unlink()
+    sh(run, "fetch", [PY, "-m", "yt_dlp", "-q", "--no-playlist", "-f", "bv*+ba/b", "--merge-output-format", "mp4",
+                      "--write-info-json", "-o", str(out / "source.%(ext)s"), run.s["url"]])
+    info = read_json(out / "source.info.json", {}) or {}
+    video = next((f for f in out.glob("source.*") if f.suffix in (".mp4", ".webm", ".mkv", ".mov")), None)
+    if not video: raise StepError("video indirilemedi")
+    frames, dur = frames_of(video, run.dir / "frames")
+    host = urllib.parse.urlparse(run.s["url"]).hostname or ""
+    platform = "X" if host.endswith(("x.com", "twitter.com")) else info.get("extractor_key") or host
+    run.s["clip"] = {"uploader": info.get("uploader") or "", "uploader_id": info.get("uploader_id") or info.get("channel_id") or "",
+                     "description": (info.get("description") or info.get("title") or "")[:1500], "secs": round(dur, 1),
+                     "platform": platform, "frames": frames}
+    run.save()
+    return f"{run.s['clip']['secs']} sn · @{run.s['clip']['uploader_id']}"
+
+
+def n_hook(run):
+    c = run.s["clip"]
+    note = f"\n## Revision request from the owner\n{run.s['note']}\n" if run.s.get("note") else ""
+    claude(run, "hook", "hook", date=run.s["day"], url=run.s["url"], uploader=c["uploader"], uploader_id=c["uploader_id"],
+           platform=c["platform"], description=c["description"].replace("```", "'" * 3), secs=c["secs"],
+           frames=", ".join(c["frames"]), note=note, content=run.s["content"])
+    data = read_json(content_path(run))
+    if not data: raise StepError(f"{run.s['content']} yazılmadı ya da geçersiz JSON")
+    if data.get("reject"): raise StepError("Claude bu videoyu uygun bulmadı: " + str(data["reject"])[:200])
+    if not data.get("hook") or not data.get("caption"): raise StepError("hook ya da caption eksik")
+    run.status(run.s["status"], title=data["hook"])
+    return data["hook"][:120]
+
+
+def n_frame(run):
+    sh(run, "frame", [PY, "clip.py", run.s["content"]])
+    secs = (read_json(out_dir(run) / "meta.json", {}) or {}).get("secs")
+    return f"{secs} sn" if secs else "tamam"
+
+
+PHASES = {"trigger": "scan", "collect": "scan", "scout": "scan", "choose": "wait", "write": "production", "cover": "production",
+          "fetch": "production", "hook": "production", "frame": "production",
           "carousel": "production", "reel": "production", "qa": "production", "approve": "wait", "upload": "publish",
           "ig_carousel": "publish", "ig_reel": "publish", "fb_photos": "publish", "fb_reel": "publish", "yt_short": "publish", "log": "publish"}
 
@@ -369,7 +439,7 @@ def record_timings(run, outcome):
 
 
 NODES = {"trigger": n_trigger, "collect": n_collect, "scout": n_scout, "choose": n_choose,
-         "write": n_write, "carousel": n_carousel, "reel": n_reel, "qa": n_qa, "approve": n_approve,
+         "write": n_write, "cover": n_cover, "carousel": n_carousel, "fetch": n_fetch, "hook": n_hook, "frame": n_frame, "reel": n_reel, "qa": n_qa, "approve": n_approve,
          "upload": publish_step("upload"), "ig_carousel": publish_step("ig_carousel"), "ig_reel": publish_step("ig_reel"),
          "fb_photos": publish_step("fb_photos"), "fb_reel": publish_step("fb_reel"),
          "yt_short": publish_step("yt_short"), "log": n_log}
@@ -511,6 +581,25 @@ def select(scan_id, cand_id):
     return run.id
 
 
+def start_clip(url, note=""):
+    url = url.strip()
+    if not re.match(r"https?://\S+$", url): raise ValueError("geçerli bir video bağlantısı değil")
+    log = ROOT / "publish_log.jsonl"
+    done = {str(json.loads(l).get("source_url") or "").split("?")[0] for l in log.read_text(encoding="utf-8").splitlines()
+            if l.strip()} if log.exists() else set()
+    if url.split("?")[0] in done: raise ValueError("bu video zaten paylaşıldı")
+    t = now(); day = f"{t:%Y-%m-%d}"
+    m = re.search(r"/status/(\d+)", url)
+    slug = (m.group(1)[-8:] if m else re.sub(r"[^a-z0-9]+", "-", url.lower().split("//")[-1])[-30:].strip("-")) or "clip"
+    content = f"content/clips/{day}_clip-{slug}.json"; k = 2
+    while (ROOT / content).exists(): content = f"content/clips/{day}_clip-{slug}-{k}.json"; k += 1
+    (ROOT / "content" / "clips").mkdir(parents=True, exist_ok=True)
+    run = Run.create("clip", f"clip-{t:%Y%m%d-%H%M%S}-{slug}"[:80], day=day, url=url, content=content,
+                     title=url, candidate={"title": url}, **({"note": note.strip()} if note.strip() else {}))
+    enqueue(run)
+    return run.id
+
+
 def approve(rid):
     run = Run(rid)
     if run.s["nodes"]["approve"]["status"] != "waiting": raise ValueError("bu gönderi onay beklemiyor")
@@ -522,7 +611,7 @@ def revise(rid, note):
     run = Run(rid)
     if not note.strip(): raise ValueError("revizyon notu boş")
     run.s["note"] = note.strip(); run.s.setdefault("revisions", []).append({"at": iso(), "note": note.strip()})
-    run.save(); run.reset_from("write"); enqueue(run)
+    run.save(); run.reset_from("hook" if run.s["kind"] == "clip" else "write"); enqueue(run)
 
 
 def reject(rid):
@@ -563,6 +652,12 @@ def state():
 
 def run_detail(rid):
     run = Run(rid); s = dict(run.s)
+    if s["kind"] == "clip":
+        out = out_dir(run); rel = out.relative_to(ROOT).as_posix()
+        s["content_data"] = read_json(content_path(run)) or read_json(run.dir / content_path(run).name)
+        s["slides"] = []
+        s["reel"] = f"{rel}/reel.mp4" if (out / "reel.mp4").exists() else None
+        s["publish"] = read_json(out / "publish.json", {})
     if s["kind"] == "post":
         name = content_path(run).stem; out = ROOT / "output" / name
         s["content_data"] = read_json(content_path(run)) or read_json(run.dir / content_path(run).name)
@@ -606,6 +701,8 @@ class H(BaseHTTPRequestHandler):
             if u.path == "/api/history": return self.send(200, history())
             if u.path == "/api/metrics":
                 return self.send(200, {**(read_json(RUNS / "metrics.json", {}) or {}), "refreshing": METRICS_LOCK.locked()})
+            if u.path == "/api/viral":
+                return self.send(200, read_json(ROOT / "research" / f"{q.get('day') or f'{now():%Y-%m-%d}'}_viral.json", {}))
             if u.path == "/api/research":
                 return self.send(200, read_json(ROOT / "research" / f"{q.get('day') or f'{now():%Y-%m-%d}'}.json", {}))
             if u.path == "/api/log":
@@ -651,6 +748,7 @@ class H(BaseHTTPRequestHandler):
                 rid = start_scan("Elle başlatıldı (Şimdi tara)")
                 return self.send(200 if rid else 409, {"run": rid} if rid else {"error": "zaten bir tarama çalışıyor"})
             if u.path == "/api/select": return self.send(200, {"run": select(b["scan"], b["candidate"])})
+            if u.path == "/api/clip": return self.send(200, {"run": start_clip(b.get("url", ""), b.get("note", ""))})
             if u.path == "/api/approve": approve(b["run"]); return self.send(200, {"ok": True})
             if u.path == "/api/revise": revise(b["run"], b.get("note", "")); return self.send(200, {"ok": True})
             if u.path == "/api/reject": reject(b["run"]); return self.send(200, {"ok": True})

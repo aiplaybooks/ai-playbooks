@@ -27,6 +27,10 @@ def main():
     out = ROOT / "output" / pathlib.Path(a.content).stem
     out.mkdir(parents=True, exist_ok=True)
     pages = theme.render(data)
+    img = out / "cover_image.jpg"
+    if (data.get("cover") or {}).get("headline") and img.exists():  # photo + hook cover (cover.py) replaces the theme's
+        from themes import hookcover
+        pages[0] = hookcover.render(data, img)
     with sync_playwright() as p:
         br = p.chromium.launch(); pg = br.new_page(viewport={"width": 1080, "height": 1350})
         for n, h in enumerate(pages, 1):

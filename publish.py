@@ -4,7 +4,8 @@ Usage:
     python publish.py content/2026-09-24_claude-tradingview.json --dry-run     (checks only, posts nothing)
     python publish.py content/2026-09-24_claude-tradingview.json [--steps ig_carousel,ig_reel]
 
-Needs carousel.py + reel.py output in output/<name>/ and META_PAGE_TOKEN, FB_PAGE_ID, IG_USER_ID in .env
+Needs carousel.py output in output/<name>/ (reel.mp4 optional: carousel posts no longer get their own Reel) and
+META_PAGE_TOKEN, FB_PAGE_ID, IG_USER_ID in .env
 (or the environment). Steps, in order:
     prepare      slide PNGs -> JPEG (Instagram takes JPEG only), checks caption, slide count, Reel
     upload       copies media to the gh-pages branch (media/<name>/), pushes, waits until the URLs are live
@@ -15,6 +16,8 @@ Needs carousel.py + reel.py output in output/<name>/ and META_PAGE_TOKEN, FB_PAG
     yt_short     YouTube Short: resumable upload of the Reel (YouTube Data API v3). Until the API project passes
                  YouTube's audit, YouTube keeps API uploads private: then make it public in YouTube Studio.
     log          appends the post to publish_log.jsonl
+Viral clip Reels (content/clips/<name>.json, "kind": "clip", made by clip.py in output/clips/<name>/): steps
+prepare, upload, ig_reel, fb_reel, log; cover = the framed clip's first frame.
 Progress is saved to output/<name>/publish.json after every step, so a rerun resumes and never posts twice.
 Token values are never printed.
 """
@@ -97,7 +100,8 @@ class Post:
         self.content = pathlib.Path(content).resolve()
         self.data = json.loads(self.content.read_text(encoding="utf-8"))
         self.name = self.content.stem
-        self.out = ROOT / "output" / self.name
+        self.clip = self.data.get("kind") == "clip"
+        self.out = ROOT / "output" / ("clips" if self.clip else "") / self.name
         self.pub = self.out / "publish"
         self.state_file = self.out / "publish.json"
         self.state = json.loads(self.state_file.read_text(encoding="utf-8")) if self.state_file.exists() else {}
@@ -124,11 +128,11 @@ class Post:
 # ---------------------------------------------------------------- steps
 
 def prepare(p, dry=False):
-    pngs = sorted(p.out.glob("slide_*.png"))
+    pngs = [] if p.clip else sorted(p.out.glob("slide_*.png"))
     reel = p.out / "reel.mp4"
-    if not pngs: raise PublishError(f"no slides in {p.out}: run carousel.py first")
-    if not 2 <= len(pngs) <= 10: raise PublishError(f"Instagram carousels take 2-10 images, this post has {len(pngs)}")
-    if not reel.exists(): raise PublishError(f"no {reel.name} in {p.out}: run reel.py first")
+    if p.clip and not reel.exists(): raise PublishError(f"no {reel.name} in {p.out}: run clip.py first")
+    if not p.clip and not pngs: raise PublishError(f"no slides in {p.out}: run carousel.py first")
+    if not p.clip and not 2 <= len(pngs) <= 10: raise PublishError(f"Instagram carousels take 2-10 images, this post has {len(pngs)}")
     cap = p.data.get("caption", "")
     if not cap.strip(): raise PublishError("caption is empty")
     if len(cap) > 2200: raise PublishError(f"caption is {len(cap)} characters (Instagram max 2200)")
@@ -138,10 +142,12 @@ def prepare(p, dry=False):
         j = p.pub / (f.stem + ".jpg")
         Image.open(f).convert("RGB").save(j, "JPEG", quality=92, optimize=True)
         if j.stat().st_size > 8 * 2**20: raise PublishError(f"{j.name} is over 8 MB")
-    shutil.copy2(reel, p.pub / "reel.mp4")
-    make_cover(pngs[0], p.pub / "cover.jpg")
-    mb = (p.pub / "reel.mp4").stat().st_size / 2**20
-    say(f"prepare: {len(pngs)} slides -> JPEG, reel {mb:.1f} MB, caption {len(cap)} chars")
+    if reel.exists():
+        shutil.copy2(reel, p.pub / "reel.mp4")
+        if p.clip: shutil.copy2(p.out / "cover.jpg", p.pub / "cover.jpg")
+        else: make_cover(pngs[0], p.pub / "cover.jpg")
+    mb = (p.pub / "reel.mp4").stat().st_size / 2**20 if reel.exists() else 0
+    say(f"prepare: {len(pngs)} slides -> JPEG, reel {f'{mb:.1f} MB' if mb else 'none'}, caption {len(cap)} chars")
     if not dry: p.done("prepare", slides=len(pngs))
 
 
@@ -182,7 +188,7 @@ def live(url, size):
 
 def upload(p):
     prepare(p)  # always from the latest render (the Studio calls upload directly, and revisions re-render)
-    files = p.images() + [p.pub / "reel.mp4", p.pub / "cover.jpg"]
+    files = p.images() + [f for f in (p.pub / "reel.mp4", p.pub / "cover.jpg") if f.exists()]
     wt = pages_worktree()
     dest = wt / "media" / p.name
     shutil.rmtree(dest, ignore_errors=True); dest.mkdir(parents=True)
@@ -368,7 +374,8 @@ def yt_short(p):
 
 def log(p):
     entry = {"date": datetime.now().astimezone().isoformat(timespec="minutes"), "post": p.name,
-             "topic": p.data.get("topic"), "theme": p.data.get("theme"), "sources": p.data.get("sources", []),
+             "kind": "clip" if p.clip else "carousel", "topic": p.data.get("topic"), "theme": p.data.get("theme"),
+             "sources": p.data.get("sources", []), **({"source_url": p.data.get("source")} if p.clip else {}),
              **{s: {k: v for k, v in p.state[s].items() if k in ("id", "link")} for s in POSTS if s in p.state}}
     with LOG.open("a", encoding="utf-8") as f: f.write(json.dumps(entry, ensure_ascii=False) + "\n")
     say(f"log: appended to {LOG.name}")
@@ -391,7 +398,7 @@ def dry_run(p):
     req = urllib.request.Request("https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true",
                                  headers={"Authorization": f"Bearer {tok}"})
     with urllib.request.urlopen(req, timeout=30) as r: ch = (json.loads(r.read()).get("items") or [{}])[0]
-    say(f"YouTube ok: {ch.get('snippet', {}).get('title')} ({ch.get('snippet', {}).get('customUrl')}); Short title: {yt_meta(p)['title']}")
+    say(f"YouTube ok: {ch.get('snippet', {}).get('title')} ({ch.get('snippet', {}).get('customUrl')})" + ("" if p.clip else f"; Short title: {yt_meta(p)['title']}"))
     done = [s for s in STEPS if s in p.state]
     say(f"already done: {', '.join(done) or 'nothing'}")
     say("dry run ok: nothing was uploaded or posted")
