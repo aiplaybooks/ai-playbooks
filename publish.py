@@ -146,6 +146,7 @@ def live(url, size):
 
 
 def upload(p):
+    prepare(p)  # always from the latest render (the Studio calls upload directly, and revisions re-render)
     files = p.images() + [p.pub / "reel.mp4"]
     wt = pages_worktree()
     dest = wt / "media" / p.name
