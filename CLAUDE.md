@@ -98,7 +98,8 @@ Override with env vars `KOKORO_PYTHON` / `KOKORO_HF_HOME`. Read-only use — nev
 2. **Daily run prompt** (`prompts/daily.md`) for Claude Code headless: news.py → web search for `manual` sources →
    pick topic (news > evergreen; no repeats vs last 30 days of content/) → verify every claim on the official page →
    content JSON (caption, sources, voiceover) → carousel.py + reel.py → look at contact.png + reel frames → report.
-3. **Publishing to Instagram + Facebook Page:** Meta developer app, IG Professional account linked to a FB Page,
+3. **Publishing to Instagram + Facebook Page:** Repo: https://github.com/aiplaybooks/ai-playbooks (public, account
+   `aiplaybooks`; media via GitHub Pages). Meta developer app, IG Professional account linked to a FB Page,
    long-lived token (GitHub Secrets), `publish.py` (IG: media containers → carousel container → publish; Reels: video
    container, poll status, publish; FB Page: multi-photo post + video/reel), public media URLs (GitHub Pages or R2),
    approval via PR for the first 2 weeks, publish log.
