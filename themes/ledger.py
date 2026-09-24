@@ -68,7 +68,7 @@ h1{font-family:Fraunces;font-weight:700;letter-spacing:-2.5px;line-height:1;font
 .lim{margin-top:50px}
 .li{display:flex;gap:26px;padding:26px 0;border-bottom:1px solid var(--rule);font-size:34px;font-weight:550;line-height:1.3;align-items:flex-start}
 .li .x{flex:none;width:44px;height:44px;border:2px solid var(--down);color:var(--down);display:grid;place-items:center;font-family:Mono;font-size:24px;font-weight:800;margin-top:2px}
-.ctab{margin-top:52px;display:flex;justify-content:space-between;align-items:center;background:var(--ink);color:var(--paper);padding:34px 40px}
+.ctab{margin-top:52px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;background:var(--ink);color:var(--paper);padding:34px 40px}
 .ctab .t{font-family:Fraunces;font-size:44px;font-weight:700;letter-spacing:-1px}
 .ctab .h{font-family:Mono;font-size:26px;color:#7FE0B0}
 """
@@ -89,7 +89,8 @@ def render(data):
     css = CSS % {"fr": (FONTS / "Fraunces.ttf").as_uri(), "mo": (FONTS / "JetBrainsMono.ttf").as_uri(),
                  "in": (FONTS / "InterVariable.ttf").as_uri()}
     slides = data["slides"]; total = len(slides); pages = []
-    brand = e(data["brand"]); b2 = brand[:5] + "<i>" + brand[5:] + "</i>" if len(brand) > 5 else brand
+    brand = e(data["brand"]); head, _, tail = brand.rpartition(" ")  # "AI Playbooks" -> AI <i>Playbooks</i>
+    b2 = f"{head} <i>{tail}</i>" if head else brand
     for n, s in enumerate(slides, 1):
         t = s["type"]
         if t == "cover":

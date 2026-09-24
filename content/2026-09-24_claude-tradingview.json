@@ -1,7 +1,7 @@
 {
   "theme": "ledger",
-  "brand": "AgentDaily",
-  "handle": "@agentdaily",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
   "topic": "Claude × TradingView",
   "window": "claude — tradingview connector",
   "tape": [

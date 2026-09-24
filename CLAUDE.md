@@ -1,10 +1,10 @@
-# AgentDaily — automated Instagram page for AI tool tips & news
+# AI Playbooks — automated Instagram + Facebook page for AI tool tips & news
 
 ## Talk to the owner in Turkish
 The owner (Cihat) communicates in **Turkish**. All published content is in **English** (international audience).
 
 ## What this project is
-A fully automated, **zero-cost** pipeline for an Instagram page ("AgentDaily" is a placeholder name/handle, final name not chosen yet) that posts daily content about AI tools and agents: ChatGPT, Claude, Claude Code, Codex, Grok, Gemini, Cursor, etc.
+A fully automated, **zero-cost** pipeline for an Instagram + Facebook page — **AI Playbooks**, Instagram **@aiplaybooks.daily**, Facebook Page "AI Playbooks", GitHub `aiplaybooks/ai-playbooks` — that posts daily content about AI tools and agents: ChatGPT, Claude, Claude Code, Codex, Grok, Gemini, Cursor, etc.
 
 Every day the pipeline should:
 1. **Research** — `python news.py` collects the last ~36h from all sources in `sources.json` into `research/YYYY-MM-DD.json`; then web search covers the `manual` sources that block scripts (xAI/Grok news, ChatGPT release notes, Perplexity, Microsoft Copilot, big X announcements). Cover **all** popular tools (ChatGPT/OpenAI, Claude, Gemini, Grok, Codex, Cursor, Copilot, Perplexity, Meta AI, Mistral, DeepSeek ...), not just Anthropic.
@@ -104,4 +104,4 @@ Override with env vars `KOKORO_PYTHON` / `KOKORO_HF_HOME`. Read-only use — nev
    container, poll status, publish; FB Page: multi-photo post + video/reel), public media URLs (GitHub Pages or R2),
    approval via PR for the first 2 weeks, publish log.
 4. **Scheduling:** Windows Task Scheduler runs `claude -p` every morning (PC must be on), or a cloud scheduled task.
-5. **More themes** (3–4) + theme selection logic; **final page name + handle** → update `brand`/`handle`.
+5. **More themes** (3–4) + theme selection logic. (Name decided: brand "AI Playbooks", handle "@aiplaybooks.daily".)

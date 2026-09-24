@@ -14,7 +14,7 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 
 ROOT = pathlib.Path(__file__).parent.resolve()
-UA = {"User-Agent": "Mozilla/5.0 (AgentDaily news collector)"}
+UA = {"User-Agent": "Mozilla/5.0 (AI Playbooks news collector)"}
 MONTHS = "Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|June?|July?|Aug(?:ust)?|Sept?(?:ember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?"
 ATOM = "{http://www.w3.org/2005/Atom}"
 

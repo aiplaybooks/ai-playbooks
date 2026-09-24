@@ -1,4 +1,4 @@
-# AgentDaily — AI araçları Instagram sayfası otomasyonu
+# AI Playbooks — AI araçları Instagram + Facebook sayfası otomasyonu
 
 Her gün AI araçları (ChatGPT, Claude, Claude Code, Codex, Grok, Gemini...) hakkında carousel ve Reel üreten, tamamen ücretsiz bir sistem.
 
