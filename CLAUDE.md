@@ -148,9 +148,13 @@ candidate (and approves the preview), everything else is automatic.
 - A failed node shows red; "Tekrar dene" resumes from that node. publish.py never double-posts on a retry.
 
 ## Where we left off (2026-09-24)
-publish.py tested up to `upload` (media live on Pages); **no post has been published yet**. Studio built; first real
-scan worked (7 candidates). **Next:** the owner picks a candidate → first full post run → owner approves the first real
-post → check FB post visibility (dev mode; the app probably must be published: needs a 1024x1024 icon).
+**First real post is live** (Gemini 3.8 TTS, adaptive theme, 2026-09-24 21:00): IG carousel + Reel, FB photo post + Reel,
+all via the Studio. Graph API reports the FB post privacy EVERYONE and the FB Reel published; still to confirm with
+the owner that a logged-out / non-admin account really sees the FB posts (app is in development mode). If not: publish
+the Meta app (needs a 1024x1024 icon; privacy policy URL is already set).
+Timing of that first run (incl. a revision + one failed upload retry): stats/timings.jsonl.
+Lessons: never restart the Studio while a run is active (now it resumes runs, but still check); the QA step is the
+slowest (~5-7 min) because it re-renders the Reel after fixes.
 
 ## Next steps (in order — owner's priority, 2026-09-24)
 1. ~~Voice-over with Kokoro~~ — done. ~~News sources + collector~~ — done (`news.py`, `sources.json`).
