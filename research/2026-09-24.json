@@ -1,7 +1,39 @@
 {
- "generated": "2026-09-24T09:34+00:00",
- "hours": 48.0,
+ "generated": "2026-09-24T17:12+00:00",
+ "hours": 36.0,
  "items": [
+  {
+   "source": "Google DeepMind blog",
+   "tier": "official",
+   "title": "Introducing Gemini 3.8 Live with Live Avatar",
+   "url": "https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/",
+   "date": "2026-09-24T16:20+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Gemini blog",
+   "tier": "official",
+   "title": "Introducing Gemini 3.8 Live with Live Avatar",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/",
+   "date": "2026-09-24T15:30+00:00",
+   "summary": "Introducing Gemini 3.8 Live with Live Avatar, which brings near real-time visual presence to Gemini’s conversational AI."
+  },
+  {
+   "source": "Hugging Face blog",
+   "tier": "official",
+   "title": "Accelerating vision-language models with LFM2.5-VL-DSpark",
+   "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark",
+   "date": "2026-09-24T14:08+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Claude release notes",
+   "tier": "official",
+   "title": "Claude release notes: Sep 24, 2026",
+   "url": "https://docs.claude.com/en/release-notes/overview",
+   "date": "2026-09-24T00:00+00:00",
+   "summary": " We're expanding which refusals are billed to include refusals that arrive before any output when stop_details.category is \"bio\" , \"frontier_llm\" , or \"reasoning_extraction\" , the categories where we measure low volumes of false positives. Mid-stream refusals were already billed. The newly billed refusals are charged like any other request, at the rates of the model that ran it. Refusals before any output in other categories are still not billed, and fallback credit is unchanged. This change applies on all platforms. See How refusals are billed . …"
+  },
   {
    "source": "Gemini CLI releases",
    "tier": "official",
@@ -147,62 +179,6 @@
    "summary": "MentalHealthBench is an expert-informed benchmark for evaluating helpful and safe AI responses across realistic mental health conversations."
   },
   {
-   "source": "Codex CLI releases",
-   "tier": "official",
-   "title": "0.156.1",
-   "url": "https://github.com/openai/codex/releases/tag/rust-v0.156.1",
-   "date": "2026-09-23T02:43+00:00",
-   "summary": "New Features Choose GPT-6 Sol or GPT-6 Luna from the model picker. The rate-limit switch prompt now recommends GPT-6 Luna. ( #47405 ) Changelog Full Changelog: rust-v0.156.0...rust-v0.156.1 #47405 [hotfix 0.156.0] Add GPT-6 Sol and Luna to the model catalog ( #47332 ) @imac-oai"
-  },
-  {
-   "source": "GitHub Copilot changelog",
-   "tier": "official",
-   "title": "OpenTelemetry in the GitHub Copilot app",
-   "url": "https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app",
-   "date": "2026-09-23T02:14+00:00",
-   "summary": "Understand how Copilot agents perform and interact with models and tools. The GitHub Copilot app now supports OpenTelemetry (OTel) configuration through enterprise-managed settings. OTel is an open source observability framework.… The post OpenTelemetry in the GitHub Copilot app appeared first on The GitHub Blog ."
-  },
-  {
-   "source": "OpenAI News",
-   "tier": "official",
-   "title": "ChatGPT Ads expands to Southeast Asia and Taiwan",
-   "url": "https://openai.com/index/chatgpt-ads-expands-southeast-asia-taiwan",
-   "date": "2026-09-23T02:00+00:00",
-   "summary": "ChatGPT Ads is expanding to Southeast Asia and Taiwan, giving eligible businesses new ways to reach people across more than 60 countries."
-  },
-  {
-   "source": "OpenAI News",
-   "tier": "official",
-   "title": "Airbnb widens access to GPT-6 Astra and OpenAI frontier models",
-   "url": "https://openai.com/index/airbnb-gpt-6-astra",
-   "date": "2026-09-23T01:00+00:00",
-   "summary": "Learn how Airbnb is expanding access to GPT-6 Astra and OpenAI frontier models to help engineering teams solve bugs, design systems, and ship faster."
-  },
-  {
-   "source": "GitHub Copilot changelog",
-   "tier": "official",
-   "title": "New features and improvements in Copilot for JetBrains",
-   "url": "https://github.blog/changelog/2026-09-22-new-features-and-improvements-in-copilot-for-jetbrains",
-   "date": "2026-09-23T00:34+00:00",
-   "summary": "GitHub Copilot for JetBrains 1.18.0 brings AI-assisted tool approvals, more control over agent conversations, and shared skills and instructions for your organization. You can also review plans with the Codex… The post New features and improvements in Copilot for JetBrains appeared first on The GitHub Blog ."
-  },
-  {
-   "source": "OpenAI News",
-   "tier": "official",
-   "title": "Grab and OpenAI bring practical AI skills to Southeast Asia",
-   "url": "https://openai.com/index/grab-openai-ai-skills-southeast-asia",
-   "date": "2026-09-23T00:00+00:00",
-   "summary": "OpenAI and Grab launch GO Forward with AI, a regional programme helping 30,000 partners build practical AI skills across Southeast Asia."
-  },
-  {
-   "source": "Cursor changelog",
-   "tier": "official",
-   "title": "Rollouts and Security Review",
-   "url": "https://cursor.com/changelog/rollouts-and-security-reviewer",
-   "date": "2026-09-23T00:00+00:00",
-   "summary": "Two bots for the last mile of shipping code: Rollouts watches every change as it deploys, and Security Review reports exploitable bugs on every pull request."
-  },
-  {
    "source": "Anthropic News",
    "tier": "official",
    "title": "Claude discovers a novel enzyme system with CRISPR-like repeats",
@@ -211,92 +187,20 @@
    "summary": ""
   },
   {
+   "source": "Claude release notes",
+   "tier": "official",
+   "title": "Claude release notes: Sep 23, 2026",
+   "url": "https://docs.claude.com/en/release-notes/overview",
+   "date": "2026-09-23T00:00+00:00",
+   "summary": " Cache diagnostics is out of beta on the Claude API and no longer requires the cache-diagnosis- …"
+  },
+  {
    "source": "Codex changelog",
    "tier": "official",
    "title": "Codex changelog: Sep 23, 2026",
    "url": "https://developers.openai.com/codex/changelog",
    "date": "2026-09-23T00:00+00:00",
    "summary": "Codex CLI 0.156.1 pre]:w-full [&>pre]:max-w-full [&>pre]:mb-0 pt-4\"> $ npm install -g @openai/codex@0.156.1 View details New Features Choose GPT-6 Sol or GPT-6 Luna from the model picker. The rate-limit switch prompt now recommends GPT-6 Luna. ( #47405 ) Changelog Full Changelog: rust-v0.156.0...rust-v0.156.1 #47405 [hotfix 0.156.0] Add GPT-6 Sol and Luna to the model catalog ( #47332 ) @imac-oai Full release on Github"
-  },
-  {
-   "source": "GitHub Copilot changelog",
-   "tier": "official",
-   "title": "Faster C++ code intelligence with whole codebase indexing",
-   "url": "https://github.blog/changelog/2026-09-22-faster-c-code-intelligence-with-whole-codebase-indexing",
-   "date": "2026-09-22T22:24+00:00",
-   "summary": "C++ code intelligence in GitHub Copilot CLI is now faster with support for whole codebase indexing. C++ repositories can contain millions of lines of code across deeply connected source files… The post Faster C++ code intelligence with whole codebase indexing appeared first on The GitHub Blog ."
-  },
-  {
-   "source": "OpenAI News",
-   "tier": "official",
-   "title": "Better prompt caching for GPT-6",
-   "url": "https://openai.com/index/better-prompt-caching-for-gpt-6",
-   "date": "2026-09-22T21:00+00:00",
-   "summary": "Learn how GPT-6 improves prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls that reduce latency and costs."
-  },
-  {
-   "source": "OpenAI News",
-   "tier": "official",
-   "title": "Introducing GPT-6 Sol and Luna",
-   "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna",
-   "date": "2026-09-22T18:00+00:00",
-   "summary": "Meet GPT-6 Sol and Luna, two models that bring frontier intelligence to everyday work with different balances of capability and cost."
-  },
-  {
-   "source": "GitHub Copilot changelog",
-   "tier": "official",
-   "title": "Claude Opus 5.5 is now available in GitHub Copilot",
-   "url": "https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot",
-   "date": "2026-09-22T17:10+00:00",
-   "summary": "Claude Opus 5.5, Anthropic’s newest Opus model, is now available in GitHub Copilot. You can use it for agentic coding, long-running agentic tasks, and knowledge work. In early testing, Opus… The post Claude Opus 5.5 is now available in GitHub Copilot appeared first on The GitHub Blog ."
-  },
-  {
-   "source": "GitHub Copilot changelog",
-   "tier": "official",
-   "title": "OpenAI’s GPT-6 Sol and GPT-6 Luna now available",
-   "url": "https://github.blog/changelog/2026-09-22-openais-gpt-6-sol-and-gpt-6-luna-now-available",
-   "date": "2026-09-22T17:00+00:00",
-   "summary": "OpenAI’s GPT-6 family is expanding in GitHub Copilot with two additional models: GPT-6 Sol, and GPT-6 Luna. Joining the previously released GPT-6 Astra, these new options let you select the… The post OpenAI’s GPT-6 Sol and GPT-6 Luna now available appeared first on The GitHub Blog ."
-  },
-  {
-   "source": "Claude Code releases",
-   "tier": "official",
-   "title": "v2.1.280",
-   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.280",
-   "date": "2026-09-22T16:38+00:00",
-   "summary": "What's changed Added Claude Opus 5.5 ( claude-opus-5-5 ), now the default Opus model — 1M context, $4/$20 per Mtok with $0.20/Mtok cache reads Added mouse support to more lists in fullscreen mode: the wheel scrolls the /skills list, and a skill's state options in /plugin can be clicked Added CLAUDE_CODE_MAX_MCP_DESCRIPTION_LENGTH to change the 2,048-character cap on MCP tool descriptions and…"
-  },
-  {
-   "source": "OpenAI News",
-   "tier": "official",
-   "title": "Parallel cut research time and cost in half with GPT‑6 Astra",
-   "url": "https://openai.com/index/parallel-cuts-time-and-cost-with-astra",
-   "date": "2026-09-22T12:00+00:00",
-   "summary": "GPT‑6 Astra allowed Parallel’s agents to research and synthesize labor-market data in half the time and at half the cost vs. prior models."
-  },
-  {
-   "source": "Claude release notes",
-   "tier": "official",
-   "title": "Claude release notes: Sep 22, 2026",
-   "url": "https://docs.claude.com/en/release-notes/overview",
-   "date": "2026-09-22T00:00+00:00",
-   "summary": " We've launched Claude Opus 5.5 ( claude-opus-5-5 ), a model for long-running agentic coding and knowledge work. It has a 1M token context window by default, 128k max output tokens, and always-on adaptive thinking , at $4 / $20 USD per MTok (Claude Opus 5 is $5 / $25). Claude Opus 5.5 is available on the Claude API, Claude in Amazon Bedrock , Claude Platform on AWS , Claude on Google Cloud , and Claude in Microsoft Foundry . See What's new in Claude Opus 5.5 for capabilities, API changes, and migration guidance. On Claude Opus 5.5, thinking can't be disabled: thinking: {\"type\": \"disabled\"} and thinking: {\"type\": \"enabled\", ...} return a 400 error. Omit the thinking field and control thinking depth with the effort parameter . tool_choice types any and tool also return a 400 error, as on Claude Fable 5.1; use auto with strict tool use . On the Claude API and Google Cloud, computer use on…"
-  },
-  {
-   "source": "Codex changelog",
-   "tier": "official",
-   "title": "Codex changelog: Sep 22, 2026",
-   "url": "https://developers.openai.com/codex/changelog",
-   "date": "2026-09-22T00:00+00:00",
-   "summary": "GPT-6 Sol and Luna in Codex and ChatGPT Work GPT-6 Sol and GPT-6 Luna are rolling out to Codex and ChatGPT Work at lower token prices than their GPT-5.6 predecessors. Use Sol for complex coding and agentic workflows, and Luna for focused, high-volume tasks. Both models are rolling out to Plus, Pro, Business, Enterprise, and Edu users. Free and Go users can access Luna in the desktop app. Availability depends on rollout and workspace settings; Enterprise administrators must enable the new models. In ChatGPT, the models are available in Work and Codex, but not Chat. Choose a model in the picker when available. In the CLI, use /model or start a task with codex --model gpt-6-sol or codex --model gpt-6-luna . See Models for selection and migration guidance, Pricing for credit rates and usage, and Workspace model availability for administrator controls. … Codex CLI 0.156.0 pre]:w-full…"
-  },
-  {
-   "source": "Gemini API changelog",
-   "tier": "official",
-   "title": "Gemini API changelog: Sep 22, 2026",
-   "url": "https://ai.google.dev/gemini-api/docs/changelog",
-   "date": "2026-09-22T00:00+00:00",
-   "summary": "Gemini 3.8 Flash TTS and Gemini 3.8 Flash-Lite TTS generally available (GA) : Released our next-generation text-to-speech (TTS) audio models and the Gemini API Voices endpoint ( /v1beta/voices ): Gemini 3.8 Flash TTS ( gemini-3.8-flash-tts ) : Flagship creative TTS model engineered for studio-grade voice fidelity, nuanced acting, regional dialects, and long-form multi-turn stability. Gemini 3.8 Flash-Lite TTS ( gemini-3.8-flash-lite-tts ) : Fast, cost-efficient TTS model built to replace gemini-3.1-flash-tts-preview for high-throughput production and real-time voice agent cascades. Voice design , Voice replication , and the Extended Voice Library : Create persistent custom vocal personas from text prompts, replicate voices with consent verification, and query 150+ prebuilt and custom voices. See the Text-to-speech guide to get started."
   },
   {
    "source": "Simon Willison",
@@ -315,52 +219,76 @@
    "summary": "Tool: Shadow roots, explained with live examples Prompt to Fable 5.1 Medium: Build an artifact to explain shadow roots in CSS with interactive examples Tags: css"
   },
   {
-   "source": "Simon Willison",
-   "tier": "signal",
-   "title": "SF October 14th: A Birds of a Feather Session on Agentic Engineering",
-   "url": "https://simonwillison.net/2026/Sep/23/bof-agentic-engineering/",
-   "date": "2026-09-23T02:53+00:00",
-   "summary": "SF October 14th: A Birds of a Feather Session on Agentic Engineering I'm hosting an evening event with Jesse Vincent in San Francisco on Wednesday 14th October for people who are building weird and interesting things with and on top of coding agents. Think of it as an agentic show-and-tell: ​Compare notes with other builders and experimenters on things you’re trying, what you're learning, and…"
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "GitHub has not removed malicious imitation software after 3 weeks",
+   "url": "https://successfulsoftware.net/2026/09/24/github-has-not-removed-malicious-imitation-software-after-3-weeks/",
+   "date": "2026-09-24T15:50+00:00",
+   "summary": "88 points, 27 comments · https://news.ycombinator.com/item?id=49832406"
   },
   {
-   "source": "Simon Willison",
-   "tier": "signal",
-   "title": "Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war",
-   "url": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/",
-   "date": "2026-09-22T23:46+00:00",
-   "summary": "Yesterday was Grok 4.7 ( pelicans ) and MiMo v2.6 Flash/Pro ( more pelicans ). Today Anthropic released Claude Opus 5.5 , and around an hour later OpenAI released GPT-6 Sol and GPT-6 Luna . It's going to take a while to get a good read on all of these new models, but here are my impressions so far. GPT-6 Sol and Luna are half the price of their GPT-5.6 equivalents GPT-5.6 Luna was already my…"
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "F-Droid 2.0",
+   "url": "https://f-droid.org/2026/09/24/f-droid-2.0-a-new-chapter-for-android-freedom.html",
+   "date": "2026-09-24T15:26+00:00",
+   "summary": "288 points, 76 comments · https://news.ycombinator.com/item?id=49831968"
   },
   {
-   "source": "Simon Willison",
-   "tier": "signal",
-   "title": "llm 0.36",
-   "url": "https://simonwillison.net/2026/Sep/22/llm/",
-   "date": "2026-09-22T18:48+00:00",
-   "summary": "Release: llm 0.36 New OpenAI models: gpt-6-sol for GPT-6 Sol and gpt-6-luna for GPT-6 Luna . #1702 Model plugins can now declare supports_conversation = False for models that only accept single-turn prompts. LLM raises llm.ConversationNotSupported when these models receive assistant or tool history, and llm chat rejects them before starting a session. See Models that do not support conversations…"
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Disney+ and Hulu raise prices by up to 13 percent after doubling profits",
+   "url": "https://arstechnica.com/gadgets/2026/09/disney-and-hulu-raise-prices-by-up-to-13-percent-after-doubling-profits/",
+   "date": "2026-09-24T15:15+00:00",
+   "summary": "117 points, 141 comments · https://news.ycombinator.com/item?id=49831774"
   },
   {
-   "source": "Simon Willison",
-   "tier": "signal",
-   "title": "Quoting @therealcornpop",
-   "url": "https://simonwillison.net/2026/Sep/22/therealcornpop/",
-   "date": "2026-09-22T18:03+00:00",
-   "summary": "Hey, you know it's like super obvious if you're using AI to write your scripts for TikTok and YouTube, right? [...] It's not just the general AI-isms of \"it's not X, it's Y\", or the rule of three, or the really weird broken staccato-like way of writing where you just say a lot of things with all these punctuation marks. and it sounds really deep, but it's not. It's the lack of anything . It's the…"
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Best LLM for every budget, updated daily",
+   "url": "https://bestmodelforyourbudget.terrydjony.com/",
+   "date": "2026-09-24T14:09+00:00",
+   "summary": "131 points, 85 comments · https://news.ycombinator.com/item?id=49830866"
   },
   {
-   "source": "Simon Willison",
-   "tier": "signal",
-   "title": "llm-anthropic 0.29",
-   "url": "https://simonwillison.net/2026/Sep/22/llm-anthropic/",
-   "date": "2026-09-22T17:14+00:00",
-   "summary": "Release: llm-anthropic 0.29 Adds support for Claude Opus 5.5 : llm -m claude-opus-5.5 \"prompt goes here\" Tags: llm , anthropic"
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "'That's so AI ' What gen Alpha's biggest insult tells us",
+   "url": "https://www.theguardian.com/society/2026/sep/24/thats-so-ai-what-gen-alphas-biggest-insult-tells-us",
+   "date": "2026-09-24T12:23+00:00",
+   "summary": "90 points, 136 comments · https://news.ycombinator.com/item?id=49829650"
   },
   {
-   "source": "Simon Willison",
-   "tier": "signal",
-   "title": "llm-typesafe 0.1a0",
-   "url": "https://simonwillison.net/2026/Sep/22/llm-typesafe/",
-   "date": "2026-09-22T15:54+00:00",
-   "summary": "Release: llm-typesafe 0.1a0 I built this new plugin for LLM to add support for TypeSafe AI's new Jev model . Install it like this: llm install llm-typesafe Then set an API key ( get one here , the waitlist seems to move pretty fast): llm keys set typesafe # Paste key And now you can ask yes/no \"noul\" questions like this: llm -m jev 'Please refund my last payment.' \\ -s 'Does this message…"
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Hackers influence ChatGPT and Gemini to direct users to scam centers",
+   "url": "https://medium.com/@arielsimon/dark-sourcery-how-hackers-manipulate-ai-to-scam-you-88df434d2073",
+   "date": "2026-09-24T11:54+00:00",
+   "summary": "101 points, 35 comments · https://news.ycombinator.com/item?id=49829387"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "The newest ESP32 can run Linux and it's getting close to a Raspberry Pi",
+   "url": "https://www.xda-developers.com/newest-esp32-run-linux-close-to-raspberry-pi/",
+   "date": "2026-09-24T11:08+00:00",
+   "summary": "159 points, 69 comments · https://news.ycombinator.com/item?id=49828969"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Starlink ground station in Poland hit by fire in suspected arson attack",
+   "url": "https://notesfrompoland.com/2026/09/24/starlink-ground-station-in-poland-hit-by-fire-in-suspected-arson-attack/",
+   "date": "2026-09-24T09:52+00:00",
+   "summary": "153 points, 160 comments · https://news.ycombinator.com/item?id=49828409"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Meta takes down a critical video about meta AI Glasses after filming at Meta",
+   "url": "https://www.reddit.com/r/facebook/comments/1wotwrk/meta_takes_down_a_critical_video_about_meta_ai/",
+   "date": "2026-09-24T08:23+00:00",
+   "summary": "553 points, 331 comments · https://news.ycombinator.com/item?id=49827794"
   },
   {
    "source": "Hacker News",
@@ -368,7 +296,23 @@
    "title": "Early rogue AI agent activity and attempts to hack found on urlquery.net",
    "url": "https://transluce.org/agent-activity",
    "date": "2026-09-24T05:21+00:00",
-   "summary": "114 points, 78 comments · https://news.ycombinator.com/item?id=49826565"
+   "summary": "200 points, 189 comments · https://news.ycombinator.com/item?id=49826565"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Contrastive Language Models",
+   "url": "https://contrastive-lm.notion.site/",
+   "date": "2026-09-24T04:20+00:00",
+   "summary": "142 points, 41 comments · https://news.ycombinator.com/item?id=49826221"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "OpenAI agent hacked Australian government website, PM says",
+   "url": "https://www.bbc.com/news/live/cvgl73pxgndwt",
+   "date": "2026-09-24T02:44+00:00",
+   "summary": "241 points, 181 comments · https://news.ycombinator.com/item?id=49825580"
   },
   {
    "source": "Hacker News",
@@ -376,7 +320,7 @@
    "title": "Australia says OpenAI agent hacked into government website",
    "url": "https://www.channelnewsasia.com/world/australia-openai-agent-breach-government-portal-6406411",
    "date": "2026-09-24T01:24+00:00",
-   "summary": "119 points, 2 comments · https://news.ycombinator.com/item?id=49825024"
+   "summary": "121 points, 3 comments · https://news.ycombinator.com/item?id=49825024"
   },
   {
    "source": "Hacker News",
@@ -384,7 +328,7 @@
    "title": "Virtio-nvgpu: Near-native Nvidia GPU access inside a KVM guest",
    "url": "https://github.com/nestrilabs/virtio-nvgpu",
    "date": "2026-09-24T01:02+00:00",
-   "summary": "94 points, 44 comments · https://news.ycombinator.com/item?id=49824864"
+   "summary": "147 points, 59 comments · https://news.ycombinator.com/item?id=49824864"
   },
   {
    "source": "Hacker News",
@@ -392,15 +336,15 @@
    "title": "Feds Target AI Critics as \"Foreign Agents\"",
    "url": "https://www.kenklippenstein.com/p/feds-think-ai-critics-are-foreign",
    "date": "2026-09-24T00:41+00:00",
-   "summary": "291 points, 298 comments · https://news.ycombinator.com/item?id=49824686"
+   "summary": "352 points, 374 comments · https://news.ycombinator.com/item?id=49824686"
   },
   {
    "source": "Hacker News",
    "tier": "community",
-   "title": "Linux support is coming to Snapdragon X2 Series",
+   "title": "Linux support is coming to Snapdragon X2 series",
    "url": "https://www.qualcomm.com/news/onq/2026/09/snapdragon-summit-agentic-ai-pcs-linux",
    "date": "2026-09-23T22:38+00:00",
-   "summary": "391 points, 173 comments · https://news.ycombinator.com/item?id=49823582"
+   "summary": "567 points, 239 comments · https://news.ycombinator.com/item?id=49823582"
   },
   {
    "source": "Hacker News",
@@ -408,7 +352,7 @@
    "title": "Mercury 2.5 LLM hits 770 tokens per second",
    "url": "https://artificialanalysis.ai/models/mercury-2-5",
    "date": "2026-09-23T22:16+00:00",
-   "summary": "103 points, 63 comments · https://news.ycombinator.com/item?id=49823348"
+   "summary": "142 points, 88 comments · https://news.ycombinator.com/item?id=49823348"
   },
   {
    "source": "Hacker News",
@@ -416,7 +360,7 @@
    "title": "Claude's Load-Bearing Seams",
    "url": "https://madradavid.com/claudes-load-bearing-seams/",
    "date": "2026-09-23T21:31+00:00",
-   "summary": "113 points, 46 comments · https://news.ycombinator.com/item?id=49822864"
+   "summary": "118 points, 49 comments · https://news.ycombinator.com/item?id=49822864"
   },
   {
    "source": "Hacker News",
@@ -424,7 +368,7 @@
    "title": "OpenAI breaches Medicare, Albanese reveals",
    "url": "https://www.smh.com.au/politics/federal/openai-breaches-medicare-albanese-reveals-20260924-p6100u.html",
    "date": "2026-09-23T21:01+00:00",
-   "summary": "212 points, 231 comments · https://news.ycombinator.com/item?id=49822556"
+   "summary": "240 points, 247 comments · https://news.ycombinator.com/item?id=49822556"
   },
   {
    "source": "Hacker News",
@@ -432,7 +376,7 @@
    "title": "Once Claude can measure something, it can make it faster",
    "url": "https://claude.dev/blog/how-we-made-claude-ai-faster/",
    "date": "2026-09-23T19:23+00:00",
-   "summary": "197 points, 137 comments · https://news.ycombinator.com/item?id=49821196"
+   "summary": "217 points, 147 comments · https://news.ycombinator.com/item?id=49821196"
   },
   {
    "source": "Hacker News",
@@ -440,7 +384,7 @@
    "title": "Claude discovers a novel enzyme system with CRISPR-like repeats",
    "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
    "date": "2026-09-23T18:06+00:00",
-   "summary": "645 points, 664 comments · https://news.ycombinator.com/item?id=49820134"
+   "summary": "744 points, 747 comments · https://news.ycombinator.com/item?id=49820134"
   },
   {
    "source": "Hacker News",
@@ -448,7 +392,15 @@
    "title": "Making Tailscale Faster",
    "url": "https://tailscale.com/blog/making-tailscale-faster",
    "date": "2026-09-23T17:49+00:00",
-   "summary": "162 points, 67 comments · https://news.ycombinator.com/item?id=49819880"
+   "summary": "222 points, 90 comments · https://news.ycombinator.com/item?id=49819880"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "The science of Monkey Island: can grog dissolve a metal mug that fast?",
+   "url": "https://jgeekstudies.org/2026/09/23/the-science-of-monkey-island-can-grog-actually-dissolve-a-metal-mug-that-fast/",
+   "date": "2026-09-23T15:55+00:00",
+   "summary": "82 points, 15 comments · https://news.ycombinator.com/item?id=49818031"
   },
   {
    "source": "Hacker News",
@@ -456,7 +408,7 @@
    "title": "Gemini 3.8 text-to-speech",
    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/",
    "date": "2026-09-23T15:29+00:00",
-   "summary": "305 points, 137 comments · https://news.ycombinator.com/item?id=49817615"
+   "summary": "320 points, 144 comments · https://news.ycombinator.com/item?id=49817615"
   },
   {
    "source": "Hacker News",
@@ -464,7 +416,7 @@
    "title": "GPT-6 Astra has gained the ability to drive a car",
    "url": "https://drivingbench.com/",
    "date": "2026-09-23T15:14+00:00",
-   "summary": "288 points, 227 comments · https://news.ycombinator.com/item?id=49817404"
+   "summary": "306 points, 237 comments · https://news.ycombinator.com/item?id=49817404"
   },
   {
    "source": "Hacker News",
@@ -472,7 +424,7 @@
    "title": "Seattle City Council votes to ban surveillance pricing in sale of groceries",
    "url": "https://advocacy.consumerreports.org/press_release/seattle-city-council-votes-to-ban-surveillance-pricing-in-sale-of-groceries/",
    "date": "2026-09-23T14:04+00:00",
-   "summary": "348 points, 212 comments · https://news.ycombinator.com/item?id=49816374"
+   "summary": "371 points, 218 comments · https://news.ycombinator.com/item?id=49816374"
   },
   {
    "source": "Hacker News",
@@ -480,7 +432,7 @@
    "title": "Stripe's Knowledge AI Platform",
    "url": "https://stripe.dev/blog/meet-stripes-knowledge-ai-platform",
    "date": "2026-09-23T13:38+00:00",
-   "summary": "179 points, 111 comments · https://news.ycombinator.com/item?id=49815982"
+   "summary": "183 points, 113 comments · https://news.ycombinator.com/item?id=49815982"
   },
   {
    "source": "Hacker News",
@@ -488,7 +440,7 @@
    "title": "The Price of Intelligence Is Falling Rapidly",
    "url": "https://marginalrevolution.com/marginalrevolution/2026/09/the-price-of-intelligence-is-falling.html",
    "date": "2026-09-23T13:08+00:00",
-   "summary": "80 points, 85 comments · https://news.ycombinator.com/item?id=49815526"
+   "summary": "81 points, 86 comments · https://news.ycombinator.com/item?id=49815526"
   },
   {
    "source": "Hacker News",
@@ -496,7 +448,7 @@
    "title": "The GitHub wiki is an anti-pattern (2022)",
    "url": "https://michaelheap.com/github-wiki-is-an-antipattern/",
    "date": "2026-09-23T13:05+00:00",
-   "summary": "167 points, 105 comments · https://news.ycombinator.com/item?id=49815484"
+   "summary": "171 points, 106 comments · https://news.ycombinator.com/item?id=49815484"
   },
   {
    "source": "Hacker News",
@@ -504,7 +456,7 @@
    "title": "OpenAI is enlisting an influencer army to make it look 'good for the world'",
    "url": "https://www.businessinsider.com/inside-open-ai-influencer-marketing-strategy-chatgpt-ads-sponsorships-instagram-2026-9",
    "date": "2026-09-23T12:32+00:00",
-   "summary": "211 points, 205 comments · https://news.ycombinator.com/item?id=49815127"
+   "summary": "213 points, 205 comments · https://news.ycombinator.com/item?id=49815127"
   },
   {
    "source": "Hacker News",
@@ -512,7 +464,7 @@
    "title": "Claude Code reads AGENTS.md only when telemetry is on [fixed]",
    "url": "https://blog.szypowi.cz/p/claude-code-reads-agents.md-only-when-telemetry-is-on/",
    "date": "2026-09-23T12:15+00:00",
-   "summary": "467 points, 269 comments · https://news.ycombinator.com/item?id=49814947"
+   "summary": "476 points, 277 comments · https://news.ycombinator.com/item?id=49814947"
   },
   {
    "source": "Hacker News",
@@ -520,7 +472,7 @@
    "title": "Two Git ignore files nobody told me about",
    "url": "https://mihai.dinculescu.dev/posts/two-git-ignore-files-nobody-told-me-about/",
    "date": "2026-09-23T11:28+00:00",
-   "summary": "90 points, 63 comments · https://news.ycombinator.com/item?id=49814432"
+   "summary": "92 points, 63 comments · https://news.ycombinator.com/item?id=49814432"
   },
   {
    "source": "Hacker News",
@@ -528,7 +480,7 @@
    "title": "Z80 REPL (2018)",
    "url": "https://abagames.github.io/z80-repl/index.html",
    "date": "2026-09-23T11:04+00:00",
-   "summary": "155 points, 19 comments · https://news.ycombinator.com/item?id=49814236"
+   "summary": "158 points, 20 comments · https://news.ycombinator.com/item?id=49814236"
   },
   {
    "source": "Hacker News",
@@ -536,7 +488,7 @@
    "title": "I am done with this shit",
    "url": "https://www.reddit.com/r/ClaudeAI/comments/1wm5c21/i_am_done_with_this_shit/",
    "date": "2026-09-23T07:59+00:00",
-   "summary": "247 points, 190 comments · https://news.ycombinator.com/item?id=49812975"
+   "summary": "250 points, 196 comments · https://news.ycombinator.com/item?id=49812975"
   },
   {
    "source": "Hacker News",
@@ -544,183 +496,7 @@
    "title": "Jev in 25 Lines of Python",
    "url": "https://www.nobodywho.ai/posts/jev-in-25-lines/",
    "date": "2026-09-23T07:26+00:00",
-   "summary": "652 points, 203 comments · https://news.ycombinator.com/item?id=49812769"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "US criticises Australia's proposed algorithm opt-out laws as 'censorship'",
-   "url": "https://www.bbc.com/news/articles/cqj3dgy8x3vro",
-   "date": "2026-09-23T02:13+00:00",
-   "summary": "111 points, 146 comments · https://news.ycombinator.com/item?id=49810829"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "The current balance of power in open models",
-   "url": "https://www.interconnects.ai/p/the-current-balance-of-power-in-open",
-   "date": "2026-09-22T22:03+00:00",
-   "summary": "124 points, 55 comments · https://news.ycombinator.com/item?id=49808816"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "Microsoft killed FoxPro in 2007. Anyway, here's FoxPro revived",
-   "url": "https://foxscript.org/",
-   "date": "2026-09-22T21:00+00:00",
-   "summary": "474 points, 259 comments · https://news.ycombinator.com/item?id=49808023"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "LLM Ass Bench",
-   "url": "https://www.assbench.com/",
-   "date": "2026-09-22T20:34+00:00",
-   "summary": "166 points, 45 comments · https://news.ycombinator.com/item?id=49807688"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "Native apps written in TypeScript and CSS",
-   "url": "https://github.com/geastack/examples",
-   "date": "2026-09-22T19:42+00:00",
-   "summary": "126 points, 54 comments · https://news.ycombinator.com/item?id=49807021"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "Pentagon says overreliance on AI contributed to missile strike on Iran school",
-   "url": "https://www.bloomberg.com/graphics/2026-iran-school-attack/",
-   "date": "2026-09-22T19:03+00:00",
-   "summary": "911 points, 515 comments · https://news.ycombinator.com/item?id=49806430"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "Unreal Agent",
-   "url": "https://unreallabs.ai/blog/unreal-agent/",
-   "date": "2026-09-22T18:15+00:00",
-   "summary": "240 points, 121 comments · https://news.ycombinator.com/item?id=49805748"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "An update on how we confirm your age group on Discord",
-   "url": "https://discord.com/blog/safer-for-teens-same-discord-for-adults",
-   "date": "2026-09-22T18:10+00:00",
-   "summary": "120 points, 86 comments · https://news.ycombinator.com/item?id=49805677"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "GPT-6 Sol and Luna",
-   "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
-   "date": "2026-09-22T18:00+00:00",
-   "summary": "1748 points, 831 comments · https://news.ycombinator.com/item?id=49805509"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "Claude Opus 5.5 Intelligence, Performance and Price Analysis (Max)",
-   "url": "https://artificialanalysis.ai/models/claude-opus-5-5",
-   "date": "2026-09-22T16:51+00:00",
-   "summary": "330 points, 103 comments · https://news.ycombinator.com/item?id=49804316"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "WordPress: Unauthenticated path traversal leading to conditional RCE",
-   "url": "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-7hp8-65ch-5whp",
-   "date": "2026-09-22T16:33+00:00",
-   "summary": "235 points, 128 comments · https://news.ycombinator.com/item?id=49803959"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "Claude Opus 5.5",
-   "url": "https://www.anthropic.com/claude-opus-5-5",
-   "date": "2026-09-22T16:29+00:00",
-   "summary": "1778 points, 1102 comments · https://news.ycombinator.com/item?id=49803892"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "Claude Opus 5.5",
-   "url": "https://www.anthropic.com/claude-opus-5-5",
-   "date": "2026-09-22T16:27+00:00",
-   "summary": "273 points, 2 comments · https://news.ycombinator.com/item?id=49803863"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "Writing Rust code that's fast by asking agents to make the code faster",
-   "url": "https://minimaxir.com/2026/09/agentic-iteration/",
-   "date": "2026-09-22T15:38+00:00",
-   "summary": "111 points, 61 comments · https://news.ycombinator.com/item?id=49803085"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "OpenAI is well positioned to fast-follow Jev",
-   "url": "https://arcturus-labs.com/blog/2026/09/21/will-openai-eat-jevs-lunch/",
-   "date": "2026-09-22T14:42+00:00",
-   "summary": "319 points, 221 comments · https://news.ycombinator.com/item?id=49802161"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "Jev – A curation of Jev demos on X, tools, skills, and integrations",
-   "url": "https://github.com/Amal-David/awesome-jev",
-   "date": "2026-09-22T14:42+00:00",
-   "summary": "92 points, 34 comments · https://news.ycombinator.com/item?id=49802160"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "Meta’s Muse has a serious 0-day",
-   "url": "https://arstechnica.com/security/2026/09/muse-metas-extraordinarily-privileged-ai-assistant-has-a-serious-0-day/",
-   "date": "2026-09-22T14:35+00:00",
-   "summary": "121 points, 49 comments · https://news.ycombinator.com/item?id=49802030"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "Stanford R&DE Uses AI to Race Swap Students for Advertising",
-   "url": "https://stanfordreview.org/stanford-r-de-uses-ai-to-race-swap-students-for-advertising/",
-   "date": "2026-09-22T13:52+00:00",
-   "summary": "88 points, 64 comments · https://news.ycombinator.com/item?id=49801330"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "Show HN: Drop – A rootless Linux sandbox with gVisor support",
-   "url": "https://droprun.sh/",
-   "date": "2026-09-22T13:52+00:00",
-   "summary": "186 points, 62 comments · https://news.ycombinator.com/item?id=49801329"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "OpenAI GPT–6 Astra breaks Enigma message that has resisted solution since 2005",
-   "url": "https://www.cryptocellar.org/bgac/the-mvueh-break.html",
-   "date": "2026-09-22T13:52+00:00",
-   "summary": "727 points, 439 comments · https://news.ycombinator.com/item?id=49801324"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "Show HN: JevBench, a reproducible benchmark for typed decision models",
-   "url": "https://benchmarkheaven.com/jev-models",
-   "date": "2026-09-22T13:01+00:00",
-   "summary": "142 points, 36 comments · https://news.ycombinator.com/item?id=49800574"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "AI Has No Wisdom and Neither Will You",
-   "url": "https://alexn.org/blog/2026/09/22/ai-has-no-wisdom-and-neither-will-you/",
-   "date": "2026-09-22T12:11+00:00",
-   "summary": "383 points, 543 comments · https://news.ycombinator.com/item?id=49799965"
+   "summary": "665 points, 208 comments · https://news.ycombinator.com/item?id=49812769"
   }
  ],
  "errors": [],

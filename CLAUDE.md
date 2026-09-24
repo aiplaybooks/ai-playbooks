@@ -32,6 +32,13 @@ reel.py            render animated Reel (typewriter prompts, staggered fade-ups,
 voice.py           Kokoro TTS per slide -> vo_NN.wav + voice.json (word timings). Runs in Pinokio's env, called by reel.py
 music.py           procedural royalty-free background track: python music.py out.wav <seconds>
 news.py            daily news collector (stdlib only): RSS/Atom feeds, changelog pages, Hacker News -> research/<date>.json
+publish.py         IG carousel + Reel and FB Page photo post + Reel via Graph API v25.0; media via gh-pages.
+                   Resumable/idempotent (output/<name>/publish.json); --dry-run checks token + quota, posts nothing
+studio.py          AI Playbooks Studio: local workflow engine + web UI at http://localhost:8787 (see below)
+studio/index.html  the n8n-style UI (vanilla JS, no build)
+prompts/           scout.md, write.md, qa.md: prompts for the headless `claude -p` steps of the Studio
+runs/              Studio run state + logs + settings.json (gitignored)
+publish_log.jsonl  one line per published post (links), committed by the Studio
 sources.json       source list: feeds, pages (parser: anthropic_news | dated_sections), hn queries, manual (web-search only)
 research/          one candidate list per day (commit it: history of what was available)
 themes/
@@ -113,21 +120,35 @@ Override with env vars `KOKORO_PYTHON` / `KOKORO_HF_HOME`. Read-only use — nev
   returns 200 before handing it to Meta. Limits: 100 MB/file, ~1 GB site → prune old `media/` now and then.
 - Instagram `image_url` officially supports **JPEG only** → publish.py must convert the PNG slides to JPEG.
 
+## AI Playbooks Studio (the daily pipeline) — built 2026-09-24
+Owner's design: an n8n-like local page showing the workflow node by node + today's news; the owner only picks a
+candidate (and approves the preview), everything else is automatic.
+- `pythonw studio.py --no-browser` starts at Windows logon (shortcut in the user's Startup folder); desktop shortcut
+  "AI Playbooks Studio.url" opens http://localhost:8787. Only one instance (port check).
+- **scan** flow, daily at `scan_times` (default 08:00 + 18:00, owner asked for 2 scans/day; a slot missed while the PC
+  was off runs at startup): news.py → `claude -p` with prompts/scout.md → `research/<date>_<HHMM>_candidates.json`
+  (4-8 candidates, Turkish summaries for the owner, official sources) → owner picks one in the UI.
+- **post** flow (one at a time): write (prompts/write.md → content JSON + runs/<id>/write.json) → carousel → reel →
+  qa (8 Reel frames + slides, prompts/qa.md, may fix + re-render) → approve (owner: Yayınla / Revize et (note → back to
+  write) / Reddet (content JSON moved into the run dir)) → publish.py steps → log (publish_log.jsonl + git commit/push).
+- Settings (UI ⚙): scan times, "Yayından önce onay" switch (owner wants it ON for now; if QA finds a problem the gate
+  applies anyway). Windows toasts when candidates are ready / approval needed / errors.
+- Claude steps run with `--permission-mode acceptEdits` and an allowlist (web, file tools, python carousel/reel/news).
+- A failed node shows red; "Tekrar dene" resumes from that node. publish.py never double-posts on a retry.
+
 ## Where we left off (2026-09-24)
-Meta app, tokens, GitHub Secrets and GitHub Pages are done (see above). **Next:** `publish.py`
-(IG carousel + Reel, same post to the FB Page, publish log) → first real test post **only after the owner approves it**
-→ check FB post visibility (dev mode) → then the daily run prompt (`prompts/daily.md`).
+publish.py tested up to `upload` (media live on Pages); **no post has been published yet**. Studio built; first real
+scan worked (7 candidates). **Next:** the owner picks a candidate → first full post run → owner approves the first real
+post → check FB post visibility (dev mode; the app probably must be published: needs a 1024x1024 icon).
 
 ## Next steps (in order — owner's priority, 2026-09-24)
 1. ~~Voice-over with Kokoro~~ — done. ~~News sources + collector~~ — done (`news.py`, `sources.json`).
    Tiers: `official` can back a claim; `signal` (Simon Willison) and `community` (Hacker News) are hints only.
-2. **Daily run prompt** (`prompts/daily.md`) for Claude Code headless: news.py → web search for `manual` sources →
-   pick topic (news > evergreen; no repeats vs last 30 days of content/) → verify every claim on the official page →
-   content JSON (caption, sources, voiceover) → carousel.py + reel.py → look at contact.png + reel frames → report.
+2. ~~Daily run~~ — done as the Studio (prompts/scout.md, write.md, qa.md).
 3. **Publishing to Instagram + Facebook Page:** Repo: https://github.com/aiplaybooks/ai-playbooks (public, account
    `aiplaybooks`; media via GitHub Pages). Meta developer app, IG Professional account linked to a FB Page,
    long-lived token (GitHub Secrets), `publish.py` (IG: media containers → carousel container → publish; Reels: video
    container, poll status, publish; FB Page: multi-photo post + video/reel), public media URLs (GitHub Pages or R2),
    approval via PR for the first 2 weeks, publish log.
-4. **Scheduling:** Windows Task Scheduler runs `claude -p` every morning (PC must be on), or a cloud scheduled task.
+4. ~~Scheduling~~ — done: the Studio's own scheduler (PC must be on; missed slots catch up at logon).
 5. **More themes** (3–4) + theme selection logic. (Name decided: brand "AI Playbooks", handle "@aiplaybooks.daily".)

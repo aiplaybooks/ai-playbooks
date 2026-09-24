@@ -1,0 +1,120 @@
+{
+  "generated": "2026-09-24T20:12:00+03:00",
+  "candidates": [
+    {
+      "id": "gemini-3-8-tts",
+      "kind": "news",
+      "title": "Gemini 3.8 can now clone your voice",
+      "summary_tr": "Google, Gemini 3.8 Flash TTS ve Flash-Lite TTS modellerini duyurdu: 2.000'den fazla hazır ses ve sadece 30 saniyelik bir ses örneğiyle özel ses klonlama özelliği geliyor.",
+      "why_tr": "Sesli AI ve klonlama takipçilerin çok ilgisini çeken, kolayca denenebilir ve görsel olarak güçlü bir konu; Hacker News'te de 300+ puanla öne çıktı.",
+      "angle": "what launched + how to try it in AI Studio + 4-5 prompts/use cases (narration, custom voice, multilingual)",
+      "tools": ["Gemini", "Google AI Studio"],
+      "published": "2026-09-23",
+      "sources": [
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/",
+        "https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/"
+      ],
+      "hints": [
+        "https://simonwillison.net/2026/Sep/23/gemini-tts-playground/",
+        "https://news.ycombinator.com/item?id=49817615"
+      ],
+      "score": 8,
+      "seen_before": false
+    },
+    {
+      "id": "gemini-live-avatar",
+      "kind": "news",
+      "title": "Google gave Gemini a face: Live Avatar is here",
+      "summary_tr": "Google, Gemini 3.8 Live'a 'Live Avatar' özelliğini ekledi: gerçek zamanlıya yakın, dudak senkronlu, 97 dilde konuşabilen fotogerçekçi bir video avatarla sohbet edilebiliyor (şimdilik Gemini Enterprise'da).",
+      "why_tr": "Çok görsel ve şaşırtıcı bir haber ('AI'ya yüz verildi'); carousel/reel için güçlü bir kapak görseli fikri olur, ama özellik şu an kurumsal müşterilere açık.",
+      "angle": "what it is + how it works (lip-sync, 97 languages, guardrails) + where it's rolling out first",
+      "tools": ["Gemini", "Google"],
+      "published": "2026-09-24",
+      "sources": [
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/",
+        "https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/"
+      ],
+      "hints": [],
+      "score": 7,
+      "seen_before": false
+    },
+    {
+      "id": "gpt-6-sol-luna",
+      "kind": "news",
+      "title": "OpenAI adds GPT-6 Sol and GPT-6 Luna to Codex and ChatGPT",
+      "summary_tr": "OpenAI, Codex CLI'nin model seçicisine GPT-6 Sol ve GPT-6 Luna modellerini ekledi; rate-limit uyarıları artık Luna'yı öneriyor. Aynı modeller ChatGPT ve API tarafında da yayılıyor.",
+      "why_tr": "Codex/ChatGPT kullanıcılarının doğrudan işine yarayan, 'hangi modeli ne zaman kullanmalıyım' sorusuna cevap veren pratik bir haber.",
+      "angle": "what's new + how to switch models in Codex/ChatGPT + when to pick Sol vs Luna",
+      "tools": ["ChatGPT", "Codex", "OpenAI"],
+      "published": "2026-09-23",
+      "sources": [
+        "https://developers.openai.com/codex/changelog",
+        "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      ],
+      "hints": [],
+      "score": 7,
+      "seen_before": false
+    },
+    {
+      "id": "copilot-local-sandboxing",
+      "kind": "news",
+      "title": "GitHub Copilot app adds local sandboxing",
+      "summary_tr": "GitHub Copilot uygulamasına 'local sandboxing' geldi: AI'nın dosya, ağ ve kimlik bilgilerine erişimini sınırlayarak istenmeyen komutların etkisini azaltıyor.",
+      "why_tr": "Kod yazan takipçiler için güvenlik odaklı, pratik ve 'nasıl açılır' anlatılabilecek bir özellik.",
+      "angle": "what it protects against + how to turn it on + why AI coding agents need this",
+      "tools": ["GitHub Copilot"],
+      "published": "2026-09-23",
+      "sources": [
+        "https://github.blog/changelog/2026-09-23-local-sandboxing-in-the-github-copilot-app"
+      ],
+      "hints": [],
+      "score": 6,
+      "seen_before": false
+    },
+    {
+      "id": "gemini-connected-apps",
+      "kind": "news",
+      "title": "Gemini connects to Adobe, Airtable, Linear and more",
+      "summary_tr": "Gemini'ye yeni 'Connected Apps' dalgası geldi: Adobe, Airtable, Linear, Peloton gibi uygulamalar artık Gemini üzerinden bağlanıp iş listenizi yönetmenize yardım edebiliyor.",
+      "why_tr": "Günlük iş akışına doğrudan değer katan, 'bağla ve dene' tarzı kolay anlatılabilir bir özellik.",
+      "angle": "which apps got added + how to connect one + 3 example prompts once connected",
+      "tools": ["Gemini", "Google"],
+      "published": "2026-09-23",
+      "sources": [
+        "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-gemini/"
+      ],
+      "hints": [],
+      "score": 6,
+      "seen_before": false
+    },
+    {
+      "id": "claude-code-tips",
+      "kind": "evergreen",
+      "title": "7 Claude Code habits that save hours every week",
+      "summary_tr": "Claude Code'u günlük kullananlar için pratik alışkanlıklar/komutlar: CLAUDE.md kullanımı, plan modu, alt-ajanlar, slash komutları gibi zaten var olan özelliklerin en iyi kullanım şekilleri.",
+      "why_tr": "Haber gerektirmeyen, her zaman işe yarayan, kaydedilme (save) oranı yüksek bir 'ipuçları' formatı; sayfada Claude Code içerikli haber post'u var ama saf ipucu carousel'i yok.",
+      "angle": "7 concrete Claude Code tips/prompts with short explanations, ends with a CTA to follow",
+      "tools": ["Claude Code"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 7,
+      "seen_before": false
+    },
+    {
+      "id": "chatgpt-claude-gemini-comparison",
+      "kind": "evergreen",
+      "title": "ChatGPT vs Claude vs Gemini: which one for which task",
+      "summary_tr": "Üç büyük asistanın güçlü olduğu alanları karşılaştıran bir rehber: kod için hangisi, yazı için hangisi, araştırma için hangisi gibi pratik bir seçim tablosu.",
+      "why_tr": "Karşılaştırma formatları kaydetme ve paylaşılma oranı yüksek, evergreen ve haber gerektirmeyen bir içerik.",
+      "angle": "a simple task-by-task comparison table + one example prompt per tool",
+      "tools": ["ChatGPT", "Claude", "Gemini"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 6,
+      "seen_before": false
+    }
+  ],
+  "notes_tr": "Perplexity ve Microsoft Copilot değişiklikleri kontrol edildi ama son 36 saatte normal kullanıcının fark edeceği yeni bir şey bulunamadı (Perplexity: sadece API/model listesi genişlemeleri; Copilot: Eylül başından kalma özellikler). xAI/Grok'ta en güncel haber (Grok 4.7, 21 Eylül) 36 saatlik pencerenin dışında kaldığı için alınmadı."
+}

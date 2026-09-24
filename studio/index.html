@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Playbooks Studio</title>
+<style>
+@font-face{font-family:Inter;src:url(/file/fonts/InterVariable.ttf);font-weight:100 900}
+:root{
+  --bg:#17171d;--grid:#2a2a33;--panel:#202028;--panel2:#282831;--card:#2b2b35;--line:#3a3a46;
+  --text:#ececf1;--muted:#9b9bab;--dim:#6d6d7c;
+  --trigger:#ff9f43;--code:#4dabf7;--ai:#b197fc;--human:#f783ac;--publish:#51cf66;
+  --run:#4dabf7;--ok:#51cf66;--err:#ff6b6b;--wait:#fcc419;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--text);font:14px/1.45 Inter,system-ui,sans-serif;overflow:hidden}
+button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:8px;padding:7px 12px}
+button:hover{border-color:#55556a}
+button.primary{background:#ff6d5a;border-color:#ff6d5a;color:#fff;font-weight:600}
+button.go{background:#2f9e44;border-color:#2f9e44;color:#fff;font-weight:600}
+button.danger{color:#ffa8a8}
+button:disabled{opacity:.45;cursor:default}
+select,input,textarea{font:inherit;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+a{color:#8fb8ff}
+header{height:56px;display:flex;align-items:center;gap:14px;padding:0 16px;border-bottom:1px solid var(--line);background:var(--panel)}
+.logo{font-weight:800;letter-spacing:-.3px;font-size:16px;display:flex;align-items:center;gap:8px}
+.logo i{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,#ff6d5a,#b197fc);display:inline-block}
+.pill{font-size:12px;color:var(--muted);background:var(--panel2);border:1px solid var(--line);border-radius:99px;padding:4px 10px;white-space:nowrap}
+.pill b{color:var(--text);font-weight:600}
+.grow{flex:1}
+#banner{display:none;align-items:center;gap:12px;padding:9px 16px;background:#3b3212;border-bottom:1px solid #6b5a14;color:#ffe066}
+#banner.on{display:flex}
+main{display:flex;height:calc(100% - 56px);position:relative}
+body.has-banner main{height:calc(100% - 56px - 45px)}
+
+/* sidebar */
+aside{width:380px;min-width:380px;border-right:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column}
+.tabs{display:flex;border-bottom:1px solid var(--line)}
+.tabs button{flex:1;border:0;border-radius:0;background:none;color:var(--muted);padding:12px 6px;border-bottom:2px solid transparent}
+.tabs button.on{color:var(--text);border-bottom-color:#ff6d5a}
+.side-head{padding:12px 14px;display:flex;gap:8px;align-items:center;border-bottom:1px solid var(--line)}
+.side-head select{flex:1;min-width:0}
+.list{flex:1;overflow:auto;padding:12px}
+.note{font-size:12.5px;color:var(--muted);background:var(--panel2);border-radius:8px;padding:9px 11px;margin-bottom:10px}
+.cand{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 13px;margin-bottom:10px}
+.cand.chosen{border-color:#2f9e44}
+.cand .top{display:flex;gap:8px;align-items:center;margin-bottom:6px;font-size:11.5px;color:var(--muted)}
+.score{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:13px;color:#111;background:var(--wait);flex:none}
+.tag{font-size:10.5px;font-weight:700;letter-spacing:.6px;padding:2px 7px;border-radius:5px;background:#3a2f5c;color:#d0bfff}
+.tag.news{background:#123a52;color:#a5d8ff}
+.cand h4{font-size:14.5px;line-height:1.3;margin-bottom:6px}
+.cand p{font-size:13px;color:#cfcfda;margin-bottom:6px}
+.cand .why{color:var(--muted);font-size:12.5px}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin:7px 0}
+.chip{font-size:11.5px;background:var(--panel2);border:1px solid var(--line);border-radius:99px;padding:1px 8px;color:#cfcfda}
+.srcs{font-size:12px;margin-bottom:9px;display:flex;flex-wrap:wrap;gap:4px 10px}
+.cand button{width:100%}
+.raw{padding:8px 2px;border-bottom:1px solid var(--line);font-size:13px}
+.raw small{color:var(--muted);display:block}
+.tier{font-size:10px;font-weight:700;padding:1px 5px;border-radius:4px;margin-right:5px;background:#1f3b2b;color:#8ce99a}
+.tier.signal{background:#3b3212;color:#ffe066}.tier.community{background:#3a2323;color:#ffa8a8}
+.hist{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px;font-size:13px}
+.hist small{color:var(--muted)}
+.empty{color:var(--muted);text-align:center;padding:40px 16px;font-size:13px}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid #4dabf755;border-top-color:var(--run);border-radius:50%;animation:sp 0.8s linear infinite;vertical-align:-2px}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+/* canvas */
+#vp{flex:1;position:relative;overflow:hidden;cursor:grab;
+  background-color:var(--bg);background-image:radial-gradient(var(--grid) 1.2px,transparent 1.2px);background-size:22px 22px}
+#vp.drag{cursor:grabbing}
+#world{position:absolute;left:0;top:0;transform-origin:0 0}
+#edges{position:absolute;left:0;top:0;overflow:visible;pointer-events:none}
+#edges path{fill:none;stroke:#4a4a58;stroke-width:2.2}
+#edges path.done{stroke:#2f9e44}
+#edges path.flow{stroke:var(--run);stroke-dasharray:7 7;animation:flow .6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-14}}
+.group{position:absolute;white-space:nowrap;font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.4px;text-transform:uppercase}
+.group span{font-weight:500;text-transform:none;letter-spacing:0;color:var(--dim);margin-left:8px}
+.node{position:absolute;width:224px;height:78px;background:var(--card);border:1.5px solid var(--line);border-radius:14px;
+  display:flex;align-items:center;gap:11px;padding:0 12px;cursor:pointer;user-select:none;transition:border-color .2s,box-shadow .2s}
+.node:hover{border-color:#6a6a80}
+.node.sel{box-shadow:0 0 0 3px #ff6d5a88}
+.node .ico{width:44px;height:44px;border-radius:11px;display:grid;place-items:center;font-size:22px;flex:none;background:#ffffff0d;border:1px solid}
+.node.k-trigger .ico{border-color:var(--trigger);background:#ff9f4318}
+.node.k-code .ico{border-color:var(--code);background:#4dabf718}
+.node.k-ai .ico{border-color:var(--ai);background:#b197fc18}
+.node.k-human .ico{border-color:var(--human);background:#f783ac18}
+.node.k-publish .ico{border-color:var(--publish);background:#51cf6618}
+.node .tx{min-width:0}
+.node b{display:block;font-size:13.5px;font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.node small{display:block;font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:142px}
+.node .badge{position:absolute;right:-9px;top:-9px;width:22px;height:22px;border-radius:50%;display:none;place-items:center;font-size:12px;font-weight:800;color:#111}
+.node.s-done{border-color:#2f9e44}
+.node.s-done .badge{display:grid;background:var(--ok)}
+.node.s-done .badge:after{content:"✓"}
+.node.s-error{border-color:var(--err)}
+.node.s-error .badge{display:grid;background:var(--err)}
+.node.s-error .badge:after{content:"!"}
+.node.s-error small{color:#ffa8a8}
+.node.s-waiting{border-color:var(--wait);animation:pulse 1.6s ease-in-out infinite}
+.node.s-waiting .badge{display:grid;background:var(--wait)}
+.node.s-waiting .badge:after{content:"⏸";font-size:10px}
+.node.s-waiting small{color:#ffe066}
+.node.s-running{border-color:var(--run);box-shadow:0 0 0 4px #4dabf722,0 0 24px #4dabf744}
+.node.s-running .badge{display:grid;background:var(--panel);border:2px solid #4dabf755;border-top-color:var(--run);animation:sp .8s linear infinite}
+.node.s-running small{color:#a5d8ff}
+.node.s-idle{opacity:.72}
+@keyframes pulse{50%{box-shadow:0 0 0 6px #fcc41922}}
+.port{position:absolute;top:50%;width:11px;height:11px;margin-top:-5.5px;border-radius:50%;background:var(--panel);border:2px solid #5a5a6c}
+.port.in{left:-6.5px}.port.out{right:-6.5px}
+.zoom{position:absolute;left:14px;bottom:14px;display:flex;gap:6px}
+.zoom button{width:34px;height:34px;padding:0;background:var(--panel)}
+.legend{position:absolute;right:14px;bottom:14px;display:flex;gap:12px;font-size:11.5px;color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:5px;vertical-align:0}
+.runinfo{position:absolute;left:14px;top:14px;font-size:12.5px;color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:7px 11px;max-width:60%}
+.runinfo b{color:var(--text)}
+
+/* drawer */
+#drawer{position:absolute;right:0;top:0;bottom:0;width:460px;border-left:1px solid var(--line);background:var(--panel);display:none;flex-direction:column;z-index:5;box-shadow:-12px 0 30px #0006}
+#drawer.on{display:flex}
+.dh{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+.dh .ico{font-size:22px}
+.dh h3{font-size:15px;flex:1}
+.db{flex:1;overflow:auto;padding:14px 16px}
+.db h5{font-size:11.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin:16px 0 7px}
+.db h5:first-child{margin-top:0}
+.kv{font-size:13px;color:#cfcfda}
+.kv span{color:var(--muted)}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+pre.log{background:#131318;border:1px solid var(--line);border-radius:8px;padding:10px;font:12px/1.5 ui-monospace,Consolas,monospace;white-space:pre-wrap;word-break:break-word;max-height:420px;overflow:auto;color:#cfcfda}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.thumbs img{width:100%;border-radius:6px;border:1px solid var(--line);cursor:zoom-in;display:block}
+video{width:100%;border-radius:10px;background:#000;max-height:520px}
+ul.clean{padding-left:18px;font-size:13px;color:#cfcfda}
+ul.clean li{margin-bottom:4px}
+
+/* modal */
+.modal{position:fixed;inset:0;background:#000a;display:none;align-items:center;justify-content:center;z-index:50;padding:24px}
+.modal.on{display:flex}
+.mbox{background:var(--panel);border:1px solid var(--line);border-radius:16px;width:min(1180px,100%);max-height:100%;display:flex;flex-direction:column;overflow:hidden}
+.mbox.small{width:min(460px,100%)}
+.mh{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px}
+.mh h2{font-size:17px;flex:1}
+.mb{padding:18px 20px;overflow:auto}
+.mf{padding:14px 20px;border-top:1px solid var(--line);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.apv{display:grid;grid-template-columns:1fr 330px;gap:22px}
+.strip{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px}
+.strip img{height:340px;border-radius:8px;border:1px solid var(--line);cursor:zoom-in}
+.cap{white-space:pre-wrap;background:var(--panel2);border-radius:10px;padding:12px;font-size:13.5px}
+.qa{border-radius:10px;padding:10px 12px;font-size:13px;margin-bottom:12px}
+.qa.ok{background:#1f3b2b;color:#b2f2bb}.qa.bad{background:#3a2323;color:#ffc9c9}
+#revise{display:none;width:100%;gap:8px;flex-direction:column}
+#revise.on{display:flex}
+#revise textarea{width:100%;min-height:70px}
+#lightbox{position:fixed;inset:0;background:#000d;display:none;align-items:center;justify-content:center;z-index:60;cursor:zoom-out}
+#lightbox.on{display:flex}
+#lightbox img{max-width:94vw;max-height:94vh;border-radius:8px}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#3a2323;color:#ffc9c9;border:1px solid #6b3030;padding:10px 16px;border-radius:10px;z-index:70;display:none}
+.toast.on{display:block}
+.times{display:flex;flex-direction:column;gap:8px}
+.times div{display:flex;gap:8px}
+.switch{display:flex;align-items:center;gap:10px;margin-top:16px;cursor:pointer}
+.switch input{width:18px;height:18px}
+@media (max-width:1100px){aside{width:300px;min-width:300px}#drawer{width:360px}.apv{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><i></i>AI Playbooks Studio</div>
+  <span class="pill" id="nextScan">…</span>
+  <span class="pill" id="gatePill"></span>
+  <div class="grow"></div>
+  <select id="postSel" title="Gösterilen üretim"></select>
+  <button class="primary" id="scanBtn">⟳ Şimdi tara</button>
+  <button id="setBtn" title="Ayarlar">⚙</button>
+</header>
+<div id="banner"><span id="bannerTxt"></span><button id="bannerBtn">Önizle ve onayla</button></div>
+<main>
+  <aside>
+    <div class="tabs">
+      <button data-tab="cands" class="on">Adaylar</button>
+      <button data-tab="raw">Ham haberler</button>
+      <button data-tab="hist">Geçmiş</button>
+    </div>
+    <div class="side-head" id="scanHead"><select id="scanSel"></select></div>
+    <div class="list" id="list"></div>
+  </aside>
+  <div id="vp">
+    <div id="world"><svg id="edges"></svg></div>
+    <div class="runinfo" id="runinfo"></div>
+    <div class="zoom"><button id="zin">+</button><button id="zout">−</button><button id="zfit" title="Ekrana sığdır">⤢</button></div>
+    <div class="legend"><span><i style="background:var(--trigger)"></i>tetik</span><span><i style="background:var(--code)"></i>script</span><span><i style="background:var(--ai)"></i>Claude</span><span><i style="background:var(--human)"></i>sen</span><span><i style="background:var(--publish)"></i>yayın</span></div>
+  </div>
+  <div id="drawer">
+    <div class="dh"><span class="ico" id="dIco"></span><h3 id="dTitle"></h3><button id="dClose">✕</button></div>
+    <div class="db" id="dBody"></div>
+  </div>
+</main>
+
+<div class="modal" id="apModal"><div class="mbox">
+  <div class="mh"><h2 id="apTitle">Önizleme</h2><button id="apClose">✕</button></div>
+  <div class="mb" id="apBody"></div>
+  <div class="mf">
+    <button class="go" id="apGo">✓ Yayınla (Instagram + Facebook)</button>
+    <button id="apRev">✎ Revize et</button>
+    <button class="danger" id="apRej">✕ Reddet</button>
+    <div class="grow"></div>
+    <span class="pill" id="apState"></span>
+    <div id="revise"><textarea id="revNote" placeholder="Ne değişsin? Örn: kapak başlığını kısalt, 3. slayttaki ipucunu değiştir, daha az teknik anlat…"></textarea>
+      <div style="display:flex;gap:8px"><button class="primary" id="revSend">Revizyonu gönder</button><button id="revCancel">Vazgeç</button></div></div>
+  </div>
+</div></div>
+
+<div class="modal" id="setModal"><div class="mbox small">
+  <div class="mh"><h2>Ayarlar</h2><button id="setClose">✕</button></div>
+  <div class="mb">
+    <h5 style="font-size:12px;color:var(--muted);margin-bottom:8px">TARAMA SAATLERİ (her gün)</h5>
+    <div class="times" id="times"></div>
+    <button id="addTime" style="margin-top:8px">+ Saat ekle</button>
+    <label class="switch"><input type="checkbox" id="gate"> Yayından önce onay iste</label>
+    <p style="font-size:12.5px;color:var(--muted);margin-top:8px">Kapalıyken seçtiğin haber kontrol edilip doğrudan paylaşılır. Kalite kontrol bir sorun bulursa yine de onay istenir.</p>
+  </div>
+  <div class="mf"><button class="primary" id="setSave">Kaydet</button></div>
+</div></div>
+
+<div id="lightbox"><img alt=""></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const ICONS={trigger:"⏰",collect:"📰",scout:"🧠",choose:"👤",write:"✍️",carousel:"🖼️",reel:"🎬",qa:"👁️",approve:"✅",
+  upload:"☁️",ig_carousel:"📸",ig_reel:"🎞️",fb_photos:"📘",fb_reel:"📘",log:"📒"};
+const POS={trigger:[0,40],collect:[270,40],scout:[540,40],choose:[810,40],
+  write:[0,230],carousel:[270,230],reel:[540,230],qa:[810,230],
+  approve:[0,420],upload:[270,420],ig_carousel:[540,420],ig_reel:[810,420],
+  fb_photos:[0,610],fb_reel:[270,610],log:[540,610]};
+const GROUPS=[["① Tarama","scan",0,0],["② Üretim","post",0,190],["③ Onay & yayın","pub",0,380]];
+const WW=810+224,WH=610+78;
+const NW=224,NH=78;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const host=u=>{try{return new URL(u).hostname.replace(/^www\./,"")}catch{return u}};
+const fmtT=s=>s?new Date(s).toLocaleString("tr-TR",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}):"";
+const file=p=>"/file/"+p.split("/").map(encodeURIComponent).join("/");
+
+let S=null, scanId=null, postId=null, tab="cands", sel=null, detail=null, dismissed=new Set(), built=false;
+let view={x:40,y:40,k:1}, fitted=false;
+
+async function api(path,body){
+  const r=await fetch(path,body?{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)}:{});
+  const j=r.headers.get("content-type")?.includes("json")?await r.json():await r.text();
+  if(!r.ok) throw new Error(j.error||r.statusText);
+  return j;
+}
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove("on"),5000);}
+
+const scans=()=>S.runs.filter(r=>r.kind==="scan");
+const posts=()=>S.runs.filter(r=>r.kind==="post");
+const runById=id=>S.runs.find(r=>r.id===id);
+const flowOf=nid=>S.flows.scan.some(n=>n.id===nid)?"scan":"post";
+
+/* ---------------- canvas ---------------- */
+function build(){
+  const w=$("#world");
+  for(const [label,key,x,y] of GROUPS){
+    const g=document.createElement("div");g.className="group";g.style.left=x+"px";g.style.top=y+"px";g.dataset.g=key;
+    g.innerHTML=esc(label)+"<span></span>";w.appendChild(g);
+  }
+  for(const f of ["scan","post"]) for(const n of S.flows[f]){
+    const d=document.createElement("div");d.className="node k-"+n.kind+" s-idle";d.id="n-"+n.id;
+    const [x,y]=POS[n.id];d.style.left=x+"px";d.style.top=y+"px";
+    d.innerHTML=`<div class="ico">${ICONS[n.id]}</div><div class="tx"><b>${esc(n.label)}</b><small>Bekliyor</small></div><span class="badge"></span><i class="port in"></i><i class="port out"></i>`;
+    d.onclick=e=>{e.stopPropagation();openNode(n.id)};
+    w.appendChild(d);
+  }
+  built=true;
+}
+const ORDER=()=>[...S.flows.scan,...S.flows.post].map(n=>n.id);
+function edgePath(a,b){
+  const [ax,ay]=POS[a],[bx,by]=POS[b];const x1=ax+NW,y1=ay+NH/2,x2=bx,y2=by+NH/2;
+  if(x2>x1) {const c=Math.max(40,(x2-x1)/2);return `M${x1},${y1} C${x1+c},${y1} ${x2-c},${y2} ${x2},${y2}`;}
+  const my=(y1+y2)/2+6,r=16;
+  return `M${x1},${y1} H${x1+24} Q${x1+24+r},${y1} ${x1+24+r},${y1+r} V${my-r} Q${x1+24+r},${my} ${x1+24},${my} H${x2-24} Q${x2-24-r},${my} ${x2-24-r},${my+r} V${y2-r} Q${x2-24-r},${y2} ${x2-24},${y2} H${x2}`;
+}
+function nodeState(nid){
+  const r=runById(flowOf(nid)==="scan"?scanId:postId);
+  return r?r.nodes[nid]:{status:"idle"};
+}
+function dur(n){
+  if(!n.started)return"";const e=n.ended?new Date(n.ended):new Date();const s=Math.max(0,Math.round((e-new Date(n.started))/1000));
+  return s<60?s+" sn":Math.floor(s/60)+":"+String(s%60).padStart(2,"0")+" dk";
+}
+function subText(nid,n){
+  if(n.status==="running")return"Çalışıyor · "+dur(n);
+  if(n.status==="idle")return flowOf(nid)==="post"&&!postId?"Seçim bekleniyor":"Bekliyor";
+  if(n.status==="done")return(n.msg||"Tamam")+(n.secs>2?" · "+dur(n):"");
+  return n.msg||n.status;
+}
+function renderCanvas(){
+  if(!built)build();
+  const ids=ORDER();let paths="";
+  for(let i=0;i<ids.length-1;i++){
+    const a=nodeState(ids[i]),b=nodeState(ids[i+1]);
+    const cls=b.status==="running"?"flow":(a.status==="done"&&b.status!=="idle"&&b.status!=="error"?"done":"");
+    paths+=`<path class="${cls}" d="${edgePath(ids[i],ids[i+1])}"/>`;
+  }
+  $("#edges").innerHTML=paths;
+  for(const id of ids){
+    const n=nodeState(id),el=$("#n-"+id);
+    el.className=`node k-${el.className.match(/k-(\w+)/)[1]} s-${n.status}${sel===id?" sel":""}`;
+    el.querySelector("small").textContent=subText(id,n);
+    el.title=subText(id,n);
+  }
+  const sc=runById(scanId),po=runById(postId);
+  document.querySelector('[data-g=scan] span').textContent=sc?`${fmtT(sc.created)} · ${sc.trigger_msg||""}`:"henüz tarama yok";
+  document.querySelector('[data-g=post] span').textContent=po?(po.title||""):"soldan bir haber seç";
+  document.querySelector('[data-g=pub] span').textContent=po?({done:"paylaşıldı",rejected:"reddedildi"}[po.status]||(S.settings.approval?"onay açık":"onay kapalı")):"";
+  $("#runinfo").innerHTML=po?`Üretim: <b>${esc(po.title||po.id)}</b> · ${statusTr(po.status)}`:"Henüz üretim yok. Soldan bir aday seçince burada canlı akar.";
+  if(!fitted){fit();fitted=true;}
+}
+function statusTr(s){return{queued:"sırada",running:"çalışıyor",waiting:"seni bekliyor",done:"tamamlandı",error:"hata",rejected:"reddedildi",canceled:"durduruldu"}[s]||s}
+function apply(){$("#world").style.transform=`translate(${view.x}px,${view.y}px) scale(${view.k})`;}
+function fit(){
+  const vp=$("#vp").getBoundingClientRect(),W=WW,H=WH;
+  const free=vp.width-($("#drawer").classList.contains("on")?470:0);view.k=Math.min(1.25,(free-80)/W,(vp.height-120)/H);view.x=Math.max(30,(free-W*view.k)/2);view.y=Math.max(64,(vp.height-H*view.k)/2+10);apply();
+}
+(()=>{
+  const vp=$("#vp");let d=null;
+  vp.addEventListener("mousedown",e=>{if(e.target.closest(".node,.zoom,button"))return;d={x:e.clientX-view.x,y:e.clientY-view.y};vp.classList.add("drag")});
+  addEventListener("mousemove",e=>{if(!d)return;view.x=e.clientX-d.x;view.y=e.clientY-d.y;apply()});
+  addEventListener("mouseup",()=>{d=null;vp.classList.remove("drag")});
+  vp.addEventListener("wheel",e=>{e.preventDefault();const r=vp.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top;
+    const k=Math.min(2,Math.max(.3,view.k*(e.deltaY<0?1.1:.9)));view.x=mx-(mx-view.x)*k/view.k;view.y=my-(my-view.y)*k/view.k;view.k=k;apply()},{passive:false});
+  const z=f=>{const r=vp.getBoundingClientRect(),mx=r.width/2,my=r.height/2,k=Math.min(2,Math.max(.3,view.k*f));
+    view.x=mx-(mx-view.x)*k/view.k;view.y=my-(my-view.y)*k/view.k;view.k=k;apply()};
+  $("#zin").onclick=()=>z(1.2);$("#zout").onclick=()=>z(1/1.2);$("#zfit").onclick=fit;
+  addEventListener("resize",fit);
+})();
+
+/* ---------------- sidebar ---------------- */
+document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{tab=b.dataset.tab;document.querySelectorAll(".tabs button").forEach(x=>x.classList.toggle("on",x===b));renderSide(true)});
+$("#scanSel").onchange=e=>{scanId=e.target.value;renderAll(true)};
+$("#postSel").onchange=e=>{postId=e.target.value;renderAll(true)};
+let rawCache={};
+async function renderSide(force){
+  const L=$("#list");
+  $("#scanHead").style.display=tab==="hist"?"none":"flex";
+  if(tab==="hist"){
+    if(!force&&L.dataset.t==="hist")return;L.dataset.t="hist";
+    const h=await api("/api/history");
+    L.innerHTML=h.length?h.map(e=>`<div class="hist"><b>${esc(e.topic||e.post)}</b><br><small>${fmtT(e.date)} · ${esc(e.theme||"")}</small><div class="srcs" style="margin:6px 0 0">
+      ${e.ig_carousel?`<a href="${esc(e.ig_carousel.link)}" target="_blank">IG carousel</a>`:""}${e.ig_reel?`<a href="${esc(e.ig_reel.link)}" target="_blank">IG Reel</a>`:""}
+      ${e.fb_photos?`<a href="${esc(e.fb_photos.link)}" target="_blank">FB gönderi</a>`:""}${e.fb_reel?`<a href="${esc(e.fb_reel.link)}" target="_blank">FB Reel</a>`:""}</div></div>`).join(""):`<div class="empty">Henüz paylaşım yok.</div>`;
+    return;
+  }
+  const sc=runById(scanId);
+  if(tab==="raw"){
+    const day=sc?.day;if(!day){L.innerHTML=`<div class="empty">Henüz tarama yok.</div>`;return;}
+    if(!force&&L.dataset.t==="raw"+day+sc.status)return;L.dataset.t="raw"+day+sc.status;
+    const r=await api("/api/research?day="+day);const items=r.items||[];
+    L.innerHTML=`<div class="note">${items.length} haber · son ${r.hours||36} saat · ${(r.errors||[]).length} kaynak hatası. Resmi (OFF) kaynaklar doğrulama için kullanılır; diğerleri ipucudur.</div>`+
+      items.map(i=>`<div class="raw"><span class="tier ${esc(i.tier)}">${{official:"OFF",signal:"SİNYAL",community:"HN"}[i.tier]||esc(i.tier)}</span><a href="${esc(i.url)}" target="_blank">${esc(i.title)}</a><small>${esc(i.source)} · ${fmtT(i.date)}</small></div>`).join("");
+    return;
+  }
+  L.dataset.t="";
+  if(!sc){L.innerHTML=`<div class="empty">Henüz tarama yapılmadı.<br>Sonraki tarama: ${fmtT(S.next_scan)}<br><br>Beklemek istemezsen üstteki <b>Şimdi tara</b>'ya bas.</div>`;return;}
+  if(sc.status==="running"||sc.status==="queued"){
+    const cur=S.flows.scan.find(n=>sc.nodes[n.id].status==="running");
+    L.innerHTML=`<div class="empty"><span class="spin"></span> Taranıyor… ${cur?esc(cur.label):""}<br><br><small>Haber toplama ~1 dk, Claude'un araması ve doğrulaması birkaç dakika sürer.</small></div>`;return;
+  }
+  const c=sc.candidates||{},list=c.candidates||[];
+  if(!list.length){L.innerHTML=`<div class="empty">${sc.status==="error"?"Tarama hata verdi. Kanvasta kırmızı node'a tıklayıp <b>Tekrar dene</b>'ye bas.":"Bu taramada aday yok."}</div>`;return;}
+  const chosen=Object.fromEntries((sc.chosen||[]).map(x=>[x.id,x.run]));
+  L.innerHTML=(c.notes_tr?`<div class="note">${esc(c.notes_tr)}</div>`:"")+list.map(k=>`
+   <div class="cand ${chosen[k.id]?"chosen":""}">
+    <div class="top"><span class="score">${esc(k.score)}</span><span class="tag ${k.kind==="news"?"news":""}">${k.kind==="news"?"HABER":"EVERGREEN"}</span>
+      ${k.published?`<span>${esc(k.published)}</span>`:""}${k.seen_before?`<span title="Önceki taramada da listelenmişti">↺ önceden</span>`:""}</div>
+    <h4>${esc(k.title)}</h4><p>${esc(k.summary_tr)}</p>${k.why_tr?`<p class="why">💡 ${esc(k.why_tr)}</p>`:""}
+    <div class="chips">${(k.tools||[]).map(t=>`<span class="chip">${esc(t)}</span>`).join("")}</div>
+    <div class="srcs">${(k.sources||[]).map(u=>`<a href="${esc(u)}" target="_blank">${esc(host(u))}</a>`).join("")}</div>
+    ${chosen[k.id]?`<button data-run="${esc(chosen[k.id])}">✓ Seçildi · üretimi göster</button>`:`<button class="primary" data-pick="${esc(k.id)}">Bu haberi seç</button>`}
+   </div>`).join("");
+  L.querySelectorAll("[data-pick]").forEach(b=>b.onclick=async()=>{
+    const k=list.find(x=>x.id===b.dataset.pick);
+    if(!confirm(`"${k.title}"\n\nBu haber için içerik, carousel ve Reel üretimi başlasın mı?`))return;
+    b.disabled=true;
+    try{const r=await api("/api/select",{scan:scanId,candidate:k.id});postId=r.run;await refresh();openNode("write");}catch(e){toast(e.message);b.disabled=false}
+  });
+  L.querySelectorAll("[data-run]").forEach(b=>b.onclick=()=>{postId=b.dataset.run;renderAll(true)});
+}
+
+/* ---------------- drawer ---------------- */
+$("#dClose").onclick=()=>{sel=null;$("#drawer").classList.remove("on");renderCanvas();setTimeout(fit,0)};
+async function openNode(nid){
+  const was=$("#drawer").classList.contains("on");
+  sel=nid;$("#drawer").classList.add("on");renderCanvas();if(!was)setTimeout(fit,0);await renderDrawer();
+}
+async function renderDrawer(){
+  if(!sel)return;
+  const f=flowOf(sel),rid=f==="scan"?scanId:postId,r=runById(rid),n=r?r.nodes[sel]:{status:"idle"};
+  const meta=S.flows[f].find(x=>x.id===sel);
+  $("#dIco").textContent=ICONS[sel];$("#dTitle").textContent=meta.label;
+  const B=$("#dBody"),keepScroll=B.querySelector("pre.log");const atBottom=!keepScroll||keepScroll.scrollTop+keepScroll.clientHeight>=keepScroll.scrollHeight-20;
+  let h=`<h5>Durum</h5><div class="kv"><b>${statusTr(n.status)==="idle"?"Bekliyor":({idle:"Bekliyor",running:"Çalışıyor",done:"Tamamlandı",error:"Hata",waiting:"Seni bekliyor"}[n.status])}</b>${n.started?` · <span>başladı ${fmtT(n.started)}</span>`:""}${n.started?` · <span>${dur(n)}</span>`:""}</div>`;
+  if(n.msg)h+=`<div class="kv" style="margin-top:6px">${esc(n.msg)}</div>`;
+  const acts=[];
+  if(r&&n.status==="running")acts.push(`<button class="danger" data-a="cancel">■ Durdur</button>`);
+  if(r&&["error","done"].includes(n.status)&&!["running","queued"].includes(r.status)&&!(f==="post"&&r.nodes.ig_carousel?.status==="done"&&POS[sel][1]<460&&sel!=="log"))
+    acts.push(`<button data-a="retry">↻ ${n.status==="error"?"Tekrar dene":"Buradan yeniden çalıştır"}</button>`);
+  if(sel==="approve"&&n.status==="waiting")acts.push(`<button class="go" data-a="preview">Önizle ve onayla</button>`);
+  if(acts.length)h+=`<div class="acts">${acts.join("")}</div>`;
+  if(f==="post"&&r){
+    if(!detail||detail.id!==rid||detail._t<Date.now()-2500){detail=await api("/api/run?id="+encodeURIComponent(rid));detail._t=Date.now();}
+    const d=detail;
+    if(sel==="write"){
+      h+=`<h5>Seçilen haber</h5><div class="kv"><b>${esc(d.candidate.title)}</b><br>${esc(d.candidate.summary_tr||"")}</div>`;
+      if(d.write_result){h+=`<h5>Doğrulanan bilgiler</h5><ul class="clean">${(d.write_result.verified||[]).map(v=>`<li>${esc(v)}</li>`).join("")}</ul>`;
+        if((d.write_result.left_out||[]).length)h+=`<h5>Doğrulanamadığı için çıkarılanlar</h5><ul class="clean">${d.write_result.left_out.map(v=>`<li>${esc(v)}</li>`).join("")}</ul>`;}
+      if(d.content_data)h+=`<h5>Caption</h5><div class="cap">${esc(d.content_data.caption)}</div>`;
+      if((d.revisions||[]).length)h+=`<h5>Revizyonlar</h5><ul class="clean">${d.revisions.map(v=>`<li>${fmtT(v.at)}: ${esc(v.note)}</li>`).join("")}</ul>`;
+    }
+    if(sel==="carousel"&&d.slides.length)h+=`<h5>Slaytlar</h5><div class="thumbs">${d.slides.map(s=>`<img src="${file(s)}?t=${Date.now()>>14}" data-zoom>`).join("")}</div>`;
+    if(sel==="reel"&&d.reel&&n.status==="done")h+=`<h5>Reel</h5><video src="${file(d.reel)}" controls preload="metadata"></video>`;
+    if(sel==="qa"&&d.qa_result){const q=d.qa_result;
+      h+=`<h5>Sonuç</h5><div class="qa ${q.ok?"ok":"bad"}">${esc(q.summary_tr||(q.ok?"Sorun yok":"Sorun var"))}</div>`;
+      if((q.fixed||[]).length)h+=`<h5>Düzeltilenler</h5><ul class="clean">${q.fixed.map(v=>`<li>${esc(v)}</li>`).join("")}</ul>`;
+      if((q.problems||[]).length)h+=`<h5>Kalan sorunlar</h5><ul class="clean">${q.problems.map(v=>`<li>${esc(v)}</li>`).join("")}</ul>`;
+      if(d.qa_frames.length)h+=`<h5>Reel kareleri</h5><div class="thumbs">${d.qa_frames.map(s=>`<img src="${file(s)}" data-zoom>`).join("")}</div>`;}
+    const pub=d.publish?.[sel];if(pub?.link)h+=`<h5>Link</h5><a href="${esc(pub.link)}" target="_blank">${esc(pub.link)}</a>`;
+  }
+  if(f==="scan"&&r&&sel==="scout"&&r.candidates?.candidates)h+=`<h5>Sonuç</h5><div class="kv">${r.candidates.candidates.length} aday soldaki listede.</div>`;
+  if(f==="scan"&&sel==="trigger")h+=`<h5>Plan</h5><div class="kv">Her gün ${S.settings.scan_times.join(" ve ")}. Sonraki: <b>${fmtT(S.next_scan)}</b>.<br><span>Bilgisayar o saatte kapalıysa tarama açılışta yapılır.</span></div>`;
+  if(r&&n.status!=="idle"&&!["trigger","choose","approve"].includes(sel)){
+    const log=await api(`/api/log?run=${encodeURIComponent(rid)}&node=${sel}`);
+    h+=`<h5>Log</h5><pre class="log">${esc(log||"(boş)")}</pre>`;
+  }
+  const vid=B.querySelector("video");const same=vid&&h.includes(vid.getAttribute("src"));
+  if(same){ // don't reset a playing video: only swap the rest
+    const tmp=document.createElement("div");tmp.innerHTML=h;tmp.querySelector("video").replaceWith(vid);B.replaceChildren(...tmp.childNodes);
+  } else B.innerHTML=h;
+  const pre=B.querySelector("pre.log");if(pre&&atBottom)pre.scrollTop=pre.scrollHeight;
+  B.querySelectorAll("[data-zoom]").forEach(i=>i.onclick=()=>zoom(i.src));
+  B.querySelectorAll("[data-a]").forEach(b=>b.onclick=async()=>{
+    const a=b.dataset.a;
+    try{
+      if(a==="cancel"){if(confirm("Bu adım durdurulsun mu?"))await api("/api/cancel",{run:rid});}
+      if(a==="retry")await api("/api/retry",{run:rid,node:sel});
+      if(a==="preview")return openApproval(rid);
+      await refresh();
+    }catch(e){toast(e.message)}
+  });
+}
+function zoom(src){$("#lightbox img").src=src;$("#lightbox").classList.add("on")}
+$("#lightbox").onclick=()=>$("#lightbox").classList.remove("on");
+
+/* ---------------- approval ---------------- */
+let apRun=null;
+async function openApproval(rid){
+  apRun=rid;const d=await api("/api/run?id="+encodeURIComponent(rid));const c=d.content_data||{},q=d.qa_result||{};
+  $("#apTitle").textContent=d.title||c.topic||"Önizleme";
+  $("#apState").textContent=`${c.theme||""} teması · ${d.slides.length} slayt · ${c.voice||""}`;
+  $("#apBody").innerHTML=`<div class="apv"><div>
+      ${d.qa_result?`<div class="qa ${q.ok?"ok":"bad"}">Kalite kontrol: ${esc(q.summary_tr||"")}${(q.problems||[]).length?"<br>• "+q.problems.map(esc).join("<br>• "):""}</div>`:""}
+      <div class="strip">${d.slides.map(s=>`<img src="${file(s)}?t=${Date.now()>>14}" data-zoom>`).join("")}</div>
+      <h5 style="font-size:12px;color:var(--muted);margin:14px 0 6px">CAPTION</h5><div class="cap">${esc(c.caption||"")}</div>
+      <h5 style="font-size:12px;color:var(--muted);margin:14px 0 6px">KAYNAKLAR</h5><div class="srcs">${(c.sources||[]).map(u=>`<a href="${esc(u)}" target="_blank">${esc(u)}</a>`).join("<br>")||"—"}</div>
+      ${d.write_result?.verified?.length?`<details style="margin-top:10px;font-size:13px"><summary style="cursor:pointer;color:var(--muted)">Doğrulanan bilgiler (${d.write_result.verified.length})</summary><ul class="clean" style="margin-top:6px">${d.write_result.verified.map(v=>`<li>${esc(v)}</li>`).join("")}</ul></details>`:""}
+    </div><div>${d.reel?`<video src="${file(d.reel)}" controls preload="metadata"></video>`:""}</div></div>`;
+  $("#apBody").querySelectorAll("[data-zoom]").forEach(i=>i.onclick=()=>zoom(i.src));
+  const waiting=d.nodes.approve.status==="waiting";
+  ["#apGo","#apRev","#apRej"].forEach(s=>$(s).disabled=!waiting);
+  $("#revise").classList.remove("on");$("#apModal").classList.add("on");
+}
+const closeAp=()=>{dismissed.add(apRun);$("#apModal").classList.remove("on");$("#apBody").innerHTML=""};
+$("#apClose").onclick=closeAp;
+$("#apGo").onclick=async()=>{if(!confirm("Bu gönderi şimdi Instagram ve Facebook'a paylaşılacak. Emin misin?"))return;
+  try{await api("/api/approve",{run:apRun});closeAp();postId=apRun;await refresh();openNode("upload")}catch(e){toast(e.message)}};
+$("#apRev").onclick=()=>{$("#revise").classList.add("on");$("#revNote").focus()};
+$("#revCancel").onclick=()=>$("#revise").classList.remove("on");
+$("#revSend").onclick=async()=>{const note=$("#revNote").value;
+  try{await api("/api/revise",{run:apRun,note});$("#revNote").value="";closeAp();dismissed.delete(apRun);postId=apRun;await refresh();openNode("write")}catch(e){toast(e.message)}};
+$("#apRej").onclick=async()=>{if(!confirm("Gönderi reddedilsin mi? Paylaşılmayacak."))return;
+  try{await api("/api/reject",{run:apRun});closeAp();await refresh()}catch(e){toast(e.message)}};
+$("#bannerBtn").onclick=()=>{const w=posts().find(p=>p.nodes.approve?.status==="waiting");if(w){postId=w.id;renderAll(true);openApproval(w.id)}};
+
+/* ---------------- settings ---------------- */
+function timeRow(v){const d=document.createElement("div");d.innerHTML=`<input type="time" value="${esc(v)}"><button>Sil</button>`;d.querySelector("button").onclick=()=>d.remove();$("#times").appendChild(d)}
+$("#setBtn").onclick=()=>{$("#times").innerHTML="";S.settings.scan_times.forEach(timeRow);$("#gate").checked=S.settings.approval;$("#setModal").classList.add("on")};
+$("#setClose").onclick=()=>$("#setModal").classList.remove("on");
+$("#addTime").onclick=()=>timeRow("12:00");
+$("#setSave").onclick=async()=>{
+  const times=[...$("#times").querySelectorAll("input")].map(i=>i.value).filter(Boolean);
+  try{await api("/api/settings",{scan_times:times,approval:$("#gate").checked});$("#setModal").classList.remove("on");await refresh()}catch(e){toast(e.message)}};
+$("#scanBtn").onclick=async()=>{try{const r=await api("/api/scan",{});scanId=r.run;tab="cands";await refresh();openNode("collect")}catch(e){toast(e.message)}};
+
+/* ---------------- main loop ---------------- */
+function renderAll(forceSide){
+  const sc=scans(),po=posts();
+  if(!scanId||!runById(scanId))scanId=sc[0]?.id||null;
+  if(!postId||!runById(postId))postId=(po.find(p=>["running","queued","waiting"].includes(p.status))||po[0])?.id||null;
+  $("#scanSel").innerHTML=sc.length?sc.slice(0,12).map(r=>`<option value="${esc(r.id)}" ${r.id===scanId?"selected":""}>${fmtT(r.created)} · ${r.candidates?.candidates?r.candidates.candidates.length+" aday":statusTr(r.status)}</option>`).join(""):`<option>Henüz tarama yok</option>`;
+  $("#postSel").innerHTML=po.length?po.slice(0,20).map(r=>`<option value="${esc(r.id)}" ${r.id===postId?"selected":""}>${{running:"▶",queued:"…",waiting:"⏸",done:"✓",error:"!",rejected:"✕",canceled:"■"}[r.status]||""} ${esc((r.title||r.id).slice(0,60))}</option>`).join(""):`<option>Henüz üretim yok</option>`;
+  $("#nextScan").innerHTML=`Sonraki tarama <b>${fmtT(S.next_scan)}</b>`;
+  $("#gatePill").innerHTML=`Onay: <b>${S.settings.approval?"açık":"kapalı"}</b>`;
+  const wait=po.filter(p=>p.nodes.approve?.status==="waiting");
+  $("#banner").classList.toggle("on",wait.length>0);document.body.classList.toggle("has-banner",wait.length>0);
+  $("#bannerTxt").textContent=wait.length?`⏸ ${wait.length} gönderi onayını bekliyor: ${wait[0].title||""}`:"";
+  const running=sc.some(r=>["running","queued"].includes(r.status));$("#scanBtn").disabled=running;$("#scanBtn").textContent=running?"Taranıyor…":"⟳ Şimdi tara";
+  renderCanvas();renderSide(forceSide);
+  if(sel)renderDrawer();
+  const w=wait.find(p=>!dismissed.has(p.id));if(w&&!$("#apModal").classList.contains("on")){postId=w.id;renderCanvas();openApproval(w.id)}
+}
+async function refresh(){try{S=await api("/api/state");renderAll(false)}catch(e){toast("Studio'ya bağlanılamadı: "+e.message)}}
+refresh();setInterval(refresh,2500);
+</script>
+</body>
+</html>
