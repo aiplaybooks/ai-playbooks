@@ -1,0 +1,182 @@
+{
+  "theme": "adaptive",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Gemini × Live Avatar",
+  "caption": "Google gave Gemini a face. Gemini 3.8 Live with Live Avatar streams real-time, lip-synced video conversations across 97 languages, watermarked with SynthID.\n\nIt's Gemini Enterprise only for now, not the free Gemini app. Save this for the full breakdown.\n\n📷 Photo: Arthur Petron · CC BY-SA 4.0 via Wikimedia Commons\n\n#gemini #google #deepmind #ai #aiavatar #aitools #genai",
+  "sources": [
+    "https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/",
+    "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/"
+  ],
+  "cover": {
+    "headline": "Google just gave Gemini a face. It can now hold a live, lip-synced video call with you:",
+    "em": "a face",
+    "person": "Demis Hassabis",
+    "scene": "A dark video-call screen glowing in a quiet room at night, a soft humanlike silhouette made of light particles mid-conversation, warm rim light on the edges, shallow depth of field, cinematic, no text, no logos, no real people",
+    "photo": {
+      "file": "File:Demis Hassabis, 2024 Nobel Prize Laureate in Chemistry (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Demis_Hassabis,_2024_Nobel_Prize_Laureate_in_Chemistry_(cropped).jpg",
+      "author": "Arthur Petron",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+    }
+  },
+  "design": {
+    "mood": "a quiet late-night video call: a screen glow in a dark room, a face rendered in light, calm cyan-on-charcoal with a warm skin-tone accent for the human side of it",
+    "palette": {
+      "bg": "#0C1013",
+      "bg2": "#12181C",
+      "surface": "#161D22",
+      "ink": "#F2F6F5",
+      "muted": "#93A5A6",
+      "accent": "#3FD6C8",
+      "accent2": "#F2A66B"
+    },
+    "fonts": {
+      "display": "Sora",
+      "body": "Inter",
+      "mono": "JetBrains Mono"
+    },
+    "display": {
+      "weight": 700,
+      "case": "none",
+      "tracking": -2,
+      "scale": 1.0,
+      "italic_em": false
+    },
+    "shape": {
+      "radius": 26,
+      "border": 1.5,
+      "shadow": "glow"
+    },
+    "background": {
+      "pattern": "scanlines",
+      "pattern_opacity": 0.07,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "pill",
+    "prompt": "card",
+    "art": "<svg viewBox='0 0 900 460' xmlns='http://www.w3.org/2000/svg'><rect x='260' y='50' width='380' height='360' rx='28' fill='none' stroke='var(--accent)' stroke-opacity='0.5' stroke-width='3'/><circle cx='450' cy='190' r='70' fill='none' stroke='var(--accent2)' stroke-width='4'/><path d='M370 340 Q450 270 530 340' fill='none' stroke='var(--accent2)' stroke-width='4' stroke-linecap='round'/><path d='M300 90 h40 M560 90 h40 M300 380 h40 M560 380 h40' stroke='var(--muted)' stroke-width='3' stroke-linecap='round'/><g stroke='var(--accent)' stroke-width='6' stroke-linecap='round' stroke-opacity='0.8'><line x1='120' y1='230' x2='120' y2='230'/><line x1='150' y1='210' x2='150' y2='250'/><line x1='180' y1='180' x2='180' y2='280'/><line x1='210' y1='205' x2='210' y2='255'/></g><g stroke='var(--accent)' stroke-width='6' stroke-linecap='round' stroke-opacity='0.8'><line x1='690' y1='230' x2='690' y2='230'/><line x1='720' y1='210' x2='720' y2='250'/><line x1='750' y1='180' x2='750' y2='280'/><line x1='780' y1='205' x2='780' y2='255'/></g><circle cx='620' cy='110' r='6' fill='var(--accent2)'/></svg>",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='5' width='13' height='14' rx='2'/><path d='M16 10l5-3v10l-5-3'/></svg>"
+  },
+  "voice": "am_liam",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "NEW · SEP 24, 2026",
+      "title": "Gemini just got a face you can talk to.",
+      "em": "a face you can talk to",
+      "sub": "Gemini 3.8 Live with Live Avatar: real-time, lip-synced video conversation.",
+      "tools": [
+        "Gemini",
+        "Gemini Enterprise"
+      ],
+      "voiceover": "Google just gave Gemini a live, lip-synced video avatar."
+    },
+    {
+      "type": "facts",
+      "label": "What launched",
+      "title": "Gemini 3.8 Live with Live Avatar",
+      "items": [
+        [
+          "What it does",
+          "Live dialogue + low-latency streaming video"
+        ],
+        [
+          "Lip-sync",
+          "Precise sync, natural expressions, fluid turn-taking"
+        ],
+        [
+          "Speech",
+          "Native multilingual sync across 97 languages"
+        ],
+        [
+          "While talking",
+          "Can fetch data in the background mid-conversation"
+        ],
+        [
+          "Launched",
+          "September 24, 2026"
+        ]
+      ],
+      "voiceover": "It streams live video with precise lip-sync across ninety-seven languages."
+    },
+    {
+      "type": "facts",
+      "label": "Who can use it",
+      "title": "Enterprise, not the free app",
+      "items": [
+        [
+          "Available in",
+          "Gemini Enterprise only"
+        ],
+        [
+          "Access",
+          "Gemini Enterprise console and API docs"
+        ],
+        [
+          "Free Gemini app",
+          "Does not include this feature"
+        ]
+      ],
+      "voiceover": "Right now it's Gemini Enterprise only, not the free Gemini app."
+    },
+    {
+      "type": "list",
+      "label": "Custom avatars",
+      "title": "Build your own avatar",
+      "items": [
+        [
+          "From one reference image",
+          "A high-quality photo becomes the avatar's look"
+        ],
+        [
+          "Access",
+          "Currently enterprise allowlisting only"
+        ]
+      ],
+      "voiceover": "You can even build a custom avatar from a single reference photo."
+    },
+    {
+      "type": "stat",
+      "label": "By the numbers",
+      "value": "97",
+      "title": "languages, speech-to-speech",
+      "sub": "Native multilingual sync, near real time.",
+      "voiceover": "The avatar syncs speech across ninety-seven languages, live."
+    },
+    {
+      "type": "limits",
+      "label": "Built-in safeguards",
+      "title": "Every output is marked as AI",
+      "items": [
+        "SynthID watermark woven into both the audio and the video",
+        "Asynchronous tool calling keeps replies live while it fetches data",
+        "Custom avatar creation needs enterprise allowlisting"
+      ],
+      "cta": "Follow for daily AI tool news",
+      "voiceover": "Every clip carries an invisible SynthID watermark, audio and video both."
+    },
+    {
+      "type": "cta",
+      "title": "Google gave Gemini",
+      "title2": "a face.",
+      "lines": [
+        [
+          "See it",
+          "Gemini Enterprise console and API docs"
+        ],
+        [
+          "Note",
+          "Enterprise-only for now, not the free app"
+        ],
+        [
+          "Follow",
+          "for daily AI tool news"
+        ]
+      ],
+      "voiceover": "That's Gemini's new live avatar, enterprise-only for now."
+    }
+  ]
+}
