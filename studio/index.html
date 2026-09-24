@@ -53,6 +53,10 @@ aside{width:380px;min-width:380px;border-right:1px solid var(--line);background:
 .cand h4 a.ttl{color:var(--text);text-decoration:none;border-bottom:1px dashed #6d6d7c}
 .cand h4 a.ttl:hover{color:#8fb8ff;border-bottom-color:#8fb8ff}
 .cand .more{font-size:12.5px;color:#cfcfda;background:var(--panel2);border-radius:8px;padding:8px 10px;margin:4px 0 8px}
+.tchips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.tchip{font-size:12px;padding:4px 10px;border-radius:99px;background:var(--panel2)}
+.tchip.on{background:#ff6d5a;border-color:#ff6d5a;color:#fff}
+.tchip.zero{opacity:.4}
 .cand .moreBtn{font-size:12px;display:inline-block;margin-bottom:6px}
 .cand p{font-size:13px;color:#cfcfda;margin-bottom:6px}
 .cand .why{color:var(--muted);font-size:12.5px}
@@ -384,7 +388,9 @@ function fit(){
 document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{tab=b.dataset.tab;document.querySelectorAll(".tabs button").forEach(x=>x.classList.toggle("on",x===b));renderSide(true)});
 $("#scanSel").onchange=e=>{scanId=e.target.value;renderAll(true)};
 $("#postSel").onchange=e=>{postId=e.target.value;renderAll(true)};
-let rawCache={};const openMore=new Set();
+let rawCache={};const openMore=new Set();let toolFilter=null;
+const TOOLS=["ChatGPT","Claude","Gemini","Grok","Codex","Cursor","Copilot","Perplexity","Meta AI","Mistral","DeepSeek","Open models"];
+const toolOf=k=>k.tool||(k.tools||[])[0]||"Diğer";
 async function renderSide(force){
   const L=$("#list");
   $("#scanHead").style.display=tab==="hist"?"none":"flex";
@@ -414,9 +420,15 @@ async function renderSide(force){
   const c=sc.candidates||{},list=c.candidates||[];
   if(!list.length){L.innerHTML=`<div class="empty">${sc.status==="error"?"Tarama hata verdi. Kanvasta kırmızı node'a tıklayıp <b>Tekrar dene</b>'ye bas.":"Bu taramada aday yok."}</div>`;return;}
   const chosen=Object.fromEntries((sc.chosen||[]).map(x=>[x.id,x.run]));
-  L.innerHTML=(c.notes_tr?`<div class="note">${esc(c.notes_tr)}</div>`:"")+list.map(k=>`
+  const counts={};list.forEach(k=>{const t=toolOf(k);counts[t]=(counts[t]||0)+1});
+  const names=[...TOOLS.filter(t=>counts[t]||c.coverage),...Object.keys(counts).filter(t=>!TOOLS.includes(t))];
+  if(toolFilter&&!counts[toolFilter])toolFilter=null;
+  const chips=`<div class="tchips"><button class="tchip ${toolFilter?"":"on"}" data-tool="">Tümü ${list.length}</button>${names.map(t=>
+    `<button class="tchip ${toolFilter===t?"on":""} ${counts[t]?"":"zero"}" data-tool="${esc(t)}" ${counts[t]?"":"disabled title='Bu taramada haber yok'"}>${esc(t)} ${counts[t]||0}</button>`).join("")}</div>`;
+  const shown=toolFilter?list.filter(k=>toolOf(k)===toolFilter):list;
+  L.innerHTML=chips+(c.notes_tr?`<div class="note">${esc(c.notes_tr)}</div>`:"")+shown.map(k=>`
    <div class="cand ${chosen[k.id]?"chosen":""}">
-    <div class="top"><span class="score">${esc(k.score)}</span><span class="tag ${k.kind==="news"?"news":""}">${k.kind==="news"?"HABER":"EVERGREEN"}</span>
+    <div class="top"><span class="score">${esc(k.score)}</span><span class="tag ${k.kind==="news"?"news":""}">${k.kind==="news"?"HABER":"EVERGREEN"}</span><span class="chip" style="font-size:11px;padding:0 7px">${esc(toolOf(k))}</span>
       ${k.published?`<span>${esc(k.published)}</span>`:""}${k.seen_before?`<span title="Önceki taramada da listelenmişti">↺ önceden</span>`:""}</div>
     <h4>${(k.sources||[])[0]?`<a class="ttl" href="${esc(k.sources[0])}" target="_blank" title="Resmi kaynağı aç">${esc(k.title)} ↗</a>`:`<a class="ttl" href="#" data-more="${esc(k.id)}" title="Detayı göster">${esc(k.title)} ▾</a>`}</h4><p>${esc(k.summary_tr)}</p>
     <div class="more" id="more-${esc(k.id)}" ${openMore.has(k.id)?"":"hidden"}><b>Gönderi planı:</b> ${esc(k.angle||"—")}${k.published?`<br><b>Tarih:</b> ${esc(k.published)}`:""}${(k.sources||[]).length?"":"<br><i>Bu bir evergreen fikir: belirli bir habere dayanmıyor, içerik yazılırken resmi dokümanlardan doğrulanacak.</i>"}</div>
@@ -432,6 +444,7 @@ async function renderSide(force){
     try{const r=await api("/api/select",{scan:scanId,candidate:k.id});postId=r.run;await refresh();openNode("write");}catch(e){toast(e.message);b.disabled=false}
   });
   L.querySelectorAll("[data-run]").forEach(b=>b.onclick=()=>{postId=b.dataset.run;renderAll(true)});
+  L.querySelectorAll("[data-tool]").forEach(b=>b.onclick=()=>{toolFilter=b.dataset.tool||null;renderSide(true)});
   L.querySelectorAll("[data-more]").forEach(a=>a.onclick=e=>{e.preventDefault();const id=a.dataset.more;
     openMore.has(id)?openMore.delete(id):openMore.add(id);renderSide(true)});
 }
