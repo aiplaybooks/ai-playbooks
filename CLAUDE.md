@@ -123,6 +123,18 @@ Override with env vars `KOKORO_PYTHON` / `KOKORO_HF_HOME`. Read-only use — nev
   Done 2026-09-24: Privacy Policy URL + Data deletion instructions URL set in App settings → Basic
   (both `https://aiplaybooks.github.io/ai-playbooks/privacy.html`). Still missing before publishing: app icon (1024x1024).
 
+## YouTube (Shorts) — set up 2026-09-24
+- Channel **AI Playbooks** @ai-playbooks-daily (UCBGx9BWEshj4Qe7inBbf3vQ). Google Cloud project skilled-mark-509618-e8
+  (number 625929791406), YouTube Data API v3 + YouTube Analytics API, OAuth consent "In production" (unverified is fine
+  for our own use), Desktop client in `client_secret.json` (gitignored). `yt_token.py` → YT_* keys in .env
+  (scopes: youtube.upload, youtube.readonly, yt-analytics.readonly).
+- `publish.py` step `yt_short` (Studio node "YouTube Short"): the Reel as a Short, title = cover title + #Shorts.
+- **Until YouTube's API audit passes, API uploads are locked to private** → owner makes them public in YouTube Studio.
+  Audit form answers + evidence screenshots: output/youtube-audit/ (FORM_CEVAPLARI.md). Submitted: not yet (2026-09-24).
+- Promise in our privacy policy (keep it true when building analytics): YouTube API data is stored only locally,
+  refreshed or deleted at least every 30 days, deleted within 7 days if access is revoked.
+- Site pages on gh-pages: index.html (mentions the YouTube channel), privacy.html, terms.html.
+
 ## GitHub Pages (public media URLs) — done 2026-09-24
 - Served from the orphan branch **`gh-pages`** (root), base URL **https://aiplaybooks.github.io/ai-playbooks/**.
   Contents: `index.html`, `privacy.html` (privacy policy + data deletion section, for publishing the Meta app), `.nojekyll`,
