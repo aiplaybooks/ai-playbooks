@@ -18,7 +18,10 @@ Every day the pipeline should:
 ## Decisions already made (don't re-litigate)
 - **Free only.** No paid SaaS. Rejected: Metricool free plan (20 scheduled posts cap), vidIQ, Make/Zapier (need paid Metricool API). Chosen: direct Instagram Graph API.
 - **Formats:** both carousel and Reel, generated from the same content JSON.
-- **Design must vary**: each post can use a different theme (`themes/*.py`). Build a larger theme pool over time; pick theme by topic or rotate.
+- **Design must vary — per topic** (owner, 2026-09-24): background, symbols, colors, fonts, shapes all come from the
+  news itself. Default theme is `adaptive`: the write step (Claude) art-directs a `design` block per post (palette, font
+  trio from the OFL pool, shape, pattern, label/prompt style, code-drawn SVG cover art + icon). `ledger`/`neon` stay as
+  fixed looks but aren't the default.
 - **Images are code-rendered**, not AI-generated: HTML/CSS template → headless Chromium (Playwright) screenshot. Fonts are open-source (OFL/Inter license) and live in `fonts/`.
 - **Music is generated in code** (`music.py`, procedural lo-fi) → no copyright issues. Optional: a folder of royalty-free tracks (YouTube Audio Library / Pixabay) via `reel.py --music`.
 - **No real people's photos**, no brand logos imitation, no exaggerated/false claims. Financial topics get a "not financial advice" line.
@@ -45,7 +48,11 @@ themes/
   neon.py          dark bg, lime accent, chat-input prompt cards. slide types: cover, prompt, cta
   ledger.py        cream "newspaper/market terminal": serif headlines, mono labels, ticker tape,
                    terminal prompt boxes. slide types: cover, facts, steps, prompt, limits
-fonts/             InterVariable, Fraunces, JetBrainsMono (+ licenses)
+  adaptive.py      DEFAULT. Whole look from the post's `design` block (see its docstring); validates fonts, fixes
+                   low contrast, sanitizes SVG. slide types: cover, facts, steps, prompt, list, compare, stat, limits, cta
+fonts/             OFL pool (+ licenses): Inter, Manrope, DM Sans, Outfit, Sora, Space Grotesk, Unbounded, Syne,
+                   Bricolage Grotesque, Archivo, Anton, Bebas Neue, Fraunces, Playfair Display, DM Serif Display,
+                   Instrument Serif, JetBrains Mono, Space Mono, IBM Plex Mono (from github.com/google/fonts)
 content/           one JSON per post (source of truth)
 output/            generated files (gitignored)
 samples/           reference outputs from the first session (overview PNGs + reels)
@@ -71,13 +78,17 @@ Slide types (a theme supports a subset — see its docstring):
 - `facts` (ledger): label, title, items [[key, value], ...]
 - `steps` (ledger): label, title, steps [[title, detail], ...] (detail containing "mcp." renders as code)
 - `limits` (ledger): label, title, items [..], cta
-- `cta` (neon): title, title2, lines [[verb, text], ...]
+- `cta` (neon, adaptive): title, title2, lines [[verb, text], ...]
+- adaptive only: `list`: label, title, items [[title, detail], ...] · `compare`: label, title, cols [{name, points[]}]
+  (2-3 cols) · `stat`: label, value (big number/word), title, sub. Adaptive `prompt`: label, name, prompt, note.
+  Text in `backticks` renders as code. Top-level `design` block: see themes/adaptive.py docstring.
 
 ## Theme contract (for adding new themes)
 A theme module in `themes/` must export:
 - `render(data) -> list[str]` — one full HTML document per slide, 1080x1350, content wrapped in an element with class `body` (reel.py fades it out between slides).
 - `ACCENT` (progress bar color), `ANIM_SEL` (CSS selector list animated in order), `TYPE_SEL` (element that gets the typewriter effect, or ""), `DRAW_SEL` (element revealed left→right, or ""), `REEL_CSS` (overrides for 1080x1920: bigger type, safe-zone insets, hide swipe hints).
 - `CC_ACTIVE` (caption color of the word being spoken; optional `CC_CSS` to restyle captions `#cc`).
+- optional `configure(data)`: reel.py calls it first so a theme can set ACCENT/CC_ACTIVE/REEL_CSS per post.
   With voice-over, reel.py sets `.wrap` bottom to 540px and puts captions in a band above the IG bottom safe zone.
 Always visually check output (open `contact.png` and a few Reel frames) before calling a theme done.
 

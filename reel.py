@@ -150,6 +150,7 @@ def main():
     ap.add_argument("--speed", type=float); ap.add_argument("--no-voice", action="store_true")
     a = ap.parse_args()
     data, theme = load(a.content, a.theme)
+    if hasattr(theme, "configure"): theme.configure(data)  # per-post colors (adaptive theme)
     out = ROOT / "output" / pathlib.Path(a.content).stem
     frames = out / "frames"; shutil.rmtree(frames, ignore_errors=True); frames.mkdir(parents=True)
 

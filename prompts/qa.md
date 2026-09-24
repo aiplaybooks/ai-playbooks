@@ -9,11 +9,15 @@ Open `output/{name}/contact.png`, every `slide_NN.png` and the sampled Reel fram
 - empty or broken slides, wrong characters (� boxes), placeholder text left in
 - in Reel frames: text inside the Instagram safe zones (top ~190px, bottom ~330px), captions covering content
 - typos, and claims in the slides/caption that go beyond the `sources` of the content JSON
+- design (adaptive theme): does the look fit the topic (its `design.mood`)? Is the cover art clear and on-topic, not
+  a meaningless blob, not overlapping text? Is every text readable against its background? If the art is weak or
+  broken, redraw the SVG in `design.art`; if colors clash, adjust `design.palette`.
 
 ## Fix
 If something is wrong, edit `{content}` (usually shorten a text) and re-render with `python carousel.py {content}`
 and, if the Reel is affected, `python reel.py {content}` (takes ~3 min). Check again. At most 2 fix rounds.
-Don't change the theme or the `voice`.
+Don't change the theme or the `voice`. If only the design changed and not the voiceover texts, you still need to
+re-render the Reel (the voice files are regenerated anyway).
 
 ## Output
 Write `{result}`: `{{"ok": true|false, "fixed": ["what you changed"], "problems": ["what is still wrong"],
