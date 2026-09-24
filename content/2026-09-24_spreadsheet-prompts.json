@@ -1,0 +1,115 @@
+{
+  "theme": "neon",
+  "brand": "AgentDaily",
+  "handle": "@agentdaily",
+  "topic": "Spreadsheets × AI",
+  "caption": "7 prompts that turn ChatGPT, Claude, Gemini or Grok into your spreadsheet assistant. Save this for your next Excel session 📊\n\n#ai #chatgpt #claude #excel #productivity #aitools",
+  "sources": [],
+  "voice": "af_jessica",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "SPREADSHEETS × AI",
+      "title": "7 AI prompts that do your spreadsheet work for you",
+      "em": "7 AI prompts",
+      "sub": "Copy, paste, save hours every week.",
+      "tools": [
+        "ChatGPT",
+        "Claude",
+        "Gemini",
+        "Grok"
+      ],
+      "voiceover": "Here are seven AI prompts that do your spreadsheet work for you."
+    },
+    {
+      "type": "prompt",
+      "tag": "Data cleaning",
+      "name": "The Spreadsheet Fixer",
+      "title": "Turn messy data into a clean table",
+      "sub": "Raw notes, exports or copied web tables become spreadsheet-ready.",
+      "prompt": "Clean up the data below. Remove duplicates, standardize dates to [YYYY-MM-DD], split full names into first and last name, and return it as a table with these columns: [COLUMNS]. Then list every change you made.",
+      "tip": "Send a small sample first and check the result before pasting everything.",
+      "voiceover": "One. Paste in messy data, and get a clean table back."
+    },
+    {
+      "type": "prompt",
+      "tag": "Formulas",
+      "name": "The Formula Writer",
+      "title": "Get the exact formula you need",
+      "sub": "No more searching forums for the right function.",
+      "prompt": "Write an Excel formula that [GOAL]. Column A contains [DATA A] and column B contains [DATA B], starting in row 2. Explain how it works step by step, then give me the Google Sheets version too.",
+      "tip": "Name your columns and the row where the data starts. Precision = correct formulas.",
+      "voiceover": "Two. Describe your goal, and get the exact formula."
+    },
+    {
+      "type": "prompt",
+      "tag": "Debugging",
+      "name": "The Error Detective",
+      "title": "Fix #N/A, #VALUE! and #REF! fast",
+      "sub": "Understand the error instead of guessing.",
+      "prompt": "This formula returns [ERROR]: [PASTE FORMULA]. Here are a few sample rows: [DATA]. Explain why it fails, give me the corrected formula, and tell me how to prevent this error in the future.",
+      "tip": "Always include sample rows. Errors often come from the data, not the formula.",
+      "voiceover": "Three. Share the error and a few rows. It finds what broke."
+    },
+    {
+      "type": "prompt",
+      "tag": "Pivot tables",
+      "name": "The Pivot Planner",
+      "title": "Build the right pivot table first time",
+      "sub": "Start from the question, not from the menu.",
+      "prompt": "My table has these columns: [COLUMNS]. I want to answer this question: [QUESTION]. Tell me exactly how to build the pivot table: what goes in rows, columns, values and filters, and which calculation to use.",
+      "tip": "Ask for 2 alternative layouts, then pick the one that reads best.",
+      "voiceover": "Four. Start with your question, and it plans the pivot table."
+    },
+    {
+      "type": "prompt",
+      "tag": "Charts",
+      "name": "The Chart Picker",
+      "title": "Choose the chart that tells the story",
+      "sub": "The wrong chart hides your best numbers.",
+      "prompt": "Here is my data: [DATA]. I want to show [MESSAGE] to [AUDIENCE]. Which chart type works best and why? Then give me step-by-step instructions to build and format it in [Excel / Google Sheets].",
+      "tip": "Tell it who will see the chart. A CEO and a team lead need different visuals.",
+      "voiceover": "Five. Name your audience, and it picks the right chart."
+    },
+    {
+      "type": "prompt",
+      "tag": "Analysis",
+      "name": "The Insight Finder",
+      "title": "Let AI read your numbers like an analyst",
+      "sub": "Trends, outliers and next steps in plain language.",
+      "prompt": "Analyze this data like a senior analyst. Find the 3 most important trends, flag any unusual values, and suggest what I should investigate next. Use plain language and keep it under 200 words.",
+      "tip": "If your AI tool supports file uploads, attach the spreadsheet directly.",
+      "voiceover": "Six. Let it read your numbers like an analyst."
+    },
+    {
+      "type": "prompt",
+      "tag": "Automation",
+      "name": "The Automation Builder",
+      "title": "Automate the task you repeat every week",
+      "sub": "Macros and scripts, even if you've never coded.",
+      "prompt": "Write a [VBA macro / Google Apps Script] that [TASK]. Comment every step, then tell me exactly where to paste it, how to run it, and how to undo it if something goes wrong.",
+      "tip": "Always test scripts on a copy of your file, never on the original.",
+      "voiceover": "Seven. Automate weekly chores with a macro, even if you've never coded."
+    },
+    {
+      "type": "cta",
+      "title": "Save this post.",
+      "title2": "You'll need it next time.",
+      "lines": [
+        [
+          "Follow",
+          "for daily AI tool tips & news"
+        ],
+        [
+          "Share",
+          "with a coworker who still does this by hand"
+        ],
+        [
+          "Comment",
+          "\"MORE\" for part 2"
+        ]
+      ],
+      "voiceover": "Save this post, and follow for a new AI tip every day."
+    }
+  ]
+}

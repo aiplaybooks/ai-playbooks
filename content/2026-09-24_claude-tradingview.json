@@ -1,0 +1,154 @@
+{
+  "theme": "ledger",
+  "brand": "AgentDaily",
+  "handle": "@agentdaily",
+  "topic": "Claude × TradingView",
+  "window": "claude — tradingview connector",
+  "tape": [
+    [
+      "AI",
+      "connectors",
+      true
+    ],
+    [
+      "MCP",
+      "40+ tools",
+      true
+    ],
+    [
+      "BETA",
+      "delayed data",
+      false
+    ],
+    [
+      "CLAUDE",
+      "all apps + code",
+      true
+    ]
+  ],
+  "caption": "TradingView just launched an official connector for Claude (public beta). Here's the 60-second setup + 6 prompts to try. Not financial advice.\n\n#tradingview #claude #ai #trading #aitools",
+  "sources": [
+    "https://www.tradingview.com/blog/en/tradingview-mcp-server-public-beta-60864/",
+    "https://www.tradingview.com/mcp/docs"
+  ],
+  "voice": "am_eric",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "NEW · SEP 16, 2026",
+      "title": "TradingView is now inside Claude.",
+      "sub": "The official connector just launched. Here's the 60-second setup and 6 prompts to try today.",
+      "em": "inside Claude.",
+      "voiceover": "TradingView just launched an official connector for Claude. Here's how to use it."
+    },
+    {
+      "type": "facts",
+      "label": "What happened",
+      "title": "An official TradingView connector for AI assistants",
+      "items": [
+        [
+          "Status",
+          "Public beta"
+        ],
+        [
+          "Plans",
+          "Essential and above (not trials)"
+        ],
+        [
+          "Works in",
+          "Claude web, desktop, mobile & Claude Code"
+        ],
+        [
+          "Also",
+          "ChatGPT, Codex and other MCP clients"
+        ],
+        [
+          "Tools",
+          "40+ across 9 categories"
+        ]
+      ],
+      "voiceover": "It's in public beta on paid plans, and it works in Claude Code too."
+    },
+    {
+      "type": "steps",
+      "label": "Setup · 60 seconds",
+      "title": "Connect it in 3 steps",
+      "steps": [
+        [
+          "Open Claude settings",
+          "Settings → Connectors → Add custom connector"
+        ],
+        [
+          "Paste the server URL",
+          "mcp.tradingview.com/mcp"
+        ],
+        [
+          "Sign in & approve",
+          "Authorize with your TradingView account. Done."
+        ]
+      ],
+      "voiceover": "Add a custom connector, paste the server URL, and sign in."
+    },
+    {
+      "type": "prompt",
+      "label": "Market data + news",
+      "name": "The Ticker Briefing",
+      "prompt": "Give me a full briefing on [TICKER]: price action over the last 3 months, the latest news headlines, and upcoming earnings or dividend dates. End with the 3 things I should watch this week.",
+      "note": "Uses price history, news and calendar tools together.",
+      "voiceover": "Get a full briefing on any ticker, with news and earnings dates."
+    },
+    {
+      "type": "prompt",
+      "label": "Screener",
+      "name": "The Stock Hunter",
+      "prompt": "Run a screen for [MARKET] stocks with market cap above [X], P/E below [Y] and a positive technical rating. Show the top 10 in a table and explain why each one passed.",
+      "note": "Describe filters in plain language. No screener menus.",
+      "voiceover": "Screen stocks in plain English, no filter menus."
+    },
+    {
+      "type": "prompt",
+      "label": "Filings & transcripts",
+      "name": "The Earnings Prep",
+      "prompt": "[COMPANY] reports soon. Summarize its last earnings call transcript and latest filing: guidance, risks management mentioned, and what analysts will likely focus on.",
+      "note": "Reads 10-Ks, 10-Qs and earnings call transcripts.",
+      "voiceover": "Summarize the last earnings call and the latest filing."
+    },
+    {
+      "type": "prompt",
+      "label": "Watchlists",
+      "name": "The Watchlist Builder",
+      "prompt": "Create a watchlist called [NAME] with the 15 largest companies in the [SECTOR] sector. Then tell me which of them report earnings in the next 30 days.",
+      "note": "It can create and edit your real watchlists.",
+      "voiceover": "Build real watchlists, right from the chat."
+    },
+    {
+      "type": "prompt",
+      "label": "Alerts",
+      "name": "The Alert Setter",
+      "prompt": "Set a price alert on [TICKER] when it crosses [PRICE]. Then list all my active alerts and flag any that look outdated compared to the current price.",
+      "note": "Alert conditions can't be edited, only deleted and recreated.",
+      "voiceover": "Set price alerts, and spot the outdated ones."
+    },
+    {
+      "type": "prompt",
+      "label": "Macro",
+      "name": "The Macro Radar",
+      "prompt": "What are the most important economic events this week? For each one, explain in simple terms how it could move [ASSET] and what surprise would matter most.",
+      "note": "Economic calendar looks ahead about 31 days.",
+      "voiceover": "See this week's key economic events, explained simply."
+    },
+    {
+      "type": "limits",
+      "label": "Know the limits",
+      "title": "Before you rely on it",
+      "items": [
+        "Market data is delayed, not real-time",
+        "Beta: requests are rate-limited",
+        "It reads data and manages lists & alerts. It doesn't place trades",
+        "AI can be wrong. This is not financial advice"
+      ],
+      "cta": "Follow for daily AI tool news",
+      "voiceover": "The data is delayed, and it can't place trades. Not financial advice."
+    }
+  ]
+}
