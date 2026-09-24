@@ -20,7 +20,7 @@ Token values are never printed.
 """
 import sys, os, re, json, time, shutil, pathlib, argparse, subprocess, urllib.request, urllib.parse, urllib.error
 from datetime import datetime, timezone
-from PIL import Image
+from PIL import Image, ImageFilter, ImageEnhance
 
 ROOT = pathlib.Path(__file__).parent.resolve()
 GRAPH = "https://graph.facebook.com/v25.0"
@@ -73,6 +73,25 @@ def api(method, url, params=None, headers=None):
                            f"(code {err.get('code')}, subcode {err.get('error_subcode')})") from None
 
 
+def multipart(url, fields, file_field, path, headers=None):
+    """POST multipart/form-data with one file (for thumbnail uploads)."""
+    b = "----aiplaybooks" + os.urandom(8).hex(); body = b""
+    CRLF = "\r\n"
+    for k, v in fields.items():
+        body += f'--{b}{CRLF}Content-Disposition: form-data; name="{k}"{CRLF}{CRLF}{v}{CRLF}'.encode()
+    body += (f'--{b}{CRLF}Content-Disposition: form-data; name="{file_field}"; filename="{path.name}"{CRLF}'
+             f'Content-Type: image/jpeg{CRLF}{CRLF}').encode() + path.read_bytes() + f"{CRLF}--{b}--{CRLF}".encode()
+    req = urllib.request.Request(url, data=body, method="POST",
+                                 headers={"Content-Type": f"multipart/form-data; boundary={b}", **(headers or {})})
+    try:
+        with urllib.request.urlopen(req, timeout=120) as r: return json.loads(r.read() or b"{}")
+    except urllib.error.HTTPError as ex:
+        body = ex.read() or b"{}"
+        try: err = json.loads(body).get("error", {}); msg = err.get("message") if isinstance(err, dict) else str(err)
+        except ValueError: msg = body[:300].decode("utf-8", "replace")
+        raise PublishError(f"POST {urllib.parse.urlparse(url).path}: {msg}") from None
+
+
 class Post:
     def __init__(self, content):
         self.content = pathlib.Path(content).resolve()
@@ -120,9 +139,22 @@ def prepare(p, dry=False):
         Image.open(f).convert("RGB").save(j, "JPEG", quality=92, optimize=True)
         if j.stat().st_size > 8 * 2**20: raise PublishError(f"{j.name} is over 8 MB")
     shutil.copy2(reel, p.pub / "reel.mp4")
+    make_cover(pngs[0], p.pub / "cover.jpg")
     mb = (p.pub / "reel.mp4").stat().st_size / 2**20
     say(f"prepare: {len(pngs)} slides -> JPEG, reel {mb:.1f} MB, caption {len(cap)} chars")
     if not dry: p.done("prepare", slides=len(pngs))
+
+
+def make_cover(slide, out):
+    """9:16 Reel/Short cover from the carousel's first slide: the slide centered, blurred copy of it above/below."""
+    im = Image.open(slide).convert("RGB"); W, H = 1080, 1920
+    k = max(W / im.width, H / im.height)
+    bg = im.resize((round(im.width * k), round(im.height * k)))
+    bg = bg.crop(((bg.width - W) // 2, (bg.height - H) // 2, (bg.width - W) // 2 + W, (bg.height - H) // 2 + H))
+    bg = ImageEnhance.Brightness(bg.filter(ImageFilter.GaussianBlur(36))).enhance(0.55)
+    fg = im.resize((W, round(im.height * W / im.width)))
+    bg.paste(fg, (0, (H - fg.height) // 2))
+    bg.save(out, "JPEG", quality=92, optimize=True)
 
 
 def git(*args, cwd=ROOT):
@@ -150,7 +182,7 @@ def live(url, size):
 
 def upload(p):
     prepare(p)  # always from the latest render (the Studio calls upload directly, and revisions re-render)
-    files = p.images() + [p.pub / "reel.mp4"]
+    files = p.images() + [p.pub / "reel.mp4", p.pub / "cover.jpg"]
     wt = pages_worktree()
     dest = wt / "media" / p.name
     shutil.rmtree(dest, ignore_errors=True); dest.mkdir(parents=True)
@@ -214,7 +246,7 @@ def ig_reel(p):
     if not cid:
         cid = api("POST", f"{GRAPH}/{ig}/media", {"media_type": "REELS", "video_url": p.url(p.pub / "reel.mp4"),
                                                   "caption": p.data["caption"], "share_to_feed": "true",
-                                                  "access_token": p.token})["id"]
+                                                  "cover_url": p.url(p.pub / "cover.jpg"), "access_token": p.token})["id"]
         p.state["ig_reel_container"] = cid; p.save()
     if not p.state.get("ig_reel_media"):
         say("ig_reel: Instagram is processing the video ...")
@@ -258,10 +290,17 @@ def fb_reel(p):
             raise PublishError(f"Facebook Reel processing failed: {json.dumps(st)}")
         if st.get("publishing_phase", {}).get("status") == "complete": break
         time.sleep(10)
+    cover = "skipped"
+    try:  # custom cover; needs pages_manage_engagement + pages_read_user_content, so it must never fail the step
+        multipart(f"{GRAPH}/{vid}/thumbnails", {"is_preferred": "true", "access_token": p.token}, "source", p.pub / "cover.jpg")
+        cover = "set"
+    except PublishError as ex:
+        cover = f"not set: {str(ex)[:160]}"
+    say(f"fb_reel: cover {cover}")
     link = f"https://www.facebook.com/reel/{vid}"
     state = st.get("publishing_phase", {}).get("status", "unknown")
     say(f"fb_reel: {link} (publishing: {state})")
-    p.done("fb_reel", id=vid, link=link, status=state)
+    p.done("fb_reel", id=vid, link=link, status=state, cover=cover)
 
 
 def yt_access(p):
@@ -309,8 +348,21 @@ def yt_short(p):
                                  headers={"Authorization": f"Bearer {tok}"})
     with urllib.request.urlopen(req, timeout=30) as r: items = json.loads(r.read()).get("items", [])
     privacy = items[0]["status"]["privacyStatus"] if items else "unknown"
+    thumb = p.state.get("yt_thumb")
+    if not thumb:  # custom Shorts covers are limited to Partner Program channels; try, never fail the step
+        try:
+            req = urllib.request.Request(f"https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId={vid}",
+                                         data=(p.pub / "cover.jpg").read_bytes(), method="POST",
+                                         headers={"Authorization": f"Bearer {tok}", "Content-Type": "image/jpeg"})
+            urllib.request.urlopen(req, timeout=120).read(); thumb = "set"
+        except urllib.error.HTTPError as ex:
+            thumb = "not set: " + (ex.read() or b"")[:160].decode("utf-8", "replace").replace("\n", " ")
+        except (urllib.error.URLError, OSError) as ex:
+            thumb = f"not set: {ex}"
+        p.state["yt_thumb"] = thumb; p.save()
+    say(f"yt_short: cover {thumb}")
     link = f"https://youtube.com/shorts/{vid}"
-    p.done("yt_short", id=vid, link=link, privacy=privacy, studio=f"https://studio.youtube.com/video/{vid}/edit")
+    p.done("yt_short", id=vid, link=link, privacy=privacy, cover=thumb, studio=f"https://studio.youtube.com/video/{vid}/edit")
     say(f"yt_short: {link} ({privacy}" + (": YouTube Studio'dan herkese açık yap)" if privacy != "public" else ")"))
 
 

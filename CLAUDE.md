@@ -22,6 +22,11 @@ Every day the pipeline should:
   news itself. Default theme is `adaptive`: the write step (Claude) art-directs a `design` block per post (palette, font
   trio from the OFL pool, shape, pattern, label/prompt style, code-drawn SVG cover art + icon). `ledger`/`neon` stay as
   fixed looks but aren't the default.
+- **Reel/Short cover = the carousel's first slide** (owner, 2026-09-24): publish.py makes `cover.jpg` (9:16, slide centered
+  on a blurred copy) → IG `cover_url`, FB reel thumbnail (needs pages_manage_engagement + pages_read_user_content; skipped
+  until the token has them), YouTube thumbnails.set (works only once the channel may set Shorts covers; never fails the
+  step). reel.py also starts the cover slide fully drawn so the first frame is a clean cover. The owner set the covers of
+  the first (Gemini) post by hand.
 - **Images are code-rendered**, not AI-generated: HTML/CSS template → headless Chromium (Playwright) screenshot. Fonts are open-source (OFL/Inter license) and live in `fonts/`.
 - **Music is generated in code** (`music.py`, procedural lo-fi) → no copyright issues. Optional: a folder of royalty-free tracks (YouTube Audio Library / Pixabay) via `reel.py --music`.
 - **No real people's photos**, no brand logos imitation, no exaggerated/false claims. Financial topics get a "not financial advice" line.

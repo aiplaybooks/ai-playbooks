@@ -51,9 +51,9 @@ function cut(src,n){const dst=src.cloneNode(false);
 const ease=x=>1-Math.pow(1-Math.min(1,Math.max(0,x)),3);
 function holder(el){let p=el; while(p&&!p.dataset.d)p=p.parentElement; return p;}
 window.setT=(t,dur,gp,cps,typeEnd)=>{
-  for(const el of anim){const p=ease((t-el.dataset.d)/0.45);
+  for(const el of anim){const p=ease((t+(window.A0||0)-el.dataset.d)/0.45);
     el.style.opacity=p; el.style.transform=`translateY(${(1-p)*44}px)`;}
-  if(draw){const p=ease((t-0.9)/1.4); draw.style.clipPath=`inset(0 ${(1-p)*100}%% 0 0)`;}
+  if(draw){const p=ease((t+(window.A0||0)-0.9)/1.4); draw.style.clipPath=`inset(0 ${(1-p)*100}%% 0 0)`;}
   if(term){const h=holder(term); const td=(h?parseFloat(h.dataset.d):0.3)+0.45;
     if(typeEnd>0) cps=Math.min(%(maxcps)s,Math.max(cps,total/Math.max(0.5,typeEnd-td)));
     const n=Math.max(0,Math.floor((t-td)*cps));
@@ -181,6 +181,7 @@ def main():
             h = h.replace("Swipe →", "")
             f = out / f"reel_{n:02d}.html"; f.write_text(h, encoding="utf-8")
             pg.goto(f.as_uri()); pg.wait_for_timeout(300)
+            if n == 1: pg.evaluate("window.A0=3")  # cover starts fully drawn: a clean first frame / Shorts thumbnail
             for k in range(int(round(d * FPS))):
                 t = k / FPS
                 pg.evaluate(f"setT({t},{d},{(elapsed + t) / total},{CPS},{type_end})")
