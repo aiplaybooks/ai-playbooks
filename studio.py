@@ -13,7 +13,8 @@ Three workflows:
           publish / revise / reject; can be switched off) -> upload -> ig_carousel -> fb_photos -> yt_short
           -> log (publish_log.jsonl + git commit/push)
     clip  (viral Reel: the owner pastes an X/post link)
-          fetch (yt-dlp) -> hook (Claude watches frames, writes hook + caption) -> frame (clip.py) -> approve
+          fetch (yt-dlp) -> hook (Claude watches frames, writes hook + caption) -> frame (clip.py) -> qa (Claude
+          compares the framed Reel with the source: crop, fit, hook; fixes + re-frames) -> approve
           -> upload -> ig_reel -> fb_reel -> log
 State lives in runs/<run-id>/state.json, logs in runs/<run-id>/<node>.log; a failed node can be retried from the UI.
 Claude steps run `claude -p` (Claude Code headless) with the prompts in prompts/.
@@ -40,7 +41,7 @@ POST = [("write", "Doğrula & yaz", "ai"), ("cover", "Kapak görseli", "code"), 
         ("ig_carousel", "Instagram carousel", "publish"), ("fb_photos", "Facebook gönderi", "publish"),
         ("yt_short", "YouTube Short", "publish"), ("log", "Kayıt & GitHub", "code")]
 CLIP = [("fetch", "Videoyu indir", "code"), ("hook", "Hook & caption", "ai"), ("frame", "Reel çerçevesi", "code"),
-        ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"), ("ig_reel", "Instagram Reel", "publish"),
+        ("qa", "Kalite kontrol", "ai"), ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"), ("ig_reel", "Instagram Reel", "publish"),
         ("fb_reel", "Facebook Reel", "publish"), ("log", "Kayıt & GitHub", "code")]
 FLOWS = {"scan": SCAN, "post": POST, "clip": CLIP}
 
@@ -311,6 +312,7 @@ def reel_frames(run):
 
 
 def n_qa(run):
+    if run.s["kind"] == "clip": return n_clip_qa(run)
     frames = reel_frames(run)
     claude(run, "qa", "qa", content=run.s["content"], name=content_path(run).stem,
            frames=", ".join(frames) or "none", result=f"runs/{run.id}/qa.json")
@@ -398,6 +400,16 @@ def n_hook(run):
     if not data.get("hook") or not data.get("caption"): raise StepError("hook ya da caption eksik")
     run.status(run.s["status"], title=data["hook"])
     return data["hook"][:120]
+
+
+def n_clip_qa(run):
+    out = out_dir(run); qa = run.dir / "qa"
+    claude(run, "qa", "clipqa", content=run.s["content"], out=out.relative_to(ROOT).as_posix(),
+           source_frames=", ".join(run.s["clip"]["frames"]), result=f"runs/{run.id}/qa.json")
+    r = read_json(run.dir / "qa.json")
+    if r is None: raise StepError("qa.json yazılmadı")
+    frames_of(out / "reel.mp4", qa, n=5)  # the preview shows the final version (QA may have re-framed)
+    return "sorun yok" if r.get("ok") else "dikkat: " + "; ".join(r.get("problems", []))[:120]
 
 
 def n_frame(run):
@@ -667,6 +679,8 @@ def run_detail(rid):
         s["slides"] = []
         s["reel"] = f"{rel}/reel.mp4" if (out / "reel.mp4").exists() else None
         s["publish"] = read_json(out / "publish.json", {})
+        s["qa_result"] = read_json(run.dir / "qa.json")
+        s["qa_frames"] = [f"runs/{rid}/qa/{p.name}" for p in sorted((run.dir / "qa").glob("*.jpg"))]
     if s["kind"] == "post":
         name = content_path(run).stem; out = ROOT / "output" / name
         s["content_data"] = read_json(content_path(run)) or read_json(run.dir / content_path(run).name)

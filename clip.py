@@ -8,6 +8,8 @@ A URL (X / Reddit / ...) is fetched with yt-dlp: only for a single post the owne
 `--title` is an optional bold first line above the hook. `--credit` adds a small "Source: @creator on X" line under the clip.
     python clip.py content/clips/<name>.json      (Studio: hook/title/credit/source from the JSON; the clip is
                                                   output/clips/<name>/source.mp4 if already fetched)
+Layout options (CLI or JSON): fit "auto" (default: a tall clip may lose up to 25% top+bottom to fill the space) |
+"contain" (never crop: the whole clip, smaller); crop_pos 0..1 = which part a crop keeps (0 top, 0.5 middle, 1 bottom).
 Output: output/clips/<name>/reel.mp4 (+ header.png, cover.jpg = first frame, meta.json)
 Keeps the clip's own audio (loudness-normalised); max 90 s. Needs ffmpeg + ffprobe on PATH.
 """
@@ -89,10 +91,13 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("src"); ap.add_argument("--hook"); ap.add_argument("--title")
     ap.add_argument("--credit"); ap.add_argument("--name")
+    ap.add_argument("--fit", choices=["auto", "contain"], default="auto"); ap.add_argument("--crop-pos", type=float, default=0.5)
     a = ap.parse_args()
     if a.src.endswith(".json"):
         d = json.loads(pathlib.Path(a.src).read_text(encoding="utf-8"))
         a.name = pathlib.Path(a.src).stem; a.hook = d["hook"]; a.title = d.get("title"); a.credit = d.get("credit")
+        a.fit = d.get("fit") if d.get("fit") in ("auto", "contain") else "auto"
+        a.crop_pos = min(1.0, max(0.0, float(d.get("crop_pos", 0.5))))
         got = [f for f in sorted((ROOT / "output" / "clips" / a.name).glob("source.*")) if f.suffix in VIDEO]
         a.src = str(got[0]) if got else d["source"]
     if not a.hook: ap.error("--hook is required")
@@ -106,10 +111,13 @@ def main():
     y = TOP + hh + 40                                   # clip starts under the header
     room = H - BOTTOM_SAFE - y - (60 if a.credit else 0)
     sw = W; sh = round(vh * W / vw / 2) * 2              # full width ...
-    crop = ""
-    if sh > room:                                        # ... tall clip: grow it so a center crop of <= 25% fills the room
-        sw = min(W, round(room / 0.75 * vw / vh / 2) * 2); sh = round(vh * sw / vw / 2) * 2
-        if sh > room: crop = f",crop={sw}:{room // 2 * 2}"; sh = room // 2 * 2
+    crop = ""; lost = 0.0
+    if sh > room:                                        # ... tall clip: grow it so a crop of <= 25% fills the room
+        keep = 1.0 if a.fit == "contain" else 0.75
+        sw = min(W, round(room / keep * vw / vh / 2) * 2); sh = round(vh * sw / vw / 2) * 2
+        if sh > room:
+            ch = room // 2 * 2; lost = round(1 - ch / sh, 3)
+            crop = f",crop={sw}:{ch}:0:{round((sh - ch) * a.crop_pos)}"; sh = ch
     sx = (W - sw) // 2
     if sh < room: y += (room - sh) // 3                  # short (landscape) clips sit a bit lower, not glued to the text
 
@@ -127,8 +135,12 @@ def main():
             "-movflags", "+faststart", str(out / "reel.mp4")]
     run(cmd)
     run(["ffmpeg", "-y", "-loglevel", "error", "-ss", "0.5", "-i", str(out / "reel.mp4"), "-frames:v", "1", "-q:v", "2", str(out / "cover.jpg")])
+    for i in range(5):  # check frames for the QA step (and for humans)
+        run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{dur * (i + 0.5) / 5:.2f}", "-i", str(out / "reel.mp4"),
+             "-frames:v", "1", "-vf", "scale=540:-2", str(out / f"check_{i + 1}.jpg")])
     (out / "meta.json").write_text(json.dumps({"src": a.src, "hook": a.hook, "title": a.title, "credit": a.credit,
-                                               "secs": round(dur, 2), "clip": [vw, vh]}, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+                                               "secs": round(dur, 2), "clip": [vw, vh], "fit": a.fit, "crop_pos": a.crop_pos,
+                                               "cropped": lost, "shown": [sw, sh], "top": y, "header_h": hh}, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     print("saved", out / "reel.mp4")
 
 

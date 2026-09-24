@@ -288,10 +288,10 @@ const LAYOUT={
     qa:[0,420],approve:[270,420],upload:[540,420],ig_carousel:[810,420],
     fb_photos:[0,610],yt_short:[270,610],log:[540,610]},
   clip:{trigger:[0,40],collect:[270,40],scout:[540,40],choose:[810,40],
-    fetch:[0,230],hook:[270,230],frame:[540,230],approve:[810,230],
-    upload:[0,420],ig_reel:[270,420],fb_reel:[540,420],log:[810,420]}};
+    fetch:[0,230],hook:[270,230],frame:[540,230],qa:[810,230],
+    approve:[0,420],upload:[270,420],ig_reel:[540,420],fb_reel:[810,420],log:[0,610]}};
 const GROUPS={post:[["① Tarama","scan",0,0],["② Carousel üretimi","post",0,190],["③ Kontrol, onay & yayın","pub",0,380]],
-  clip:[["① Tarama","scan",0,0],["② Viral Reel üretimi","post",0,190],["③ Yayın","pub",0,380]]};
+  clip:[["① Tarama","scan",0,0],["② Viral Reel üretimi","post",0,190],["③ Onay & yayın","pub",0,380]]};
 const kind=()=>runById(postId)?.kind==="clip"?"clip":"post";
 const POS=new Proxy({},{get:(_,id)=>LAYOUT[kind()][id]||[0,0]});
 const WW=810+224,WH=610+78;
@@ -341,8 +341,10 @@ function edgePath(a,b){
   const my=(y1+y2)/2+6,r=16;
   return `M${x1},${y1} H${x1+24} Q${x1+24+r},${y1} ${x1+24+r},${y1+r} V${my-r} Q${x1+24+r},${my} ${x1+24},${my} H${x2-24} Q${x2-24-r},${my} ${x2-24-r},${my+r} V${y2-r} Q${x2-24-r},${y2} ${x2-24},${y2} H${x2}`;
 }
+// a carousel run belongs to one scan: while another scan is shown (e.g. a new scan just started) its rows stay empty
+const shownPost=()=>{const po=runById(postId);return po&&po.kind==="post"&&po.scan&&scanId&&po.scan!==scanId?null:po;};
 function nodeState(nid){
-  const r=runById(flowOf(nid)==="scan"?scanId:postId);
+  const r=flowOf(nid)==="scan"?runById(scanId):shownPost();
   return (r&&r.nodes[nid])||{status:"idle"};
 }
 function dur(n){
@@ -351,7 +353,7 @@ function dur(n){
 }
 function subText(nid,n){
   if(n.status==="running")return"Çalışıyor · "+dur(n);
-  if(n.status==="idle")return flowOf(nid)!=="scan"&&!postId?"Seçim bekleniyor":"Bekliyor";
+  if(n.status==="idle")return flowOf(nid)!=="scan"&&!shownPost()?"Seçim bekleniyor":"Bekliyor";
   if(n.status==="done")return(n.msg||"Tamam")+(n.secs>2?" · "+dur(n):"");
   return n.msg||n.status;
 }
@@ -370,12 +372,12 @@ function renderCanvas(){
     el.querySelector("small").textContent=subText(id,n);
     el.title=subText(id,n);
   }
-  const sc=runById(scanId),po=runById(postId);
+  const sc=runById(scanId),po=shownPost();
   document.querySelector('[data-g=scan] span').textContent=sc?`${fmtT(sc.created)} · ${sc.trigger_msg||""}`:"henüz tarama yok";
   document.querySelector('[data-g=post] span').textContent=po?(po.title||""):"soldan bir haber seç ya da Viral sekmesinden link yapıştır";
   document.querySelector('[data-g=pub] span').textContent=po?({done:"paylaşıldı",rejected:"reddedildi"}[po.status]||(S.settings.approval?"onay açık":"onay kapalı")):"";
   const sw=`<span class="fsw">${[["post","🖼️ Carousel akışı"],["clip","🎞 Viral Reel akışı"]].map(([k,l])=>`<button data-flow="${k}" class="${kind()===k?"on":""}">${l}</button>`).join("")}</span>`;
-  $("#runinfo").innerHTML=sw+(po?`Üretim: <b>${esc(po.title||po.id)}</b> · ${statusTr(po.status)}`:"Henüz üretim yok. Soldan bir aday seçince burada canlı akar.");
+  $("#runinfo").innerHTML=sw+(po?`Üretim: <b>${esc(po.title||po.id)}</b> · ${statusTr(po.status)}`:(runById(postId)&&kind()==="post"?"Bu taramadan henüz haber seçilmedi. Soldan bir aday seçince burada canlı akar.":"Henüz üretim yok. Soldan bir aday seçince burada canlı akar."));
   $("#runinfo").querySelectorAll("[data-flow]").forEach(b=>b.onclick=()=>{const r=posts().find(p=>(p.kind==="clip"?"clip":"post")===b.dataset.flow);
     if(!r)return toast(b.dataset.flow==="clip"?"Henüz viral Reel yok: Viral sekmesinden bir link yapıştır.":"Henüz carousel üretimi yok: Adaylar'dan bir haber seç.");
     postId=r.id;sel=null;$("#drawer").classList.remove("on");renderAll(true)});
@@ -402,8 +404,8 @@ function fit(){
 
 /* ---------------- sidebar ---------------- */
 document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{tab=b.dataset.tab;document.querySelectorAll(".tabs button").forEach(x=>x.classList.toggle("on",x===b));renderSide(true)});
-$("#scanSel").onchange=e=>{scanId=e.target.value;renderAll(true)};
-$("#postSel").onchange=e=>{postId=e.target.value;renderAll(true)};
+$("#scanSel").onchange=e=>{scanId=e.target.value;const po=posts().find(p=>p.scan===scanId);if(po)postId=po.id;renderAll(true)};
+$("#postSel").onchange=e=>{postId=e.target.value;const po=runById(postId);if(po?.scan&&runById(po.scan))scanId=po.scan;renderAll(true)};
 let rawCache={};const openMore=new Set();let toolFilter=null;
 const TOOLS=["ChatGPT","Claude","Gemini","Grok","Codex","Cursor","Copilot","Perplexity","Meta AI","Mistral","DeepSeek","Open models"];
 const toolOf=k=>k.tool||(k.tools||[])[0]||"Diğer";
@@ -491,7 +493,7 @@ async function openNode(nid){
 }
 async function renderDrawer(){
   if(!sel)return;
-  const f=flowOf(sel),rid=f==="scan"?scanId:postId,r=runById(rid),n=(r&&r.nodes[sel])||{status:"idle"};
+  const f=flowOf(sel),rid=f==="scan"?scanId:shownPost()?.id,r=rid&&runById(rid),n=(r&&r.nodes[sel])||{status:"idle"};
   const meta=S.flows[f].find(x=>x.id===sel);
   $("#dIco").textContent=ICONS[sel];$("#dTitle").textContent=meta.label;
   const B=$("#dBody"),keepScroll=B.querySelector("pre.log");const atBottom=!keepScroll||keepScroll.scrollTop+keepScroll.clientHeight>=keepScroll.scrollHeight-20;
@@ -530,7 +532,7 @@ async function renderDrawer(){
       h+=`<h5>Sonuç</h5><div class="qa ${q.ok?"ok":"bad"}">${esc(q.summary_tr||(q.ok?"Sorun yok":"Sorun var"))}</div>`;
       if((q.fixed||[]).length)h+=`<h5>Düzeltilenler</h5><ul class="clean">${q.fixed.map(v=>`<li>${esc(v)}</li>`).join("")}</ul>`;
       if((q.problems||[]).length)h+=`<h5>Kalan sorunlar</h5><ul class="clean">${q.problems.map(v=>`<li>${esc(v)}</li>`).join("")}</ul>`;
-      if(d.qa_frames.length)h+=`<h5>Reel kareleri</h5><div class="thumbs">${d.qa_frames.map(s=>`<img src="${file(s)}" data-zoom>`).join("")}</div>`;}
+      if((d.qa_frames||[]).length)h+=`<h5>Reel kareleri</h5><div class="thumbs">${d.qa_frames.map(s=>`<img src="${file(s)}" data-zoom>`).join("")}</div>`;}
     const pub=d.publish?.[sel];if(pub?.link)h+=`<h5>Link</h5><a href="${esc(pub.link)}" target="_blank">${esc(pub.link)}</a>`;
     if(sel==="yt_short"&&pub?.privacy&&pub.privacy!=="public")h+=`<div class="qa bad" style="margin-top:10px">YouTube bu videoyu <b>${esc(pub.privacy)}</b> tuttu (API projesi henüz YouTube incelemesinden geçmedi). <a href="${esc(pub.studio)}" target="_blank">YouTube Studio'da aç</a> → Görünürlük → Herkese açık.</div>`;
   }
@@ -567,6 +569,7 @@ async function openApproval(rid){
   if(d.kind==="clip"){
     $("#apState").textContent=`Viral Reel · ${d.clip?.secs||""} sn · kaynak @${d.clip?.uploader_id||""}`;
     $("#apBody").innerHTML=`<div class="apv"><div>
+      ${d.qa_result?`<div class="qa ${d.qa_result.ok?"ok":"bad"}" style="margin-bottom:10px">Kalite kontrol: ${esc(d.qa_result.summary_tr||"")}${(d.qa_result.fixed||[]).length?"<br>Düzeltilen: "+d.qa_result.fixed.map(esc).join("; "):""}${(d.qa_result.problems||[]).length?"<br>• "+d.qa_result.problems.map(esc).join("<br>• "):""}</div>`:""}
       <div class="qa bad" style="margin-bottom:10px">Bu video başkasına ait. Kaynak gösteriliyor ama bu izin yerine geçmez; mümkünse üreticiden izin al.</div>
       <h5 style="font-size:12px;color:var(--muted);margin:4px 0 6px">HOOK</h5><div class="kv">${c.title?`<b>${esc(c.title)}</b><br>`:""}${esc(c.hook||"")}</div>
       <h5 style="font-size:12px;color:var(--muted);margin:14px 0 6px">CAPTION</h5><div class="cap">${esc(c.caption||"")}</div>
