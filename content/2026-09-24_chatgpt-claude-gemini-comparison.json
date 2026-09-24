@@ -1,0 +1,121 @@
+{
+  "theme": "adaptive",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "ChatGPT vs Claude vs Gemini",
+  "caption": "ChatGPT, Claude and Gemini each have one thing they're genuinely best at. Here's a task-by-task pick, plus one prompt to try for each.\n\nSave this for your next \"which AI should I use\" moment.\n\n#chatgpt #claude #gemini #ai #aitools #productivity",
+  "sources": [
+    "https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt",
+    "https://help.openai.com/en/articles/10500283-deep-research-in-chatgpt",
+    "https://claude.com/product/claude-code",
+    "https://gemini.google/overview/deep-research/"
+  ],
+  "design": {
+    "mood": "a clean decision board in daylight: three signposts branching from one point, crisp paper background",
+    "palette": {
+      "bg": "#F4F1EA",
+      "bg2": "#EAE4D6",
+      "surface": "#FFFFFF",
+      "ink": "#1C1B18",
+      "muted": "#6B675C",
+      "accent": "#3457D5",
+      "accent2": "#E8792F"
+    },
+    "fonts": {"display": "Archivo", "body": "Inter", "mono": "IBM Plex Mono"},
+    "display": {"weight": 800, "case": "none", "tracking": -2, "scale": 1.0, "italic_em": false},
+    "shape": {"radius": 20, "border": 2, "shadow": "hard"},
+    "background": {"pattern": "grid", "pattern_opacity": 0.06, "glow": false, "gradient": true},
+    "label": "bar",
+    "prompt": "card",
+    "art": "<svg viewBox='0 0 900 460' xmlns='http://www.w3.org/2000/svg'><circle cx='150' cy='230' r='26' fill='var(--ink)'/><line x1='176' y1='226' x2='430' y2='100' stroke='var(--accent)' stroke-width='10' stroke-linecap='round'/><line x1='176' y1='230' x2='430' y2='230' stroke='var(--accent2)' stroke-width='10' stroke-linecap='round'/><line x1='176' y1='234' x2='430' y2='360' stroke='var(--muted)' stroke-width='10' stroke-linecap='round'/><circle cx='460' cy='100' r='34' fill='var(--accent)'/><circle cx='460' cy='230' r='34' fill='var(--accent2)'/><circle cx='460' cy='360' r='34' fill='var(--surface)' stroke='var(--ink)' stroke-width='6'/><line x1='494' y1='100' x2='760' y2='100' stroke='var(--accent)' stroke-width='6' stroke-dasharray='2 14' stroke-linecap='round'/><line x1='494' y1='230' x2='760' y2='230' stroke='var(--accent2)' stroke-width='6' stroke-dasharray='2 14' stroke-linecap='round'/><line x1='494' y1='360' x2='760' y2='360' stroke='var(--muted)' stroke-width='6' stroke-dasharray='2 14' stroke-linecap='round'/></svg>",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 3v18'/><path d='M12 7h5l-1.8 2L17 11h-5'/><path d='M12 13H7l1.8-2L7 9h5'/></svg>"
+  },
+  "voice": "af_sarah",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "GUIDE",
+      "title": "ChatGPT vs Claude vs Gemini: which one for which task?",
+      "em": "which one",
+      "sub": "A quick task-by-task pick, plus one prompt to try for each.",
+      "tools": ["ChatGPT", "Claude", "Gemini"],
+      "voiceover": "ChatGPT, Claude and Gemini each have one thing they do best. Here's how to pick."
+    },
+    {
+      "type": "compare",
+      "label": "Quick pick",
+      "title": "Three tools, three strengths",
+      "cols": [
+        {
+          "name": "ChatGPT",
+          "points": [
+            "Data analysis: upload a file, it writes and runs the Python",
+            "Deep research: agentic, cited reports"
+          ]
+        },
+        {
+          "name": "Claude",
+          "points": [
+            "Claude Code: an agentic coding tool for real codebases",
+            "Runs in your terminal, IDE, desktop or browser"
+          ]
+        },
+        {
+          "name": "Gemini",
+          "points": [
+            "Deep Research: 1M-token context window plus web search",
+            "Can also search your Gmail, Drive and Chat"
+          ]
+        }
+      ],
+      "voiceover": "ChatGPT crunches your data, Claude ships code, Gemini digs through research and your files."
+    },
+    {
+      "type": "prompt",
+      "label": "ChatGPT · Data analysis",
+      "name": "The Analyst",
+      "prompt": "Analyze this dataset: clean and merge the columns, summarize the key trends, and build a chart of [METRIC] over [TIME PERIOD].",
+      "note": "Upload a file first — ChatGPT writes and runs the Python for you.",
+      "voiceover": "Upload a file and ChatGPT writes the Python to analyze it for you."
+    },
+    {
+      "type": "prompt",
+      "label": "Claude · Claude Code",
+      "name": "The Coding Agent",
+      "prompt": "Find the bug causing [ISSUE] in this codebase, write a test that reproduces it, then fix it and open a pull request.",
+      "note": "Works from your terminal, IDE, desktop app or claude.ai/code on your real repo.",
+      "voiceover": "Claude Code works right in your terminal to find bugs and open pull requests."
+    },
+    {
+      "type": "prompt",
+      "label": "Gemini · Deep Research",
+      "name": "The Researcher",
+      "prompt": "Research [TOPIC]: compare the leading approaches, cite your sources, and cross-check against the files in my Drive.",
+      "note": "Runs a multi-step research pass with a 1M-token context window.",
+      "voiceover": "Gemini's Deep Research runs a million-token pass across the web and your Drive."
+    },
+    {
+      "type": "list",
+      "label": "Rule of thumb",
+      "title": "When in doubt, default to this",
+      "items": [
+        ["Crunching a spreadsheet", "ChatGPT's data analysis writes the Python for you"],
+        ["Shipping real code", "Claude Code works directly in your terminal or repo"],
+        ["Research across your own files", "Gemini Deep Research can search Gmail, Drive and Chat"]
+      ],
+      "voiceover": "Pick ChatGPT for spreadsheets, Claude Code for real repos, Gemini for deep research."
+    },
+    {
+      "type": "limits",
+      "label": "Keep in mind",
+      "title": "None of this is fixed",
+      "items": [
+        "All three ship new features constantly — check what your plan includes",
+        "Deep research tools run multi-step passes, not instant answers",
+        "Claude Code needs your own dev setup to actually ship the code"
+      ],
+      "cta": "Follow for daily AI tool comparisons",
+      "voiceover": "All three change fast, so check your plan — and follow for more comparisons."
+    }
+  ]
+}
