@@ -1,0 +1,111 @@
+{
+  "theme": "adaptive",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Gemini × Voice Cloning",
+  "caption": "Gemini can now clone a voice from a 30-second sample. Google just launched Gemini 3.8 Flash TTS and Flash-Lite TTS: 2,000+ voices, 100+ languages, built-in consent checks. Here's how to try it in AI Studio + 4 prompts.\n\n#gemini #google #ai #texttospeech #voicecloning #aitools",
+  "sources": [
+    "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/",
+    "https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/"
+  ],
+  "voice": "am_adam",
+  "design": {
+    "mood": "late-night recording booth: a glowing voice waveform pulsing in the dark, warm mic-amber against deep indigo",
+    "palette": {
+      "bg": "#0B0A16",
+      "bg2": "#181229",
+      "surface": "#1C1730",
+      "ink": "#F6F2FF",
+      "muted": "#AA9FCB",
+      "accent": "#FF7A45",
+      "accent2": "#33E6C2"
+    },
+    "fonts": {"display": "Unbounded", "body": "Inter", "mono": "JetBrains Mono"},
+    "display": {"weight": 700, "case": "none", "tracking": -2, "scale": 1.0, "italic_em": false},
+    "shape": {"radius": 32, "border": 1.5, "shadow": "glow"},
+    "background": {"pattern": "waves", "pattern_opacity": 0.1, "glow": true, "gradient": true},
+    "label": "pill",
+    "prompt": "card",
+    "art": "<svg viewBox='0 0 900 460' xmlns='http://www.w3.org/2000/svg'><circle cx='450' cy='230' r='150' fill='none' stroke='var(--accent2)' stroke-opacity='0.35' stroke-width='2'/><circle cx='450' cy='230' r='190' fill='none' stroke='var(--accent2)' stroke-opacity='0.2' stroke-width='2'/><g stroke='var(--accent)' stroke-width='16' stroke-linecap='round'><line x1='90' y1='230' x2='90' y2='230'/><line x1='130' y1='200' x2='130' y2='260'/><line x1='170' y1='160' x2='170' y2='300'/><line x1='210' y1='190' x2='210' y2='270'/><line x1='250' y1='120' x2='250' y2='340'/><line x1='290' y1='170' x2='290' y2='290'/><line x1='330' y1='90' x2='330' y2='370'/><line x1='370' y1='150' x2='370' y2='310'/><line x1='410' y1='60' x2='410' y2='400'/></g><g stroke='var(--accent2)' stroke-width='16' stroke-linecap='round'><line x1='450' y1='40' x2='450' y2='420'/><line x1='490' y1='60' x2='490' y2='400'/><line x1='530' y1='150' x2='530' y2='310'/><line x1='570' y1='90' x2='570' y2='370'/><line x1='610' y1='170' x2='610' y2='290'/><line x1='650' y1='120' x2='650' y2='340'/><line x1='690' y1='190' x2='690' y2='270'/><line x1='730' y1='160' x2='730' y2='300'/><line x1='770' y1='200' x2='770' y2='260'/><line x1='810' y1='230' x2='810' y2='230'/></g></svg>",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Z'/><path d='M19 11a7 7 0 0 1-14 0'/><path d='M12 18v3'/></svg>"
+  },
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "NEW · SEP 23, 2026",
+      "title": "Gemini can clone your voice.",
+      "em": "clone your voice.",
+      "sub": "Gemini 3.8 TTS: 2,000+ voices, 30-sec cloning.",
+      "tools": ["Gemini", "Google AI Studio"],
+      "voiceover": "Google just launched Gemini 3.8 TTS, and it can clone your voice."
+    },
+    {
+      "type": "facts",
+      "label": "What launched",
+      "title": "Two new text-to-speech models",
+      "items": [
+        ["Models", "Gemini 3.8 Flash TTS + Flash-Lite TTS"],
+        ["Voices", "2,000+ built in"],
+        ["Cloning", "From a 30-second audio sample"],
+        ["Languages", "100+ languages and dialects"],
+        ["Access", "Google AI Studio & Gemini API, now"]
+      ],
+      "voiceover": "Two models: Flash for creative work, Flash-Lite for high-volume use."
+    },
+    {
+      "type": "steps",
+      "label": "Try it · AI Studio",
+      "title": "Clone a voice in 3 steps",
+      "steps": [
+        ["Open Google AI Studio", "Pick the Gemini 3.8 Flash TTS model"],
+        ["Record consent", "A verbal consent clip from the voice owner is required"],
+        ["Upload the 30-second sample", "Generate speech in that voice"]
+      ],
+      "voiceover": "In AI Studio, record consent first, then upload a 30-second sample."
+    },
+    {
+      "type": "prompt",
+      "label": "Narration",
+      "name": "The Narrator",
+      "prompt": "Read the following script in a warm, calm, documentary-narrator voice, pausing naturally between sentences: [SCRIPT]",
+      "note": "Works with any of the 2,000+ built-in voices.",
+      "voiceover": "First, narrate a script in a warm documentary voice."
+    },
+    {
+      "type": "prompt",
+      "label": "Custom voice",
+      "name": "The Voice Clone",
+      "prompt": "Using my uploaded voice sample, say: [TEXT]. Keep the tone conversational and match my natural pace.",
+      "note": "Needs a 30-second sample plus a verbal consent recording.",
+      "voiceover": "Second, clone your own voice from a 30-second sample and consent clip."
+    },
+    {
+      "type": "prompt",
+      "label": "Multilingual",
+      "name": "The Translator",
+      "prompt": "Say this in [LANGUAGE] using a natural [REGIONAL ACCENT, e.g. Mexican Spanish] accent: [TEXT]",
+      "note": "Covers 100+ languages and regional dialects.",
+      "voiceover": "Third, generate the same line across a hundred-plus languages."
+    },
+    {
+      "type": "prompt",
+      "label": "Multi-character",
+      "name": "The Dialogue Builder",
+      "prompt": "Generate a conversation between [CHARACTER A] and [CHARACTER B] with distinct voices. [CHARACTER A] sounds [TRAIT], [CHARACTER B] sounds [TRAIT]. Script: [DIALOGUE]",
+      "note": "Assign a different voice and delivery style to each character.",
+      "voiceover": "Fourth, build a full dialogue with a different voice per character."
+    },
+    {
+      "type": "limits",
+      "label": "Know the limits",
+      "title": "Before you clone a voice",
+      "items": [
+        "Requires a verbal consent recording from the voice owner",
+        "Not available yet in the EEA, UK, Switzerland, Illinois, Texas or India",
+        "Every generated clip carries a SynthID watermark"
+      ],
+      "cta": "Follow for daily AI tool news",
+      "voiceover": "Consent is mandatory, and it's not available everywhere yet."
+    }
+  ]
+}
