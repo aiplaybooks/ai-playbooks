@@ -92,6 +92,17 @@ with `HF_HOME=<app>/cache/HF_HOME`, `HF_HUB_OFFLINE=1` and `CUDA_HOME=E:\pinokio
 (transformers imports deepspeed, which crashes without CUDA_HOME; the `LNK1181 aio.lib/cufile.lib` lines it prints are harmless).
 Override with env vars `KOKORO_PYTHON` / `KOKORO_HF_HOME`. Read-only use — never modify Pinokio folders.
 
+## Meta (Instagram + Facebook) setup — done 2026-09-24
+- Meta app **AI Playbooks Publisher** (App ID 1451989886792783), Business type, **Unpublished** (development mode).
+  Use cases: Instagram (API setup with *Facebook login*), Manage everything on your Page (+ Messenger, unused).
+  Facebook Login for Business configuration "Publisher" (916780787888379) — needed for Graph API Explorer user tokens.
+- Facebook Page "AI Playbooks" id 1283376908201081; Instagram @aiplaybooks.daily (IG user id 17841424416174844). IG quota: 100 posts / 24h.
+- `meta_token.py`: short-lived Explorer user token (in .env) → never-expiring Page token. `.env` (gitignored) holds
+  META_APP_ID, META_APP_SECRET, META_PAGE_TOKEN, FB_PAGE_ID, IG_USER_ID. GitHub Secrets: META_PAGE_TOKEN, FB_PAGE_ID, IG_USER_ID.
+  Never print or commit token values. If the token dies (password change, permissions removed): new Explorer token → rerun meta_token.py → `gh secret set`.
+- Likely gotcha: Facebook posts made by an app in development mode may be visible only to app role users → the app
+  probably has to be **published** (needs privacy policy URL, category, icon; host the policy on GitHub Pages).
+
 ## Next steps (in order — owner's priority, 2026-09-24)
 1. ~~Voice-over with Kokoro~~ — done. ~~News sources + collector~~ — done (`news.py`, `sources.json`).
    Tiers: `official` can back a claim; `signal` (Simon Willison) and `community` (Hacker News) are hints only.
