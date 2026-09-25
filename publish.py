@@ -15,6 +15,10 @@ META_PAGE_TOKEN, FB_PAGE_ID, IG_USER_ID in .env
     fb_reel      Facebook Page Reel: video_reels start -> rupload from the public URL -> finish
     yt_short     YouTube Short: resumable upload of the Reel (YouTube Data API v3). Until the API project passes
                  YouTube's audit, YouTube keeps API uploads private: then make it public in YouTube Studio.
+    comments     the content JSON's optional `comments` list (e.g. the prompts of a clip), posted in order as our own
+                 first comments under every IG / FB post of this run. Needs instagram_manage_comments +
+                 pages_manage_engagement: `prepare` checks that before anything is posted, so a post never goes out
+                 without its comments.
     log          appends the post to publish_log.jsonl
 Viral clip Reels (content/clips/<name>.json, "kind": "clip", made by clip.py in output/clips/<name>/): steps
 prepare, upload, ig_reel, fb_reel, log; cover = the framed clip's first frame.
@@ -31,7 +35,7 @@ RUPLOAD = "https://rupload.facebook.com/video-upload/v25.0"
 PAGES_URL = "https://aiplaybooks.github.io/ai-playbooks"
 PAGES_DIR = ROOT / ".pages"  # git worktree of the gh-pages branch (gitignored)
 LOG = ROOT / "publish_log.jsonl"
-STEPS = ["prepare", "upload", "ig_carousel", "ig_reel", "fb_photos", "fb_reel", "yt_short", "log"]
+STEPS = ["prepare", "upload", "ig_carousel", "ig_reel", "fb_photos", "fb_reel", "yt_short", "comments", "log"]
 POSTS = ["ig_carousel", "ig_reel", "fb_photos", "fb_reel", "yt_short"]
 
 
@@ -137,6 +141,7 @@ def prepare(p, dry=False):
     if not cap.strip(): raise PublishError("caption is empty")
     if len(cap) > 2200: raise PublishError(f"caption is {len(cap)} characters (Instagram max 2200)")
     if cap.count("#") > 30: raise PublishError(f"caption has {cap.count('#')} hashtags (Instagram max 30)")
+    check_comments(p)
     shutil.rmtree(p.pub, ignore_errors=True); p.pub.mkdir(parents=True)
     for f in pngs:
         j = p.pub / (f.stem + ".jpg")
@@ -149,6 +154,24 @@ def prepare(p, dry=False):
     mb = (p.pub / "reel.mp4").stat().st_size / 2**20 if reel.exists() else 0
     say(f"prepare: {len(pngs)} slides -> JPEG, reel {f'{mb:.1f} MB' if mb else 'none'}, caption {len(cap)} chars")
     if not dry: p.done("prepare", slides=len(pngs))
+
+
+COMMENT_PERMS = {"instagram_manage_comments", "pages_manage_engagement"}
+
+
+def check_comments(p):
+    """Comments to post: each non-empty and within Instagram's 2200 characters, and the token allowed to comment."""
+    cs = p.data.get("comments") or []
+    if not cs: return
+    if not isinstance(cs, list) or not all(isinstance(c, str) and c.strip() for c in cs):
+        raise PublishError("`comments` must be a list of non-empty strings")
+    if long := [i + 1 for i, c in enumerate(cs) if len(c) > 2200]:
+        raise PublishError(f"comment {long} is over 2200 characters (Instagram max)")
+    d = api("GET", f"{GRAPH}/debug_token", {"input_token": p.token,
+                                             "access_token": f"{p.env['META_APP_ID']}|{p.env['META_APP_SECRET']}"})["data"]
+    if missing := COMMENT_PERMS - set(d.get("scopes", [])):
+        raise PublishError(f"this post has {len(cs)} comment(s) but the Meta token lacks {', '.join(sorted(missing))}: "
+                           "add the permission in Graph API Explorer, run meta_token.py again, then retry")
 
 
 def make_cover(slide, out):
@@ -370,6 +393,22 @@ def yt_short(p):
     link = f"https://youtube.com/shorts/{vid}"
     p.done("yt_short", id=vid, link=link, privacy=privacy, cover=thumb, studio=f"https://studio.youtube.com/video/{vid}/edit")
     say(f"yt_short: {link} ({privacy}" + (": YouTube Studio'dan herkese açık yap)" if privacy != "public" else ")"))
+
+
+def comments(p):
+    cs = [c.strip() for c in p.data.get("comments") or []]
+    if not cs:
+        say("comments: none in the content JSON"); p.done("comments", count=0); return
+    targets = [(s, p.state[s]["id"]) for s in ("ig_carousel", "ig_reel", "fb_photos", "fb_reel") if p.state.get(s, {}).get("id")]
+    posted = p.state.setdefault("comment_ids", {})
+    for step, obj in targets:
+        for i, c in enumerate(cs):
+            key = f"{step}:{i}"
+            if key in posted: continue
+            posted[key] = api("POST", f"{GRAPH}/{obj}/comments", {"message": c, "access_token": p.token})["id"]
+            p.save()  # one by one: a retry never posts the same comment twice
+        say(f"comments: {len(cs)} under {step}")
+    p.done("comments", count=len(cs), targets=[s for s, _ in targets])
 
 
 def log(p):

@@ -174,7 +174,7 @@ ul.clean li{margin-bottom:4px}
 .toast.on{display:block}
 .times{display:flex;flex-direction:column;gap:8px}
 .times div{display:flex;gap:8px}
-.tcards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px}
+.tcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:18px}
 .tcard{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:11px 13px}
 .tcard small{display:block;font-size:11.5px;color:var(--muted)}
 .tcard b{font-size:20px;font-weight:750;letter-spacing:-.3px}
@@ -280,7 +280,7 @@ table.tt td.p{text-align:right;color:var(--muted);width:48px;font-variant-numeri
 <div class="toast" id="toast"></div>
 
 <script>
-const ICONS={trigger:"⏰",collect:"📰",scout:"🧠",choose:"👤",write:"✍️",cover:"🧑‍💼",carousel:"🖼️",reel:"🎬",qa:"👁️",approve:"✅",
+const ICONS={comments:"💬",trigger:"⏰",collect:"📰",scout:"🧠",choose:"👤",write:"✍️",cover:"🧑‍💼",carousel:"🖼️",reel:"🎬",qa:"👁️",approve:"✅",
   upload:"☁️",ig_carousel:"📸",ig_reel:"🎞️",fb_photos:"📘",fb_reel:"📘",yt_short:"▶️",log:"📒",fetch:"⬇️",hook:"🪝",frame:"🎬"};
 const LAYOUT={
   post:{trigger:[0,40],collect:[270,40],scout:[540,40],choose:[810,40],
@@ -615,48 +615,46 @@ $("#setSave").onclick=async()=>{
 $("#scanBtn").onclick=async()=>{try{const r=await api("/api/scan",{});scanId=r.run;tab="cands";await refresh();openNode("collect")}catch(e){toast(e.message)}};
 
 /* ---------------- timings ---------------- */
-const PH={scan:["Tarama","var(--trigger)"],wait:["Senin bekleme süren","var(--human)"],production:["Üretim","var(--ai)"],publish:["Yayın","var(--publish)"]};
+const PH={scan:["Tarama","var(--trigger)"],production:["Üretim","var(--ai)"],publish:["Yayın","var(--publish)"]};
 const PHASE={trigger:"scan",collect:"scan",scout:"scan",choose:"wait",write:"production",cover:"production",fetch:"production",hook:"production",frame:"production",carousel:"production",reel:"production",qa:"production",
-  approve:"wait",upload:"publish",ig_carousel:"publish",ig_reel:"publish",fb_photos:"publish",fb_reel:"publish",yt_short:"publish",log:"publish"};
+  approve:"wait",upload:"publish",ig_carousel:"publish",ig_reel:"publish",fb_photos:"publish",fb_reel:"publish",yt_short:"publish",comments:"publish",log:"publish"};
 const secsOf=t=>t.started?Math.max(0,((t.ended?new Date(t.ended):new Date())-new Date(t.started))/1000):0;
 function hms(s){s=Math.round(s);if(s<60)return s+" sn";const m=Math.floor(s/60),r=s%60;if(m<60)return m+" dk "+String(r).padStart(2,"0")+" sn";
   return Math.floor(m/60)+" sa "+String(m%60).padStart(2,"0")+" dk";}
 function timingRows(){
-  const po=runById(postId),sc=po?runById(po.scan):runById(scanId),rows=[];let first=null,last=null;
+  const po=runById(postId),sc=po?runById(po.scan):runById(scanId),rows=[];
   for(const [r,f] of [[po?.kind==="clip"?null:sc,"scan"],[po,po?.kind||"post"]]) if(r) for(const m of S.flows[f]){
+    if(PHASE[m.id]==="wait")continue;  // the owner's picking/approval time is not the system's time
     const n=r.nodes[m.id]||{status:"idle"},tries=[...(n.attempts||[]),...(n.started?[n]:[])];
-    for(const t of tries){if(!t.started)continue;const e=t.ended||new Date().toISOString();
-      if(!first||t.started<first)first=t.started;if(!last||new Date(e)>new Date(last))last=e;}
     rows.push({id:m.id,label:m.label,phase:PHASE[m.id],secs:tries.reduce((a,t)=>a+secsOf(t),0),tries:tries.length,status:n.status});
   }
-  return {po,sc,rows,wall:first?(new Date(last)-new Date(first))/1000:0};
+  return {po,sc,rows};
 }
 function renderTimings(){
-  const {po,sc,rows,wall}=timingRows();
+  const {po,sc,rows}=timingRows();
   $("#tmTitle").textContent="Süre dökümü"+(po?" · "+(po.title||""):sc?" · tarama "+fmtT(sc.created):"");
   if(!rows.length){$("#tmBody").innerHTML=`<div class="empty">Henüz ölçülecek bir iş yok.</div>`;return;}
   const tot=k=>rows.filter(r=>r.phase===k).reduce((a,r)=>a+r.secs,0);
-  const machine=tot("scan")+tot("production")+tot("publish"),max=Math.max(...rows.map(r=>r.secs),1);
-  const live=rows.some(r=>r.status==="running"||r.status==="waiting");
+  const total=tot("scan")+tot("production")+tot("publish"),max=Math.max(...rows.map(r=>r.secs),1);
+  const pct=s=>total?Math.round(s*100/total):0;
+  const live=rows.some(r=>r.status==="running");
   let h=`<div class="tcards">
-    <div class="tcard main"><small>Toplam (baştan sona)</small><b>${hms(wall)}</b></div>
-    <div class="tcard"><small>Makine süresi</small><b>${hms(machine)}</b></div>
-    <div class="tcard"><small>Senin bekleme süren</small><b>${hms(tot("wait"))}</b></div>
+    <div class="tcard main"><small>Sistem süresi (toplam)</small><b>${hms(total)}</b></div>
+    ${Object.keys(PH).filter(ph=>rows.some(r=>r.phase===ph)).map(ph=>`<div class="tcard"><small>${PH[ph][0]}</small><b>${hms(tot(ph))}</b></div>`).join("")}
     <div class="tcard"><small>Durum</small><b style="font-size:15px">${po?statusTr(po.status):statusTr(sc.status)}${live?' <span class="spin"></span>':""}</b></div></div>
    <table class="tt">`;
-  for(const ph of ["scan","wait","production","publish"]){
+  for(const ph of Object.keys(PH)){
     const rs=rows.filter(r=>r.phase===ph);if(!rs.length)continue;
-    const order=ph==="wait"?["choose","approve"]:null;
-    h+=`<tr class="ph"><td colspan="2">${PH[ph][0]}</td><td class="d">${hms(tot(ph))}</td><td class="p">${machine+tot("wait")?Math.round(tot(ph)*100/(machine+tot("wait"))):0}%</td></tr>`;
-    for(const r of (order?order.map(i=>rs.find(x=>x.id===i)).filter(Boolean):rs)){
-      const st={running:" ▶",waiting:" ⏸",error:" !"}[r.status]||"";
+    h+=`<tr class="ph"><td colspan="2">${PH[ph][0]}</td><td class="d">${hms(tot(ph))}</td><td class="p">${pct(tot(ph))}%</td></tr>`;
+    for(const r of rs){
+      const st={running:" ▶",error:" !"}[r.status]||"";
       h+=`<tr><td class="n">${ICONS[r.id]} ${esc(r.label)}${r.tries>1?` <span class="pill" style="padding:1px 7px">${r.tries} deneme</span>`:""}${st}</td>
         <td><div class="bar"><i style="width:${(r.secs/max*100).toFixed(1)}%;background:${PH[ph][1]}"></i></div></td>
-        <td class="d">${r.tries?hms(r.secs):"—"}</td><td class="p">${r.tries&&machine+tot("wait")?Math.round(r.secs*100/(machine+tot("wait"))):""}${r.tries?"%":""}</td></tr>`;
+        <td class="d">${r.tries?hms(r.secs):"—"}</td><td class="p">${r.tries?pct(r.secs)+"%":""}</td></tr>`;
     }
   }
-  h+=`</table><p class="tnote">Toplam = taramanın başladığı andan son adımın bittiği (ya da şu) ana kadar geçen süre. Makine süresi = sistemin çalıştığı süre;
-    bekleme = haberi seçmen ve onay vermen için geçen süre. Tekrar denenen/revize edilen adımlarda tüm denemeler sayılır. Her iş bitince döküm <b>stats/timings.jsonl</b> dosyasına kaydedilir.</p>`;
+  h+=`</table><p class="tnote">Sadece sistemin çalıştığı süre: haberi seçmen ve onay vermen için geçen bekleme süreleri hiçbir toplama ve yüzdeye girmez.
+    Tekrar denenen/revize edilen adımlarda tüm denemeler sayılır. Her iş bitince döküm <b>stats/timings.jsonl</b> dosyasına kaydedilir.</p>`;
   $("#tmBody").innerHTML=h;
 }
 $("#timeBtn").onclick=()=>{renderTimings();$("#tmModal").classList.add("on")};

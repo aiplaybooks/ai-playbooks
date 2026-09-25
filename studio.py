@@ -40,10 +40,10 @@ POST = [("write", "Doğrula & yaz", "ai"), ("cover", "Kapak görseli", "code"), 
         ("reel", "Video · ses + müzik (YouTube)", "code"), ("qa", "Kalite kontrol", "ai"),
         ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"),
         ("ig_carousel", "Instagram carousel", "publish"), ("fb_photos", "Facebook gönderi", "publish"),
-        ("yt_short", "YouTube Short", "publish"), ("log", "Kayıt & GitHub", "code")]
+        ("yt_short", "YouTube Short", "publish"), ("comments", "Yorumlar", "publish"), ("log", "Kayıt & GitHub", "code")]
 CLIP = [("fetch", "Videoyu indir", "code"), ("hook", "Hook & caption", "ai"), ("frame", "Reel çerçevesi", "code"),
         ("qa", "Kalite kontrol", "ai"), ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"), ("ig_reel", "Instagram Reel", "publish"),
-        ("fb_reel", "Facebook Reel", "publish"), ("log", "Kayıt & GitHub", "code")]
+        ("fb_reel", "Facebook Reel", "publish"), ("comments", "Yorumlar", "publish"), ("log", "Kayıt & GitHub", "code")]
 FLOWS = {"scan": SCAN, "post": POST, "clip": CLIP}
 
 LOCK = threading.RLock()
@@ -472,7 +472,7 @@ def n_frame(run):
 PHASES = {"trigger": "scan", "collect": "scan", "scout": "scan", "choose": "wait", "write": "production", "cover": "production",
           "fetch": "production", "hook": "production", "frame": "production",
           "carousel": "production", "reel": "production", "qa": "production", "approve": "wait", "upload": "publish",
-          "ig_carousel": "publish", "ig_reel": "publish", "fb_photos": "publish", "fb_reel": "publish", "yt_short": "publish", "log": "publish"}
+          "ig_carousel": "publish", "ig_reel": "publish", "fb_photos": "publish", "fb_reel": "publish", "yt_short": "publish", "comments": "publish", "log": "publish"}
 
 
 def secs_between(a, b):
@@ -481,27 +481,24 @@ def secs_between(a, b):
 
 
 def timings(run):
-    """Per-node time of a post run (+ its scan), earlier attempts included; totals per phase."""
+    """Per-node time the system worked on a post run (+ its scan), earlier attempts included; totals per phase.
+    The owner's own time (picking a candidate, approving) is left out on purpose: it says nothing about the pipeline."""
     flows = []
     scan = Run(run.s["scan"]) if run.s.get("scan") and (RUNS / run.s["scan"] / "state.json").exists() else None
     if scan and scan.s: flows.append(scan.s)
     flows.append(run.s)
-    rows, first, last = [], None, None
+    rows = []
     for s in flows:
         for nid, label, _ in FLOWS[s["kind"]]:
+            if PHASES[nid] == "wait": continue
             n = s["nodes"][nid]
             tries = n.get("attempts", []) + ([n] if n.get("started") else [])
             secs = sum(secs_between(t.get("started"), t.get("ended")) for t in tries)
-            for t in tries:
-                if t.get("started") and (not first or t["started"] < first): first = t["started"]
-                end = t.get("ended") or (iso() if t.get("started") else None)
-                if end and (not last or end > last): last = end
             rows.append({"node": nid, "label": label, "phase": PHASES[nid], "secs": secs, "attempts": len(tries),
                          "status": n["status"]})
-    tot = {ph: sum(r["secs"] for r in rows if r["phase"] == ph) for ph in ("scan", "wait", "production", "publish")}
+    tot = {ph: sum(r["secs"] for r in rows if r["phase"] == ph) for ph in ("scan", "production", "publish")}
     return {"run": run.id, "post": pathlib.Path(run.s["content"]).stem, "title": run.s.get("title"),
-            "nodes": rows, "phases": tot, "machine": tot["scan"] + tot["production"] + tot["publish"],
-            "waiting": tot["wait"], "wall": secs_between(first, last), "start": first, "end": last}
+            "nodes": rows, "phases": tot, "total": sum(tot.values())}
 
 
 def record_timings(run, outcome):
@@ -514,7 +511,7 @@ NODES = {"trigger": n_trigger, "collect": n_collect, "scout": n_scout, "choose":
          "write": n_write, "cover": n_cover, "carousel": n_carousel, "fetch": n_fetch, "hook": n_hook, "frame": n_frame, "reel": n_reel, "qa": n_qa, "approve": n_approve,
          "upload": publish_step("upload"), "ig_carousel": publish_step("ig_carousel"), "ig_reel": publish_step("ig_reel"),
          "fb_photos": publish_step("fb_photos"), "fb_reel": publish_step("fb_reel"),
-         "yt_short": publish_step("yt_short"), "log": n_log}
+         "yt_short": publish_step("yt_short"), "comments": publish_step("comments"), "log": n_log}
 
 
 def execute(run):
