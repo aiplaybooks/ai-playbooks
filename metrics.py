@@ -113,7 +113,8 @@ def collect():
                                            "comments": b.get("comments", {}).get("summary", {}).get("total_count", 0),
                                            "shares": b.get("shares", {}).get("count", 0)}
                     try:
-                        for it in graph(f"{pid}/insights", metric="post_impressions_unique").get("data", []):
+                        # post_impressions_unique was retired by Meta; unique viewers of the post's media replace it
+                        for it in graph(f"{pid}/insights", metric="post_total_media_view_unique").get("data", []):
                             p["m"]["fb_photos"]["reach"] = (it.get("values") or [{}])[0].get("value")
                     except P.PublishError as ex:
                         if perm_error(ex): needs.add("read_insights")

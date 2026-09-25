@@ -665,7 +665,7 @@ const fmtN=v=>v===undefined||v===null?"—":Number(v).toLocaleString("tr-TR");
 const PL=[["yt_short","YouTube Short","views","izlenme",[["watch_minutes","izlenme dk"],["avg_view_sec","ort. sn"],["avg_view_pct","ort. %"],["likes","beğeni"],["comments","yorum"],["shares","paylaşım"],["subs_gained","abone +"]]],
   ["ig_reel","Instagram Reel","views","izlenme",[["reach","erişim"],["likes","beğeni"],["comments","yorum"],["saved","kaydetme"],["shares","paylaşım"]]],
   ["ig_carousel","IG carousel","views","görüntülenme",[["reach","erişim"],["likes","beğeni"],["comments","yorum"],["saved","kaydetme"],["shares","paylaşım"]]],
-  ["fb_reel","Facebook Reel","plays","oynatma",[["avg_view_sec","ort. sn"],["likes","beğeni"],["comments","yorum"]]],
+  ["fb_reel","Facebook Reel","plays","oynatma",[["avg_view_sec","ort. sn (tekrar dahil)"],["likes","beğeni"],["comments","yorum"]]],
   ["fb_photos","FB gönderi","reactions","tepki",[["comments","yorum"],["shares","paylaşım"],["reach","erişim"]]]];
 const NEEDS={pages_read_user_content:"Facebook gönderi tepkileri/yorumları",read_insights:"Facebook erişim verileri",instagram_manage_insights:"Instagram erişim/kaydetme verileri"};
 async function renderPerf(){
