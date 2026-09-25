@@ -1,0 +1,172 @@
+{
+  "theme": "prompts",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Prompt Pack · Monthly Budget",
+  "caption": "5 copy-paste prompts that turn ChatGPT, Claude or Gemini into a budgeting assistant: upload a bank statement or CSV and get a real income/expense table, spending categories, a savings plan, a debt payoff order, and a subscription cleanup.\n\nNot financial advice — just a faster way to see your own numbers.\n\nSave this before your next payday.\n\n#budgeting #personalfinance #chatgpt #claude #aitools #moneytips #savingmoney",
+  "sources": [
+    "https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt",
+    "https://support.google.com/gemini/answer/14903178",
+    "https://support.claude.com/en/articles/8241126-what-kinds-of-documents-can-i-upload-to-claude"
+  ],
+  "cover": {
+    "headline": "ChatGPT, Claude and Gemini can now read your bank statement and build a real budget from it. Here are 5 prompts to try:",
+    "em": "build a real budget",
+    "person": null,
+    "scene": "A tidy home desk in warm morning light: an open laptop showing a clean spreadsheet grid with colored budget categories, a notebook with handwritten totals, a coffee cup and a few coins, cinematic, no text, no logos, no real people"
+  },
+  "design": {
+    "mood": "a sunny spreadsheet grid on a tidy desk: friendly ledger green, warm gold accents, clean and organized",
+    "palette": {
+      "bg": "#F6F5EC",
+      "bg2": "#ECE8D6",
+      "surface": "#FFFFFF",
+      "ink": "#1F2A22",
+      "muted": "#77806F",
+      "accent": "#1F7A4D",
+      "accent2": "#C79A34"
+    },
+    "fonts": {
+      "display": "Space Grotesk",
+      "body": "Inter",
+      "mono": "IBM Plex Mono"
+    },
+    "display": {
+      "weight": 700,
+      "case": "none",
+      "tracking": -1,
+      "scale": 1.0
+    },
+    "shape": {
+      "radius": 18,
+      "border": 2,
+      "shadow": "soft"
+    },
+    "background": {
+      "pattern": "grid",
+      "pattern_opacity": 0.08,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "pill",
+    "prompt": "chat",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='6' width='20' height='14' rx='2'/><path d='M2 10h20'/><path d='M6 15h4'/></svg>"
+  },
+  "voice": "af_jessica",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "PROMPT PACK",
+      "title": "prompts to build a real monthly budget",
+      "em": "real monthly budget",
+      "sub": "Upload your statement, copy, paste, done.",
+      "tools": [
+        "ChatGPT",
+        "Claude",
+        "Gemini"
+      ],
+      "count": 5,
+      "voiceover": "Here are five prompts that turn ChatGPT, Claude or Gemini into a budgeting assistant."
+    },
+    {
+      "type": "prompt",
+      "name": "The Table Builder",
+      "sub": "Turn a messy bank statement into a clean income vs. expense table.",
+      "prompt": "I'm uploading my bank statement as a [CSV/PDF]. Build a clean table with columns Date, Description, Category, and Amount. Add a summary at the top: total income, total expenses, and net savings for the period.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Total income: [X]",
+          "Total expenses: [Y]",
+          "Net savings: [X-Y]"
+        ]
+      },
+      "voiceover": "One. Upload your statement and get a clean income and expense table."
+    },
+    {
+      "type": "prompt",
+      "name": "The Category Sorter",
+      "sub": "See exactly where your money actually goes.",
+      "prompt": "Using the transaction table above, group every expense into categories like Rent, Groceries, Transport, Subscriptions, and Eating Out. Show each category's total and its percentage of my total spending, ranked from highest to lowest.",
+      "tip": "Ask a follow-up like 'which category grew the most vs last month' if you have two statements.",
+      "voiceover": "Two. Group every transaction into categories, ranked by how much you spend."
+    },
+    {
+      "type": "prompt",
+      "name": "The Savings Planner",
+      "sub": "A month-by-month plan for a goal you actually pick.",
+      "prompt": "I want to save [AMOUNT] in [NUMBER] months for [GOAL]. Based on my income and expense totals above, suggest a realistic monthly savings target and which categories I could trim to hit it, without listing this as financial advice.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Monthly target: [amount]",
+          "Trim: eating out by [X]",
+          "Trim: subscriptions by [Y]"
+        ]
+      },
+      "voiceover": "Three. Turn a savings goal into a month by month plan from your own numbers."
+    },
+    {
+      "type": "prompt",
+      "name": "The Debt Payoff Order",
+      "sub": "A clear order to pay off what you owe.",
+      "prompt": "Here are my debts: [LIST NAME, BALANCE, INTEREST RATE FOR EACH]. Suggest a payoff order using both the avalanche method (highest interest first) and the snowball method (smallest balance first), and explain the trade-off between the two for my situation. This is not financial advice.",
+      "tip": "Bring this to a licensed advisor before making big decisions — use it to understand your options, not as final advice.",
+      "voiceover": "Four. Compare two payoff orders for your debts, side by side."
+    },
+    {
+      "type": "prompt",
+      "name": "The Subscription Cleanup",
+      "sub": "Find every recurring charge hiding in your statement.",
+      "prompt": "Scan the transaction table above for recurring charges (same amount, roughly monthly). List each one with its name, amount, and how many months it appeared. Flag any I might have forgotten I'm paying for.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Streaming app — 3 months in a row",
+          "Gym — 12 months in a row",
+          "Unknown charge — flagged"
+        ]
+      },
+      "voiceover": "Five. Find every recurring charge you forgot you were paying for."
+    },
+    {
+      "type": "howto",
+      "title": "Get more out of this pack",
+      "items": [
+        [
+          "Export a real CSV",
+          "Most banking apps let you download a statement as CSV — it works better than a screenshot."
+        ],
+        [
+          "Run it monthly",
+          "Same five prompts, new statement — watch the categories change over time."
+        ],
+        [
+          "Keep it factual",
+          "Use the numbers to decide, not the AI's opinion — it's a calculator, not an advisor."
+        ]
+      ],
+      "voiceover": "Export a real CSV, run this every month, and keep it factual."
+    },
+    {
+      "type": "cta",
+      "title": "Save this pack.",
+      "title2": "Build your budget before payday.",
+      "lines": [
+        [
+          "Follow",
+          "for daily AI tool tips & news"
+        ],
+        [
+          "Share",
+          "with someone who needs a budget"
+        ],
+        [
+          "Comment",
+          "your biggest money leak below"
+        ]
+      ],
+      "voiceover": "Save this pack, and follow for a new AI tip every day."
+    }
+  ]
+}
