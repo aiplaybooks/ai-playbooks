@@ -15,7 +15,7 @@ Three workflows:
     clip  (viral Reel: the owner pastes an X/post link)
           fetch (yt-dlp) -> hook (Claude watches frames, writes hook + caption) -> frame (clip.py) -> qa (Claude
           compares the framed Reel with the source: crop, fit, hook; fixes + re-frames) -> approve
-          -> upload -> ig_reel -> fb_reel -> log
+          -> upload -> ig_reel -> fb_reel -> yt_short -> comments -> log
 State lives in runs/<run-id>/state.json, logs in runs/<run-id>/<node>.log; a failed node can be retried from the UI.
 Claude steps run `claude -p` (Claude Code headless) with the prompts in prompts/.
 """
@@ -43,7 +43,8 @@ POST = [("write", "Doğrula & yaz", "ai"), ("cover", "Kapak görseli", "code"), 
         ("yt_short", "YouTube Short", "publish"), ("comments", "Yorumlar", "publish"), ("log", "Kayıt & GitHub", "code")]
 CLIP = [("fetch", "Videoyu indir", "code"), ("hook", "Hook & caption", "ai"), ("frame", "Reel çerçevesi", "code"),
         ("qa", "Kalite kontrol", "ai"), ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"), ("ig_reel", "Instagram Reel", "publish"),
-        ("fb_reel", "Facebook Reel", "publish"), ("comments", "Yorumlar", "publish"), ("log", "Kayıt & GitHub", "code")]
+        ("fb_reel", "Facebook Reel", "publish"), ("yt_short", "YouTube Short", "publish"), ("comments", "Yorumlar", "publish"),
+        ("log", "Kayıt & GitHub", "code")]
 FLOWS = {"scan": SCAN, "post": POST, "clip": CLIP}
 
 LOCK = threading.RLock()

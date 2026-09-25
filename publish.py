@@ -21,7 +21,7 @@ META_PAGE_TOKEN, FB_PAGE_ID, IG_USER_ID in .env
                  without its comments.
     log          appends the post to publish_log.jsonl
 Viral clip Reels (content/clips/<name>.json, "kind": "clip", made by clip.py in output/clips/<name>/): steps
-prepare, upload, ig_reel, fb_reel, log; cover = the framed clip's first frame.
+prepare, upload, ig_reel, fb_reel, yt_short, comments, log; cover = the framed clip's first frame.
 Progress is saved to output/<name>/publish.json after every step, so a rerun resumes and never posts twice.
 Token values are never printed.
 """
@@ -341,13 +341,22 @@ def yt_access(p):
 
 
 def yt_meta(p):
-    """Title (<=100 chars), description and tags for the Short, from the content JSON."""
-    cover = next((s for s in p.data["slides"] if s["type"] == "cover"), {})
-    title = (cover.get("title") or p.data.get("topic") or p.name).replace("<", "").replace(">", "").strip()
+    """Title (<=100 chars), description and tags for the Short, from the content JSON.
+    Clips: title = their title line + hook; our IG/FB comments (e.g. prompts) go into the description, because we
+    don't post YouTube comments."""
+    if p.clip:
+        title = " ".join(x for x in (p.data.get("title"), p.data.get("hook")) if x) or p.data.get("topic") or p.name
+    else:
+        cover = next((s for s in p.data["slides"] if s["type"] == "cover"), {})
+        title = cover.get("title") or p.data.get("topic") or p.name
+    title = title.replace("<", "").replace(">", "").strip()
     if len(title) > 90: title = title[:89].rsplit(" ", 1)[0] + "…"
     cap = p.data["caption"].replace("<", "").replace(">", "")
     tags = [t.lstrip("#") for t in re.findall(r"#\w+", cap)][:15]
-    desc = cap + "\n\n" + "\n".join(p.data.get("sources", [])[:3]) + "\n\n#Shorts"
+    extra = [c.strip() for c in p.data.get("comments") or []]
+    if extra: cap = re.sub(r"(?i)\bin the comments\b", "below", cap)
+    links = p.data.get("sources", [])[:3] + ([p.data["source"]] if p.clip and p.data.get("source") else [])
+    desc = cap + "".join("\n\n" + c for c in extra) + "\n\n" + "\n".join(links) + "\n\n#Shorts"
     return {"title": title + " #Shorts", "description": desc[:4900], "tags": tags, "categoryId": "28",
             "defaultLanguage": "en", "defaultAudioLanguage": "en"}
 
