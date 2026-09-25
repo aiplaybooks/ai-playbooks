@@ -1,0 +1,186 @@
+{
+  "theme": "adaptive",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "GPT-6 Sol & Luna",
+  "caption": "OpenAI just cut ChatGPT model prices in half. GPT-6 Sol and Luna bring GPT-6 Astra's power to faster, cheaper models — with about half as many factual mistakes.\n\nAlready live in ChatGPT Work, Codex, the desktop app and the API.\n\nSave this for the price + rollout breakdown.\n\n📷 Photo: TechCrunch · CC BY 2.0 via Wikimedia Commons\n\n#chatgpt #openai #gpt6 #ai #aitools #genai #codex",
+  "sources": [
+    "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+    "https://community.openai.com/t/announcing-gpt-6-sol-and-luna/1399925"
+  ],
+  "cover": {
+    "headline": "OpenAI just cut ChatGPT's smartest model prices in half. Meet GPT-6 Sol and Luna:",
+    "em": "in half",
+    "person": "Sam Altman",
+    "scene": "A desk lit half by warm golden sunlight and half by cool silver moonlight against a deep indigo sky, a faint glowing orbit ring connecting the two, cinematic, minimal, no text, no logos, no real people",
+    "photo": {
+      "file": "File:Sam Altman TechCrunch SF 2019 Day 2 Oct 3 (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Sam_Altman_TechCrunch_SF_2019_Day_2_Oct_3_(cropped).jpg",
+      "author": "TechCrunch",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0"
+    }
+  },
+  "design": {
+    "mood": "day meets night: a warm gold sun (Sol) and a cool silver moon (Luna) sharing one deep indigo sky, celestial and efficient",
+    "palette": {
+      "bg": "#12142A",
+      "bg2": "#1B1E3D",
+      "surface": "#1C2044",
+      "ink": "#F5F4FF",
+      "muted": "#9B9FC7",
+      "accent": "#F2B33D",
+      "accent2": "#8FB8FF"
+    },
+    "fonts": {
+      "display": "Bricolage Grotesque",
+      "body": "Inter",
+      "mono": "Space Mono"
+    },
+    "display": {
+      "weight": 700,
+      "case": "none",
+      "tracking": -2,
+      "scale": 1.0,
+      "italic_em": false
+    },
+    "shape": {
+      "radius": 24,
+      "border": 1.5,
+      "shadow": "glow"
+    },
+    "background": {
+      "pattern": "rings",
+      "pattern_opacity": 0.08,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "pill",
+    "prompt": "card",
+    "art": "<svg viewBox='0 0 900 460' xmlns='http://www.w3.org/2000/svg'><line x1='450' y1='40' x2='450' y2='420' stroke='var(--muted)' stroke-width='2' stroke-dasharray='4 12' opacity='0.5'/><circle cx='255' cy='230' r='84' fill='var(--accent)'/><g stroke='var(--accent)' stroke-width='7' stroke-linecap='round'><line x1='255' y1='96' x2='255' y2='62'/><line x1='255' y1='364' x2='255' y2='398'/><line x1='121' y1='230' x2='87' y2='230'/><line x1='150' y1='125' x2='127' y2='102'/><line x1='150' y1='335' x2='127' y2='358'/><line x1='360' y1='125' x2='383' y2='102'/><line x1='360' y1='335' x2='383' y2='358'/></g><path d='M700 150 a80 80 0 1 0 0 160 a64 64 0 1 1 0 -160z' fill='var(--accent2)'/><circle cx='610' cy='130' r='4' fill='var(--surface)'/><circle cx='790' cy='310' r='3' fill='var(--surface)'/><circle cx='750' cy='110' r='3' fill='var(--surface)'/><circle cx='640' cy='360' r='3' fill='var(--surface)'/></svg>",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='8' cy='12' r='3.2'/><path d='M8 5v1.4M8 17.6V19M2.8 12h1.4M12.4 12h.9M4.4 7.4l1 1M11 17l.9.9M4.4 16.6l1-1M11.9 6.1l.9-.9'/><path d='M19.6 8.4a4.8 4.8 0 1 0 0 7.2 3.8 3.8 0 0 1 0-7.2z'/></svg>"
+  },
+  "voice": "af_sarah",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "NEW · SEP 22, 2026",
+      "title": "OpenAI cuts ChatGPT model prices in half with GPT-6 Sol and Luna.",
+      "em": "in half",
+      "sub": "Two faster, cheaper models built on GPT-6 Astra — with fewer mistakes.",
+      "tools": [
+        "ChatGPT",
+        "Codex"
+      ],
+      "voiceover": "OpenAI just launched two new models: GPT-6 Sol and Luna."
+    },
+    {
+      "type": "facts",
+      "label": "What launched",
+      "title": "GPT-6 Sol and Luna",
+      "items": [
+        [
+          "Built on",
+          "The same advances behind GPT-6 Astra"
+        ],
+        [
+          "Sol",
+          "For complex coding and professional work"
+        ],
+        [
+          "Luna",
+          "For high-volume tasks: summarizing, extracting, Q&A"
+        ],
+        [
+          "Released",
+          "September 22, 2026"
+        ]
+      ],
+      "voiceover": "Sol handles complex coding, Luna handles fast everyday tasks."
+    },
+    {
+      "type": "stat",
+      "label": "By the numbers",
+      "value": "50%",
+      "title": "cheaper API pricing",
+      "sub": "Permanent pricing, not a promo — the same cut for Sol and Luna.",
+      "voiceover": "Both models cost fifty percent less than their GPT-5.6 predecessors."
+    },
+    {
+      "type": "facts",
+      "label": "API pricing",
+      "title": "Sol and Luna, per 1M tokens",
+      "items": [
+        [
+          "GPT-6 Sol",
+          "$2 in / $10 out — down from $4 / $20"
+        ],
+        [
+          "GPT-6 Luna",
+          "$0.10 in / $0.50 out — down from $0.20 / $1.20"
+        ]
+      ],
+      "voiceover": "Sol dropped to two dollars in, ten dollars out, per million tokens."
+    },
+    {
+      "type": "stat",
+      "label": "Fewer mistakes",
+      "value": "½",
+      "title": "as many factual errors",
+      "sub": "OpenAI says GPT-6 Sol roughly halves GPT-5.6 Sol's mistake rate.",
+      "voiceover": "OpenAI says Sol makes about half as many factual mistakes now."
+    },
+    {
+      "type": "list",
+      "label": "Where you already have it",
+      "title": "Already rolling out",
+      "items": [
+        [
+          "ChatGPT Work & Codex",
+          "Plus, Pro, Business, Enterprise and Edu plans"
+        ],
+        [
+          "Desktop app",
+          "Free and Go users get GPT-6 Luna"
+        ],
+        [
+          "API",
+          "`gpt-6-sol` and `gpt-6-luna`, live now"
+        ]
+      ],
+      "voiceover": "It's already in ChatGPT Work, Codex, the desktop app and the API."
+    },
+    {
+      "type": "limits",
+      "label": "Keep in mind",
+      "title": "Still rolling out",
+      "items": [
+        "Chat interface access is a gradual rollout through the day",
+        "Free and Go users get Luna only, not Sol",
+        "Pricing is permanent, but usage limits vary by plan"
+      ],
+      "cta": "Follow for daily AI tool news",
+      "voiceover": "The chat rollout is gradual, and free users get Luna, not Sol."
+    },
+    {
+      "type": "cta",
+      "title": "Same GPT-6 quality,",
+      "title2": "half the price.",
+      "lines": [
+        [
+          "See it",
+          "openai.com — GPT-6 Sol and Luna"
+        ],
+        [
+          "Try it",
+          "ChatGPT Work, Codex, or the API"
+        ],
+        [
+          "Follow",
+          "for daily AI tool news"
+        ]
+      ],
+      "voiceover": "That's GPT-6 Sol and Luna: same quality, half the price."
+    }
+  ]
+}
