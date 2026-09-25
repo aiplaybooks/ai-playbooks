@@ -41,8 +41,9 @@ Every day the pipeline should:
 - **Reels = hook-framed viral clips, not the carousel's own Reel** (owner, 2026-09-25; refs: @chatgptips): black frame,
   brand line, hook text on top, the clip below, "Source: @creator on X" (`clip.py`). The owner picks the clip (pastes
   an X link); clip.py fetches that one post with yt-dlp. Risk the owner accepted: credit is not a license (takedowns
-  possible); ask creators for permission where possible. Don't upload these to YouTube: YouTube keeps getting the
-  carousel's own voiced video (owner, 2026-09-25). Discovery: `viral.py`
+  possible); ask creators for permission where possible. They go to YouTube Shorts too (owner changed this on
+  2026-09-25, accepting the Content ID / strike risk; carousels keep their own voiced video there): title = clip title +
+  hook, the IG/FB comments (prompts) go into the YouTube description. Discovery: `viral.py`
   (YouTube API = signal only, never downloaded; Reddit API needs manual approval since 2025-11 → not available).
   Hooks must stay truthful (no unverified $/follower claims from the source post), no fake verified badge.
 - No brand logo imitation, no exaggerated/false claims. Financial topics get a "not financial advice" line.
@@ -197,7 +198,8 @@ candidate (and approves the preview), everything else is automatic.
   may fix + re-render) → approve (owner: Yayınla / Revize et (note → back to
   write) / Reddet (content JSON moved into the run dir)) → publish.py steps (ig_carousel, fb_photos, yt_short) → log (publish_log.jsonl + git commit/push).
 - **clip** flow (UI tab "Viral": owner pastes a link): fetch (yt-dlp + info.json + 8 frames) → hook (prompts/hook.md →
-  content/clips/<date>_clip-<id>.json, "kind": "clip") → frame (clip.py) → approve → upload → ig_reel → fb_reel → log.
+  content/clips/<date>_clip-<id>.json, "kind": "clip") → frame (clip.py) → approve → upload → ig_reel → fb_reel →
+  yt_short → comments → log.
   Output in output/clips/<name>/. The scan's collect step also runs viral.py (YouTube trend signals for the Viral tab).
 - Settings (UI ⚙): scan times, "Yayından önce onay" switch (owner wants it ON for now; if QA finds a problem the gate
   applies anyway). Windows toasts when candidates are ready / approval needed / errors.
