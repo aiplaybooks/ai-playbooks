@@ -422,11 +422,28 @@ def frames_of(video, dest, n=8):
     return out, dur
 
 
+FETCH_ERRORS = [  # yt-dlp message -> what it means for the owner
+    ("private video", "Video gizli: sahibi herkese açık yapmadan indirilemez"),
+    ("video unavailable", "Video kaldırılmış ya da erişilemiyor"),
+    ("sign in to confirm your age", "Yaş doğrulaması isteyen video: giriş yapmadan indirilemez"),
+    ("sign in to confirm you", "YouTube bot kontrolü istedi: biraz bekleyip tekrar dene"),
+    ("not available in your country", "Video bu ülkede engelli"),
+    ("members-only", "Sadece kanal üyelerine açık video"),
+    ("no video could be found", "Bu gönderide video yok"),
+    ("unsupported url", "Bu link desteklenmiyor"),
+]
+
+
 def n_fetch(run):
     out = out_dir(run); out.mkdir(parents=True, exist_ok=True)
     for f in out.glob("source.*"): f.unlink()
-    sh(run, "fetch", [PY, "-m", "yt_dlp", "-q", "--no-playlist", "-f", "bv*+ba/b", "--merge-output-format", "mp4",
-                      "--write-info-json", "-o", str(out / "source.%(ext)s"), run.s["url"]])
+    try:  # Node as the JS runtime: YouTube extraction without one misses formats
+        sh(run, "fetch", [PY, "-m", "yt_dlp", "-q", "--no-playlist", "--js-runtimes", "node", "-f", "bv*+ba/b",
+                          "--merge-output-format", "mp4", "--write-info-json", "-o", str(out / "source.%(ext)s"), run.s["url"]])
+    except StepError as ex:
+        s = str(ex).lower()
+        why = next((tr for key, tr in FETCH_ERRORS if key in s), None)
+        raise StepError(f"{why} ({ex})" if why else str(ex)) from None
     info = read_json(out / "source.info.json", {}) or {}
     video = next((f for f in out.glob("source.*") if f.suffix in (".mp4", ".webm", ".mkv", ".mov")), None)
     if not video: raise StepError("video indirilemedi")
