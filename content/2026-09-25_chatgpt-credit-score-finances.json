@@ -1,0 +1,207 @@
+{
+  "theme": "adaptive",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "ChatGPT × Credit Score",
+  "caption": "ChatGPT can now watch your credit score for you. Connect Experian in Finances and it tracks your VantageScore 3.0, updates monthly, and flags changes like a new account or inquiry.\n\nUS Plus and Pro only for now. Checking it is a soft inquiry, so it won't lower your score.\n\nNot financial advice. Save this for the full breakdown.\n\n📷 Photo: Village Global · CC BY 2.0 via Wikimedia Commons\n\n#chatgpt #openai #ai #personalfinance #creditscore #fintech #aitools",
+  "sources": [
+    "https://help.openai.com/en/articles/20001222-finances-in-chatgpt"
+  ],
+  "cover": {
+    "headline": "ChatGPT can now track your Experian credit score, right inside your chat history:",
+    "em": "track your Experian credit score",
+    "person": "Sam Altman",
+    "photo_file": "File:Sam Altman November 2022.jpg",
+    "scene": "A softly lit home desk at night, a laptop glowing with financial charts and a credit score dial, warm gold and green light, cinematic, shallow depth of field, no text, no logos, no real people",
+    "photo": {
+      "file": "File:Sam Altman November 2022.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Sam_Altman_November_2022.jpg",
+      "author": "Village Global",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0"
+    }
+  },
+  "design": {
+    "mood": "personal finance dashboard at night: a trustworthy dark forest green ledger with a glowing gold credit-score dial, calm and precise",
+    "palette": {
+      "bg": "#0E1913",
+      "bg2": "#142420",
+      "surface": "#17241D",
+      "ink": "#F1F5F0",
+      "muted": "#8FA396",
+      "accent": "#34D399",
+      "accent2": "#E8B84B"
+    },
+    "fonts": {
+      "display": "Archivo",
+      "body": "Inter",
+      "mono": "IBM Plex Mono"
+    },
+    "display": {
+      "weight": 800,
+      "case": "none",
+      "tracking": -2,
+      "scale": 1.0,
+      "italic_em": false
+    },
+    "shape": {
+      "radius": 20,
+      "border": 1.5,
+      "shadow": "soft"
+    },
+    "background": {
+      "pattern": "grid",
+      "pattern_opacity": 0.06,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "bar",
+    "prompt": "card",
+    "art": "<svg viewBox='0 0 900 460' xmlns='http://www.w3.org/2000/svg'><path d='M170,390 A280,280 0 0 1 730,390' fill='none' stroke='var(--surface)' stroke-width='34' stroke-linecap='round'/><path d='M170,390 A280,280 0 0 1 610,160' fill='none' stroke='var(--accent)' stroke-width='34' stroke-linecap='round'/><g stroke='var(--muted)' stroke-width='3' stroke-linecap='round' stroke-opacity='0.6'><line x1='170' y1='390' x2='170' y2='360'/><line x1='210' y1='260' x2='230' y2='285'/><line x1='300' y1='175' x2='325' y2='195'/><line x1='450' y1='140' x2='450' y2='170'/><line x1='600' y1='175' x2='575' y2='195'/><line x1='690' y1='260' x2='670' y2='285'/><line x1='730' y1='390' x2='730' y2='360'/></g><line x1='450' y1='390' x2='600' y2='225' stroke='var(--accent2)' stroke-width='8' stroke-linecap='round'/><circle cx='450' cy='390' r='22' fill='var(--accent2)'/><circle cx='450' cy='390' r='9' fill='var(--bg)'/></svg>",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 15a8 8 0 1 1 16 0'/><line x1='12' y1='15' x2='16' y2='9'/><circle cx='12' cy='15' r='1.5'/></svg>"
+  },
+  "voice": "am_adam",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "NEW · SEP 21, 2026",
+      "title": "ChatGPT can now track your credit score.",
+      "em": "track your credit score",
+      "sub": "Connect Experian in Finances to see your VantageScore 3.0, free with Plus or Pro.",
+      "tools": [
+        "ChatGPT",
+        "Experian"
+      ],
+      "voiceover": "ChatGPT can now track your Experian credit score for you."
+    },
+    {
+      "type": "facts",
+      "label": "What launched",
+      "title": "Credit score in Finances",
+      "items": [
+        [
+          "Score",
+          "VantageScore 3.0, from Experian"
+        ],
+        [
+          "Range",
+          "300 to 850"
+        ],
+        [
+          "Who",
+          "US Plus and Pro subscribers"
+        ],
+        [
+          "Where",
+          "Web, iOS and Android"
+        ],
+        [
+          "Rolled out",
+          "September 21, 2026"
+        ]
+      ],
+      "voiceover": "It shows your VantageScore 3.0, based on your Experian report."
+    },
+    {
+      "type": "steps",
+      "label": "How to connect",
+      "title": "Set it up in Finances",
+      "steps": [
+        [
+          "Open Finances",
+          "In ChatGPT on web, iOS or Android"
+        ],
+        [
+          "Connect Experian",
+          "A secure authorization flow"
+        ],
+        [
+          "Check monthly",
+          "Score and report refresh automatically"
+        ]
+      ],
+      "voiceover": "Just open Finances, connect Experian, and it updates every month."
+    },
+    {
+      "type": "list",
+      "label": "What you can see",
+      "title": "More than just a number",
+      "items": [
+        [
+          "Reported accounts",
+          "Balances and credit limits"
+        ],
+        [
+          "Utilization & history",
+          "Payment history and inquiries"
+        ],
+        [
+          "Ask ChatGPT",
+          "About any factor behind your score"
+        ]
+      ],
+      "voiceover": "You can see balances, utilization, payment history, and every inquiry."
+    },
+    {
+      "type": "limits",
+      "label": "Know the limits",
+      "title": "What the score can't tell you",
+      "items": [
+        "VantageScore 3.0 is used by some lenders, not all",
+        "A lender may pull a different score than the one shown",
+        "Card balances reflect Experian's last reported figure, not live",
+        "ChatGPT can't file disputes or freeze your credit file"
+      ],
+      "cta": "Follow for daily AI tool news",
+      "voiceover": "It's not the only score lenders use, so don't rely on it alone."
+    },
+    {
+      "type": "stat",
+      "label": "By the numbers",
+      "value": "Monthly",
+      "title": "automatic score refresh",
+      "sub": "Checking it is a soft inquiry — it won't lower your score.",
+      "voiceover": "Checking your score is a soft inquiry, so it won't hurt you."
+    },
+    {
+      "type": "facts",
+      "label": "Privacy",
+      "title": "You stay in control",
+      "items": [
+        [
+          "Soft inquiry",
+          "Checking your score doesn't move it"
+        ],
+        [
+          "Disconnect anytime",
+          "Experian data deletes within 30 days"
+        ],
+        [
+          "Temporary chats",
+          "Can't access connected financial accounts"
+        ]
+      ],
+      "voiceover": "Disconnect anytime, and your Experian data deletes within thirty days."
+    },
+    {
+      "type": "cta",
+      "title": "ChatGPT now",
+      "title2": "watches your credit.",
+      "lines": [
+        [
+          "Connect",
+          "Finances → Experian, on US Plus or Pro"
+        ],
+        [
+          "Remember",
+          "Checking it won't lower your score"
+        ],
+        [
+          "Follow",
+          "for daily AI tool news"
+        ]
+      ],
+      "voiceover": "That's ChatGPT's new credit tracker, live now for Plus and Pro."
+    }
+  ]
+}

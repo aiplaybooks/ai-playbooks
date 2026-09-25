@@ -1,14 +1,46 @@
 {
- "generated": "2026-09-25T15:13+00:00",
+ "generated": "2026-09-25T18:09+00:00",
  "hours": 36.0,
  "items": [
   {
+   "source": "OpenAI News",
+   "tier": "official",
+   "title": "Proaction boosts sales 60% and saves 75+ hours with Codex",
+   "url": "https://openai.com/index/proaction",
+   "date": "2026-09-25T19:00+00:00",
+   "summary": "With Codex, GPT-Live-1, and GPT-6 Astra, Proaction builds, operates, and sells modern fleet management faster."
+  },
+  {
    "source": "GitHub Copilot changelog",
    "tier": "official",
-   "title": "Default Enablement of Copilot Features for Copilot Business and Enterprise",
+   "title": "Agentic autofix now uses Copilot Memory",
+   "url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+   "date": "2026-09-25T17:25+00:00",
+   "summary": "Agentic autofix now uses Copilot Memory for customers who’ve enabled it. When you use agentic autofix, it reviews existing memories for context that can help resolve security alerts. When it… The post Agentic autofix now uses Copilot Memory appeared first on The GitHub Blog ."
+  },
+  {
+   "source": "GitHub Copilot changelog",
+   "tier": "official",
+   "title": "GitHub Copilot weekly releases — September 21",
+   "url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21",
+   "date": "2026-09-25T16:42+00:00",
+   "summary": "This week’s releases add new models to Copilot, local sandboxing in the Copilot app, and updates to Copilot in Slack, Microsoft Teams, JetBrains, and VS Code. GitHub Copilot Claude Opus… The post GitHub Copilot weekly releases — September 21 appeared first on The GitHub Blog ."
+  },
+  {
+   "source": "GitHub Copilot changelog",
+   "tier": "official",
+   "title": "Updates to GitHub Copilot for Slack and Microsoft Teams",
+   "url": "https://github.blog/changelog/2026-09-25-updates-to-github-copilot-for-slack-and-microsoft-teams",
+   "date": "2026-09-25T16:33+00:00",
+   "summary": "GitHub Copilot in Slack and Microsoft Teams now gives you more context, more control, and a clearer path from conversation to GitHub work. Whether you’re sharing files in Slack or… The post Updates to GitHub Copilot for Slack and Microsoft Teams appeared first on The GitHub Blog ."
+  },
+  {
+   "source": "GitHub Copilot changelog",
+   "tier": "official",
+   "title": "Default Enablement of Copilot features for Copilot Business and Enterprise",
    "url": "https://github.blog/changelog/2026-09-24-default-enablement-of-copilot-features-for-copilot-business-and-enterprise",
    "date": "2026-09-25T03:13+00:00",
-   "summary": "We’re introducing a new global default policy for generally available GitHub Copilot features and supported client capabilities in enterprise and organization Copilot settings. For the next 28 days, you can… The post Default Enablement of Copilot Features for Copilot Business and Enterprise appeared first on The GitHub Blog ."
+   "summary": "We’re introducing a new global default policy for generally available GitHub Copilot features and supported client capabilities in enterprise and organization Copilot settings. For the next 28 days, you can… The post Default Enablement of Copilot features for Copilot Business and Enterprise appeared first on The GitHub Blog ."
   },
   {
    "source": "Codex CLI releases",
@@ -77,6 +109,30 @@
   {
    "source": "Simon Willison",
    "tier": "signal",
+   "title": "Quoting John Gruber",
+   "url": "https://simonwillison.net/2026/Sep/25/john-gruber/",
+   "date": "2026-09-25T17:22+00:00",
+   "summary": "Muse is getting a lot of attention — including mine — because it’s both groundbreaking technically (each user gets their own entire persistent Linux VM running in Meta’s cloud) and because it’s packaged in an easy-to-install easy-to-use way. It’s literally presented as a cute mascot . It’s the first consumer-accessible agentic AI system, and Meta has truly done an amazing job with that. But it’s…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Northern Gannet, Great Blue Heron, California Brown Pelican",
+   "url": "https://simonwillison.net/2026/Sep/25/sighting-403293902/",
+   "date": "2026-09-25T02:07+00:00",
+   "summary": "Northern Gannet, Great Blue Heron, California Brown Pelican, in Monterey Bay National Marine Sanctuary, CA, US, CA New 200-800mm Canon EF lens got me my best photo of Morris yet. They really like hanging out under that sign in the harbor! Tags: photography , wildlife"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Note on 24th September 2026",
+   "url": "https://simonwillison.net/2026/Sep/24/harder/",
+   "date": "2026-09-24T23:31+00:00",
+   "summary": "The more time I spend working with coding agents, the more convinced I am that they make software engineering even harder. We can do amazing things with them, but unlocking their full potential requires extraordinary discipline and knowledge. Tags: coding-agents , ai , llms"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
    "title": "commit-rewriter 0.2",
    "url": "https://simonwillison.net/2026/Sep/24/commit-rewriter/",
    "date": "2026-09-24T20:06+00:00",
@@ -93,10 +149,26 @@
   {
    "source": "Hacker News",
    "tier": "community",
+   "title": "U.S. appeals court upholds designation of Anthropic as supply chain risk",
+   "url": "https://www.cnbc.com/2026/09/25/pentagon-anthropic-ai-risk-appeals-court.html",
+   "date": "2026-09-25T15:29+00:00",
+   "summary": "203 points, 276 comments · https://news.ycombinator.com/item?id=49845977"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Classified Estimates Show the NSA Is Paying Billions to Test AI Models",
+   "url": "https://www.washingtonsun.com/technology/classified-estimates-nsa-paying-billions-to-test-ai-models",
+   "date": "2026-09-25T15:27+00:00",
+   "summary": "124 points, 67 comments · https://news.ycombinator.com/item?id=49845952"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
    "title": "Git-bug: Distributed, offline-first bug tracker embedded in Git",
    "url": "https://github.com/git-bug/git-bug",
    "date": "2026-09-25T11:38+00:00",
-   "summary": "116 points, 29 comments · https://news.ycombinator.com/item?id=49843174"
+   "summary": "212 points, 67 comments · https://news.ycombinator.com/item?id=49843174"
   },
   {
    "source": "Hacker News",
@@ -104,7 +176,7 @@
    "title": "What About Rails?",
    "url": "https://jardo.dev/what-about-rails",
    "date": "2026-09-25T02:50+00:00",
-   "summary": "174 points, 103 comments · https://news.ycombinator.com/item?id=49839664"
+   "summary": "227 points, 143 comments · https://news.ycombinator.com/item?id=49839664"
   },
   {
    "source": "Hacker News",
@@ -112,7 +184,7 @@
    "title": "Show HN: Koi.rest – watch some fish and regain your balance",
    "url": "https://koi.rest",
    "date": "2026-09-24T21:33+00:00",
-   "summary": "201 points, 59 comments · https://news.ycombinator.com/item?id=49837006"
+   "summary": "207 points, 60 comments · https://news.ycombinator.com/item?id=49837006"
   },
   {
    "source": "Hacker News",
@@ -120,7 +192,7 @@
    "title": "Using LLMs to trace alchemical knowledge and decode 17th century letters",
    "url": "https://resobscura.substack.com/p/ai-labs-need-to-start-funding-historical",
    "date": "2026-09-24T19:14+00:00",
-   "summary": "151 points, 32 comments · https://news.ycombinator.com/item?id=49835531"
+   "summary": "160 points, 38 comments · https://news.ycombinator.com/item?id=49835531"
   },
   {
    "source": "Hacker News",
@@ -128,7 +200,7 @@
    "title": "Creatine uptake enhances antitumor immunity",
    "url": "https://www.cell.com/iscience/fulltext/S2589-0042(26)00811-4",
    "date": "2026-09-24T18:24+00:00",
-   "summary": "174 points, 193 comments · https://news.ycombinator.com/item?id=49834825"
+   "summary": "175 points, 201 comments · https://news.ycombinator.com/item?id=49834825"
   },
   {
    "source": "Hacker News",
@@ -136,7 +208,7 @@
    "title": "Show HN: Whiteboard (YC W26) – An open-source IDE for thoughtful software design",
    "url": "https://github.com/devdotfast/whiteboard",
    "date": "2026-09-24T17:21+00:00",
-   "summary": "357 points, 125 comments · https://news.ycombinator.com/item?id=49833867"
+   "summary": "374 points, 126 comments · https://news.ycombinator.com/item?id=49833867"
   },
   {
    "source": "Hacker News",
@@ -144,7 +216,7 @@
    "title": "Federal judge orders Texas to air condition all prisons by the end of 2029",
    "url": "https://www.texastribune.org/2026/09/22/texas-prison-air-conditioning-lawsuit-ruling/",
    "date": "2026-09-24T16:15+00:00",
-   "summary": "112 points, 174 comments · https://news.ycombinator.com/item?id=49832844"
+   "summary": "115 points, 173 comments · https://news.ycombinator.com/item?id=49832844"
   },
   {
    "source": "Hacker News",
@@ -152,7 +224,7 @@
    "title": "GitHub has not removed malicious imitation software after 3 weeks",
    "url": "https://successfulsoftware.net/2026/09/24/github-has-not-removed-malicious-imitation-software-after-3-weeks/",
    "date": "2026-09-24T15:50+00:00",
-   "summary": "261 points, 118 comments · https://news.ycombinator.com/item?id=49832406"
+   "summary": "265 points, 118 comments · https://news.ycombinator.com/item?id=49832406"
   },
   {
    "source": "Hacker News",
@@ -160,7 +232,7 @@
    "title": "F-Droid 2.0",
    "url": "https://f-droid.org/2026/09/24/f-droid-2.0-a-new-chapter-for-android-freedom.html",
    "date": "2026-09-24T15:26+00:00",
-   "summary": "1351 points, 388 comments · https://news.ycombinator.com/item?id=49831968"
+   "summary": "1404 points, 399 comments · https://news.ycombinator.com/item?id=49831968"
   },
   {
    "source": "Hacker News",
@@ -168,7 +240,7 @@
    "title": "Disney+ and Hulu raise prices by up to 13 percent after doubling profits",
    "url": "https://arstechnica.com/gadgets/2026/09/disney-and-hulu-raise-prices-by-up-to-13-percent-after-doubling-profits/",
    "date": "2026-09-24T15:15+00:00",
-   "summary": "160 points, 185 comments · https://news.ycombinator.com/item?id=49831774"
+   "summary": "161 points, 185 comments · https://news.ycombinator.com/item?id=49831774"
   },
   {
    "source": "Hacker News",
@@ -176,7 +248,7 @@
    "title": "Tutoring company tells parents to save their money and 'use AI instead'",
    "url": "https://www.afr.com/policy/health-and-education/tutoring-company-tell-parents-to-save-their-money-and-use-ai-instead-20260923-p60z0r",
    "date": "2026-09-24T15:09+00:00",
-   "summary": "124 points, 199 comments · https://news.ycombinator.com/item?id=49831690"
+   "summary": "131 points, 205 comments · https://news.ycombinator.com/item?id=49831690"
   },
   {
    "source": "Hacker News",
@@ -184,7 +256,7 @@
    "title": "Japanese used bookstores see 5x sales surge as books are being bought by the ton",
    "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/japanese-used-bookstores-see-5x-sales-surge-as-books-are-being-bought-by-the-ton-one-50-ton-order-sent-to-the-us-for-ai-scanning-and-destruction-multitude-of-suspicious-bulk-buys-thought-to-end-up-in-foreign-ai-scan-and-shred-facilities",
    "date": "2026-09-24T14:51+00:00",
-   "summary": "87 points, 125 comments · https://news.ycombinator.com/item?id=49831456"
+   "summary": "89 points, 126 comments · https://news.ycombinator.com/item?id=49831456"
   },
   {
    "source": "Hacker News",
@@ -200,7 +272,7 @@
    "title": "Best LLM for every budget, updated daily",
    "url": "https://bestmodelforyourbudget.terrydjony.com/",
    "date": "2026-09-24T14:09+00:00",
-   "summary": "178 points, 109 comments · https://news.ycombinator.com/item?id=49830866"
+   "summary": "180 points, 110 comments · https://news.ycombinator.com/item?id=49830866"
   },
   {
    "source": "Hacker News",
@@ -208,7 +280,7 @@
    "title": "Google’s Project Suncatcher to put ML infrastructure in space",
    "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/google-project-suncatcher-facts/",
    "date": "2026-09-24T13:53+00:00",
-   "summary": "205 points, 439 comments · https://news.ycombinator.com/item?id=49830606"
+   "summary": "212 points, 460 comments · https://news.ycombinator.com/item?id=49830606"
   },
   {
    "source": "Hacker News",
@@ -216,7 +288,7 @@
    "title": "Oracle cites 'force majeure' to shield itself on controversial data center",
    "url": "https://www.bloomberg.com/news/articles/2026-09-24/oracle-cites-force-majeure-to-shield-itself-on-controversial-data-center",
    "date": "2026-09-24T13:04+00:00",
-   "summary": "145 points, 144 comments · https://news.ycombinator.com/item?id=49830037"
+   "summary": "146 points, 146 comments · https://news.ycombinator.com/item?id=49830037"
   },
   {
    "source": "Hacker News",
@@ -224,7 +296,7 @@
    "title": "'That's so AI ' What gen Alpha's biggest insult tells us",
    "url": "https://www.theguardian.com/society/2026/sep/24/thats-so-ai-what-gen-alphas-biggest-insult-tells-us",
    "date": "2026-09-24T12:23+00:00",
-   "summary": "180 points, 266 comments · https://news.ycombinator.com/item?id=49829650"
+   "summary": "189 points, 288 comments · https://news.ycombinator.com/item?id=49829650"
   },
   {
    "source": "Hacker News",
@@ -240,7 +312,7 @@
    "title": "The newest ESP32 can run Linux and it's getting close to a Raspberry Pi",
    "url": "https://www.xda-developers.com/newest-esp32-run-linux-close-to-raspberry-pi/",
    "date": "2026-09-24T11:08+00:00",
-   "summary": "229 points, 116 comments · https://news.ycombinator.com/item?id=49828969"
+   "summary": "230 points, 118 comments · https://news.ycombinator.com/item?id=49828969"
   },
   {
    "source": "Hacker News",
@@ -248,7 +320,7 @@
    "title": "Starlink ground station in Poland hit by fire in suspected arson attack",
    "url": "https://notesfrompoland.com/2026/09/24/starlink-ground-station-in-poland-hit-by-fire-in-suspected-arson-attack/",
    "date": "2026-09-24T09:52+00:00",
-   "summary": "176 points, 176 comments · https://news.ycombinator.com/item?id=49828409"
+   "summary": "176 points, 178 comments · https://news.ycombinator.com/item?id=49828409"
   },
   {
    "source": "Hacker News",
@@ -256,23 +328,15 @@
    "title": "Meta takes down a critical video about meta AI Glasses after filming at Meta",
    "url": "https://www.reddit.com/r/facebook/comments/1wotwrk/meta_takes_down_a_critical_video_about_meta_ai/",
    "date": "2026-09-24T08:23+00:00",
-   "summary": "618 points, 374 comments · https://news.ycombinator.com/item?id=49827794"
+   "summary": "620 points, 376 comments · https://news.ycombinator.com/item?id=49827794"
   },
   {
    "source": "Hacker News",
    "tier": "community",
-   "title": "Early rogue AI agent activity and attempts to hack found on urlquery.net",
-   "url": "https://transluce.org/agent-activity",
-   "date": "2026-09-24T05:21+00:00",
-   "summary": "261 points, 289 comments · https://news.ycombinator.com/item?id=49826565"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "Contrastive Language Models",
-   "url": "https://contrastive-lm.notion.site/",
-   "date": "2026-09-24T04:20+00:00",
-   "summary": "170 points, 55 comments · https://news.ycombinator.com/item?id=49826221"
+   "title": "Show HN: Air-gapped file encryption as self-decrypting HTML page",
+   "url": "https://cms-sfx-demo.apeleg.com/",
+   "date": "2026-09-24T07:22+00:00",
+   "summary": "81 points, 29 comments · https://news.ycombinator.com/item?id=49827375"
   }
  ],
  "errors": [],
