@@ -164,6 +164,50 @@ def all_runs():
     return sorted(out, key=lambda s: s["created"], reverse=True)
 
 
+# ---------------------------------------------------------------- already posted (never offered again)
+
+GENERIC_URL = re.compile(r"(?i)changelog|release-?notes|/releases/?$|/updates/?$|/news/?$|/blog/?$|/\d{4}/?$")
+
+
+def _url(u):
+    return re.sub(r"^https?://(www\.)?|[?#].*$|/+$", "", str(u).strip().lower())
+
+
+def posted():
+    """Every post made so far (content/*.json; rejected ones are moved out of content/)."""
+    runs = {pathlib.Path(r["content"]).stem: r for r in all_runs() if r["kind"] == "post" and r.get("content")}
+    out = []
+    for p in sorted((ROOT / "content").glob("*.json")):
+        d = read_json(p, {}) or {}; r = runs.get(p.stem, {}); s0 = (d.get("slides") or [{}])[0]
+        out.append({"name": p.stem, "slug": re.sub(r"-\d+$", "", p.stem[11:]), "topic": d.get("topic"),
+                    "title": (d.get("cover") or {}).get("title") or s0.get("title"), "sources": d.get("sources", []),
+                    "candidate": (r.get("candidate") or {}).get("id"), "scan": r.get("scan")})
+    return out
+
+
+def posted_text():
+    """Posted list for the scout prompt."""
+    return "\n".join(f"- {p['name'][:10]} · {p['topic']} · \"{p['title']}\" · id {p['candidate'] or p['slug']} · "
+                     + " ".join(p["sources"][:3]) for p in posted()) or "- (nothing yet)"
+
+
+def load_candidates(path, scan_id=None):
+    """A scan's candidate list without anything that was already posted (same candidate id, same slug, or a news
+    item sharing a specific source URL with a post). Posts picked from this same scan stay (shown as chosen)."""
+    data = read_json(ROOT / path, {}) or {}
+    done = [p for p in posted() if not scan_id or p["scan"] != scan_id]
+    urls = {_url(u): p["name"] for p in done for u in p["sources"] if not GENERIC_URL.search(u)}
+    keep, hidden = [], []
+    for c in data.get("candidates", []):
+        hit = next((p["name"] for p in done if c.get("id") in (p["candidate"], p["slug"])), None)
+        if not hit and c.get("kind") == "news":
+            hit = next((urls[_url(u)] for u in c.get("sources", []) if _url(u) in urls), None)
+        (hidden if hit else keep).append({**c, "posted": hit} if hit else c)
+    data["candidates"] = keep
+    if hidden: data["hidden"] = hidden
+    return data
+
+
 def sh(run, nid, cmd, env=None):
     """Run a command, stream its output into the node log."""
     env = dict(os.environ, PYTHONUNBUFFERED="1", PYTHONIOENCODING="utf-8", **(env or {}))
@@ -242,14 +286,17 @@ def n_scout(run):
     out = ROOT / "research" / f"{day}_{run.s['hhmm']}_candidates.json"
     prev = sorted(str(p.relative_to(ROOT)).replace("\\", "/") for p in (ROOT / "research").glob(f"{day}_*_candidates.json") if p != out)
     claude(run, "scout", "scout", date=day, time=run.s["hhmm"], research=f"research/{day}.json",
-           out=str(out.relative_to(ROOT)).replace("\\", "/"), previous=", ".join(prev) or "none")
-    data = read_json(out)
-    if not data or not data.get("candidates"): raise StepError(f"{out.name} yazılmadı ya da boş")
-    run.status(run.s["status"], candidates_file=str(out.relative_to(ROOT)))
+           out=str(out.relative_to(ROOT)).replace("\\", "/"), previous=", ".join(prev) or "none", posted=posted_text())
+    rel = str(out.relative_to(ROOT)).replace("\\", "/")
+    data = load_candidates(rel)
+    if not data.get("candidates"): raise StepError(f"{out.name} yazılmadı ya da boş")
+    if data.get("hidden"):
+        run.log("scout", "Daha önce paylaşıldığı için gizlendi: " + ", ".join(f"{c['id']} (= {c['posted']})" for c in data["hidden"]))
+    run.status(run.s["status"], candidates_file=rel)
     n = len(data["candidates"])
     notify("AI Playbooks", f"{n} yeni aday hazır. Studio'dan birini seç.")
     TG.event("candidates", run)
-    return f"{n} aday"
+    return f"{n} aday" + (f" ({len(data['hidden'])} tekrar gizlendi)" if data.get("hidden") else "")
 
 
 def n_choose(run):
@@ -591,9 +638,9 @@ def recover():
 
 def select(scan_id, cand_id):
     scan = Run(scan_id)
-    cands = (read_json(ROOT / scan.s["candidates_file"], {}) or {}).get("candidates", [])
+    cands = load_candidates(scan.s["candidates_file"], scan_id).get("candidates", [])
     c = next((x for x in cands if x["id"] == cand_id), None)
-    if not c: raise ValueError("aday bulunamadı")
+    if not c: raise ValueError("aday bulunamadı (ya da daha önce paylaşıldı)")
     t = now(); day = f"{t:%Y-%m-%d}"
     slug = re.sub(r"[^a-z0-9-]+", "-", c["id"].lower()).strip("-")[:50] or "post"
     content = f"content/{day}_{slug}.json"; k = 2
@@ -669,7 +716,7 @@ def state():
     s = settings(); runs = all_runs()
     for r in runs:
         if r["kind"] == "scan" and r.get("candidates_file"):
-            r["candidates"] = (read_json(ROOT / r["candidates_file"], {}) or {})
+            r["candidates"] = load_candidates(r["candidates_file"], r["id"])
     return {"settings": {k: s[k] for k in ("scan_times", "approval")},
             "next_scan": iso(next_slot(s["scan_times"], now())), "now": iso(),
             "flows": {k: [{"id": n, "label": l, "kind": t} for n, l, t in v] for k, v in FLOWS.items()},

@@ -111,7 +111,7 @@ def latest_scan():
 
 def candidates(scan):
     if not scan or not scan.get("candidates_file"): return []
-    return (S.read_json(ROOT / scan["candidates_file"], {}) or {}).get("candidates", [])
+    return S.load_candidates(scan["candidates_file"], scan.get("id")).get("candidates", [])
 
 
 def show_candidates(scan=None):

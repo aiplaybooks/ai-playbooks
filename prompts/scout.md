@@ -24,10 +24,15 @@ everything after the pick is automatic, so the list must be accurate and ready t
    notice, research papers without a usable product, funding/business news, and rumors.
 5. For every news candidate, open its official source page (vendor blog, docs, release notes, official changelog) and
    confirm the core claim and date. No official source → drop it. Hacker News / Simon Willison are hints only.
-6. Avoid repeats: check `content/` and `publish_log.jsonl` (last 30 days) and the earlier candidate lists
-   of today: {previous}. A topic that was already posted is dropped; one that was only offered earlier today stays,
-   with `"seen_before": true`.
-7. Add 2 evergreen candidates (no news needed) that were not posted in the last 30 days, about tools from the list
+6. **Never offer something we already posted** (the owner's rule, no time limit). Everything posted so far:
+{posted}
+   Drop a candidate when its main news/launch was in one of these posts, even with a different source URL, a new
+   headline or extra details (e.g. a post covered "Muse on Meta glasses" → a later "Muse comes to AI glasses" candidate
+   is a repeat). A genuinely different launch about the same product is fine (new model version, new feature, new
+   product); then say in `summary_tr` what is new compared to the earlier post. Don't reuse the id of a posted post.
+   Candidates that were only offered in earlier lists of today ({previous}) and not posted stay, with
+   `"seen_before": true`. Note dropped repeats in `notes_tr`. (The Studio also hides exact repeats by id/source URL.)
+7. Add 2 evergreen candidates (no news needed) that are not in the posted list above, about tools from the list
    that got few or no news today (not always Claude/ChatGPT): e.g. tips, a comparison, a workflow (prompt
    collections go under step 8).
    Give them `sources` too: the official docs / help pages the post will be based on.
@@ -35,8 +40,8 @@ everything after the pick is automatic, so the list must be accurate and ready t
    the page's core format next to news ("7 prompts to learn any language", "6 prompts that write your weekly report",
    "5 photo edits you can do by just asking"). Pick everyday goals people search for, 3 different areas per scan:
    learning & study, work & career, writing, productivity, money planning (post says "not financial advice"), travel,
-   coding, image editing / creation, research, small business ... Not an area (or a near-identical pack) posted in
-   the last 30 days. `tools` = the chat tools the prompts really work in; features a prompt relies on (image editing,
+   coding, image editing / creation, research, small business ... Never a pack we already posted (list above);
+   the same area only after 30 days and with a clearly different pack. `tools` = the chat tools the prompts really work in; features a prompt relies on (image editing,
    file upload, voice mode, web search) must exist in those tools: put their official help pages in `sources`.
    `angle`: the pack plan in one line (the prompt names). Score them like the rest; a strong pack can beat weak news.
 
