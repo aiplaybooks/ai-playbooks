@@ -1,0 +1,170 @@
+{
+  "theme": "prompts",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Prompt Pack · Learn a Language",
+  "caption": "6 copy-paste prompts that turn ChatGPT or Claude into a personal language tutor: level test, daily conversation partner, mistake corrector, pronunciation coach, flashcard generator, culture guide.\n\nSave this before your next lesson.\n\n#languagelearning #chatgpt #claude #ai #aitools #learnalanguage #productivity",
+  "sources": [
+    "https://help.openai.com/en/articles/8400625-voice-mode-faq",
+    "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+  ],
+  "cover": {
+    "headline": "You can turn ChatGPT or Claude into a personal language tutor that never gets tired. Here are 6 prompts to try:",
+    "em": "personal language tutor",
+    "person": null,
+    "scene": "A cozy sunlit desk with an open notebook full of handwritten vocabulary, a phone showing chat bubbles in two languages, scattered postcards and a small world globe, warm morning light, shallow depth of field, cinematic, no text, no logos, no real people"
+  },
+  "design": {
+    "mood": "a language notebook on a sunny desk: postcards, passport stamps, warm terracotta ink and teal accents on cream paper",
+    "palette": {
+      "bg": "#FBF3E7",
+      "bg2": "#F4E7D3",
+      "surface": "#FFFFFF",
+      "ink": "#2B2018",
+      "muted": "#8C7B68",
+      "accent": "#E2632A",
+      "accent2": "#1F8A82"
+    },
+    "fonts": {
+      "display": "Fraunces",
+      "body": "DM Sans",
+      "mono": "Space Mono"
+    },
+    "display": {
+      "weight": 700,
+      "case": "none",
+      "tracking": -1,
+      "scale": 1.0,
+      "italic_em": true
+    },
+    "shape": {
+      "radius": 22,
+      "border": 2,
+      "shadow": "soft"
+    },
+    "background": {
+      "pattern": "grid",
+      "pattern_opacity": 0.06,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "pill",
+    "prompt": "chat",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z'/></svg>"
+  },
+  "voice": "am_fenrir",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "PROMPT PACK",
+      "title": "prompts to learn any language with AI",
+      "em": "learn any language",
+      "sub": "Copy, paste, start speaking today.",
+      "tools": [
+        "ChatGPT",
+        "Claude"
+      ],
+      "count": 6,
+      "voiceover": "Here are six prompts to learn any language with ChatGPT or Claude."
+    },
+    {
+      "type": "prompt",
+      "name": "The Placement Test",
+      "sub": "Find your real level in two minutes, no guessing.",
+      "prompt": "I want to learn [LANGUAGE]. Ask me 8 short questions in [LANGUAGE], mixed from easy to hard, to test my vocabulary and grammar. After my answers, tell me my level on the CEFR scale (A1-C2) and the 3 things I should work on first.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Level: B1 (intermediate)",
+          "Strength: everyday vocabulary",
+          "Focus next: past tense verbs"
+        ]
+      },
+      "voiceover": "One. A quick quiz that tells you your real level, not a guess."
+    },
+    {
+      "type": "prompt",
+      "name": "The Conversation Partner",
+      "sub": "A 5-minute role-play in your target language, every day.",
+      "prompt": "Be my conversation partner in [LANGUAGE] at a [YOUR LEVEL] level. Play the role of [SCENARIO, e.g. a barista in Paris]. Reply only in [LANGUAGE], keep it short, and gently correct my grammar in [YOUR LANGUAGE] after each of my turns.",
+      "tip": "Do this for 5 minutes a day instead of one long session a week — it sticks better.",
+      "voiceover": "Two. A daily role-play partner that corrects you as you go."
+    },
+    {
+      "type": "prompt",
+      "name": "The Mistake Corrector",
+      "sub": "Turn your own sentences into a mini grammar lesson.",
+      "prompt": "Here is a paragraph I wrote in [LANGUAGE]: [PASTE TEXT]. Correct every mistake, show the original next to the fix, explain the grammar rule behind each correction in [YOUR LANGUAGE], and rate my writing from 1 to 10.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "\"Je suis allé\" not \"Je suis aller\"",
+          "Rule: past tense needs the past participle",
+          "Score: 7/10"
+        ]
+      },
+      "voiceover": "Three. Paste anything you wrote, get a real grammar breakdown."
+    },
+    {
+      "type": "prompt",
+      "name": "The Pronunciation Coach",
+      "sub": "Phonetic breakdowns for the words that trip you up.",
+      "prompt": "Break down how to pronounce this [LANGUAGE] word or phrase: [WORD]. Give me a phonetic spelling I can actually read, which syllable to stress, one similar-sounding English word, and a common mistake learners make with it.",
+      "tip": "If your app has a voice conversation feature, say the word out loud afterward and ask how it sounded.",
+      "voiceover": "Four. Get a phonetic spelling for any word that trips you up."
+    },
+    {
+      "type": "prompt",
+      "name": "The Flashcard Generator",
+      "sub": "Turn any text into a ready-to-study vocabulary set.",
+      "prompt": "Read this [LANGUAGE] text: [PASTE TEXT]. Pick the 10 most useful words or phrases for a [YOUR LEVEL] learner. For each one, give the translation, one example sentence, and a memory trick. Format it as a simple flashcard list.",
+      "voiceover": "Five. Any article becomes a ten-card vocabulary deck."
+    },
+    {
+      "type": "prompt",
+      "name": "The Culture Guide",
+      "sub": "The context a textbook always skips.",
+      "prompt": "Explain the cultural context behind this [LANGUAGE] expression or custom: [TOPIC]. When would a native speaker actually use it, is it formal or casual, and is there anything a foreigner should avoid saying or doing around it?",
+      "voiceover": "Six. The cultural context your textbook never explains."
+    },
+    {
+      "type": "howto",
+      "title": "Get more out of this pack",
+      "items": [
+        [
+          "Pick one language",
+          "Stick with it for a full week before you switch."
+        ],
+        [
+          "Save the good replies",
+          "Turn your corrected sentences into your own flashcard deck."
+        ],
+        [
+          "Use it daily",
+          "Five minutes with the conversation partner beats one hour, once a week."
+        ]
+      ],
+      "voiceover": "Pick one language, save your corrections, and use it daily."
+    },
+    {
+      "type": "cta",
+      "title": "Save this pack.",
+      "title2": "Start your first lesson today.",
+      "lines": [
+        [
+          "Follow",
+          "for daily AI tool tips & news"
+        ],
+        [
+          "Share",
+          "with someone learning a language"
+        ],
+        [
+          "Comment",
+          "your target language below"
+        ]
+      ],
+      "voiceover": "Save this pack, and follow for a new AI tip every day."
+    }
+  ]
+}
