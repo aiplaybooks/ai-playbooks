@@ -286,9 +286,9 @@ const LAYOUT={
   post:{trigger:[0,40],collect:[270,40],scout:[540,40],choose:[810,40],
     write:[0,230],cover:[270,230],carousel:[540,230],reel:[810,230],
     qa:[0,420],approve:[270,420],upload:[540,420],ig_carousel:[810,420],
-    fb_photos:[0,610],yt_short:[270,610],log:[540,610]},
+    fb_photos:[0,610],yt_short:[270,610],comments:[540,610],log:[810,610]},
   clip:{fetch:[0,40],hook:[270,40],frame:[540,40],qa:[810,40],
-    approve:[0,230],upload:[270,230],ig_reel:[540,230],fb_reel:[810,230],log:[0,420]}};
+    approve:[0,230],upload:[270,230],ig_reel:[540,230],fb_reel:[810,230],comments:[0,420],log:[270,420]}};
 const GROUPS={post:[["① Tarama","scan",0,0],["② Carousel üretimi","post",0,190],["③ Kontrol, onay & yayın","pub",0,380]],
   clip:[["① Viral Reel üretimi (link yapıştırınca başlar, taramadan bağımsız)","post",0,0],["② Kontrol sonrası onay & yayın","pub",0,190]]};
 const kind=()=>runById(postId)?.kind==="clip"?"clip":"post";
