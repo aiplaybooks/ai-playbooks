@@ -1,0 +1,11 @@
+{
+  "kind": "clip",
+  "source": "https://x.com/triptitips/status/2101682470655758391/video/1",
+  "credit": "@triptitips on X",
+  "topic": "AI tools",
+  "title": null,
+  "hook": "ChatGPT is just the tip. This map shows the 100+ tools running the AI stack underneath",
+  "fit": "contain",
+  "caption": "One chart, the whole modern AI stack: LLMs, agents, RAG, memory, observability, vector DBs and more.\nA good one to save if you're mapping out the AI tooling landscape.\nSource: @triptitips on X\nFollow @aiplaybooks.daily for daily AI tips & news\n#AI #AIStack #AITools #MachineLearning #LLM #AIagents #TechEducation #AIecosystem",
+  "checked": ["Categories and tool logos in the graphic (LLM, Agentic AI, RAG, Embedding, MCP, AI Security, Observability, Memory, AI Agent, Automation, Vector Database) are legible in the source frames; no external verification needed since the post makes no factual claim beyond listing well-known, real tool names/logos (OpenAI GPT, Anthropic Claude, Google Gemini, etc.), and we make no claims about who made the graphic or with what tool."]
+}
