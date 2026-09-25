@@ -1,0 +1,289 @@
+{
+ "generated": "2026-09-25T18:00+03:00",
+ "candidates": [
+  {
+   "id": "chatgpt-voice-plugins-work",
+   "tool": "ChatGPT",
+   "kind": "news",
+   "title": "ChatGPT Voice Can Now Use Your Apps While You Talk",
+   "summary_tr": "OpenAI, ChatGPT'nin sesli (Live) modunu web, iOS ve Android'de eklentiler ve bağlı uygulamalarla (e-posta, takvim, Slack gibi) çalışacak şekilde genişletti; ayrıca sesli mod artık ChatGPT Work'e de geldi, konuşma bitince görevler devam edebiliyor.",
+   "why_tr": "Sesli asistanı gerçek işler için kullanmak isteyen geniş bir kitleye hitap ediyor; 'konuşarak e-postanı okut/takvimini düzenlet' somut ve gösterilebilir bir demo.",
+   "angle": "what's new (voice + plugins/connected apps) + how to try it (say 'check my calendar' in Live) + it now works in Work too",
+   "tools": ["ChatGPT"],
+   "published": "2026-09-23",
+   "sources": [
+    "https://help.openai.com/en/articles/20001274-chatgpt-voice",
+    "https://help.openai.com/en/articles/11487775-connectors-in-chatgpt"
+   ],
+   "hints": ["https://www.unite.ai/openai-brings-plugins-to-live-voice-and-voice-to-work-in-chatgpt/"],
+   "score": 7,
+   "seen_before": false
+  },
+  {
+   "id": "chatgpt-credit-score-finances",
+   "tool": "ChatGPT",
+   "kind": "news",
+   "title": "ChatGPT Can Now Track Your Credit Score",
+   "summary_tr": "ChatGPT'nin Finances bölümüne, ABD'deki Plus ve Pro kullanıcıları için Experian kredi raporu ve VantageScore 3.0 kredi skorunu bağlama özelliği geldi; skor aylık güncelleniyor, önemli değişikliklerde uyarı veriyor ve bağlanma sorgusu kredi skorunu etkilemiyor.",
+   "why_tr": "Kişisel finans, AI'dan somut fayda beklenen bir alan; 'ChatGPT artık kredi skorunu takip ediyor' başlığı merak uyandırır ve pratik bir demo olur.",
+   "angle": "what it shows (score + what's affecting it) + how to connect it in Finances + who can use it (US Plus/Pro)",
+   "tools": ["ChatGPT"],
+   "published": "2026-09-21",
+   "sources": ["https://help.openai.com/en/articles/20001222-finances-in-chatgpt"],
+   "hints": ["https://mixed-news.com/en/chatgpt-experian-credit-score-finances-us-plus-pro/"],
+   "score": 6,
+   "seen_before": false
+  },
+  {
+   "id": "claude-enzyme-discovery",
+   "tool": "Claude",
+   "kind": "news",
+   "title": "Claude Helped Discover a Novel CRISPR-like Enzyme System",
+   "summary_tr": "Anthropic, Claude'un araştırmacılarla birlikte CRISPR benzeri tekrarlara sahip yeni bir enzim sistemi keşfine yardımcı olduğunu duyurdu.",
+   "why_tr": "Bilimsel keşif hikayeleri çok geniş kitlede merak uyandırıyor ve 'AI sadece sohbet etmiyor' mesajını güçlü veriyor.",
+   "angle": "what Claude helped discover + why it matters + AI-in-science framing",
+   "tools": ["Claude"],
+   "published": "2026-09-23",
+   "sources": ["https://www.anthropic.com/news/claude-discovers-novel-enzyme-system"],
+   "hints": ["https://news.ycombinator.com/item?id=49820134"],
+   "score": 6,
+   "seen_before": true
+  },
+  {
+   "id": "claude-code-2-1-282",
+   "tool": "Claude",
+   "kind": "news",
+   "title": "Claude Code Adds a Wide-Terminal Prose Width Setting",
+   "summary_tr": "Claude Code v2.1.282, geniş terminallerde metnin okunabilirliği için maxProseWidth ayarı ve telemetri durumunu gösteren yeni bir başlangıç uyarısı ekledi.",
+   "why_tr": "Claude Code kullanan geliştirici kitlemiz için küçük ama gerçek bir kalite-of-life güncellemesi.",
+   "angle": "what's new in this Claude Code release + why the setting matters on wide terminals",
+   "tools": ["Claude"],
+   "published": "2026-09-24",
+   "sources": ["https://github.com/anthropics/claude-code/releases/tag/v2.1.282"],
+   "hints": [],
+   "score": 5,
+   "seen_before": true
+  },
+  {
+   "id": "grok-4-7-release",
+   "tool": "Grok",
+   "kind": "news",
+   "title": "Grok 4.7 Lands as xAI's New Frontier Coding Model",
+   "summary_tr": "xAI, kodlama ve ajan görevlerinde daha güçlü olan Grok 4.7'yi API'de yayınladı; aynı fiyatla 500 bin token bağlam penceresi sunuyor ve zaten Cursor ile Grok Build içinde kullanılabiliyor.",
+   "why_tr": "Kod yazan takipçiler için doğrudan ilgi çekici bir model yükseltmesi, fiyat/performans karşılaştırması iyi bir carousel konusu olur.",
+   "angle": "what's new in Grok 4.7 + where it's already available (Cursor, Grok Build, API) + same price as before",
+   "tools": ["Grok"],
+   "published": "2026-09-21",
+   "sources": ["https://docs.x.ai/developers/release-notes"],
+   "hints": ["https://tech.yahoo.com/ai/gemini/articles/xai-launches-grok-4-7-171603280.html"],
+   "score": 7,
+   "seen_before": true
+  },
+  {
+   "id": "codex-cli-0-157-0",
+   "tool": "Codex",
+   "kind": "news",
+   "title": "Codex CLI Adds GPT-6 Sol/Luna, Fullscreen Transcripts and Fork Shortcut",
+   "summary_tr": "Codex CLI 0.157.0, GPT-6 Sol ve Luna desteği (Amazon Bedrock dahil), varsayılan tam ekran transkript görünümü, metin seçimini genişletmek için Shift-tıklama ve sohbetleri başka bir uygulamada çatallamak için 'f' kısayolunu ekledi.",
+   "why_tr": "Codex CLI kullanan geliştiriciler için doğrudan iş akışını hızlandıran pratik değişiklikler.",
+   "angle": "new models in Codex CLI + fullscreen transcripts + the fork shortcut",
+   "tools": ["Codex", "ChatGPT"],
+   "published": "2026-09-25",
+   "sources": [
+    "https://developers.openai.com/codex/changelog",
+    "https://github.com/openai/codex/releases/tag/rust-v0.157.0"
+   ],
+   "hints": [],
+   "score": 6,
+   "seen_before": true
+  },
+  {
+   "id": "cursor-rollouts-security-review",
+   "tool": "Cursor",
+   "kind": "news",
+   "title": "Cursor Ships Two Bots That Watch Your Code After You Ship It",
+   "summary_tr": "Cursor, her deploy'u izleyip sorun tespit ettiğinde uyaran 'Rollouts' ve her pull request'te SQL/komut enjeksiyonu, kimlik doğrulama açıkları gibi güvenlik sorunlarını raporlayan 'Security Review' adlı iki yeni bot yayınladı (Teams/Enterprise, ilk 10 gün ücretsiz kredi ile).",
+   "why_tr": "Cursor kullanan geliştirme ekipleri için 'ship sonrası' güvenlik ve izleme konusunda somut, yeni bir yetenek.",
+   "angle": "what Rollouts and Security Review do + which plans get them + free trial credits",
+   "tools": ["Cursor"],
+   "published": "2026-09-23",
+   "sources": [
+    "https://cursor.com/changelog/rollouts-and-security-reviewer",
+    "https://cursor.com/blog/rollouts-and-security-reviewer"
+   ],
+   "hints": [],
+   "score": 7,
+   "seen_before": true
+  },
+  {
+   "id": "copilot-powerpoint-interactive-slides",
+   "tool": "Copilot",
+   "kind": "news",
+   "title": "Microsoft 365 Copilot Builds Clickable, Interactive Slides in PowerPoint",
+   "summary_tr": "Copilot'ın yeni 'interactive slides' özelliği, PowerPoint'te tıklanabilir filtreler, animasyonlar ve butonlar içeren tam sayfa görsel deneyimler üretiyor; karmaşık kavramları, zaman çizelgelerini ve karşılaştırmaları anlatmak için tasarlandı. Cowork tarafında da işi ne kadar 'düşüneceğini' ayarlayan yeni bir 'reasoning effort' kaydırıcısı eklendi.",
+   "why_tr": "Ofiste sunum hazırlayan geniş bir kitle için gösterişli, ekran görüntüsüyle iyi çalışan somut bir özellik.",
+   "angle": "what interactive slides look like + how to ask Copilot to build one + the new Cowork effort slider",
+   "tools": ["Copilot"],
+   "published": "2026-09-25",
+   "sources": [
+    "https://mc.merill.net/message/MC1461152",
+    "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/get-started"
+   ],
+   "hints": ["https://m365copilotconnection.substack.com/p/new-copilot-updates-are-here-september"],
+   "score": 5,
+   "seen_before": true
+  },
+  {
+   "id": "copilot-default-enablement",
+   "tool": "Copilot",
+   "kind": "news",
+   "title": "GitHub Copilot Business/Enterprise Features Turn On by Default",
+   "summary_tr": "GitHub, Copilot Business ve Enterprise planlarında genel kullanıma açık özellikler ve desteklenen istemci yetenekleri için yeni bir global varsayılan açık politika getiriyor; kuruluşların 28 gün içinde ayarları gözden geçirmesi öneriliyor.",
+   "why_tr": "Şirket hesabıyla Copilot kullanan takipçiler için 'hangi özellikler artık otomatik açık' sorusuna cevap veren pratik bir yönetici notu.",
+   "angle": "what turns on by default + the 28-day window to review settings + who it affects (Business/Enterprise admins)",
+   "tools": ["Copilot"],
+   "published": "2026-09-25",
+   "sources": ["https://github.blog/changelog/2026-09-24-default-enablement-of-copilot-features-for-copilot-business-and-enterprise"],
+   "hints": [],
+   "score": 5,
+   "seen_before": true
+  },
+  {
+   "id": "perplexity-agent-api-models",
+   "tool": "Perplexity",
+   "kind": "news",
+   "title": "Perplexity's Agent API Adds GPT-6, Gemini 3.8 Flash, GLM-5.3 and Grok 4.6",
+   "summary_tr": "Perplexity'nin Agent API'si artık GPT-6 Sol/Luna, Gemini 3.8 Flash, GLM-5.3 (ve ucuz sürümü GLM-5.3-flash) ve xAI'ın Grok 4.6 modelini destekliyor. Eski Sonar chat completions API'si 27 Eylül'de emekliye ayrılıyor; sonar modeli isteklerde değişiklik olmadan, daha düşük fiyatla Agent API'ye taşınıyor.",
+   "why_tr": "Perplexity üzerine kendi ajanlarını kuran geliştiriciler için model seçeneği genişliyor; teknik ama meraklı kitle için ilgi çekici, ayrıca fiyat düşüşü somut bir fayda.",
+   "angle": "which new models you can now pick in Perplexity's Agent API + Sonar API retiring Sep 27 with a same-request price cut",
+   "tools": ["Perplexity"],
+   "published": "2026-09-25",
+   "sources": ["https://docs.perplexity.ai/docs/resources/changelog"],
+   "hints": ["https://llmgateway.io/changelog/perplexity-sonar-changes"],
+   "score": 5,
+   "seen_before": true
+  },
+  {
+   "id": "gemini-notebook-in-docs",
+   "tool": "Gemini",
+   "kind": "news",
+   "title": "Gemini Notebook Becomes a Context Source Inside Google Docs",
+   "summary_tr": "Google Docs'ta artık yan panelde '@' yazarak kendi Gemini Notebook'unuzdaki araştırmaları doğrudan referans gösterebiliyorsunuz; ayrıca 100.000'den fazla kitabı kapsayan 'Expert Intelligence' ile güvenilir yayıncı içeriklerine erişim geliyor.",
+   "why_tr": "Araştırmasını Notebook'ta toplayan kullanıcılar için yazma sürecini hızlandıran, hemen denenebilir bir entegrasyon.",
+   "angle": "how to pull your Notebook research into a Doc with @ + what Expert Intelligence adds",
+   "tools": ["Gemini"],
+   "published": "2026-09-23",
+   "sources": ["https://workspaceupdates.googleblog.com/2026/"],
+   "hints": [],
+   "score": 6,
+   "seen_before": true
+  },
+  {
+   "id": "claude-code-tips-subagents",
+   "tool": "Claude",
+   "kind": "evergreen",
+   "title": "5 Claude Code Settings Most People Never Turn On",
+   "summary_tr": "Claude Code'un günlük kullanıcıların çoğunun fark etmediği 5 ayarı: özel slash komutları, permission modları, hooks, CLAUDE.md ve subagent'lar — her biri için ne işe yaradığı ve nasıl açılacağı.",
+   "why_tr": "Haber olmadan da işe yarar, sürekli değer üreten bir 'ipuçları' formatı; Claude Code takipçilerimiz için pratik ve kaydedilebilir.",
+   "angle": "5 underused Claude Code settings + what each one does + one-line setup for each",
+   "tools": ["Claude"],
+   "published": null,
+   "sources": [
+    "https://docs.claude.com/en/docs/claude-code/settings",
+    "https://docs.claude.com/en/docs/claude-code/hooks",
+    "https://docs.claude.com/en/docs/claude-code/sub-agents"
+   ],
+   "hints": [],
+   "score": 6,
+   "seen_before": true
+  },
+  {
+   "id": "deepseek-free-app-features",
+   "tool": "DeepSeek",
+   "kind": "evergreen",
+   "title": "5 Things DeepSeek's Free App Can Do Besides Chat",
+   "summary_tr": "DeepSeek'in tamamen ücretsiz mobil/web uygulamasında çoğu kullanıcının fark etmediği özellikler: derin düşünme modu (DeepThink), web araması, dosya yükleyip metin çıkarma (PDF, Office, tablo, görsel) ve cihazlar arası sohbet geçmişi senkronizasyonu.",
+   "why_tr": "DeepSeek'te son 7 günde haber yok; ücretsiz ve reklamsız olması güçlü bir 'bunu neden kullanmıyorsun' açısı sunuyor.",
+   "angle": "DeepThink mode + web search + file upload & text extraction + cross-platform sync, one line each with how to trigger it",
+   "tools": ["DeepSeek"],
+   "published": null,
+   "sources": [
+    "https://api-docs.deepseek.com/news/news250115/",
+    "https://www.deepseek.com/en/news/deepseek-app/"
+   ],
+   "hints": [],
+   "score": 5,
+   "seen_before": false
+  },
+  {
+   "id": "prompts-research-summary",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Prompts That Turn Any Topic Into a Clear Research Summary",
+   "summary_tr": "Karmaşık bir konuyu anlaşılır bir araştırma özetine çeviren 5 kopyala-yapıştır prompt: temel kavramları basitçe tanımlama, farklı görüşleri karşılaştırma, güncel kaynaklarla web araması yaptırma, kaynak listesi oluşturma ve konuyu yeni başlayan biri için özetleme — ChatGPT'nin arama, Perplexity'nin kaynak gösterme ve Gemini'nin web'e bağlı yanıtlarıyla.",
+   "why_tr": "Öğrenciler ve meraklı kullanıcılar için 'bir konuyu hızlıca anlama' ihtiyacına doğrudan cevap veren, para/dil paketlerinden farklı yeni bir alan.",
+   "angle": "define the basics + compare viewpoints + web-search for current sources + build a source list + explain it like I'm new to the topic",
+   "tools": ["ChatGPT", "Perplexity", "Gemini"],
+   "published": null,
+   "sources": [
+    "https://help.openai.com/en/articles/9237897-chatgpt-search",
+    "https://docs.perplexity.ai/docs/resources/changelog",
+    "https://support.google.com/gemini/answer/13695044"
+   ],
+   "hints": [],
+   "score": 6,
+   "seen_before": false
+  },
+  {
+   "id": "prompts-photo-edits",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Photo Edits You Can Do Just by Asking",
+   "summary_tr": "Fotoğrafı yükleyip yazarak yapılabilecek 5 düzenleme: arka planı değiştirme, ışığı/renk tonunu düzeltme, dikkat dağıtan objeyi kaldırma, eski fotoğrafı canlandırma, ürün fotoğrafını beyaz zemine oturtma — Gemini ve ChatGPT'nin görsel düzenleme özellikleriyle.",
+   "why_tr": "Görsel içerik her zaman güçlü performans gösteriyor; 'sadece yazarak düzenle' konsepti hem şaşırtıcı hem hemen denenebilir.",
+   "angle": "background swap + relight/color fix + remove distraction + restore old photo + product-on-white",
+   "tools": ["Gemini", "ChatGPT"],
+   "published": null,
+   "sources": [
+    "https://support.google.com/gemini/answer/14903178",
+    "https://help.openai.com/en/articles/11989085-image-generation-and-editing-with-chatgpt"
+   ],
+   "hints": [],
+   "score": 7,
+   "seen_before": true
+  },
+  {
+   "id": "prompts-trip-planning",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Prompts That Plan Your Next Trip Start to Finish",
+   "summary_tr": "Bir sonraki seyahati baştan sona planlayan 5 kopyala-yapıştır prompt: bütçeye göre rota önerisi, gün gün program, yerel yemek/etkinlik önerileri, harita bağlantılı yer araması ve 'ne paketlemeliyim' kontrol listesi.",
+   "why_tr": "Seyahat planlama, AI'dan pratik yardım istenen en popüler konulardan biri; harita/web arama entegrasyonlarıyla somut ve hemen denenebilir.",
+   "angle": "budget route suggestion + day-by-day itinerary + local food/events + map-grounded place search + packing checklist",
+   "tools": ["ChatGPT", "Gemini"],
+   "published": null,
+   "sources": [
+    "https://help.openai.com/en/articles/9237897-chatgpt-search",
+    "https://support.google.com/gemini/answer/13695044"
+   ],
+   "hints": [],
+   "score": 6,
+   "seen_before": true
+  }
+ ],
+ "coverage": {
+  "ChatGPT": 2,
+  "Claude": 2,
+  "Gemini": 1,
+  "Grok": 1,
+  "Codex": 1,
+  "Cursor": 1,
+  "Copilot": 2,
+  "Perplexity": 1,
+  "Meta AI": 0,
+  "Mistral": 0,
+  "DeepSeek": 0,
+  "Open models": 0
+ },
+ "notes_tr": "18:00 taraması research/2026-09-25.json + 14:42 listesini temel aldı ve yeni web aramalarıyla güncelledi. ChatGPT için iki taze, önceden hiç sunulmamış haber bulundu ve gpt-6-sol-luna'nın yerine kondu: Live sesli modun eklenti/bağlı uygulama desteği (23 Eylül) ve Finances'a Experian kredi skoru takibi (21 Eylül) — gpt-6-sol-luna zaten önceki taramalarda sunulmuştu, tekrar eklenmedi. Grok: Imagine Image 2.0 (7 Ağustos) ve Imagine Video 1.5 (31 Temmuz) kontrol edildi, ikisi de 7 günden çok eski; Grok 4.7 tek haber adayı kaldı. Gemini: Notebook 'Study Tools' (15 Eylül) ve Find Hub entegrasyonu (Eylül başı) kontrol edildi, ikisi de 7 günden eski; gemini-notebook-in-docs tek adayı korudu. Perplexity: yeni 'Portable Computer' özelliğinin AMD Ryzen AI Max desteği (25 Eylül, resmi: perplexity.ai/hub/blog) bulundu ama en az 24GB GPU belleği olan belirli AMD donanımı gerektirdiği için normal takipçi kitlesi için çok dar kapsamlı görüldü, aday yapılmadı. Meta AI: Connect 2026 haberleri (Muse gözlüklere geliyor, Ray-Ban ses gözlükleri, VR Glasses) zaten postlandı/sunuldu, son 7 günde yeni haber yok. Mistral: son haber Samsung'un 3 milyar euro'luk yatırımı (finans haberi, kural gereği alınmadı), ürün tarafında yeni bir şey yok. DeepSeek: en yeni model V4.1 Flash 10 Eylül (15 gün önce), 7 günden eski; DeepSeek coverage 0 kaldı, evergreen slotuna 'ücretsiz uygulamanın özellikleri' adayı eklendi (daha önce hiç sunulmamış). Open models (Qwen/Kimi/GLM/MiniMax): en yenisi MiniMax H3 Max 8 Eylül (17 gün önce), 7 günden eski, coverage 0. x.ai/news, ChatGPT release notes, Perplexity changelog ve Microsoft blog script'i engelliyor (403); hepsi web search ile doğrulandı."
+}
