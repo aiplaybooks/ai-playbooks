@@ -26,8 +26,8 @@ Every day the pipeline should:
   promise is also "copy-paste prompts". Scout adds 3 `kind: "prompts"` candidates per scan (different everyday areas);
   write.md renders them with the `prompts` theme. Prompts are our own wording, never copied from other accounts.
 - **Reel/Short cover = the carousel's first slide** (owner, 2026-09-24): publish.py makes `cover.jpg` (9:16, slide centered
-  on a blurred copy) → IG `cover_url`, FB reel thumbnail (needs pages_manage_engagement + pages_read_user_content; skipped
-  until the token has them), YouTube thumbnails.set (works only once the channel may set Shorts covers; never fails the
+  on a blurred copy) → IG `cover_url`, FB reel thumbnail (needs pages_manage_engagement + pages_read_user_content; the
+  token has them since 2026-09-25), YouTube thumbnails.set (works only once the channel may set Shorts covers; never fails the
   step). reel.py also starts the cover slide fully drawn so the first frame is a clean cover. The owner set the covers of
   the first (Gemini) post by hand.
 - **Images are code-rendered**, not AI-generated: HTML/CSS template → headless Chromium (Playwright) screenshot. Fonts are open-source (OFL/Inter license) and live in `fonts/`.
@@ -63,8 +63,11 @@ news.py            daily news collector (stdlib only): RSS/Atom feeds, changelog
 publish.py         IG carousel + Reel and FB Page photo post + Reel via Graph API v25.0; media via gh-pages.
                    Resumable/idempotent (output/<name>/publish.json); --dry-run checks token + quota, posts nothing
 metrics.py         performance collector (YouTube Data+Analytics, IG media + insights, FB page/post/reel) -> runs/metrics.json
-                   (local only, 30-day history; Studio runs it every 6 h; UI: 📊 Performans). Missing Meta permission:
-                   pages_read_user_content (FB photo-post reactions/comments) -> listed under "needs"
+                   (local only, 30-day history; Studio runs it every 6 h; UI: 📊 Performans). A missing permission
+                   is listed under "needs" (none since the 2026-09-25 token)
+comments           publish.py step: the content JSON's optional `comments` list is posted as our first comments under
+                   every IG/FB post of the run (clips: prompts go there, caption says "in the comments"). Needs
+                   instagram_manage_comments + pages_manage_engagement; prepare checks before anything is posted
 telegram_bot.py    Telegram remote control inside the Studio (@aiplaybooks_studio_bot, owner-only: TELEGRAM_BOT_TOKEN +
                    TELEGRAM_CHAT_ID in .env): candidates, approval previews, publish links, errors; text + voice commands
 stt.py             speech to text for voice commands (faster-whisper in the Pinokio TTS env, model cache in .cache/)
