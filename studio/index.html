@@ -425,7 +425,7 @@ async function renderSide(force){
       shown.map(p=>`<div class="cand ${p.used?"chosen":""}">
         <div class="top"><span class="tag pp">PROMPT PAKETİ</span><span class="chip" style="font-size:11px;padding:0 7px">${esc(p.category_tr)}</span>${p.used?`<span>✓ paylaşıldı</span>`:""}</div>
         <h4><a class="ttl" href="#" data-more="${esc(p.id)}">${esc(p.title_tr)} ▾</a></h4><p>${esc(p.headline)}</p>
-        <div class="more" id="more-${esc(p.id)}" ${openMore.has(p.id)?"":"hidden"}>${p.prompts.map((x,i)=>`<p><b>${i+1}. ${esc(x.name)}</b> <i>${esc(x.sub)}</i><br><small>${esc(x.prompt)}</small></p>`).join("")}${p.disclaimer?`<p class="why">${esc(p.disclaimer)}</p>`:""}</div>
+        <div class="more" id="more-${esc(p.id)}" ${openMore.has(p.id)?"":"hidden"}>${p.prompts.map((x,i)=>`<p><b>${i+1}. ${esc(x.name)}</b> <i>${esc(x.sub)}</i><br><small>${esc(x.prompt)}</small></p>`).join("")}</div>
         <div class="chips">${(p.tools||[]).map(t=>`<span class="chip">${esc(t)}</span>`).join("")}</div>
         ${p.used?"":p.run?`<button data-run="${esc(p.run)}">Üretimde · göster</button>`:`<button class="primary" data-pack="${esc(p.id)}">Bu paketi üret</button>`}
       </div>`).join("");

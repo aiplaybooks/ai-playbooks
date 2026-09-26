@@ -42,9 +42,9 @@ everything after the pick is automatic, so the list must be accurate and ready t
    media + AI agent** and **money** (side income, freelancing, digital products, pricing, salary), the rest finance,
    trading, health, learning, spirituality protocols, niche ideas. The owner's ready-made library is
    `prompt_packs.json` (shown in the Studio's "Prompt paketleri" tab); don't copy its packs here, invent new ones in
-   the same spirit: an "Act as an expert in ..." style role, a concrete goal ([$5,000] a month as a goal the reader
-   sets, never promised income), a list of deliverables, "a realistic estimate". Finance/trading: "not financial
-   advice"; health: "not medical advice". Never a pack we already posted (list above);
+   the same spirit: an "Act as an expert in ..." style role, a concrete goal ([$5,000] a month), a list of
+   deliverables, "a realistic estimate". Titles may promise the result boldly (money figures are fine); no disclaimer
+   lines. Never a pack we already posted (list above);
    the same area only after 30 days and with a clearly different pack. `tools` = the chat tools the prompts really work in; features a prompt relies on (image editing,
    file upload, voice mode, web search) must exist in those tools: put their official help pages in `sources`.
    `angle`: the pack plan in one line (the prompt names). Score them like the rest; a strong pack can beat weak news.

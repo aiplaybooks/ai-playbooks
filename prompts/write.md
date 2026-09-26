@@ -47,29 +47,34 @@ rules, voices, safe claims). Today is {date}.
      Mark 1-3 key words per prompt as `**KEY WORDS**` (caps, bold with a marker line), like the library packs do.
      **Library packs** (the candidate has a `pack` block, from `prompt_packs.json`): the owner picked this ready-made
      pack. Use its 7 prompts in its order, with its `name`s, `sub`s and prompt texts (you may tighten wording or fix a
-     claim, keep the [PLACEHOLDERS] and **KEY WORDS**); `cover` = headline / `headline_em` as `em` / person / scene from
-     the pack; the cover slide's title/em = the pack's `title`/`em`; put the pack's `disclaimer` in the caption. Dollar
-     amounts stay goals the reader sets, never promised income. Money / social media packs: a confident, practical
+     claim, keep the [PLACEHOLDERS] and **KEY WORDS**); `cover` = headline / `headline_em` as `em` / person from the
+     pack; the cover slide's title/em = the pack's `title`/`em`. Money / social media packs: a confident, practical
      design (not a pastel look); every pack still gets its own palette, fonts and pattern for its subject.
      `demo` shows what the prompt gives you: `{{"kind": "reply", "lines": [2-3 short lines of a realistic answer]}}`, or
      for image prompts `{{"kind": "before_after", "before": "<svg viewBox='0 0 400 250'>…", "after": "<svg …>"}}` (a
      simple code-drawn scene showing the edit; no people, no real photos, no logos).
    - **`cover` block (top level, required)**: the carousel's first slide is a photo + big hook headline (see CLAUDE.md,
      "Carousel cover"). It replaces the theme's own cover slide, but still write slide 1 as a normal `cover` slide.
-     `{{"headline": "...", "em": "...", "person": "..." | null, "scene": "..."}}`
+     `{{"headline": "...", "em": "...", "person": "..." | null, "photo_query": ["..."], "photo_pick": {{...}} | null}}`
      - `headline`: the scroll-stopping hook in the style of big AI news pages, 8-22 words, ends with ":" when the
        carousel continues it ("Claude can now teach you any language like a private tutor. Here are 7 prompts to
-       try:", "Google's new Gemini TTS can clone your voice from a 30-second clip"). Punchy but TRUE: only verified
-       claims, no invented numbers, no "breaks the internet" hype. `em`: 1-4 words of it to highlight in yellow.
+       try:", "Google's new Gemini TTS can clone your voice from a 30-second clip"). News facts (what launched, versions,
+       dates) must be verified. Prompt packs / money topics may promise the result boldly (owner, 2026-09-26): "This AI
+       agent setup can make you $5,000 a month. 7 prompts to build it:" is fine. No disclaimer lines ("not financial
+       advice" etc.), anywhere. `em`: 1-4 words of it to highlight in yellow.
      - `person`: the best-known real person directly tied to the topic, whose photo makes people stop: the company's
        CEO/founder (OpenAI: Sam Altman, Google/Gemini: Sundar Pichai or Demis Hassabis, Anthropic/Claude: Dario Amodei,
        xAI/Grok: Elon Musk, Microsoft/Copilot: Satya Nadella, Meta: Mark Zuckerberg, Nvidia: Jensen Huang, ...) or the
        person the news is about. The pipeline fetches a freely licensed photo from Wikimedia Commons and credits it.
        The headline must not put words in their mouth or suggest they endorse our post. `null` only when nobody fits.
-     - `scene`: always write it too (English image prompt, used when Commons has no usable photo): a cinematic scene about the
-       topic, no text, no logos, no real people.
+     - Image generation is OFF: the cover is always a real, freely licensed photo. When `person` is null (or may have
+       no photo on Commons), pick a topic photo yourself: run `python cover.py --search <content file name without
+       .json> "query one" "query two"` (2-3 plain English nouns per query, e.g. "laptop desk night", "cash money",
+       "stock chart screen"), look at the previews in `output/<name>/photo_cands/` (Read the jpgs) and copy the JSON
+       line of the best one into `photo_pick`: sharp, bright or moody, tied to the topic, room at the bottom for the
+       headline; no text/logos/watermarks, no screens showing someone else's content. Nothing fits → other words.
+       Also write `photo_query` (the queries, best first) as the fallback.
    - `caption`: English, hook in the first line, 2-4 short lines, a save/follow nudge, 4-8 relevant hashtags.
-     Financial topics: add "Not financial advice."
    - `sources`: the official URLs you used.
    - `voiceover` on every slide: conversational, 7-15 words, only verified claims; whole video ~30-40 s (it becomes
      a YouTube Short; Instagram/Facebook get only the carousel).

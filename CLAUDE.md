@@ -29,8 +29,12 @@ Every day the pipeline should:
   that makes money while you sleep"): ~60% social media + AI agent and money, the rest finance, trading, health, learning,
   spirituality protocols, niche ideas. They don't need news. Library: `prompt_packs.json` (21 packs x 7 prompts, our own
   wording; Studio tab "Prompt paketleri", Telegram `paketler`) → `select_pack` starts a post run. Style: role + concrete
-  goal + deliverables + "a realistic estimate", [PLACEHOLDERS] and **KEY WORDS**; $ amounts are goals the reader sets,
-  never promised income. Rendered with OUR `prompts` theme (owner: don't copy their black chat box).
+  goal + deliverables + "a realistic estimate", [PLACEHOLDERS] and **KEY WORDS**. Rendered with OUR `prompts` theme
+  (owner: don't copy their black chat box).
+- **Rules relaxed for reach** (owner, 2026-09-26): hooks/titles of packs, money topics and clips may promise results
+  with numbers ("this setup can make you $3,000 a month"); the owner says the figures are reachable when the prompts are
+  used well and all risk is on the user. **No disclaimer lines** ("not financial/medical advice") anywhere. Still:
+  news facts are verified, no fake quotes/endorsements from real people, no fake verified badge.
 - **Reel/Short cover = the carousel's first slide** (owner, 2026-09-24): publish.py makes `cover.jpg` (9:16, slide centered
   on a blurred copy) → IG `cover_url`, FB reel thumbnail (needs pages_manage_engagement + pages_read_user_content; the
   token has them since 2026-09-25), YouTube thumbnails.set (works only once the channel may set Shorts covers; never fails the
@@ -42,8 +46,10 @@ Every day the pipeline should:
   top, Anton upper-case headline with a yellow highlight, "SWIPE FOR MORE". The owner wants a **well-known person tied to
   the topic** on the cover (e.g. the company's CEO) for reach. Only freely licensed real photos: Wikimedia Commons
   (CC BY / CC BY-SA / public domain, via its API) with "Photo: <author> · <license>" on the cover and in the caption.
-  Never AI-generated likenesses of real people, no fake quotes/endorsements. No fitting person → Flux image
-  (Forge API, `flux1-schnell-fp8.safetensors`, ~85-90 s per image on the RTX 4060). Sample: output/flux-test/.
+  Never AI-generated likenesses of real people, no fake quotes/endorsements. No fitting person (or no Commons photo of
+  them) → a real, freely licensed topic photo from Openverse (StockSnap, rawpixel, Flickr, Commons ...): the write step
+  runs `cover.py --search`, looks at the previews and sets `cover.photo_pick`; `photo_query` is the automatic fallback.
+  **Image generation (Flux) is OFF** (owner, 2026-09-26) until the owner turns it back on (`FLUX_ENABLED` in cover.py).
 - **Reels = hook-framed viral clips, not the carousel's own Reel** (owner, 2026-09-25; refs: @chatgptips): black frame,
   brand line, hook text on top, the clip below, "Source: @creator on X" (`clip.py`). The owner picks the clip (pastes
   an X link); clip.py fetches that one post with yt-dlp. Risk the owner accepted: credit is not a license (takedowns
@@ -51,15 +57,15 @@ Every day the pipeline should:
   2026-09-25, accepting the Content ID / strike risk; carousels keep their own voiced video there): title = clip title +
   hook, the IG/FB comments (prompts) go into the YouTube description. Discovery: `viral.py`
   (YouTube API = signal only, never downloaded; Reddit API needs manual approval since 2025-11 → not available).
-  Hooks must stay truthful (no unverified $/follower claims from the source post), no fake verified badge.
-- No brand logo imitation, no exaggerated/false claims. Financial topics get a "not financial advice" line.
+  No fake verified badge.
+- No brand logo imitation.
 - Reels: 1080x1920, 30fps, H.264 + AAC. Content kept inside IG safe zones (top ~190px, bottom ~330px reserved).
 
 ## Repo layout
 ```
 carousel.py        render carousel PNGs (1080x1350) + contact.png overview; slide 1 = themes/hookcover.py when the post
                    has a `cover` block + output/<post>/cover_image.jpg
-cover.py           cover image: Wikimedia Commons photo of `cover.person` (licensed, credited) or Flux scene via Forge
+cover.py           cover image: Commons photo of `cover.person`, else a licensed topic photo (Openverse); credited
 reel.py            render the carousel as a voiced video: now only for YouTube Shorts (IG/FB Reels = viral clips) (typewriter prompts, staggered fade-ups, progress bar, music,
                    Kokoro voice-over + word-level burned-in captions + music ducking)
 voice.py           Kokoro TTS per slide -> vo_NN.wav + voice.json (word timings). Runs in Pinokio's env, called by reel.py
@@ -201,7 +207,7 @@ candidate (and approves the preview), everything else is automatic.
   was off runs at startup): news.py → `claude -p` with prompts/scout.md → `research/<date>_<HHMM>_candidates.json`
   (4-8 candidates, Turkish summaries for the owner, official sources) → owner picks one in the UI.
 - **post** flow (one at a time): write (prompts/write.md → content JSON + runs/<id>/write.json) → cover (cover.py:
-  Wikimedia photo first, Flux when none) → carousel → reel (YouTube only) → qa (slides + video frames, prompts/qa.md,
+  Wikimedia photo of the person first, else a licensed topic photo) → carousel → reel (YouTube only) → qa (slides + video frames, prompts/qa.md,
   may fix + re-render) → approve (owner: Yayınla / Revize et (note → back to
   write) / Reddet (content JSON moved into the run dir)) → publish.py steps (ig_carousel, fb_photos, yt_short) → log (publish_log.jsonl + git commit/push).
 - **clip** flow (UI tab "Viral": owner pastes a link): fetch (yt-dlp + info.json + 8 frames) → hook (prompts/hook.md →

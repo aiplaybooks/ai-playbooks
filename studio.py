@@ -8,7 +8,7 @@ Three workflows:
     scan  (scheduled, default 08:00 + 18:00; missed slots run at startup)
           trigger -> collect (news.py) -> scout (Claude: web search, verify, rank) -> choose (owner picks in the UI)
     post  (one per picked candidate, one at a time)
-          write (Claude: verify + content JSON) -> cover (Wikimedia photo, else Flux) -> carousel -> reel (the
+          write (Claude: verify + content JSON) -> cover (Commons photo of the person, else a licensed topic photo) -> carousel -> reel (the
           carousel as a voiced video, only for YouTube) -> qa (Claude looks at the output, fixes) -> approve (owner:
           publish / revise / reject; can be switched off) -> upload -> ig_carousel -> fb_photos -> yt_short
           -> log (publish_log.jsonl + git commit/push)
@@ -334,7 +334,7 @@ def n_write(run):
 def n_cover(run):
     tail = sh(run, "cover", [PY, "cover.py", run.s["content"]])
     t = next((x for x in tail if x.startswith(("photo:", "flux:"))), "tamam")
-    return t.replace("photo: File:", "Foto: ").replace("flux:", "Flux sahnesi ·")[:120]
+    return t.replace("photo: File:", "Foto: ").replace("photo: ", "Foto: ")[:120]
 
 
 def n_carousel(run):
@@ -691,7 +691,7 @@ def select_pack(pack_id):
     while (ROOT / content).exists(): content = f"content/{day}_{p['id']}-{k}.json"; k += 1
     cand = {"id": p["id"], "tool": "Prompt pack", "kind": "prompts", "title": p["headline"], "summary_tr": p["title_tr"],
             "angle": " · ".join(x["name"] for x in p["prompts"]), "tools": p["tools"], "sources": [],
-            "pack": {k2: p[k2] for k2 in ("title", "em", "headline", "headline_em", "person", "scene", "disclaimer", "prompts", "category")}}
+            "pack": {k2: p[k2] for k2 in ("title", "em", "headline", "headline_em", "person", "photo_query", "prompts", "category")}}
     run = Run.create("post", f"post-{t:%Y%m%d-%H%M%S}-{p['id']}"[:80], day=day, candidate=cand, content=content,
                      title=p["headline"])
     enqueue(run)
