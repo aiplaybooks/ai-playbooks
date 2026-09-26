@@ -1,0 +1,23 @@
+{
+  "kind": "clip",
+  "source": "https://x.com/borjafat/status/2101018783976722479/video/1",
+  "credit": "@borjafat on X",
+  "topic": "AI agent cost",
+  "title": null,
+  "hook": "45 seconds. That's all it took for one AI agent to link 586 pages while Claude Opus barely finished 21.",
+  "caption": "Same 586 pages, same clock: TypeSafe AI's Jev finished the whole internal link map in 45.1 seconds for $0.21, placing 584 links and skipping 139 pages that genuinely didn't fit.\n\nClaude Opus 5 got through 21 pages in that time for $1.43, about 190x more per page. The full pass would have cost $43.\n\nInternal linking is really 8,790 yes/no calls, not writing, which is exactly what a fast decision model is built for.",
+  "checked": [
+    "Jev (TypeSafe AI System One model), founder ex-OpenAI, and the 586-page/45.1s/$0.21 vs. Claude Opus 5 21-page/$1.43 internal-linking demo: https://www.get-ryze.ai/blog/jev-for-seo",
+    "Claude Opus 5 is a real, current Anthropic model, priced $5/$25 per million tokens: https://www.anthropic.com/news/claude-opus-5"
+  ],
+  "captions": {
+    "instagram": "45 seconds. That's all it took for one AI agent to rebuild an entire site's internal link map 🤯\n\nTypeSafe AI's Jev read all 586 pages, placed 584 links, and skipped 139 pages that genuinely didn't fit, all for $0.21.\n\nClaude Opus 5, same pages, same clock, only got through 21 of them for $1.43. About 190x more per page.\n\nInternal linking isn't really writing, it's thousands of yes/no calls: does this page have a real reason to link to that one? That's a job built for a fast decision model, not a frontier LLM.\n\nWould you trust an AI agent to rebuild your site's links? Tell us below 👇\n\nFollow @aiplaybooks.daily for the AI tools everyone's talking about.\n\n#ai #aiagents #claude #seo #artificialintelligence",
+    "facebook": "Same 586 pages, same clock. One AI agent finished, the other barely started.\n\nTypeSafe AI's Jev read every page on the site and rebuilt the internal link map in 45.1 seconds: 584 links placed, 139 pages skipped because nothing honestly fit. Total cost: $0.21.\n\nClaude Opus 5 was given the identical task and got through 21 pages in the same time, for $1.43. Per page, that's roughly 190x more expensive. A full Opus pass on all 586 pages would have run about $43.\n\nInternal linking isn't a writing task, it's thousands of small yes/no decisions, and that's exactly the kind of job a fast decision model is built for.\n\nWould you hand this job to an AI agent?\n\n#ai #aiagents #seo",
+    "youtube": {
+      "title": "AI Agent vs Claude Opus 5: Who Links 586 Pages Faster? #Shorts",
+      "description": "TypeSafe AI's Jev read all 586 pages on a site and rebuilt the internal link map in 45.1 seconds for $0.21: 584 links placed, 139 pages skipped because nothing honestly fit.\n\nClaude Opus 5, same pages, same clock, got through 21 of them for $1.43, about 190x more per page. A full Opus pass would have cost $43.\n\nInternal linking is really 8,790 yes/no calls, not writing, which is exactly what a fast decision model is built for.\n\n#ai #aiagent #seo #claudeopus #artificialintelligence",
+      "tags": ["jev ai", "typesafe ai", "ai agent", "claude opus 5", "ai seo", "internal linking ai", "ai cost comparison", "ai news", "artificial intelligence"]
+    }
+  },
+  "caption": "45 seconds. That's all it took for one AI agent to rebuild an entire site's internal link map 🤯\n\nTypeSafe AI's Jev read all 586 pages, placed 584 links, and skipped 139 pages that genuinely didn't fit, all for $0.21.\n\nClaude Opus 5, same pages, same clock, only got through 21 of them for $1.43. About 190x more per page.\n\nInternal linking isn't really writing, it's thousands of yes/no calls: does this page have a real reason to link to that one? That's a job built for a fast decision model, not a frontier LLM.\n\nWould you trust an AI agent to rebuild your site's links? Tell us below 👇\n\nFollow @aiplaybooks.daily for the AI tools everyone's talking about.\n\n#ai #aiagents #claude #seo #artificialintelligence"
+}
