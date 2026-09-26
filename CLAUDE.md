@@ -43,6 +43,19 @@ Every day the pipeline should:
   media). Hashtags from data, not guesses: `tags.py` (IG Business Discovery of big AI accounts + most-viewed Shorts'
   tags). `captions.py check` enforces the rules; publish.py sends each platform its own text. The agent adds dated
   "Lessons" to the playbook from runs/metrics.json when our numbers show a pattern.
+- **Instagram comment-to-DM bot with a follow gate** (owner, 2026-09-26; Instagram only; hosted on Cloudflare
+  Workers, free): `bot/worker.js`. Comment the post's `dm.keyword` → ONE private reply (Instagram allows one per
+  comment, within 7 days) "follow us, then tap ✅" + a varied public reply "Sent you a DM 📩" → tap (opens the 24 h
+  window) → `is_user_follow_business`: following → button with the link, else "follow first" + the button again.
+  Typing the keyword in a DM works too. Link = the post's page `p/<post>/` on gh-pages (`packpage.py`: everything
+  copy-ready; published by publish.py's upload + `dm` steps). Keyword map: gh-pages `dm.json` (IG media id → keyword,
+  link), written by publish.py's `dm` step. With a keyword, clip prompts stay off the public comments (they are the
+  reward). Studio setting "Instagram DM botu" (default OFF) tells the writer/hook writer to add `dm` blocks; the
+  caption agent writes varied "Comment WORD" CTAs (IG only, never on FB). Setup/check: `python dm_setup.py
+  [--check | --register content/<post>.json WORD]` (deploys the Worker, uploads secrets without printing them,
+  subscribes Meta's `instagram` webhook: comments, messages, messaging_postbacks). **Until Meta App Review grants
+  Advanced Access to instagram_manage_messages, private replies/DMs only reach accounts with a role on the app**
+  (the owner tests with their other Instagram accounts) → keep the setting OFF until then.
 - **Reel/Short cover = the carousel's first slide** (owner, 2026-09-24): publish.py makes `cover.jpg` (9:16, slide centered
   on a blurred copy) → IG `cover_url`, FB reel thumbnail (needs pages_manage_engagement + pages_read_user_content; the
   token has them since 2026-09-25), YouTube thumbnails.set (works only once the channel may set Shorts covers; never fails the
@@ -80,6 +93,9 @@ Every day the pipeline should:
 carousel.py        render carousel PNGs (1080x1350) + contact.png overview; slide 1 = themes/hookcover.py when the post
                    has a `cover` block + output/<post>/cover_image.jpg
 brand_icons.py     brand icons for the cover (Simple Icons, icons/ cache, tool -> slug map, per-post style/size/corner)
+packpage.py        the post's page for the DM bot (p/<post>/index.html on gh-pages: prompts with Copy buttons)
+dm_setup.py        DM bot setup / check / test registration (Cloudflare Worker + Meta webhooks)
+bot/               worker.js (Instagram comment-to-DM bot, Cloudflare Worker) + wrangler.toml
 cover.py           cover image: Commons photo of `cover.person`, else a licensed topic photo (Openverse); credited
 reel.py            render the carousel as a voiced video: now only for YouTube Shorts (IG/FB Reels = viral clips) (typewriter prompts, staggered fade-ups, progress bar, music,
                    Kokoro voice-over + word-level burned-in captions + music ducking)

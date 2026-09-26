@@ -45,11 +45,11 @@ POST = [("write", "Doğrula & yaz", "ai"), ("caption", "Caption & tag", "ai"), (
         ("reel", "Video · ses + müzik (YouTube)", "code"), ("qa", "Kalite kontrol", "ai"),
         ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"),
         ("ig_carousel", "Instagram carousel", "publish"), ("fb_photos", "Facebook gönderi", "publish"),
-        ("yt_short", "YouTube Short", "publish"), ("comments", "Yorumlar", "publish"), ("log", "Kayıt & GitHub", "code")]
+        ("yt_short", "YouTube Short", "publish"), ("comments", "Yorumlar", "publish"), ("dm", "DM botu kaydı", "publish"), ("log", "Kayıt & GitHub", "code")]
 CLIP = [("fetch", "Videoyu indir", "code"), ("hook", "Hook", "ai"), ("caption", "Caption & tag", "ai"), ("frame", "Reel çerçevesi", "code"),
         ("qa", "Kalite kontrol", "ai"), ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"), ("ig_reel", "Instagram Reel", "publish"),
         ("fb_reel", "Facebook Reel", "publish"), ("yt_short", "YouTube Short", "publish"), ("comments", "Yorumlar", "publish"),
-        ("log", "Kayıt & GitHub", "code")]
+        ("dm", "DM botu kaydı", "publish"), ("log", "Kayıt & GitHub", "code")]
 FLOWS = {"scan": SCAN, "post": POST, "clip": CLIP, "gather": GATHER, "learn": LEARN}
 
 LOCK = threading.RLock()
@@ -96,7 +96,7 @@ def write_json(p, data):
 
 
 def settings():
-    s = {"scan_times": ["08:00", "18:00"], "approval": True, "last_slot": None,
+    s = {"scan_times": ["08:00", "18:00"], "approval": True, "last_slot": None, "dm_bot": False,
          "gather_times": ["06:30", "10:30", "13:30", "16:30", "21:30"], "last_gather_slot": None,
          "learn_time": "11:45", "last_learn_slot": None}
     s.update(read_json(SETTINGS, {}) or {})
@@ -410,6 +410,20 @@ def out_dir(run):
     return ROOT / "output" / ("clips" if run.s["kind"] == "clip" else "") / content_path(run).stem
 
 
+DM_ON = """## Instagram DM bot (ON)
+Our comment-to-DM bot is live on Instagram. When the post gives people something to take away (prompts, a setup, a
+guide, the prompt behind a clip), add `"dm": {"keyword": "WORD"}`: one short, easy-to-type English word in capitals
+tied to the topic (AGENT, BUDGET, PROMPTS, GUIDE, SETUP, SKETCH ...), not the keyword of our last 5 posts. Whoever
+comments it gets a DM (follow gate) with the post's page, which lists everything copy-ready. The caption agent writes
+the "Comment WORD" call to action; you only choose the word. Clips: with a `dm` keyword the prompts stay OFF the public
+comments (they are the reward): still put them in `comments`, the page and YouTube use them."""
+DM_OFF = "## Instagram DM bot (OFF)\nThe comment-to-DM bot is off: no `dm` block, no \"Comment WORD\" promises."
+
+
+def dm_rule():
+    return DM_ON if settings().get("dm_bot") else DM_OFF
+
+
 def n_write(run):
     c = run.s["candidate"]
     note = ""
@@ -417,7 +431,7 @@ def n_write(run):
         note = (f"## Revision request from the owner\n{run.s['note']}\n\nThe file {run.s['content']} already exists: "
                 "update it according to the request instead of starting over (keep its `voice`).")
     claude(run, "write", "write", date=run.s["day"], candidate=json.dumps(c, indent=1, ensure_ascii=False), note=note,
-           content=run.s["content"], result=f"runs/{run.id}/write.json")
+           content=run.s["content"], result=f"runs/{run.id}/write.json", dm_rule=dm_rule())
     data = read_json(content_path(run))
     if not data: raise StepError(f"{run.s['content']} yazılmadı ya da geçersiz JSON")
     n = len(data.get("slides", []))
@@ -557,7 +571,7 @@ def n_hook(run):
     note = f"\n## Revision request from the owner\n{run.s['note']}\n" if run.s.get("note") else ""
     claude(run, "hook", "hook", date=run.s["day"], url=run.s["url"], uploader=c["uploader"], uploader_id=c["uploader_id"],
            platform=c["platform"], description=c["description"].replace("```", "'" * 3), secs=c["secs"],
-           frames=", ".join(c["frames"]), note=note, content=run.s["content"])
+           frames=", ".join(c["frames"]), note=note, content=run.s["content"], dm_rule=dm_rule())
     data = read_json(content_path(run))
     if not data: raise StepError(f"{run.s['content']} yazılmadı ya da geçersiz JSON")
     if data.get("reject"): raise StepError("Claude bu videoyu uygun bulmadı: " + str(data["reject"])[:200])
@@ -602,7 +616,7 @@ def n_frame(run):
 PHASES = {"trigger": "scan", "collect": "scan", "scout": "scan", "pool": "scan", "hooks": "scan", "choose": "wait", "write": "production", "cover": "production",
           "fetch": "production", "hook": "production", "caption": "production", "frame": "production",
           "carousel": "production", "reel": "production", "qa": "production", "approve": "wait", "upload": "publish",
-          "ig_carousel": "publish", "ig_reel": "publish", "fb_photos": "publish", "fb_reel": "publish", "yt_short": "publish", "comments": "publish", "log": "publish"}
+          "ig_carousel": "publish", "ig_reel": "publish", "fb_photos": "publish", "fb_reel": "publish", "yt_short": "publish", "comments": "publish", "dm": "publish", "log": "publish"}
 
 
 def secs_between(a, b):
@@ -641,7 +655,7 @@ NODES = {"trigger": n_trigger, "collect": n_collect, "scout": n_scout, "pool": n
          "write": n_write, "caption": n_caption, "cover": n_cover, "carousel": n_carousel, "fetch": n_fetch, "hook": n_hook, "frame": n_frame, "reel": n_reel, "qa": n_qa, "approve": n_approve,
          "upload": publish_step("upload"), "ig_carousel": publish_step("ig_carousel"), "ig_reel": publish_step("ig_reel"),
          "fb_photos": publish_step("fb_photos"), "fb_reel": publish_step("fb_reel"),
-         "yt_short": publish_step("yt_short"), "comments": publish_step("comments"), "log": n_log}
+         "yt_short": publish_step("yt_short"), "comments": publish_step("comments"), "dm": publish_step("dm"), "log": n_log}
 
 
 def execute(run):
@@ -898,7 +912,7 @@ def state():
             "id": last["id"], "status": last["status"], "created": last["created"],
             "msg": next((n.get("msg") for n in reversed(list(last["nodes"].values())) if n.get("msg")), "")}}
     bg["pool"] = len(pool_items())
-    return {"settings": {k: s[k] for k in ("scan_times", "approval", "gather_times", "learn_time")},
+    return {"settings": {k: s[k] for k in ("scan_times", "approval", "gather_times", "learn_time", "dm_bot")},
             "next_scan": iso(next_slot(s["scan_times"], now())), "now": iso(), "background": bg,
             "flows": {k: [{"id": n, "label": l, "kind": t} for n, l, t in v] for k, v in FLOWS.items()},
             "runs": fg}
@@ -1022,6 +1036,7 @@ class H(BaseHTTPRequestHandler):
             if u.path == "/api/settings":
                 s = settings()
                 if "approval" in b: s["approval"] = bool(b["approval"])
+                if "dm_bot" in b: s["dm_bot"] = bool(b["dm_bot"])
                 if "scan_times" in b:
                     times = sorted({t for t in b["scan_times"] if re.fullmatch(r"([01]\d|2[0-3]):[0-5]\d", t)})
                     if not times: raise ValueError("geçerli saat yok (SS:DD)")

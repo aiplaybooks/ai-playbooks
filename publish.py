@@ -15,6 +15,9 @@ META_PAGE_TOKEN, FB_PAGE_ID, IG_USER_ID in .env
     fb_reel      Facebook Page Reel: video_reels start -> rupload from the public URL -> finish
     yt_short     YouTube Short: resumable upload of the Reel (YouTube Data API v3). Until the API project passes
                  YouTube's audit, YouTube keeps API uploads private: then make it public in YouTube Studio.
+    dm           Instagram comment-to-DM bot (bot/worker.js, Cloudflare): when the post has `dm.keyword`, registers
+                 {IG media id -> keyword, page link} in gh-pages dm.json, which the bot reads. The link is the post's
+                 page p/<name>/ (packpage.py; the upload step publishes it for every post).
     comments     the content JSON's optional `comments` list (e.g. the prompts of a clip), posted in order as our own
                  first comments under every IG / FB post of this run. Needs instagram_manage_comments +
                  pages_manage_engagement: `prepare` checks that before anything is posted, so a post never goes out
@@ -36,7 +39,7 @@ RUPLOAD = "https://rupload.facebook.com/video-upload/v25.0"
 PAGES_URL = "https://aiplaybooks.github.io/ai-playbooks"
 PAGES_DIR = ROOT / ".pages"  # git worktree of the gh-pages branch (gitignored)
 LOG = ROOT / "publish_log.jsonl"
-STEPS = ["prepare", "upload", "ig_carousel", "ig_reel", "fb_photos", "fb_reel", "yt_short", "comments", "log"]
+STEPS = ["prepare", "upload", "ig_carousel", "ig_reel", "fb_photos", "fb_reel", "yt_short", "comments", "dm", "log"]
 POSTS = ["ig_carousel", "ig_reel", "fb_photos", "fb_reel", "yt_short"]
 
 
@@ -146,6 +149,11 @@ def prepare(p, dry=False):
         n = len(CAP.tags_in(cap))
         if n > lim["tags"]: raise PublishError(f"{pf} caption has {n} hashtags (max {lim['tags']}; Instagram's cap since Dec 2025)")
     check_comments(p)
+    kw = (p.data.get("dm") or {}).get("keyword")
+    if kw:
+        if not re.fullmatch(r"[A-Z0-9]{2,20}", kw): raise PublishError(f"dm.keyword {kw!r}: 2-20 capital letters/digits")
+        if kw.lower() not in CAP.text_for(p.data, "instagram").lower():
+            raise PublishError(f"dm.keyword {kw!r} is not in the Instagram caption (people must know what to comment)")
     shutil.rmtree(p.pub, ignore_errors=True); p.pub.mkdir(parents=True)
     for f in pngs:
         j = p.pub / (f.stem + ".jpg")
@@ -220,7 +228,11 @@ def upload(p):
     dest = wt / "media" / p.name
     shutil.rmtree(dest, ignore_errors=True); dest.mkdir(parents=True)
     for f in files: shutil.copy2(f, dest / f.name)
-    git("add", "-A", "media", cwd=wt)
+    import packpage  # the post's page (what the DM bot sends): p/<name>/index.html
+    cover = next((f for f in files if f.name == "cover.jpg"), None) or next(iter(p.images()), None)
+    page = wt / "p" / p.name; page.mkdir(parents=True, exist_ok=True)
+    (page / "index.html").write_text(packpage.page_html(p.data, p.name, p.url(cover) if cover else None), encoding="utf-8")
+    git("add", "-A", "media", "p", cwd=wt)
     if git("status", "--porcelain", cwd=wt):
         git("commit", "-q", "-m", f"media: {p.name}", cwd=wt)
         git("push", "-q", "origin", "gh-pages", cwd=wt)
@@ -414,6 +426,8 @@ def yt_short(p):
 
 def comments(p):
     cs = [c.strip() for c in p.data.get("comments") or []]
+    if cs and (p.data.get("dm") or {}).get("keyword"):  # behind the DM bot's follow gate: not in public comments
+        say("comments: skipped, the post has a DM keyword (the prompts are on its page)"); p.done("comments", count=0, gated=True); return
     if not cs:
         say("comments: none in the content JSON"); p.done("comments", count=0); return
     targets = [(s, p.state[s]["id"]) for s in ("ig_carousel", "ig_reel", "fb_photos", "fb_reel") if p.state.get(s, {}).get("id")]
@@ -426,6 +440,33 @@ def comments(p):
             p.save()  # one by one: a retry never posts the same comment twice
         say(f"comments: {len(cs)} under {step}")
     p.done("comments", count=len(cs), targets=[s for s, _ in targets])
+
+
+def dm(p):
+    """Register the post for the Instagram comment-to-DM bot (gh-pages dm.json: IG media id -> keyword + link)."""
+    d = p.data.get("dm") or {}
+    ids = [p.state[s]["id"] for s in ("ig_carousel", "ig_reel") if p.state.get(s, {}).get("id")]
+    if not d.get("keyword") or not ids:
+        say("dm: no dm.keyword (or no Instagram post): nothing to register"); p.done("dm", keyword=None); return
+    wt = pages_worktree(); f = wt / "dm.json"
+    import packpage  # (re)write the page too, so older posts registered for a test get theirs
+    imgs = p.images() or sorted(p.pub.glob("*.jpg"))
+    cover = next((x for x in imgs if x.name == "cover.jpg"), None) or next(iter(imgs), None)
+    page = wt / "p" / p.name; page.mkdir(parents=True, exist_ok=True)
+    (page / "index.html").write_text(packpage.page_html(p.data, p.name, p.url(cover) if cover else None), encoding="utf-8")
+    try: reg = json.loads(f.read_text(encoding="utf-8"))
+    except (OSError, ValueError): reg = {}
+    link = d.get("link") or f"{PAGES_URL}/p/{p.name}/"
+    title = (p.data.get("cover") or {}).get("headline") or p.data.get("topic") or p.name
+    for mid in ids:
+        reg[mid] = {"keyword": d["keyword"].upper(), "link": link, "title": title[:120], "post": p.name,
+                    "added": datetime.now().astimezone().isoformat(timespec="minutes")}
+    f.write_text(json.dumps(reg, indent=1, ensure_ascii=False), encoding="utf-8")
+    git("add", "dm.json", "p", cwd=wt)
+    if git("status", "--porcelain", cwd=wt):
+        git("commit", "-q", "-m", f"dm: {p.name}", cwd=wt); git("push", "-q", "origin", "gh-pages", cwd=wt)
+    say(f"dm: '{d['keyword']}' -> {link} for {len(ids)} Instagram post(s)")
+    p.done("dm", keyword=d["keyword"], link=link, media=ids)
 
 
 def log(p):

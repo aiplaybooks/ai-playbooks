@@ -34,6 +34,17 @@ Shape (blank line between every block; each paragraph at most ~3 phone lines, ~3
 
 Length: carousels 450-900 characters, Reels 250-550.
 
+### Comment-keyword call to action (when the post has `dm.keyword`)
+Our Instagram bot DMs the post's page to everyone who comments the keyword (follow gate: they must follow us). Then
+the Instagram caption's engagement block IS the keyword CTA, and the hook line may tease it. Vary the wording every
+post (never the same line twice in a row), e.g.:
+- "Comment AGENT and I'll send you all 7 prompts 📩"
+- "Want the full setup? Comment GUIDE, we'll DM it to you."
+- "Comment BUDGET to learn how, I'll DM you the link."
+- "Drop "PROMPTS" in the comments and they're in your DMs in seconds."
+- "Type SKETCH below 👇 and I'll send you the exact prompt."
+Keyword in capitals, exactly as in `dm.keyword`. Facebook and YouTube have no bot: no keyword there.
+
 ## 3. Facebook (Page photo posts and Reels)
 Same audience as Instagram (Meta); the same post may read a bit more like a story. Rules: long text is fine, but only
 the first line or two show before "See more", so the hook works the same way. **2-4 hashtags** (more reads as spam;

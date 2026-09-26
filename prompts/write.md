@@ -7,6 +7,8 @@ rules, voices, safe claims). Today is {date}.
 ```
 {note}
 
+{dm_rule}
+
 ## Steps
 1. Verify. Open every official source above (and search for the official page if a claim needs one). Every factual
    claim in the post (names, dates, versions, plans/prices, availability, limits, how to enable it) must be confirmed on

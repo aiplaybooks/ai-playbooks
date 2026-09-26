@@ -73,7 +73,12 @@ def check(data):
         if len(",".join(yt.get("tags") or [])) > 450: probs.append("youtube.tags: over ~450 characters together (limit 500)")
     if caps.get("instagram") and data.get("caption") != caps["instagram"]:
         probs.append("`caption` must equal captions.instagram")
-    if data.get("comments") and not re.search(r"(?i)comment", caps.get("instagram", "")):
+    kw = (data.get("dm") or {}).get("keyword")
+    if kw and kw.lower() not in (caps.get("instagram") or "").lower():
+        probs.append(f"instagram: the post has dm.keyword {kw!r}: the caption must tell people to comment it")
+    if kw and kw.lower() in (caps.get("facebook") or "").lower():
+        probs.append("facebook: no 'Comment WORD' there (the DM bot is Instagram only); ask a real question instead")
+    if data.get("comments") and not kw and not re.search(r"(?i)comment", caps.get("instagram", "")):
         probs.append("the post has `comments` (e.g. the prompts): the caption should say they're in the comments")
     return probs
 

@@ -168,5 +168,8 @@
       ],
       "voiceover": "Save this pack, and follow for a new AI tip every day."
     }
-  ]
+  ],
+  "dm": {
+    "keyword": "BUDGET"
+  }
 }

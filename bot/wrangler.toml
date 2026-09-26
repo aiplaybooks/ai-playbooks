@@ -1,0 +1,12 @@
+name = "aiplaybooks-dm-bot"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+workers_dev = true
+
+[vars]
+PAGE_ID = "1283376908201081"
+IG_USER_ID = "17841424416174844"
+DM_MAP_URL = "https://aiplaybooks.github.io/ai-playbooks/dm.json"
+
+# secrets (never in this file): wrangler secret put PAGE_TOKEN | APP_SECRET | VERIFY_TOKEN
+# deploy + secrets + Meta webhook: python dm_setup.py

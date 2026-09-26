@@ -17,7 +17,8 @@ Each: template · example (ours) · proof (data line: account, engagement vs. th
 
 1. **Comment-keyword DM** · "Comment "[WORD]" and I'll send you [the full thing]." · "Comment AGENT and I'll send you
    the 7 prompts." · proof: @theaifield 274x its median (2,852 comments), @godofprompt 12.9x / 11.4x (2,000+ comments).
-   Use when we really deliver (the prompts go in the comments / DM). Best for packs.
+   Use when we really deliver (the post has a `dm.keyword`: our bot DMs the page). Best for packs. Vary it:
+   "Comment X, I'll send you the link" / "Comment X to learn how, we'll DM you" / "Want it? Comment X".
 2. **Big number + insider move** · "[Person/company] just [did something surprising] [$ figure]" · "Higgsfield's CEO
    just open-sourced his entire $5.4B platform" style · proof: @theaifield 65x. Use for news with a figure.
 3. **Time-lapse shock** · "[Short time]. That's all it took for [thing] to [change completely]." · proof:

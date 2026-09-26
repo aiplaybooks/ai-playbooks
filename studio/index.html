@@ -267,6 +267,8 @@ table.tt td.p{text-align:right;color:var(--muted);width:48px;font-variant-numeri
     <h5 style="font-size:12px;color:var(--muted);margin:16px 0 8px">HOOK ÖĞRENME (günde bir)</h5>
     <input type="time" id="learnTime">
     <label class="switch"><input type="checkbox" id="gate"> Yayından önce onay iste</label>
+    <label class="switch"><input type="checkbox" id="dmBot"> Instagram DM botu açık (yorum → takip kontrolü → link)</label>
+    <p style="font-size:12.5px;color:var(--muted);margin-top:4px">Açıkken yazar uygun gönderilere bir anahtar kelime koyar, caption "Comment KELİME" der. Meta onayı (App Review) gelmeden açma: bot o zamana kadar sadece test hesaplarına cevap verir.</p>
     <p style="font-size:12.5px;color:var(--muted);margin-top:8px">Kapalıyken seçtiğin haber kontrol edilip doğrudan paylaşılır. Kalite kontrol bir sorun bulursa yine de onay istenir.</p>
   </div>
   <div class="mf"><button class="primary" id="setSave">Kaydet</button></div>
@@ -287,14 +289,14 @@ table.tt td.p{text-align:right;color:var(--muted);width:48px;font-variant-numeri
 
 <script>
 const ICONS={comments:"💬",trigger:"⏰",collect:"📰",scout:"🧠",choose:"👤",write:"✍️",cover:"🧑‍💼",carousel:"🖼️",reel:"🎬",qa:"👁️",approve:"✅",
-  upload:"☁️",ig_carousel:"📸",ig_reel:"🎞️",fb_photos:"📘",fb_reel:"📘",yt_short:"▶️",log:"📒",fetch:"⬇️",hook:"🪝",caption:"#️⃣",frame:"🎬",pool:"🧺",hooks:"🎓"};
+  upload:"☁️",ig_carousel:"📸",ig_reel:"🎞️",fb_photos:"📘",fb_reel:"📘",yt_short:"▶️",log:"📒",fetch:"⬇️",hook:"🪝",caption:"#️⃣",frame:"🎬",pool:"🧺",hooks:"🎓",dm:"📩"};
 const LAYOUT={
   post:{trigger:[0,40],collect:[270,40],scout:[540,40],pool:[810,40],choose:[1080,40],
     write:[0,230],caption:[270,230],cover:[540,230],carousel:[810,230],reel:[1080,230],
     qa:[0,420],approve:[270,420],upload:[540,420],ig_carousel:[810,420],fb_photos:[1080,420],
-    yt_short:[0,610],comments:[270,610],log:[540,610]},
+    yt_short:[0,610],comments:[270,610],dm:[540,610],log:[810,610]},
   clip:{fetch:[0,40],hook:[270,40],caption:[540,40],frame:[810,40],qa:[1080,40],
-    approve:[0,230],upload:[270,230],ig_reel:[540,230],fb_reel:[810,230],yt_short:[1080,230],comments:[0,420],log:[270,420]}};
+    approve:[0,230],upload:[270,230],ig_reel:[540,230],fb_reel:[810,230],yt_short:[1080,230],comments:[0,420],dm:[270,420],log:[540,420]}};
 const GROUPS={post:[["① Tarama","scan",0,0],["② Carousel üretimi","post",0,190],["③ Kontrol, onay & yayın","pub",0,380]],
   clip:[["① Viral Reel üretimi (link yapıştırınca başlar, taramadan bağımsız)","post",0,0],["② Kontrol sonrası onay & yayın","pub",0,190]]};
 const kind=()=>runById(postId)?.kind==="clip"?"clip":"post";
@@ -655,20 +657,20 @@ $("#bannerBtn").onclick=()=>{const w=posts().find(p=>p.nodes.approve?.status==="
 function timeRow(v,box="#times"){const d=document.createElement("div");d.innerHTML=`<input type="time" value="${esc(v)}"><button>Sil</button>`;d.querySelector("button").onclick=()=>d.remove();$(box).appendChild(d)}
 $("#setBtn").onclick=()=>{$("#times").innerHTML="";$("#gtimes").innerHTML="";S.settings.scan_times.forEach(v=>timeRow(v));
   (S.settings.gather_times||[]).forEach(v=>timeRow(v,"#gtimes"));$("#learnTime").value=S.settings.learn_time||"11:45";
-  $("#gate").checked=S.settings.approval;$("#setModal").classList.add("on")};
+  $("#gate").checked=S.settings.approval;$("#dmBot").checked=!!S.settings.dm_bot;$("#setModal").classList.add("on")};
 $("#addGTime").onclick=()=>timeRow("12:00","#gtimes");
 $("#setClose").onclick=()=>$("#setModal").classList.remove("on");
 $("#addTime").onclick=()=>timeRow("12:00");
 $("#setSave").onclick=async()=>{
   const times=[...$("#times").querySelectorAll("input")].map(i=>i.value).filter(Boolean);
   const gtimes=[...$("#gtimes").querySelectorAll("input")].map(i=>i.value).filter(Boolean);
-  try{await api("/api/settings",{scan_times:times,gather_times:gtimes,learn_time:$("#learnTime").value,approval:$("#gate").checked});$("#setModal").classList.remove("on");await refresh()}catch(e){toast(e.message)}};
+  try{await api("/api/settings",{scan_times:times,gather_times:gtimes,learn_time:$("#learnTime").value,approval:$("#gate").checked,dm_bot:$("#dmBot").checked});$("#setModal").classList.remove("on");await refresh()}catch(e){toast(e.message)}};
 $("#scanBtn").onclick=async()=>{try{const r=await api("/api/scan",{});scanId=r.run;tab="cands";await refresh();openNode("collect")}catch(e){toast(e.message)}};
 
 /* ---------------- timings ---------------- */
 const PH={scan:["Tarama","var(--trigger)"],production:["Üretim","var(--ai)"],publish:["Yayın","var(--publish)"]};
 const PHASE={trigger:"scan",collect:"scan",scout:"scan",pool:"scan",choose:"wait",write:"production",cover:"production",fetch:"production",hook:"production",caption:"production",frame:"production",carousel:"production",reel:"production",qa:"production",
-  approve:"wait",upload:"publish",ig_carousel:"publish",ig_reel:"publish",fb_photos:"publish",fb_reel:"publish",yt_short:"publish",comments:"publish",log:"publish"};
+  approve:"wait",upload:"publish",ig_carousel:"publish",ig_reel:"publish",fb_photos:"publish",fb_reel:"publish",yt_short:"publish",comments:"publish",dm:"publish",log:"publish"};
 const secsOf=t=>t.started?Math.max(0,((t.ended?new Date(t.ended):new Date())-new Date(t.started))/1000):0;
 function hms(s){s=Math.round(s);if(s<60)return s+" sn";const m=Math.floor(s/60),r=s%60;if(m<60)return m+" dk "+String(r).padStart(2,"0")+" sn";
   return Math.floor(m/60)+" sa "+String(m%60).padStart(2,"0")+" dk";}
