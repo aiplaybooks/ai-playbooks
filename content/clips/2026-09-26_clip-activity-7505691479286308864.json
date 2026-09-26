@@ -1,0 +1,23 @@
+{
+  "kind": "clip",
+  "source": "https://www.linkedin.com/feed/update/urn:li:activity:7505691479286308864/",
+  "credit": "@ on LinkedIn",
+  "topic": "AI model launch",
+  "title": null,
+  "hook": "An OpenAI co-inventor just raised $40M for Jev, an AI model that never hallucinates",
+  "caption": "Jev is TypeSafe AI's new \"System One\" model, built by a ChatGPT co-inventor who left OpenAI to fix a real problem: chatbots that hallucinate and just tell you what you want to hear.\n\nInstead of text, Jev returns typed decisions with confidence scores, made for software to act on, not for people to read.\n\nIt just launched with a $40M seed round.",
+  "checked": [
+    "TypeSafe AI / Jev launch, founder background (OpenAI, RLHF/InstructGPT/ChatGPT), $40M seed led by DCVC: https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+    "Funding details and valuation confirmation: https://en.wowtale.net/2026/09/21/235190/"
+  ],
+  "captions": {
+    "instagram": "Meet Jev, the AI model an OpenAI co-inventor built to never hallucinate 🤯\n\nInstead of chatty text, Jev returns typed decisions with confidence scores, made for software to act on, not for people to read.\n\nIt just launched at TypeSafe AI with a $40M seed round.\n\nWould you trust an AI that can't lie to you? Yes or no 👇\n\nFollow @aiplaybooks.daily for the AI launches worth knowing about.\n\n#ai #openai #aimodel #chatgpt #artificialintelligence",
+    "facebook": "Jev is the new AI model built to never hallucinate, and it came from a co-inventor of ChatGPT.\n\nHe left OpenAI to fix a real problem: chatbots that make things up and just tell you what you want to hear. Instead of text, Jev returns typed decisions with confidence scores, made for software to act on, not for people to read.\n\nIt just launched at TypeSafe AI with a $40M seed round.\n\nDo you think \"never hallucinates\" is actually possible for AI?\n\n#ai #openai #artificialintelligence",
+    "youtube": {
+      "title": "Jev: the AI model built to never hallucinate #Shorts",
+      "description": "Jev is TypeSafe AI's new model, built by a ChatGPT co-inventor who left OpenAI to fix chatbots that hallucinate and just tell you what you want to hear.\n\nInstead of text, Jev returns typed decisions with confidence scores, made for software to act on, not for people to read.\n\nIt just launched with a $40M seed round.\n\n#ai #openai #aimodel #chatgpt #artificialintelligence",
+      "tags": ["jev ai", "typesafe ai", "ai model", "openai founder", "chatgpt co-inventor", "ai that doesn't hallucinate", "ai news", "artificial intelligence", "ai startup funding"]
+    }
+  },
+  "caption": "Meet Jev, the AI model an OpenAI co-inventor built to never hallucinate 🤯\n\nInstead of chatty text, Jev returns typed decisions with confidence scores, made for software to act on, not for people to read.\n\nIt just launched at TypeSafe AI with a $40M seed round.\n\nWould you trust an AI that can't lie to you? Yes or no 👇\n\nFollow @aiplaybooks.daily for the AI launches worth knowing about.\n\n#ai #openai #aimodel #chatgpt #artificialintelligence"
+}
