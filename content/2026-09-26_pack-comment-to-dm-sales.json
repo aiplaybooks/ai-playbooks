@@ -1,0 +1,245 @@
+{
+  "theme": "prompts",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Prompt Pack · Comment-to-DM Sales",
+  "caption": "The \"comment a keyword, get a DM\" trick that turns your posts into a sales funnel\n\nMost accounts get a comment and nothing else happens. The creators actually making money turn every comment into a DM, and every DM into a shot at a sale.\n\n→ a lead magnet worth commenting for\n→ a post built to earn comments, not just likes\n→ a DM script that doesn't sound robotic\n→ a no-code setup, plus the platform's limits\n→ follow-ups and objection answers for people who go quiet\n\nWhich part of your funnel is leaking right now: comments, DMs, or sales? Save this before your next post.\n\nFollow @aiplaybooks.daily for a new AI playbook every day.\n\n#ai #chatgpt #automation #aiagents #prompt",
+  "captions": {
+    "instagram": "The \"comment a keyword, get a DM\" trick that turns your posts into a sales funnel\n\nMost accounts get a comment and nothing else happens. The creators actually making money turn every comment into a DM, and every DM into a shot at a sale.\n\n→ a lead magnet worth commenting for\n→ a post built to earn comments, not just likes\n→ a DM script that doesn't sound robotic\n→ a no-code setup, plus the platform's limits\n→ follow-ups and objection answers for people who go quiet\n\nWhich part of your funnel is leaking right now: comments, DMs, or sales? Save this before your next post.\n\nFollow @aiplaybooks.daily for a new AI playbook every day.\n\n#ai #chatgpt #automation #aiagents #prompt",
+    "facebook": "Ever notice creators who reply \"comment X and I'll DM you...\"? That's not luck, it's a funnel.\n\nHere's the version we broke down into 7 copy-paste prompts: a lead magnet worth commenting for, a post that actually earns comments, a DM script that still sounds human, a no-code setup with the platform's real limits, and follow-ups for people who go quiet.\n\nWhere does your own funnel usually break down: getting comments, sending DMs, or closing sales?\n\nFollow AI Playbooks for a new AI playbook every day.\n\n#ai #automation #chatgpt #aiagents",
+    "youtube": {
+      "title": "7 ChatGPT Prompts for Instagram Comment-to-DM Sales",
+      "description": "7 ChatGPT prompts to turn Instagram comments into DMs, and DMs into sales.\n\nBuild the lead magnet, the keyword post, the DM script, the no-code setup, and the follow-ups that close it, all in one copy-paste pack.\n\nWhich part of your funnel needs the most work right now: comments, DMs, or sales?\n\n#ai #chatgpt #automation #aiagents #dmautomation",
+      "tags": [
+        "chatgpt prompts",
+        "instagram dm automation",
+        "comment to dm",
+        "ai sales funnel",
+        "instagram automation",
+        "ai agents",
+        "chatgpt for business",
+        "side hustle prompts"
+      ]
+    }
+  },
+  "sources": [],
+  "cover": {
+    "headline": "\"Comment GUIDE\": the Instagram trick that turns comments into sales on autopilot. 7 prompts to build it:",
+    "em": "sales on autopilot",
+    "person": "Mark Zuckerberg",
+    "photo_query": [
+      "phone dark room",
+      "smartphone glow night",
+      "iphone hand dark"
+    ],
+    "photo_pick": {
+      "url": "https://cdn.stocksnap.io/img-thumbs/960w/WHTEJ8X4SX.jpg",
+      "page": "https://stocksnap.io/photo/iphone-camera-WHTEJ8X4SX",
+      "author": "Gabriel Santiago",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "StockSnap"
+    },
+    "layout": "scene_person",
+    "icons": [
+      {
+        "slug": "instagram",
+        "style": "circle",
+        "pos": "tr",
+        "size": 150
+      }
+    ],
+    "photo": {
+      "file": "WHTEJ8X4SX.jpg",
+      "page": "https://stocksnap.io/photo/iphone-camera-WHTEJ8X4SX",
+      "author": "Gabriel Santiago",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "StockSnap"
+    },
+    "layout_used": "scene_person",
+    "person_photo": {
+      "file": "File:Mark Zuckerberg 2019 (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Mark_Zuckerberg_2019_(cropped).jpg",
+      "author": "Anthony Quintano from Westminster, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source": "Wikimedia Commons"
+    }
+  },
+  "design": {
+    "mood": "a phone lighting up with notifications in the dark: moody navy-black bokeh, a hot-pink alert badge, the quiet buzz of a DM that's about to become a sale",
+    "palette": {
+      "bg": "#0A0E1C",
+      "bg2": "#121A30",
+      "surface": "#1A2340",
+      "ink": "#F5F7FF",
+      "muted": "#93A0C4",
+      "accent": "#FF3E7F",
+      "accent2": "#FFC53D"
+    },
+    "fonts": {
+      "display": "Syne",
+      "body": "Inter",
+      "mono": "JetBrains Mono"
+    },
+    "display": {
+      "weight": 750,
+      "tracking": -2
+    },
+    "shape": {
+      "radius": 30,
+      "border": 2,
+      "shadow": "soft"
+    },
+    "background": {
+      "pattern": "grid",
+      "pattern_opacity": 0.08,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "pill",
+    "prompt": "chat",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z'/><path d='M9 10h.01M12 10h.01M15 10h.01'/></svg>"
+  },
+  "voice": "am_eric",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "PROMPT PACK",
+      "title": "prompts to turn comments into sales with DM automation",
+      "em": "comments into sales",
+      "sub": "The comment-to-DM funnel top creators use, written in your own words.",
+      "tools": [
+        "ChatGPT",
+        "Claude",
+        "Gemini"
+      ],
+      "count": 7,
+      "voiceover": "Here are seven prompts to turn Instagram comments into a real sales funnel."
+    },
+    {
+      "type": "prompt",
+      "name": "The Lead Magnet",
+      "sub": "A freebie people comment for.",
+      "prompt": "Act as a funnel strategist. My audience is [AUDIENCE] and I sell [PRODUCT]. Give me 5 free lead magnet ideas people would comment a keyword to get (checklist, template, mini-guide), how fast I can make each, and which one leads most **NATURALLY** to my product.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Idea: a 5-step DM script template",
+          "Make time: under 1 hour",
+          "Leads naturally to: your paid setup"
+        ]
+      },
+      "voiceover": "One. Find a freebie worth commenting for in the first place."
+    },
+    {
+      "type": "prompt",
+      "name": "The Keyword Post",
+      "sub": "A post built to earn comments.",
+      "prompt": "Write an Instagram carousel outline that ends with 'Comment [KEYWORD] and I'll send you [FREEBIE]'. 7 slides: a hook, 5 value slides that make people want more, and the ask. Add a caption whose first line repeats the **KEYWORD** offer.",
+      "tip": "The value slides do the real work — a keyword ask with no value behind it just trains people to scroll past.",
+      "voiceover": "Two. Build the post that actually earns those comments."
+    },
+    {
+      "type": "prompt",
+      "name": "The DM Flow",
+      "sub": "An auto-reply that doesn't feel automatic.",
+      "prompt": "Write the automated DM sequence for people who comment [KEYWORD]: the first message with the freebie, a question to learn what they need, 2 reply branches based on their answer, and a soft offer for [PRODUCT]. Friendly, short, and **HUMAN**.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Here's your guide! Quick q – solo or team?",
+          "Branch: solo → starter tip",
+          "Branch: team → soft offer for [PRODUCT]"
+        ]
+      },
+      "voiceover": "Three. Script a DM sequence that reads like a person, not a robot."
+    },
+    {
+      "type": "prompt",
+      "name": "The Tool Setup",
+      "sub": "Wire it up without code.",
+      "prompt": "Explain step by step how to set up comment-to-DM automation for Instagram with [TOOL], using only official, policy-compliant features. Include the trigger, the message steps, how to tag leads, and the **LIMITS** or rules I must respect.",
+      "tip": "Instagram only allows one automated private reply per comment, and it has to happen within 7 days — build the flow around that limit, not around what you wish it allowed.",
+      "voiceover": "Four. Get the setup steps, and the platform limits you have to respect."
+    },
+    {
+      "type": "prompt",
+      "name": "The Follow-Up Sequence",
+      "sub": "For people who took the freebie and went quiet.",
+      "prompt": "Write a 3-message follow-up for people who got my free [FREEBIE] but didn't buy [PRODUCT]: day 2 (a useful tip), day 4 (a short customer story), day 7 (a clear offer with a deadline). Each under 60 words, **NO GUILT-TRIPPING**.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Day 2: one tip they can use today",
+          "Day 4: a 2-line customer story",
+          "Day 7: the offer, with a real deadline"
+        ]
+      },
+      "voiceover": "Five. Follow up with people who went quiet, without sounding pushy."
+    },
+    {
+      "type": "prompt",
+      "name": "The Objection DMs",
+      "sub": "Answers for 'how much?' and 'not now'.",
+      "prompt": "People reply to my DMs about [PRODUCT] with: 'how much?', 'I'll think about it', 'is it worth it?', 'I don't have time'. Write a short, honest reply to each that answers the real worry and gives **ONE** next step.",
+      "tip": "One next step per reply — three options in a DM reads as pressure, one reads as help.",
+      "voiceover": "Six. Have a real answer ready for the objections you hear every week."
+    },
+    {
+      "type": "prompt",
+      "name": "The Funnel Review",
+      "sub": "Find the leak in your numbers.",
+      "prompt": "Here are my funnel numbers: [COMMENTS] comments, [DMS] DMs sent, [REPLIES] replies, [SALES] sales. Tell me where the biggest leak is, 3 likely reasons, and one test for each stage I can run **THIS WEEK**.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Biggest leak: DMs sent → replies",
+          "Likely cause: first message too long",
+          "Test this week: cut it to 1 line"
+        ]
+      },
+      "voiceover": "Seven. Find exactly where your funnel is leaking, and what to test first."
+    },
+    {
+      "type": "howto",
+      "title": "Get more out of this pack",
+      "items": [
+        [
+          "Start with one keyword",
+          "One clear keyword on one post beats three vague ones spread across your feed — easier to promote, easier to track."
+        ],
+        [
+          "Stay inside the platform's rules",
+          "Only use official automation features and respect the one-reply, 7-day window — that's what keeps the account safe."
+        ],
+        [
+          "Review the numbers weekly",
+          "Comments and DMs sent are vanity — replies and sales are the numbers that tell you where to fix the flow."
+        ]
+      ],
+      "voiceover": "Start with one keyword, stay inside the rules, and review your numbers weekly."
+    },
+    {
+      "type": "cta",
+      "title": "Save this pack.",
+      "title2": "Turn your next post into a funnel.",
+      "lines": [
+        [
+          "Follow",
+          "for daily AI tool tips & news"
+        ],
+        [
+          "Share",
+          "with someone selling in their DMs"
+        ],
+        [
+          "Comment",
+          "which prompt you're building first"
+        ]
+      ],
+      "voiceover": "Save this pack, and follow for a new AI playbook every day."
+    }
+  ]
+}
