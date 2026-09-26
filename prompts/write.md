@@ -44,6 +44,13 @@ rules, voices, safe claims). Today is {date}.
      Every prompt slide: `name` (2-4 words, e.g. "The conversation partner"), `sub` (the benefit in one line),
      `prompt` (your OWN wording, 150-330 characters, specific, copy-paste ready, [PLACEHOLDERS] in caps for what the
      reader fills in; never copy other accounts' prompts), plus `demo` or `tip` (not both on long prompts):
+     Mark 1-3 key words per prompt as `**KEY WORDS**` (caps, bold with a marker line), like the library packs do.
+     **Library packs** (the candidate has a `pack` block, from `prompt_packs.json`): the owner picked this ready-made
+     pack. Use its 7 prompts in its order, with its `name`s, `sub`s and prompt texts (you may tighten wording or fix a
+     claim, keep the [PLACEHOLDERS] and **KEY WORDS**); `cover` = headline / `headline_em` as `em` / person / scene from
+     the pack; the cover slide's title/em = the pack's `title`/`em`; put the pack's `disclaimer` in the caption. Dollar
+     amounts stay goals the reader sets, never promised income. Money / social media packs: a confident, practical
+     design (not a pastel look); every pack still gets its own palette, fonts and pattern for its subject.
      `demo` shows what the prompt gives you: `{{"kind": "reply", "lines": [2-3 short lines of a realistic answer]}}`, or
      for image prompts `{{"kind": "before_after", "before": "<svg viewBox='0 0 400 250'>…", "after": "<svg …>"}}` (a
      simple code-drawn scene showing the edit; no people, no real photos, no logos).

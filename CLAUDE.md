@@ -25,6 +25,12 @@ Every day the pipeline should:
 - **Two pillars: news AND copy-paste prompt packs** (owner, 2026-09-24): the first posts were all news; the page's
   promise is also "copy-paste prompts". Scout adds 3 `kind: "prompts"` candidates per scan (different everyday areas);
   write.md renders them with the `prompts` theme. Prompts are our own wording, never copied from other accounts.
+- **Prompt packs must hit daily life or the wallet** (owner, 2026-09-26; refs: @chatgptips "7 prompts to build software
+  that makes money while you sleep"): ~60% social media + AI agent and money, the rest finance, trading, health, learning,
+  spirituality protocols, niche ideas. They don't need news. Library: `prompt_packs.json` (21 packs x 7 prompts, our own
+  wording; Studio tab "Prompt paketleri", Telegram `paketler`) → `select_pack` starts a post run. Style: role + concrete
+  goal + deliverables + "a realistic estimate", [PLACEHOLDERS] and **KEY WORDS**; $ amounts are goals the reader sets,
+  never promised income. Rendered with OUR `prompts` theme (owner: don't copy their black chat box).
 - **Reel/Short cover = the carousel's first slide** (owner, 2026-09-24): publish.py makes `cover.jpg` (9:16, slide centered
   on a blurred copy) → IG `cover_url`, FB reel thumbnail (needs pages_manage_engagement + pages_read_user_content; the
   token has them since 2026-09-25), YouTube thumbnails.set (works only once the channel may set Shorts covers; never fails the
@@ -77,6 +83,7 @@ studio.py          AI Playbooks Studio: local workflow engine + web UI at http:/
 studio/index.html  the n8n-style UI (vanilla JS, no build)
 prompts/           scout.md, write.md, qa.md: prompts for the headless `claude -p` steps of the Studio
 runs/              Studio run state + logs + settings.json (gitignored)
+prompt_packs.json  ready-made prompt pack library (see Decisions); used = content/<date>_<pack id>.json exists
 publish_log.jsonl  one line per published post (links), committed by the Studio
 sources.json       source list: feeds, pages (parser: anthropic_news | dated_sections), hn queries, manual (web-search only)
 research/          one candidate list per day (commit it: history of what was available)

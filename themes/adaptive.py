@@ -321,7 +321,9 @@ def css(ds):
 # ---------------------------------------------------------------- slides
 
 def hl(t):
-    return re.sub(r"(\[[^\]]+\])", r"<b>\1</b>", e(t))
+    """Prompt text: [PLACEHOLDERS] and **EMPHASIS** in bold."""
+    t = re.sub(r"(\[[^\]]+\])", r"<b>\1</b>", e(t))
+    return re.sub(r"\*\*(.+?)\*\*", r'<b class="em">\1</b>', t)
 
 
 def rich(t):

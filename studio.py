@@ -669,6 +669,35 @@ def select(scan_id, cand_id):
     return run.id
 
 
+def packs():
+    """The prompt pack library (prompt_packs.json) with each pack's state: used = a post was made from it."""
+    lib = read_json(ROOT / "prompt_packs.json", {}) or {}
+    done = {p["candidate"] or p["slug"]: p["name"] for p in posted()}
+    busy = {r["candidate"].get("id"): r["id"] for r in all_runs()
+            if r["kind"] == "post" and r["status"] not in ("rejected", "canceled", "done") and r.get("candidate")}
+    cats = lib.get("categories", {})
+    return {"categories": cats, "packs": [{**p, "category_tr": cats.get(p["category"], p["category"]),
+                                           "used": done.get(p["id"]), "run": busy.get(p["id"])} for p in lib.get("packs", [])]}
+
+
+def select_pack(pack_id):
+    """Start a post from a library pack (no scan needed)."""
+    p = next((x for x in packs()["packs"] if x["id"] == pack_id), None)
+    if not p: raise ValueError("paket bulunamadı")
+    if p["used"]: raise ValueError(f"bu paket zaten paylaşıldı ({p['used']})")
+    if p["run"]: raise ValueError("bu paket zaten üretimde")
+    t = now(); day = f"{t:%Y-%m-%d}"
+    content = f"content/{day}_{p['id']}.json"; k = 2
+    while (ROOT / content).exists(): content = f"content/{day}_{p['id']}-{k}.json"; k += 1
+    cand = {"id": p["id"], "tool": "Prompt pack", "kind": "prompts", "title": p["headline"], "summary_tr": p["title_tr"],
+            "angle": " · ".join(x["name"] for x in p["prompts"]), "tools": p["tools"], "sources": [],
+            "pack": {k2: p[k2] for k2 in ("title", "em", "headline", "headline_em", "person", "scene", "disclaimer", "prompts", "category")}}
+    run = Run.create("post", f"post-{t:%Y%m%d-%H%M%S}-{p['id']}"[:80], day=day, candidate=cand, content=content,
+                     title=p["headline"])
+    enqueue(run)
+    return run.id
+
+
 def start_clip(url, note=""):
     url = url.strip()
     if not re.match(r"https?://\S+$", url): raise ValueError("geçerli bir video bağlantısı değil")
@@ -789,6 +818,7 @@ class H(BaseHTTPRequestHandler):
             if u.path == "/api/state": return self.send(200, state())
             if u.path == "/api/run": return self.send(200, run_detail(q["id"]))
             if u.path == "/api/history": return self.send(200, history())
+            if u.path == "/api/packs": return self.send(200, packs())
             if u.path == "/api/metrics":
                 return self.send(200, {**(read_json(RUNS / "metrics.json", {}) or {}), "refreshing": METRICS_LOCK.locked()})
             if u.path == "/api/viral":
@@ -838,6 +868,7 @@ class H(BaseHTTPRequestHandler):
                 rid = start_scan("Elle başlatıldı (Şimdi tara)")
                 return self.send(200 if rid else 409, {"run": rid} if rid else {"error": "zaten bir tarama çalışıyor"})
             if u.path == "/api/select": return self.send(200, {"run": select(b["scan"], b["candidate"])})
+            if u.path == "/api/pack": return self.send(200, {"run": select_pack(b["pack"])})
             if u.path == "/api/clip": return self.send(200, {"run": start_clip(b.get("url", ""), b.get("note", ""))})
             if u.path == "/api/approve": approve(b["run"]); return self.send(200, {"ok": True})
             if u.path == "/api/revise": revise(b["run"], b.get("note", "")); return self.send(200, {"ok": True})

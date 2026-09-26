@@ -130,6 +130,17 @@ def show_candidates(scan=None):
     send("Numara yaz ya da söyle (örn. <b>3</b>), ya da yukarıdaki düğmeye bas.")
 
 
+def show_packs():
+    ps = [p for p in S.packs()["packs"] if not p["used"] and not p["run"]]
+    if not ps: return send("Kullanılmamış prompt paketi kalmadı. Yeni paket eklemek için Claude'a yazabilirsin.")
+    lines, rows = [f"<b>📋 {len(ps)} prompt paketi</b> (kullanılmamış)"], []
+    for i, p in enumerate(ps, 1):
+        lines.append(f"\n<b>P{i}.</b> {esc(p['title_tr'])}\n<i>{esc(p['category_tr'])}</i>")
+    for i in range(0, len(ps), 5):
+        rows.append([btn(f"P{j + 1}", "ask_pack", ps[j]["id"]) for j in range(i, min(i + 5, len(ps)))])
+    send("\n".join(lines)[:4000], rows)
+
+
 def status():
     runs = S.all_runs(); out = []
     sc = latest_scan()
@@ -224,6 +235,7 @@ def handle_text(text, spoken=False):
         return send("🔎 Tarama başladı (~5-8 dk). Adaylar hazır olunca listeyi gönderirim." if rid else "Zaten bir tarama çalışıyor.")
     if re.match(r"^/?(durum|ne durumda|status)", t): return status()
     if re.match(r"^/?(adaylar|aday listesi|liste)", t): return show_candidates()
+    if re.match(r"^/?(paketler|prompt ?pack|prompt paket)", t): return show_packs()
     if re.match(r"^/?(önizle|önizleme|onizle|onay)\b", t):
         w = waiting_run(); return preview(w["id"]) if w else send("Onay bekleyen gönderi yok.")
     m = re.match(r"^/?revize( et)?[:,]?\s*(.*)$", t, re.S)
@@ -354,6 +366,7 @@ def ask(kind, payload, text):
 def help_msg():
     send("<b>AI Playbooks Studio</b> · yazabilir ya da sesli mesaj atabilirsin\n\n"
          "• <b>tara</b> — şimdi tarama başlat\n• <b>adaylar</b> — son taramanın adayları\n"
+         "• <b>paketler</b> — hazır prompt paketleri (düğmeyle seç)\n"
          "• <b>3</b> / <b>3'ü seç</b> / <b>gemini'yi seç</b> — aday seç (onay sorulur)\n"
          "• <b>durum</b> — ne çalışıyor, ne bekliyor\n• <b>önizle</b> — onay bekleyen gönderiyi tekrar gönder\n"
          "• <b>yayınla</b> / <b>reddet</b> — onay sorulur\n• <b>revize: kapağı kısalt…</b> — revizyon notu\n"
@@ -372,6 +385,11 @@ def on_callback(cq):
             return ask("select", p, f"Bu aday seçilsin mi?\n<b>{esc(c.get('title'))}</b>")
         if kind == "select":
             rid = S.select(*p); return send(f"✍️ Üretim başladı: yazı → kapak → carousel → video → kalite kontrol. Onaya gelince önizlemeyi gönderirim.\n<code>{esc(rid)}</code>")
+        if kind == "ask_pack":
+            pk = next((x for x in S.packs()["packs"] if x["id"] == p), {})
+            return ask("pack", p, f"Bu prompt paketi üretilsin mi?\n<b>{esc(pk.get('title_tr'))}</b>\n<i>{esc(pk.get('headline'))}</i>")
+        if kind == "pack":
+            rid = S.select_pack(p); return send(f"✍️ Paket üretimi başladı: yazı → kapak → carousel → video → kalite kontrol. Onaya gelince önizlemeyi gönderirim.\n<code>{esc(rid)}</code>")
         if kind == "ask_publish": return ask("publish", p, "<b>Yayınlansın mı?</b> (Instagram + Facebook" + ("" if p.startswith("clip") else " + YouTube") + ")")
         if kind == "publish": S.approve(p); return send("🚀 Onaylandı, paylaşılıyor. Linkleri bitince gönderirim.")
         if kind == "ask_reject": return ask("reject", p, "Reddedilsin mi? Paylaşılmayacak.")
@@ -435,7 +453,7 @@ def loop():
     offset = None
     try:
         call("setMyCommands", {"commands": [{"command": c, "description": d} for c, d in (
-            ("durum", "Ne çalışıyor, ne bekliyor"), ("adaylar", "Son taramanın adayları"), ("tara", "Şimdi tara"),
+            ("durum", "Ne çalışıyor, ne bekliyor"), ("adaylar", "Son taramanın adayları"), ("paketler", "Prompt paketleri"),("tara", "Şimdi tara"),
             ("onizle", "Onay bekleyen gönderi"), ("yardim", "Komutlar"))]})
     except Exception as ex: log("setMyCommands", ex)  # noqa: BLE001
     while True:

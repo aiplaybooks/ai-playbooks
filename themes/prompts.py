@@ -5,7 +5,7 @@ so the series is recognisable while every pack still gets its own colors.
 Slide types:
     cover   kicker, title, em, sub, tools[] ("works in" chips). A fanned stack of the pack's prompt cards is drawn
             automatically from the prompt slides' names; `count` overrides the big number (default: number of prompts).
-    prompt  name ("Teacher mode"), sub (the benefit, one line), prompt (the copy-paste text; [PLACEHOLDERS] in caps),
+    prompt  name ("Teacher mode"), sub (the benefit, one line), prompt (the copy-paste text; [PLACEHOLDERS] in caps, **KEY WORDS** in bold with a marker line),
             optional tip, optional demo (what the prompt gives you, drawn in code, never real photos):
               {"kind": "reply", "lines": ["short line of the AI's answer", ...]}         2-4 lines, illustrative
               {"kind": "before_after", "before": "<svg viewBox='0 0 400 250'>", "after": "<svg ...>",
@@ -76,6 +76,7 @@ PCSS = """
 .pcard .copy svg{width:22px;height:22px}
 .ptxt{font-size:calc(var(--ps)*var(--k));line-height:1.42;font-weight:500;color:var(--ink);text-wrap:pretty}
 .ptxt b{color:var(--accent-text);font-weight:800}
+.ptxt b.em{color:var(--ink);font-weight:800;background:linear-gradient(transparent 62%,color-mix(in srgb,var(--accent) 38%,transparent) 62%)}
 .pbar{margin-top:calc(26px*var(--k));display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:42px;font-weight:300}
 .pbar span{width:60px;height:60px;border-radius:50%;background:var(--ink);display:grid;place-items:center}
 .demo{margin-top:calc(26px*var(--k))}

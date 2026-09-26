@@ -37,10 +37,14 @@ everything after the pick is automatic, so the list must be accurate and ready t
    collections go under step 8).
    Give them `sources` too: the official docs / help pages the post will be based on.
 8. Add 3 **prompt pack** candidates (`"kind": "prompts"`, `"tool": "Prompt pack"`): copy-paste prompt collections,
-   the page's core format next to news ("7 prompts to learn any language", "6 prompts that write your weekly report",
-   "5 photo edits you can do by just asking"). Pick everyday goals people search for, 3 different areas per scan:
-   learning & study, work & career, writing, productivity, money planning (post says "not financial advice"), travel,
-   coding, image editing / creation, research, small business ... Never a pack we already posted (list above);
+   the page's core format next to news. They don't need news. The owner wants packs that touch people's daily life
+   or their wallet (refs: "7 prompts to build software that makes money while you sleep"), weighted ~60% **social
+   media + AI agent** and **money** (side income, freelancing, digital products, pricing, salary), the rest finance,
+   trading, health, learning, spirituality protocols, niche ideas. The owner's ready-made library is
+   `prompt_packs.json` (shown in the Studio's "Prompt paketleri" tab); don't copy its packs here, invent new ones in
+   the same spirit: an "Act as an expert in ..." style role, a concrete goal ([$5,000] a month as a goal the reader
+   sets, never promised income), a list of deliverables, "a realistic estimate". Finance/trading: "not financial
+   advice"; health: "not medical advice". Never a pack we already posted (list above);
    the same area only after 30 days and with a clearly different pack. `tools` = the chat tools the prompts really work in; features a prompt relies on (image editing,
    file upload, voice mode, web search) must exist in those tools: put their official help pages in `sources`.
    `angle`: the pack plan in one line (the prompt names). Score them like the rest; a strong pack can beat weak news.
