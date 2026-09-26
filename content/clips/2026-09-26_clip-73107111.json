@@ -1,0 +1,21 @@
+{
+  "kind": "clip",
+  "source": "https://x.com/rachitdot_/status/2103572511573107111/video/1",
+  "credit": "@rachitdot_ on X",
+  "topic": "Claude Code tips",
+  "title": null,
+  "hook": "The engineer who built Claude Code just gave a free 28-minute class that beats every $300 prompting course",
+  "caption": "The guy who built Claude Code just taught a free class better than most $300 prompting courses 🤯\n\nHe covers what most people get wrong: a messy CLAUDE.md, no memory shortcuts, and running one session when you could run three in parallel.\n\n→ what actually belongs in your CLAUDE.md\n→ keybindings that save you dozens of clicks a day\n→ how to run parallel Claude Code sessions on the same project\n→ the memory trick that stops you repeating yourself\n\nWhich one are you trying today: parallel sessions or the CLAUDE.md fix? 👇\n\nFollow @aiplaybooks.daily for the Claude Code tricks nobody tells you.\n\n#claudecode #claude #aitools #anthropic #ai",
+  "checked": [
+    "Speaker matches Boris Cherny, described as the creator/builder of Claude Code, e.g. Y Combinator library title 'Boris Cherny: Building Claude Code' (ycombinator.com/library/UN-boris-cherny-building-claude-code) and Substack piece 'How the Creator of Claude Code Actually Uses Claude Code' (getpushtoprod.substack.com); slide content (CLAUDE.md, keybindings, multi-claude/parallel sessions) matches his public Claude Code talks/playbook (howborisusesclaudecode.com, simonwillison.net/2026/May/6/code-w-claude-2026)."
+  ],
+  "captions": {
+    "instagram": "The guy who built Claude Code just taught a free class better than most $300 prompting courses 🤯\n\nHe covers what most people get wrong: a messy CLAUDE.md, no memory shortcuts, and running one session when you could run three in parallel.\n\n→ what actually belongs in your CLAUDE.md\n→ keybindings that save you dozens of clicks a day\n→ how to run parallel Claude Code sessions on the same project\n→ the memory trick that stops you repeating yourself\n\nWhich one are you trying today: parallel sessions or the CLAUDE.md fix? 👇\n\nFollow @aiplaybooks.daily for the Claude Code tricks nobody tells you.\n\n#claudecode #claude #aitools #anthropic #ai",
+    "facebook": "The engineer who built Claude Code just gave away a free 28-minute class, and it's more useful than most paid courses.\n\nHe walks through his own setup: what goes in CLAUDE.md, small keybinding tweaks that save clicks, and running several Claude Code sessions on the same project at once.\n\nIf you use Claude Code for work, this is worth pausing for.\n\nWhat's the one Claude Code habit you wish you'd started sooner?\n\n#claudecode #anthropic #aitools",
+    "youtube": {
+      "title": "Claude Code Creator's Free Class Beats $300 Courses",
+      "description": "The engineer who built Claude Code gave a free 28-minute class on how to actually use it well.\n\nHe covers CLAUDE.md setup, keybinding shortcuts, memory tricks, and running parallel Claude Code sessions on the same project.\n\nIf you use Claude Code daily, this is worth 28 minutes.\n\n#claudecode #anthropic #aitools #claude #ai",
+      "tags": ["claude code", "claude code tips", "anthropic", "claude ai", "ai coding tips", "coding tips", "ai tools", "boris cherny"]
+    }
+  }
+}
