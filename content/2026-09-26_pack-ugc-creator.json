@@ -1,0 +1,229 @@
+{
+  "theme": "prompts",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Prompt Pack · Land Your First Paid UGC Deal",
+  "caption": "If you post content but have never been paid a cent for it, this pack is for you 🎥\n\nBrands spend real budget on UGC every month, but most creators never pitch because they don't know what to send or what to charge.\n\n→ 3 sample videos with what you already own\n→ the brands already paying for UGC right now\n→ scripts that don't sound like ads\n→ a pitch DM and a rate card so you don't guess your price\n\nWhich prompt are you starting with: the samples or the pitch? 👇\n\nSave this before you film your first video, and follow @aiplaybooks.daily for a new AI playbook every day.\n\n#chatgpt #ai #ugccreator #contentcreator #branddeals",
+  "captions": {
+    "instagram": "If you post content but have never been paid a cent for it, this pack is for you 🎥\n\nBrands spend real budget on UGC every month, but most creators never pitch because they don't know what to send or what to charge.\n\n→ 3 sample videos with what you already own\n→ the brands already paying for UGC right now\n→ scripts that don't sound like ads\n→ a pitch DM and a rate card so you don't guess your price\n\nWhich prompt are you starting with: the samples or the pitch? 👇\n\nSave this before you film your first video, and follow @aiplaybooks.daily for a new AI playbook every day.\n\n#chatgpt #ai #ugccreator #contentcreator #branddeals",
+    "facebook": "If you post content but have never been paid for it, this one's for you.\n\nBrands are spending real money on UGC every month, short, honest-feeling videos, not big production. Most people never pitch because they don't know what to send or what to charge.\n\nThis prompt pack builds the three things brands actually check before they say yes: sample videos, a pitch message, and a rate card, so you're not guessing on price.\n\nHave you ever pitched a brand for a paid video, or is this new to you?\n\n#ai #ugccreator #contentcreator #branddeals",
+    "youtube": {
+      "title": "7 ChatGPT Prompts to Land Your First Paid UGC Deal",
+      "description": "7 ChatGPT prompts that help you land your first paid UGC deal, even with zero followers.\n\nFrom building 3 sample videos with products you already own, to finding brands that pay for UGC, writing scripts, pitching, pricing your rate card, and turning one deal into a monthly retainer.\n\nSave this if you make content and want to start getting paid for it.\n\n#ugccreator #branddeals #chatgptprompts #contentcreator #ai",
+      "tags": [
+        "ugc creator",
+        "paid brand deal",
+        "chatgpt prompts",
+        "content creator",
+        "brand deals",
+        "influencer marketing",
+        "side hustle",
+        "creator economy"
+      ]
+    }
+  },
+  "sources": [],
+  "cover": {
+    "headline": "Brands will pay you $150-$500 per video, even with zero followers. 7 prompts to land your first UGC deal:",
+    "em": "$150-$500 per video",
+    "person": null,
+    "photo_query": [
+      "phone tripod video recording",
+      "ring light phone",
+      "product photography"
+    ],
+    "photo_pick": {
+      "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvbnM1MDA3LWltYWdlLWt3dnlidmI1LmpwZw.jpg",
+      "page": "https://www.rawpixel.com/image/5926341/photo-image-public-domain-ocean-nature",
+      "author": "unknown",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "rawpixel"
+    },
+    "layout": "scene",
+    "photo": {
+      "file": "czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvbnM1MDA3LWltYWdlLWt3dnlidmI1LmpwZw.jpg",
+      "page": "https://www.rawpixel.com/image/5926341/photo-image-public-domain-ocean-nature",
+      "author": "unknown",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "rawpixel"
+    },
+    "layout_used": "scene"
+  },
+  "design": {
+    "mood": "a phone on a tripod filming at golden hour: warm amber light, confident and a little glossy, like a creator setting up a shoot that's about to get paid",
+    "palette": {
+      "bg": "#1A1208",
+      "bg2": "#241807",
+      "surface": "#2C1F0E",
+      "ink": "#FDF6EC",
+      "muted": "#C7AE8C",
+      "accent": "#FFB020",
+      "accent2": "#FF6B4A"
+    },
+    "fonts": {
+      "display": "Unbounded",
+      "body": "Inter",
+      "mono": "JetBrains Mono"
+    },
+    "display": {
+      "weight": 700,
+      "tracking": -2
+    },
+    "shape": {
+      "radius": 30,
+      "border": 2,
+      "shadow": "soft"
+    },
+    "background": {
+      "pattern": "dots",
+      "pattern_opacity": 0.07,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "pill",
+    "prompt": "chat",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='7' y='2' width='10' height='16' rx='2'/><path d='M12 18v3M9 21h6'/><circle cx='12' cy='9' r='2'/></svg>"
+  },
+  "voice": "af_jessica",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "PROMPT PACK",
+      "title": "prompts to land your first paid UGC deal",
+      "em": "paid UGC deal",
+      "sub": "No following needed. Just a phone, a plan, and a pitch.",
+      "tools": [
+        "ChatGPT",
+        "Claude",
+        "Gemini"
+      ],
+      "count": 7,
+      "voiceover": "Here are seven prompts to land your first paid UGC deal, even with zero followers."
+    },
+    {
+      "type": "prompt",
+      "name": "The Portfolio Builder",
+      "sub": "3 sample videos before anyone pays you.",
+      "prompt": "Act as a UGC coach. I have no clients yet. Plan 3 sample UGC videos I can film at home with products I already own in [CATEGORY]: the product, the angle, a 30-second script, and the shot list. Make each one show a different **SKILL** brands pay for.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Video 1: unboxing - shows first reaction",
+          "Video 2: tutorial - shows product knowledge",
+          "Video 3: before/after - shows results"
+        ]
+      },
+      "voiceover": "One. Plan three sample videos with products you already own, no clients needed."
+    },
+    {
+      "type": "prompt",
+      "name": "The Brand Finder",
+      "sub": "Who is actually buying UGC right now.",
+      "prompt": "Help me find brands that buy UGC in [CATEGORY]. Give me 10 types of brands to target, the signs a brand already pays for UGC (ads, creator posts, hiring pages), where to find their marketing contact, and which **5** to pitch first.",
+      "tip": "Check the brand's own ad library before you pitch — if they're already running UGC-style ads, they're already paying for this.",
+      "voiceover": "Two. Find brands already buying UGC, and the five to pitch first."
+    },
+    {
+      "type": "prompt",
+      "name": "The Script Writer",
+      "sub": "Ads that sound like a real person.",
+      "prompt": "Write 3 UGC ad scripts for [PRODUCT] aimed at [AUDIENCE], 20-35 seconds each: a problem-solution, an unboxing, and a 'things I wish I knew' style. Add the first-3-second hook, what to show on screen, and the **CALL TO ACTION** for each.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Hook: \"I almost didn't buy this...\"",
+          "On screen: hold product to camera",
+          "CTA: \"link is in their bio\""
+        ]
+      },
+      "voiceover": "Three. Get three ad scripts that sound like a real person, not an ad."
+    },
+    {
+      "type": "prompt",
+      "name": "The Pitch DM",
+      "sub": "A message brands actually answer.",
+      "prompt": "Write a short cold email and a DM to [BRAND] offering UGC videos for [PRODUCT]. I'm new but have 3 samples: [LINK]. Keep it under 90 words, lead with an idea for their product, not with me, and end with **ONE CLEAR** question.",
+      "tip": "Send the DM to the brand's own account and the email to their marketing address — send both, don't pick one.",
+      "voiceover": "Four. Turn your samples into a short pitch that leads with an idea, not with you."
+    },
+    {
+      "type": "prompt",
+      "name": "The Rate Card",
+      "sub": "Price it so you don't work for free.",
+      "prompt": "Act as a UGC business mentor. Build my rate card as a beginner in [COUNTRY]: price per video, a 3-video bundle, raw footage, usage rights for [30/90] days and whitelisting. Explain each line in one sentence so I can defend it on a call.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "1 video: $150 - 3-video bundle: $400",
+          "Raw footage: +$50",
+          "90-day usage rights: +$100"
+        ]
+      },
+      "voiceover": "Five. Build a rate card so you never have to guess a price on a call."
+    },
+    {
+      "type": "prompt",
+      "name": "The Hook Variations",
+      "sub": "One video, five ad versions.",
+      "prompt": "I filmed a UGC video for [PRODUCT]. Here is the script: [PASTE SCRIPT]. Write 5 alternative opening hooks I can record in 10 minutes so the brand can test them as separate ads, and tell me which hook fits a **COLD AUDIENCE** best.",
+      "tip": "Brands pay extra for hook variations because it lets them run more ads from one shoot — mention this when you pitch it.",
+      "voiceover": "Six. Turn one video into five hooks the brand can test as separate ads."
+    },
+    {
+      "type": "prompt",
+      "name": "The Repeat Client",
+      "sub": "Turn one deal into a monthly retainer.",
+      "prompt": "I delivered my first UGC videos to [BRAND]. Write the delivery message, a short results check-in for 2 weeks later, and a proposal for a monthly package of [NUMBER] videos, with 3 fresh content ideas that make saying **YES** easy.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Check-in: \"How did the videos perform?\"",
+          "Proposal: 4 videos / month package",
+          "3 fresh ideas attached"
+        ]
+      },
+      "voiceover": "Seven. Turn your first delivery into a proposal for a monthly retainer."
+    },
+    {
+      "type": "howto",
+      "title": "Get more out of this pack",
+      "items": [
+        [
+          "Film the 3 samples first",
+          "No brand signs a creator with zero videos to show — the portfolio builder comes before any pitch."
+        ],
+        [
+          "Pitch 5 brands, not 1",
+          "Send the same pitch to all 5 brands from the brand finder the same week — most replies come from volume."
+        ],
+        [
+          "Never skip the rate card",
+          "Price it before the call, so you're not making up a number while a brand is waiting on the phone."
+        ]
+      ],
+      "voiceover": "Film your samples first, pitch five brands at once, and always price it before the call."
+    },
+    {
+      "type": "cta",
+      "title": "Save this pack.",
+      "title2": "Send your first pitch this week.",
+      "lines": [
+        [
+          "Follow",
+          "for daily AI tool tips & news"
+        ],
+        [
+          "Share",
+          "with someone who films content"
+        ],
+        [
+          "Comment",
+          "which brand you're pitching first"
+        ]
+      ],
+      "voiceover": "Save this pack, and follow for a new AI playbook every day."
+    }
+  ]
+}
