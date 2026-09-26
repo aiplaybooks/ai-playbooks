@@ -53,7 +53,7 @@ def check(e):
     print("Worker:", url or "not deployed yet")
     if url:
         try:
-            with urllib.request.urlopen(url + "/health", timeout=20) as r: print("  health:", r.read().decode()[:200])
+            with urllib.request.urlopen(urllib.request.Request(url + "/health", headers={"User-Agent": "Mozilla/5.0 dm_setup"}), timeout=20) as r: print("  health:", r.read().decode()[:200])
         except OSError as ex: print("  health: FAIL", ex)
     app = f"{e['META_APP_ID']}|{e['META_APP_SECRET']}"
     subs = api("GET", f"/{e['META_APP_ID']}/subscriptions", {"access_token": app})
