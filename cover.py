@@ -19,7 +19,7 @@ Reads the post's `cover` block (written by the write step):
     scene       old field (Flux prompt); only used as a last search query when photo_query is missing
     focus       optional CSS background-position of the image (default "50% 20%": faces sit in the upper part)
 Writes output/<post>/cover_image.jpg and `cover.photo` = {file, page, author, license, license_url, source} back into
-the JSON + a credit line in the caption ("📷 Photo: <author> · <license> via <source>").
+the JSON. The credit is drawn on the cover (hookcover.py), never in the caption (owner, 2026-09-26).
 Licenses: only ones that allow reuse with edits (crop + text): CC BY, CC BY-SA, CC0, public domain. No NC/ND.
 A photo already used on another post's cover is skipped.
 """
@@ -198,7 +198,7 @@ def main():
     if ph:
         cv["photo"] = ph
         cap = "\n".join(l for l in data.get("caption", "").split("\n") if not l.startswith(CREDIT))
-        data["caption"] = credit_caption(cap, ph) if ph.get("author") else cap
+        data["caption"] = cap  # the credit is on the cover image; captions carry no credits (owner, 2026-09-26)
     elif FLUX_ENABLED and cv.get("scene"):
         cv.pop("photo", None)
         data["caption"] = "\n".join(l for l in data.get("caption", "").split("\n") if not l.startswith(CREDIT))

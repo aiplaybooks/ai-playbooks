@@ -27,9 +27,9 @@ You write the hook for a viral-clip Reel on AI Playbooks (@aiplaybooks.daily, In
   shows. Bold result/money promises are fine (owner, 2026-09-26: "This AI workflow can make you $5,000 a month"), also
   the creator's own figures from their post; no disclaimer lines. Don't state who made it with which tool unless the
   post or an official page says so.
-- `caption`: 2-4 short lines: what it is + why it's interesting (verified facts only; name the tool only if the post or
-  an official page confirms it), then "Source: @{uploader_id} on {platform}", then "Follow @aiplaybooks.daily for daily
-  AI tips & news", then 4-8 hashtags. English.
+- `caption`: a short English draft (2-3 lines: what it is + why it's interesting; name the tool only if the post or an
+  official page confirms it). No source/credit line: the credit is on the video. The next step (caption agent,
+  prompts/caption.md) rewrites it per platform with researched hashtags, so no hashtags needed here.
 - `comments` (leave it out when not needed): for prompt clips, the prompts go here, one comment per prompt
   ("Step 1 - image prompt:\n\n<prompt>", "Step 2 - video prompt:\n\n<prompt>"), each under 2200 characters; the
   caption then only says the prompts are in the comments. Only when the owner asks for it or the clip is about a prompt.

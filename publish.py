@@ -28,6 +28,7 @@ Token values are never printed.
 import sys, os, re, json, time, shutil, pathlib, argparse, subprocess, urllib.request, urllib.parse, urllib.error
 from datetime import datetime, timezone
 from PIL import Image, ImageFilter, ImageEnhance
+import captions as CAP
 
 ROOT = pathlib.Path(__file__).parent.resolve()
 GRAPH = "https://graph.facebook.com/v25.0"
@@ -137,10 +138,13 @@ def prepare(p, dry=False):
     if p.clip and not reel.exists(): raise PublishError(f"no {reel.name} in {p.out}: run clip.py first")
     if not p.clip and not pngs: raise PublishError(f"no slides in {p.out}: run carousel.py first")
     if not p.clip and not 2 <= len(pngs) <= 10: raise PublishError(f"Instagram carousels take 2-10 images, this post has {len(pngs)}")
-    cap = p.data.get("caption", "")
-    if not cap.strip(): raise PublishError("caption is empty")
-    if len(cap) > 2200: raise PublishError(f"caption is {len(cap)} characters (Instagram max 2200)")
-    if cap.count("#") > 30: raise PublishError(f"caption has {cap.count('#')} hashtags (Instagram max 30)")
+    for pf in ("instagram", "facebook"):
+        cap = CAP.text_for(p.data, pf)
+        if not cap.strip(): raise PublishError(f"{pf} caption is empty")
+        lim = CAP.LIMITS[pf]
+        if len(cap) > lim["chars"]: raise PublishError(f"{pf} caption is {len(cap)} characters (max {lim['chars']})")
+        n = len(CAP.tags_in(cap))
+        if n > lim["tags"]: raise PublishError(f"{pf} caption has {n} hashtags (max {lim['tags']}; Instagram's cap since Dec 2025)")
     check_comments(p)
     shutil.rmtree(p.pub, ignore_errors=True); p.pub.mkdir(parents=True)
     for f in pngs:
@@ -262,7 +266,7 @@ def ig_carousel(p):
     if not p.state.get("ig_carousel_media"):
         for k in kids: ig_wait(p, k, "carousel item", 300)
         cid = api("POST", f"{GRAPH}/{ig}/media", {"media_type": "CAROUSEL", "children": ",".join(kids),
-                                                  "caption": p.data["caption"], "access_token": p.token})["id"]
+                                                  "caption": CAP.text_for(p.data, "instagram"), "access_token": p.token})["id"]
         ig_wait(p, cid, "carousel", 300)
     mid, link = ig_publish(p, cid, "ig_carousel")
     say(f"ig_carousel: published {link}")
@@ -274,7 +278,7 @@ def ig_reel(p):
     cid = p.state.get("ig_reel_container")
     if not cid:
         cid = api("POST", f"{GRAPH}/{ig}/media", {"media_type": "REELS", "video_url": p.url(p.pub / "reel.mp4"),
-                                                  "caption": p.data["caption"], "share_to_feed": "true",
+                                                  "caption": CAP.text_for(p.data, "instagram"), "share_to_feed": "true",
                                                   "cover_url": p.url(p.pub / "cover.jpg"), "access_token": p.token})["id"]
         p.state["ig_reel_container"] = cid; p.save()
     if not p.state.get("ig_reel_media"):
@@ -292,7 +296,7 @@ def fb_photos(p):
             ids.append(api("POST", f"{GRAPH}/{page}/photos",
                            {"url": p.url(f), "published": "false", "access_token": p.token})["id"])
         p.state["fb_photo_ids"] = ids; p.save()
-    params = {"message": p.data["caption"], "access_token": p.token}
+    params = {"message": CAP.text_for(p.data, "facebook"), "access_token": p.token}
     for i, x in enumerate(ids): params[f"attached_media[{i}]"] = json.dumps({"media_fbid": x})
     pid = api("POST", f"{GRAPH}/{page}/feed", params)["id"]
     link = f"https://www.facebook.com/{pid}"
@@ -310,7 +314,7 @@ def fb_reel(p):
         p.state["fb_reel_video"] = vid; p.save()
     if not p.state.get("fb_reel_finished"):
         api("POST", f"{GRAPH}/{page}/video_reels", {"upload_phase": "finish", "video_id": vid, "video_state": "PUBLISHED",
-                                                    "description": p.data["caption"], "access_token": p.token})
+                                                    "description": CAP.text_for(p.data, "facebook"), "access_token": p.token})
         p.state["fb_reel_finished"] = True; p.save()
     t0 = time.time(); st = {}
     while time.time() - t0 < 600:  # Facebook publishes asynchronously; wait for it, but don't fail on slowness
@@ -341,22 +345,26 @@ def yt_access(p):
 
 
 def yt_meta(p):
-    """Title (<=100 chars), description and tags for the Short, from the content JSON.
-    Clips: title = their title line + hook; our IG/FB comments (e.g. prompts) go into the description, because we
-    don't post YouTube comments."""
-    if p.clip:
-        title = " ".join(x for x in (p.data.get("title"), p.data.get("hook")) if x) or p.data.get("topic") or p.name
+    """Title (<=100 chars), description and tags for the Short. From `captions.youtube` (the caption agent) when there,
+    else from the cover title + caption. Clips: our IG/FB comments (e.g. prompts) go into the description, because we
+    don't post YouTube comments. No source links (owner, 2026-09-26: credits live on the media, not in captions)."""
+    yt = (p.data.get("captions") or {}).get("youtube") or {}
+    if yt.get("title"): title = yt["title"]
+    elif p.clip: title = " ".join(x for x in (p.data.get("title"), p.data.get("hook")) if x) or p.data.get("topic") or p.name
     else:
         cover = next((s for s in p.data["slides"] if s["type"] == "cover"), {})
         title = cover.get("title") or p.data.get("topic") or p.name
-    title = title.replace("<", "").replace(">", "").strip()
+    title = re.sub(r"\s*#shorts\b", "", title.replace("<", "").replace(">", ""), flags=re.I).strip()
     if len(title) > 90: title = title[:89].rsplit(" ", 1)[0] + "…"
-    cap = p.data["caption"].replace("<", "").replace(">", "")
-    tags = [t.lstrip("#") for t in re.findall(r"#\w+", cap)][:15]
+    cap = CAP.tidy(yt.get("description") or p.data["caption"]).replace("<", "").replace(">", "")
+    tags = [t.strip()[:60] for t in yt.get("tags") or []] or [t.lstrip("#") for t in CAP.tags_in(cap)][:15]
     extra = [c.strip() for c in p.data.get("comments") or []]
     if extra: cap = re.sub(r"(?i)\bin the comments\b", "below", cap)
-    links = p.data.get("sources", [])[:3] + ([p.data["source"]] if p.clip and p.data.get("source") else [])
-    desc = cap + "".join("\n\n" + c for c in extra) + "\n\n" + "\n".join(links) + "\n\n#Shorts"
+    body, tail = cap, ""
+    m = re.search(r"\n\n((?:#\w+\s*)+)$", cap)  # keep the hashtag line last, after the prompts
+    if m: body, tail = cap[:m.start()], m.group(1).strip()
+    desc = body + "".join("\n\n" + c for c in extra) + ("\n\n" + tail if tail else "")
+    if "#shorts" not in desc.lower(): desc += (" " if tail else "\n\n") + "#Shorts"
     return {"title": title + " #Shorts", "description": desc[:4900], "tags": tags, "categoryId": "28",
             "defaultLanguage": "en", "defaultAudioLanguage": "en"}
 

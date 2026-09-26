@@ -74,7 +74,8 @@ rules, voices, safe claims). Today is {date}.
        line of the best one into `photo_pick`: sharp, bright or moody, tied to the topic, room at the bottom for the
        headline; no text/logos/watermarks, no screens showing someone else's content. Nothing fits → other words.
        Also write `photo_query` (the queries, best first) as the fallback.
-   - `caption`: English, hook in the first line, 2-4 short lines, a save/follow nudge, 4-8 relevant hashtags.
+   - `caption`: a short English draft (hook line + 2-3 lines). The next step (caption agent, prompts/caption.md)
+     rewrites it per platform with researched hashtags; no sources, credits or hashtags needed here.
    - `sources`: the official URLs you used.
    - `voiceover` on every slide: conversational, 7-15 words, only verified claims; whole video ~30-40 s (it becomes
      a YouTube Short; Instagram/Facebook get only the carousel).

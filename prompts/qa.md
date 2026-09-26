@@ -13,8 +13,10 @@ Open `output/{name}/contact.png`, every `slide_NN.png` and the sampled video fra
   `cover.photo_file` to a better Commons file (search commons.wikimedia.org, only CC BY / CC BY-SA / CC0 / public
   domain) or `cover.focus` (CSS background-position, e.g. "50% 10%") and rerun `python cover.py {content}`, then
   `python carousel.py {content}`.
-  Is the headline true, readable, not cut off? Photo credit present on the cover and in the caption?
-- typos, and claims in the slides/caption that go beyond the `sources` of the content JSON
+  Is the headline true, readable, not cut off? Photo credit present on the cover (NOT in the caption)?
+- typos, and claims in the slides/caption that go beyond the `sources` of the content JSON. The captions were written
+  by the caption agent (`captions` per platform): only fix typos or wrong facts there, keep `caption` =
+  `captions.instagram`, and run `python captions.py check <content>` after any caption edit.
 - prompt packs (prompts theme): every prompt fully visible and readable, [PLACEHOLDERS] make sense, before/after
   demo art clearly shows the edit
 - design (adaptive theme): does the look fit the topic (its `design.mood`)? Is the cover art clear and on-topic, not

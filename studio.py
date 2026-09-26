@@ -32,16 +32,17 @@ CLAUDE = shutil.which("claude") or "claude"
 NO_WINDOW = getattr(subprocess, "CREATE_NO_WINDOW", 0)
 CLAUDE_TOOLS = ["WebSearch", "WebFetch", "Read", "Write", "Edit", "Glob", "Grep",
                 "Bash(python carousel.py:*)", "Bash(python reel.py:*)", "Bash(python news.py:*)",
-                "Bash(python cover.py:*)", "Bash(python clip.py:*)"]
+                "Bash(python cover.py:*)", "Bash(python clip.py:*)",
+                "Bash(python tags.py:*)", "Bash(python captions.py:*)"]
 
 SCAN = [("trigger", "Zamanlayıcı", "trigger"), ("collect", "Haber topla", "code"),
         ("scout", "Ara, doğrula, sırala", "ai"), ("choose", "Senin seçimin", "human")]
-POST = [("write", "Doğrula & yaz", "ai"), ("cover", "Kapak görseli", "code"), ("carousel", "Carousel", "code"),
+POST = [("write", "Doğrula & yaz", "ai"), ("caption", "Caption & tag", "ai"), ("cover", "Kapak görseli", "code"), ("carousel", "Carousel", "code"),
         ("reel", "Video · ses + müzik (YouTube)", "code"), ("qa", "Kalite kontrol", "ai"),
         ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"),
         ("ig_carousel", "Instagram carousel", "publish"), ("fb_photos", "Facebook gönderi", "publish"),
         ("yt_short", "YouTube Short", "publish"), ("comments", "Yorumlar", "publish"), ("log", "Kayıt & GitHub", "code")]
-CLIP = [("fetch", "Videoyu indir", "code"), ("hook", "Hook & caption", "ai"), ("frame", "Reel çerçevesi", "code"),
+CLIP = [("fetch", "Videoyu indir", "code"), ("hook", "Hook", "ai"), ("caption", "Caption & tag", "ai"), ("frame", "Reel çerçevesi", "code"),
         ("qa", "Kalite kontrol", "ai"), ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"), ("ig_reel", "Instagram Reel", "publish"),
         ("fb_reel", "Facebook Reel", "publish"), ("yt_short", "YouTube Short", "publish"), ("comments", "Yorumlar", "publish"),
         ("log", "Kayıt & GitHub", "code")]
@@ -471,6 +472,23 @@ def n_hook(run):
     return data["hook"][:120]
 
 
+def n_caption(run):
+    """Caption agent: per-platform captions + researched hashtags (prompts/caption.md, trained by caption_playbook.md)."""
+    import captions as CAP
+    clip = run.s["kind"] == "clip"
+    note = f"\n## Owner's note for this post (revision request)\n{run.s['note']}\n" if run.s.get("note") else ""
+    claude(run, "caption", "caption", date=run.s["day"], content=run.s["content"], run=run.id, note=note,
+           kind="clip" if clip else "carousel",
+           kind_hint="a viral video Reel framed with our hook; IG Reel + FB Reel + YouTube Short" if clip
+           else "a carousel post; IG carousel + FB photo post + a voiced YouTube Short of the slides")
+    data = read_json(content_path(run))
+    probs = CAP.check(data or {})
+    if probs: raise StepError("Caption kurallara uymuyor: " + "; ".join(probs)[:280])
+    r = read_json(run.dir / "caption.json", {}) or {}
+    tags = " ".join(t[0] if isinstance(t, list) else str(t) for t in (r.get("hashtags") or {}).get("instagram", []))
+    return (tags or data["caption"].split("\n", 1)[0])[:120]
+
+
 def n_clip_qa(run):
     out = out_dir(run); qa = run.dir / "qa"
     claude(run, "qa", "clipqa", content=run.s["content"], out=out.relative_to(ROOT).as_posix(),
@@ -488,7 +506,7 @@ def n_frame(run):
 
 
 PHASES = {"trigger": "scan", "collect": "scan", "scout": "scan", "choose": "wait", "write": "production", "cover": "production",
-          "fetch": "production", "hook": "production", "frame": "production",
+          "fetch": "production", "hook": "production", "caption": "production", "frame": "production",
           "carousel": "production", "reel": "production", "qa": "production", "approve": "wait", "upload": "publish",
           "ig_carousel": "publish", "ig_reel": "publish", "fb_photos": "publish", "fb_reel": "publish", "yt_short": "publish", "comments": "publish", "log": "publish"}
 
@@ -526,7 +544,7 @@ def record_timings(run, outcome):
 
 
 NODES = {"trigger": n_trigger, "collect": n_collect, "scout": n_scout, "choose": n_choose,
-         "write": n_write, "cover": n_cover, "carousel": n_carousel, "fetch": n_fetch, "hook": n_hook, "frame": n_frame, "reel": n_reel, "qa": n_qa, "approve": n_approve,
+         "write": n_write, "caption": n_caption, "cover": n_cover, "carousel": n_carousel, "fetch": n_fetch, "hook": n_hook, "frame": n_frame, "reel": n_reel, "qa": n_qa, "approve": n_approve,
          "upload": publish_step("upload"), "ig_carousel": publish_step("ig_carousel"), "ig_reel": publish_step("ig_reel"),
          "fb_photos": publish_step("fb_photos"), "fb_reel": publish_step("fb_reel"),
          "yt_short": publish_step("yt_short"), "comments": publish_step("comments"), "log": n_log}

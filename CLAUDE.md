@@ -35,6 +35,14 @@ Every day the pipeline should:
   with numbers ("this setup can make you $3,000 a month"); the owner says the figures are reachable when the prompts are
   used well and all risk is on the user. **No disclaimer lines** ("not financial/medical advice") anywhere. Still:
   news facts are verified, no fake quotes/endorsements from real people, no fake verified badge.
+- **Captions: the caption agent** (owner, 2026-09-26): Studio step "Caption & tag" after write/hook runs
+  prompts/caption.md, trained by `prompts/caption_playbook.md` (platform rules researched 2026-09-26: IG max 5 hashtags
+  since Dec 2025, ~125 chars before "more"; FB 2-4 tags, no engagement bait; YouTube <= 15 hashtags or all ignored).
+  Writes `captions` {instagram, facebook, youtube{title, description, tags}} (+ `caption` = instagram). Readable
+  paragraphs with blank lines, a comment-driving question, **no sources/credits/links in captions** (credits live on the
+  media). Hashtags from data, not guesses: `tags.py` (IG Business Discovery of big AI accounts + most-viewed Shorts'
+  tags). `captions.py check` enforces the rules; publish.py sends each platform its own text. The agent adds dated
+  "Lessons" to the playbook from runs/metrics.json when our numbers show a pattern.
 - **Reel/Short cover = the carousel's first slide** (owner, 2026-09-24): publish.py makes `cover.jpg` (9:16, slide centered
   on a blurred copy) → IG `cover_url`, FB reel thumbnail (needs pages_manage_engagement + pages_read_user_content; the
   token has them since 2026-09-25), YouTube thumbnails.set (works only once the channel may set Shorts covers; never fails the
@@ -45,7 +53,7 @@ Every day the pipeline should:
 - **Carousel cover = a photo + big hook headline** (owner, 2026-09-25; refs: @chatgptips style): full-bleed image on
   top, Anton upper-case headline with a yellow highlight, "SWIPE FOR MORE". The owner wants a **well-known person tied to
   the topic** on the cover (e.g. the company's CEO) for reach. Only freely licensed real photos: Wikimedia Commons
-  (CC BY / CC BY-SA / public domain, via its API) with "Photo: <author> · <license>" on the cover and in the caption.
+  (CC BY / CC BY-SA / public domain, via its API) with "Photo: <author> · <license>" on the cover (not in the caption: captions carry no credits).
   Never AI-generated likenesses of real people, no fake quotes/endorsements. No fitting person (or no Commons photo of
   them) → a real, freely licensed topic photo from Openverse (StockSnap, rawpixel, Flickr, Commons ...): the write step
   runs `cover.py --search`, looks at the previews and sets `cover.photo_pick`; `photo_query` is the automatic fallback.
@@ -90,6 +98,9 @@ studio/index.html  the n8n-style UI (vanilla JS, no build)
 prompts/           scout.md, write.md, qa.md: prompts for the headless `claude -p` steps of the Studio
 runs/              Studio run state + logs + settings.json (gitignored)
 prompt_packs.json  ready-made prompt pack library (see Decisions); used = content/<date>_<pack id>.json exists
+tags.py            hashtag research for the caption agent (IG Business Discovery of sources.json tags.ig_accounts +
+                   YouTube most-viewed Shorts' tags); cache in research/tags/ (gitignored)
+captions.py        caption rules in code: tidy + check per-platform captions (used by the agent, Studio and publish.py)
 publish_log.jsonl  one line per published post (links), committed by the Studio
 sources.json       source list: feeds, pages (parser: anthropic_news | dated_sections), hn queries, manual (web-search only)
 research/          one candidate list per day (commit it: history of what was available)
@@ -206,12 +217,13 @@ candidate (and approves the preview), everything else is automatic.
 - **scan** flow, daily at `scan_times` (default 08:00 + 18:00, owner asked for 2 scans/day; a slot missed while the PC
   was off runs at startup): news.py → `claude -p` with prompts/scout.md → `research/<date>_<HHMM>_candidates.json`
   (4-8 candidates, Turkish summaries for the owner, official sources) → owner picks one in the UI.
-- **post** flow (one at a time): write (prompts/write.md → content JSON + runs/<id>/write.json) → cover (cover.py:
+- **post** flow (one at a time): write (prompts/write.md → content JSON + runs/<id>/write.json) → caption
+  (prompts/caption.md: per-platform captions + researched hashtags) → cover (cover.py:
   Wikimedia photo of the person first, else a licensed topic photo) → carousel → reel (YouTube only) → qa (slides + video frames, prompts/qa.md,
   may fix + re-render) → approve (owner: Yayınla / Revize et (note → back to
   write) / Reddet (content JSON moved into the run dir)) → publish.py steps (ig_carousel, fb_photos, yt_short) → log (publish_log.jsonl + git commit/push).
 - **clip** flow (UI tab "Viral": owner pastes a link): fetch (yt-dlp + info.json + 8 frames) → hook (prompts/hook.md →
-  content/clips/<date>_clip-<id>.json, "kind": "clip") → frame (clip.py) → approve → upload → ig_reel → fb_reel →
+  content/clips/<date>_clip-<id>.json, "kind": "clip") → caption → frame (clip.py) → approve → upload → ig_reel → fb_reel →
   yt_short → comments → log.
   Output in output/clips/<name>/. The scan's collect step also runs viral.py (YouTube trend signals for the Viral tab).
 - Settings (UI ⚙): scan times, "Yayından önce onay" switch (owner wants it ON for now; if QA finds a problem the gate

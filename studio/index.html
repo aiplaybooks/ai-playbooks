@@ -282,19 +282,19 @@ table.tt td.p{text-align:right;color:var(--muted);width:48px;font-variant-numeri
 
 <script>
 const ICONS={comments:"💬",trigger:"⏰",collect:"📰",scout:"🧠",choose:"👤",write:"✍️",cover:"🧑‍💼",carousel:"🖼️",reel:"🎬",qa:"👁️",approve:"✅",
-  upload:"☁️",ig_carousel:"📸",ig_reel:"🎞️",fb_photos:"📘",fb_reel:"📘",yt_short:"▶️",log:"📒",fetch:"⬇️",hook:"🪝",frame:"🎬"};
+  upload:"☁️",ig_carousel:"📸",ig_reel:"🎞️",fb_photos:"📘",fb_reel:"📘",yt_short:"▶️",log:"📒",fetch:"⬇️",hook:"🪝",caption:"#️⃣",frame:"🎬"};
 const LAYOUT={
   post:{trigger:[0,40],collect:[270,40],scout:[540,40],choose:[810,40],
-    write:[0,230],cover:[270,230],carousel:[540,230],reel:[810,230],
-    qa:[0,420],approve:[270,420],upload:[540,420],ig_carousel:[810,420],
-    fb_photos:[0,610],yt_short:[270,610],comments:[540,610],log:[810,610]},
-  clip:{fetch:[0,40],hook:[270,40],frame:[540,40],qa:[810,40],
-    approve:[0,230],upload:[270,230],ig_reel:[540,230],fb_reel:[810,230],yt_short:[0,420],comments:[270,420],log:[540,420]}};
+    write:[0,230],caption:[270,230],cover:[540,230],carousel:[810,230],reel:[1080,230],
+    qa:[0,420],approve:[270,420],upload:[540,420],ig_carousel:[810,420],fb_photos:[1080,420],
+    yt_short:[0,610],comments:[270,610],log:[540,610]},
+  clip:{fetch:[0,40],hook:[270,40],caption:[540,40],frame:[810,40],qa:[1080,40],
+    approve:[0,230],upload:[270,230],ig_reel:[540,230],fb_reel:[810,230],yt_short:[1080,230],comments:[0,420],log:[270,420]}};
 const GROUPS={post:[["① Tarama","scan",0,0],["② Carousel üretimi","post",0,190],["③ Kontrol, onay & yayın","pub",0,380]],
   clip:[["① Viral Reel üretimi (link yapıştırınca başlar, taramadan bağımsız)","post",0,0],["② Kontrol sonrası onay & yayın","pub",0,190]]};
 const kind=()=>runById(postId)?.kind==="clip"?"clip":"post";
 const POS=new Proxy({},{get:(_,id)=>LAYOUT[kind()][id]||[0,0]});
-const WW=810+224;let WH=610+78;
+const WW=1080+224;let WH=610+78;
 const NW=224,NH=78;
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -311,6 +311,15 @@ async function api(path,body){
   if(!r.ok) throw new Error(j.error||r.statusText);
   return j;
 }
+function capsHtml(c){const k=c.captions||{},y=k.youtube||{},H=t=>`<h5 style="font-size:12px;color:var(--muted);margin:14px 0 6px">${t}</h5>`;
+  if(!k.instagram)return H("CAPTION")+`<div class="cap">${esc(c.caption||"")}</div>`;
+  return H("CAPTION · INSTAGRAM")+`<div class="cap">${esc(k.instagram)}</div>`+
+    `<details><summary style="cursor:pointer;color:var(--muted);font-size:12px;margin-top:10px">Facebook + YouTube caption'ları</summary>`+
+    H("FACEBOOK")+`<div class="cap">${esc(k.facebook||"")}</div>`+H("YOUTUBE")+`<div class="cap"><b>${esc(y.title||"")}</b>
+
+${esc(y.description||"")}
+
+Etiketler: ${esc((y.tags||[]).join(", "))}</div></details>`}
 function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove("on"),5000);}
 
 const scans=()=>S.runs.filter(r=>r.kind==="scan");
@@ -527,7 +536,7 @@ async function renderDrawer(){
   const acts=[];
   if(r&&n.status==="running")acts.push(`<button class="danger" data-a="cancel">■ Durdur</button>`);
   const posted=r&&(r.nodes.ig_carousel?.status==="done"||r.nodes.ig_reel?.status==="done");
-  if(r&&["error","done"].includes(n.status)&&!["running","queued"].includes(r.status)&&!(f!=="scan"&&posted&&["write","cover","carousel","qa","approve","upload","fetch","hook","frame"].includes(sel)))
+  if(r&&["error","done"].includes(n.status)&&!["running","queued"].includes(r.status)&&!(f!=="scan"&&posted&&["write","cover","carousel","qa","approve","upload","fetch","hook","caption","frame"].includes(sel)))
     acts.push(`<button data-a="retry">↻ ${n.status==="error"?"Tekrar dene":"Buradan yeniden çalıştır"}</button>`);
   if(sel==="approve"&&n.status==="waiting")acts.push(`<button class="go" data-a="preview">Önizle ve onayla</button>`);
   if(acts.length)h+=`<div class="acts">${acts.join("")}</div>`;
@@ -597,7 +606,7 @@ async function openApproval(rid){
       ${d.qa_result?`<div class="qa ${d.qa_result.ok?"ok":"bad"}" style="margin-bottom:10px">Kalite kontrol: ${esc(d.qa_result.summary_tr||"")}${(d.qa_result.fixed||[]).length?"<br>Düzeltilen: "+d.qa_result.fixed.map(esc).join("; "):""}${(d.qa_result.problems||[]).length?"<br>• "+d.qa_result.problems.map(esc).join("<br>• "):""}</div>`:""}
       <div class="qa bad" style="margin-bottom:10px">Bu video başkasına ait. Kaynak gösteriliyor ama bu izin yerine geçmez; mümkünse üreticiden izin al.</div>
       <h5 style="font-size:12px;color:var(--muted);margin:4px 0 6px">HOOK</h5><div class="kv">${c.title?`<b>${esc(c.title)}</b><br>`:""}${esc(c.hook||"")}</div>
-      <h5 style="font-size:12px;color:var(--muted);margin:14px 0 6px">CAPTION</h5><div class="cap">${esc(c.caption||"")}</div>
+      ${capsHtml(c)}
       <h5 style="font-size:12px;color:var(--muted);margin:14px 0 6px">KAYNAK</h5><div class="srcs"><a href="${esc(d.url)}" target="_blank">${esc(d.url)}</a></div>
       ${(c.checked||[]).length?`<details style="margin-top:10px;font-size:13px"><summary style="cursor:pointer;color:var(--muted)">Kontrol edilenler (${c.checked.length})</summary><ul class="clean" style="margin-top:6px">${c.checked.map(v=>`<li>${esc(v)}</li>`).join("")}</ul></details>`:""}
     </div><div>${d.reel?`<video src="${file(d.reel)}" controls preload="metadata"></video>`:""}</div></div>`;
@@ -608,7 +617,7 @@ async function openApproval(rid){
   $("#apBody").innerHTML=`<div class="apv"><div>
       ${d.qa_result?`<div class="qa ${q.ok?"ok":"bad"}">Kalite kontrol: ${esc(q.summary_tr||"")}${(q.problems||[]).length?"<br>• "+q.problems.map(esc).join("<br>• "):""}</div>`:""}
       <div class="strip">${d.slides.map(s=>`<img src="${file(s)}?t=${Date.now()>>14}" data-zoom>`).join("")}</div>
-      <h5 style="font-size:12px;color:var(--muted);margin:14px 0 6px">CAPTION</h5><div class="cap">${esc(c.caption||"")}</div>
+      ${capsHtml(c)}
       <h5 style="font-size:12px;color:var(--muted);margin:14px 0 6px">KAYNAKLAR</h5><div class="srcs">${(c.sources||[]).map(u=>`<a href="${esc(u)}" target="_blank">${esc(u)}</a>`).join("<br>")||"—"}</div>
       ${d.write_result?.verified?.length?`<details style="margin-top:10px;font-size:13px"><summary style="cursor:pointer;color:var(--muted)">Doğrulanan bilgiler (${d.write_result.verified.length})</summary><ul class="clean" style="margin-top:6px">${d.write_result.verified.map(v=>`<li>${esc(v)}</li>`).join("")}</ul></details>`:""}
     </div><div>${d.reel?`<video src="${file(d.reel)}" controls preload="metadata"></video>`:""}</div></div>`;
@@ -641,7 +650,7 @@ $("#scanBtn").onclick=async()=>{try{const r=await api("/api/scan",{});scanId=r.r
 
 /* ---------------- timings ---------------- */
 const PH={scan:["Tarama","var(--trigger)"],production:["Üretim","var(--ai)"],publish:["Yayın","var(--publish)"]};
-const PHASE={trigger:"scan",collect:"scan",scout:"scan",choose:"wait",write:"production",cover:"production",fetch:"production",hook:"production",frame:"production",carousel:"production",reel:"production",qa:"production",
+const PHASE={trigger:"scan",collect:"scan",scout:"scan",choose:"wait",write:"production",cover:"production",fetch:"production",hook:"production",caption:"production",frame:"production",carousel:"production",reel:"production",qa:"production",
   approve:"wait",upload:"publish",ig_carousel:"publish",ig_reel:"publish",fb_photos:"publish",fb_reel:"publish",yt_short:"publish",comments:"publish",log:"publish"};
 const secsOf=t=>t.started?Math.max(0,((t.ended?new Date(t.ended):new Date())-new Date(t.started))/1000):0;
 function hms(s){s=Math.round(s);if(s<60)return s+" sn";const m=Math.floor(s/60),r=s%60;if(m<60)return m+" dk "+String(r).padStart(2,"0")+" sn";

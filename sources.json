@@ -1,46 +1,221 @@
 {
   "feeds": [
-    {"name": "OpenAI News", "url": "https://openai.com/news/rss.xml", "tier": "official"},
-    {"name": "Claude Code releases", "url": "https://github.com/anthropics/claude-code/releases.atom", "tier": "official"},
-    {"name": "Codex CLI releases", "url": "https://github.com/openai/codex/releases.atom", "tier": "official", "skip": "(?i)alpha|beta|rc\\d"},
-    {"name": "Gemini CLI releases", "url": "https://github.com/google-gemini/gemini-cli/releases.atom", "tier": "official", "skip": "(?i)nightly|preview"},
-    {"name": "Google AI blog", "url": "https://blog.google/technology/ai/rss/", "tier": "official"},
-    {"name": "Gemini blog", "url": "https://blog.google/products/gemini/rss/", "tier": "official"},
-    {"name": "Google Developers blog", "url": "https://blog.google/technology/developers/rss/", "tier": "official", "match": "(?i)Gemini|\\bAI\\b|agent|Jules"},
-    {"name": "Google DeepMind blog", "url": "https://deepmind.google/blog/rss.xml", "tier": "official"},
-    {"name": "Cursor changelog", "url": "https://cursor.com/changelog/rss.xml", "tier": "official"},
-    {"name": "GitHub Copilot changelog", "url": "https://github.blog/changelog/label/copilot/feed/", "tier": "official"},
-    {"name": "Mistral news", "url": "https://mistral.ai/rss.xml", "tier": "official"},
-    {"name": "Meta newsroom (AI)", "url": "https://about.fb.com/news/feed/", "tier": "official", "match": "(?i)\\bAI\\b|Llama|Meta AI|superintelligence"},
-    {"name": "Hugging Face blog", "url": "https://huggingface.co/blog/feed.xml", "tier": "official"},
-    {"name": "Simon Willison", "url": "https://simonwillison.net/atom/everything/", "tier": "signal"}
+    {
+      "name": "OpenAI News",
+      "url": "https://openai.com/news/rss.xml",
+      "tier": "official"
+    },
+    {
+      "name": "Claude Code releases",
+      "url": "https://github.com/anthropics/claude-code/releases.atom",
+      "tier": "official"
+    },
+    {
+      "name": "Codex CLI releases",
+      "url": "https://github.com/openai/codex/releases.atom",
+      "tier": "official",
+      "skip": "(?i)alpha|beta|rc\\d"
+    },
+    {
+      "name": "Gemini CLI releases",
+      "url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+      "tier": "official",
+      "skip": "(?i)nightly|preview"
+    },
+    {
+      "name": "Google AI blog",
+      "url": "https://blog.google/technology/ai/rss/",
+      "tier": "official"
+    },
+    {
+      "name": "Gemini blog",
+      "url": "https://blog.google/products/gemini/rss/",
+      "tier": "official"
+    },
+    {
+      "name": "Google Developers blog",
+      "url": "https://blog.google/technology/developers/rss/",
+      "tier": "official",
+      "match": "(?i)Gemini|\\bAI\\b|agent|Jules"
+    },
+    {
+      "name": "Google DeepMind blog",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "tier": "official"
+    },
+    {
+      "name": "Cursor changelog",
+      "url": "https://cursor.com/changelog/rss.xml",
+      "tier": "official"
+    },
+    {
+      "name": "GitHub Copilot changelog",
+      "url": "https://github.blog/changelog/label/copilot/feed/",
+      "tier": "official"
+    },
+    {
+      "name": "Mistral news",
+      "url": "https://mistral.ai/rss.xml",
+      "tier": "official"
+    },
+    {
+      "name": "Meta newsroom (AI)",
+      "url": "https://about.fb.com/news/feed/",
+      "tier": "official",
+      "match": "(?i)\\bAI\\b|Llama|Meta AI|superintelligence"
+    },
+    {
+      "name": "Hugging Face blog",
+      "url": "https://huggingface.co/blog/feed.xml",
+      "tier": "official"
+    },
+    {
+      "name": "Simon Willison",
+      "url": "https://simonwillison.net/atom/everything/",
+      "tier": "signal"
+    }
   ],
   "pages": [
-    {"name": "Anthropic News", "url": "https://www.anthropic.com/news", "parser": "anthropic_news", "tier": "official"},
-    {"name": "Claude release notes", "url": "https://docs.claude.com/en/release-notes/overview", "parser": "dated_sections", "tier": "official"},
-    {"name": "xAI / Grok API release notes", "url": "https://docs.x.ai/docs/release-notes", "parser": "dated_sections", "tier": "official"},
-    {"name": "Codex changelog", "url": "https://developers.openai.com/codex/changelog", "parser": "dated_sections", "tier": "official"},
-    {"name": "OpenAI API changelog", "url": "https://platform.openai.com/docs/changelog", "parser": "dated_sections", "tier": "official"},
-    {"name": "Gemini API changelog", "url": "https://ai.google.dev/gemini-api/docs/changelog", "parser": "dated_sections", "tier": "official"},
-    {"name": "DeepSeek updates", "url": "https://api-docs.deepseek.com/updates", "parser": "dated_sections", "tier": "official"}
+    {
+      "name": "Anthropic News",
+      "url": "https://www.anthropic.com/news",
+      "parser": "anthropic_news",
+      "tier": "official"
+    },
+    {
+      "name": "Claude release notes",
+      "url": "https://docs.claude.com/en/release-notes/overview",
+      "parser": "dated_sections",
+      "tier": "official"
+    },
+    {
+      "name": "xAI / Grok API release notes",
+      "url": "https://docs.x.ai/docs/release-notes",
+      "parser": "dated_sections",
+      "tier": "official"
+    },
+    {
+      "name": "Codex changelog",
+      "url": "https://developers.openai.com/codex/changelog",
+      "parser": "dated_sections",
+      "tier": "official"
+    },
+    {
+      "name": "OpenAI API changelog",
+      "url": "https://platform.openai.com/docs/changelog",
+      "parser": "dated_sections",
+      "tier": "official"
+    },
+    {
+      "name": "Gemini API changelog",
+      "url": "https://ai.google.dev/gemini-api/docs/changelog",
+      "parser": "dated_sections",
+      "tier": "official"
+    },
+    {
+      "name": "DeepSeek updates",
+      "url": "https://api-docs.deepseek.com/updates",
+      "parser": "dated_sections",
+      "tier": "official"
+    }
   ],
   "hn": {
-    "queries": ["Claude", "Anthropic", "ChatGPT", "OpenAI", "GPT", "Codex", "Gemini", "Google AI", "Grok", "xAI",
-                "Cursor", "Copilot", "Perplexity", "Mistral", "Llama", "DeepSeek", "Midjourney", "AI agent", "LLM"],
+    "queries": [
+      "Claude",
+      "Anthropic",
+      "ChatGPT",
+      "OpenAI",
+      "GPT",
+      "Codex",
+      "Gemini",
+      "Google AI",
+      "Grok",
+      "xAI",
+      "Cursor",
+      "Copilot",
+      "Perplexity",
+      "Mistral",
+      "Llama",
+      "DeepSeek",
+      "Midjourney",
+      "AI agent",
+      "LLM"
+    ],
     "min_points": 80
   },
   "manual": [
-    {"name": "xAI news / Grok app updates", "url": "https://x.ai/news", "why": "blocks scripts (403): web search 'Grok' / 'xAI' last 24h"},
-    {"name": "ChatGPT release notes", "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes", "why": "blocks scripts (403): check with web search"},
-    {"name": "Perplexity changelog", "url": "https://www.perplexity.ai/changelog", "why": "blocks scripts (403): check with web search"},
-    {"name": "Microsoft Copilot", "url": "https://blogs.microsoft.com/", "why": "blocks scripts (403): check with web search"},
-    {"name": "Official X accounts (@AnthropicAI, @OpenAI, @xai, @GoogleDeepMind, @cursor_ai)", "url": "https://x.com", "why": "X needs login / paid API: use web search for big announcements"}
+    {
+      "name": "xAI news / Grok app updates",
+      "url": "https://x.ai/news",
+      "why": "blocks scripts (403): web search 'Grok' / 'xAI' last 24h"
+    },
+    {
+      "name": "ChatGPT release notes",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "why": "blocks scripts (403): check with web search"
+    },
+    {
+      "name": "Perplexity changelog",
+      "url": "https://www.perplexity.ai/changelog",
+      "why": "blocks scripts (403): check with web search"
+    },
+    {
+      "name": "Microsoft Copilot",
+      "url": "https://blogs.microsoft.com/",
+      "why": "blocks scripts (403): check with web search"
+    },
+    {
+      "name": "Official X accounts (@AnthropicAI, @OpenAI, @xai, @GoogleDeepMind, @cursor_ai)",
+      "url": "https://x.com",
+      "why": "X needs login / paid API: use web search for big announcements"
+    }
   ],
   "viral": {
-    "subreddits": ["aivideo", "singularity", "ChatGPT", "OpenAI", "artificial", "StableDiffusion", "midjourney", "ClaudeAI",
-                   "GeminiAI", "robotics", "accelerate", "ArtificialInteligence"],
-    "periods": ["day", "week"], "min_score": 300, "min_secs": 4, "max_secs": 90,
-    "youtube_queries": ["AI generated video", "AI video made with Veo", "Sora AI video", "Kling AI video", "humanoid robot video"],
+    "subreddits": [
+      "aivideo",
+      "singularity",
+      "ChatGPT",
+      "OpenAI",
+      "artificial",
+      "StableDiffusion",
+      "midjourney",
+      "ClaudeAI",
+      "GeminiAI",
+      "robotics",
+      "accelerate",
+      "ArtificialInteligence"
+    ],
+    "periods": [
+      "day",
+      "week"
+    ],
+    "min_score": 300,
+    "min_secs": 4,
+    "max_secs": 90,
+    "youtube_queries": [
+      "AI generated video",
+      "AI video made with Veo",
+      "Sora AI video",
+      "Kling AI video",
+      "humanoid robot video"
+    ],
     "youtube_min_views": 100000
+  },
+  "tags": {
+    "about": "tags.py: big AI accounts (Instagram Business/Creator accounts) whose recent posts show which hashtags are used and with how much engagement",
+    "ig_accounts": [
+      "chatgptips",
+      "chatgptricks",
+      "openai",
+      "googlegemini",
+      "nvidia",
+      "airesearches",
+      "theaifield",
+      "therundownai",
+      "rowancheung",
+      "godofprompt",
+      "techcrunch",
+      "notionhq"
+    ]
   }
 }
