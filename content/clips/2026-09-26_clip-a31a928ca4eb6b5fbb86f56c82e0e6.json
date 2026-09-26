@@ -1,0 +1,24 @@
+{
+  "kind": "clip",
+  "crop_pos": 0,
+  "fit": "contain",
+  "source": "https://packaged-media.redd.it/jjqj48g0c9nh1/pb/m2-res_1280p.mp4?m=DASHPlaylist.mpd&var=sgpssan&v=1&e=1790456400&s=262ae1d61aa31a928ca4eb6b5fbb86f56c82e0e6",
+  "credit": "Reddit",
+  "topic": "AI video",
+  "title": "Seedance 2.5 vs Wan 3.0:",
+  "hook": "Two new AI video models got the exact same tiny-explorer scene. Can you tell them apart?",
+  "caption": "Two new AI video models got the exact same prompt. Can you tell them apart? 👀\n\nSame tiny explorer, same giant kitchen, two different AI video generators.\n\nByteDance's Seedance 2.5 and Alibaba's Wan 3.0 can both now make 30-second clips with native audio, and the gap between \"real\" and AI is shrinking fast.\n\nWhich half looks more real to you? Tell us in the comments 👇\n\nFollow @aiplaybooks.daily for the AI tools everyone's talking about.\n\n#ai #aivideo #artificialintelligence #generativeai #technology",
+  "captions": {
+    "instagram": "Two new AI video models got the exact same prompt. Can you tell them apart? 👀\n\nSame tiny explorer, same giant kitchen, two different AI video generators.\n\nByteDance's Seedance 2.5 and Alibaba's Wan 3.0 can both now make 30-second clips with native audio, and the gap between \"real\" and AI is shrinking fast.\n\nWhich half looks more real to you? Tell us in the comments 👇\n\nFollow @aiplaybooks.daily for the AI tools everyone's talking about.\n\n#ai #aivideo #artificialintelligence #generativeai #technology",
+    "facebook": "Two new AI video models were given the exact same prompt: a tiny explorer lost in a giant kitchen.\n\nOne is ByteDance's Seedance 2.5, the other is Alibaba's Wan 3.0. Both can now generate 30-second clips with native audio, and the gap between them keeps getting smaller.\n\nWe watched both clips back to back and still had to look twice.\n\nWhich one do you think looks more real, and why?\n\n#ai #aivideo #generativeai",
+    "youtube": {
+      "title": "Seedance 2.5 vs Wan 3.0 AI Video: Can You Tell Them Apart?",
+      "description": "Two AI video models, the exact same prompt: a tiny explorer inside a giant kitchen.\n\nByteDance's Seedance 2.5 and Alibaba's Wan 3.0 can both generate 30-second clips with native audio now, and the gap between them keeps shrinking fast.\n\nWatch both halves and decide: which one looks more real to you?\n\n#aivideo #seedance25 #wan3 #ai #generativeai",
+      "tags": ["seedance 2.5", "wan 3.0", "ai video generator", "text to video ai", "ai video comparison", "bytedance ai video", "alibaba ai video", "ai video model"]
+    }
+  },
+  "checked": [
+    "Seedance 2.5 is ByteDance's 30-second, native-audio video model (public launch): https://thenextweb.com/news/bytedance-seedance-2-5-ai-video-4k-30-seconds",
+    "Wan 3.0 is Alibaba's video model generating up to 30-second clips with native audio: https://technode.global/2026/08/10/chinas-alibaba-releases-wan3-0-ai-video-model-in-public-beta-with-30s-clips-multimodal-inputs/"
+  ]
+}
