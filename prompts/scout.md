@@ -13,6 +13,12 @@ is new since the pool was last filled, verify it, and write only new or updated 
 8. Perplexity              9. Meta AI / Llama         10. Mistral (Le Chat)    11. DeepSeek
 12. Big open-weight / Chinese model releases (Qwen, Kimi, GLM, MiniMax, Llama, DeepSeek ...) — only big releases a
     normal user can try (app, chat site or easy download), not research-only papers.
+13. Apple (Apple Intelligence, Siri, iOS / macOS features, devices with new AI or camera features)
+14. Higgsfield (AI video / image generation: new models, features, presets)
+15. Google beyond Gemini (Search, Chrome, Photos, Android, Workspace, NotebookLM features)
+16. **Social media new features** (Instagram, TikTok, YouTube / Shorts, X, Threads, WhatsApp, Facebook, LinkedIn,
+    Snapchat): new features, AI features and creator tools our audience would use right away. Confirm on the
+    platform's own newsroom / help page / official account (Social Media Today and TechCrunch are hints).
 
 ## Already in the pool (don't add these again; to improve one, write it again with the SAME id)
 {pool}
@@ -25,7 +31,7 @@ or extra details. A genuinely different launch about the same product is fine; t
 ## Steps
 1. Read `{research}` (collected by news.py a minute ago: official feeds, changelogs, Hacker News, all sources in
    sources.json). The `manual` sources block scripts: check them with web search.
-2. Go through the tool list ONE BY ONE: what news.py found plus **one web search for EVERY tool** (all 12, even when
+2. Go through the tool list ONE BY ONE: what news.py found plus **one web search for EVERY tool** (all 16, even when
    news.py shows nothing: that is exactly when a search finds what the feeds missed) for news of the last 36 hours
    (official blog, release notes, changelog, official X account). Then **at least 3 more searches for interesting AI
    stories people talk about** outside the list (a viral use case, a new tool everyone tries, a big AI feature in an
@@ -52,7 +58,7 @@ or extra details. A genuinely different launch about the same product is fine; t
   "candidates": [
     {{
       "id": "short-kebab-slug",
-      "tool": "one of: ChatGPT, Claude, Gemini, Grok, Codex, Cursor, Copilot, Perplexity, Meta AI, Mistral, DeepSeek, Open models, Other, Prompt pack",
+      "tool": "one of: ChatGPT, Claude, Gemini, Grok, Codex, Cursor, Copilot, Perplexity, Meta AI, Mistral, DeepSeek, Open models, Apple, Higgsfield, Google, Social media, Other, Prompt pack",
       "kind": "news" | "evergreen" | "prompts",
       "title": "English headline as it could appear on the cover",
       "summary_tr": "1-2 Turkish sentences for the owner: what happened / what the post teaches",

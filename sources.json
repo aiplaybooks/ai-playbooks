@@ -59,10 +59,11 @@
       "tier": "official"
     },
     {
-      "name": "Meta newsroom (AI)",
+      "name": "Meta newsroom (AI + Instagram / WhatsApp / Threads / Facebook)",
       "url": "https://about.fb.com/news/feed/",
       "tier": "official",
-      "match": "(?i)\\bAI\\b|Llama|Meta AI|superintelligence"
+      "match": "(?i)\\bAI\\b|Llama|Meta AI|superintelligence|Instagram|WhatsApp|Threads|Facebook|Reels|Messenger|creator",
+      "why": "owner 2026-09-26: social media new features too (Instagram/WhatsApp/Threads have no working RSS of their own)"
     },
     {
       "name": "Hugging Face blog",
@@ -81,6 +82,63 @@
       "added": "2026-09-26",
       "by": "scout",
       "why": "official blog of the most-used local runner for open-weight models (Qwen/Llama/GLM/etc land here first for normal users)"
+    },
+    {
+      "name": "Apple Newsroom",
+      "url": "https://www.apple.com/newsroom/rss-feed.rss",
+      "tier": "official",
+      "added": "2026-09-26",
+      "by": "owner",
+      "why": "Apple launches (iOS, Apple Intelligence, devices)"
+    },
+    {
+      "name": "Apple Developer News",
+      "url": "https://developer.apple.com/news/rss/news.rss",
+      "tier": "official",
+      "added": "2026-09-26",
+      "by": "owner",
+      "match": "(?i)Apple Intelligence|\\bAI\\b|Siri|Foundation Models|iOS \\d|iPadOS|macOS|visionOS|App Store",
+      "why": "Apple platform features before the press picks them up"
+    },
+    {
+      "name": "Google Keyword blog (all products)",
+      "url": "https://blog.google/rss/",
+      "tier": "official",
+      "added": "2026-09-26",
+      "by": "owner",
+      "why": "Google product news beyond the AI blog (Search, Chrome, Photos, Android, Workspace)"
+    },
+    {
+      "name": "Higgsfield blog",
+      "url": "https://higgsfield.ai/blog/rss.xml",
+      "tier": "official",
+      "added": "2026-09-26",
+      "by": "owner",
+      "why": "AI video/image tool the audience uses; launches + features"
+    },
+    {
+      "name": "YouTube official blog",
+      "url": "https://blog.youtube/rss/",
+      "tier": "official",
+      "added": "2026-09-26",
+      "by": "owner",
+      "why": "social media new features: YouTube / Shorts / creator tools"
+    },
+    {
+      "name": "Social Media Today",
+      "url": "https://www.socialmediatoday.com/feeds/news/",
+      "tier": "signal",
+      "added": "2026-09-26",
+      "by": "owner",
+      "why": "social media new features across Instagram, TikTok, X, LinkedIn, Threads (verify on the platform's own page)"
+    },
+    {
+      "name": "TechCrunch Social",
+      "url": "https://techcrunch.com/category/social/feed/",
+      "tier": "signal",
+      "added": "2026-09-26",
+      "by": "owner",
+      "why": "social media new features (verify on the platform's own page)"
     }
   ],
   "pages": [
@@ -176,6 +234,16 @@
       "name": "Official X accounts (@AnthropicAI, @OpenAI, @xai, @GoogleDeepMind, @cursor_ai)",
       "url": "https://x.com",
       "why": "X needs login / paid API: use web search for big announcements"
+    },
+    {
+      "name": "Social media new features (Instagram @creators/@mosseri, TikTok newsroom, X, LinkedIn, Snapchat)",
+      "url": "https://newsroom.tiktok.com/",
+      "why": "no working RSS (TikTok/WhatsApp/Instagram blogs are HTML, Snap/LinkedIn 404): web search each gather for new features, AI features and creator tools; confirm on the platform's own newsroom/help page"
+    },
+    {
+      "name": "Higgsfield announcements",
+      "url": "https://x.com/higgsfield_ai",
+      "why": "big launches often land on X before the blog"
     }
   ],
   "viral": {

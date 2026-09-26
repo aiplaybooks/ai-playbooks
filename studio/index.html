@@ -429,7 +429,7 @@ document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{tab=b.datase
 $("#scanSel").onchange=e=>{scanId=e.target.value;const po=posts().find(p=>p.scan===scanId);if(po)postId=po.id;renderAll(true)};
 $("#postSel").onchange=e=>{postId=e.target.value;const po=runById(postId);if(po?.scan&&runById(po.scan))scanId=po.scan;renderAll(true)};
 let rawCache={};const openMore=new Set();let toolFilter=null;let packCat=null;
-const TOOLS=["ChatGPT","Claude","Gemini","Grok","Codex","Cursor","Copilot","Perplexity","Meta AI","Mistral","DeepSeek","Open models"];
+const TOOLS=["ChatGPT","Claude","Gemini","Grok","Codex","Cursor","Copilot","Perplexity","Meta AI","Mistral","DeepSeek","Open models","Apple","Higgsfield","Google","Social media"];
 const toolOf=k=>k.tool||(k.tools||[])[0]||"Diğer";
 async function renderSide(force){
   const L=$("#list");
