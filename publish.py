@@ -259,13 +259,13 @@ def ig_wait(p, cid, what, limit=900):
 
 def ig_published(p, cid):
     """media_publish sometimes errors (e.g. 'Application request limit reached', 2207051) although the post went
-    live. The container then says PUBLISHED: find the media by its caption among our newest posts."""
+    live (the container may then even say ERROR): look for a post with our caption made after this run's upload."""
     if not cid: return None
-    if api("GET", f"{GRAPH}/{cid}", {"fields": "status_code", "access_token": p.token}).get("status_code") != "PUBLISHED":
-        return None
     cap = CAP.text_for(p.data, "instagram")[:80]
-    recent = api("GET", f"{GRAPH}/{p.env['IG_USER_ID']}/media", {"fields": "id,caption", "limit": 10, "access_token": p.token})
-    return next((m["id"] for m in recent.get("data", []) if (m.get("caption") or "")[:80] == cap), None)
+    since = (p.state.get("upload") or {}).get("done", "")[:19]
+    recent = api("GET", f"{GRAPH}/{p.env['IG_USER_ID']}/media", {"fields": "id,caption,timestamp", "limit": 10, "access_token": p.token})
+    return next((m["id"] for m in recent.get("data", [])
+                 if (m.get("caption") or "")[:80] == cap and m.get("timestamp", "")[:19] >= since), None)
 
 
 def ig_publish(p, cid, step):
