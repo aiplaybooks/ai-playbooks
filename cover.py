@@ -113,6 +113,9 @@ def openverse(query):
 def fetch(cands, dest, used):
     """Download the best candidate not used on another cover yet."""
     for best in cands:
+        # a photo_pick written by hand/by Claude may lack fields
+        best = {"file": best.get("url", "photo").rsplit("/", 1)[-1], "page": best.get("url", ""), "author": "unknown",
+                "license": "", "license_url": "", **best}
         if best["page"] in used: continue
         try:
             with urllib.request.urlopen(urllib.request.Request(best["url"], headers=UA), timeout=60) as r: dest.write_bytes(r.read())
