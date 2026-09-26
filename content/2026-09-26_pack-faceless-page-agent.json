@@ -1,0 +1,228 @@
+{
+  "theme": "prompts",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Prompt Pack · Faceless Page + AI Agent",
+  "caption": "7 prompts that can take a faceless page to $3,000 a month with one AI agent running it 🤖\n\nMost faceless pages fail for one reason: no plan. These prompts give you the plan, from picking a niche people already pay in, to an AI agent that drafts your posts and waits for your approval.\n\n→ pick a niche with proof it pays\n→ 30 days of posts from one brainstorm\n→ an agent that drafts, you approve\n→ hooks, income streams and your first sponsor pitch\n\nWhich prompt are you running first: 1, 3 or 5? 👇\n\nSave this before you start your page, and follow @aiplaybooks.daily for a new playbook every day.\n\n#faceless #aiagents #sidehustle #chatgpt #claude",
+  "sources": [],
+  "captions": {
+    "instagram": "7 prompts that can take a faceless page to $3,000 a month with one AI agent running it 🤖\n\nMost faceless pages fail for one reason: no plan. These prompts give you the plan, from picking a niche people already pay in, to an AI agent that drafts your posts and waits for your approval.\n\n→ pick a niche with proof it pays\n→ 30 days of posts from one brainstorm\n→ an agent that drafts, you approve\n→ hooks, income streams and your first sponsor pitch\n\nWhich prompt are you running first: 1, 3 or 5? 👇\n\nSave this before you start your page, and follow @aiplaybooks.daily for a new playbook every day.\n\n#faceless #aiagents #sidehustle #chatgpt #claude",
+    "facebook": "A faceless page plus one AI agent can realistically build toward $3,000 a month 🤖\n\nMost people who try this quit after a week because they never had a real plan. So we wrote 7 prompts that build the whole system for you: the niche, a month of content, an AI agent that drafts your posts and waits for your approval, your hooks, your income streams and your first sponsor pitch.\n\nWhich part would you want an AI agent to handle first?\n\n#sidehustle #aiagents #chatgpt",
+    "youtube": {
+      "title": "7 ChatGPT prompts to run a faceless page with an AI agent",
+      "description": "A faceless page plus one AI agent can realistically build toward $3,000 a month if you run it well and stay consistent.\n\nThese 7 copy-paste prompts for ChatGPT, Claude or Gemini cover picking a niche with proof it pays, planning 30 days of content, building an AI agent workflow that drafts your posts for approval, writing hooks, mapping income streams and pitching your first sponsor.\n\nWhich prompt are you trying first? Tell us in the comments.\n\n#faceless #aiagents #sidehustle #chatgpt #claude",
+      "tags": [
+        "faceless page",
+        "ai agent",
+        "chatgpt prompts",
+        "side hustle",
+        "passive income",
+        "faceless youtube channel",
+        "ai automation",
+        "content creator tips"
+      ]
+    }
+  },
+  "cover": {
+    "headline": "A faceless page plus one AI agent can realistically build toward $3,000 a month. 7 prompts to build it:",
+    "em": "$3,000 a month",
+    "person": null,
+    "photo_query": [
+      "laptop dark room desk",
+      "code editor screen night",
+      "smartphone night desk"
+    ],
+    "photo_pick": {
+      "url": "https://cdn.stocksnap.io/img-thumbs/960w/W0RUS6FWBJ.jpg",
+      "page": "https://stocksnap.io/photo/laptop-computer-W0RUS6FWBJ",
+      "author": "Émile Perron",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "StockSnap"
+    },
+    "photo": {
+      "file": "W0RUS6FWBJ.jpg",
+      "page": "https://stocksnap.io/photo/laptop-computer-W0RUS6FWBJ",
+      "author": "Émile Perron",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "StockSnap"
+    },
+    "layout_used": "scene"
+  },
+  "design": {
+    "mood": "a laptop glowing alone at night, building something from nothing: deep charcoal, a single electric-lime accent like a terminal cursor, focused and a little clandestine",
+    "palette": {
+      "bg": "#0D1210",
+      "bg2": "#161F1B",
+      "surface": "#1B2622",
+      "ink": "#F1F7F3",
+      "muted": "#8FA69B",
+      "accent": "#5CF29A",
+      "accent2": "#3B9BFF"
+    },
+    "fonts": {
+      "display": "Space Grotesk",
+      "body": "Inter",
+      "mono": "JetBrains Mono"
+    },
+    "display": {
+      "weight": 700,
+      "tracking": -2
+    },
+    "shape": {
+      "radius": 24,
+      "border": 2,
+      "shadow": "soft"
+    },
+    "background": {
+      "pattern": "scanlines",
+      "pattern_opacity": 0.06,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "mono",
+    "prompt": "terminal",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='14' rx='2'/><path d='M8 21h8M12 17v4'/><path d='m8 9 2 2-2 2'/><path d='M13 13h3'/></svg>"
+  },
+  "voice": "am_eric",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "PROMPT PACK",
+      "title": "prompts to run a faceless page with an AI agent",
+      "em": "AI agent",
+      "sub": "Pick a niche, build the system, let the agent run it.",
+      "tools": [
+        "ChatGPT",
+        "Claude",
+        "Gemini"
+      ],
+      "count": 7,
+      "voiceover": "Here are seven prompts to build a faceless page that runs on one AI agent."
+    },
+    {
+      "type": "prompt",
+      "name": "The Niche Picker",
+      "sub": "Find a niche that pays before you post once.",
+      "prompt": "Act as a strategist who has grown faceless pages. Give me 5 faceless page niches for [PLATFORM] that could realistically reach [$3,000] a month. For each: the audience, 3 ways it makes money, how crowded it is, and **ONE PROOF** that people already pay in that niche.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Niche: AI productivity tips",
+          "Monetizes via: affiliates, sponsors, a guide",
+          "Proof: [named account] sells a $27 guide"
+        ]
+      },
+      "voiceover": "One. Get five niches that could realistically pay, with proof people already spend there."
+    },
+    {
+      "type": "prompt",
+      "name": "The Content Engine",
+      "sub": "30 days of posts from one brainstorm.",
+      "prompt": "Be my content director for a faceless [NICHE] page. Build a 30-day plan as a table: 3 content pillars, the format for each day (carousel, Reel, story), a hook for every post, and which posts should send people to my [PRODUCT OR LINK].",
+      "tip": "Feed it your best-performing post once you have data, so month two builds on what actually works.",
+      "voiceover": "Two. Turn one brainstorm into a full month of posts, pillars and hooks."
+    },
+    {
+      "type": "prompt",
+      "name": "The Agent Blueprint",
+      "sub": "What an AI agent can do for you every day.",
+      "prompt": "Act as an automation architect. Design an AI agent workflow for my [NICHE] page using [n8n / Make / Zapier]: it finds trending topics, drafts captions in my voice, builds a posting schedule and sends me everything to **APPROVE**. List each step, the tool for it, and what I still do by hand.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Step 1: scrape trends -> n8n",
+          "Step 2: draft caption -> your voice",
+          "Step 3: queue for your approval"
+        ]
+      },
+      "voiceover": "Three. Design the agent workflow that drafts your content and waits for your approval."
+    },
+    {
+      "type": "prompt",
+      "name": "The Hook Factory",
+      "sub": "Stop the scroll in the first line.",
+      "prompt": "Write 20 scroll-stopping hooks about [TOPIC] for [AUDIENCE]. Use 5 styles: a bold claim, a question, a number, a mistake, a before/after. Keep each under 12 words, nothing I can't back up, and mark the **3 TO TEST FIRST** with the reason.",
+      "tip": "Post the 3 marked hooks first and let real engagement decide the rest of the batch.",
+      "voiceover": "Four. Get twenty hooks in five proven styles, with the three to test first."
+    },
+    {
+      "type": "prompt",
+      "name": "The Money Map",
+      "sub": "Every income stream, in the right order.",
+      "prompt": "Act as a creator monetization coach. My faceless page has [FOLLOWERS] followers in [NICHE]. Map every realistic income stream (affiliates, sponsors, a digital product, UGC): what each needs, what it typically pays, and the **ORDER** to launch them to reach [$3,000] a month.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "1. Affiliates - needs an audience only",
+          "2. Digital product - needs a proven hook",
+          "3. Sponsors - needs 10k+ followers"
+        ]
+      },
+      "voiceover": "Five. Map every income stream and the order to launch them in."
+    },
+    {
+      "type": "prompt",
+      "name": "The Sponsor Pitch",
+      "sub": "Land your first brand deal.",
+      "prompt": "Write a short sponsorship pitch to [BRAND] from my [NICHE] page with [FOLLOWERS] followers and [ENGAGEMENT RATE]% engagement. Include a one-line opener, why my audience fits their product, 3 package options with prices, and a polite follow-up for 5 days later.",
+      "tip": "Send it from an email that matches your page name — it reads far more professional than a personal address.",
+      "voiceover": "Six. Turn your follower count into a real sponsorship pitch with pricing."
+    },
+    {
+      "type": "prompt",
+      "name": "The Growth Auditor",
+      "sub": "Find out why a post flopped.",
+      "prompt": "Act as a growth analyst. Here are my last 10 posts with reach, saves and shares: [PASTE STATS]. Tell me what the top 3 have in common, what the weakest 3 did wrong, 3 experiments for next week, and a **REALISTIC** follower range for the next 30 days.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Top posts: all used a number hook",
+          "Weak posts: no clear first line",
+          "Try: 3 hook-first Reels next week"
+        ]
+      },
+      "voiceover": "Seven. Feed it your own stats and get exactly what to change next."
+    },
+    {
+      "type": "howto",
+      "title": "Get more out of this pack",
+      "items": [
+        [
+          "Run one prompt at a time",
+          "Keep the niche pick, content plan and agent blueprint in the same chat so each step builds on the last."
+        ],
+        [
+          "Start the agent as a checklist",
+          "Before wiring up n8n or Zapier, run the workflow by hand for a week so you know what to automate first."
+        ],
+        [
+          "Review before you post",
+          "The agent drafts, you approve — never let it publish without a human reading it first."
+        ]
+      ],
+      "voiceover": "Run these in one chat, start the agent as a checklist, and always approve before it posts."
+    },
+    {
+      "type": "cta",
+      "title": "Save this pack.",
+      "title2": "Build your faceless page this week.",
+      "lines": [
+        [
+          "Follow",
+          "for daily AI tool tips & news"
+        ],
+        [
+          "Share",
+          "with someone starting a page"
+        ],
+        [
+          "Comment",
+          "which niche you're picking"
+        ]
+      ],
+      "voiceover": "Save this pack, and follow for a new AI tip every day."
+    }
+  ]
+}
