@@ -257,11 +257,29 @@ def ig_wait(p, cid, what, limit=900):
         time.sleep(10)
 
 
+def ig_published(p, cid):
+    """media_publish sometimes errors (e.g. 'Application request limit reached', 2207051) although the post went
+    live. The container then says PUBLISHED: find the media by its caption among our newest posts."""
+    if not cid: return None
+    if api("GET", f"{GRAPH}/{cid}", {"fields": "status_code", "access_token": p.token}).get("status_code") != "PUBLISHED":
+        return None
+    cap = CAP.text_for(p.data, "instagram")[:80]
+    recent = api("GET", f"{GRAPH}/{p.env['IG_USER_ID']}/media", {"fields": "id,caption", "limit": 10, "access_token": p.token})
+    return next((m["id"] for m in recent.get("data", []) if (m.get("caption") or "")[:80] == cap), None)
+
+
 def ig_publish(p, cid, step):
     ig = p.env["IG_USER_ID"]
-    mid = p.state.get(step + "_media")
-    if not mid:  # saved right away: if anything after this fails, a rerun must not post again
-        mid = api("POST", f"{GRAPH}/{ig}/media_publish", {"creation_id": cid, "access_token": p.token})["id"]
+    mid = p.state.get(step + "_media") or ig_published(p, cid)
+    if not mid:
+        try:
+            mid = api("POST", f"{GRAPH}/{ig}/media_publish", {"creation_id": cid, "access_token": p.token})["id"]
+        except PublishError:
+            time.sleep(20)
+            mid = ig_published(p, cid)
+            if not mid: raise
+            say(f"{step}: media_publish reported an error, but the post is live")
+    if p.state.get(step + "_media") != mid:  # saved right away: if anything after this fails, a rerun must not post again
         p.state[step + "_media"] = mid; p.save()
     link = api("GET", f"{GRAPH}/{mid}", {"fields": "permalink", "access_token": p.token}).get("permalink")
     return mid, link
@@ -274,11 +292,12 @@ def ig_carousel(p):
             kids.append(api("POST", f"{GRAPH}/{ig}/media",
                             {"image_url": p.url(f), "is_carousel_item": "true", "access_token": p.token})["id"])
         p.state["ig_carousel_children"] = kids; p.save()
-    cid = None
-    if not p.state.get("ig_carousel_media"):
+    cid = p.state.get("ig_carousel_container")
+    if not p.state.get("ig_carousel_media") and not ig_published(p, cid):
         for k in kids: ig_wait(p, k, "carousel item", 300)
         cid = api("POST", f"{GRAPH}/{ig}/media", {"media_type": "CAROUSEL", "children": ",".join(kids),
                                                   "caption": CAP.text_for(p.data, "instagram"), "access_token": p.token})["id"]
+        p.state["ig_carousel_container"] = cid; p.save()
         ig_wait(p, cid, "carousel", 300)
     mid, link = ig_publish(p, cid, "ig_carousel")
     say(f"ig_carousel: published {link}")
