@@ -1,0 +1,259 @@
+{
+  "theme": "adaptive",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Cursor Projects",
+  "caption": "Cursor's new AI just stopped writing code — and users are shipping 6x more 🤖\n\nMost AI coding tools quit the second you close your laptop. Cursor's new Projects feature doesn't: a coordinator agent plans the work, then hands it to thousands of subagents that keep coding in the cloud.\n\n→ the coordinator only plans and delegates, it never touches code itself\n→ subagents do the actual coding and testing, in parallel\n→ it keeps running on its own cloud machine after you log off\n→ built for work that outlives one chat: features, migrations, big jobs\n\nWould you trust an AI to keep coding while you sleep? 👇\n\nSave this for how it works, and follow @aiplaybooks.daily for daily AI tool news.\n\n#ai #aitools #cursorai #aicoding #coding",
+  "captions": {
+    "instagram": "Cursor's new AI just stopped writing code — and users are shipping 6x more 🤖\n\nMost AI coding tools quit the second you close your laptop. Cursor's new Projects feature doesn't: a coordinator agent plans the work, then hands it to thousands of subagents that keep coding in the cloud.\n\n→ the coordinator only plans and delegates, it never touches code itself\n→ subagents do the actual coding and testing, in parallel\n→ it keeps running on its own cloud machine after you log off\n→ built for work that outlives one chat: features, migrations, big jobs\n\nWould you trust an AI to keep coding while you sleep? 👇\n\nSave this for how it works, and follow @aiplaybooks.daily for daily AI tool news.\n\n#ai #aitools #cursorai #aicoding #coding",
+    "facebook": "Cursor just changed how AI coding tools work.\n\nInstead of one AI writing code line by line, Cursor's new Projects feature uses a coordinator agent that only plans and delegates. It hands the actual coding to thousands of subagents running in the cloud — so the work keeps going even after you close your laptop.\n\nThe result: people who mainly use Projects are merging 6x more pull requests than before.\n\nWould you let an AI keep working on your project while you're away, or do you like watching it happen? Let us know below.\n\n#ai #cursorai #aicoding #coding",
+    "youtube": {
+      "title": "Cursor Projects: Coordinator AI + Thousands of Subagents",
+      "description": "Cursor's new Projects feature runs a coordinator agent that only plans and delegates — never writing code itself — while thousands of subagents do the actual coding and testing in the cloud.\n\nUsers who mainly work through Projects merge 6x more pull requests, and the work keeps running even after you close your laptop.\n\nIn this video: what Cursor Projects is, how the coordinator delegates work, and how to start your first Project from the sidebar.\n\n#cursorai #aicoding #aiagents #coding #ai",
+      "tags": [
+        "cursor ai",
+        "cursor projects",
+        "ai coding agent",
+        "claude code",
+        "ai agents",
+        "coding agent",
+        "ai tools",
+        "artificial intelligence"
+      ]
+    }
+  },
+  "sources": [
+    "https://cursor.com/blog/projects",
+    "https://cursor.com/docs/agent/projects"
+  ],
+  "cover": {
+    "headline": "Cursor's coordinator agent now runs thousands of subagents that keep coding after you close your laptop.",
+    "em": "thousands of subagents",
+    "person": null,
+    "layout": "scene",
+    "photo_query": [
+      "computer code screen",
+      "server room",
+      "programmer laptop dark"
+    ],
+    "photo_pick": {
+      "url": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L25zMTA1NTQtaW1hZ2Uta3d2d3F4aDkuanBn.jpg",
+      "page": "https://www.rawpixel.com/image/5916657/image-public-domain-computer-free",
+      "author": "unknown",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "rawpixel",
+      "file": "Free computer code screen image"
+    },
+    "icons": [
+      {
+        "slug": "cursor",
+        "style": "glass",
+        "pos": "tr",
+        "size": 170
+      }
+    ],
+    "photo": {
+      "file": "Free computer code screen image",
+      "page": "https://www.rawpixel.com/image/5916657/image-public-domain-computer-free",
+      "author": "unknown",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "rawpixel"
+    },
+    "layout_used": "scene"
+  },
+  "design": {
+    "mood": "coding mission control: dark graphite command center, one coordinator node directing a swarm of smaller agent nodes across a faint network grid",
+    "palette": {
+      "bg": "#0B0D13",
+      "bg2": "#131722",
+      "surface": "#151A26",
+      "ink": "#F1F3F8",
+      "muted": "#8B93A9",
+      "accent": "#5B8DEF",
+      "accent2": "#34D399"
+    },
+    "fonts": {
+      "display": "Space Grotesk",
+      "body": "Inter",
+      "mono": "JetBrains Mono"
+    },
+    "display": {
+      "weight": 700,
+      "case": "none",
+      "tracking": -2,
+      "scale": 1.0,
+      "italic_em": false
+    },
+    "shape": {
+      "radius": 14,
+      "border": 1.5,
+      "shadow": "hard"
+    },
+    "background": {
+      "pattern": "plus",
+      "pattern_opacity": 0.07,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "mono",
+    "prompt": "terminal",
+    "art": "<svg viewBox='0 0 900 460' xmlns='http://www.w3.org/2000/svg'><g stroke='var(--muted)' stroke-width='2' opacity='0.55'><line x1='450' y1='230' x2='170' y2='90'/><line x1='450' y1='230' x2='170' y2='230'/><line x1='450' y1='230' x2='170' y2='370'/><line x1='450' y1='230' x2='730' y2='90'/><line x1='450' y1='230' x2='730' y2='230'/><line x1='450' y1='230' x2='730' y2='370'/><line x1='450' y1='230' x2='340' y2='60'/><line x1='450' y1='230' x2='560' y2='400'/></g><circle cx='450' cy='230' r='58' fill='var(--accent)'/><rect x='420' y='202' width='60' height='8' rx='4' fill='var(--surface)'/><rect x='420' y='220' width='44' height='8' rx='4' fill='var(--surface)'/><rect x='420' y='238' width='52' height='8' rx='4' fill='var(--surface)'/><g fill='var(--accent2)'><circle cx='170' cy='90' r='16'/><circle cx='170' cy='230' r='16'/><circle cx='170' cy='370' r='16'/><circle cx='730' cy='90' r='16'/><circle cx='730' cy='230' r='16'/><circle cx='730' cy='370' r='16'/><circle cx='340' cy='60' r='12'/><circle cx='560' cy='400' r='12'/></g></svg>",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3'/><circle cx='4' cy='5' r='2'/><circle cx='20' cy='5' r='2'/><circle cx='4' cy='19' r='2'/><circle cx='20' cy='19' r='2'/><path d='M9.9 10.3 5.6 6.3M14.1 10.3l4.3-4M9.9 13.7l-4.3 4M14.1 13.7l4.3 4'/></svg>"
+  },
+  "voice": "am_adam",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "CURSOR · PROJECTS",
+      "title": "One chat, a coordinator agent, and thousands of subagents working in the cloud.",
+      "em": "thousands of subagents",
+      "sub": "Users who mainly work through Projects merge 6x more pull requests.",
+      "tools": [
+        "Cursor"
+      ],
+      "voiceover": "Cursor just launched Projects: one coordinator, thousands of subagents."
+    },
+    {
+      "type": "facts",
+      "label": "What it is",
+      "title": "Cursor Projects",
+      "items": [
+        [
+          "The coordinator",
+          "Plans and delegates — it never writes code itself"
+        ],
+        [
+          "The subagents",
+          "Do the actual coding and testing, in parallel"
+        ],
+        [
+          "Where it runs",
+          "On its own computer in the cloud"
+        ],
+        [
+          "Launched",
+          "September 10, 2026, in beta for all users"
+        ]
+      ],
+      "voiceover": "A coordinator agent plans the work and delegates it to subagents."
+    },
+    {
+      "type": "stat",
+      "label": "Real usage",
+      "value": "6x",
+      "title": "more pull requests merged",
+      "sub": "Cursor: users who primarily work through Projects merge 6x as many PRs; new users merge 30% more.",
+      "voiceover": "Users who mainly use Projects merge six times more pull requests."
+    },
+    {
+      "type": "list",
+      "label": "How it works",
+      "title": "Coordinator, then subagents",
+      "items": [
+        [
+          "You describe the work",
+          "In chat, to the coordinator"
+        ],
+        [
+          "It plans and delegates",
+          "Creates and runs subagents for you, as many as the work needs"
+        ],
+        [
+          "It never blocks",
+          "Since it delegates instead of coding, it stays responsive to you"
+        ],
+        [
+          "Keeps shared context",
+          "Subagents add research and what they learn about your codebase"
+        ]
+      ],
+      "voiceover": "It plans the work, then creates as many subagents as the job needs."
+    },
+    {
+      "type": "facts",
+      "label": "Why the cloud matters",
+      "title": "Closing your laptop doesn't stop it",
+      "items": [
+        [
+          "Runs on",
+          "Its own computer in the cloud"
+        ],
+        [
+          "Scale",
+          "More agents in parallel than your laptop could support"
+        ],
+        [
+          "Local testing",
+          "The coordinator spins up a local agent when it needs your machine"
+        ]
+      ],
+      "voiceover": "A Project runs on its own cloud computer, so closing your laptop doesn't stop it."
+    },
+    {
+      "type": "list",
+      "label": "Best for",
+      "title": "Work that outlives one chat",
+      "items": [
+        [
+          "A feature with several PRs",
+          "Not a single quick fix"
+        ],
+        [
+          "A migration",
+          "Something that would take you weeks alone"
+        ],
+        [
+          "A job for while you're away",
+          "Kick it off, check back later"
+        ]
+      ],
+      "voiceover": "It's built for work that outlives a single chat: features, migrations, big jobs."
+    },
+    {
+      "type": "steps",
+      "label": "How to start one",
+      "title": "From the sidebar",
+      "steps": [
+        [
+          "Open Projects",
+          "Click `New Project` in the left-hand nav"
+        ],
+        [
+          "Name it",
+          "Pick an icon and a name"
+        ],
+        [
+          "Pick your setup",
+          "Choose the workspace repository and coordinator model"
+        ],
+        [
+          "Describe the work",
+          "Tell the coordinator what you want built — it takes it from there"
+        ]
+      ],
+      "voiceover": "Starting one takes four steps: name it, pick a repo, describe the work."
+    },
+    {
+      "type": "cta",
+      "title": "Cursor Projects:",
+      "title2": "a coordinator, not a copilot.",
+      "lines": [
+        [
+          "See it",
+          "cursor.com/blog/projects"
+        ],
+        [
+          "Try it",
+          "New Project, in the Cursor sidebar"
+        ],
+        [
+          "Follow",
+          "for daily AI tool news"
+        ]
+      ],
+      "voiceover": "That's Cursor Projects: one coordinator, thousands of subagents, always on."
+    }
+  ]
+}

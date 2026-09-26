@@ -1,0 +1,85 @@
+{
+  "generated": "2026-09-26T12:37:00Z",
+  "candidates": [
+    {
+      "id": "apple-health-app-ai-overhaul",
+      "tool": "Apple",
+      "kind": "news",
+      "title": "Apple Just Rebuilt the Health App Around AI",
+      "summary_tr": "Apple, iOS 27.2 public beta ile Health uygulamasını baştan tasarladı: Apple Intelligence tabanlı 'Insights' özeti, uzun vadeli takip için 'Longevity' sekmesi ve kameradan esneklik/denge/VO2 max ölçüp gerçek yaşınızla kıyaslayan 'Health Age' özelliği geldi.",
+      "why_tr": "Herkesin telefonunda olan bir uygulamaya gelen büyük bir AI güncellemesi; sağlık ilgisi olan geniş bir kitleye hitap ediyor ve görsel olarak (skorlar, sekmeler) carousel'e çok uygun.",
+      "angle": "what's new in the redesigned Health app + how Health Age works + how to try the beta",
+      "tools": ["Apple"],
+      "published": "2026-09-22",
+      "sources": [
+        "https://developer.apple.com/documentation/ios-ipados-release-notes/ios-ipados-27_2-release-notes",
+        "https://www.apple.com/newsroom/2026/09/major-updates-for-apples-software-platforms-are-now-available/"
+      ],
+      "hints": [
+        "https://9to5mac.com/2026/09/22/apple-releases-first-ios-27-2-public-beta-with-new-iphone-health-app/",
+        "https://www.macrumors.com/2026/09/22/apple-releases-ios-27-2-public-beta/"
+      ],
+      "score": 7
+    },
+    {
+      "id": "whatsapp-third-party-ai-agents",
+      "tool": "Social media",
+      "kind": "news",
+      "title": "WhatsApp Now Lets You Add Your Own AI Agent to a Chat",
+      "summary_tr": "WhatsApp, kullanıcıların kendi hesaplarına en fazla 5 üçüncü taraf AI ajanı ekleyip her birini ayrı bir sohbet olarak konuşabilmesini sağlayan bir özelliği sınırlı sayıda kullanıcıda test etmeye başladı; her ajan sadece kendi sohbetini görebiliyor.",
+      "why_tr": "AI ajanlarını günlük mesajlaşma uygulamasına taşıyan yeni ve az bilinen bir özellik; erken haber vermek takipçi kazandırır.",
+      "angle": "what the feature is + how to set up a third-party agent chat + privacy caveat (not end-to-end encrypted)",
+      "tools": ["Meta AI", "Social media"],
+      "published": "2026-09-22",
+      "sources": [
+        "https://faq.whatsapp.com/1349784656772709",
+        "https://faq.whatsapp.com/818760060056834"
+      ],
+      "hints": [
+        "https://wabetainfo.com/whatsapp-is-rolling-out-chats-with-third-party-agents-on-ios/",
+        "https://wabetainfo.com/whatsapp-is-rolling-out-chats-with-third-party-agents/"
+      ],
+      "score": 6
+    },
+    {
+      "id": "google-ai-mode-notebooks-search",
+      "tool": "Google",
+      "kind": "evergreen",
+      "title": "5 Google Search AI Features Most People Never Open",
+      "summary_tr": "Google, arama sonuçlarına Gemini Notebook tabanlı 'notebooks in AI Mode' özelliğini ekledi: notlarınızı/dosyalarınızı kaynak olarak ekleyip AI Mode, Gemini ve Gemini Notebook arasında otomatik senkron çalışan kişisel bir araştırma alanı oluşturuyorsunuz.",
+      "why_tr": "Google listede haberi az olan bir araç; günlük arama alışkanlığına bağlı, herkesin kullanabileceği pratik bir ipucu formatı iyi çalışır.",
+      "angle": "AI Mode notebooks + Circle to Search + AI Overviews tips walkthrough",
+      "tools": ["Google"],
+      "published": null,
+      "sources": [
+        "https://support.google.com/gemininotebook/answer/17513891",
+        "https://support.google.com/websearch/answer/17499802",
+        "https://support.google.com/websearch/answer/16011537"
+      ],
+      "hints": [],
+      "score": 6
+    },
+    {
+      "id": "prompts-side-hustle-launch",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "5 Prompts That Launch a Side Hustle in a Weekend",
+      "summary_tr": "Elinizdeki bir beceriyi (tasarım, düzenleme, danışmanlık, el işi ürün) 48 saat içinde satılabilir bir yan işe dönüştüren 5 promptluk bir paket: fikir + fiyatlandırma, tek sayfalık teklif, ilk 10 müşteri için mesaj şablonları, basit bir haftalık plan ve gerçekçi bir gelir tahmini.",
+      "why_tr": "Para kazanma + günlük hayat teması, sahipliğin belirlediği en güçlü kategori; 'bu hafta sonu başlat' somut vaadi paylaşılabilirliği artırır.",
+      "angle": "Act as a side-hustle launch coach: 5 prompts — pick the offer, price it, write the one-page pitch, message the first 10 customers, [X-day] plan with a realistic income estimate",
+      "tools": ["Prompt pack"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 7
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 0, "Claude": 0, "Gemini": 0, "Grok": 0, "Codex": 0, "Cursor": 0,
+    "Copilot": 0, "Perplexity": 0, "Meta AI": 1, "Mistral": 0, "DeepSeek": 0,
+    "Open models": 0, "Apple": 1, "Higgsfield": 0, "Google": 1, "Social media": 1,
+    "Prompt pack": 1
+  },
+  "notes_tr": "ChatGPT, Claude, Gemini, Grok, Codex, Cursor, Copilot, Perplexity, Mistral, DeepSeek ve açık modeller için bu turda bulunan her şey ya zaten havuzda (Grok 4.7, Copilot Home/Code/Autopilot, Cursor Projects, DeepSeek V4.1, Qwen/Kimi/GLM/MiniMax sürümleri) ya da 7 günden eski (Perplexity Effort Mode 17 Eylül, Higgsfield Genjutsu 3 Eylül, Instagram Edits ses güncellemesi ~8 Ağustos) olduğu için tekrar eklenmedi. Yeni olanlar: Apple'ın iOS 27.2 beta ile Health uygulamasını AI ile yenilemesi, WhatsApp'ın üçüncü taraf AI ajanlarını sohbete eklemesi (sınırlı test), ve haberi az olan Google için AI Mode not defterleri ipucu + yeni bir para/günlük hayat prompt paketi.",
+  "sources_changed": []
+}

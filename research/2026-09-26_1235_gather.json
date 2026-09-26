@@ -1,0 +1,80 @@
+{
+ "generated": "2026-09-26T12:35+00:00",
+ "candidates": [
+  {
+   "id": "perplexity-hp-computer-preinstall",
+   "tool": "Perplexity",
+   "kind": "news",
+   "title": "Your Next Laptop Might Ship With an AI Agent Already Installed",
+   "summary_tr": "HP, Perplexity'nin masaüstü ajanı 'Perplexity Computer'ı doğrudan bilgisayarlara önceden yüklüyor; ilk model HP ZBook Ultra G3a, Windows görev çubuğunda geliyor. Ajan dosyaları düzenleyebiliyor, Office belgelerini dolduruyor, 400'den fazla uygulamaya bağlanıyor.",
+   "why_tr": "Microsoft Copilot'a rakip bir hamle ve 'bilgisayarına gömülü AI ajanı' konsepti kitleye çok görsel ve şaşırtıcı geliyor.",
+   "angle": "what shipped + what the agent can actually do on your PC + how to get Perplexity Computer without a new laptop",
+   "tools": ["Perplexity"],
+   "published": "2026-09-15",
+   "sources": [
+    "https://x.com/perplexity_ai/status/2099876468872638717"
+   ],
+   "hints": [
+    "https://www.unite.ai/hp-to-pre-load-perplexitys-windows-app-starting-with-zbook-ultra-g3a/",
+    "https://alphasignal.ai/news/hp-preinstalls-perplexity-computer-on-windows-pcs-to-rival-microsoft-copilot"
+   ],
+   "score": 7
+  },
+  {
+   "id": "apple-siri-audio-intelligence",
+   "tool": "Apple",
+   "kind": "news",
+   "title": "Apple's Siri Can Now Rewind Your Conversations",
+   "summary_tr": "Apple, Apple Watch Series 12/Ultra 4 ve uyumlu iPhone'lar için 'Audio Intelligence' paketini duyurdu: Live Rewind son 15 saniyeyi yazıya çeviriyor, Siri Recap konuşmaların özetini çıkarıyor. Beta 2026 sonunda İngilizce başlıyor.",
+   "why_tr": "Apple bu ay hiç yer almamıştı; 'telefonun konuşmaları özetlemesi' herkesin anlayacağı çarpıcı bir özellik.",
+   "angle": "what Live Rewind + Siri Recap do + which devices + privacy note (end-to-end encrypted, on-device)",
+   "tools": ["Apple"],
+   "published": "2026-09-09",
+   "sources": [
+    "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/"
+   ],
+   "hints": [
+    "https://techcrunch.com/2026/09/09/apple-watchs-new-feature-listens-to-your-chats-and-recaps-them/"
+   ],
+   "score": 6
+  },
+  {
+   "id": "higgsfield-hidden-features",
+   "tool": "Higgsfield",
+   "kind": "evergreen",
+   "title": "5 Higgsfield Features Almost Nobody Uses",
+   "summary_tr": "Higgsfield'ın az bilinen özellikleri: Genjutsu (videoda tek bir nesne/karakteri değiştirme), 18 dilde dudak senkronlu çeviri, Cinema Studio 4.0'ın Emotion Wheel'i (karakter performansı yönetimi), Seed Audio 1.0 (tek promptla ses+müzik+efekt), 3D Jutsu (promptu 3D sahneye çeviren stüdyo).",
+   "why_tr": "Higgsfield havuzda hiç yoktu; 'bilmediğin özellikler' formatı hem eğitici hem paylaşılabilir.",
+   "angle": "5 things you didn't know Higgsfield can do: Genjutsu object swap, lip-sync translation, Cinema Studio Emotion Wheel, Seed Audio, 3D Jutsu",
+   "tools": ["Higgsfield"],
+   "published": null,
+   "sources": [
+    "https://higgsfield.ai/creator-hub/changelog"
+   ],
+   "hints": [],
+   "score": 6
+  },
+  {
+   "id": "prompts-side-hustle-social-agent",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Prompts That Turn One Skill Into a Faceless Content Business",
+   "summary_tr": "Sıradan bir beceriyi (örn. Excel, yemek tarifi, dil öğretimi) yüzsüz bir sosyal medya hesabına ve gelire çeviren 5 prompt: niş bulma, 30 günlük içerik takvimi, hook kütüphanesi, ürünleştirme (dijital ürün fikri), aylık gelir tahmini.",
+   "why_tr": "Sosyal medya + para teması, faceless içerik trendiyle çok uyumlu ve herkesin dener bir fikri var.",
+   "angle": "Act as a content strategist for [SKILL] -> niche pick, 30-day content calendar, hook library, digital product idea, realistic monthly income estimate",
+   "tools": ["Prompt pack"],
+   "published": null,
+   "sources": [],
+   "hints": [],
+   "score": 7
+  }
+ ],
+ "coverage": {
+  "ChatGPT": 0, "Claude": 0, "Gemini": 0, "Grok": 0, "Codex": 0, "Cursor": 0,
+  "Copilot": 0, "Perplexity": 1, "Meta AI": 0, "Mistral": 0, "DeepSeek": 0,
+  "Open models": 0, "Apple": 1, "Higgsfield": 1, "Google": 0, "Social media": 0,
+  "Prompt pack": 1
+ },
+ "notes_tr": "ChatGPT, Claude, Gemini, Grok, Codex, Copilot, Cursor, Mistral, DeepSeek ve açık modellerdeki son 36 saatlik haberler (GPT-6 Sol/Luna dahil çoğu Copilot Home/Code/Autopilot, Cursor Projects, Grok 4.7, Qwen/Kimi/GLM/MiniMax güncellemeleri) havuzda zaten var, yeni bir gelişme yok. Instagram Edits'in yeni ses özellikleri (Loudness Match, kendi sesini içe aktarma, 200 efekt) ve TikTok'un AI Outline/Smart Split araçları üçüncü taraf sitelerde geçiyor ama about.instagram.com veya newsroom.tiktok.com üzerinde tarihi doğrulanan resmi bir kaynak bulamadım (TikTok sayfası Ekim 2025 tarihli çıktı) - eklemedim. Google Chrome'daki 'Auto Browse' haberi de resmi sayfada Eylül 2025 tarihli çıkıyor, 2026 sanılmasın diye eklemedim. Higgsfield ve Apple havuzda ilk kez yer alıyor.",
+ "sources_changed": []
+}
