@@ -21,7 +21,7 @@ signal (Instagram search and, since 2025, Google index professional accounts' ca
 understand what the post is about; they don't buy reach, so few and exact beats many and generic.
 
 Shape (blank line between every block; each paragraph at most ~3 phone lines, ~300 characters):
-1. **Hook line** (<= 125 chars): the promise or the surprise + the main keyword ("ChatGPT prompts", "AI agent",
+1. **Hook line** (<= 125 chars; a live pattern from `prompts/hook_playbook.md`, not the cover headline again): the promise or the surprise + the main keyword ("ChatGPT prompts", "AI agent",
    "side hustle", "Gemini"). It must make people tap "more". Not the same sentence as the cover headline.
 2. **Why it matters** (1-3 short sentences): the pain or the opportunity, in the reader's words.
 3. **What's inside / how to use it**: 2-5 short lines, each starting with the same marker ("→", "✅", "1." ...),

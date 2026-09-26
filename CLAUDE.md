@@ -58,6 +58,12 @@ Every day the pipeline should:
   them) → a real, freely licensed topic photo from Openverse (StockSnap, rawpixel, Flickr, Commons ...): the write step
   runs `cover.py --search`, looks at the previews and sets `cover.photo_pick`; `photo_query` is the automatic fallback.
   **Image generation (Flux) is OFF** (owner, 2026-09-26) until the owner turns it back on (`FLUX_ENABLED` in cover.py).
+  **The cover image must tell the topic at a glance + carry the tool's brand icon** (owner, 2026-09-26, refs: gym +
+  ChatGPT icon for a workout pack, money + Sam Altman for finance): `cover.layout` = `scene_person` (topic photo +
+  the person in a ring-framed circle), `person` (portrait) or `scene`; brand icons from Simple Icons (CC0 set, cached in
+  `icons/`, OpenAI from v15 since v16 dropped it) via `brand_icons.py`: style (tile/circle/brand/glass/plain), size
+  (~150-260 px) and corner vary per post (seeded by the headline), never over the face / person circle; `cover.icons`
+  steers it. This replaces the old "no brand logos" line: logos only name the product the post is about.
 - **Reels = hook-framed viral clips, not the carousel's own Reel** (owner, 2026-09-25; refs: @chatgptips): black frame,
   brand line, hook text on top, the clip below, "Source: @creator on X" (`clip.py`). The owner picks the clip (pastes
   an X link); clip.py fetches that one post with yt-dlp. Risk the owner accepted: credit is not a license (takedowns
@@ -73,6 +79,7 @@ Every day the pipeline should:
 ```
 carousel.py        render carousel PNGs (1080x1350) + contact.png overview; slide 1 = themes/hookcover.py when the post
                    has a `cover` block + output/<post>/cover_image.jpg
+brand_icons.py     brand icons for the cover (Simple Icons, icons/ cache, tool -> slug map, per-post style/size/corner)
 cover.py           cover image: Commons photo of `cover.person`, else a licensed topic photo (Openverse); credited
 reel.py            render the carousel as a voiced video: now only for YouTube Shorts (IG/FB Reels = viral clips) (typewriter prompts, staggered fade-ups, progress bar, music,
                    Kokoro voice-over + word-level burned-in captions + music ducking)
@@ -98,6 +105,7 @@ studio/index.html  the n8n-style UI (vanilla JS, no build)
 prompts/           scout.md, write.md, qa.md: prompts for the headless `claude -p` steps of the Studio
 runs/              Studio run state + logs + settings.json (gitignored)
 prompt_packs.json  ready-made prompt pack library (see Decisions); used = content/<date>_<pack id>.json exists
+hooks.py           hook research for the learn job (IG opening lines vs. account median, trending Shorts, ours)
 tags.py            hashtag research for the caption agent (IG Business Discovery of sources.json tags.ig_accounts +
                    YouTube most-viewed Shorts' tags); cache in research/tags/ (gitignored)
 captions.py        caption rules in code: tidy + check per-platform captions (used by the agent, Studio and publish.py)
@@ -214,9 +222,20 @@ Owner's design: an n8n-like local page showing the workflow node by node + today
 candidate (and approves the preview), everything else is automatic.
 - `pythonw studio.py --no-browser` starts at Windows logon (shortcut in the user's Startup folder); desktop shortcut
   "AI Playbooks Studio.url" opens http://localhost:8787. Only one instance (port check).
-- **scan** flow, daily at `scan_times` (default 08:00 + 18:00, owner asked for 2 scans/day; a slot missed while the PC
-  was off runs at startup): news.py → `claude -p` with prompts/scout.md → `research/<date>_<HHMM>_candidates.json`
-  (4-8 candidates, Turkish summaries for the owner, official sources) → owner picks one in the UI.
+- **Candidate pool** (owner, 2026-09-26): the scout doesn't wait for a button. **gather** jobs run in the background at
+  `gather_times` (default 06:30, 10:30, 13:30, 16:30, 21:30; silent: no Telegram, no toast, errors show in the next
+  delivery's notes): news.py → `claude -p` prompts/scout.md → `research/<date>_<HHMM>_gather.json` (only NEW
+  candidates; the prompt gets the pool so it doesn't repeat). The day's first gather also does **source upkeep**
+  (prompts/scout_sources.md): fixes/disables failing sources from `research/source_health.json` (written by news.py),
+  finds 1-3 new sources, tests them with `python news.py --check <url>`, adds them to sources.json (`"by": "scout"`).
+- **scan** flow = delivery, at `scan_times` (08:00 + 18:00) and the "Şimdi tara" button / Telegram `tara`: trigger →
+  collect + scout (skipped when the last gather is < 3 h old; waits for a running gather) → **pool** (every candidate
+  of the last 7 days not posted yet, `new` since the last delivery first → `research/<date>_<HHMM>_candidates.json`
+  with `"pool": true`) → Telegram + toast → owner picks one in the UI.
+- **learn** job, daily at `learn_time` (11:45): prompts/hook_learn.md + `hooks.py` (big AI accounts' opening lines
+  ranked vs. each account's median, trending Shorts titles, our own hooks + results) + web research → updates
+  `prompts/hook_playbook.md` (≤ 12 live patterns with proof). Read by the hook writer, the writer (cover headline) and
+  the caption agent (first line). UI: the "Arka plan" line in the candidates tab ("Şimdi topla", "Şimdi öğren").
 - **post** flow (one at a time): write (prompts/write.md → content JSON + runs/<id>/write.json) → caption
   (prompts/caption.md: per-platform captions + researched hashtags) → cover (cover.py:
   Wikimedia photo of the person first, else a licensed topic photo) → carousel → reel (YouTube only) → qa (slides + video frames, prompts/qa.md,

@@ -14,6 +14,9 @@ Open `output/{name}/contact.png`, every `slide_NN.png` and the sampled video fra
   domain) or `cover.focus` (CSS background-position, e.g. "50% 10%") and rerun `python cover.py {content}`, then
   `python carousel.py {content}`.
   Is the headline true, readable, not cut off? Photo credit present on the cover (NOT in the caption)?
+  Does the image tell the topic at a glance? Is the brand icon right for the topic, not covering a face / the person
+  circle / the headline, and not dominating? Fix with `cover.icons` (pos/size/style), `cover.layout` or another
+  `photo_pick`, then rerun cover.py + carousel.py.
 - typos, and claims in the slides/caption that go beyond the `sources` of the content JSON. The captions were written
   by the caption agent (`captions` per platform): only fix typos or wrong facts there, keep `caption` =
   `captions.instagram`, and run `python captions.py check <content>` after any caption edit.

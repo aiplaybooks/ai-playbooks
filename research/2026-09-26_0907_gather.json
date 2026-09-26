@@ -1,0 +1,50 @@
+{
+  "generated": "2026-09-26T09:07+00:00",
+  "candidates": [
+    {
+      "id": "cursor-projects-cloud",
+      "tool": "Cursor",
+      "kind": "evergreen",
+      "title": "Cursor's Projects: One Chat, a Coordinator Agent, Thousands of Subagents",
+      "summary_tr": "Cursor'ın Projects özelliği: kod yazmayan bir 'koordinatör' agent işi planlayıp binlerce alt-agent'a dağıtıyor, iş bulutta (laptop kapansa da) devam ediyor; kullananlar 6 kat daha fazla PR birleştirmiş. Haberi yeni ama 10 Eylül'den (36 saatlik pencerenin dışında), havuzda hiç yok; iyi bir workflow/evergreen konusu.",
+      "why_tr": "Cursor kullanıcıları için gerçek bir 'nasıl kullanılır' değeri var, büyük bir yetenek ve havuzda henüz hiç bahsedilmemiş.",
+      "angle": "what Projects is + how the coordinator/subagent split works + when to use it (big migration, month-long feature) + how to start one",
+      "tools": ["Cursor"],
+      "published": "2026-09-10",
+      "sources": ["https://cursor.com/blog/projects", "https://cursor.com/docs/agent/projects"],
+      "hints": ["https://www.eesel.ai/blog/cursor-projects"],
+      "score": 7
+    },
+    {
+      "id": "prompts-trading-journal",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "6 Prompts That Build You a Real Trading Journal and Risk Plan",
+      "summary_tr": "Yeni bir prompt paketi fikri: bir AI'ı trading koçu gibi kullanıp kişisel bir işlem günlüğü, pozisyon büyüklüğü/risk kuralları, haftalık performans incelemesi ve gerçekçi bir aylık hedef çıkarmak. Havuzda 'trading' kategorisinde henüz hiçbir paket yok.",
+      "why_tr": "Trading, paranın peşindeki kitleye hitap ediyor ve şu ana kadarki paket havuzunda hiç işlenmemiş bir kategori, çeşitliliği artırıyor.",
+      "angle": "Act as a trading coach + goal of consistent, controlled profit -> deliverables: trade journal template, position-sizing/risk rules, a weekly review checklist, a realistic monthly estimate",
+      "tools": ["ChatGPT", "Claude", "Gemini"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 6
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 0,
+    "Claude": 0,
+    "Gemini": 0,
+    "Grok": 0,
+    "Codex": 0,
+    "Cursor": 1,
+    "Copilot": 0,
+    "Perplexity": 0,
+    "Meta AI": 0,
+    "Mistral": 0,
+    "DeepSeek": 0,
+    "Open models": 0,
+    "Prompt pack": 1
+  },
+  "notes_tr": "Bu tur çok az yenilik getirdi: ChatGPT (Voice + plugin genişlemesi), Grok (Voice Transcribe 2.0, Grok 4.7), Perplexity (Agent API modelleri, HP'nin Windows PC'lere önceden yüklemesi - 15 Eylül, 7 günlük pencerenin dışında) ve Gemini (video-to-image, Mayıs 2026'dan) hep havuzda zaten olan konuların devamı ya da 7 günlük tazelik sınırının dışında kaldı. Claude Code v2.1.283 çıktı ama içeriği kurumsal model-erişim ayarları (availableModelsMatch, deniedModels, gateway hint headers) - sıradan kullanıcı için zayıf bir konu, eklemedim. GitHub Copilot'ta birkaç küçük kurumsal güncelleme vardı (Copilot Memory ile agentic autofix, PR inceleme metrikleri) ama düşük paylaşım potansiyeli var, atlandı. Open models (Qwen/Kimi/GLM/MiniMax) tarafında Eylül'de yeni bir sürüm bulunamadı (en yenisi Haziran). Meta AI, Mistral, DeepSeek kaynaklarında 36 saatlik/7 günlük pencerede yeni bir şey yok.",
+  "sources_changed": []
+}

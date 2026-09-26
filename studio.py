@@ -33,10 +33,14 @@ NO_WINDOW = getattr(subprocess, "CREATE_NO_WINDOW", 0)
 CLAUDE_TOOLS = ["WebSearch", "WebFetch", "Read", "Write", "Edit", "Glob", "Grep",
                 "Bash(python carousel.py:*)", "Bash(python reel.py:*)", "Bash(python news.py:*)",
                 "Bash(python cover.py:*)", "Bash(python clip.py:*)",
-                "Bash(python tags.py:*)", "Bash(python captions.py:*)"]
+                "Bash(python tags.py:*)", "Bash(python captions.py:*)", "Bash(python hooks.py:*)"]
 
 SCAN = [("trigger", "Zamanlayıcı", "trigger"), ("collect", "Haber topla", "code"),
-        ("scout", "Ara, doğrula, sırala", "ai"), ("choose", "Senin seçimin", "human")]
+        ("scout", "Ara, doğrula, havuza ekle", "ai"), ("pool", "Havuzdan listele", "code"), ("choose", "Senin seçimin", "human")]
+# background jobs (no canvas, no Telegram): gathers fill the candidate pool 5x a day, learn keeps the hook playbook fresh
+GATHER = [("collect", "Haber topla", "code"), ("scout", "Ara, doğrula, havuza ekle", "ai")]
+LEARN = [("hooks", "Hook trendlerini öğren", "ai")]
+BACKGROUND = ("gather", "learn")
 POST = [("write", "Doğrula & yaz", "ai"), ("caption", "Caption & tag", "ai"), ("cover", "Kapak görseli", "code"), ("carousel", "Carousel", "code"),
         ("reel", "Video · ses + müzik (YouTube)", "code"), ("qa", "Kalite kontrol", "ai"),
         ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"),
@@ -46,7 +50,7 @@ CLIP = [("fetch", "Videoyu indir", "code"), ("hook", "Hook", "ai"), ("caption", 
         ("qa", "Kalite kontrol", "ai"), ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"), ("ig_reel", "Instagram Reel", "publish"),
         ("fb_reel", "Facebook Reel", "publish"), ("yt_short", "YouTube Short", "publish"), ("comments", "Yorumlar", "publish"),
         ("log", "Kayıt & GitHub", "code")]
-FLOWS = {"scan": SCAN, "post": POST, "clip": CLIP}
+FLOWS = {"scan": SCAN, "post": POST, "clip": CLIP, "gather": GATHER, "learn": LEARN}
 
 LOCK = threading.RLock()
 POST_Q = queue.Queue()
@@ -92,7 +96,9 @@ def write_json(p, data):
 
 
 def settings():
-    s = {"scan_times": ["08:00", "18:00"], "approval": True, "last_slot": None}
+    s = {"scan_times": ["08:00", "18:00"], "approval": True, "last_slot": None,
+         "gather_times": ["06:30", "10:30", "13:30", "16:30", "21:30"], "last_gather_slot": None,
+         "learn_time": "11:45", "last_learn_slot": None}
     s.update(read_json(SETTINGS, {}) or {})
     return s
 
@@ -275,7 +281,28 @@ def n_trigger(run):
     return run.s.get("trigger_msg", "Elle başlatıldı")
 
 
+POOL_DAYS = 7          # a candidate stays in the pool this long after it was first found (unless posted)
+FRESH_HOURS = 3        # a scan uses the pool as is when the last gather is younger than this
+
+
+def last_gather():
+    return next((r for r in all_runs() if r["kind"] in ("gather", "scan") and r["nodes"].get("scout", {}).get("status") == "done"), None)
+
+
 def n_collect(run):
+    if run.s["kind"] == "scan":
+        busy = next((r for r in all_runs() if r["kind"] == "gather" and r["status"] in ("running", "queued")), None)
+        if busy:  # a background gather is running: wait for it instead of doing the same work twice
+            run.log("collect", f"arka plan toplaması sürüyor ({busy['id']}), bekleniyor")
+            for _ in range(160):
+                if Run(busy["id"]).s["status"] not in ("running", "queued"): break
+                if run.id in CANCELED: raise Canceled()
+                time.sleep(15)
+        g = last_gather()
+        if g and now() - datetime.fromisoformat(g["nodes"]["scout"]["ended"]) < timedelta(hours=FRESH_HOURS):
+            run.s["skip_scout"] = True; run.save()
+            return f"Atlandı: havuz güncel (son toplama {datetime.fromisoformat(g['nodes']['scout']['ended']):%H:%M})"
+        run.s["skip_scout"] = False; run.save()
     tail = sh(run, "collect", [PY, "news.py", "--hours", "36"])
     msg = next((t for t in reversed(tail) if "items" in t), "tamam").split("->")[0].strip()
     try: sh(run, "collect", [PY, "viral.py"])  # trending AI videos for the Viral tab; never fails the scan
@@ -283,22 +310,89 @@ def n_collect(run):
     return msg
 
 
-def n_scout(run):
+def pool_items(exclude=None):
+    """Every candidate gathered in the last POOL_DAYS days, newest version per id, with first_seen / times_seen."""
+    items = {}
+    cut = f"{now() - timedelta(days=POOL_DAYS):%Y-%m-%d}"
+    files = sorted((ROOT / "research").glob("*_gather.json"))
+    files += sorted(f for f in (ROOT / "research").glob("*_candidates.json") if not (read_json(f, {}) or {}).get("pool"))  # pre-pool scans
+    for f in sorted(files, key=lambda f: f.name):
+        if f.name[:10] < cut or f == exclude: continue
+        d = read_json(f, {}) or {}
+        hm = f.name[11:15]; when = f"{f.name[:10]}T{hm[:2]}:{hm[2:]}" if hm.isdigit() else f.name[:10]  # local time, from the name
+        for c in d.get("candidates", []):
+            old = items.get(c["id"])
+            items[c["id"]] = {**c, "first_seen": (old or {}).get("first_seen") or when, "times_seen": (old or {}).get("times_seen", 0) + 1,
+                              "gather_file": f.name}
+    return items
+
+
+def pool_text():
+    rows = sorted(pool_items().values(), key=lambda c: c["first_seen"], reverse=True)
+    return "\n".join(f"- {c['id']} · {c.get('tool')} · {c.get('title')}" for c in rows[:120]) or "- (empty)"
+
+
+def source_task(run):
+    """The day's first gather also looks after the sources (health, new sources)."""
     day = run.s["day"]
-    out = ROOT / "research" / f"{day}_{run.s['hhmm']}_candidates.json"
-    prev = sorted(str(p.relative_to(ROOT)).replace("\\", "/") for p in (ROOT / "research").glob(f"{day}_*_candidates.json") if p != out)
-    claude(run, "scout", "scout", date=day, time=run.s["hhmm"], research=f"research/{day}.json",
-           out=str(out.relative_to(ROOT)).replace("\\", "/"), previous=", ".join(prev) or "none", posted=posted_text())
+    done_today = any(r["kind"] in ("gather", "scan") and r.get("day") == day and r.get("source_task") and r["id"] != run.id
+                     and r["nodes"].get("scout", {}).get("status") == "done" for r in all_runs())
+    if done_today: return ""
+    run.s["source_task"] = True; run.save()
+    return (ROOT / "prompts" / "scout_sources.md").read_text(encoding="utf-8").format(date=day)
+
+
+def n_scout(run):
+    if run.s.get("skip_scout"): return "Atlandı: havuz güncel"
+    day = run.s["day"]
+    out = ROOT / "research" / f"{day}_{run.s['hhmm']}_gather.json"
+    rel = str(out.relative_to(ROOT)).replace("\\", "/")
+    claude(run, "scout", "scout", date=day, time=run.s["hhmm"], research=f"research/{day}.json", out=rel,
+           pool=pool_text(), posted=posted_text(), source_task=source_task(run))
+    data = read_json(out)
+    if data is None: raise StepError(f"{out.name} yazılmadı ya da geçersiz JSON")
+    run.status(run.s["status"], gather_file=rel)
+    n = len(data.get("candidates", [])); ch = data.get("sources_changed") or []
+    return f"{n} yeni aday" + (f" · kaynak: {len(ch)} değişiklik" if ch else "")
+
+
+def n_pool(run):
+    """The owner's list = the whole pool (not posted, not older than POOL_DAYS); new since the last delivery marked."""
+    t = now(); out = ROOT / "research" / f"{run.s['day']}_{t:%H%M}_candidates.json"
+    prev = next((r for r in all_runs() if r["kind"] == "scan" and r["id"] != run.id and r["nodes"].get("pool", {}).get("status") == "done"), None)
+    since = prev["nodes"]["pool"]["ended"] if prev else ""
+    items = list(pool_items().values())
+    for c in items: c["new"] = bool(since) and c["first_seen"] > since[:16]
+    items.sort(key=lambda c: (-(c.get("score") or 0), c["first_seen"]), reverse=False)
+    items.sort(key=lambda c: not c["new"])  # new ones first, each group by score
+    news = [c for c in items if c.get("kind") == "news"]
+    cov = {}
+    for c in news: cov[c.get("tool") or "Other"] = cov.get(c.get("tool") or "Other", 0) + 1
+    gathers = [r for r in all_runs() if r["kind"] in ("gather", "scan") and r["nodes"].get("scout", {}).get("status") == "done"]
+    last = gathers[0] if gathers else None
+    notes = [f"Havuz: son {POOL_DAYS} günün adayları, {sum(c['new'] for c in items)} tanesi son teslimden beri yeni."]
+    if last: notes.append(f"Son toplama {datetime.fromisoformat(last['nodes']['scout']['ended']):%d.%m %H:%M}.")
+    lg = read_json(ROOT / (last.get("gather_file") or ""), {}) if last and last.get("gather_file") else {}
+    if lg and lg.get("notes_tr"): notes.append(lg["notes_tr"])
+    ch = [x for g in gathers[:6] if g.get("gather_file") for x in ((read_json(ROOT / g["gather_file"], {}) or {}).get("sources_changed") or [])]
+    if ch: notes.append("Kaynaklar: " + " · ".join(ch[:4]))
+    failed = [r for r in all_runs()[:30] if r["kind"] == "gather" and r["status"] == "error"]
+    if failed: notes.append(f"⚠ {len(failed)} arka plan toplaması hata verdi (son: {failed[0]['created'][11:16]}).")
+    write_json(out, {"generated": iso(t), "pool": True, "candidates": items, "coverage": cov, "notes_tr": " ".join(notes)})
     rel = str(out.relative_to(ROOT)).replace("\\", "/")
     data = load_candidates(rel)
-    if not data.get("candidates"): raise StepError(f"{out.name} yazılmadı ya da boş")
-    if data.get("hidden"):
-        run.log("scout", "Daha önce paylaşıldığı için gizlendi: " + ", ".join(f"{c['id']} (= {c['posted']})" for c in data["hidden"]))
     run.status(run.s["status"], candidates_file=rel)
-    n = len(data["candidates"])
-    notify("AI Playbooks", f"{n} yeni aday hazır. Studio'dan birini seç.")
+    n = len(data.get("candidates", [])); new = sum(1 for c in data.get("candidates", []) if c.get("new"))
+    if not n: raise StepError("havuz boş: arka plan toplaması henüz aday bulmadı")
+    notify("AI Playbooks", f"{n} aday hazır ({new} yeni). Studio'dan birini seç.")
     TG.event("candidates", run)
-    return f"{n} aday" + (f" ({len(data['hidden'])} tekrar gizlendi)" if data.get("hidden") else "")
+    return f"{n} aday · {new} yeni" + (f" ({len(data['hidden'])} paylaşılmış gizlendi)" if data.get("hidden") else "")
+
+
+def n_hooks(run):
+    claude(run, "hooks", "hook_learn", date=run.s["day"], run_id=run.id)
+    r = read_json(run.dir / "learn.json", {}) or {}
+    return (r.get("summary_tr") or "tamam")[:160]
 
 
 def n_choose(run):
@@ -477,7 +571,7 @@ def n_caption(run):
     import captions as CAP
     clip = run.s["kind"] == "clip"
     note = f"\n## Owner's note for this post (revision request)\n{run.s['note']}\n" if run.s.get("note") else ""
-    claude(run, "caption", "caption", date=run.s["day"], content=run.s["content"], run=run.id, note=note,
+    claude(run, "caption", "caption", date=run.s["day"], content=run.s["content"], run_id=run.id, note=note,
            kind="clip" if clip else "carousel",
            kind_hint="a viral video Reel framed with our hook; IG Reel + FB Reel + YouTube Short" if clip
            else "a carousel post; IG carousel + FB photo post + a voiced YouTube Short of the slides")
@@ -505,7 +599,7 @@ def n_frame(run):
     return f"{secs} sn" if secs else "tamam"
 
 
-PHASES = {"trigger": "scan", "collect": "scan", "scout": "scan", "choose": "wait", "write": "production", "cover": "production",
+PHASES = {"trigger": "scan", "collect": "scan", "scout": "scan", "pool": "scan", "hooks": "scan", "choose": "wait", "write": "production", "cover": "production",
           "fetch": "production", "hook": "production", "caption": "production", "frame": "production",
           "carousel": "production", "reel": "production", "qa": "production", "approve": "wait", "upload": "publish",
           "ig_carousel": "publish", "ig_reel": "publish", "fb_photos": "publish", "fb_reel": "publish", "yt_short": "publish", "comments": "publish", "log": "publish"}
@@ -543,7 +637,7 @@ def record_timings(run, outcome):
         f.write(json.dumps({"date": iso(), "outcome": outcome, **timings(run)}, ensure_ascii=False) + "\n")
 
 
-NODES = {"trigger": n_trigger, "collect": n_collect, "scout": n_scout, "choose": n_choose,
+NODES = {"trigger": n_trigger, "collect": n_collect, "scout": n_scout, "pool": n_pool, "choose": n_choose, "hooks": n_hooks,
          "write": n_write, "caption": n_caption, "cover": n_cover, "carousel": n_carousel, "fetch": n_fetch, "hook": n_hook, "frame": n_frame, "reel": n_reel, "qa": n_qa, "approve": n_approve,
          "upload": publish_step("upload"), "ig_carousel": publish_step("ig_carousel"), "ig_reel": publish_step("ig_reel"),
          "fb_photos": publish_step("fb_photos"), "fb_reel": publish_step("fb_reel"),
@@ -565,8 +659,9 @@ def execute(run):
             run.log(nid, f"HATA: {type(ex).__name__}: {ex}")
             run.node(nid, status="error", ended=iso(), msg=str(ex)[:300]); run.status("error")
             slog(run.id, nid, "error:", ex)
-            notify("AI Playbooks: hata", f"{label}: {str(ex)[:120]}")
-            TG.event("error", run, label=label, node=nid, msg=str(ex))
+            if run.s["kind"] not in BACKGROUND:  # background errors show up in the next delivery's notes instead
+                notify("AI Playbooks: hata", f"{label}: {str(ex)[:120]}")
+                TG.event("error", run, label=label, node=nid, msg=str(ex))
             return
         if run.s["nodes"][nid]["status"] == "waiting":
             run.status("waiting"); return
@@ -584,6 +679,17 @@ def start_scan(trigger_msg):
         run = Run.create("scan", rid, day=f"{t:%Y-%m-%d}", hhmm=f"{t:%H%M}", trigger_msg=trigger_msg)
     threading.Thread(target=execute, args=(run,), daemon=True).start()
     slog("scan started:", rid, trigger_msg)
+    return rid
+
+
+def start_bg(kind, trigger_msg):
+    """A background gather / learn job in its own thread (never two of the same kind at once)."""
+    with LOCK:
+        if any(s["kind"] == kind and s["status"] in ("running", "queued") for s in all_runs()): return None
+        t = now(); rid = f"{kind}-{t:%Y%m%d-%H%M%S}"
+        run = Run.create(kind, rid, day=f"{t:%Y-%m-%d}", hhmm=f"{t:%H%M}", trigger_msg=trigger_msg)
+    threading.Thread(target=execute, args=(run,), daemon=True).start()
+    slog(kind, "started:", rid, trigger_msg)
     return rid
 
 
@@ -647,6 +753,11 @@ def scheduler():
                 late = t - slot > timedelta(minutes=10)
                 if start_scan(f"Planlı tarama {slot:%H:%M}" + (" (kaçırılmıştı, telafi)" if late else "")):
                     s["last_slot"] = slot.isoformat(); save_settings(s)
+            for kind, times, key in (("gather", s["gather_times"], "last_gather_slot"), ("learn", [s["learn_time"]], "last_learn_slot")):
+                slot = last_slot(times, t)
+                if slot and (not s.get(key) or s[key] < slot.isoformat()):
+                    if start_bg(kind, f"Planlı {slot:%H:%M}" + (" (telafi)" if t - slot > timedelta(minutes=10) else "")):
+                        s = settings(); s[key] = slot.isoformat(); save_settings(s)
         except Exception as ex:
             slog("scheduler error:", ex)
         time.sleep(30)
@@ -661,7 +772,7 @@ def recover():
             nid = next((n for n, v in s["nodes"].items() if v["status"] == "running"), None)
             if nid: run.reset_from(nid)
             slog("resuming after restart:", run.id, nid)
-            if s["kind"] == "scan": threading.Thread(target=execute, args=(run,), daemon=True).start()
+            if s["kind"] in ("scan",) + BACKGROUND: threading.Thread(target=execute, args=(run,), daemon=True).start()
             else: enqueue(run)
         elif s["status"] == "queued" and s["kind"] == "post":
             POST_Q.put(s["id"])
@@ -761,7 +872,7 @@ def retry(rid, nid):
     run = Run(rid)
     if run.s["status"] in ("running", "queued"): raise ValueError("zaten çalışıyor")
     run.reset_from(nid)
-    if run.s["kind"] == "scan": threading.Thread(target=execute, args=(run,), daemon=True).start()
+    if run.s["kind"] in ("scan",) + BACKGROUND: threading.Thread(target=execute, args=(run,), daemon=True).start()
     else: enqueue(run)
 
 
@@ -779,10 +890,18 @@ def state():
     for r in runs:
         if r["kind"] == "scan" and r.get("candidates_file"):
             r["candidates"] = load_candidates(r["candidates_file"], r["id"])
-    return {"settings": {k: s[k] for k in ("scan_times", "approval")},
-            "next_scan": iso(next_slot(s["scan_times"], now())), "now": iso(),
+    fg = [r for r in runs if r["kind"] not in BACKGROUND][:40]
+    bg = {}
+    for kind, times in (("gather", s["gather_times"]), ("learn", [s["learn_time"]])):
+        last = next((r for r in runs if r["kind"] == kind), None)
+        bg[kind] = {"next": iso(next_slot(times, now())), "last": last and {
+            "id": last["id"], "status": last["status"], "created": last["created"],
+            "msg": next((n.get("msg") for n in reversed(list(last["nodes"].values())) if n.get("msg")), "")}}
+    bg["pool"] = len(pool_items())
+    return {"settings": {k: s[k] for k in ("scan_times", "approval", "gather_times", "learn_time")},
+            "next_scan": iso(next_slot(s["scan_times"], now())), "now": iso(), "background": bg,
             "flows": {k: [{"id": n, "label": l, "kind": t} for n, l, t in v] for k, v in FLOWS.items()},
-            "runs": runs[:40]}
+            "runs": fg}
 
 
 def run_detail(rid):
@@ -882,6 +1001,12 @@ class H(BaseHTTPRequestHandler):
         u = urllib.parse.urlparse(self.path)
         try:
             b = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))) or b"{}")
+            if u.path == "/api/gather":
+                rid = start_bg("gather", "Elle başlatıldı")
+                return self.send(200 if rid else 409, {"run": rid} if rid else {"error": "zaten bir toplama çalışıyor"})
+            if u.path == "/api/learn":
+                rid = start_bg("learn", "Elle başlatıldı")
+                return self.send(200 if rid else 409, {"run": rid} if rid else {"error": "zaten çalışıyor"})
             if u.path == "/api/scan":
                 rid = start_scan("Elle başlatıldı (Şimdi tara)")
                 return self.send(200 if rid else 409, {"run": rid} if rid else {"error": "zaten bir tarama çalışıyor"})
@@ -902,6 +1027,13 @@ class H(BaseHTTPRequestHandler):
                     if not times: raise ValueError("geçerli saat yok (SS:DD)")
                     s["scan_times"] = times
                     s["last_slot"] = (last_slot(times, now()) or now()).isoformat()  # new times start from now on
+                if "gather_times" in b:
+                    times = sorted({t for t in b["gather_times"] if re.fullmatch(r"([01]\d|2[0-3]):[0-5]\d", t)})
+                    if not times: raise ValueError("toplama için geçerli saat yok (SS:DD)")
+                    s["gather_times"] = times; s["last_gather_slot"] = (last_slot(times, now()) or now()).isoformat()
+                if b.get("learn_time"):
+                    if not re.fullmatch(r"([01]\d|2[0-3]):[0-5]\d", b["learn_time"]): raise ValueError("öğrenme saati geçersiz")
+                    s["learn_time"] = b["learn_time"]; s["last_learn_slot"] = (last_slot([b["learn_time"]], now()) or now()).isoformat()
                 save_settings(s); return self.send(200, {"ok": True})
             self.send(404, {"error": "yok"})
         except (KeyError, ValueError, TypeError) as ex:

@@ -117,15 +117,33 @@ def main():
     sys.stdout.reconfigure(encoding="utf-8", errors="replace"); sys.stderr.reconfigure(encoding="utf-8", errors="replace")
     ap = argparse.ArgumentParser()
     ap.add_argument("--hours", type=float, default=36); ap.add_argument("--date")
+    ap.add_argument("--check", metavar="URL", help="test one candidate source (the scout uses this before adding it)")
+    ap.add_argument("--parser", default="feed", help="with --check: feed | anthropic_news | dated_sections")
     a = ap.parse_args()
     now = datetime.now(timezone.utc); since = now - timedelta(hours=a.hours)
+    if a.check:
+        try: got = globals()[a.parser]({"url": a.check, "name": "check"})
+        except Exception as ex: sys.exit(f"FAIL: {type(ex).__name__}: {ex}")
+        dated = sorted((i for i in got if i["date"]), key=lambda i: i["date"], reverse=True)
+        print(f"{len(got)} items, {len(dated)} with a date; newest:")
+        for i in dated[:5]: print(f"  {i['date']:%Y-%m-%d}  {i['title']}  {i['url']}")
+        sys.exit(0 if dated else "FAIL: no dated items (wrong parser or not a feed)")
     cfg = json.loads((ROOT / "sources.json").read_text(encoding="utf-8"))
     items, errors = [], []
+    hfile = ROOT / "research" / "source_health.json"  # per source: streaks + last result, for the scout's upkeep
+    try: health = json.loads(hfile.read_text(encoding="utf-8"))
+    except (OSError, ValueError): health = {}
 
-    jobs = [(s, feed) for s in cfg["feeds"]] + [(s, globals()[s["parser"]]) for s in cfg["pages"]]
+    jobs = [(s, feed) for s in cfg["feeds"] if not s.get("disabled")] + \
+           [(s, globals()[s["parser"]]) for s in cfg["pages"] if not s.get("disabled")]
     for src, fn in jobs:
+        h = health.setdefault(src["name"], {"ok_streak": 0, "fail_streak": 0})
         try:
-            for it in fn(src):
+            got = fn(src)
+            h.update(ok_streak=h["ok_streak"] + 1, fail_streak=0, last_ok=now.isoformat(timespec="minutes"),
+                     last_items=len(got), newest=max((i["date"] for i in got if i["date"]), default=None) and
+                     max(i["date"] for i in got if i["date"]).isoformat(timespec="minutes"))
+            for it in got:
                 if src.get("skip") and re.search(src["skip"], it["title"]): continue
                 if src.get("match") and not re.search(src["match"], it["title"] + " " + it["summary"]): continue
                 if it["date"] and it["date"] > now + timedelta(days=1): continue
@@ -134,6 +152,9 @@ def main():
                     items.append({"source": src["name"], "tier": src["tier"], **it})
         except Exception as ex:  # one broken source must not stop the run
             errors.append(f"{src['name']}: {type(ex).__name__}: {ex}")
+            h.update(ok_streak=0, fail_streak=h["fail_streak"] + 1, last_error=f"{type(ex).__name__}: {ex}"[:200],
+                     last_fail=now.isoformat(timespec="minutes"))
+    hfile.parent.mkdir(exist_ok=True); hfile.write_text(json.dumps(health, indent=1, ensure_ascii=False), encoding="utf-8")
     try:
         items += hacker_news(cfg["hn"], since)
     except Exception as ex:

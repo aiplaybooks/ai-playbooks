@@ -56,7 +56,7 @@ rules, voices, safe claims). Today is {date}.
    - **`cover` block (top level, required)**: the carousel's first slide is a photo + big hook headline (see CLAUDE.md,
      "Carousel cover"). It replaces the theme's own cover slide, but still write slide 1 as a normal `cover` slide.
      `{{"headline": "...", "em": "...", "person": "..." | null, "photo_query": ["..."], "photo_pick": {{...}} | null}}`
-     - `headline`: the scroll-stopping hook in the style of big AI news pages, 8-22 words, ends with ":" when the
+     - `headline`: the scroll-stopping hook (use a live pattern from `prompts/hook_playbook.md`), 8-22 words, ends with ":" when the
        carousel continues it ("Claude can now teach you any language like a private tutor. Here are 7 prompts to
        try:", "Google's new Gemini TTS can clone your voice from a 30-second clip"). News facts (what launched, versions,
        dates) must be verified. Prompt packs / money topics may promise the result boldly (owner, 2026-09-26): "This AI
@@ -67,13 +67,26 @@ rules, voices, safe claims). Today is {date}.
        xAI/Grok: Elon Musk, Microsoft/Copilot: Satya Nadella, Meta: Mark Zuckerberg, Nvidia: Jensen Huang, ...) or the
        person the news is about. The pipeline fetches a freely licensed photo from Wikimedia Commons and credits it.
        The headline must not put words in their mouth or suggest they endorse our post. `null` only when nobody fits.
-     - Image generation is OFF: the cover is always a real, freely licensed photo. When `person` is null (or may have
-       no photo on Commons), pick a topic photo yourself: run `python cover.py --search <content file name without
-       .json> "query one" "query two"` (2-3 plain English nouns per query, e.g. "laptop desk night", "cash money",
-       "stock chart screen"), look at the previews in `output/<name>/photo_cands/` (Read the jpgs) and copy the JSON
-       line of the best one into `photo_pick`: sharp, bright or moody, tied to the topic, room at the bottom for the
-       headline; no text/logos/watermarks, no screens showing someone else's content. Nothing fits → other words.
-       Also write `photo_query` (the queries, best first) as the fallback.
+     - **The image must tell the topic at a glance** (owner, 2026-09-26; refs: a gym + the ChatGPT icon for a workout
+       pack, money in the air + Sam Altman for a finance pack): someone who only sees the cover knows what the post is
+       about and wants to swipe. Choose `layout`:
+       - `"scene_person"` (usually best): a topic photo full-bleed (gym, desk with bills, trading screens, a phone
+         with a feed ...) + the `person` in a ring-framed circle. Use it when a well-known person fits AND the topic has
+         a clear scene (prompt packs, how-tos, money/health/learning topics).
+       - `"person"`: the person's portrait fills the frame: for news where the person IS the story (a CEO's
+         announcement, a launch event).
+       - `"scene"`: topic photo only, when no person fits.
+     - Image generation is OFF: covers are real, freely licensed photos. For `scene` / `scene_person`, pick the topic
+       photo yourself: run `python cover.py --search <content file name without .json> "query one" "query two"`
+       (2-3 plain English nouns per query, e.g. "gym workout", "cash money", "stock chart screen"), look at the
+       previews in `output/<name>/photo_cands/` (Read the jpgs) and copy the JSON line of the best one into
+       `photo_pick`: sharp, clearly about the topic, room at the bottom for the headline; no text/logos/watermarks, no
+       screens showing someone else's content. Nothing fits → other words. Also write `photo_query` (best first).
+     - `icons` (optional): the brand icon of the tool the post is about is added automatically (from the cover slide's
+       `tools` / the headline) with a random style, size and corner, never over the face or the person circle. Set it
+       to steer: `[{{"slug": "claude", "style": "tile|circle|brand|glass|plain", "pos": "tl|tr|ml|mr|bl|br|c",
+       "size": 130-300}}]` (slugs: see TOOL_SLUGS in brand_icons.py; 2 icons at most, e.g. anthropic + claude),
+       `[]` for none. Keep it a supporting element: 150-260 px is the usual size.
    - `caption`: a short English draft (hook line + 2-3 lines). The next step (caption agent, prompts/caption.md)
      rewrites it per platform with researched hashtags; no sources, credits or hashtags needed here.
    - `sources`: the official URLs you used.

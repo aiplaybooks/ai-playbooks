@@ -152,7 +152,11 @@ def status():
     done = [r for r in runs if r["kind"] in ("post", "clip") and r["status"] == "done"][:2]
     for r in done: out.append(f"✅ {esc((r.get('title') or '')[:70])}")
     s = S.settings()
-    out.append(f"⏰ Sonraki tarama: {S.next_slot(s['scan_times'], S.now()):%d.%m %H:%M} · onay {'açık' if s['approval'] else 'kapalı'}")
+    g = next((r for r in runs if r["kind"] == "gather"), None)
+    out.append(f"🧺 Havuz: {len(S.pool_items())} aday · son arka plan toplaması "
+               + (f"{esc(g['created'][11:16])} ({S_tr(g['status'])})" if g else "henüz yok")
+               + f" · sonraki {S.next_slot(s['gather_times'], S.now()):%H:%M}")
+    out.append(f"⏰ Sonraki teslim: {S.next_slot(s['scan_times'], S.now()):%d.%m %H:%M} · onay {'açık' if s['approval'] else 'kapalı'}")
     send("\n".join(out) or "Her şey sakin.")
 
 
@@ -232,7 +236,7 @@ def handle_text(text, spoken=False):
     if re.match(r"^/?(start|yardım|yardim|help|komutlar)\b", t): return help_msg()
     if re.match(r"^/?(şimdi )?tara\b|^tarama (yap|başlat)", t):
         rid = S.start_scan("Telegram'dan başlatıldı")
-        return send("🔎 Tarama başladı (~5-8 dk). Adaylar hazır olunca listeyi gönderirim." if rid else "Zaten bir tarama çalışıyor.")
+        return send("🔎 Havuz hazırlanıyor: güncelse hemen, değilse önce toplama yapılır (~5-8 dk). Liste hazır olunca gönderirim." if rid else "Zaten bir tarama çalışıyor.")
     if re.match(r"^/?(durum|ne durumda|status)", t): return status()
     if re.match(r"^/?(adaylar|aday listesi|liste)", t): return show_candidates()
     if re.match(r"^/?(paketler|prompt ?pack|prompt paket)", t): return show_packs()
@@ -287,8 +291,8 @@ def state_summary():
                               "candidates": [{"n": i, "id": c["id"], "title": c.get("title"), "tool": c.get("tool"),
                                               "kind": c.get("kind"), "score": c.get("score")} for i, c in enumerate(candidates(sc), 1)]}
     out["runs"] = []
-    for r in runs[:12]:
-        if r["kind"] == "scan": continue
+    out["pool_size"] = len(S.pool_items())
+    for r in [r for r in runs if r["kind"] not in ("scan", "gather", "learn")][:12]:
         cur = next(((n, v) for n, v in r["nodes"].items() if v["status"] in ("running", "waiting", "error")), (None, {}))
         out["runs"].append({"id": r["id"], "kind": r["kind"], "status": r["status"], "title": r.get("title"),
                             "created": r["created"], "content": r.get("content"), "step": cur[0], "step_msg": cur[1].get("msg")})
@@ -365,7 +369,7 @@ def ask(kind, payload, text):
 
 def help_msg():
     send("<b>AI Playbooks Studio</b> · yazabilir ya da sesli mesaj atabilirsin\n\n"
-         "• <b>tara</b> — şimdi tarama başlat\n• <b>adaylar</b> — son taramanın adayları\n"
+         "• <b>tara</b> — havuzdaki tüm adayları şimdi getir\n• <b>adaylar</b> — son taramanın adayları\n"
          "• <b>paketler</b> — hazır prompt paketleri (düğmeyle seç)\n"
          "• <b>3</b> / <b>3'ü seç</b> / <b>gemini'yi seç</b> — aday seç (onay sorulur)\n"
          "• <b>durum</b> — ne çalışıyor, ne bekliyor\n• <b>önizle</b> — onay bekleyen gönderiyi tekrar gönder\n"

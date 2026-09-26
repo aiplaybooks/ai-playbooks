@@ -1,0 +1,72 @@
+{
+  "generated": "2026-09-26T09:12+00:00",
+  "candidates": [
+    {
+      "id": "meta-muse-charm-device",
+      "tool": "Meta AI",
+      "kind": "news",
+      "title": "Meta's Muse Gets Its Own Pocket Device: Meet Charm",
+      "summary_tr": "Meta Connect 2026'da (23 Eylül) tanıtılan Muse Charm: avuç içi büyüklüğünde, Tamagotchi'ye benzeyen, kendi OLED ekranı ve dahili 5G modemi olan ayrı bir cihaz. Telefonu kilidini açmadan sesle Muse'a konuşabiliyorsun; fiyat ve çıkış tarihi henüz yok (Aralık'ta sevkiyat planlanıyor). Havuzdaki Muse haberleri gözlük/VR odaklıydı, bu ilk kez bağımsız bir 'Muse cihazı'.",
+      "why_tr": "Fiziksel, çok görsel ve şaşırtıcı bir ürün (cep boyutu AI arkadaşı) — 'yapay zeka artık cebinde' açısı paylaşılabilirlik açısından güçlü.",
+      "angle": "what Muse Charm is (pocket AI companion, voice + touch + camera, built-in 5G) + why Meta is betting on a dedicated device instead of just an app + when it ships",
+      "tools": ["Meta AI"],
+      "published": "2026-09-23",
+      "sources": ["https://www.meta.com/muse-charm/", "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/"],
+      "hints": ["https://www.bloomberg.com/news/articles/2026-09-23/meta-debuts-a-dedicated-palm-sized-muse-charm-device-to-use-ai-on-the-go"],
+      "score": 8
+    },
+    {
+      "id": "chatgpt-images-sketch",
+      "tool": "ChatGPT",
+      "kind": "evergreen",
+      "title": "ChatGPT Can Now Finish Your Doodle: Meet Sketch",
+      "summary_tr": "ChatGPT Images 2.5 ile gelen Sketch özelliği: sohbete '@Sketch' yazıp kabaca bir çizim (oda düzeni, kıyafet taslağı, basit bir karalama) yapınca ChatGPT bunu tam bir görsele dönüştürüyor. Ayrıca hazır şablonlar (broşür, ürün fotoğrafı) ve görsellere yorum bırakma geldi. 8 Eylül'de duyuruldu, 7 günlük tazelik penceresinin dışında ama havuzda hiç yok; iyi bir 'nasıl kullanılır' konusu.",
+      "why_tr": "Görsel ve interaktif bir özellik, karuselde önce/sonra (karalama -> bitmiş görsel) göstererek çok iyi çalışır ve normal kullanıcı hemen deneyebilir.",
+      "angle": "what Sketch is + how to trigger it (@Sketch) + a before/after example + 2-3 things to try (room layout, outfit concept, doodle-to-art)",
+      "tools": ["ChatGPT"],
+      "published": "2026-09-08",
+      "sources": ["https://openai.com/index/introducing-chatgpt-images-2-5/"],
+      "hints": [],
+      "score": 7
+    },
+    {
+      "id": "prompts-manifestation-practice",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "5 Prompts That Build You a Daily Manifestation and Gratitude Practice",
+      "summary_tr": "Yeni bir prompt paketi fikri: AI'ı bir manifestasyon/mindfulness koçu gibi kullanıp kişisel bir sabah niyet rutini, bir minnettarlık günlüğü şablonu, aylık bir hedef görselleştirme egzersizi ve haftalık bir ilerleme kontrolü çıkarmak. Havuzda şu ana kadar spiritüellik/mindfulness kategorisinde hiçbir paket yok (hepsi para/iş/sosyal medya ağırlıklı).",
+      "why_tr": "Owner'ın istediği 'spiritüellik protokolleri' kategorisine ilk örnek, mevcut paket havuzuna çeşitlilik katıyor ve iyi oluş/self-help kitlesine hitap ediyor.",
+      "angle": "Act as a mindfulness and manifestation coach + goal of a calmer, more intentional daily routine -> deliverables: morning intention script, gratitude journal template, monthly vision exercise, weekly check-in prompt, a realistic estimate of how long it takes to feel a difference",
+      "tools": ["ChatGPT", "Claude", "Gemini"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 6
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 1,
+    "Claude": 0,
+    "Gemini": 0,
+    "Grok": 0,
+    "Codex": 0,
+    "Cursor": 0,
+    "Copilot": 0,
+    "Perplexity": 0,
+    "Meta AI": 1,
+    "Mistral": 0,
+    "DeepSeek": 0,
+    "Open models": 0,
+    "Prompt pack": 1
+  },
+  "notes_tr": "5 dakika önce biten 0907 taramasının üzerine: tüm 12 araç + manuel kaynaklar tekrar tek tek arandı. Claude (Opus 5.5, Cowork/chat birleşmesi), Cursor (Rollouts/Security bot'ları), Gemini (Study Notebooks), GPT-6 Sol/Luna, Grok (Voice Transcribe 2.0, 4.7), Perplexity (Agent API modelleri, HP ön yükleme), Mistral (Vibe, isim değişikliği eski haber) hep havuzda zaten var olan konuların tekrarıydı veya 7 günlük pencerenin dışındaydı (DeepSeek V4.1 Flash 10 Eylül, Perplexity Personal Computer Mart-Mayıs, Gemini repo yükleme özelliği aslında 2025'ten - bunları eklemedim). Gerçekten yeni olan iki şey bulundu: Meta'nın Muse Charm cihazı (23 Eylül, havuzdaki gözlük/VR haberlerinden farklı, bağımsız bir ürün) ve ChatGPT'nin Sketch özelliği (8 Eylül, evergreen 'nasıl kullanılır' konusu, havuzda hiç yok). Codex/Copilot/DeepSeek/Open models/Mistral'da paylaşılabilir yeni bir şey çıkmadı. Ekstra ilginç hikaye taramasında (viral AI, yeni agent araçları, şaşırtıcı kullanım örnekleri) marka tonuna uyan, doğrulanabilir ve havuzda olmayan güçlü bir aday çıkmadı (OpenAI ajanlarının Hugging Face'i 'hackleme' hikayesi ilginç ama korkutucu/negatif, pozitif tonlu sayfaya uymuyor, eklemedim).",
+  "sources_changed": [
+    "Ollama blog (ollama.com/blog/rss.xml) eklendi: taze (58 öğe, en yenisi 31 Ağustos) ve resmi, açık ağırlıklı modelleri normal kullanıcıya en hızlı getiren araçlardan biri.",
+    "Test edilip reddedildi: Perplexity blog RSS'i (perplexity.ai/hub/blog/rss.xml) - 403 engelliyor.",
+    "Test edilip reddedildi: Qwen3 GitHub releases feed'i - boş/tarihsiz döndü.",
+    "Test edilip reddedildi: DeepSeek-V3 GitHub releases feed'i - sadece 1 eski öğe (Haziran 2025).",
+    "Test edilip reddedildi: Qwen resmi blogu (qwenlm.github.io/blog) - en yeni öğe Eylül 2025, çok bayat.",
+    "Test edilip reddedildi: GLM-4.6 ve Kimi-K2 GitHub releases feed'leri - 404/boş döndü.",
+    "Mevcut kaynaklar sağlıklı: source_health.json'da fail_streak >= 3 veya 30 günden eski hiçbir kaynak yok, düzeltme gerekmedi."
+  ]
+}

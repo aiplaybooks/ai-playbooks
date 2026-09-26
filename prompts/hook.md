@@ -1,5 +1,6 @@
 You write the hook for a viral-clip Reel on AI Playbooks (@aiplaybooks.daily, Instagram + Facebook). Read the
-"Reels = hook-framed viral clips" part of CLAUDE.md first. Today is {date}.
+"Reels = hook-framed viral clips" part of CLAUDE.md first, then `prompts/hook_playbook.md`: the hook patterns that
+work right now (updated daily from real numbers). Pick the pattern that fits this clip best. Today is {date}.
 
 ## The clip the owner picked
 - Post: {url}

@@ -18,6 +18,9 @@ Reads the post's `cover` block (written by the write step):
     photo_url   optional: an image URL the owner picked (used as is; `photo_credit` = the credit line text)
     scene       old field (Flux prompt); only used as a last search query when photo_query is missing
     focus       optional CSS background-position of the image (default "50% 20%": faces sit in the upper part)
+    layout      "person" (portrait fills the frame) | "scene" (topic photo) | "scene_person" (topic photo + the person in
+                a ring-framed circle, output/<post>/cover_person.jpg); default: person when `person` is set, else scene
+    icons       brand icons on the image (see brand_icons.py); default: the post's tool, style/size/corner vary
 Writes output/<post>/cover_image.jpg and `cover.photo` = {file, page, author, license, license_url, source} back into
 the JSON. The credit is drawn on the cover (hookcover.py), never in the caption (owner, 2026-09-26).
 Licenses: only ones that allow reuse with edits (crop + text): CC BY, CC BY-SA, CC0, public domain. No NC/ND.
@@ -168,6 +171,25 @@ def search(post, queries):
     print(f"{n} previews in {out.relative_to(ROOT)}" if n else "nothing found: try other words (2-3 plain English nouns)")
 
 
+def scene_photo(cv, dest, used):
+    """The topic photo: the writer's pick, the owner's URL, else a search by photo_query."""
+    ph = None
+    pick = cv.get("photo_pick")
+    if pick and pick.get("url"): ph = fetch([pick], dest, ())  # chosen by the write step from `cover.py --search` previews
+    if not ph and cv.get("photo_url"):  # the owner's own pick
+        with urllib.request.urlopen(urllib.request.Request(cv["photo_url"], headers=UA), timeout=60) as r: dest.write_bytes(r.read())
+        ph = {"file": cv["photo_url"], "page": cv["photo_url"], "author": cv.get("photo_credit") or "", "license": "", "source": ""}
+        print(f"photo: {cv['photo_url']} (owner's pick)")
+    if not ph:
+        qs = cv.get("photo_query") or []
+        qs = [qs] if isinstance(qs, str) else list(qs)
+        if cv.get("scene"): qs.append(" ".join(re.findall(r"[A-Za-z]+", cv["scene"].split(",")[0])[-3:]))
+        for q in qs:
+            ph = fetch(openverse(q), dest, used)
+            if ph: break
+    return ph
+
+
 def main():
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     if sys.argv[1] == "--search": return search(sys.argv[2], sys.argv[3:])
@@ -176,35 +198,38 @@ def main():
     cv = data.get("cover") or {}
     if not cv.get("headline"): sys.exit("content JSON has no cover.headline")
     out = ROOT / "output" / content.stem; out.mkdir(parents=True, exist_ok=True)
-    dest = out / "cover_image.jpg"
-    used = used_photos(content); ph = None
-    pick = cv.get("photo_pick")
-    if pick and pick.get("url"):  # chosen by the write step from `cover.py --search` previews
-        ph = fetch([pick], dest, ())
-    if not ph and cv.get("photo_url"):  # the owner's own pick
-        with urllib.request.urlopen(urllib.request.Request(cv["photo_url"], headers=UA), timeout=60) as r: dest.write_bytes(r.read())
-        ph = {"file": cv["photo_url"], "page": cv["photo_url"], "author": cv.get("photo_credit") or "", "license": "", "source": ""}
-        print(f"photo: {cv['photo_url']} (owner's pick)")
-    if not ph and (cv.get("person") or cv.get("photo_file")):
-        ph = photo(cv.get("person"), cv.get("photo_file"), dest, used)
-        if not ph: print(f"no freely licensed Commons photo of {cv.get('photo_file') or cv['person']!r}: searching a topic photo")
-    if not ph:
-        qs = cv.get("photo_query") or []
-        qs = [qs] if isinstance(qs, str) else list(qs)
-        if cv.get("scene"): qs.append(" ".join(re.findall(r"[A-Za-z]+", cv["scene"].split(",")[0])[-3:]))
-        for q in qs:
-            ph = fetch(openverse(q), dest, used)
-            if ph: break
+    dest, pdest = out / "cover_image.jpg", out / "cover_person.jpg"
+    pdest.unlink(missing_ok=True)
+    used = used_photos(content)
+    has_person = bool(cv.get("person") or cv.get("photo_file"))
+    layout = cv.get("layout") or ("person" if has_person else "scene")
+    ph = pp = None
+    if layout == "person":
+        ph = photo(cv.get("person"), cv.get("photo_file"), dest)  # the same CEO photo may come back: no reuse rule for people
+        if not ph:
+            print(f"no freely licensed Commons photo of {cv.get('photo_file') or cv.get('person')!r}: using a topic photo")
+            ph, layout = scene_photo(cv, dest, used), "scene"
+    elif layout == "scene_person":
+        ph = scene_photo(cv, dest, used)
+        pp = photo(cv.get("person"), cv.get("photo_file"), pdest) if has_person else None
+        if not ph and pp: pdest.replace(dest); ph, pp, layout = pp, None, "person"
+        elif ph and not pp: layout = "scene"
+    else:
+        ph, layout = scene_photo(cv, dest, used), "scene"
+    cv.pop("person_photo", None)
     if ph:
-        cv["photo"] = ph
+        cv["photo"] = ph; cv["layout_used"] = layout
+        if pp: cv["person_photo"] = pp
         cap = "\n".join(l for l in data.get("caption", "").split("\n") if not l.startswith(CREDIT))
         data["caption"] = cap  # the credit is on the cover image; captions carry no credits (owner, 2026-09-26)
     elif FLUX_ENABLED and cv.get("scene"):
-        cv.pop("photo", None)
-        data["caption"] = "\n".join(l for l in data.get("caption", "").split("\n") if not l.startswith(CREDIT))
+        cv.pop("photo", None); cv["layout_used"] = "scene"
         flux(cv["scene"], dest)
     else:
         sys.exit("Kapak için uygun fotoğraf bulunamadı: revize et, cover.photo_query (2-4 İngilizce kelime) ya da photo_url ver")
+    import brand_icons as BI
+    icons = BI.plan(data)
+    print(f"layout: {layout}" + (" (+ person circle)" if pp else "") + " · icons: " + (", ".join(f"{x['slug']} {x['style']} {x['pos']} {x['size']}px" for x in icons) or "none"))
     data["cover"] = cv
     content.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print("saved", dest)

@@ -73,6 +73,14 @@
       "name": "Simon Willison",
       "url": "https://simonwillison.net/atom/everything/",
       "tier": "signal"
+    },
+    {
+      "name": "Ollama blog",
+      "url": "https://ollama.com/blog/rss.xml",
+      "tier": "official",
+      "added": "2026-09-26",
+      "by": "scout",
+      "why": "official blog of the most-used local runner for open-weight models (Qwen/Llama/GLM/etc land here first for normal users)"
     }
   ],
   "pages": [

@@ -258,9 +258,14 @@ table.tt td.p{text-align:right;color:var(--muted);width:48px;font-variant-numeri
 <div class="modal" id="setModal"><div class="mbox small">
   <div class="mh"><h2>Ayarlar</h2><button id="setClose">✕</button></div>
   <div class="mb">
-    <h5 style="font-size:12px;color:var(--muted);margin-bottom:8px">TARAMA SAATLERİ (her gün)</h5>
+    <h5 style="font-size:12px;color:var(--muted);margin-bottom:8px">TESLİM SAATLERİ (havuzdaki adaylar sana gelir + Telegram)</h5>
     <div class="times" id="times"></div>
     <button id="addTime" style="margin-top:8px">+ Saat ekle</button>
+    <h5 style="font-size:12px;color:var(--muted);margin:16px 0 8px">ARKA PLAN TOPLAMA SAATLERİ (sessiz, havuza ekler)</h5>
+    <div class="times" id="gtimes"></div>
+    <button id="addGTime" style="margin-top:8px">+ Saat ekle</button>
+    <h5 style="font-size:12px;color:var(--muted);margin:16px 0 8px">HOOK ÖĞRENME (günde bir)</h5>
+    <input type="time" id="learnTime">
     <label class="switch"><input type="checkbox" id="gate"> Yayından önce onay iste</label>
     <p style="font-size:12.5px;color:var(--muted);margin-top:8px">Kapalıyken seçtiğin haber kontrol edilip doğrudan paylaşılır. Kalite kontrol bir sorun bulursa yine de onay istenir.</p>
   </div>
@@ -282,9 +287,9 @@ table.tt td.p{text-align:right;color:var(--muted);width:48px;font-variant-numeri
 
 <script>
 const ICONS={comments:"💬",trigger:"⏰",collect:"📰",scout:"🧠",choose:"👤",write:"✍️",cover:"🧑‍💼",carousel:"🖼️",reel:"🎬",qa:"👁️",approve:"✅",
-  upload:"☁️",ig_carousel:"📸",ig_reel:"🎞️",fb_photos:"📘",fb_reel:"📘",yt_short:"▶️",log:"📒",fetch:"⬇️",hook:"🪝",caption:"#️⃣",frame:"🎬"};
+  upload:"☁️",ig_carousel:"📸",ig_reel:"🎞️",fb_photos:"📘",fb_reel:"📘",yt_short:"▶️",log:"📒",fetch:"⬇️",hook:"🪝",caption:"#️⃣",frame:"🎬",pool:"🧺",hooks:"🎓"};
 const LAYOUT={
-  post:{trigger:[0,40],collect:[270,40],scout:[540,40],choose:[810,40],
+  post:{trigger:[0,40],collect:[270,40],scout:[540,40],pool:[810,40],choose:[1080,40],
     write:[0,230],caption:[270,230],cover:[540,230],carousel:[810,230],reel:[1080,230],
     qa:[0,420],approve:[270,420],upload:[540,420],ig_carousel:[810,420],fb_photos:[1080,420],
     yt_short:[0,610],comments:[270,610],log:[540,610]},
@@ -311,6 +316,13 @@ async function api(path,body){
   if(!r.ok) throw new Error(j.error||r.statusText);
   return j;
 }
+function bgHtml(){const b=S.background||{},g=b.gather||{},l=b.learn||{},t=x=>x?new Date(x).toLocaleTimeString("tr-TR",{hour:"2-digit",minute:"2-digit"}):"—";
+  const st=r=>!r?"henüz yok":`${fmtT(r.created)} ${{done:"✓",error:"⚠ hata",running:"çalışıyor…",queued:"sırada"}[r.status]||r.status}${r.msg?" · "+esc(r.msg):""}`;
+  return `<div class="note" style="line-height:1.6">🔄 <b>Arka plan</b> · havuz ${b.pool??"?"} aday<br>Son toplama: ${st(g.last)} · sonraki ${t(g.next)}
+    <button class="tchip" id="bgGather" style="margin-left:6px">Şimdi topla</button><br>Hook öğrenme: ${st(l.last)} · sonraki ${t(l.next)}
+    <button class="tchip" id="bgLearn" style="margin-left:6px">Şimdi öğren</button></div>`}
+document.addEventListener("click",async e=>{const id=e.target?.id;if(id!=="bgGather"&&id!=="bgLearn")return;
+  e.target.disabled=true;try{await api(id==="bgGather"?"/api/gather":"/api/learn",{});toast(id==="bgGather"?"Toplama başladı (arka planda, birkaç dakika). Bitince havuza eklenir.":"Hook öğrenme başladı (arka planda).");await refresh()}catch(x){toast(x.message)}});
 function capsHtml(c){const k=c.captions||{},y=k.youtube||{},H=t=>`<h5 style="font-size:12px;color:var(--muted);margin:14px 0 6px">${t}</h5>`;
   if(!k.instagram)return H("CAPTION")+`<div class="cap">${esc(c.caption||"")}</div>`;
   return H("CAPTION · INSTAGRAM")+`<div class="cap">${esc(k.instagram)}</div>`+
@@ -485,9 +497,10 @@ async function renderSide(force){
   if(!sc){L.innerHTML=`<div class="empty">Henüz tarama yapılmadı.<br>Sonraki tarama: ${fmtT(S.next_scan)}<br><br>Beklemek istemezsen üstteki <b>Şimdi tara</b>'ya bas.</div>`;return;}
   if(sc.status==="running"||sc.status==="queued"){
     const cur=S.flows.scan.find(n=>sc.nodes[n.id].status==="running");
-    L.innerHTML=`<div class="empty"><span class="spin"></span> Taranıyor… ${cur?esc(cur.label):""}<br><br><small>Haber toplama ~1 dk, Claude'un araması ve doğrulaması birkaç dakika sürer.</small></div>`;return;
+    L.innerHTML=`<div class="empty"><span class="spin"></span> Hazırlanıyor… ${cur?esc(cur.label):""}<br><br><small>Havuz güncelse birkaç saniyede gelir. Son toplama 3 saatten eskiyse önce yeni toplama yapılır (~5-8 dk).</small></div>`;return;
   }
   const c=sc.candidates||{},list=c.candidates||[];
+  const bgLine=bgHtml();
   if(!list.length){L.innerHTML=`<div class="empty">${sc.status==="error"?"Tarama hata verdi. Kanvasta kırmızı node'a tıklayıp <b>Tekrar dene</b>'ye bas.":"Bu taramada aday yok."}</div>`;return;}
   const chosen=Object.fromEntries((sc.chosen||[]).map(x=>[x.id,x.run]));
   const counts={};list.forEach(k=>{const t=toolOf(k);counts[t]=(counts[t]||0)+1});
@@ -496,9 +509,9 @@ async function renderSide(force){
   const chips=`<div class="tchips"><button class="tchip ${toolFilter?"":"on"}" data-tool="">Tümü ${list.length}</button>${names.map(t=>
     `<button class="tchip ${toolFilter===t?"on":""} ${counts[t]?"":"zero"}" data-tool="${esc(t)}" ${counts[t]?"":"disabled title='Bu taramada haber yok'"}>${esc(t)} ${counts[t]||0}</button>`).join("")}</div>`;
   const shown=toolFilter?list.filter(k=>toolOf(k)===toolFilter):list;
-  L.innerHTML=chips+(c.notes_tr?`<div class="note">${esc(c.notes_tr)}</div>`:"")+shown.map(k=>`
+  L.innerHTML=bgLine+chips+(c.notes_tr?`<div class="note">${esc(c.notes_tr)}</div>`:"")+shown.map(k=>`
    <div class="cand ${chosen[k.id]?"chosen":""}">
-    <div class="top"><span class="score">${esc(k.score)}</span><span class="tag ${k.kind==="news"?"news":k.kind==="prompts"?"pp":""}">${{news:"HABER",prompts:"PROMPT PAKETİ"}[k.kind]||"EVERGREEN"}</span><span class="chip" style="font-size:11px;padding:0 7px">${esc(toolOf(k))}</span>
+    <div class="top">${k.new?`<span class="tag news" style="background:#ffd23f;color:#111">YENİ</span>`:""}<span class="score">${esc(k.score)}</span><span class="tag ${k.kind==="news"?"news":k.kind==="prompts"?"pp":""}">${{news:"HABER",prompts:"PROMPT PAKETİ"}[k.kind]||"EVERGREEN"}</span><span class="chip" style="font-size:11px;padding:0 7px">${esc(toolOf(k))}</span>
       ${k.published?`<span>${esc(k.published)}</span>`:""}${k.seen_before?`<span title="Önceki taramada da listelenmişti">↺ önceden</span>`:""}</div>
     <h4>${(k.sources||[])[0]?`<a class="ttl" href="${esc(k.sources[0])}" target="_blank" title="Resmi kaynağı aç">${esc(k.title)} ↗</a>`:`<a class="ttl" href="#" data-more="${esc(k.id)}" title="Detayı göster">${esc(k.title)} ▾</a>`}</h4><p>${esc(k.summary_tr)}</p>
     <div class="more" id="more-${esc(k.id)}" ${openMore.has(k.id)?"":"hidden"}><b>Gönderi planı:</b> ${esc(k.angle||"—")}${k.published?`<br><b>Tarih:</b> ${esc(k.published)}`:""}${(k.sources||[]).length?"":"<br><i>Bu bir evergreen fikir: belirli bir habere dayanmıyor, içerik yazılırken resmi dokümanlardan doğrulanacak.</i>"}</div>
@@ -639,18 +652,22 @@ $("#apRej").onclick=async()=>{if(!confirm("Gönderi reddedilsin mi? Paylaşılma
 $("#bannerBtn").onclick=()=>{const w=posts().find(p=>p.nodes.approve?.status==="waiting");if(w){postId=w.id;renderAll(true);openApproval(w.id)}};
 
 /* ---------------- settings ---------------- */
-function timeRow(v){const d=document.createElement("div");d.innerHTML=`<input type="time" value="${esc(v)}"><button>Sil</button>`;d.querySelector("button").onclick=()=>d.remove();$("#times").appendChild(d)}
-$("#setBtn").onclick=()=>{$("#times").innerHTML="";S.settings.scan_times.forEach(timeRow);$("#gate").checked=S.settings.approval;$("#setModal").classList.add("on")};
+function timeRow(v,box="#times"){const d=document.createElement("div");d.innerHTML=`<input type="time" value="${esc(v)}"><button>Sil</button>`;d.querySelector("button").onclick=()=>d.remove();$(box).appendChild(d)}
+$("#setBtn").onclick=()=>{$("#times").innerHTML="";$("#gtimes").innerHTML="";S.settings.scan_times.forEach(v=>timeRow(v));
+  (S.settings.gather_times||[]).forEach(v=>timeRow(v,"#gtimes"));$("#learnTime").value=S.settings.learn_time||"11:45";
+  $("#gate").checked=S.settings.approval;$("#setModal").classList.add("on")};
+$("#addGTime").onclick=()=>timeRow("12:00","#gtimes");
 $("#setClose").onclick=()=>$("#setModal").classList.remove("on");
 $("#addTime").onclick=()=>timeRow("12:00");
 $("#setSave").onclick=async()=>{
   const times=[...$("#times").querySelectorAll("input")].map(i=>i.value).filter(Boolean);
-  try{await api("/api/settings",{scan_times:times,approval:$("#gate").checked});$("#setModal").classList.remove("on");await refresh()}catch(e){toast(e.message)}};
+  const gtimes=[...$("#gtimes").querySelectorAll("input")].map(i=>i.value).filter(Boolean);
+  try{await api("/api/settings",{scan_times:times,gather_times:gtimes,learn_time:$("#learnTime").value,approval:$("#gate").checked});$("#setModal").classList.remove("on");await refresh()}catch(e){toast(e.message)}};
 $("#scanBtn").onclick=async()=>{try{const r=await api("/api/scan",{});scanId=r.run;tab="cands";await refresh();openNode("collect")}catch(e){toast(e.message)}};
 
 /* ---------------- timings ---------------- */
 const PH={scan:["Tarama","var(--trigger)"],production:["Üretim","var(--ai)"],publish:["Yayın","var(--publish)"]};
-const PHASE={trigger:"scan",collect:"scan",scout:"scan",choose:"wait",write:"production",cover:"production",fetch:"production",hook:"production",caption:"production",frame:"production",carousel:"production",reel:"production",qa:"production",
+const PHASE={trigger:"scan",collect:"scan",scout:"scan",pool:"scan",choose:"wait",write:"production",cover:"production",fetch:"production",hook:"production",caption:"production",frame:"production",carousel:"production",reel:"production",qa:"production",
   approve:"wait",upload:"publish",ig_carousel:"publish",ig_reel:"publish",fb_photos:"publish",fb_reel:"publish",yt_short:"publish",comments:"publish",log:"publish"};
 const secsOf=t=>t.started?Math.max(0,((t.ended?new Date(t.ended):new Date())-new Date(t.started))/1000):0;
 function hms(s){s=Math.round(s);if(s<60)return s+" sn";const m=Math.floor(s/60),r=s%60;if(m<60)return m+" dk "+String(r).padStart(2,"0")+" sn";
