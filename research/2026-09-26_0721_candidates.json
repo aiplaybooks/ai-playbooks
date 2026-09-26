@@ -1,0 +1,268 @@
+{
+ "generated": "2026-09-26T07:21:00+03:00",
+ "candidates": [
+  {
+   "id": "microsoft-copilot-superapp",
+   "tool": "Copilot",
+   "kind": "news",
+   "title": "Microsoft just rebuilt Copilot into Home, Code and Autopilot",
+   "summary_tr": "Microsoft, Copilot uygulamasını 25 Eylül'de baştan tasarladı: Home (sohbet + Office içinde Word/Excel/PowerPoint), Code (konuşarak kendi uygulamanı/otomasyonunu kurma) ve Autopilot (arka planda sürekli çalışan, kendi kendine devam eden kişisel ajan). Nadella bunu 'işin yeni işletim sistemi' olarak tanımlıyor.",
+   "why_tr": "Kitlemizin çoğu ofis çalışanı; üç net bölüme ayrılmış büyük bir marka güncellemesi görsel olarak da çok iyi carousel malzemesi.",
+   "angle": "what's new (Home/Code/Autopilot) + how each part works + when it rolls out",
+   "tools": ["Copilot"],
+   "published": "2026-09-25",
+   "sources": [
+    "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/"
+   ],
+   "hints": ["https://www.geekwire.com/2026/microsoft-unveils-all-in-one-copilot-app-taking-on-anthropic-and-openai-in-new-push-to-boost-adoption/"],
+   "score": 9,
+   "seen_before": false
+  },
+  {
+   "id": "meta-muse-glasses-agent",
+   "tool": "Meta AI",
+   "kind": "news",
+   "title": "Meta's Muse agent is coming to your AI glasses",
+   "summary_tr": "Meta Connect 2026'da (24 Eylül) Muse kişisel AI ajanının önümüzdeki aylarda Meta'nın akıllı gözlüklerine geleceği açıklandı: gözlüğe bakarak 'ajanının adını' söyleyip elini kullanmadan randevu almak, uçuş fiyatı kontrol etmek, gördüğün bir ürünü sorup işlem yaptırmak mümkün olacak. Bu, önceki gönderimizdeki ses odaklı Ray-Ban Meta Audio Glasses lansmanından farklı: burada konu donanım değil, gözlüğe binen ajan yeteneği.",
+   "why_tr": "Eller özgür AI ajanı konsepti çok çarpıcı ve 'wow' anı yaratan bir görsel hikaye sunuyor.",
+   "angle": "what Muse-on-glasses can do (hands-free booking, look-and-ask) + how it's different from a normal voice assistant",
+   "tools": ["Meta AI"],
+   "published": "2026-09-24",
+   "sources": [
+    "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/",
+    "https://www.meta.com/blog/muse-personal-agent-ai-glasses/"
+   ],
+   "hints": ["https://www.engadget.com/2267210/meta-muse-ai-agent-smart-glasses/"],
+   "score": 8,
+   "seen_before": false
+  },
+  {
+   "id": "grok-4-7-launch",
+   "tool": "Grok",
+   "kind": "news",
+   "title": "Grok 4.7: xAI's new flagship, same price as before",
+   "summary_tr": "xAI, 21 Eylül'de Grok 4.7'yi tanıttı: kodlama, ajan görevleri ve bilgi işi için yeni amiral gemisi model; zor problemlerde daha uzun düşünüyor ve kendi cevabını daha sık kontrol ediyor. Fiyat Grok 4.6 ile aynı ($2/M girdi, $6/M çıktı). Cursor, Grok Build ve API'de kullanılabilir; GitHub Copilot'a da geliyor.",
+   "why_tr": "Fiyat artmadan güçlenen yeni bir model duyurusu, 'aynı paraya daha fazlası' açısı takipçiye somut fayda anlatıyor.",
+   "angle": "what's new in 4.7 + where you can already use it + how it compares on price",
+   "tools": ["Grok"],
+   "published": "2026-09-21",
+   "sources": ["https://x.ai/news/grok-4-7"],
+   "hints": ["https://xenospectrum.com/en/xai-grok-4-7-pricing-copilot/"],
+   "score": 7,
+   "seen_before": false
+  },
+  {
+   "id": "github-copilot-claude-opus",
+   "tool": "Copilot",
+   "kind": "news",
+   "title": "Claude Opus lands in GitHub Copilot, plus local sandboxing",
+   "summary_tr": "GitHub Copilot'un 21 Eylül haftalık güncellemesinde Copilot'a yeni modeller (Claude Opus dahil) eklendi, Copilot app'e yerel sandbox geldi; Slack, Microsoft Teams, JetBrains ve VS Code entegrasyonları güncellendi.",
+   "why_tr": "Geliştirici kitlemiz için 'hangi modeli ne zaman kullanmalı' tarzı pratik bir içerik fırsatı.",
+   "angle": "which new models landed in Copilot + what local sandboxing means for you",
+   "tools": ["Copilot", "Claude"],
+   "published": "2026-09-21",
+   "sources": [
+    "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21"
+   ],
+   "hints": [],
+   "score": 7,
+   "seen_before": false
+  },
+  {
+   "id": "cursor-rollouts-security-review",
+   "tool": "Cursor",
+   "kind": "news",
+   "title": "Cursor now watches your deploys and reviews every PR for exploitable bugs",
+   "summary_tr": "23 Eylül'de Cursor, iki yeni 'bot' tanıttı: Rollouts her değişikliği canlıya çıkarken izliyor ve ortam bazında sağlıklı/regresyon durumunu raporluyor; Security Review her pull request'te istismar edilebilir güvenlik açıklarını buluyor. Şimdilik Teams ve Enterprise planlarında.",
+   "why_tr": "Kod yazan takipçiler için 'production'a çıkmadan önce ne kontrol etmeliyim' açısından çok pratik.",
+   "angle": "what Rollouts + Security Review catch + who gets them today",
+   "tools": ["Cursor"],
+   "published": "2026-09-23",
+   "sources": ["https://cursor.com/changelog"],
+   "hints": ["https://pondero.ai/news/2026-09-11-cursor-projects/"],
+   "score": 6,
+   "seen_before": false
+  },
+  {
+   "id": "perplexity-portable-amd",
+   "tool": "Perplexity",
+   "kind": "news",
+   "title": "Perplexity's AI agent can now run fully on your own laptop",
+   "summary_tr": "24 Eylül'de Perplexity, Portable Computer'ı AMD Ryzen AI Max işlemcili Windows PC'lere getirdi: model, ajan, zamanlayıcı ve sandbox tamamen cihazda çalışıyor, bulut kredisi harcamıyor ve buluta veri göndermeden önce izin istiyor. Pro/Max aboneliği ve en az 24 GB paylaşımlı bellek gerekiyor.",
+   "why_tr": "Gizlilik odaklı 'AI'n verimi bulut'a göndermeden kendi bilgisayarında çalışsın' mesajı güçlü bir açı.",
+   "angle": "what runs fully local now + what that means for privacy + who qualifies",
+   "tools": ["Perplexity"],
+   "published": "2026-09-24",
+   "sources": [
+    "https://newsroom.amd.com/news/amd-perplexity-agentic-pcs/",
+    "https://www.perplexity.ai/hub/blog"
+   ],
+   "hints": [],
+   "score": 6,
+   "seen_before": false
+  },
+  {
+   "id": "sora-discontinued",
+   "tool": "ChatGPT",
+   "kind": "news",
+   "title": "Sora is officially gone — here's what replaced it in ChatGPT",
+   "summary_tr": "OpenAI'ın video modeli Sora 2 ve Videos API'si 24 Eylül'de tamamen kapatıldı (web/app deneyimi zaten Nisan'da kapanmıştı). OpenAI kullanıcılara içeriklerini indirmelerini önerdi; sonrasında tüm veriler siliniyor.",
+   "why_tr": "Takipçilerin çoğu Sora'yı denemişti; 'artık yok, alternatif ne' merakı tıklama getirir.",
+   "angle": "what got shut down + why + what to use for AI video now",
+   "tools": ["ChatGPT"],
+   "published": "2026-09-24",
+   "sources": ["https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation"],
+   "hints": [],
+   "score": 6,
+   "seen_before": false
+  },
+  {
+   "id": "gemini-notebook-docs-context",
+   "tool": "Gemini",
+   "kind": "news",
+   "title": "Gemini can now write your Google Doc straight from your research notebook",
+   "summary_tr": "23 Eylül'de Google, Gemini Notebook'u Google Docs içinde bir bağlam kaynağı olarak kullanmayı mümkün kıldı: yan panelde '@' yazıp bir notebook'a referans verince Gemini, taslağı o kaynaklara dayandırıp satır içi alıntı ekliyor; sekme değiştirmeye, kopyala-yapıştıra gerek kalmıyor.",
+   "why_tr": "Araştırmadan yazıya geçişi tek ekranda birleştirmesi ofis/öğrenci kitlesi için çok pratik bir ipucu.",
+   "angle": "how to pull your notebook sources straight into a Doc with @-mentions",
+   "tools": ["Gemini"],
+   "published": "2026-09-23",
+   "sources": [
+    "https://workspaceupdates.googleblog.com/2026/09/ground-ai-prompts-in-google-docs-on-existing-sources-from-Gemini-Notebook.html"
+   ],
+   "hints": [],
+   "score": 6,
+   "seen_before": false
+  },
+  {
+   "id": "qwen-livetranslate",
+   "tool": "Open models",
+   "kind": "news",
+   "title": "Qwen's real-time AI interpreter got noticeably faster",
+   "summary_tr": "Qwen, 20 Eylül'de LiveTranslate'i yeniden kurdu: yeni 'Interleave' mimarisiyle anlık çeviri daha sadık ve akıcı, ortalama gecikme 2.8 saniyeden 2.3 saniyeye düştü. Herkesin deneyebileceği bir uygulama/chat üzerinden erişilebiliyor.",
+   "why_tr": "Simultane çeviri gündelik hayatta çok işe yarayan, kolay anlatılan bir yetenek; açık modellerin ne kadar ilerlediğini gösteriyor.",
+   "angle": "what got faster + a quick before/after on translation lag + how to try it",
+   "tools": ["Open models"],
+   "published": "2026-09-20",
+   "sources": ["https://qwen.ai/blog"],
+   "hints": [],
+   "score": 6,
+   "seen_before": false
+  },
+  {
+   "id": "codex-cli-quality-of-life",
+   "tool": "Codex",
+   "kind": "news",
+   "title": "Codex CLI gets conversation forking and a cleaner terminal",
+   "summary_tr": "Codex CLI'nin 25-26 Eylül güncellemelerinde konuşmaları başka bir uygulamada 'fork'lama (taslakları/kuyruktaki komutları koruyarak), uzak ve arka plan oturumlarında /import kullanımı ve Unicode madde imleri/onay kutuları ile daha okunaklı terminal çıktısı geldi.",
+   "why_tr": "Codex kullanan geliştiriciler için günlük iş akışını doğrudan hızlandıran, göze hoş gelen küçük ama toplu bir güncelleme paketi.",
+   "angle": "3 small Codex CLI upgrades that make daily terminal coding smoother",
+   "tools": ["Codex"],
+   "published": "2026-09-25",
+   "sources": ["https://developers.openai.com/codex/changelog"],
+   "hints": [],
+   "score": 5,
+   "seen_before": false
+  },
+  {
+   "id": "claude-projects-tip",
+   "tool": "Claude",
+   "kind": "evergreen",
+   "title": "Claude Projects: one place to keep a big goal organized",
+   "summary_tr": "Haberde son 7 günde sıradan kullanıcıya yönelik büyük bir Claude duyurusu yok (sadece Claude Code sürüm notları); bunun yerine Claude Projects özelliğinin nasıl kullanılacağını anlatan bir evergreen içerik.",
+   "why_tr": "Projects az bilinen ama uzun soluklu işleri (öğrenme, iş takibi) tek yerde tutmayı sağlayan güçlü bir özellik.",
+   "angle": "what Claude Projects is + 3 ways to set one up (study plan, job search, home project)",
+   "tools": ["Claude"],
+   "published": null,
+   "sources": [
+    "https://support.claude.com/en/articles/9517075-what-are-projects",
+    "https://support.claude.com/en/articles/8241126-what-kinds-of-documents-can-i-upload-to-claude"
+   ],
+   "score": 6,
+   "seen_before": false
+  },
+  {
+   "id": "mistral-vibe-tips",
+   "tool": "Mistral",
+   "kind": "evergreen",
+   "title": "5 things Mistral's Vibe (formerly Le Chat) can do that people miss",
+   "summary_tr": "Son 7 günde Mistral'den sıradan kullanıcıya yönelik yeni bir haber yok (sadece kurumsal ortaklık/finansman haberleri); bunun yerine Le Chat'in yeniden markalandığı Vibe'ın az bilinen özelliklerini anlatan bir evergreen içerik.",
+   "why_tr": "Çoğu takipçi Le Chat'in Vibe'a dönüştüğünü bilmiyor; 'bunu biliyor muydun' formatı iyi çalışır.",
+   "angle": "Vibe = old Le Chat + what's new (work/code agent) + 5 quick things to try",
+   "tools": ["Mistral"],
+   "published": null,
+   "sources": [
+    "https://help.mistral.ai/en/articles/682992-le-chat-is-now-vibe",
+    "https://mistral.ai/news/all-new-le-chat/"
+   ],
+   "score": 5,
+   "seen_before": false
+  },
+  {
+   "id": "prompts-work-report",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "6 prompts that turn messy notes into a client-ready report",
+   "summary_tr": "Dağınık toplantı notlarını, e-postaları veya taslakları düzenli bir rapora çeviren 6 kopyala-yapıştır prompt: özetleme, yapılandırma, ton ayarlama, eksik veri sorgulama, başlıklandırma, son okuma.",
+   "why_tr": "İş/kariyer kitlesinin her hafta karşılaştığı somut bir sorunu çözüyor; sayfaya kaydedilecek bir 'araç seti' hissi veriyor.",
+   "angle": "summarize -> structure -> tone-fix -> gap-check -> headline -> proofread",
+   "tools": ["ChatGPT", "Claude", "Gemini"],
+   "published": null,
+   "sources": [
+    "https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt",
+    "https://support.claude.com/en/articles/8241126-what-kinds-of-documents-can-i-upload-to-claude",
+    "https://support.google.com/gemini/answer/14903178"
+   ],
+   "score": 6,
+   "seen_before": false
+  },
+  {
+   "id": "prompts-trip-planning",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 prompts to plan a trip without opening 10 browser tabs",
+   "summary_tr": "Bir seyahati uçuştan güzergaha tek sohbette planlayan 5 prompt: bütçeye göre rota, günlük plan, yerel öneriler, paketleme listesi, yedek plan B.",
+   "why_tr": "Seyahat planlaması herkesin ilgisini çeken, paylaşılası bir konu; carousel'de her prompt bir slayt olarak çok iyi çalışır.",
+   "angle": "route -> daily plan -> local picks -> packing list -> backup plan",
+   "tools": ["ChatGPT", "Gemini"],
+   "published": null,
+   "sources": [
+    "https://help.openai.com/en/articles/11487775-connectors-in-chatgpt",
+    "https://support.google.com/gemini/answer/14903178"
+   ],
+   "score": 6,
+   "seen_before": false
+  },
+  {
+   "id": "prompts-photo-edits",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 photo edits you can do by just asking",
+   "summary_tr": "Bir fotoğrafı yükleyip sadece yazarak yapılabilecek 5 düzenleme: arka planı değiştirme, ışığı düzeltme, gereksiz nesneyi silme, stil/filtre uygulama, kadrajı yeniden düzenleme.",
+   "why_tr": "Görsel sonuçlar carousel'de önce/sonra olarak çok çarpıcı durur ve akışta durdurma oranı yüksek olur.",
+   "angle": "background swap -> lighting fix -> object removal -> style filter -> reframe",
+   "tools": ["ChatGPT", "Gemini"],
+   "published": null,
+   "sources": [
+    "https://help.openai.com/en/articles/11084440-images-in-chatgpt",
+    "https://support.google.com/gemini/answer/14286560"
+   ],
+   "score": 7,
+   "seen_before": false
+  }
+ ],
+ "coverage": {
+  "ChatGPT": 1,
+  "Claude": 0,
+  "Gemini": 1,
+  "Grok": 1,
+  "Codex": 1,
+  "Cursor": 1,
+  "Copilot": 2,
+  "Perplexity": 1,
+  "Meta AI": 1,
+  "Mistral": 0,
+  "DeepSeek": 0,
+  "Open models": 1
+ },
+ "notes_tr": "Claude: son 7 günde sıradan kullanıcıya yönelik haber yok, yalnızca Claude Code sürüm notları (geliştirici odaklı, çoğu teknik) var — evergreen ile telafi edildi. Mistral: son 7 günde ürün haberi yok, sadece finansman/ortaklık haberleri (iş haberi olduğu için elendi) — evergreen ile telafi edildi. DeepSeek: son 7 günde tüketiciye yönelik yeni bir şey yok (V4.1-Flash 10 Eylül'de çıktı, 7 günlük pencerenin dışında; 25 Eylül haberi sadece gelir/fiyat artışı, iş haberi olduğu için elendi). ChatGPT'nin '25 Eylül sesli ajan' ve Codex'in 'GPT-6 Sol&Luna desteği' haberleri, zaten yayınlanmış chatgpt-voice-plugins-work ve gpt-6-sol-luna gönderileriyle aynı lansmana dayandığı için elendi. Perplexity Effort Mode (17 Eylül) ve Cursor Projects (10 Eylül) 7 günlük pencerenin dışında kaldığı için daha yeni haberler seçildi."
+}

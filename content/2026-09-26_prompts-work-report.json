@@ -1,0 +1,187 @@
+{
+  "theme": "prompts",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Prompt Pack · Client-Ready Report",
+  "caption": "6 copy-paste prompts that turn messy meeting notes, emails or drafts into a client-ready report using ChatGPT, Claude or Gemini: summarize, structure, fix the tone, check for gaps, write the headline, and proofread.\n\nSave this before your next report is due.\n\n📷 Photo: Shixart1985 · CC BY 2.0 via Wikimedia Commons\n\n#productivity #chatgpt #claude #gemini #aitools #worktips #reportwriting",
+  "sources": [
+    "https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt",
+    "https://help.openai.com/en/articles/8555545-file-uploads-faq",
+    "https://support.claude.com/en/articles/8241126-what-kinds-of-documents-can-i-upload-to-claude",
+    "https://support.google.com/gemini/answer/14903178"
+  ],
+  "cover": {
+    "headline": "You can turn a pile of messy meeting notes into a client-ready report with a few AI prompts. Here are 6 to try:",
+    "em": "client-ready report",
+    "person": null,
+    "photo_file": "File:A woman sits at a desk with her laptop, deeply focused on her work in a low-light environment.jpg",
+    "scene": "A tidy office desk at night, laptop screen glowing with rows of highlighted text turning into a clean formatted document, a notebook and pen beside it, soft warm lamp light, cinematic, no text, no logos, no real people",
+    "photo": {
+      "file": "File:A woman sits at a desk with her laptop, deeply focused on her work in a low-light environment.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:A_woman_sits_at_a_desk_with_her_laptop,_deeply_focused_on_her_work_in_a_low-light_environment.jpg",
+      "author": "Shixart1985",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0"
+    }
+  },
+  "design": {
+    "mood": "a report coming together on a dark editor screen at night: charcoal navy, warm amber highlight like tracked changes, calm and precise",
+    "palette": {
+      "bg": "#12151C",
+      "bg2": "#1B2130",
+      "surface": "#20263A",
+      "ink": "#F1F2F6",
+      "muted": "#8B93A8",
+      "accent": "#F2A93B",
+      "accent2": "#5AC8E0"
+    },
+    "fonts": {
+      "display": "Archivo",
+      "body": "Inter",
+      "mono": "IBM Plex Mono"
+    },
+    "display": {
+      "weight": 700,
+      "case": "none",
+      "tracking": -2,
+      "scale": 1.0
+    },
+    "shape": {
+      "radius": 16,
+      "border": 2,
+      "shadow": "hard"
+    },
+    "background": {
+      "pattern": "lines",
+      "pattern_opacity": 0.06,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "mono",
+    "prompt": "card",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M7 3h8l4 4v14H7z'/><path d='M15 3v4h4'/><path d='M9 12h6'/><path d='M9 16h6'/><path d='M9 8h3'/></svg>"
+  },
+  "voice": "am_puck",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "PROMPT PACK",
+      "title": "prompts that turn messy notes into a client-ready report",
+      "em": "client-ready report",
+      "sub": "Paste your notes, chat, or email thread — copy, paste, done.",
+      "tools": [
+        "ChatGPT",
+        "Claude",
+        "Gemini"
+      ],
+      "count": 6,
+      "voiceover": "Six prompts that turn messy notes into a report you can actually send a client."
+    },
+    {
+      "type": "prompt",
+      "name": "The Summarizer",
+      "sub": "Condense a wall of raw notes into the points that matter.",
+      "prompt": "Here are my raw notes from [MEETING/EMAIL THREAD/CALL]: [PASTE NOTES]. Summarize the key points in plain language, grouped by topic, and flag anything that sounds like a decision or an action item.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Topic: Budget — agreed to [X]",
+          "Action item: [OWNER] to send [Y]",
+          "Decision: launch moved to [DATE]"
+        ]
+      },
+      "voiceover": "One. Paste your raw notes and get the key points, grouped by topic."
+    },
+    {
+      "type": "prompt",
+      "name": "The Structurer",
+      "sub": "Turn scattered bullet points into a real report layout.",
+      "prompt": "Using the summary above, structure it into a short report with these sections: Overview, Key Findings, Decisions Made, Next Steps. Keep each section to a few sentences or bullet points, written for [CLIENT/TEAM/MANAGER].",
+      "tip": "Name the exact audience — a client report and an internal update should read differently.",
+      "voiceover": "Two. Turn those bullet points into a report with real sections."
+    },
+    {
+      "type": "prompt",
+      "name": "The Tone Fixer",
+      "sub": "Rewrite it so it sounds right for who's reading it.",
+      "prompt": "Rewrite the report above in a [FORMAL/FRIENDLY/CONCISE] tone suitable for [AUDIENCE, e.g. a client who wasn't in the meeting]. Keep every fact the same — only change the wording and tone.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Before: \"we kinda need this fast\"",
+          "After: \"we're requesting this by [DATE]\""
+        ]
+      },
+      "voiceover": "Three. Fix the tone for the exact person who's going to read it."
+    },
+    {
+      "type": "prompt",
+      "name": "The Gap Checker",
+      "sub": "Catch the missing pieces before you hit send.",
+      "prompt": "Review the report above and list any missing information, unclear numbers, or unanswered questions a reader would likely ask. For each gap, suggest exactly what to add or who to ask.",
+      "tip": "Run this before every report — it catches what you skipped because you were too close to the topic.",
+      "voiceover": "Four. Ask what's missing before your reader has to ask you."
+    },
+    {
+      "type": "prompt",
+      "name": "The Headline Writer",
+      "sub": "One line that tells a busy reader what matters most.",
+      "prompt": "Write a one-sentence executive summary for the report above that a busy [CLIENT/MANAGER] could read in five seconds and understand the outcome. Then suggest a clear title for the report.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Title: Q3 Rollout Status Report",
+          "Summary: On track, one blocker on [X]."
+        ]
+      },
+      "voiceover": "Five. Get a one-line summary a busy reader can grab in five seconds."
+    },
+    {
+      "type": "prompt",
+      "name": "The Proofreader",
+      "sub": "One last pass for clarity, grammar and consistency.",
+      "prompt": "Proofread the full report above. Fix grammar, tighten long sentences, make headings and formatting consistent, and flag any sentence that could be misread. Show only the corrected version.",
+      "tip": "Ask it to also check that names, dates and numbers match your original notes — AI can tighten wording but won't verify facts for you.",
+      "voiceover": "Six. One last pass for grammar, clarity and consistent formatting."
+    },
+    {
+      "type": "howto",
+      "title": "Get more out of this pack",
+      "items": [
+        [
+          "Keep source and draft together",
+          "Paste your original notes and the report in the same chat so later prompts can check back against them."
+        ],
+        [
+          "Upload the file directly",
+          "ChatGPT, Claude and Gemini all accept documents like PDFs, Word files and text files — skip retyping."
+        ],
+        [
+          "Verify the facts yourself",
+          "These prompts fix structure and wording, not accuracy — always check names, numbers and dates before sending."
+        ]
+      ],
+      "voiceover": "Keep your notes in the same chat, upload files directly, and always check the facts yourself."
+    },
+    {
+      "type": "cta",
+      "title": "Save this pack.",
+      "title2": "Turn your next messy notes into a report in minutes.",
+      "lines": [
+        [
+          "Follow",
+          "for daily AI tool tips & news"
+        ],
+        [
+          "Share",
+          "with a coworker who writes reports"
+        ],
+        [
+          "Comment",
+          "which prompt you're trying first"
+        ]
+      ],
+      "voiceover": "Save this pack, and follow for a new AI tip every day."
+    }
+  ]
+}
