@@ -1,0 +1,248 @@
+{
+  "theme": "prompts",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Prompt Pack · Digital Product Weekend",
+  "caption": "Stop waiting for the perfect business idea — you can sell a digital product by Sunday night 💻\n\nMost people never ship because they try to plan a whole business before they've made a single sale. These 7 prompts skip that part.\n\n→ an idea people already search for\n→ a plan small enough to finish in 2 days\n→ a sales page with no fake scarcity\n→ 5 launch posts, ready to go\n\nWhich prompt are you starting with: 1, 2 or 3? 👇\n\nSave this before your next free weekend, and follow @aiplaybooks.daily for a new playbook every day.\n\n#ai #chatgpt #digitalproducts #sidehustle #passiveincome",
+  "sources": [],
+  "captions": {
+    "instagram": "Stop waiting for the perfect business idea — you can sell a digital product by Sunday night 💻\n\nMost people never ship because they try to plan a whole business before they've made a single sale. These 7 prompts skip that part.\n\n→ an idea people already search for\n→ a plan small enough to finish in 2 days\n→ a sales page with no fake scarcity\n→ 5 launch posts, ready to go\n\nWhich prompt are you starting with: 1, 2 or 3? 👇\n\nSave this before your next free weekend, and follow @aiplaybooks.daily for a new playbook every day.\n\n#ai #chatgpt #digitalproducts #sidehustle #passiveincome",
+    "facebook": "Stop waiting for the perfect business idea — you could have a digital product for sale by Sunday night 💻\n\nMost people who want to start a digital product never do, because they try to plan the whole business before they've made a single sale. So we wrote 7 prompts that skip straight to shipping: an idea with proof it sells, an outline you can finish in two days, a sales page with no fake scarcity, and launch posts ready to go.\n\nWhat's stopped you from shipping a product idea before?\n\n#digitalproducts #sidehustle #chatgpt",
+    "youtube": {
+      "title": "7 ChatGPT prompts to build and sell a digital product this weekend",
+      "description": "Build a digital product and get your first sale in one weekend, using 7 copy-paste ChatGPT, Claude or Gemini prompts.\n\nThey cover picking an idea people already search for, outlining it in one sitting, drafting it section by section, writing an honest sales page, launching with 5 ready posts, pricing without guessing, and turning your first buyers into feedback for version two.\n\nWhich prompt are you trying first? Tell us in the comments.\n\n#digitalproducts #sidehustle #chatgpt #ai #passiveincome",
+      "tags": [
+        "digital product ideas",
+        "side hustle prompts",
+        "chatgpt prompts",
+        "make money online",
+        "passive income ideas",
+        "sell digital products",
+        "ai side hustle",
+        "how to start a digital product"
+      ]
+    }
+  },
+  "cover": {
+    "headline": "Build a digital product on Saturday, get your first sale on Sunday. 7 prompts that do the heavy lifting:",
+    "em": "first sale on Sunday",
+    "person": null,
+    "photo_query": [
+      "planner notebook coffee",
+      "laptop notebook desk",
+      "creative desk workspace"
+    ],
+    "photo_pick": {
+      "url": "https://cdn.stocksnap.io/img-thumbs/960w/YXZ67J94XL.jpg",
+      "page": "https://stocksnap.io/photo/lifestyle-office-YXZ67J94XL",
+      "author": "Lukas",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "StockSnap"
+    },
+    "photo": {
+      "file": "YXZ67J94XL.jpg",
+      "page": "https://stocksnap.io/photo/lifestyle-office-YXZ67J94XL",
+      "author": "Lukas",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "StockSnap"
+    },
+    "layout_used": "scene",
+    "icons": [
+      {
+        "slug": "openai",
+        "style": "tile",
+        "pos": "tl",
+        "size": 128
+      },
+      {
+        "slug": "claude",
+        "style": "tile",
+        "pos": "tl",
+        "size": 128
+      },
+      {
+        "slug": "googlegemini",
+        "style": "tile",
+        "pos": "tl",
+        "size": 128
+      }
+    ]
+  },
+  "design": {
+    "mood": "a sunny Saturday desk: warm cream paper, a notebook plan taking shape, coffee-stain terracotta accent, unhurried but purposeful",
+    "palette": {
+      "bg": "#FBF1E1",
+      "bg2": "#F3E2C7",
+      "surface": "#FFFFFF",
+      "ink": "#2B2116",
+      "muted": "#8C7A63",
+      "accent": "#E4572E",
+      "accent2": "#2F6F5E"
+    },
+    "fonts": {
+      "display": "Bricolage Grotesque",
+      "body": "Inter",
+      "mono": "Space Mono"
+    },
+    "display": {
+      "weight": 700,
+      "tracking": -2
+    },
+    "shape": {
+      "radius": 26,
+      "border": 2,
+      "shadow": "soft"
+    },
+    "background": {
+      "pattern": "dots",
+      "pattern_opacity": 0.08,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "pill",
+    "prompt": "card",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='3' width='16' height='18' rx='2'/><path d='M8 7h8M8 11h8M8 15h5'/></svg>"
+  },
+  "voice": "af_jessica",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "PROMPT PACK",
+      "title": "prompts to create and sell a digital product this weekend",
+      "em": "this weekend",
+      "sub": "Idea Saturday morning, first sale by Sunday night.",
+      "tools": [
+        "ChatGPT",
+        "Claude",
+        "Gemini"
+      ],
+      "count": 7,
+      "voiceover": "Here are seven prompts to build and sell a digital product in one weekend."
+    },
+    {
+      "type": "prompt",
+      "name": "The Product Finder",
+      "sub": "Something people already search for.",
+      "prompt": "Act as a digital product strategist. I'm good at [SKILL] and know [AUDIENCE]. Give me 7 digital product ideas I can finish in one weekend (templates, checklists, guides, prompt packs), the problem each solves, a fair price, and which one has the **FASTEST FIRST SALE**.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Idea: a 1-page budgeting template",
+          "Solves: no simple starter budget",
+          "Fastest sale: low price, instant use"
+        ]
+      },
+      "voiceover": "One. Get seven weekend-sized product ideas, ranked by how fast they can sell."
+    },
+    {
+      "type": "prompt",
+      "name": "The Outline Maker",
+      "sub": "The full product plan in 5 minutes.",
+      "prompt": "Create the complete outline for [PRODUCT IDEA] for [AUDIENCE]: sections, what goes into each, examples to include, and the one 'quick win' the buyer gets in the **FIRST 10 MINUTES**. Keep it small enough to finish in 2 days.",
+      "tip": "If the outline has more than 6 sections, cut it — a smaller finished product beats a bigger unfinished one.",
+      "voiceover": "Two. Turn one idea into a full outline, small enough to finish in two days."
+    },
+    {
+      "type": "prompt",
+      "name": "The Content Drafter",
+      "sub": "Write the product section by section.",
+      "prompt": "Write section [NUMBER] of my product [PRODUCT NAME] based on this outline: [PASTE OUTLINE]. Practical, specific, with one example and one mini exercise. Plain language for [AUDIENCE], no padding, and flag anything I should **CHECK** myself.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Section 2 draft: 340 words",
+          "Example + 1 mini exercise included",
+          "Flagged to check: the local tax line"
+        ]
+      },
+      "voiceover": "Three. Draft the product section by section, with a mini exercise in each."
+    },
+    {
+      "type": "prompt",
+      "name": "The Sales Page",
+      "sub": "A page that explains and sells.",
+      "prompt": "Write a short sales page for [PRODUCT NAME] at [$PRICE]: a headline, the problem, what's inside as bullet points, who it's for and **NOT FOR**, 3 honest FAQs, and a clear buy button text. No fake testimonials, no fake scarcity.",
+      "tip": "Keep the 'who it's not for' line — it reads as honest, and it filters out refund requests later.",
+      "voiceover": "Four. Get a sales page that's honest, specific, and ready to publish."
+    },
+    {
+      "type": "prompt",
+      "name": "The Launch Posts",
+      "sub": "5 posts to announce it.",
+      "prompt": "Write 5 social media posts to launch [PRODUCT NAME] on [PLATFORM]: a behind-the-scenes post, a problem post, a sneak peek, a 'who it's for' post, and a launch-day post. Give each a hook and a caption with **ONE** call to action.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Post 1 hook: 'I built this in a weekend'",
+          "Post 4 hook: 'this is for you if...'",
+          "Post 5 hook: 'it's live - link below'"
+        ]
+      },
+      "voiceover": "Five. Get five launch posts, each with one clear call to action."
+    },
+    {
+      "type": "prompt",
+      "name": "The Price Tester",
+      "sub": "Don't guess the price.",
+      "prompt": "Help me price [PRODUCT NAME] for [AUDIENCE]. Compare 3 price points ([$LOW], [$MID], [$HIGH]), what each signals, a bundle or upsell idea, and a simple way to test prices in the **FIRST 2 WEEKS**.",
+      "tip": "Launch at the middle price — it's easier to add a discount later than to raise a price your first buyers saw.",
+      "voiceover": "Six. Compare three price points instead of guessing one."
+    },
+    {
+      "type": "prompt",
+      "name": "The Feedback Loop",
+      "sub": "Turn buyers into better versions.",
+      "prompt": "Write a short thank-you email for buyers of [PRODUCT NAME] with 3 questions that tell me what to improve, and plan version 2: what to add based on likely answers, and how to turn happy buyers into **REVIEWS** without pressure.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Q: what almost stopped you buying?",
+          "V2 idea: add a quick-start checklist",
+          "Ask for a review only after a 'thanks!'"
+        ]
+      },
+      "voiceover": "Seven. Turn your first buyers into the feedback that builds version two."
+    },
+    {
+      "type": "howto",
+      "title": "Get more out of this pack",
+      "items": [
+        [
+          "Run it in order",
+          "Idea, then outline, then draft — each prompt feeds the next in one chat, so nothing gets rebuilt twice."
+        ],
+        [
+          "Pick the smallest idea",
+          "A template or checklist ships in a weekend; a full course doesn't. Small and finished beats big and stuck."
+        ],
+        [
+          "Sell before it's perfect",
+          "Launch with the outline and one strong section done — the sales page and the first buyers tell you what to polish."
+        ]
+      ],
+      "voiceover": "Run these in order, pick the smallest idea, and sell before it's perfect."
+    },
+    {
+      "type": "cta",
+      "title": "Save this pack.",
+      "title2": "Build your first product this weekend.",
+      "lines": [
+        [
+          "Follow",
+          "for daily AI tool tips & news"
+        ],
+        [
+          "Share",
+          "with someone who keeps saying 'someday'"
+        ],
+        [
+          "Comment",
+          "which prompt you're running first"
+        ]
+      ],
+      "voiceover": "Save this pack, and follow for a new AI playbook every day."
+    }
+  ]
+}

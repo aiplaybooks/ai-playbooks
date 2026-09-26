@@ -1,0 +1,88 @@
+{
+ "generated": "2026-09-26T16:30+00:00",
+ "candidates": [
+  {
+   "id": "apple-siri-ai-rollout",
+   "tool": "Apple",
+   "kind": "evergreen",
+   "title": "Siri Finally Got the AI Brain Transplant It Needed",
+   "summary_tr": "Apple, iOS 27 ile birlikte 'Siri AI' adlı tamamen yeni bir Siri'yi yayına aldı: daha doğal sohbet, önceki mesaj/soru bağlamını hatırlama, Kamera üzerinden Görsel Zeka ile ekrandakini anlayıp aksiyon alma. Şu an İngilizce beta, Ekim'de Fransızca/Japonca/Korece/Portekizce/İspanyolca geliyor; AB ve Çin'de yok.",
+   "why_tr": "Herkesin telefonunda olan bir asistanın köklü değişimi -- 'aç ve dene' diyebileceğimiz, geniş kitleye hitap eden bir konu.",
+   "angle": "what changed in Siri AI + 3 things to try today (Visual Intelligence, follow-up questions, cross-app actions)",
+   "tools": ["Apple"],
+   "published": "2026-09-14",
+   "sources": [
+    "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
+    "https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/"
+   ],
+   "hints": ["https://9to5mac.com/2026/09/09/apple-confirms-siri-ai-launches-in-english-this-month-will-add-five-languages-in-october/"],
+   "score": 8
+  },
+  {
+   "id": "higgsfield-genjutsu-motion-transfer",
+   "tool": "Higgsfield",
+   "kind": "evergreen",
+   "title": "Higgsfield's Genjutsu Lets You Recast Any Video Without Reshooting It",
+   "summary_tr": "Higgsfield'ın Genjutsu aracı bir videodaki oyunculuğu, dudak senkronunu, kamera hareketini ve VFX'i alıp başka bir karaktere/mekana/ürüne aktarıyor -- videoyu yeniden çekmeden. Bireysel planlarda ücretsiz, 3-30 saniyelik referans videolar ve 1080p çıkış destekliyor.",
+   "why_tr": "Ücretsiz ve görsel olarak çarpıcı bir özellik -- önce/sonra kliple carousel'de çok iyi çalışır.",
+   "angle": "what Genjutsu does (motion + character/object swap) + a quick before/after demo + how to try it free",
+   "tools": ["Higgsfield"],
+   "published": "2026-09-01",
+   "sources": [
+    "https://higgsfield.ai/blog/higgsfield-genjutsu"
+   ],
+   "hints": ["https://x.com/higgsfield/status/2094856679544533430"],
+   "score": 7
+  },
+  {
+   "id": "gemini-3-8-flash-launch",
+   "tool": "Gemini",
+   "kind": "evergreen",
+   "title": "Google Quietly Shipped a Faster, Cheaper Gemini Model",
+   "summary_tr": "Google, Gemini 3.8 Flash'ı ve güvenlik odaklı 3.8 Flash Cyber'ı duyurdu: kodlama, ajan görevleri ve akıl yürütmede iyileşme, aynı giriş fiyatı (1M girdi token başına 0,75$). 31 Aralık 2026'ya kadar bu fiyatta.",
+   "why_tr": "Yeni ve bugün herkesin Gemini uygulamasından deneyebileceği bir model -- 'bunu şimdi dene' formatına uygun.",
+   "angle": "what's new in Gemini 3.8 Flash + how to pick it in the Gemini app + 3 quick tasks to try",
+   "tools": ["Gemini"],
+   "published": "2026-09-02",
+   "sources": [
+    "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/"
+   ],
+   "hints": [],
+   "score": 6
+  },
+  {
+   "id": "prompts-salary-raise-negotiation",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Prompts That Build You a Real Case for a Raise",
+   "summary_tr": "Maaş zammı görüşmesine hazırlanmak için: piyasa verisiyle rakam belirleme, kendi katkılarının dökümünü çıkarma, itirazlara karşı hazırlıklı bir konuşma metni, e-posta taslağı ve 'hayır' gelirse B planı -- 5 promptluk bir paket.",
+   "why_tr": "Herkesin cüzdanına dokunan, cesur ama gerçekçi bir vaat: 'AI ile zam iste' -- paylaşılası ve kaydedilesi bir konu.",
+   "angle": "Act as a compensation negotiation coach -> [ROLE/INDUSTRY] + [X years experience] -> market range, contribution summary, talking script, follow-up email, fallback ask",
+   "tools": ["Prompt pack"],
+   "published": null,
+   "sources": [],
+   "hints": [],
+   "score": 7
+  }
+ ],
+ "coverage": {
+  "ChatGPT": 0,
+  "Claude": 0,
+  "Gemini": 1,
+  "Grok": 0,
+  "Codex": 0,
+  "Cursor": 0,
+  "Copilot": 0,
+  "Perplexity": 0,
+  "Meta AI": 0,
+  "Mistral": 0,
+  "DeepSeek": 0,
+  "Open models": 0,
+  "Apple": 1,
+  "Higgsfield": 1,
+  "Google": 0,
+  "Social media": 0
+ },
+ "notes_tr": "16 aracın tamamı için arama yapıldı. ChatGPT, Claude, Grok, Codex, Cursor, Copilot, Perplexity, Meta AI, Mistral, DeepSeek, Open models ve Google (Gemini dışı) tarafında son 36 saatte havuzda olmayan, doğrulanabilir yeni bir haber çıkmadı -- bulunanların hepsi (Cursor Projects, Copilot Home/Code/Autopilot, Grok 4.7, Le Chat/Vibe birleşmesi, GPT-6 Sol/Luna, vb.) zaten havuzda. Sosyal medyada Instagram Edits'in iki dilli altyazısı (Temmuz) ve X'in 'Made with AI' etiketi (Mart) resmi kaynaklı ama çok eski, atlandı. Perplexity'nin Mac mini'de 7/24 çalışan 'Personal Computer' özelliği havuzdaki 'Perplexity'nin AI ajanı artık kendi laptopunda tam olarak çalışabiliyor' ile örtüştüğü için eklenmedi. Anthropic'in 'Claude Ar-Ge'nin %26'sını yönetiyor' haberi (17 Eylül) çok konuşuldu ama resmi anthropic.com kaynağı bulunamadığı için eklenmedi -- sonraki taramada tekrar denenebilir. DeepSeek'in Instant/Expert/Vision modlarını birleştirdiği güncelleme uygulama mağazası notlarında var ama net bir resmi tarih/kaynak doğrulanamadı, atlandı. Yeni eklenenler: Apple'ın Siri AI'sı (iOS 27, kapsamlı yeniden yapım), Higgsfield'ın ücretsiz Genjutsu video dönüştürme aracı, Gemini 3.8 Flash modeli ve yeni bir prompt paketi (zam pazarlığı).",
+ "sources_changed": []
+}

@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-26T10:31+00:00",
- "hours": 36,
+ "generated": "2026-09-26T13:30+00:00",
+ "hours": 36.0,
  "items": [
   {
    "source": "Codex CLI releases",
@@ -91,14 +91,6 @@
    "summary": "Codex CLI 0.157.0 pre]:w-full [&>pre]:max-w-full [&>pre]:mb-0 pt-4\"> $ npm install -g @openai/codex@0.157.0 View details New Features Added GPT-6 Sol and Luna, including Amazon Bedrock support and migration prompts for older models. ( #47332 , #47347 ) Enabled fullscreen transcripts by default and added Shift-click to extend text selections. ( #47178 , #47414 ) Enabled automatic background-server startup for eligible interactive sessions, with recovery choices when server settings are incompatible. ( #47179 , #47318 ) Added an f shortcut to fork conversations open in another app, preserving drafts and queued prompts. ( #47185 ) Made /import available in remote sessions and local background-server sessions. ( #47317 ) Improved terminal rendering with Unicode bullets, checkboxes, aligned equations, and optimization notation. ( #47191 , #47322 ) Bug Fixes Preserved active voice…"
   },
   {
-   "source": "Claude release notes",
-   "tier": "official",
-   "title": "Claude release notes: Sep 24, 2026",
-   "url": "https://docs.claude.com/en/release-notes/overview",
-   "date": "2026-09-24T00:00+00:00",
-   "summary": " We're resuming billing for refusals that arrive before any output when stop_details.category is \"bio\" , \"frontier_llm\" , or \"reasoning_extraction\" , the categories where we measure low volumes of false positives. Mid-stream refusals were already billed. Refusals billed under this change are charged like any other request, at the rates of the model that ran it. Refusals before any output in other categories are still not billed, and fallback credit is unchanged. This change applies on all platforms. See How refusals are billed . The Compliance API local session endpoints are out of beta for Claude for Microsoft 365 sessions in Excel, PowerPoint, Word, and Outlook ( product_surface values beginning with office_agents ). See Sessions on users' machines . The Compliance API Activity Feed no longer returns file names, project document names, or artifact titles. The filename and title…"
-  },
-  {
    "source": "TechCrunch Social",
    "tier": "signal",
    "title": "The hottest new hangout for middle schoolers is NPR’s comment section?",
@@ -131,12 +123,20 @@
    "summary": "Northern Gannet, Great Blue Heron, California Brown Pelican, in Monterey Bay National Marine Sanctuary, CA, US, CA New 200-800mm Canon EF lens got me my best photo of Morris yet. They really like hanging out under that sign in the harbor! Tags: photography , wildlife"
   },
   {
-   "source": "Simon Willison",
-   "tier": "signal",
-   "title": "Note on 24th September 2026",
-   "url": "https://simonwillison.net/2026/Sep/24/harder/",
-   "date": "2026-09-24T23:31+00:00",
-   "summary": "The more time I spend working with coding agents, the more convinced I am that they make software engineering even harder. We can do amazing things with them, but unlocking their full potential requires extraordinary discipline and knowledge. Tags: coding-agents , ai , llms"
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "One Month Without AI",
+   "url": "https://blog.bustikiller.com/2026/09/25/one-month-without-ai.html",
+   "date": "2026-09-26T10:08+00:00",
+   "summary": "95 points, 99 comments · https://news.ycombinator.com/item?id=49855018"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "A single function Jev-like wrapper for LLMs, including vision models",
+   "url": "http://allanrbo.blogspot.com/2026/09/a-jev-like-wrapper-for-llms-including.html",
+   "date": "2026-09-26T04:20+00:00",
+   "summary": "100 points, 29 comments · https://news.ycombinator.com/item?id=49853175"
   },
   {
    "source": "Hacker News",
@@ -144,7 +144,7 @@
    "title": "One Piece of Flock Camera Data Put This Innocent Woman in Jail for 13 Days",
    "url": "https://www.jezebel.com/flock-cameras-data-innocent-woman-arrested-lindsey-isaacs-palm-beach-florida-lawsuit-vehicular-homicide",
    "date": "2026-09-26T00:59+00:00",
-   "summary": "179 points, 77 comments · https://news.ycombinator.com/item?id=49852065"
+   "summary": "207 points, 99 comments · https://news.ycombinator.com/item?id=49852065"
   },
   {
    "source": "Hacker News",
@@ -152,7 +152,7 @@
    "title": "Revealing the details of how OpenAI agents hacked Hugging Face",
    "url": "https://swarmtraces.org/",
    "date": "2026-09-25T21:09+00:00",
-   "summary": "495 points, 301 comments · https://news.ycombinator.com/item?id=49849985"
+   "summary": "545 points, 347 comments · https://news.ycombinator.com/item?id=49849985"
   },
   {
    "source": "Hacker News",
@@ -160,7 +160,7 @@
    "title": "Too AI; Didn't Read",
    "url": "https://www.tai-dr.com/",
    "date": "2026-09-25T20:37+00:00",
-   "summary": "108 points, 108 comments · https://news.ycombinator.com/item?id=49849625"
+   "summary": "109 points, 108 comments · https://news.ycombinator.com/item?id=49849625"
   },
   {
    "source": "Hacker News",
@@ -168,7 +168,7 @@
    "title": "Ask HN: Who's still keeping a DOS machine up because the business depends on it?",
    "url": "https://news.ycombinator.com/item?id=49848955",
    "date": "2026-09-25T19:37+00:00",
-   "summary": "126 points, 118 comments · https://news.ycombinator.com/item?id=49848955"
+   "summary": "161 points, 154 comments · https://news.ycombinator.com/item?id=49848955"
   },
   {
    "source": "Hacker News",
@@ -176,7 +176,7 @@
    "title": "Alan Kay: Shannon gave us a way of dealing with noisy channels [video]",
    "url": "https://www.youtube.com/watch?v=Cjntrqhn8pk",
    "date": "2026-09-25T18:37+00:00",
-   "summary": "139 points, 25 comments · https://news.ycombinator.com/item?id=49848295"
+   "summary": "140 points, 25 comments · https://news.ycombinator.com/item?id=49848295"
   },
   {
    "source": "Hacker News",
@@ -184,7 +184,7 @@
    "title": "Ollaya – Ollama for open-source, Jev-style decision models",
    "url": "https://ollaya.dev/",
    "date": "2026-09-25T18:33+00:00",
-   "summary": "466 points, 117 comments · https://news.ycombinator.com/item?id=49848269"
+   "summary": "497 points, 125 comments · https://news.ycombinator.com/item?id=49848269"
   },
   {
    "source": "Hacker News",
@@ -192,7 +192,7 @@
    "title": "Meta's Muse appears to use an OpenAI model labeled muse-special",
    "url": "https://mouse.dev/blog/muse-special/",
    "date": "2026-09-25T18:18+00:00",
-   "summary": "133 points, 47 comments · https://news.ycombinator.com/item?id=49848095"
+   "summary": "137 points, 48 comments · https://news.ycombinator.com/item?id=49848095"
   },
   {
    "source": "Hacker News",
@@ -200,7 +200,7 @@
    "title": "Yes, Claude can do nine loops",
    "url": "https://www.anthropic.com/research/yes-claude-can-do-nine-loops",
    "date": "2026-09-25T18:11+00:00",
-   "summary": "103 points, 59 comments · https://news.ycombinator.com/item?id=49848033"
+   "summary": "103 points, 60 comments · https://news.ycombinator.com/item?id=49848033"
   },
   {
    "source": "Hacker News",
@@ -208,7 +208,7 @@
    "title": "U.S. appeals court upholds designation of Anthropic as supply chain risk",
    "url": "https://www.cnbc.com/2026/09/25/pentagon-anthropic-ai-risk-appeals-court.html",
    "date": "2026-09-25T15:29+00:00",
-   "summary": "447 points, 773 comments · https://news.ycombinator.com/item?id=49845977"
+   "summary": "459 points, 788 comments · https://news.ycombinator.com/item?id=49845977"
   },
   {
    "source": "Hacker News",
@@ -224,7 +224,7 @@
    "title": "Show HN: Jev Plays Pokémon Red",
    "url": "https://jev-pokemon.vercel.app/",
    "date": "2026-09-25T14:28+00:00",
-   "summary": "203 points, 85 comments · https://news.ycombinator.com/item?id=49845172"
+   "summary": "216 points, 90 comments · https://news.ycombinator.com/item?id=49845172"
   },
   {
    "source": "Hacker News",
@@ -232,7 +232,7 @@
    "title": "Microsoft abandons personal AI chatbot race with Copilot reboot",
    "url": "https://www.bloomberg.com/news/articles/2026-09-25/microsoft-abandons-personal-ai-chatbot-race-with-copilot-reboot",
    "date": "2026-09-25T14:07+00:00",
-   "summary": "125 points, 118 comments · https://news.ycombinator.com/item?id=49844896"
+   "summary": "126 points, 121 comments · https://news.ycombinator.com/item?id=49844896"
   },
   {
    "source": "Hacker News",
@@ -240,7 +240,7 @@
    "title": "Git-bug: Distributed, offline-first bug tracker embedded in Git",
    "url": "https://github.com/git-bug/git-bug",
    "date": "2026-09-25T11:38+00:00",
-   "summary": "336 points, 108 comments · https://news.ycombinator.com/item?id=49843174"
+   "summary": "341 points, 108 comments · https://news.ycombinator.com/item?id=49843174"
   },
   {
    "source": "Hacker News",
@@ -248,15 +248,7 @@
    "title": "What About Rails?",
    "url": "https://jardo.dev/what-about-rails",
    "date": "2026-09-25T02:50+00:00",
-   "summary": "315 points, 215 comments · https://news.ycombinator.com/item?id=49839664"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "Remembering Johannes Doerfert",
-   "url": "https://blog.llvm.org/posts/2026-09-24-rememberingjohannesdoerfert/",
-   "date": "2026-09-24T23:36+00:00",
-   "summary": "96 points, 3 comments · https://news.ycombinator.com/item?id=49838247"
+   "summary": "319 points, 218 comments · https://news.ycombinator.com/item?id=49839664"
   }
  ],
  "errors": [],
