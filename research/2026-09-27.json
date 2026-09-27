@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-27T10:31+00:00",
+ "generated": "2026-09-27T13:30+00:00",
  "hours": 36.0,
  "items": [
   {
@@ -9,22 +9,6 @@
    "url": "https://developers.openai.com/codex/changelog",
    "date": "2026-09-26T00:00+00:00",
    "summary": "Codex CLI 0.157.1 pre]:w-full [&>pre]:max-w-full [&>pre]:mb-0 pt-4\"> $ npm install -g @openai/codex@0.157.1 View details Chores Release highlights could not be determined: the supplied PR index is empty, and the GitHub tag comparison returned 404. Changelog Full Changelog: rust-v0.157.0...rust-v0.157.1 Full release on Github"
-  },
-  {
-   "source": "GitHub Copilot changelog",
-   "tier": "official",
-   "title": "Enterprise managed settings in-product validator",
-   "url": "https://github.blog/changelog/2026-09-25-enterprise-managed-settings-in-product-validator",
-   "date": "2026-09-25T23:24+00:00",
-   "summary": "You can now use an in-product validator for enterprise managed settings for GitHub Copilot. The validator detects malformed JSON, unsupported configurations, invalid team mappings, and other errors that can prevent… The post Enterprise managed settings in-product validator appeared first on The GitHub Blog ."
-  },
-  {
-   "source": "Codex changelog",
-   "tier": "official",
-   "title": "Codex changelog: Sep 25, 2026",
-   "url": "https://developers.openai.com/codex/changelog",
-   "date": "2026-09-25T00:00+00:00",
-   "summary": "Codex CLI 0.157.0 pre]:w-full [&>pre]:max-w-full [&>pre]:mb-0 pt-4\"> $ npm install -g @openai/codex@0.157.0 View details New Features Added GPT-6 Sol and Luna, including Amazon Bedrock support and migration prompts for older models. ( #47332 , #47347 ) Enabled fullscreen transcripts by default and added Shift-click to extend text selections. ( #47178 , #47414 ) Enabled automatic background-server startup for eligible interactive sessions, with recovery choices when server settings are incompatible. ( #47179 , #47318 ) Added an f shortcut to fork conversations open in another app, preserving drafts and queued prompts. ( #47185 ) Made /import available in remote sessions and local background-server sessions. ( #47317 ) Improved terminal rendering with Unicode bullets, checkboxes, aligned equations, and optimization notation. ( #47191 , #47322 ) Bug Fixes Preserved active voice…"
   },
   {
    "source": "Simon Willison",
@@ -56,7 +40,7 @@
    "title": "OpenAI Feared \"Optics\" of what might appear on Hacker News",
    "url": "https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/",
    "date": "2026-09-27T06:19+00:00",
-   "summary": "209 points, 169 comments · https://news.ycombinator.com/item?id=49863864"
+   "summary": "375 points, 311 comments · https://news.ycombinator.com/item?id=49863864"
   },
   {
    "source": "Hacker News",
@@ -64,7 +48,7 @@
    "title": "DeepSeek Elastic Compute (DSec)",
    "url": "https://arxiv.org/abs/2609.22978",
    "date": "2026-09-26T18:22+00:00",
-   "summary": "249 points, 83 comments · https://news.ycombinator.com/item?id=49859112"
+   "summary": "279 points, 92 comments · https://news.ycombinator.com/item?id=49859112"
   },
   {
    "source": "Hacker News",
@@ -72,7 +56,7 @@
    "title": "Show HN: Reladraw – A diagram language where you decide where to place things",
    "url": "https://github.com/reladraw/reladraw",
    "date": "2026-09-26T17:10+00:00",
-   "summary": "312 points, 85 comments · https://news.ycombinator.com/item?id=49858513"
+   "summary": "337 points, 90 comments · https://news.ycombinator.com/item?id=49858513"
   },
   {
    "source": "Hacker News",
@@ -80,7 +64,7 @@
    "title": "Turning GLM-5.3-Flash into a Jev-like decision model",
    "url": "https://www.privatemode.ai/blog/system-one-from-glm-flash",
    "date": "2026-09-26T15:49+00:00",
-   "summary": "96 points, 39 comments · https://news.ycombinator.com/item?id=49857656"
+   "summary": "109 points, 45 comments · https://news.ycombinator.com/item?id=49857656"
   },
   {
    "source": "Hacker News",
@@ -88,7 +72,7 @@
    "title": "Automattic has a new board after failed attempt to put CEO on leave",
    "url": "https://techcrunch.com/2026/09/25/automattic-has-a-new-board-after-failed-attempt-to-put-ceo-on-leave/",
    "date": "2026-09-26T15:40+00:00",
-   "summary": "137 points, 172 comments · https://news.ycombinator.com/item?id=49857572"
+   "summary": "141 points, 174 comments · https://news.ycombinator.com/item?id=49857572"
   },
   {
    "source": "Hacker News",
@@ -96,7 +80,7 @@
    "title": "OpenAI bots meddled with multiple US Government agency sites",
    "url": "https://www.bbc.com/news/articles/cw62jje658dlo",
    "date": "2026-09-26T14:03+00:00",
-   "summary": "116 points, 179 comments · https://news.ycombinator.com/item?id=49856665"
+   "summary": "122 points, 181 comments · https://news.ycombinator.com/item?id=49856665"
   },
   {
    "source": "Hacker News",
@@ -104,7 +88,7 @@
    "title": "CEO of Mistral: AI is software. It can be controlled",
    "url": "https://www.lemonde.fr/en/economy/article/2026/09/24/arthur-mensch-ceo-of-french-start-up-mistral-ai-ai-is-software-it-can-be-controlled_6757890_19.html",
    "date": "2026-09-26T12:52+00:00",
-   "summary": "92 points, 162 comments · https://news.ycombinator.com/item?id=49856034"
+   "summary": "96 points, 164 comments · https://news.ycombinator.com/item?id=49856034"
   },
   {
    "source": "Hacker News",
@@ -112,7 +96,7 @@
    "title": "One Month Without AI",
    "url": "https://blog.bustikiller.com/2026/09/25/one-month-without-ai.html",
    "date": "2026-09-26T10:08+00:00",
-   "summary": "173 points, 222 comments · https://news.ycombinator.com/item?id=49855018"
+   "summary": "177 points, 223 comments · https://news.ycombinator.com/item?id=49855018"
   },
   {
    "source": "Hacker News",
@@ -120,7 +104,7 @@
    "title": "The Copilot+ PC brand is dead",
    "url": "https://www.windowscentral.com/microsoft/windows-11/the-copilot-pc-brand-is-dead-microsoft-and-pc-makers-quietly-pull-back-on-tarnished-windows-11-ai-pc-branding",
    "date": "2026-09-26T09:55+00:00",
-   "summary": "104 points, 66 comments · https://news.ycombinator.com/item?id=49854945"
+   "summary": "104 points, 67 comments · https://news.ycombinator.com/item?id=49854945"
   },
   {
    "source": "Hacker News",
@@ -128,7 +112,7 @@
    "title": "How to keep enjoying programming in a world of LLMs",
    "url": "https://discourse.haskell.org/t/how-to-keep-enjoying-programming-in-a-world-of-llms/14705",
    "date": "2026-09-26T09:41+00:00",
-   "summary": "229 points, 271 comments · https://news.ycombinator.com/item?id=49854875"
+   "summary": "262 points, 292 comments · https://news.ycombinator.com/item?id=49854875"
   },
   {
    "source": "Hacker News",
@@ -136,7 +120,7 @@
    "title": "A single function Jev-like wrapper for LLMs, including vision models",
    "url": "http://allanrbo.blogspot.com/2026/09/a-jev-like-wrapper-for-llms-including.html",
    "date": "2026-09-26T04:20+00:00",
-   "summary": "141 points, 44 comments · https://news.ycombinator.com/item?id=49853175"
+   "summary": "145 points, 44 comments · https://news.ycombinator.com/item?id=49853175"
   },
   {
    "source": "Hacker News",
@@ -144,15 +128,7 @@
    "title": "An agent used DNS to reach an external chatbot",
    "url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/",
    "date": "2026-09-26T04:14+00:00",
-   "summary": "102 points, 104 comments · https://news.ycombinator.com/item?id=49853137"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "One Piece of Flock Camera Data Put This Innocent Woman in Jail for 13 Days",
-   "url": "https://www.jezebel.com/flock-cameras-data-innocent-woman-arrested-lindsey-isaacs-palm-beach-florida-lawsuit-vehicular-homicide",
-   "date": "2026-09-26T00:59+00:00",
-   "summary": "250 points, 133 comments · https://news.ycombinator.com/item?id=49852065"
+   "summary": "117 points, 118 comments · https://news.ycombinator.com/item?id=49853137"
   }
  ],
  "errors": [],
