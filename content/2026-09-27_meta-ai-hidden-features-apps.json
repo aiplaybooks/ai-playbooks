@@ -1,0 +1,278 @@
+{
+  "theme": "adaptive",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Meta AI",
+  "caption": "Meta AI has been sitting inside Instagram, WhatsApp and Facebook this whole time 👀\n\nNo download, no new app — you're already logged into it every day. Most people just don't know where to look.\n\n→ Restyle any Story from one text prompt\n→ Generate and edit images inside a DM\n→ Ask @Meta AI a question in any chat\n→ Get WhatsApp to summarize your unread messages\n→ Let a business page auto-reply for you\n\nWhich one of these five did you not know about? 👇\n\nSave this for the next time you forget, and follow @aiplaybooks.daily for a new AI playbook every day.\n\n#metaai #ai #instagram #whatsapp #aitools",
+  "captions": {
+    "instagram": "Meta AI has been sitting inside Instagram, WhatsApp and Facebook this whole time 👀\n\nNo download, no new app — you're already logged into it every day. Most people just don't know where to look.\n\n→ Restyle any Story from one text prompt\n→ Generate and edit images inside a DM\n→ Ask @Meta AI a question in any chat\n→ Get WhatsApp to summarize your unread messages\n→ Let a business page auto-reply for you\n\nWhich one of these five did you not know about? 👇\n\nSave this for the next time you forget, and follow @aiplaybooks.daily for a new AI playbook every day.\n\n#metaai #ai #instagram #whatsapp #aitools",
+    "facebook": "Meta AI has been sitting inside Instagram, WhatsApp and Facebook this whole time 👀\n\nMost people scroll past it every day without noticing. It's not a new app to download — it's already built into the apps you use.\n\nHere's what it can already do: redraw a Story from a text prompt, generate images inside a DM, answer questions in any chat, summarize your unread WhatsApp messages, and even reply to customers on a business page.\n\nWhich one of these are you trying first?\n\nFollow AI Playbooks for a new AI tool tip every day.\n\n#metaai #ai #instagram #whatsapp",
+    "youtube": {
+      "title": "5 Meta AI Features Already Hiding in Your Apps #Shorts",
+      "description": "Meta AI is already built into Instagram, WhatsApp and Facebook — here are 5 things it can already do for you.\n\n→ Restyle a Story from a text prompt\n→ Generate and edit images in a DM\n→ Ask @Meta AI a question in any chat\n→ Summarize your unread WhatsApp messages\n→ Auto-reply on a business page\n\nFollow AI Playbooks for a new AI tool tip every day.\n\n#metaai #ai #instagram #whatsapp #aitools",
+      "tags": [
+        "meta ai",
+        "meta ai features",
+        "instagram ai",
+        "whatsapp ai",
+        "facebook ai",
+        "meta ai tricks",
+        "ai tools 2026",
+        "chatgpt alternative"
+      ]
+    }
+  },
+  "sources": [
+    "https://www.meta.com/help/artificial-intelligence/3898022273743835/",
+    "https://help.instagram.com/834655619479850/",
+    "https://about.instagram.com/blog/announcements/ai-restyle-instagram-stories",
+    "https://help.instagram.com/893646515974351",
+    "https://help.instagram.com/2050445508681504",
+    "https://faq.whatsapp.com/876471037953289",
+    "https://blog.whatsapp.com/catch-up-on-conversations-with-private-message-summaries",
+    "https://faq.whatsapp.com/6485307734928964",
+    "https://whatsappbusiness.com/blog/introducing-meta-business-agent-ai/"
+  ],
+  "cover": {
+    "headline": "If you use Instagram, WhatsApp or Facebook, Meta AI is already hiding inside them. Here are 5 things it can do:",
+    "em": "already hiding inside them",
+    "person": "Mark Zuckerberg",
+    "photo_query": [
+      "phone in hand couch",
+      "texting phone hands",
+      "smartphone social media"
+    ],
+    "photo_pick": {
+      "url": "https://cdn.stocksnap.io/img-thumbs/960w/TYMEY7MDAM.jpg",
+      "page": "https://stocksnap.io/photo/browsing-smartphone-TYMEY7MDAM",
+      "author": "Kristin Hardwick",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "StockSnap",
+      "file": "Browsing Smartphone"
+    },
+    "layout": "scene_person",
+    "photo": {
+      "file": "Browsing Smartphone",
+      "page": "https://stocksnap.io/photo/browsing-smartphone-TYMEY7MDAM",
+      "author": "Kristin Hardwick",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "StockSnap"
+    },
+    "layout_used": "scene_person",
+    "person_photo": {
+      "file": "File:Mark Zuckerberg 2019 (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Mark_Zuckerberg_2019_(cropped).jpg",
+      "author": "Anthony Quintano from Westminster, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source": "Wikimedia Commons"
+    }
+  },
+  "design": {
+    "mood": "a phone glowing on a nightstand, everyday apps already lit up with one hidden assistant: near-black backdrop, WhatsApp green meets Instagram coral, warm and approachable, not technical",
+    "palette": {
+      "bg": "#0D1210",
+      "bg2": "#132019",
+      "surface": "#15201B",
+      "ink": "#F3F6F1",
+      "muted": "#9CAAA1",
+      "accent": "#22C55E",
+      "accent2": "#FF6F61"
+    },
+    "fonts": {
+      "display": "Manrope",
+      "body": "Inter",
+      "mono": "Space Mono"
+    },
+    "display": {
+      "weight": 800,
+      "case": "none",
+      "tracking": -2,
+      "scale": 1.05,
+      "italic_em": false
+    },
+    "shape": {
+      "radius": 30,
+      "border": 1,
+      "shadow": "soft"
+    },
+    "background": {
+      "pattern": "dots",
+      "pattern_opacity": 0.07,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "pill",
+    "prompt": "chat",
+    "art": "<svg viewBox='0 0 900 460'><rect x='60' y='40' width='260' height='380' rx='36' fill='none' stroke='var(--muted)' stroke-width='3' opacity='0.4'/><rect x='60' y='40' width='260' height='380' rx='36' fill='var(--surface)' opacity='0.5'/><circle cx='190' cy='140' r='34' fill='var(--accent2)'/><rect x='140' y='210' width='100' height='100' rx='24' fill='var(--accent)'/><circle cx='190' cy='340' r='30' fill='var(--ink)' opacity='0.85'/><g transform='translate(360,60)'><circle cx='0' cy='0' r='6' fill='var(--accent2)'/><circle cx='40' cy='30' r='4' fill='var(--accent)'/><circle cx='20' cy='70' r='3' fill='var(--ink)' opacity='0.6'/></g><path d='M420 220 q60 -70 140 -20 q60 40 20 110 q-30 55 -110 40' fill='none' stroke='var(--accent)' stroke-width='6' stroke-linecap='round' opacity='0.9'/><path d='M470 200 l14 -30 l14 30 z' fill='var(--accent2)'/><g transform='translate(620,120)'><path d='M40 0 L48 30 L80 40 L48 50 L40 80 L32 50 L0 40 L32 30 Z' fill='var(--accent2)'/></g><g transform='translate(700,260)'><path d='M22 0 L27 17 L44 22 L27 27 L22 44 L17 27 L0 22 L17 17 Z' fill='var(--accent)' opacity='0.8'/></g></svg>",
+    "icon": "<svg viewBox='0 0 24 24' fill='currentColor'><path d='M12 2l1.8 5.6L19 9l-5.2 1.4L12 16l-1.8-5.6L5 9l5.2-1.4L12 2z'/><path d='M19 13l.9 2.8L22.7 17l-2.8.9L19 20.7l-.9-2.8L15.3 17l2.8-.9L19 13z' opacity='0.7'/></svg>"
+  },
+  "voice_speed": 1.1,
+  "voice": "af_sarah",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "META AI TIPS",
+      "title": "5 Meta AI features already hiding in your apps",
+      "em": "5 Meta AI features",
+      "sub": "No new app to download. It's already there.",
+      "tools": [
+        "Meta AI",
+        "Instagram",
+        "WhatsApp",
+        "Facebook"
+      ],
+      "voiceover": "If you use Instagram, WhatsApp or Facebook, Meta AI is already hiding in there."
+    },
+    {
+      "type": "list",
+      "label": "THE LIST",
+      "title": "5 things Meta AI can already do",
+      "items": [
+        [
+          "Restyle",
+          "Redraw a Story photo or clip from a text prompt"
+        ],
+        [
+          "Imagine & edit",
+          "Generate images in a DM, then ask for changes"
+        ],
+        [
+          "Ask anything",
+          "Type `@Meta AI` in a chat or use Search"
+        ],
+        [
+          "Message Summaries",
+          "WhatsApp turns your unread chats into bullet points"
+        ],
+        [
+          "Auto-reply",
+          "Businesses can let Meta AI answer customers"
+        ]
+      ],
+      "voiceover": "Here are five things Meta AI can already do, right where you're scrolling."
+    },
+    {
+      "type": "steps",
+      "label": "01 · INSTAGRAM STORIES",
+      "title": "Restyle turns a photo into a whole new scene",
+      "steps": [
+        [
+          "Open a Story",
+          "Add a photo or video like you normally would"
+        ],
+        [
+          "Tap `Restyle`",
+          "It sits at the top of the Stories editor"
+        ],
+        [
+          "Type a prompt",
+          "\"watercolor\", \"add a crown\", \"sunset background\" — Meta AI redraws it"
+        ]
+      ],
+      "voiceover": "One. Restyle rewrites your Story's whole look from a text prompt."
+    },
+    {
+      "type": "steps",
+      "label": "02 · INSTAGRAM DMs",
+      "title": "Generate and edit images without leaving the chat",
+      "steps": [
+        [
+          "Type `/imagine`",
+          "or `@Meta AI imagine` plus what you want, in any DM"
+        ],
+        [
+          "Pick a result",
+          "Meta AI replies inline with a set of images"
+        ],
+        [
+          "Ask for a tweak",
+          "\"add a hat\", \"make it night\" — Imagine Edit updates it"
+        ]
+      ],
+      "voiceover": "Two. You can generate and edit images without ever leaving the chat."
+    },
+    {
+      "type": "steps",
+      "label": "03 · SEARCH & CHATS",
+      "title": "Meta AI answers questions right where you're scrolling",
+      "steps": [
+        [
+          "Type `@Meta AI`",
+          "in any 1:1 or group DM, then ask your question"
+        ],
+        [
+          "Or use Search",
+          "Instagram's search bar can ask Meta AI directly"
+        ],
+        [
+          "Same window, same login",
+          "no separate app, no new account"
+        ]
+      ],
+      "voiceover": "Three. Type at Meta AI in any chat, and it just answers."
+    },
+    {
+      "type": "steps",
+      "label": "04 · WHATSAPP",
+      "title": "Let Meta AI catch you up on unread chats",
+      "steps": [
+        [
+          "Tap the unread count",
+          "on a chat with messages piling up"
+        ],
+        [
+          "Get bullet points",
+          "a private summary of what you missed"
+        ],
+        [
+          "Off by default",
+          "turn it on in Settings › Chats › Private Processing"
+        ]
+      ],
+      "voiceover": "Four. WhatsApp can bullet-point your unread messages for you, if you turn it on."
+    },
+    {
+      "type": "steps",
+      "label": "05 · BUSINESS ACCOUNTS",
+      "title": "Business pages can let Meta AI handle the replies",
+      "steps": [
+        [
+          "Meta Business Agent",
+          "answers customers on WhatsApp, Instagram and Messenger"
+        ],
+        [
+          "Three modes",
+          "you write every reply, approve AI suggestions, or let it answer alone"
+        ],
+        [
+          "It learns your business",
+          "from your Page, past chats and your website"
+        ]
+      ],
+      "voiceover": "Five. A business page can let Meta AI write, suggest, or send the reply itself."
+    },
+    {
+      "type": "cta",
+      "title": "Meta AI is already on your phone.",
+      "title2": "You just have to open it.",
+      "lines": [
+        [
+          "Follow",
+          "for daily AI tool tips & news"
+        ],
+        [
+          "Save",
+          "this post for the next time you forget"
+        ],
+        [
+          "Comment",
+          "which one you'll try first"
+        ]
+      ],
+      "voiceover": "Save this, follow for daily AI tips, and tell me which one you'll try."
+    }
+  ]
+}
