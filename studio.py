@@ -168,7 +168,7 @@ def all_runs():
     out = []
     for d in RUNS.iterdir() if RUNS.exists() else []:
         s = read_json(d / "state.json")
-        if s: out.append(s)
+        if s and "created" in s and "kind" in s: out.append(s)  # runs/agent_studio etc. are not runs
     return sorted(out, key=lambda s: s["created"], reverse=True)
 
 
@@ -480,13 +480,31 @@ def n_qa(run):
     return "sorun yok" if r.get("ok") else "dikkat: " + "; ".join(r.get("problems", []))[:120]
 
 
+def publish_at(run):
+    """The planned publish time of a run from the share pool (None = as soon as it's ready)."""
+    t = run.s.get("publish_at")
+    return datetime.fromisoformat(t).astimezone() if t else None
+
+
+def hold(run, msg):
+    """Keep a ready (approved or approval-free) run until its planned time; the scheduler releases it."""
+    t = publish_at(run)
+    if not t or t <= now(): return False
+    run.node("approve", status="scheduled", msg=f"{msg} · {t:%d.%m %H:%M}'de paylaşılacak")
+    return True
+
+
 def n_approve(run):
     qa = read_json(run.dir / "qa.json", {})
-    if settings()["approval"] or not qa.get("ok", True):
-        run.node("approve", status="waiting", msg="Önizleme hazır: Yayınla / Revize et / Reddet")
+    need = run.s["approval"] if "approval" in run.s else settings()["approval"]  # pool items carry their own checkbox
+    if need or not qa.get("ok", True):
+        t = publish_at(run)
+        run.node("approve", status="waiting", msg="Önizleme hazır: Yayınla / Revize et / Reddet"
+                 + (f" · planlı {t:%d.%m %H:%M}" if t else ""))
         notify("AI Playbooks", f"Onay bekliyor: {(run.s.get('title') or '')[:80]}")
         TG.event("approval", run)
         return None
+    if hold(run, "Onaysız"): return None
     return "otomatik (onay kapalı)"
 
 
@@ -677,8 +695,8 @@ def execute(run):
                 notify("AI Playbooks: hata", f"{label}: {str(ex)[:120]}")
                 TG.event("error", run, label=label, node=nid, msg=str(ex))
             return
-        if run.s["nodes"][nid]["status"] == "waiting":
-            run.status("waiting"); return
+        if run.s["nodes"][nid]["status"] in ("waiting", "scheduled"):
+            run.status(run.s["nodes"][nid]["status"]); return
         run.node(nid, status="done", ended=iso(), msg=msg or "", secs=round(time.time() - t0))
     run.status("done")
 
@@ -774,6 +792,8 @@ def scheduler():
                         s = settings(); s[key] = slot.isoformat(); save_settings(s)
         except Exception as ex:
             slog("scheduler error:", ex)
+        try: share_tick()
+        except Exception as ex: slog("share pool error:", ex)
         time.sleep(30)
 
 
@@ -788,27 +808,43 @@ def recover():
             slog("resuming after restart:", run.id, nid)
             if s["kind"] in ("scan",) + BACKGROUND: threading.Thread(target=execute, args=(run,), daemon=True).start()
             else: enqueue(run)
-        elif s["status"] == "queued" and s["kind"] == "post":
+        elif s["status"] == "queued" and s["kind"] in ("post", "clip"):
             POST_Q.put(s["id"])
 
 
 # ---------------------------------------------------------------- actions (called from the UI)
 
-def select(scan_id, cand_id):
+def scan_candidate(scan_id, cand_id):
     scan = Run(scan_id)
     cands = load_candidates(scan.s["candidates_file"], scan_id).get("candidates", [])
     c = next((x for x in cands if x["id"] == cand_id), None)
     if not c: raise ValueError("aday bulunamadı (ya da daha önce paylaşıldı)")
+    return scan, c
+
+
+def mark_chosen(scan, cand_id, rid, how="Seçildi"):
+    chosen = [x for x in scan.s.get("chosen", []) if x["id"] != cand_id] + [{"id": cand_id, "run": rid}]
+    scan.status(scan.s["status"] if scan.s["status"] != "waiting" else "done", chosen=chosen)
+    title = next((c.get("title", "") for c in load_candidates(scan.s["candidates_file"], scan.id).get("candidates", [])
+                  if c["id"] == cand_id), "")
+    scan.node("choose", status="done", msg=f"{how}: {title[:60]}", ended=iso())
+
+
+def start_post(c, scan_id=None, **extra):
     t = now(); day = f"{t:%Y-%m-%d}"
     slug = re.sub(r"[^a-z0-9-]+", "-", c["id"].lower()).strip("-")[:50] or "post"
     content = f"content/{day}_{slug}.json"; k = 2
     while (ROOT / content).exists(): content = f"content/{day}_{slug}-{k}.json"; k += 1
     run = Run.create("post", f"post-{t:%Y%m%d-%H%M%S}-{slug}"[:80], day=day, candidate=c, content=content,
-                     scan=scan_id, title=c.get("title"))
-    chosen = scan.s.get("chosen", []) + [{"id": cand_id, "run": run.id}]
-    scan.status(scan.s["status"] if scan.s["status"] != "waiting" else "done", chosen=chosen)
-    scan.node("choose", status="done", msg=f"Seçildi: {c.get('title', '')[:60]}", ended=iso())
+                     title=c.get("title"), **({"scan": scan_id} if scan_id else {}), **extra)
     enqueue(run)
+    return run
+
+
+def select(scan_id, cand_id):
+    scan, c = scan_candidate(scan_id, cand_id)
+    run = start_post(c, scan_id)
+    mark_chosen(scan, cand_id, run.id)
     return run.id
 
 
@@ -823,31 +859,33 @@ def packs():
                                            "used": done.get(p["id"]), "run": busy.get(p["id"])} for p in lib.get("packs", [])]}
 
 
-def select_pack(pack_id):
-    """Start a post from a library pack (no scan needed)."""
+def pack_candidate(pack_id):
     p = next((x for x in packs()["packs"] if x["id"] == pack_id), None)
     if not p: raise ValueError("paket bulunamadı")
     if p["used"]: raise ValueError(f"bu paket zaten paylaşıldı ({p['used']})")
     if p["run"]: raise ValueError("bu paket zaten üretimde")
-    t = now(); day = f"{t:%Y-%m-%d}"
-    content = f"content/{day}_{p['id']}.json"; k = 2
-    while (ROOT / content).exists(): content = f"content/{day}_{p['id']}-{k}.json"; k += 1
-    cand = {"id": p["id"], "tool": "Prompt pack", "kind": "prompts", "title": p["headline"], "summary_tr": p["title_tr"],
+    return {"id": p["id"], "tool": "Prompt pack", "kind": "prompts", "title": p["headline"], "summary_tr": p["title_tr"],
             "angle": " · ".join(x["name"] for x in p["prompts"]), "tools": p["tools"], "sources": [],
             "pack": {k2: p[k2] for k2 in ("title", "em", "headline", "headline_em", "person", "photo_query", "prompts", "category")}}
-    run = Run.create("post", f"post-{t:%Y%m%d-%H%M%S}-{p['id']}"[:80], day=day, candidate=cand, content=content,
-                     title=p["headline"])
-    enqueue(run)
-    return run.id
 
 
-def start_clip(url, note=""):
+def select_pack(pack_id):
+    """Start a post from a library pack (no scan needed)."""
+    return start_post(pack_candidate(pack_id)).id
+
+
+def check_clip_url(url):
     url = url.strip()
     if not re.match(r"https?://\S+$", url): raise ValueError("geçerli bir video bağlantısı değil")
     log = ROOT / "publish_log.jsonl"
     done = {str(json.loads(l).get("source_url") or "").split("?")[0] for l in log.read_text(encoding="utf-8").splitlines()
             if l.strip()} if log.exists() else set()
     if url.split("?")[0] in done: raise ValueError("bu video zaten paylaşıldı")
+    return url
+
+
+def start_clip(url, note="", **extra):
+    url = check_clip_url(url)
     t = now(); day = f"{t:%Y-%m-%d}"
     m = re.search(r"/status/(\d+)", url)
     slug = (m.group(1)[-8:] if m else re.sub(r"[^a-z0-9]+", "-", url.lower().split("//")[-1])[-30:].strip("-")) or "clip"
@@ -855,15 +893,131 @@ def start_clip(url, note=""):
     while (ROOT / content).exists(): content = f"content/clips/{day}_clip-{slug}-{k}.json"; k += 1
     (ROOT / "content" / "clips").mkdir(parents=True, exist_ok=True)
     run = Run.create("clip", f"clip-{t:%Y%m%d-%H%M%S}-{slug}"[:80], day=day, url=url, content=content,
-                     title=url, candidate={"title": url}, **({"note": note.strip()} if note.strip() else {}))
+                     title=url, candidate={"title": url}, **({"note": note.strip()} if note.strip() else {}), **extra)
     enqueue(run)
     return run.id
+
+
+# ---------------------------------------------------------------- share pool (owner, 2026-09-27)
+# The owner drops clip links (Viral tab) and news / packs ("Havuza at") into a pool, ticks "onay" per item and either
+# shares now or plans a time. Production starts LEAD minutes before the planned time; a finished run waits at the
+# approve node ("scheduled") until then. Approval ticked -> it comes to the owner first; unticked -> posted as is
+# (a QA problem still asks, like the global switch).
+
+SHARE = RUNS / "share_pool.json"
+LEAD = {"clip": 45, "post": 90}  # minutes of production (+ time to approve) before the planned time
+
+
+def share_items():
+    return read_json(SHARE, []) or []
+
+
+def save_share(items):
+    with LOCK: write_json(SHARE, items)
+
+
+def share_add(kind, approval=True, url="", note="", scan=None, candidate=None, pack=None):
+    items = share_items(); live = [i for i in items if i["status"] in ("pool", "producing")]
+    t = now(); item = {"id": f"s{t:%Y%m%d%H%M%S%f}"[:21], "kind": kind, "added": iso(t), "approval": bool(approval),
+                       "at": None, "status": "pool"}
+    if kind == "clip":
+        url = check_clip_url(url)
+        if any(i.get("url", "").split("?")[0] == url.split("?")[0] for i in live): raise ValueError("bu link zaten havuzda")
+        item.update(url=url, note=note.strip(), title=url)
+    else:
+        if pack: c = pack_candidate(pack)
+        else: sc, c = scan_candidate(scan, candidate); item["scan"] = scan
+        if any((i.get("candidate") or {}).get("id") == c["id"] for i in live): raise ValueError("bu içerik zaten havuzda")
+        item.update(candidate=c, title=c.get("title"))
+        if not pack: mark_chosen(sc, c["id"], "", how="Havuza atıldı")
+    save_share(items + [item])
+    return item["id"]
+
+
+def share_start(item):
+    """Start production for a pool item (called with LOCK held via share_tick or share_now)."""
+    extra = {"approval": item["approval"], "share": item["id"], **({"publish_at": item["at"]} if item.get("at") else {})}
+    if item["kind"] == "clip": rid = start_clip(item["url"], item.get("note", ""), **extra)
+    else:
+        rid = start_post(item["candidate"], item.get("scan"), **extra).id
+        if item.get("scan") and (RUNS / item["scan"] / "state.json").exists():
+            mark_chosen(Run(item["scan"]), item["candidate"]["id"], rid, how="Havuzdan üretiliyor")
+    item.update(status="producing", run=rid, started=iso())
+
+
+def share_edit(sid, approval=None, at=False, remove=False, now_=False):
+    with LOCK:
+        items = share_items(); item = next((i for i in items if i["id"] == sid), None)
+        if not item: raise ValueError("havuzda böyle bir öğe yok")
+        run = Run(item["run"]) if item.get("run") and (RUNS / item["run"] / "state.json").exists() else None
+        busy = run and run.s["status"] not in ("done", "rejected", "canceled", "error")
+        if remove:
+            if busy: raise ValueError("üretimde: önce kanvastan durdur ya da reddet")
+            items.remove(item)
+        if approval is not None:
+            item["approval"] = bool(approval)
+            if run and run.s["nodes"]["approve"]["status"] in ("idle", "running"): run.s["approval"] = bool(approval); run.save()
+        if at is not False:  # "" or None clears the plan
+            item["at"] = datetime.fromisoformat(at).astimezone().isoformat(timespec="seconds") if at else None
+            if run and run.s["status"] not in ("done",):
+                run.s["publish_at"] = item["at"]; run.save()
+                if not item["at"] and run.s["status"] == "scheduled": release(run)
+        if now_:
+            item["at"] = None
+            if item["status"] in ("pool", "error", "canceled") and not busy: share_start(item)
+            elif run and run.s["status"] == "scheduled": run.s.pop("publish_at", None); run.save(); release(run)
+            elif run: run.s.pop("publish_at", None); run.save()
+        save_share(items)
+
+
+def share_tick():
+    """Scheduler: start planned items on time, release scheduled runs, mirror run results into the pool."""
+    with LOCK:
+        items = share_items(); t = now(); changed = False
+        for i in items:
+            run = Run(i["run"]) if i.get("run") and (RUNS / i["run"] / "state.json").exists() else None
+            if i["status"] == "pool" and i.get("at"):
+                if datetime.fromisoformat(i["at"]) - timedelta(minutes=LEAD[i["kind"]]) <= t:
+                    try: share_start(i)
+                    except ValueError as ex: i.update(status="error", error=str(ex))
+                    changed = True
+            elif i["status"] == "producing" and run:
+                st = run.s["status"]
+                new = {"done": "done", "rejected": "canceled", "canceled": "canceled", "error": "error"}.get(st)
+                if new == "error" and run.s["nodes"].get("approve", {}).get("status") == "done": new = None  # publish retry pending
+                if new: i["status"] = new; changed = True
+                if st == "scheduled" and publish_at(run) and publish_at(run) <= t: release(run)
+            elif i["status"] == "error" and run and run.s["status"] in ("queued", "running", "waiting", "scheduled"):
+                i["status"] = "producing"; changed = True  # the owner retried the run from the canvas
+        if changed: save_share(items)
+    for s in all_runs():  # scheduled runs that don't come from the pool item list (e.g. item removed)
+        if s["status"] == "scheduled" and not any(i.get("run") == s["id"] for i in items):
+            r = Run(s["id"])
+            if not publish_at(r) or publish_at(r) <= now(): release(r)
+
+
+def share_state():
+    runs = {r["id"]: r for r in all_runs()}
+    out = []
+    for i in share_items():
+        r = runs.get(i.get("run")) or {}
+        out.append({**i, "run_status": r.get("status"), "run_msg": next((n.get("msg") for n in reversed(list((r.get("nodes") or {}).values()))
+                                                                        if n.get("status") in ("running", "waiting", "scheduled", "error") and n.get("msg")), "")})
+    return out
 
 
 def approve(rid):
     run = Run(rid)
     if run.s["nodes"]["approve"]["status"] != "waiting": raise ValueError("bu gönderi onay beklemiyor")
+    if hold(run, f"Onaylandı {now():%H:%M}"): run.status("scheduled"); return
     run.node("approve", status="done", ended=iso(), msg=f"Onaylandı {now():%H:%M}")
+    enqueue(run)
+
+
+def release(run):
+    """A scheduled run's time has come (or the owner pressed "Şimdi paylaş"): publish."""
+    msg = run.s["nodes"]["approve"].get("msg", "").split(" · ")[0]
+    run.node("approve", status="done", ended=iso(), msg=f"{msg} · {now():%H:%M}'de yayına çıktı")
     enqueue(run)
 
 
@@ -895,7 +1049,7 @@ def cancel(rid):
     p = PROCS.get(rid)
     if p:
         subprocess.run(["taskkill", "/F", "/T", "/PID", str(p.pid)], capture_output=True, creationflags=NO_WINDOW)
-    elif run.s["status"] == "queued":
+    elif run.s["status"] in ("queued", "scheduled"):
         run.status("canceled")
 
 
@@ -915,7 +1069,7 @@ def state():
     return {"settings": {k: s[k] for k in ("scan_times", "approval", "gather_times", "learn_time", "dm_bot")},
             "next_scan": iso(next_slot(s["scan_times"], now())), "now": iso(), "background": bg,
             "flows": {k: [{"id": n, "label": l, "kind": t} for n, l, t in v] for k, v in FLOWS.items()},
-            "runs": fg}
+            "runs": fg, "share": share_state(), "lead": LEAD}
 
 
 def run_detail(rid):
@@ -1027,6 +1181,12 @@ class H(BaseHTTPRequestHandler):
             if u.path == "/api/select": return self.send(200, {"run": select(b["scan"], b["candidate"])})
             if u.path == "/api/pack": return self.send(200, {"run": select_pack(b["pack"])})
             if u.path == "/api/clip": return self.send(200, {"run": start_clip(b.get("url", ""), b.get("note", ""))})
+            if u.path == "/api/share/add":
+                return self.send(200, {"id": share_add(b["kind"], b.get("approval", True), b.get("url", ""), b.get("note", ""),
+                                                       b.get("scan"), b.get("candidate"), b.get("pack"))})
+            if u.path == "/api/share/edit":
+                share_edit(b["id"], b.get("approval"), b["at"] if "at" in b else False, bool(b.get("remove")), bool(b.get("now")))
+                return self.send(200, {"ok": True})
             if u.path == "/api/approve": approve(b["run"]); return self.send(200, {"ok": True})
             if u.path == "/api/revise": revise(b["run"], b.get("note", "")); return self.send(200, {"ok": True})
             if u.path == "/api/reject": reject(b["run"]); return self.send(200, {"ok": True})

@@ -85,6 +85,22 @@ Every day the pipeline should:
   hook, the IG/FB comments (prompts) go into the YouTube description. Discovery: `viral.py`
   (YouTube API = signal only, never downloaded; Reddit API needs manual approval since 2025-11 → not available).
   No fake verified badge.
+- **Share pool + planned publishing** (owner, 2026-09-27): Viral tab = clip pool (owner pastes links: "Havuza ekle"
+  / "Şimdi paylaş"); Adaylar tab = "📌 Carousel havuzu" filled by "Havuza at" on news candidates and prompt packs.
+  Per item: "Onay iste" checkbox (ticked → approval before publishing; unticked → no approval, except a QA problem
+  still asks), "Planla" (date + time = publish time) or "Şimdi paylaş". Store: `runs/share_pool.json`. The scheduler
+  starts production `LEAD` minutes early (clip 45, post 90) with `publish_at` + `approval` on the run; a ready run
+  waits at the approve node with status `scheduled` until then (`hold` / `release` in studio.py). Owner can
+  "Beklemeden şimdi paylaş" from the approve node.
+- **YouTube channel rules** (owner, 2026-09-27; `youtube.py`, used by publish.py `yt_short`): paid promotion NO
+  (`paidProductPlacementDetails`), altered/AI content YES (`status.containsSyntheticMedia`: returned by PUT/insert,
+  never by GET → confirmed ids kept in `runs/youtube_rules.json`), tags always include `ai` + `artificial
+  intelligence` (YouTube re-sorts tags, order can't be forced); every Short goes into the playlist "AI Playbooks: AI
+  Tools, Prompts & News" (`YT_PLAYLIST_ID` in .env, https://www.youtube.com/playlist?list=PLOtFIq86a9do).
+  `python youtube.py [--check]` applies it to every channel video (done for all 28 on 2026-09-27).
+  **Not possible via the API:** video location (the deprecated `recordingDetails.location` is accepted and silently
+  dropped; still sent on upload, harmless) and caption certification ("never aired on US TV") → YouTube Studio →
+  Settings → Upload defaults (owner). Needs the `youtube` scope (yt_token.py, re-authorized 2026-09-27).
 - No brand logo imitation.
 - Reels: 1080x1920, 30fps, H.264 + AAC. Content kept inside IG safe zones (top ~190px, bottom ~330px reserved).
 
@@ -116,6 +132,8 @@ telegram_bot.py    Telegram remote control inside the Studio (@aiplaybooks_studi
                    TELEGRAM_CHAT_ID in .env): candidates, approval previews, publish links, errors; text + voice commands
 stt.py             speech to text for voice commands (faster-whisper in the Pinokio TTS env, model cache in .cache/)
 yt_token.py        one-time YouTube OAuth -> YT_* in .env
+youtube.py         YouTube channel rules (AI disclosure, no paid promo, US location, required tags, playlist) +
+                   backfill of all channel videos: python youtube.py [--check]
 studio.py          AI Playbooks Studio: local workflow engine + web UI at http://localhost:8787 (see below)
 studio/index.html  the n8n-style UI (vanilla JS, no build)
 prompts/           scout.md, write.md, qa.md: prompts for the headless `claude -p` steps of the Studio

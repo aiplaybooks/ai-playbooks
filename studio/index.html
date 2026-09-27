@@ -199,6 +199,26 @@ table.tt td.p{text-align:right;color:var(--muted);width:48px;font-variant-numeri
 .plat .kv2{color:var(--muted);line-height:1.5}.plat .kv2 b{color:var(--text);font-weight:600}
 .plat.none{opacity:.45}
 @media (max-width:1100px){.plats{grid-template-columns:repeat(2,1fr)}.pcards{grid-template-columns:repeat(2,1fr)}}
+.node.s-scheduled{border-color:#74c0fc}
+.node.s-scheduled .badge{display:grid;background:#74c0fc}
+.node.s-scheduled .badge:after{content:"⏰";font-size:10px}
+.node.s-scheduled small{color:#a5d8ff}
+.pool{background:#1d2530;border:1px solid #2f4a66;border-radius:12px;padding:11px 12px;margin-bottom:12px}
+.pool>h4{font-size:14px;margin-bottom:4px}
+.pool>p{font-size:12px;color:var(--muted);margin-bottom:8px}
+.sitem{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 10px;margin-top:8px;font-size:12.5px}
+.sitem .st{font-size:11.5px;font-weight:650;margin-bottom:4px;color:var(--muted)}
+.sitem .st.plan{color:#74c0fc}.sitem .st.wait{color:var(--wait)}.sitem .st.ok{color:var(--ok)}.sitem .st.err{color:var(--err)}.sitem .st.run{color:#a5d8ff}
+.sitem .tt{font-weight:600;margin-bottom:6px;word-break:break-word}
+.sitem .tt a{color:var(--text)}
+.srow{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:6px}
+.srow input[type=datetime-local]{flex:1;min-width:150px;padding:4px 7px;font-size:12.5px;color-scheme:dark}
+.srow button{padding:4px 9px;font-size:12px;width:auto}
+.srow label{display:flex;gap:6px;align-items:center;cursor:pointer}
+.pool .add{display:flex;flex-direction:column;gap:6px}
+.srow input[type=checkbox]{width:16px;height:16px;padding:0}
+.pool .add input:not([type=checkbox]),.pool .add textarea{width:100%;padding:7px 9px;background:var(--card)}
+.twob{display:flex;gap:6px}.twob button{flex:1}
 .switch{display:flex;align-items:center;gap:10px;margin-top:16px;cursor:pointer}
 .switch input{width:18px;height:18px}
 @media (max-width:1100px){aside{width:300px;min-width:300px}#drawer{width:360px}.apv{grid-template-columns:1fr}}
@@ -334,6 +354,57 @@ function capsHtml(c){const k=c.captions||{},y=k.youtube||{},H=t=>`<h5 style="fon
 ${esc(y.description||"")}
 
 Etiketler: ${esc((y.tags||[]).join(", "))}</div></details>`}
+/* ---------------- share pool (clips in Viral, carousels in Adaylar) ---------------- */
+const sDraft={};  // datetime typed but not saved yet, survives the 2.5 s refresh
+const localDT=iso=>{if(!iso)return"";const d=new Date(iso);d.setMinutes(d.getMinutes()-d.getTimezoneOffset());return d.toISOString().slice(0,16)};
+function shareStatus(i){
+  const at=i.at?fmtT(i.at):"";
+  if(i.status==="pool")return i.at?["plan",`⏰ Planlı: ${at} (üretim ~${S.lead?.[i.kind]||60} dk önce başlar)`]:["","Havuzda · plan yok"];
+  if(i.status==="producing"){const r=i.run_status;
+    if(r==="waiting")return["wait","⏸ Onayını bekliyor"+(at?` · planlı ${at}`:"")];
+    if(r==="scheduled")return["plan",`✓ Hazır · ${at}'de paylaşılacak`];
+    if(r==="error")return["err","⚠ Hata: "+(i.run_msg||"")];
+    return["run",`▶ Üretimde${at?" · planlı "+at:""}${i.run_msg?" · "+i.run_msg:""}`];}
+  if(i.status==="done")return["ok","✓ Paylaşıldı"];
+  if(i.status==="canceled")return["","✕ Reddedildi / durduruldu"];
+  return["err","⚠ Hata: "+(i.error||i.run_msg||"")];
+}
+function shareHtml(kind){
+  const all=(S.share||[]).filter(i=>i.kind===kind);
+  const live=all.filter(i=>!["done","canceled"].includes(i.status)).sort((a,b)=>(a.at||"9")<(b.at||"9")?-1:1);
+  const old=all.filter(i=>["done","canceled"].includes(i.status)).slice(-3).reverse();
+  return [...live,...old].map(i=>{const [c,t]=shareStatus(i),busy=i.status==="producing"&&["queued","running","waiting","scheduled"].includes(i.run_status),fin=["done","canceled"].includes(i.status);
+    const title=i.kind==="clip"?`<a href="${esc(i.url)}" target="_blank">${esc((i.url||"").replace(/^https?:\/\/(www\.)?/,"").slice(0,70))} ↗</a>`:esc(i.title||"");
+    return `<div class="sitem"><div class="st ${c}">${esc(t)}</div><div class="tt">${title}</div>${i.note?`<div class="why">Not: ${esc(i.note)}</div>`:""}
+      ${fin?(i.run?`<div class="srow"><button data-run="${esc(i.run)}">Üretimi göster</button><button data-sdel="${esc(i.id)}">Listeden kaldır</button></div>`:""):`
+      <div class="srow"><label title="İşaretliyse paylaşmadan önce onayına gelir"><input type="checkbox" data-sapp="${esc(i.id)}" ${i.approval?"checked":""} ${i.run_status==="waiting"||i.run_status==="scheduled"?"disabled":""}> Onay iste</label></div>
+      <div class="srow"><input type="datetime-local" data-sat="${esc(i.id)}" value="${esc(sDraft[i.id]??localDT(i.at))}">
+        <button data-splan="${esc(i.id)}">${i.at?"Planı güncelle":"Planla"}</button>${i.at?`<button data-sunplan="${esc(i.id)}" title="Planı kaldır">✕</button>`:""}</div>
+      <div class="srow"><button class="go" data-snow="${esc(i.id)}">▶ Şimdi paylaş</button>${i.run?`<button data-run="${esc(i.run)}">Göster</button>`:""}${busy?"":`<button class="danger" data-sdel="${esc(i.id)}">Sil</button>`}</div>`}
+    </div>`}).join("")||`<div class="why" style="margin-top:6px">Havuz boş.</div>`;
+}
+function wireShare(L){
+  const ed=async(body,msg)=>{try{await api("/api/share/edit",body);if(msg)toast(msg);await refresh();renderSide(true)}catch(e){toast(e.message)}};
+  L.querySelectorAll("[data-sat]").forEach(i=>i.oninput=()=>{sDraft[i.dataset.sat]=i.value});
+  L.querySelectorAll("[data-sapp]").forEach(c=>c.onchange=()=>ed({id:c.dataset.sapp,approval:c.checked}));
+  L.querySelectorAll("[data-splan]").forEach(b=>b.onclick=()=>{const id=b.dataset.splan,v=L.querySelector(`[data-sat="${id}"]`).value;
+    if(!v)return toast("Önce tarih ve saat seç");if(new Date(v)<new Date())return toast("Geçmiş bir saat seçtin; hemen paylaşmak için Şimdi paylaş'a bas");
+    delete sDraft[id];ed({id,at:v},`Planlandı: ${fmtT(v)}`)});
+  L.querySelectorAll("[data-sunplan]").forEach(b=>b.onclick=()=>{delete sDraft[b.dataset.sunplan];ed({id:b.dataset.sunplan,at:""},"Plan kaldırıldı")});
+  L.querySelectorAll("[data-snow]").forEach(b=>b.onclick=()=>{const i=S.share.find(x=>x.id===b.dataset.snow);
+    if(!confirm(i.approval?"Üretim şimdi başlasın mı? Bitince onayına gelecek, onaylayınca hemen paylaşılır.":"Üretim şimdi başlasın mı? Onay istemediğin için hazır olunca doğrudan paylaşılacak."))return;
+    ed({id:b.dataset.snow,now:true},"Başladı")});
+  L.querySelectorAll("[data-sdel]").forEach(b=>b.onclick=()=>{if(confirm("Havuzdan silinsin mi?"))ed({id:b.dataset.sdel,remove:true})});
+}
+function setList(L,html){  // skip identical re-renders; keep typed text and focus across refreshes
+  if(L._h===html&&L._n===L.innerHTML)return false;  // _n: nothing else wrote into the list meanwhile
+  const keep={},act=document.activeElement;L.querySelectorAll("input[id],textarea[id]").forEach(e=>{if(e.type!=="checkbox")keep[e.id]=e.value});
+  L.innerHTML=html;L._h=html;L._n=L.innerHTML;
+  for(const [id,v] of Object.entries(keep)){const e=L.querySelector("#"+id);if(e)e.value=v}
+  if(act?.id){const e=L.querySelector("#"+act.id);if(e){e.focus();try{e.setSelectionRange(e.value.length,e.value.length)}catch{}}}
+  if(act?.dataset?.sat){const e=L.querySelector(`[data-sat="${act.dataset.sat}"]`);if(e)e.focus()}
+  return true;
+}
 function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove("on"),5000);}
 
 const scans=()=>S.runs.filter(r=>r.kind==="scan");
@@ -406,7 +477,7 @@ function renderCanvas(){
     postId=r.id;sel=null;$("#drawer").classList.remove("on");renderAll(true)});
   if(!fitted){fit();fitted=true;}
 }
-function statusTr(s){return{queued:"sırada",running:"çalışıyor",waiting:"seni bekliyor",done:"tamamlandı",error:"hata",rejected:"reddedildi",canceled:"durduruldu"}[s]||s}
+function statusTr(s){return{scheduled:"planlı saati bekliyor",queued:"sırada",running:"çalışıyor",waiting:"seni bekliyor",done:"tamamlandı",error:"hata",rejected:"reddedildi",canceled:"durduruldu"}[s]||s}
 function apply(){$("#world").style.transform=`translate(${view.x}px,${view.y}px) scale(${view.k})`;}
 function fit(){
   WH=(kind()==="clip"?420:610)+78;
@@ -427,10 +498,10 @@ function fit(){
 })();
 
 /* ---------------- sidebar ---------------- */
-document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{tab=b.dataset.tab;document.querySelectorAll(".tabs button").forEach(x=>x.classList.toggle("on",x===b));renderSide(true)});
+document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{tab=b.dataset.tab;$("#list")._h=null;document.querySelectorAll(".tabs button").forEach(x=>x.classList.toggle("on",x===b));renderSide(true)});
 $("#scanSel").onchange=e=>{scanId=e.target.value;const po=posts().find(p=>p.scan===scanId);if(po)postId=po.id;renderAll(true)};
 $("#postSel").onchange=e=>{postId=e.target.value;const po=runById(postId);if(po?.scan&&runById(po.scan))scanId=po.scan;renderAll(true)};
-let rawCache={};const openMore=new Set();let toolFilter=null;let packCat=null;
+let rawCache={},viralCache=null,poolOpen=true;const openMore=new Set();let toolFilter=null;let packCat=null;
 const TOOLS=["ChatGPT","Claude","Gemini","Grok","Codex","Cursor","Copilot","Perplexity","Meta AI","Mistral","DeepSeek","Open models","Apple","Higgsfield","Google","Social media"];
 const toolOf=k=>k.tool||(k.tools||[])[0]||"Diğer";
 async function renderSide(force){
@@ -450,11 +521,14 @@ async function renderSide(force){
         <h4><a class="ttl" href="#" data-more="${esc(p.id)}">${esc(p.title_tr)} ▾</a></h4><p>${esc(p.headline)}</p>
         <div class="more" id="more-${esc(p.id)}" ${openMore.has(p.id)?"":"hidden"}>${p.prompts.map((x,i)=>`<p><b>${i+1}. ${esc(x.name)}</b> <i>${esc(x.sub)}</i><br><small>${esc(x.prompt)}</small></p>`).join("")}</div>
         <div class="chips">${(p.tools||[]).map(t=>`<span class="chip">${esc(t)}</span>`).join("")}</div>
-        ${p.used?"":p.run?`<button data-run="${esc(p.run)}">Üretimde · göster</button>`:`<button class="primary" data-pack="${esc(p.id)}">Bu paketi üret</button>`}
+        ${p.used?"":p.run?`<button data-run="${esc(p.run)}">Üretimde · göster</button>`:(S.share||[]).some(i=>i.candidate?.id===p.id&&["pool","producing"].includes(i.status))?`<button disabled>📌 Carousel havuzunda</button>`:
+          `<div class="twob"><button class="primary" data-pack="${esc(p.id)}">Bu paketi üret</button><button data-ppool="${esc(p.id)}">📌 Havuza at</button></div>`}
       </div>`).join("");
     L.querySelectorAll("[data-pcat]").forEach(b=>b.onclick=()=>{packCat=b.dataset.pcat||null;renderSide(true)});
     L.querySelectorAll("[data-more]").forEach(a=>a.onclick=e=>{e.preventDefault();const id=a.dataset.more;openMore.has(id)?openMore.delete(id):openMore.add(id);renderSide(true)});
     L.querySelectorAll("[data-run]").forEach(b=>b.onclick=()=>{postId=b.dataset.run;renderAll(true)});
+    L.querySelectorAll("[data-ppool]").forEach(b=>b.onclick=async()=>{b.disabled=true;
+      try{await api("/api/share/add",{kind:"post",pack:b.dataset.ppool,approval:S.settings.approval});toast("Havuza atıldı: Adaylar sekmesindeki Carousel havuzundan planla");await refresh();renderSide(true)}catch(e){toast(e.message);b.disabled=false}});
     L.querySelectorAll("[data-pack]").forEach(b=>b.onclick=async()=>{const p=all.find(x=>x.id===b.dataset.pack);
       if(!confirm(`"${p.title_tr}"\n\nBu prompt paketi için içerik, carousel ve video üretimi başlasın mı?`))return;
       b.disabled=true;try{const r=await api("/api/pack",{pack:p.id});postId=r.run;L.dataset.t="";await refresh();openNode("write")}catch(e){toast(e.message);b.disabled=false}});
@@ -469,21 +543,31 @@ async function renderSide(force){
     return;
   }
   if(tab==="viral"){
-    if(!force&&L.dataset.t==="viral")return;L.dataset.t="viral";
+    L.dataset.t="viral";
     const clips=posts().filter(p=>p.kind==="clip").slice(0,6);
-    const v=await api("/api/viral").catch(()=>({}));
-    L.innerHTML=`<div class="cand"><h4>🎞 Viral Reel yap</h4>
-      <p>X'te (veya başka bir sitede) beğendiğin videonun bağlantısını yapıştır. Video indirilir, Claude hook + caption yazar, çerçevelenir, onayına gelir.</p>
-      <input id="clipUrl" placeholder="https://x.com/.../status/..." style="width:100%;margin:8px 0;padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--text)">
-      <textarea id="clipNote" placeholder="İsteğe bağlı not: hook'ta neye odaklansın?" style="width:100%;min-height:54px;padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--text)"></textarea>
-      <p class="why">Kaynak gösterilir ama bu izin sayılmaz: mümkünse üreticiye DM atıp izin iste.</p>
-      <button class="primary" id="clipGo">Reel yap</button></div>`+
-      (clips.length?`<div class="note">Son viral Reel'ler</div>`+clips.map(c=>`<div class="hist"><a href="#" data-run="${esc(c.id)}"><b>${esc((c.title||c.url||"").slice(0,90))}</b></a><br><small>${fmtT(c.created)} · ${statusTr(c.status)}</small></div>`).join(""):"")+
+    if(force||!viralCache||Date.now()-viralCache._t>300000){viralCache=await api("/api/viral").catch(()=>({}));viralCache._t=Date.now();}
+    const v=viralCache;
+    const html=`<div class="pool"><h4>🎞 Viral video havuzu</h4>
+      <p>Beğendiğin videoların linklerini buraya at. Her birini <b>Şimdi paylaş</b> ya da <b>Planla</b> ile zamanla; planlı saatte ben paylaşırım (üretim ~${S.lead?.clip||45} dk önce başlar). <b>Onay iste</b> işaretliyse önce sana gelir, değilse onaysız paylaşılır.</p>
+      <div class="add"><input id="clipUrl" placeholder="https://x.com/.../status/...">
+        <textarea id="clipNote" placeholder="İsteğe bağlı not: hook'ta neye odaklansın?" style="min-height:44px"></textarea>
+        <div class="srow" style="margin:0"><label><input type="checkbox" id="clipApp" ${S.settings.approval?"checked":""}> Onay iste</label></div>
+        <div class="twob"><button class="primary" id="clipAdd">+ Havuza ekle</button><button class="go" id="clipGo">▶ Şimdi paylaş</button></div></div>
+      ${shareHtml("clip")}
+      <p class="why" style="margin-top:8px">Kaynak gösterilir ama bu izin sayılmaz: mümkünse üreticiye DM atıp izin iste.</p></div>`+
+      (clips.length?`<div class="note">Son viral Reel üretimleri</div>`+clips.map(c=>`<div class="hist"><a href="#" data-run="${esc(c.id)}"><b>${esc((c.title||c.url||"").slice(0,90))}</b></a><br><small>${fmtT(c.created)} · ${statusTr(c.status)}</small></div>`).join(""):"")+
       `<div class="note">Bugün trend olan AI videoları (YouTube sinyali: fikir için, buradan indirilmez)</div>`+
       ((v.youtube_signal||[]).slice(0,15).map(x=>`<div class="raw"><span class="tier signal">${(x.views/1000).toFixed(0)}B</span><a href="${esc(x.url)}" target="_blank">${esc(x.title)}</a><small>${esc(x.channel)}</small></div>`).join("")||`<div class="empty">Henüz sinyal yok (taramayla birlikte toplanır).</div>`);
-    $("#clipGo").onclick=async()=>{const url=$("#clipUrl").value.trim();if(!url)return toast("Önce bir bağlantı yapıştır");
-      $("#clipGo").disabled=true;try{const r=await api("/api/clip",{url,note:$("#clipNote").value});postId=r.run;L.dataset.t="";await refresh();openNode("fetch")}catch(e){toast(e.message);$("#clipGo").disabled=false}};
-    L.querySelectorAll("[data-run]").forEach(a=>a.onclick=e=>{e.preventDefault();postId=a.dataset.run;renderAll(true)});
+    const appKeep=$("#clipApp")?.checked;
+    if(!setList(L,html))return;
+    if(appKeep!==undefined)$("#clipApp").checked=appKeep;
+    const add=async now=>{const url=$("#clipUrl").value.trim();if(!url)return toast("Önce bir bağlantı yapıştır");
+      try{const r=await api("/api/share/add",{kind:"clip",url,note:$("#clipNote").value,approval:$("#clipApp").checked});
+        if(now)await api("/api/share/edit",{id:r.id,now:true});
+        $("#clipUrl").value="";$("#clipNote").value="";toast(now?"Üretim başladı":"Havuza eklendi: Planla ile saat ver ya da Şimdi paylaş'a bas");await refresh();renderSide(true)}catch(e){toast(e.message)}};
+    $("#clipAdd").onclick=()=>add(false);$("#clipGo").onclick=()=>add(true);
+    wireShare(L);
+    L.querySelectorAll("a[data-run],button[data-run]").forEach(a=>a.onclick=e=>{e.preventDefault();postId=a.dataset.run;renderAll(true)});
     return;
   }
   const sc=runById(scanId);
@@ -511,7 +595,12 @@ async function renderSide(force){
   const chips=`<div class="tchips"><button class="tchip ${toolFilter?"":"on"}" data-tool="">Tümü ${list.length}</button>${names.map(t=>
     `<button class="tchip ${toolFilter===t?"on":""} ${counts[t]?"":"zero"}" data-tool="${esc(t)}" ${counts[t]?"":"disabled title='Bu taramada haber yok'"}>${esc(t)} ${counts[t]||0}</button>`).join("")}</div>`;
   const shown=toolFilter?list.filter(k=>toolOf(k)===toolFilter):list;
-  L.innerHTML=bgLine+chips+(c.notes_tr?`<div class="note">${esc(c.notes_tr)}</div>`:"")+shown.map(k=>`
+  const nPool=(S.share||[]).filter(i=>i.kind==="post"&&!["done","canceled"].includes(i.status)).length;
+  const poolBox=`<details class="pool" ${poolOpen?"open":""} id="poolBox"><summary style="cursor:pointer"><b>📌 Carousel havuzu</b> · ${nPool} içerik</summary>
+    <p style="margin-top:6px">Aşağıdaki haberlerden (ya da Prompt paketleri sekmesinden) <b>Havuza at</b> ile seçtiklerin burada toplanır. <b>Planla</b> ile saat ver (üretim ~${S.lead?.post||90} dk önce başlar) ya da <b>Şimdi paylaş</b>. <b>Onay iste</b> işaretliyse önce sana gelir.</p>
+    ${shareHtml("post")}</details>`;
+  const pooled=Object.fromEntries((S.share||[]).filter(i=>i.kind==="post"&&["pool","producing"].includes(i.status)).map(i=>[i.candidate?.id,i]));
+  const html=poolBox+bgLine+chips+(c.notes_tr?`<div class="note">${esc(c.notes_tr)}</div>`:"")+shown.map(k=>`
    <div class="cand ${chosen[k.id]?"chosen":""}">
     <div class="top">${k.new?`<span class="tag news" style="background:#ffd23f;color:#111">YENİ</span>`:""}<span class="score">${esc(k.score)}</span><span class="tag ${k.kind==="news"?"news":k.kind==="prompts"?"pp":""}">${{news:"HABER",prompts:"PROMPT PAKETİ"}[k.kind]||"EVERGREEN"}</span><span class="chip" style="font-size:11px;padding:0 7px">${esc(toolOf(k))}</span>
       ${k.published?`<span>${esc(k.published)}</span>`:""}${k.seen_before?`<span title="Önceki taramada da listelenmişti">↺ önceden</span>`:""}</div>
@@ -520,8 +609,14 @@ async function renderSide(force){
     ${(k.sources||[])[0]?`<a href="#" class="moreBtn" data-more="${esc(k.id)}">${openMore.has(k.id)?"Detayı gizle":"Gönderi planını göster"}</a>`:""}${k.why_tr?`<p class="why">💡 ${esc(k.why_tr)}</p>`:""}
     <div class="chips">${(k.tools||[]).map(t=>`<span class="chip">${esc(t)}</span>`).join("")}</div>
     <div class="srcs">${(k.sources||[]).length?"Kaynaklar: ":""}${(k.sources||[]).map(u=>`<a href="${esc(u)}" target="_blank">${esc(host(u))}</a>`).join("")}${(k.hints||[]).map(u=>`<a href="${esc(u)}" target="_blank" style="color:var(--muted)" title="Resmi olmayan ipucu kaynağı">${esc(host(u))}</a>`).join("")}</div>
-    ${chosen[k.id]?`<button data-run="${esc(chosen[k.id])}">✓ Seçildi · üretimi göster</button>`:`<button class="primary" data-pick="${esc(k.id)}">Bu haberi seç</button>`}
+    ${pooled[k.id]&&!chosen[k.id]?`<button disabled>📌 Havuzda${pooled[k.id].at?" · "+fmtT(pooled[k.id].at):""}</button>`:chosen[k.id]?`<button data-run="${esc(chosen[k.id])}">✓ Seçildi · üretimi göster</button>`:
+      `<div class="twob"><button class="primary" data-pick="${esc(k.id)}">Bu haberi seç</button><button data-pool="${esc(k.id)}">📌 Havuza at</button></div>`}
    </div>`).join("");
+  if(!setList(L,html))return;
+  $("#poolBox").ontoggle=e=>{poolOpen=e.target.open};
+  wireShare(L);
+  L.querySelectorAll("[data-pool]").forEach(b=>b.onclick=async()=>{b.disabled=true;
+    try{await api("/api/share/add",{kind:"post",scan:scanId,candidate:b.dataset.pool,approval:S.settings.approval});poolOpen=true;toast("Havuza atıldı: yukarıdaki Carousel havuzundan planla ya da şimdi paylaş");await refresh()}catch(e){toast(e.message);b.disabled=false}});
   L.querySelectorAll("[data-pick]").forEach(b=>b.onclick=async()=>{
     const k=list.find(x=>x.id===b.dataset.pick);
     if(!confirm(`"${k.title}"\n\nBu haber için içerik, carousel ve Reel üretimi başlasın mı?`))return;
@@ -546,7 +641,7 @@ async function renderDrawer(){
   const meta=S.flows[f].find(x=>x.id===sel);
   $("#dIco").textContent=ICONS[sel];$("#dTitle").textContent=meta.label;
   const B=$("#dBody"),keepScroll=B.querySelector("pre.log");const atBottom=!keepScroll||keepScroll.scrollTop+keepScroll.clientHeight>=keepScroll.scrollHeight-20;
-  let h=`<h5>Durum</h5><div class="kv"><b>${statusTr(n.status)==="idle"?"Bekliyor":({idle:"Bekliyor",running:"Çalışıyor",done:"Tamamlandı",error:"Hata",waiting:"Seni bekliyor"}[n.status])}</b>${n.started?` · <span>başladı ${fmtT(n.started)}</span>`:""}${n.started?` · <span>${dur(n)}</span>`:""}</div>`;
+  let h=`<h5>Durum</h5><div class="kv"><b>${statusTr(n.status)==="idle"?"Bekliyor":({idle:"Bekliyor",running:"Çalışıyor",done:"Tamamlandı",error:"Hata",waiting:"Seni bekliyor",scheduled:"Planlı saati bekliyor"}[n.status])}</b>${n.started?` · <span>başladı ${fmtT(n.started)}</span>`:""}${n.started?` · <span>${dur(n)}</span>`:""}</div>`;
   if(n.msg)h+=`<div class="kv" style="margin-top:6px">${esc(n.msg)}</div>`;
   const acts=[];
   if(r&&n.status==="running")acts.push(`<button class="danger" data-a="cancel">■ Durdur</button>`);
@@ -554,6 +649,7 @@ async function renderDrawer(){
   if(r&&["error","done"].includes(n.status)&&!["running","queued"].includes(r.status)&&!(f!=="scan"&&posted&&["write","cover","carousel","qa","approve","upload","fetch","hook","caption","frame"].includes(sel)))
     acts.push(`<button data-a="retry">↻ ${n.status==="error"?"Tekrar dene":"Buradan yeniden çalıştır"}</button>`);
   if(sel==="approve"&&n.status==="waiting")acts.push(`<button class="go" data-a="preview">Önizle ve onayla</button>`);
+  if(sel==="approve"&&n.status==="scheduled"&&r.share)acts.push(`<button class="go" data-a="shareNow">▶ Beklemeden şimdi paylaş</button>`,`<button class="danger" data-a="cancel">■ İptal et</button>`);
   if(acts.length)h+=`<div class="acts">${acts.join("")}</div>`;
   if(f!=="scan"&&r){
     if(!detail||detail.id!==rid||detail._t<Date.now()-2500){detail=await api("/api/run?id="+encodeURIComponent(rid));detail._t=Date.now();}
@@ -603,6 +699,7 @@ async function renderDrawer(){
       if(a==="cancel"){if(confirm("Bu adım durdurulsun mu?"))await api("/api/cancel",{run:rid});}
       if(a==="retry")await api("/api/retry",{run:rid,node:sel});
       if(a==="preview")return openApproval(rid);
+      if(a==="shareNow"){if(!confirm("Planlı saati beklemeden şimdi paylaşılsın mı?"))return;await api("/api/share/edit",{id:r.share,now:true});}
       await refresh();
     }catch(e){toast(e.message)}
   });
@@ -611,9 +708,11 @@ function zoom(src){$("#lightbox img").src=src;$("#lightbox").classList.add("on")
 $("#lightbox").onclick=()=>$("#lightbox").classList.remove("on");
 
 /* ---------------- approval ---------------- */
-let apRun=null;
+let apRun=null,apPlan=null;
 async function openApproval(rid){
   apRun=rid;const d=await api("/api/run?id="+encodeURIComponent(rid));const c=d.content_data||{},q=d.qa_result||{};
+  apPlan=d.publish_at&&new Date(d.publish_at)>new Date()?d.publish_at:null;
+  $("#apGo").textContent=apPlan?`✓ Onayla · ${fmtT(apPlan)}'de paylaşılsın`:"✓ Yayınla (Instagram + Facebook)";
   $("#apTitle").textContent=d.title||c.topic||"Önizleme";
   if(d.kind==="clip"){
     $("#apState").textContent=`Viral Reel · ${d.clip?.secs||""} sn · kaynak @${d.clip?.uploader_id||""}`;
@@ -643,7 +742,7 @@ async function openApproval(rid){
 }
 const closeAp=()=>{dismissed.add(apRun);$("#apModal").classList.remove("on");$("#apBody").innerHTML=""};
 $("#apClose").onclick=closeAp;
-$("#apGo").onclick=async()=>{if(!confirm("Bu gönderi şimdi Instagram ve Facebook'a paylaşılacak. Emin misin?"))return;
+$("#apGo").onclick=async()=>{if(!confirm(apPlan?`Onaylıyorsun: bu gönderi planlı saatte (${fmtT(apPlan)}) otomatik paylaşılacak.`:"Bu gönderi şimdi Instagram ve Facebook'a paylaşılacak. Emin misin?"))return;
   try{await api("/api/approve",{run:apRun});closeAp();postId=apRun;await refresh();openNode("upload")}catch(e){toast(e.message)}};
 $("#apRev").onclick=()=>{$("#revise").classList.add("on");$("#revNote").focus()};
 $("#revCancel").onclick=()=>$("#revise").classList.remove("on");
@@ -757,7 +856,7 @@ function renderAll(forceSide){
   if(!scanId||!runById(scanId))scanId=sc[0]?.id||null;
   if(!postId||!runById(postId))postId=(po.find(p=>["running","queued","waiting"].includes(p.status))||po[0])?.id||null;
   $("#scanSel").innerHTML=sc.length?sc.slice(0,12).map(r=>`<option value="${esc(r.id)}" ${r.id===scanId?"selected":""}>${fmtT(r.created)} · ${r.candidates?.candidates?r.candidates.candidates.length+" aday":statusTr(r.status)}</option>`).join(""):`<option>Henüz tarama yok</option>`;
-  $("#postSel").innerHTML=po.length?po.slice(0,20).map(r=>`<option value="${esc(r.id)}" ${r.id===postId?"selected":""}>${{running:"▶",queued:"…",waiting:"⏸",done:"✓",error:"!",rejected:"✕",canceled:"■"}[r.status]||""} ${r.kind==="clip"?"🎞 ":""}${esc((r.title||r.id).slice(0,60))}</option>`).join(""):`<option>Henüz üretim yok</option>`;
+  $("#postSel").innerHTML=po.length?po.slice(0,20).map(r=>`<option value="${esc(r.id)}" ${r.id===postId?"selected":""}>${{running:"▶",queued:"…",waiting:"⏸",scheduled:"⏰",done:"✓",error:"!",rejected:"✕",canceled:"■"}[r.status]||""} ${r.kind==="clip"?"🎞 ":""}${esc((r.title||r.id).slice(0,60))}</option>`).join(""):`<option>Henüz üretim yok</option>`;
   $("#nextScan").innerHTML=`Sonraki tarama <b>${fmtT(S.next_scan)}</b>`;
   $("#gatePill").innerHTML=`Onay: <b>${S.settings.approval?"açık":"kapalı"}</b>`;
   const wait=po.filter(p=>p.nodes.approve?.status==="waiting");

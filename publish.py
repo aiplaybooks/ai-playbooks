@@ -32,6 +32,7 @@ import sys, os, re, json, time, shutil, pathlib, argparse, subprocess, urllib.re
 from datetime import datetime, timezone
 from PIL import Image, ImageFilter, ImageEnhance
 import captions as CAP
+import youtube as YT
 
 ROOT = pathlib.Path(__file__).parent.resolve()
 GRAPH = "https://graph.facebook.com/v25.0"
@@ -405,21 +406,29 @@ def yt_short(p):
     if not vid:  # one upload only: a retry after this point never uploads a second copy
         tok = yt_access(p); f = p.pub / "reel.mp4"
         if not f.exists(): prepare(p)
-        body = json.dumps({"snippet": yt_meta(p), "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False}}).encode()
-        req = urllib.request.Request("https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status",
-                                     data=body, method="POST", headers={
-            "Authorization": f"Bearer {tok}", "Content-Type": "application/json; charset=UTF-8",
-            "X-Upload-Content-Type": "video/mp4", "X-Upload-Content-Length": str(f.stat().st_size)})
-        try:
-            with urllib.request.urlopen(req, timeout=60) as r: session = r.headers["Location"]
-        except urllib.error.HTTPError as ex:
-            raise PublishError(f"YouTube upload start: {(ex.read() or b'')[:400].decode('utf-8', 'replace')}") from None
+        # channel rules (youtube.py): AI disclosure yes, paid promotion no, location US, "ai" tags first
+        meta = YT.upload_body(yt_meta(p), {"privacyStatus": "public", "selfDeclaredMadeForKids": False})
+        session = None
+        for body in (meta, YT.drop_location(meta)):  # the location fields are deprecated: never let them block an upload
+            req = urllib.request.Request("https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part="
+                                         + YT.parts(body), data=json.dumps(body).encode(), method="POST", headers={
+                "Authorization": f"Bearer {tok}", "Content-Type": "application/json; charset=UTF-8",
+                "X-Upload-Content-Type": "video/mp4", "X-Upload-Content-Length": str(f.stat().st_size)})
+            try:
+                with urllib.request.urlopen(req, timeout=60) as r: session = r.headers["Location"]; break
+            except urllib.error.HTTPError as ex:
+                err = (ex.read() or b"")[:400].decode("utf-8", "replace")
+                if "recordingDetails" not in body: raise PublishError(f"YouTube upload start: {err}") from None
+                say(f"yt_short: upload with location refused, retrying without it ({err[:160]})")
         req = urllib.request.Request(session, data=f.read_bytes(), method="PUT", headers={"Content-Type": "video/mp4"})
         try:
             with urllib.request.urlopen(req, timeout=600) as r: v = json.loads(r.read())
         except urllib.error.HTTPError as ex:
             raise PublishError(f"YouTube upload: {(ex.read() or b'')[:400].decode('utf-8', 'replace')}") from None
         vid = v["id"]; p.state["yt_short_video"] = vid; p.save()
+        if (v.get("status") or {}).get("containsSyntheticMedia"):  # GET never returns the flag: remember it (youtube.py)
+            done = set(json.loads(YT.DONE.read_text(encoding="utf-8"))) if YT.DONE.exists() else set()
+            YT.DONE.parent.mkdir(exist_ok=True); YT.DONE.write_text(json.dumps(sorted(done | {vid})), encoding="utf-8")
     tok = yt_access(p)
     req = urllib.request.Request(f"https://www.googleapis.com/youtube/v3/videos?part=status&id={vid}",
                                  headers={"Authorization": f"Bearer {tok}"})
@@ -438,8 +447,15 @@ def yt_short(p):
             thumb = f"not set: {ex}"
         p.state["yt_thumb"] = thumb; p.save()
     say(f"yt_short: cover {thumb}")
+    playlist = p.state.get("yt_playlist")
+    if not playlist:  # never fails the step (e.g. a token from before the `youtube` scope)
+        try: playlist = "added " + YT.add_to_playlist(tok, vid)
+        except YT.YTError as ex: playlist = f"not added: {str(ex)[:160]}"
+        if playlist.startswith("added"): p.state["yt_playlist"] = playlist; p.save()
+    say(f"yt_short: playlist {playlist}")
     link = f"https://youtube.com/shorts/{vid}"
-    p.done("yt_short", id=vid, link=link, privacy=privacy, cover=thumb, studio=f"https://studio.youtube.com/video/{vid}/edit")
+    p.done("yt_short", id=vid, link=link, privacy=privacy, cover=thumb, playlist=playlist,
+           studio=f"https://studio.youtube.com/video/{vid}/edit")
     say(f"yt_short: {link} ({privacy}" + (": YouTube Studio'dan herkese açık yap)" if privacy != "public" else ")"))
 
 
