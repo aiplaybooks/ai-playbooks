@@ -391,7 +391,10 @@ def slide(s, n, slides, data, ds):
         return (f'{label(s.get("label", ""), ds)}<div class="v">{e(s["value"])}</div>'
                 f'<h1 style="font-size:{size(s["title"], 90, ds)}px">{e(s["title"])}</h1>' + (f'<div class="sub">{rich(s["sub"])}</div>' if s.get("sub") else ""))
     if t == "limits":
-        li = "".join(f'<div class="li"><div class="x">!</div><div>{rich(x)}</div></div>' for x in s["items"])
+        # items are strings; the writer sometimes sends [title, detail] pairs like `list` -> bold title + detail
+        li = "".join(f'<div class="li"><div class="x">!</div><div>'
+                     + (f'<b>{e(x[0])}</b> — {rich(x[1])}' if isinstance(x, (list, tuple)) and len(x) == 2 else rich(" ".join(map(str, x)) if isinstance(x, (list, tuple)) else x))
+                     + '</div></div>' for x in s["items"])
         cta = (f'<div class="ctab"><div class="t">{e(s["cta"])}</div><div class="h">{e(data["handle"])}</div></div>' if s.get("cta") else "")
         return f'{label(s.get("label", ""), ds)}<h1 style="font-size:{size(s["title"], 106, ds)}px">{e(s["title"])}</h1><div class="lim">{li}</div>{cta}'
     if t == "cta":
