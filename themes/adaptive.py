@@ -365,7 +365,7 @@ def slide(s, n, slides, data, ds):
         return f'{label(s.get("label", ""), ds)}<h1 style="font-size:{size(s["title"], 100, ds)}px">{e(s["title"])}</h1><div class="tbl box">{rows}</div>'
     if t == "steps":
         st = "".join(f'<div class="step box"><div class="no">{i}</div><div><div class="t">{rich(a)}</div><div class="d">{rich(d)}</div></div></div>'
-                     for i, (a, d) in enumerate(s["steps"], 1))
+                     for i, (a, d) in enumerate(s.get("steps", s.get("items", [])), 1))
         return f'{label(s.get("label", ""), ds)}<h1 style="font-size:{size(s["title"], 106, ds)}px">{e(s["title"])}</h1><div class="st">{st}</div>'
     if t == "list":
         bul = ds["icon"] or DOT
