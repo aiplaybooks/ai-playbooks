@@ -237,10 +237,10 @@ def sh(run, nid, cmd, env=None):
     return tail
 
 
-def claude(run, nid, template, **fields):
+def claude(run, nid, template, prompt_name=None, **fields):
     """Run Claude Code headless with a prompt from prompts/, stream a readable log."""
     prompt = (ROOT / "prompts" / f"{template}.md").read_text(encoding="utf-8").format(**fields)
-    (run.dir / f"{nid}.prompt.md").write_text(prompt, encoding="utf-8")
+    (run.dir / f"{prompt_name or nid}.prompt.md").write_text(prompt, encoding="utf-8")
     env = dict(os.environ, PYTHONIOENCODING="utf-8"); env.pop("CLAUDECODE", None)
     cmd = [CLAUDE, "-p", "--output-format", "stream-json", "--verbose", "--permission-mode", "acceptEdits",
            "--allowedTools", *CLAUDE_TOOLS]
@@ -676,28 +676,111 @@ NODES = {"trigger": n_trigger, "collect": n_collect, "scout": n_scout, "pool": n
          "yt_short": publish_step("yt_short"), "comments": publish_step("comments"), "dm": publish_step("dm"), "log": n_log}
 
 
+# ---------------------------------------------------------------- self-repair (owner, 2026-09-27: "no more errors for me")
+# A failing step first retries on its own when it talks to a platform (hiccups), then the doctor (prompts/doctor.md,
+# Claude) finds the root cause, fixes the content or makes our code robust, verifies it, and the step reruns. Only
+# what can't be fixed from here (expired token, private video, no Claude usage left ...) reaches the owner, with
+# what to do. Every repair is kept in the run (`repairs`) and code fixes are committed.
+
+NO_REPAIR = {"trigger", "choose", "approve"}  # the owner's steps
+PUBLISH_NODES = {"upload", "ig_carousel", "ig_reel", "fb_photos", "fb_reel", "yt_short", "comments", "dm", "log"}
+RETRY_WAITS = [60, 300]  # seconds before plain retries of a publish step (publish.py never posts twice)
+MAX_REPAIRS = 2
+
+
+def log_tail(run, nid, n=80):
+    f = run.dir / f"{nid}.log"
+    return "\n".join(f.read_text(encoding="utf-8", errors="replace").splitlines()[-n:]) if f.exists() else "(empty)"
+
+
+def commit_repair(run, r):
+    """Commit the code the doctor fixed (content files are committed by the log step when the post goes out)."""
+    files = [f for f in r.get("files") or [] if f and not f.startswith(("content/", "runs/", "output/")) and ".env" not in f
+             and (ROOT / f).resolve().is_relative_to(ROOT) and (ROOT / f).exists()]
+    if not files: return
+    msg = f"doctor: {r.get('cause_tr') or 'otomatik onarım'} ({run.id} / {r['node']})\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    for args in (["add", *files], ["commit", "-q", "-m", msg, "--", *files], ["push", "-q"]):
+        p = subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace",
+                           creationflags=NO_WINDOW)
+        run.log(r["node"], f"$ git {args[0]}: {(p.stdout + p.stderr).strip()[:300]}")
+        if p.returncode: break
+
+
+def repair(run, nid, label, ex, attempt):
+    run.node(nid, msg=f"Otomatik onarım {attempt}/{MAX_REPAIRS}: {str(ex)[:100]}")
+    run.log(nid, f"\n----- otomatik onarım {attempt} {iso()} -----")
+    res = run.dir / f"doctor_{nid}.json"; res.unlink(missing_ok=True)
+    hist = [{k: r.get(k) for k in ("cause_tr", "changes", "kind")} for r in run.s.get("repairs", []) if r.get("node") == nid]
+    try: out = out_dir(run).relative_to(ROOT).as_posix() if run.s.get("content") else "(none)"
+    except Exception: out = "(none)"
+    try:
+        claude(run, nid, "doctor", prompt_name=f"doctor_{nid}", run_id=run.id, kind=run.s["kind"], node=nid, label=label,
+               attempt=attempt, content=run.s.get("content") or "(none: this flow has no content file)", out=out,
+               error=f"{type(ex).__name__}: {str(ex)[:800]}", history=json.dumps(hist, ensure_ascii=False) if hist else "none",
+               log=log_tail(run, nid).replace("```", "'''"))
+        r = read_json(res, {}) or {"fixed": False, "retry": False, "kind": "unknown", "cause_tr": "onarım sonucu yazılmadı"}
+    except Canceled: raise
+    except Exception as e2:
+        r = {"fixed": False, "retry": False, "kind": "external", "cause_tr": f"onarım çalışamadı: {str(e2)[:160]}"}
+    r.update(node=nid, at=iso(), error=str(ex)[:300])
+    with LOCK: run.s.setdefault("repairs", []).append(r); run.save()
+    slog(run.id, nid, "repair", attempt, r.get("kind"), r.get("fixed"), r.get("cause_tr"))
+    if r.get("kind") == "code" and r.get("fixed"):
+        try: commit_repair(run, r)
+        except Exception as e3: run.log(nid, f"commit: {e3}")
+    return r
+
+
+def wait_or_cancel(run, secs):
+    for _ in range(int(secs)):
+        if run.id in CANCELED: raise Canceled()
+        time.sleep(1)
+
+
 def execute(run):
-    """Run the flow's nodes from the first one that isn't done. Stops at a waiting node or an error."""
+    """Run the flow's nodes from the first one that isn't done. Stops at a waiting node or an error that the
+    self-repair couldn't fix."""
     run.status("running"); CANCELED.discard(run.id)
     for nid, label, _ in FLOWS[run.s["kind"]]:
         if run.s["nodes"][nid]["status"] == "done": continue
         run.node(nid, status="running", started=iso(), ended=None, msg="")
-        t0 = time.time()
-        try:
-            msg = NODES[nid](run)
-        except Canceled:
-            run.node(nid, status="error", ended=iso(), msg="Durduruldu"); run.status("canceled"); return
-        except Exception as ex:  # any failure: show it on the node, keep the rest for a retry
-            run.log(nid, f"HATA: {type(ex).__name__}: {ex}")
-            run.node(nid, status="error", ended=iso(), msg=str(ex)[:300]); run.status("error")
-            slog(run.id, nid, "error:", ex)
-            if run.s["kind"] not in BACKGROUND:  # background errors show up in the next delivery's notes instead
-                notify("AI Playbooks: hata", f"{label}: {str(ex)[:120]}")
-                TG.event("error", run, label=label, node=nid, msg=str(ex))
-            return
+        t0 = time.time(); waits = list(RETRY_WAITS) if nid in PUBLISH_NODES else []; repairs = []
+        max_rep = 0 if nid in NO_REPAIR else 1 if run.s["kind"] in BACKGROUND else MAX_REPAIRS
+        while True:
+            try:
+                msg = NODES[nid](run); break
+            except Canceled:
+                run.node(nid, status="error", ended=iso(), msg="Durduruldu"); run.status("canceled"); return
+            except Exception as ex:
+                run.log(nid, f"HATA: {type(ex).__name__}: {ex}")
+                slog(run.id, nid, "error:", ex)
+                try:
+                    if run.id in CANCELED: raise Canceled()
+                    if waits:  # platform hiccup? same step again after a pause
+                        w = waits.pop(0)
+                        run.node(nid, msg=f"Geçici sorun, {w // 60} dk sonra tekrar deneniyor")
+                        run.log(nid, f"----- {w} sn sonra tekrar deneniyor -----")
+                        wait_or_cancel(run, w); continue
+                    if len(repairs) < max_rep:
+                        r = repair(run, nid, label, ex, len(repairs) + 1); repairs.append(r)
+                        if r.get("retry"):
+                            run.node(nid, msg=f"Onarıldı, tekrar çalışıyor: {r.get('cause_tr', '')[:100]}"); continue
+                except Canceled:
+                    run.node(nid, status="error", ended=iso(), msg="Durduruldu"); run.status("canceled"); return
+                last = repairs[-1] if repairs else {}
+                why = last.get("cause_tr") or str(ex)
+                todo = last.get("owner_action_tr") or ""
+                text = f"{why}" + (f" · Yapman gereken: {todo}" if todo else "") + (f" ({len(repairs)} otomatik onarım denendi)" if repairs else "")
+                run.node(nid, status="error", ended=iso(), msg=text[:400]); run.status("error")
+                if run.s["kind"] not in BACKGROUND:  # background errors show up in the next delivery's notes instead
+                    notify("AI Playbooks: yardım gerekiyor", f"{label}: {text[:160]}")
+                    TG.event("error", run, label=label, node=nid, msg=text)
+                return
         if run.s["nodes"][nid]["status"] in ("waiting", "scheduled"):
             run.status(run.s["nodes"][nid]["status"]); return
-        run.node(nid, status="done", ended=iso(), msg=msg or "", secs=round(time.time() - t0))
+        fixed = [r for r in repairs if r.get("retry")]
+        run.node(nid, status="done", ended=iso(), secs=round(time.time() - t0),
+                 msg=(msg or "") + (f" · 🔧 kendi onardı: {fixed[-1].get('cause_tr', '')[:80]}" if fixed else ""))
     run.status("done")
 
 

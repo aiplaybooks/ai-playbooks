@@ -283,6 +283,13 @@ candidate (and approves the preview), everything else is automatic.
   applies anyway). Windows toasts when candidates are ready / approval needed / errors.
 - Claude steps run with `--permission-mode acceptEdits` and an allowlist (web, file tools, python carousel/reel/news).
 - A failed node shows red; "Tekrar dene" resumes from that node. publish.py never double-posts on a retry.
+- **Self-repair** (owner, 2026-09-27: "the system debugs itself, I don't want to see errors"): in `execute()` a failing
+  step first retries publish steps after 1 and 5 min (platform hiccups), then runs the **doctor** (`prompts/doctor.md`,
+  up to 2 rounds; 1 for background jobs; never for trigger/choose/approve): Claude reads the log, fixes the content JSON
+  or makes our code robust, verifies by rerunning the render command, writes `runs/<id>/doctor_<node>.json`, and the
+  step reruns. Code fixes are committed as "doctor: ..." (`commit_repair`). Repairs are kept in the run's `repairs`
+  and shown in the node drawer. Only unfixable (external) problems reach the owner, with "Yapman gereken".
+  Tested 2026-09-27 on a broken copy (steps→items): fixed in 50 s (commit 3a0ccec).
 
 ## Where we left off (2026-09-24)
 **First real post is live** (Gemini 3.8 TTS, adaptive theme, 2026-09-24 21:00): IG carousel + Reel, FB photo post + Reel,

@@ -643,6 +643,8 @@ async function renderDrawer(){
   const B=$("#dBody"),keepScroll=B.querySelector("pre.log");const atBottom=!keepScroll||keepScroll.scrollTop+keepScroll.clientHeight>=keepScroll.scrollHeight-20;
   let h=`<h5>Durum</h5><div class="kv"><b>${statusTr(n.status)==="idle"?"Bekliyor":({idle:"Bekliyor",running:"Çalışıyor",done:"Tamamlandı",error:"Hata",waiting:"Seni bekliyor",scheduled:"Planlı saati bekliyor"}[n.status])}</b>${n.started?` · <span>başladı ${fmtT(n.started)}</span>`:""}${n.started?` · <span>${dur(n)}</span>`:""}</div>`;
   if(n.msg)h+=`<div class="kv" style="margin-top:6px">${esc(n.msg)}</div>`;
+  const reps=(r?.repairs||[]).filter(x=>x.node===sel);
+  if(reps.length)h+=`<h5>🔧 Otomatik onarımlar</h5><ul class="clean">${reps.map(x=>`<li>${fmtT(x.at)} · <b>${x.retry?"onardı":"onaramadı"}</b>: ${esc(x.cause_tr||"")}${(x.changes||[]).length?"<br><small>"+x.changes.map(esc).join("<br>")+"</small>":""}${x.owner_action_tr?`<br><b>Yapman gereken:</b> ${esc(x.owner_action_tr)}`:""}</li>`).join("")}</ul>`;
   const acts=[];
   if(r&&n.status==="running")acts.push(`<button class="danger" data-a="cancel">■ Durdur</button>`);
   const posted=r&&(r.nodes.ig_carousel?.status==="done"||r.nodes.ig_reel?.status==="done");
