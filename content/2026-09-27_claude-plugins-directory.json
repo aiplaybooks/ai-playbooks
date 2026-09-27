@@ -1,0 +1,252 @@
+{
+  "theme": "adaptive",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Claude Plugin Directory",
+  "caption": "Claude just opened its own plugin store, and every submission gets auto safety-scanned before it goes live 🔌\n\nDevelopers can now publish MCP connectors and plugin bundles straight from GitHub, so Claude keeps gaining new abilities without you ever leaving the chat.\n\n→ submit an MCP connector or plugin bundle from GitHub\n→ get auto safety-scanned the moment you submit\n→ built on the new MCP 2.0 spec, with interactive apps inside the chat\n→ zero-touch sign-in for enterprise teams\n\nWhat's the first plugin you'd want to see for Claude? 👇\n\nFollow @aiplaybooks.daily for daily AI tool news.\n\n#claudeai #claude #anthropic #ai #aitools",
+  "captions": {
+    "instagram": "Claude just opened its own plugin store, and every submission gets auto safety-scanned before it goes live 🔌\n\nDevelopers can now publish MCP connectors and plugin bundles straight from GitHub, so Claude keeps gaining new abilities without you ever leaving the chat.\n\n→ submit an MCP connector or plugin bundle from GitHub\n→ get auto safety-scanned the moment you submit\n→ built on the new MCP 2.0 spec, with interactive apps inside the chat\n→ zero-touch sign-in for enterprise teams\n\nWhat's the first plugin you'd want to see for Claude? 👇\n\nFollow @aiplaybooks.daily for daily AI tool news.\n\n#claudeai #claude #anthropic #ai #aitools",
+    "facebook": "Claude just opened its own plugin store 🔌\n\nAnthropic built a submission portal where developers publish MCP connectors and plugin bundles straight from GitHub. Every single one gets safety-scanned the moment it's submitted, and developers can track the review and safety results before it goes live.\n\nIt runs on the new MCP 2.0 spec, adds interactive apps inside the chat itself, and gives enterprise teams zero-touch sign-in.\n\nWhat's the first plugin you'd want Claude to have?\n\n#claudeai #anthropic #ai",
+    "youtube": {
+      "title": "Claude just got a plugin store with auto safety scans",
+      "description": "Anthropic opened a submission portal that turns Claude into a growing plugin store for AI tools.\n\nDevelopers publish MCP connectors and plugin bundles from GitHub, and every submission is automatically safety-scanned before it goes live. It's built on the new MCP 2.0 spec, with interactive apps inside the chat and zero-touch sign-in for enterprise teams.\n\nRight now the submission portal is open to developers on paid Claude plans.\n\n#claude #claudeai #anthropic #aitools #ai",
+      "tags": [
+        "claude ai",
+        "claude plugins",
+        "claude code",
+        "mcp servers",
+        "anthropic",
+        "ai agent tools",
+        "claude code tutorial",
+        "ai coding",
+        "vibe coding"
+      ]
+    }
+  },
+  "sources": [
+    "https://claude.com/blog/build-plugins-for-claude"
+  ],
+  "cover": {
+    "headline": "Anthropic just launched a submission portal that turns Claude into a growing app store for AI tools.",
+    "em": "app store",
+    "person": "Dario Amodei",
+    "layout": "scene_person",
+    "photo_query": [
+      "terminal command line screen",
+      "computer code screen",
+      "software developer typing laptop"
+    ],
+    "photo_pick": {
+      "url": "https://live.staticflickr.com/4060/4661409838_919824b9fa_b.jpg",
+      "page": "https://www.flickr.com/photos/88875472@N00/4661409838",
+      "author": "*n3wjack's world in pixels",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source": "Flickr",
+      "file": "dir /s"
+    },
+    "icons": [
+      {
+        "slug": "claude",
+        "style": "tile",
+        "pos": "tr",
+        "size": 170
+      }
+    ],
+    "photo": {
+      "file": "dir /s",
+      "page": "https://www.flickr.com/photos/88875472@N00/4661409838",
+      "author": "*n3wjack's world in pixels",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source": "Flickr"
+    },
+    "layout_used": "scene_person",
+    "person_photo": {
+      "file": "File:Dario Amodei at TechCrunch Disrupt 2023 01 (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Dario_Amodei_at_TechCrunch_Disrupt_2023_01_(cropped).jpg",
+      "author": "TechCrunch",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source": "Wikimedia Commons"
+    }
+  },
+  "design": {
+    "mood": "a developer's plugin shelf at night: near-black warm charcoal, terminal-green code glow, a clay-orange accent snapping new tiles into place, sharp and technical",
+    "palette": {
+      "bg": "#14110D",
+      "bg2": "#1E1812",
+      "surface": "#201A14",
+      "ink": "#F5EFE7",
+      "muted": "#A69784",
+      "accent": "#D97757",
+      "accent2": "#6FCF97"
+    },
+    "fonts": {
+      "display": "Archivo",
+      "body": "DM Sans",
+      "mono": "IBM Plex Mono"
+    },
+    "display": {
+      "weight": 800,
+      "case": "none",
+      "tracking": -2,
+      "scale": 1.0,
+      "italic_em": false
+    },
+    "shape": {
+      "radius": 10,
+      "border": 2,
+      "shadow": "hard"
+    },
+    "background": {
+      "pattern": "scanlines",
+      "pattern_opacity": 0.06,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "mono",
+    "prompt": "terminal",
+    "art": "<svg viewBox='0 0 900 460' xmlns='http://www.w3.org/2000/svg'><rect x='330' y='140' width='240' height='180' rx='18' fill='var(--surface)' stroke='var(--muted)' stroke-width='2'/><rect x='356' y='170' width='150' height='14' rx='7' fill='var(--accent)'/><rect x='356' y='196' width='110' height='14' rx='7' fill='var(--muted)' opacity='0.6'/><rect x='356' y='222' width='130' height='14' rx='7' fill='var(--muted)' opacity='0.6'/><rect x='356' y='260' width='188' height='36' rx='10' fill='none' stroke='var(--accent2)' stroke-width='2'/><g><rect x='120' y='80' width='90' height='90' rx='16' fill='var(--accent2)'/><path d='M150 125h30M165 110v30' stroke='var(--surface)' stroke-width='6' stroke-linecap='round'/><line x1='210' y1='125' x2='330' y2='190' stroke='var(--muted)' stroke-width='2' stroke-dasharray='6 6'/></g><g><rect x='690' y='80' width='90' height='90' rx='16' fill='var(--surface)' stroke='var(--accent)' stroke-width='2'/><circle cx='735' cy='125' r='16' fill='var(--accent)'/><line x1='690' y1='140' x2='570' y2='200' stroke='var(--muted)' stroke-width='2' stroke-dasharray='6 6'/></g><g><rect x='120' y='290' width='90' height='90' rx='16' fill='var(--surface)' stroke='var(--muted)' stroke-width='2'/><rect x='150' y='320' width='30' height='30' rx='6' fill='var(--muted)'/><line x1='210' y1='320' x2='330' y2='270' stroke='var(--muted)' stroke-width='2' stroke-dasharray='6 6'/></g><g><rect x='690' y='290' width='90' height='90' rx='16' fill='var(--accent)'/><path d='M715 335h40' stroke='var(--surface)' stroke-width='6' stroke-linecap='round'/><path d='M735 315v40' stroke='var(--surface)' stroke-width='6' stroke-linecap='round'/><line x1='690' y1='320' x2='570' y2='270' stroke='var(--muted)' stroke-width='2' stroke-dasharray='6 6'/></g></svg>",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 2v4M15 2v4M7 6h10v4a5 5 0 0 1-5 5 5 5 0 0 1-5-5V6z'/><path d='M12 15v4M9 21h6'/></svg>"
+  },
+  "voice": "am_liam",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "CLAUDE · PLUGINS",
+      "title": "Anthropic opened a submission portal that turns Claude into a growing plugin store.",
+      "em": "plugin store",
+      "sub": "Developers submit on GitHub; every plugin gets auto safety-scanned before it goes live.",
+      "tools": [
+        "Claude"
+      ],
+      "voiceover": "Anthropic just opened a plugin store for Claude, with automatic safety scans."
+    },
+    {
+      "type": "facts",
+      "label": "What launched",
+      "title": "Claude Plugin Directory",
+      "items": [
+        [
+          "Submission portal",
+          "Developers submit an MCP connector or a plugin bundle from GitHub"
+        ],
+        [
+          "Safety scan",
+          "Every submission is checked and safety-scanned as soon as it's submitted"
+        ],
+        [
+          "Review tracking",
+          "See status, feedback and the safety-scan results before you publish"
+        ],
+        [
+          "Announced",
+          "September 25, 2026"
+        ]
+      ],
+      "voiceover": "Anthropic opened a portal where developers submit and publish plugins for Claude."
+    },
+    {
+      "type": "steps",
+      "label": "How developers publish",
+      "title": "From GitHub repo to live plugin",
+      "steps": [
+        [
+          "Submit",
+          "Point to a remote MCP server, or a bundle of MCP servers and skills on GitHub"
+        ],
+        [
+          "Get scanned",
+          "Anthropic checks and safety-scans the submission right away"
+        ],
+        [
+          "Review it",
+          "See review status, feedback, and the safety-scan results"
+        ],
+        [
+          "Publish",
+          "Once approved, the developer chooses when it goes live"
+        ]
+      ],
+      "voiceover": "Submit on GitHub, get safety-scanned, review the feedback, then publish once approved."
+    },
+    {
+      "type": "facts",
+      "label": "Under the hood",
+      "title": "MCP 2.0, with two new extensions",
+      "items": [
+        [
+          "MCP 2.0",
+          "Claude now supports the latest MCP spec, built around a stateless core"
+        ],
+        [
+          "MCP Apps",
+          "Interactive UI rendered inside the chat itself"
+        ],
+        [
+          "Enterprise Managed Auth",
+          "Zero-touch OAuth for enterprise users"
+        ]
+      ],
+      "voiceover": "It's built on MCP 2.0, plus in-chat interactive apps and zero-touch enterprise sign-in."
+    },
+    {
+      "type": "list",
+      "label": "What it means for you",
+      "title": "A more capable Claude, plugin by plugin",
+      "items": [
+        [
+          "More tools, one chat",
+          "Installed plugins add abilities without leaving the conversation"
+        ],
+        [
+          "One discovery experience",
+          "Rolling out across Claude and Claude Code over the coming weeks"
+        ],
+        [
+          "Nothing breaks",
+          "Existing skills and connectors keep working as they are"
+        ]
+      ],
+      "voiceover": "For regular users, it means a Claude that keeps gaining new abilities through plugins."
+    },
+    {
+      "type": "limits",
+      "label": "Who can submit",
+      "title": "Open to paid plans first",
+      "items": [
+        [
+          "Right now",
+          "The submission portal is open to developers on paid Claude plans"
+        ],
+        [
+          "Coming later",
+          "Developers will be able to turn an existing connector listing into a plugin"
+        ]
+      ],
+      "cta": "Full writeup: claude.com/blog/build-plugins-for-claude",
+      "voiceover": "Submitting a plugin right now needs a paid Claude plan."
+    },
+    {
+      "type": "cta",
+      "title": "Claude's plugin store",
+      "title2": "just opened its doors.",
+      "lines": [
+        [
+          "Read",
+          "claude.com/blog/build-plugins-for-claude"
+        ],
+        [
+          "Try Claude",
+          "claude.ai"
+        ],
+        [
+          "Follow",
+          "for daily AI tool news"
+        ]
+      ],
+      "voiceover": "That's Claude's new plugin directory, an app store for Claude that's just getting started."
+    }
+  ]
+}
