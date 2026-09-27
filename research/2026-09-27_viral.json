@@ -1,0 +1,130 @@
+{
+ "generated": "2026-09-27T10:32:17+00:00",
+ "reddit": [],
+ "youtube_signal": [
+  {
+   "id": "yt-rXewAdQywQ8",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Help Peppa Pig Rescue Daddy Pig! #peppapig #mineceaft #peppa",
+   "channel": "Pep Family",
+   "url": "https://www.youtube.com/shorts/rXewAdQywQ8",
+   "views": 649932,
+   "date": "2026-09-25T12:00:34Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-RCeC5me_nUs",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Elon Musk Predicts 1,000,000,000 Humanoid Robots… Seriously? 🤯",
+   "channel": "ejunky66",
+   "url": "https://www.youtube.com/shorts/RCeC5me_nUs",
+   "views": 244904,
+   "date": "2026-09-24T16:14:11Z",
+   "query": "humanoid robot video"
+  },
+  {
+   "id": "yt-ll53fE1a0SQ",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "#vijaythalapathy",
+   "channel": "Вистарокс",
+   "url": "https://www.youtube.com/shorts/ll53fE1a0SQ",
+   "views": 231629,
+   "date": "2026-09-24T12:30:37Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-oM6w3q_SICg",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Kala Jamun Par Chandi Ka Varak 😍 |#manufacturing #shorts",
+   "channel": "manufacture by me",
+   "url": "https://www.youtube.com/shorts/oM6w3q_SICg",
+   "views": 186180,
+   "date": "2026-09-25T07:45:59Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-Ru9coRGETYo",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "O primeiro robô policial humanoide do Brasil custou R$ 1 milhão",
+   "channel": "Izabela Anholett",
+   "url": "https://www.youtube.com/shorts/Ru9coRGETYo",
+   "views": 185457,
+   "date": "2026-09-24T10:45:13Z",
+   "query": "humanoid robot video"
+  },
+  {
+   "id": "yt-CFFARpBux1s",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "हमारे नबी पाक की वफ़ात के बाद क्या हुआ? | सहाबा ने कैसे नमाज़ अदा की? | Part 2 | Islamic History",
+   "channel": "noor ki duniya07",
+   "url": "https://www.youtube.com/shorts/CFFARpBux1s",
+   "views": 156193,
+   "date": "2026-09-24T13:43:36Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-uHp_dispnuk",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Allah Tala sab dekhta ha #prayer #trending #emotional #today #news #ai #ytshorts",
+   "channel": "Islamic Star yt ",
+   "url": "https://www.youtube.com/shorts/uHp_dispnuk",
+   "views": 152446,
+   "date": "2026-09-26T02:00:16Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-0JxjxARcleI",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "ai tiktok video #viral​ #video​ #storytelling​ #ai​ #tiktok​ #reels​ #animation​ #shorts​ #stories​",
+   "channel": "Agent Rakha Ai",
+   "url": "https://www.youtube.com/shorts/0JxjxARcleI",
+   "views": 146151,
+   "date": "2026-09-24T10:33:59Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-Itww7iKY0bU",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Alfajores Con IA",
+   "channel": "Mariano Bondar",
+   "url": "https://www.youtube.com/shorts/Itww7iKY0bU",
+   "views": 130455,
+   "date": "2026-09-25T17:19:23Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-BbkYNTW4yO0",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "🔥 वैभव सूर्यवंशी के सामने खुले 5 रास्ते! गौतम गंभीर को दिया बड़ा जवाब?",
+   "channel": "Sports Cricket Hub",
+   "url": "https://www.youtube.com/shorts/BbkYNTW4yO0",
+   "views": 109377,
+   "date": "2026-09-25T08:20:13Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-gY9XfJPCTmM",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "ചൈനീസ് തെരുവുകളിൽ റോബോട്ടുകൾ ഇറങ്ങിയപ്പോൾ 😮😮",
+   "channel": "123 FACTS",
+   "url": "https://www.youtube.com/shorts/gY9XfJPCTmM",
+   "views": 101026,
+   "date": "2026-09-24T13:43:17Z",
+   "query": "humanoid robot video"
+  }
+ ],
+ "errors": [
+  "Reddit: REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET missing in .env"
+ ]
+}

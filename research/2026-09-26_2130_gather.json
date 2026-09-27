@@ -1,0 +1,69 @@
+{
+ "generated": "2026-09-26T21:30+00:00",
+ "candidates": [
+  {
+   "id": "claude-plugins-directory",
+   "tool": "Claude",
+   "kind": "news",
+   "title": "Anthropic Opens a Plugin Store for Claude",
+   "summary_tr": "Anthropic, gelistiricilerin Claude icin eklenti (plugin) gonderebilecegi bir basvuru portali actiği: otomatik guvenlik taramasi, inceleme takibi ve yayindan sonra kurulum/kesif analitikleri var. MCP 2.0 ve etkilesimli MCP Apps'i destekliyor.",
+   "why_tr": "Claude'un kapanmis bir sohbet botundan gercek bir eklenti ekosistemine gectigini gosteren buyuk bir platform hamlesi; 'Claude'a nasil eklenti eklenir' formatiyla iyi calisir.",
+   "angle": "what launched (plugin directory submission portal) + who it's for (developers on paid plans) + what it means for regular users (more capable Claude via installed plugins)",
+   "tools": ["Claude"],
+   "published": "2026-09-25",
+   "sources": ["https://claude.com/blog/build-plugins-for-claude"],
+   "hints": ["https://github.com/anthropics/claude-plugins-official"],
+   "score": 7
+  },
+  {
+   "id": "meta-muse-early-access-prompt",
+   "tool": "Meta AI",
+   "kind": "news",
+   "title": "Meta Made It So You Can Just Ask Muse for Early Access",
+   "summary_tr": "Meta, Connect 2026'da tanitilan yeni Muse ozelliklerine (video sohbet edilebilen avatar, genisletilmis Mac uygulamasi, yeni magaza ortakliklari) erken erisim icin klasik bir web formu yerine dogrudan Muse'a yazilan hazir bir prompt kullaniyor.",
+   "why_tr": "Kayit yontemi kendi basina ilginc ve paylasilabilir bir 'bunu deneyin' anı: takipciler tek bir mesaji Muse'a yapistirip erken erisim listesine giriyor.",
+   "angle": "the exact prompt to send Muse + what early features it unlocks (avatar video chat, Mac computer-use, new shopping partners)",
+   "tools": ["Meta AI"],
+   "published": "2026-09-25",
+   "sources": ["https://techcrunch.com/2026/09/25/meta-opens-early-access-program-for-new-muse-features/"],
+   "hints": ["https://www.theapplepost.com/2026/09/26/72679/meta-opens-early-access-for-new-muse-ai-features/"],
+   "score": 6
+  },
+  {
+   "id": "codex-cli-best-practices-evergreen",
+   "tool": "Codex",
+   "kind": "evergreen",
+   "title": "5 Codex CLI Habits That Stop It From Making a Mess of Your Repo",
+   "summary_tr": "Codex CLI icin OpenAI'nin resmi 'best practices' rehberi: kucuk, sadece-inceleme gorevleriyle basla, kalici talimatlar icin AGENTS.md kullan, MCP ile disari baglan, tekrar eden isleri 'skill' haline getir, kararli akislari otomatiklestir.",
+   "why_tr": "Codex haberleri son gunlerde cok ama pratik bir 'nasil kullanilir' rehberi hicbir zaman yayinlanmadi; kod yazan takipciler icin dogrudan uygulanabilir bir carousel.",
+   "angle": "5 official-docs-backed habits: start small/investigation-only, AGENTS.md, MCP connectors, turn repeats into skills, automate stable workflows",
+   "tools": ["Codex"],
+   "published": null,
+   "sources": ["https://developers.openai.com/codex/learn/best-practices"],
+   "hints": [],
+   "score": 6
+  },
+  {
+   "id": "prompts-negotiate-better-deal",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Prompts That Get You a Better Deal on Almost Anything",
+   "summary_tr": "Gunluk hayatta pazarlik gerektiren seyler icin (kira yenileme, ikinci el arac, abonelik iptali/indirim, faturasi yuksek servis saglayicilari, is teklifi disi diger sozlesmeler) rol tabanli, somut hedefli 5 promptluk bir paket: 'Uzman bir muzakereci gibi davran, hedefim [X], elimdeki kaldiraç [Y], bana adim adim bir mesaj yaz ve gerceci bir tahmin ver.'",
+   "why_tr": "Herkesin hayatinda pazarlik anı var ve 'AI ile daha iyi fiyat kopar' vaadi guclu, parayla dogrudan ilgili, kanitlanabilir bir sonuc iceriyor.",
+   "angle": "Act as an expert negotiator + concrete target (e.g. lower your bill by [$50]/month) + deliverables (script, leverage list, fallback position) + a realistic estimate; 5 prompts across rent renewal, used car, subscription retention call, service provider, contractor quote",
+   "tools": ["Prompt pack"],
+   "published": null,
+   "sources": [],
+   "hints": [],
+   "score": 6
+  }
+ ],
+ "coverage": {
+  "ChatGPT": 0, "Claude": 1, "Gemini": 0, "Grok": 0, "Codex": 1, "Cursor": 0,
+  "Copilot": 0, "Perplexity": 0, "Meta AI": 1, "Mistral": 0, "DeepSeek": 0,
+  "Open models": 0, "Apple": 0, "Higgsfield": 0, "Google": 0, "Social media": 0,
+  "Other": 0, "Prompt pack": 1
+ },
+ "notes_tr": "Bu tur icin havuzda olani tekrar etmemek zorlastirici oldu: Cursor Projects, Grok 4.7, Microsoft Copilot superapp, Perplexity Personal Computer, DeepSeek V4.1 Flash, Higgsfield Cinema Studio 4.0, Google Photos Ask/AI templates, Instagram Edits ses guncellemesi, TikTok Creator Level, Gemini Expert Intelligence (Notebook) ve Anthropic'in ART enzim kesfi arastirildi ama ya zaten havuzda ya da 36 saat/7 gunluk pencerenin disinda (cogu Agustos - erken Eylul) cikti, o yuzden eklenmedi. ChatGPT, Gemini, Grok, Cursor, Copilot, Perplexity, Mistral, DeepSeek, Open models, Apple, Higgsfield, Google (Gemini disi) ve Social media icin son 36 saatte havuzda olmayan yeni ve dogrulanabilir bir haber bulunamadi (hepsi bir tur once zaten islenmis). En ilginc 3 disari-cikan haber (Anthropic'in guvenlik standartlari girisimi, Akamai bulut anlasmasi, OpenAI ajaninin Avustralya Medicare erisimi) resmi kaynakla net tarih/detay dogrulanamadigi ve gorsel carousel'a uygun olmadigi icin alinmadi.",
+ "sources_changed": []
+}

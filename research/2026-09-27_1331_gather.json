@@ -1,0 +1,55 @@
+{
+  "generated": "2026-09-27T13:31+00:00",
+  "candidates": [
+    {
+      "id": "minimax-m3-1-flash-preview",
+      "tool": "Open models",
+      "kind": "news",
+      "title": "MiniMax Quietly Shipped a New Free Coding Model Today",
+      "summary_tr": "MiniMax, yeni metin modeli M3.1-Flash-Preview'i bugün MiniMax Code'a ekledi: hızlı, güvenilir, günlük geliştirme işleri için; herhangi bir duyuru, benchmark ya da fiyat açıklaması yapmadan sessizce yayına aldılar.",
+      "why_tr": "Bugünün haberi, ücretsiz denenebilir, Çin açık model yarışının hızını gösteriyor; 'kimse anons etmeden çıkardı' açısı ilgi çekici.",
+      "angle": "what quietly shipped + how to try it free in MiniMax Code + how it compares to the big free coding models",
+      "tools": ["Open models", "MiniMax"],
+      "published": "2026-09-27",
+      "sources": ["https://x.com/MiniMaxAgent/status/2104079819881517400", "https://agent.minimax.io/"],
+      "hints": ["https://alphasignal.ai/news/minimax-quietly-slips-m3-1-flash-preview-into-its-coding-tool", "https://startupfortune.com/minimax-quietly-ships-a-coding-only-model-as-chinas-ai-models-flood-the-market/"],
+      "score": 6
+    },
+    {
+      "id": "cursor-hidden-settings-evergreen",
+      "tool": "Cursor",
+      "kind": "evergreen",
+      "title": "5 Cursor Settings That Quietly Fix Your Worst Coding Sessions",
+      "summary_tr": "Cursor haberlerinde son günlerde hep 'Projects' ve güvenlik botları konuşuluyor; ama Cursor'ın .cursorignore, Rules, MCP bağlantıları ve Agent modu gibi temel ayarları çoğu kullanıcı hiç açmıyor.",
+      "why_tr": "Herkes Cursor kullanıyor ama çoğu varsayılan ayarlarla çalışıyor; bu format geçmişte iyi performans gösterdi (bkz. 'Claude Code habits', 'Grok features').",
+      "angle": "5 real Cursor settings (.cursorignore, Rules, MCP, Agent mode) most people never touch + what each fixes",
+      "tools": ["Cursor"],
+      "published": null,
+      "sources": ["https://docs.cursor.com/context/ignore-files", "https://docs.cursor.com/context/rules", "https://docs.cursor.com/context/model-context-protocol"],
+      "hints": [],
+      "score": 6
+    },
+    {
+      "id": "pack-sleep-reset-plan",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "6 Prompts That Build You a Real Sleep Reset Plan",
+      "summary_tr": "Kötü uyku düzenini 2 haftada toparlamak için AI'a rol verdiren, somut bir hedef (ör. saat 23:00'te uykuya dalmak), teslim edilecekler (günlük rutin, ekran süresi kuralları, takip tablosu) ve gerçekçi bir zaman tahmini isteyen 6 promptluk bir paket.",
+      "why_tr": "Uyku, sağlık ve günlük hayatı doğrudan etkileyen, herkesin ilgisini çeken ama para paketleri kadar doymamış bir alan; mevcut havuzda sağlık/uyku paketi yok.",
+      "angle": "Act as a sleep coach + 2-week reset plan + wind-down routine + screen-time rules + a tracking template, in [PLACEHOLDERS] and KEY WORDS style",
+      "tools": ["Prompt pack"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 6
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 0, "Claude": 0, "Gemini": 0, "Grok": 0, "Codex": 0, "Cursor": 1,
+    "Copilot": 0, "Perplexity": 0, "Meta AI": 0, "Mistral": 0, "DeepSeek": 0,
+    "Open models": 1, "Apple": 0, "Higgsfield": 0, "Google": 0, "Social media": 0,
+    "Other": 0, "Prompt pack": 1
+  },
+  "notes_tr": "16 aracın tamamı için ayrı arama yapıldı; bulunan çoğu haber (Perplexity Personal Computer/Comet Enterprise, Meta Muse Spark, Higgsfield Cinema Studio 4.0, Instagram Edits ses güncellemeleri, Copilot Cowork mobil, Gemini Notebook sesli sohbet) ya haftalar/aylar önceydi ya da havuzdaki mevcut başlıklarla (Claude Opus 5.5, Grok 4.7, Gemini Notebook x4, Mistral Vibe x6, Meta Muse x7, Higgsfield x4, Copilot süperapp, Apple Siri/Health x3) aynı lansmanın tekrarıydı, o yüzden eklenmedi. ChatGPT, Claude, Gemini, Grok, Codex, Copilot, Perplexity, Meta AI, Mistral, DeepSeek, Apple, Higgsfield, Google ve Social media için bu turda gerçekten yeni ve doğrulanabilir bir şey çıkmadı (havuz zaten dolu). 'İlginç 3 hikaye' aramasında Reddit'in 'botlar kendini tanıtıyor' konusu birincil kaynakla doğrulanamadığı için düşürüldü.",
+  "sources_changed": []
+}
