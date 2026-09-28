@@ -1,0 +1,39 @@
+{
+  "kind": "repo",
+  "repo": {
+    "full_name": "calesthio/OpenMontage",
+    "url": "https://github.com/calesthio/OpenMontage",
+    "stars": 61719,
+    "license": "AGPL-3.0",
+    "language": "Python",
+    "description": "The first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio."
+  },
+  "topic": "OpenMontage: turns Claude Code into a full video production studio",
+  "hook": [
+    "I JUST FOUND A GITHUB REPO THAT TURNS CLAUDE CODE INTO A FULL VIDEO PRODUCTION STUDIO.",
+    "No editing software. No paid AI video tools.",
+    "It's 100% FR££ and open source.",
+    "It's called OpenMontage — already at 61K+ GitHub stars."
+  ],
+  "hook_pattern": "CAPS discovery",
+  "dm": {
+    "keyword": "STUDIO",
+    "mode": "direct"
+  },
+  "fb_comment": "🔗 OpenMontage on GitHub:\nhttps://github.com/calesthio/OpenMontage\n\n⭐ 61K+ stars · AGPL-3.0 license · built in Python\n🤖 Works with Claude Code, Cursor, Copilot, Windsurf or Codex — you just describe the video in plain language\n💻 Runs on your own machine, no paid API keys required (free TTS, free archival footage, free local video models)\n\nStart here: git clone + `make setup`\n\nFollow AI Playbooks for a new FR££ AI tool every day 🙏",
+  "caption": "I JUST FOUND A GITHUB REPO THAT TURNS CLAUDE CODE INTO A FULL VIDEO PRODUCTION STUDIO.\n\nNo editing software. No paid AI video tools.\n\nIt's 100% FR££ and open source.\n\nIt's called OpenMontage — already at 61K+ GitHub stars.\n\nComment STUDIO and I'll DM you the repo link 📩\n\nFollow @aiplaybooks.daily, we post a FR££ AI tool every day.\n\n#ai #github #opensource #claudecode #aitools",
+  "captions": {
+    "instagram": "I JUST FOUND A GITHUB REPO THAT TURNS CLAUDE CODE INTO A FULL VIDEO PRODUCTION STUDIO.\n\nNo editing software. No paid AI video tools.\n\nIt's 100% FR££ and open source.\n\nIt's called OpenMontage — already at 61K+ GitHub stars.\n\nComment STUDIO and I'll DM you the repo link 📩\n\nFollow @aiplaybooks.daily, we post a FR££ AI tool every day.\n\n#ai #github #opensource #claudecode #aitools",
+    "facebook": "I JUST FOUND A GITHUB REPO THAT TURNS CLAUDE CODE INTO A FULL VIDEO PRODUCTION SETUP.\n\nNo editing software. No paid AI video tools.\n\nIt's 100% FR££ and open source.\n\nIt's called OpenMontage — already at 61K+ GitHub stars.\n\nLink in the first comment 👇\n\nWould you trust an AI agent to edit your videos?\n\n#ai #github #opensource #aitools"
+  },
+  "sources": [
+    "https://github.com/calesthio/OpenMontage"
+  ],
+  "checked": [
+    "61,718 stars, AGPL-3.0 license, Python -> GitHub API (repos.py --info)",
+    "12 production pipelines, 100+ tools, 700+ agent skill/production-knowledge files -> repo description + README",
+    "works via Claude Code, Cursor, Copilot, Windsurf, Codex -> README Quick Start + WebFetch of github.com/calesthio/OpenMontage",
+    "runs locally, no paid API keys needed (free Piper TTS, Archive.org/NASA/Wikimedia footage, free local video models like WAN 2.2/Hunyuan on GPU) -> README + WebFetch",
+    "install via git clone + make setup -> README Quick Start"
+  ]
+}
