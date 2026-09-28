@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-27T13:30+00:00",
+ "generated": "2026-09-27T18:57+00:00",
  "hours": 36.0,
  "items": [
   {
@@ -37,10 +37,66 @@
   {
    "source": "Hacker News",
    "tier": "community",
-   "title": "OpenAI Feared \"Optics\" of what might appear on Hacker News",
+   "title": "SNL Weekend Update: Anthropic CEO Dario Amodei on A.I.'S Threat to Humanity [video]",
+   "url": "https://www.youtube.com/watch?v=-Nvne3LzBls",
+   "date": "2026-09-27T17:32+00:00",
+   "summary": "114 points, 29 comments · https://news.ycombinator.com/item?id=49868831"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Ember-1",
+   "url": "https://fireworks.ai/blog/ember-1",
+   "date": "2026-09-27T17:31+00:00",
+   "summary": "100 points, 36 comments · https://news.ycombinator.com/item?id=49868830"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "There are no \"rogue\" AI agents",
+   "url": "https://eoinhiggins.substack.com/p/there-are-no-rogue-ai-agents",
+   "date": "2026-09-27T16:19+00:00",
+   "summary": "204 points, 143 comments · https://news.ycombinator.com/item?id=49868083"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "The Normalization of Inexplicable Failures",
+   "url": "https://www.ihatethefuture.com/2026/09/the-normalization-of-inexplicable.html",
+   "date": "2026-09-27T15:26+00:00",
+   "summary": "176 points, 61 comments · https://news.ycombinator.com/item?id=49867486"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Ten lines of code that changed my world",
+   "url": "https://pixelambacht.nl/2026/ten-lines-of-code/",
+   "date": "2026-09-27T13:33+00:00",
+   "summary": "93 points, 22 comments · https://news.ycombinator.com/item?id=49866534"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "\"As a Language Model\": Chat Template Switches LLM Self-Referential Voice",
+   "url": "https://arxiv.org/abs/2609.25021",
+   "date": "2026-09-27T10:26+00:00",
+   "summary": "96 points, 99 comments · https://news.ycombinator.com/item?id=49865343"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Unsealed Briefs in Authors’ Case v. Microsoft/OpenAI",
    "url": "https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/",
    "date": "2026-09-27T06:19+00:00",
-   "summary": "375 points, 311 comments · https://news.ycombinator.com/item?id=49863864"
+   "summary": "576 points, 541 comments · https://news.ycombinator.com/item?id=49863864"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "OpenAI agents tried to bruteforce a UN website's API fields",
+   "url": "https://swarmcha.se/posts/openai-unctad",
+   "date": "2026-09-27T01:08+00:00",
+   "summary": "82 points, 81 comments · https://news.ycombinator.com/item?id=49862299"
   },
   {
    "source": "Hacker News",
@@ -48,7 +104,7 @@
    "title": "DeepSeek Elastic Compute (DSec)",
    "url": "https://arxiv.org/abs/2609.22978",
    "date": "2026-09-26T18:22+00:00",
-   "summary": "279 points, 92 comments · https://news.ycombinator.com/item?id=49859112"
+   "summary": "311 points, 100 comments · https://news.ycombinator.com/item?id=49859112"
   },
   {
    "source": "Hacker News",
@@ -56,7 +112,7 @@
    "title": "Show HN: Reladraw – A diagram language where you decide where to place things",
    "url": "https://github.com/reladraw/reladraw",
    "date": "2026-09-26T17:10+00:00",
-   "summary": "337 points, 90 comments · https://news.ycombinator.com/item?id=49858513"
+   "summary": "377 points, 105 comments · https://news.ycombinator.com/item?id=49858513"
   },
   {
    "source": "Hacker News",
@@ -64,7 +120,7 @@
    "title": "Turning GLM-5.3-Flash into a Jev-like decision model",
    "url": "https://www.privatemode.ai/blog/system-one-from-glm-flash",
    "date": "2026-09-26T15:49+00:00",
-   "summary": "109 points, 45 comments · https://news.ycombinator.com/item?id=49857656"
+   "summary": "124 points, 51 comments · https://news.ycombinator.com/item?id=49857656"
   },
   {
    "source": "Hacker News",
@@ -72,7 +128,7 @@
    "title": "Automattic has a new board after failed attempt to put CEO on leave",
    "url": "https://techcrunch.com/2026/09/25/automattic-has-a-new-board-after-failed-attempt-to-put-ceo-on-leave/",
    "date": "2026-09-26T15:40+00:00",
-   "summary": "141 points, 174 comments · https://news.ycombinator.com/item?id=49857572"
+   "summary": "142 points, 181 comments · https://news.ycombinator.com/item?id=49857572"
   },
   {
    "source": "Hacker News",
@@ -80,7 +136,7 @@
    "title": "OpenAI bots meddled with multiple US Government agency sites",
    "url": "https://www.bbc.com/news/articles/cw62jje658dlo",
    "date": "2026-09-26T14:03+00:00",
-   "summary": "122 points, 181 comments · https://news.ycombinator.com/item?id=49856665"
+   "summary": "124 points, 187 comments · https://news.ycombinator.com/item?id=49856665"
   },
   {
    "source": "Hacker News",
@@ -88,7 +144,7 @@
    "title": "CEO of Mistral: AI is software. It can be controlled",
    "url": "https://www.lemonde.fr/en/economy/article/2026/09/24/arthur-mensch-ceo-of-french-start-up-mistral-ai-ai-is-software-it-can-be-controlled_6757890_19.html",
    "date": "2026-09-26T12:52+00:00",
-   "summary": "96 points, 164 comments · https://news.ycombinator.com/item?id=49856034"
+   "summary": "96 points, 166 comments · https://news.ycombinator.com/item?id=49856034"
   },
   {
    "source": "Hacker News",
@@ -96,7 +152,7 @@
    "title": "One Month Without AI",
    "url": "https://blog.bustikiller.com/2026/09/25/one-month-without-ai.html",
    "date": "2026-09-26T10:08+00:00",
-   "summary": "177 points, 223 comments · https://news.ycombinator.com/item?id=49855018"
+   "summary": "178 points, 224 comments · https://news.ycombinator.com/item?id=49855018"
   },
   {
    "source": "Hacker News",
@@ -112,23 +168,7 @@
    "title": "How to keep enjoying programming in a world of LLMs",
    "url": "https://discourse.haskell.org/t/how-to-keep-enjoying-programming-in-a-world-of-llms/14705",
    "date": "2026-09-26T09:41+00:00",
-   "summary": "262 points, 292 comments · https://news.ycombinator.com/item?id=49854875"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "A single function Jev-like wrapper for LLMs, including vision models",
-   "url": "http://allanrbo.blogspot.com/2026/09/a-jev-like-wrapper-for-llms-including.html",
-   "date": "2026-09-26T04:20+00:00",
-   "summary": "145 points, 44 comments · https://news.ycombinator.com/item?id=49853175"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "An agent used DNS to reach an external chatbot",
-   "url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/",
-   "date": "2026-09-26T04:14+00:00",
-   "summary": "117 points, 118 comments · https://news.ycombinator.com/item?id=49853137"
+   "summary": "310 points, 324 comments · https://news.ycombinator.com/item?id=49854875"
   }
  ],
  "errors": [],

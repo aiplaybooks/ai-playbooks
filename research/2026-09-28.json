@@ -1,0 +1,247 @@
+{
+ "generated": "2026-09-28T07:30+00:00",
+ "hours": 36.0,
+ "items": [
+  {
+   "source": "Codex CLI releases",
+   "tier": "official",
+   "title": "0.158.0",
+   "url": "https://github.com/openai/codex/releases/tag/rust-v0.158.0",
+   "date": "2026-09-28T05:10+00:00",
+   "summary": "New Features Configure copy-on-select and right-click paste in the fullscreen TUI. Copied transcript selections now preserve Markdown formatting. ( #47639 , #47896 , #48118 ) Connect to MCP servers that require pre-registered OAuth client secrets, including through codex mcp add --oauth-client-secret . ( #47891 ) Secure direct exec-server WebSocket connections with bearer tokens, including…"
+  },
+  {
+   "source": "Codex changelog",
+   "tier": "official",
+   "title": "Codex changelog: Sep 26, 2026",
+   "url": "https://developers.openai.com/codex/changelog",
+   "date": "2026-09-26T00:00+00:00",
+   "summary": "Codex CLI 0.157.1 pre]:w-full [&>pre]:max-w-full [&>pre]:mb-0 pt-4\"> $ npm install -g @openai/codex@0.157.1 View details Chores Release highlights could not be determined: the supplied PR index is empty, and the GitHub tag comparison returned 404. Changelog Full Changelog: rust-v0.157.0...rust-v0.157.1 Full release on Github"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Quoting Muse AI Agent",
+   "url": "https://simonwillison.net/2026/Sep/28/muse-ai-agent/",
+   "date": "2026-09-28T04:01+00:00",
+   "summary": "Bad news on the MX Keys Mini pickup. Usman showed up at your building around 9:15 and waited, messaged a bunch of times, and nobody came down. He left angry at 9:38 and left a negative rating. Worse, my auto-reply told him \"Yep I'm here!\" at 9:27 when you clearly weren't available, which is on me. That's a bad look and it made the no-show worse. I've sent him an apology from your account owning…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "2026 in LLMs (so far)",
+   "url": "https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/",
+   "date": "2026-09-27T23:54+00:00",
+   "summary": "On Friday I gave the closing keynote at the WeAreDevelopers World Congress North America in San Jose. I tied together the key trends from the past year into a chronological exploration of everything that happened in 2026. The video is on YouTube ; here are my annotated slides and notes to accompany the talk. And as an annotated presentation : # I'm going to give a lightning tour of everything…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "S3 Is the Future, S3 Is the Past",
+   "url": "https://simonwillison.net/2026/Sep/27/hn-49871741/",
+   "date": "2026-09-27T23:09+00:00",
+   "summary": "My comment on S3 Is the Future, S3 Is the Past — Hacker News. One thing I find notable about S3 today is that, while it used to drop in price reasonably often, there hasn't been a price drop in a full decade : 2006-03-14 $0.150/GB-month 2010-11-01 $0.140/GB-month 2012-02-01 $0.125/GB-month 2012-12-01 $0.095/GB-month 2014-02-01 $0.085/GB-month 2014-04-01 $0.030/GB-month 2016-12-01 $0.023/GB-month…"
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Can Meta be trusted with user data to power its AI agents?",
+   "url": "https://www.socialmediatoday.com/news/can-meta-be-trusted-with-user-data-to-power-its-ai-agents/831446/",
+   "date": "2026-09-27T18:38-04:00",
+   "summary": "An incomplete list of the many times that Meta has been accused of misusing people’s data over the years reflects how it prioritizes innovation over safety."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "YouTube previews AI-powered Conversational Editing",
+   "url": "https://www.socialmediatoday.com/news/youtube-previews-ai-powered-conversational-editing/831445/",
+   "date": "2026-09-27T18:34-04:00",
+   "summary": "Conversational Editing will make it easier for creators to build and refine their projects using plain language guidance."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "X launches Grok Bot rewards program to showcase AI utility",
+   "url": "https://www.socialmediatoday.com/news/x-launches-grok-bot-rewards-program-to-showcase-ai-utility/831444/",
+   "date": "2026-09-27T18:30-04:00",
+   "summary": "The new trend in AI development is enabling users to deploy AI-powered bots that can be tasked with online roles on their behalf."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "How can Instagram creators use Muse AI agents?",
+   "url": "https://www.socialmediatoday.com/news/how-can-instagram-creators-use-muse-ai-agents/831443/",
+   "date": "2026-09-27T18:24-04:00",
+   "summary": "There’s a range of ways that Meta's AI agents could be of value for creators, but building trust in them will be a hurdle."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "TikTok agrees to teen usage restrictions in Alabama",
+   "url": "https://www.socialmediatoday.com/news/tiktok-agrees-to-teen-usage-restrictions-in-alabama/831442/",
+   "date": "2026-09-27T18:21-04:00",
+   "summary": "The measures are very similar to the provisions that Meta agreed to implement as part of its recent settlement deal in California."
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Bluesky reply bot checker",
+   "url": "https://simonwillison.net/2026/Sep/27/bluesky-bot-check/",
+   "date": "2026-09-27T18:41+00:00",
+   "summary": "Tool: Bluesky reply bot checker Automated reply bots on Twitter are a scourge - as someone with a decent number of followers I attract a swarm of these, such that anything I post there attracts dozens of mindless automated replies. They've started manifesting on Bluesky as well. Unlike Twitter, Bluesky still has a freely available and useful API. The lack of such a thing doesn't slow down the…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Kākāpō Party",
+   "url": "https://simonwillison.net/2026/Sep/26/kakapo-party/",
+   "date": "2026-09-26T23:39+00:00",
+   "summary": "Tool: Kākāpō Party I presented a closing keynote for the WeAreDevelopers World Congress North America yesterday. As a STAR moment I decided to weave in references to the record breaking kākāpō breeding season we had in 2026. For my closing slide I wanted to celebrate, and I had seen some buzz around how good Claude Opus 5.5 was at creating pixel art animations. So I rounded up three Kakapo photos…"
+  },
+  {
+   "source": "TechCrunch Social",
+   "tier": "signal",
+   "title": "TikTok agrees to pay at least $100M in Alabama settlement",
+   "url": "https://techcrunch.com/2026/09/26/tiktok-agrees-to-pay-at-least-100m-in-alabama-settlement/",
+   "date": "2026-09-26T20:24+00:00",
+   "summary": "TikTok will pay Alabama at least $100 million in a settlement tied to allegations that the short-form video platform misled users about safety and was designed to addict children."
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "As A.I. makes law firms more efficient, clients ask: 'Where's my discount?'",
+   "url": "https://www.nytimes.com/2026/09/26/business/dealbook/ai-law-discount-billable-hour.html",
+   "date": "2026-09-28T01:30+00:00",
+   "summary": "114 points, 116 comments · https://news.ycombinator.com/item?id=49872522"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "When did Google get so weird?",
+   "url": "https://sancho.bearblog.dev/google-weird/",
+   "date": "2026-09-27T20:12+00:00",
+   "summary": "1148 points, 613 comments · https://news.ycombinator.com/item?id=49870367"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "SNL Weekend Update: Anthropic CEO Dario Amodei on A.I.'S Threat to Humanity [video]",
+   "url": "https://www.youtube.com/watch?v=-Nvne3LzBls",
+   "date": "2026-09-27T17:32+00:00",
+   "summary": "183 points, 94 comments · https://news.ycombinator.com/item?id=49868831"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Ember-1",
+   "url": "https://fireworks.ai/blog/ember-1",
+   "date": "2026-09-27T17:31+00:00",
+   "summary": "434 points, 203 comments · https://news.ycombinator.com/item?id=49868830"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Don't couple your Go code to GitHub",
+   "url": "https://iain.rocks/blog/dont-couple-your-go-code-to-github",
+   "date": "2026-09-27T16:50+00:00",
+   "summary": "223 points, 103 comments · https://news.ycombinator.com/item?id=49868404"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "There are no \"rogue\" AI agents",
+   "url": "https://eoinhiggins.substack.com/p/there-are-no-rogue-ai-agents",
+   "date": "2026-09-27T16:19+00:00",
+   "summary": "360 points, 251 comments · https://news.ycombinator.com/item?id=49868083"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: TinyAIArena watch AI agents battle it out",
+   "url": "https://tinyaiarena.com/",
+   "date": "2026-09-27T15:51+00:00",
+   "summary": "107 points, 43 comments · https://news.ycombinator.com/item?id=49867775"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "The Normalization of Inexplicable Failures",
+   "url": "https://www.ihatethefuture.com/2026/09/the-normalization-of-inexplicable.html",
+   "date": "2026-09-27T15:26+00:00",
+   "summary": "260 points, 107 comments · https://news.ycombinator.com/item?id=49867486"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Ten lines of code that changed my world",
+   "url": "https://pixelambacht.nl/2026/ten-lines-of-code/",
+   "date": "2026-09-27T13:33+00:00",
+   "summary": "125 points, 39 comments · https://news.ycombinator.com/item?id=49866534"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "\"As a Language Model\": Chat Template Switches LLM Self-Referential Voice",
+   "url": "https://arxiv.org/abs/2609.25021",
+   "date": "2026-09-27T10:26+00:00",
+   "summary": "101 points, 101 comments · https://news.ycombinator.com/item?id=49865343"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Unsealed Briefs in Authors’ Case v. Microsoft/OpenAI",
+   "url": "https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/",
+   "date": "2026-09-27T06:19+00:00",
+   "summary": "611 points, 600 comments · https://news.ycombinator.com/item?id=49863864"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "OpenAI agents tried to bruteforce a UN website's API fields",
+   "url": "https://swarmcha.se/posts/openai-unctad",
+   "date": "2026-09-27T01:08+00:00",
+   "summary": "85 points, 83 comments · https://news.ycombinator.com/item?id=49862299"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "OpenAI Codex agents go rogue and consumes USD 78,000 without authorization",
+   "url": "https://news.ycombinator.com/item?id=49861047",
+   "date": "2026-09-26T22:15+00:00",
+   "summary": "80 points, 31 comments · https://news.ycombinator.com/item?id=49861047"
+  }
+ ],
+ "errors": [],
+ "manual": [
+  {
+   "name": "xAI news / Grok app updates",
+   "url": "https://x.ai/news",
+   "why": "blocks scripts (403): web search 'Grok' / 'xAI' last 24h"
+  },
+  {
+   "name": "ChatGPT release notes",
+   "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Perplexity changelog",
+   "url": "https://www.perplexity.ai/changelog",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Official X accounts (@AnthropicAI, @OpenAI, @xai, @GoogleDeepMind, @cursor_ai)",
+   "url": "https://x.com",
+   "why": "X needs login / paid API: use web search for big announcements"
+  },
+  {
+   "name": "Social media new features (Instagram @creators/@mosseri, TikTok newsroom, X, LinkedIn, Snapchat)",
+   "url": "https://newsroom.tiktok.com/",
+   "why": "no working RSS (TikTok/WhatsApp/Instagram blogs are HTML, Snap/LinkedIn 404): web search each gather for new features, AI features and creator tools; confirm on the platform's own newsroom/help page"
+  },
+  {
+   "name": "Higgsfield announcements",
+   "url": "https://x.com/higgsfield_ai",
+   "why": "big launches often land on X before the blog"
+  }
+ ]
+}

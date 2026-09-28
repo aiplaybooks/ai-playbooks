@@ -1,0 +1,87 @@
+{
+  "generated": "2026-09-28T09:25+00:00",
+  "candidates": [
+    {
+      "id": "youtube-conversational-editing",
+      "tool": "Social media",
+      "kind": "news",
+      "title": "YouTube's New AI Editor Takes Edit Instructions in Plain English",
+      "summary_tr": "YouTube, 'Made on YouTube' etkinliğinde Conversational Editing'i tanıttı: Shorts ve YouTube Create'te yaratıcılar artık \"şarkının ritmine göre kes\", \"en iyi çekimleri seç\", \"duraklamaları kaldır\" gibi doğal dilde komutlarla video düzenleyebilecek; manuel zaman çizelgesine istediğin an dönebiliyorsun. Erken 2027'de kullanıma açılacak.",
+      "why_tr": "Kitlemizin çoğu içerik üreticisi; kurgu yapmadan doğal dille video düzenleme vaadi paylaşılası ve merak uyandırıcı bir haber.",
+      "angle": "what Conversational Editing does + example commands + when it rolls out",
+      "tools": ["Social media", "Google"],
+      "published": "2026-09-23",
+      "sources": [
+        "https://blog.youtube/news-and-events/made-on-youtube-new-tools-power-creation-journey/"
+      ],
+      "hints": [
+        "https://www.socialmediatoday.com/news/youtube-previews-ai-powered-conversational-editing/831445/",
+        "https://techcrunch.com/2026/09/23/youtubes-conversational-video-editing-tool-lets-creators-make-edits-in-natural-language/"
+      ],
+      "score": 6
+    },
+    {
+      "id": "google-photos-ask-photos-edit",
+      "tool": "Google",
+      "kind": "evergreen",
+      "title": "You Can Now Edit Google Photos Just by Describing What You Want",
+      "summary_tr": "Google Photos'ta 'Ask Photos' / 'Help me edit' özelliği Gemini ile çalışıyor: bir fotoğrafı aç, Edit > Ask'a dokun ve \"gözlüğü kaldır\", \"gülümsemesini düzelt\", \"gözlerini aç\" gibi cümlelerle düzenleme yapabiliyorsun — tasarım bilgisi gerekmiyor.",
+      "why_tr": "Google ürünleri listesinde son zamanlarda az haber çıktı; bu, herkesin telefonunda zaten olan ama çoğu kişinin bilmediği pratik bir özellik, dene-ve-paylaş formatına uygun.",
+      "angle": "how to open Ask Photos + 4-5 example prompts people can try right now",
+      "tools": ["Google"],
+      "published": null,
+      "sources": [
+        "https://support.google.com/photos/answer/15318661?hl=en",
+        "https://blog.google/products-and-platforms/products/photos/ai-photo-editing-google-photos/"
+      ],
+      "hints": [],
+      "score": 5
+    },
+    {
+      "id": "prompts-rental-side-income",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "5 Prompts That Turn a Spare Room, Car or Garage Into Real Rental Income",
+      "summary_tr": "Boş oda, kullanılmayan araba veya garaj/depo alanını kiralayarak gelir elde etmek isteyenler için: ChatGPT veya Claude'a rol verip fiyatlandırma, ilan metni, güvenlik kontrol listesi ve ilk ay hedefiyle gerçekçi bir tahmin çıkartan 5 prompt.",
+      "why_tr": "Cüzdana dokunan, gündelik hayattan bir konu; herkesin evinde/garajında kullanmadığı bir şey vardır, aksiyona geçmesi kolay.",
+      "angle": "role = rental income strategist, act as an expert in ...; prompts: price it, write the listing, safety/legal checklist, screen renters, one-month income estimate",
+      "tools": ["Prompt pack"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 7
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 0,
+    "Claude": 0,
+    "Gemini": 0,
+    "Grok": 0,
+    "Codex": 0,
+    "Cursor": 0,
+    "Copilot": 0,
+    "Perplexity": 0,
+    "Meta AI": 0,
+    "Mistral": 0,
+    "DeepSeek": 0,
+    "Open models": 0,
+    "Apple": 0,
+    "Higgsfield": 0,
+    "Google": 1,
+    "Social media": 1,
+    "Other": 0,
+    "Prompt pack": 1
+  },
+  "notes_tr": "16 araç için tek tek arama yapıldı; son 36 saatte gerçekten yeni olan haberlerin neredeyse tamamı zaten havuzda: GPT-6 Sol/Luna ve ChatGPT güvenlik geçmişi (ChatGPT), Claude Opus 5.5 + enzim keşfi (Claude), Gemini Notebook/Docs + Study Notebooks (Gemini), Grok 4.7 + Voice Transcribe 2 + Build shell akışı (Grok), Codex CLI 0.157-0.158 (küçük sürüm notları, öne çıkan yeni şey yok), Cursor Projects + rollouts güvenlik (Cursor), Microsoft Copilot Home/Code/Autopilot + GitHub Copilot yeni katmanlar (Copilot), Perplexity Personal Computer + HP ön yükleme (Perplexity), Meta Muse özellikleri (Meta AI), Mistral Vibe birleşmesi (Mistral), DeepSeek V4.1 Flash + app modları (DeepSeek), Qwen3.8/Kimi K3/GLM-5.3/MiniMax M3 (Open models — hepsi zaten ayrı ayrı havuzda), Apple Siri AI (Apple), Higgsfield + GPT-6 Astra (Higgsfield) — hiçbiri 36 saat içinde gerçekten yeni bir gelişme değil, sadece aynı haberlerin tekrarı. Anthropic-Salesforce 'Claudeforce' ortaklığını buldum ama duyurusu 26 Ağustos, beta'sı 15 Eylül — hem eski hem B2B/satış odaklı, kitlemize uygun değil, eklemedim. Yeni eklenenler: YouTube'un doğal dille video kurgusu (Made on YouTube etkinliği, 23 Eylül), Google Photos'un 'Ask Photos' düzenleme özelliği (evergreen, az haber alan Google için), ve yeni bir prompt paketi fikri (kira/ek gelir). OpenAI'nin 29 Eylül DevDay teaser'ı henüz somut bir özellik değil, o yüzden eklemedim — sonraki taramada takip edilebilir.",
+  "sources_changed": [
+    "research/source_health.json kontrol edildi: fail_streak >= 3 veya 30 günden eski haber veren kaynak yok, düzeltme gerekmedi.",
+    "Test edildi, reddedildi: Perplexity hub blog RSS (perplexity.ai/hub/blog/rss.xml) — 403 engelliyor.",
+    "Test edildi, reddedildi: Perplexity blog RSS (blog.perplexity.ai/rss.xml) — 403 engelliyor.",
+    "Test edildi, reddedildi: Instagram resmi blog RSS (about.instagram.com/blog/rss) — bozuk XML, parse hatası.",
+    "Test edildi, reddedildi: TikTok newsroom RSS (newsroom.tiktok.com/en-us/rss) — bozuk XML, parse hatası.",
+    "Test edildi, reddedildi: xAI blog RSS (x.ai/blog/rss.xml) — 404.",
+    "Test edildi, reddedildi: Meta AI blog RSS (ai.meta.com/blog/rss/) — 404.",
+    "Test edildi, reddedildi: Qwen ekibinin resmi blogu (qwenlm.github.io/blog/index.xml) çalışıyor ama en yeni yazı 2025-09-23 — bir yıldan eski, güncel değil, eklenmedi.",
+    "Test edildi, reddedildi: QwenLM/Qwen3, zai-org/GLM-4.5, MoonshotAI/Kimi-K2 GitHub releases feed'leri — bu ekipler GitHub Releases kullanmıyor, feed boş."
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "generated": "2026-09-27T21:57+00:00",
+  "candidates": [
+    {
+      "id": "copilot-settings-you-miss",
+      "tool": "Copilot",
+      "kind": "evergreen",
+      "title": "5 GitHub Copilot Settings Almost Nobody Turns On",
+      "summary_tr": "GitHub Copilot'un çoğu kullanıcının hiç açmadığı ayarları: public code eşleşmelerini engelleme, CLI oturum bütçesi (AI credit) sınırı, VS Code'da Copilot ayarlarını JSON'dan düzenleme, hata satırını doğrudan chat'e sürükleme, takım için paylaşılan .vscode ayarları.",
+      "why_tr": "Copilot haberleri son günlerde çok işlendi ama ayar/ipucu formatı hiç denenmedi; geliştirici kitlesi için pratik ve kaydedilebilir bir carousel olur.",
+      "angle": "5 official Copilot settings/features most users never open + how to turn each on",
+      "tools": ["Copilot"],
+      "published": null,
+      "sources": [
+        "https://docs.github.com/en/copilot/get-started/best-practices",
+        "https://docs.github.com/en/copilot/how-tos/copilot-cli/cli-best-practices",
+        "https://docs.github.com/copilot/how-tos/manage-your-account/managing-copilot-policies-as-an-individual-subscriber"
+      ],
+      "hints": ["https://neueda.com/insights/5-github-copilot-features-you-might-not-know/"],
+      "score": 6
+    },
+    {
+      "id": "prompts-investment-starter-plan",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "6 Prompts That Build You a Real Investment Starter Plan",
+      "summary_tr": "Para biriktirmeye başlamak isteyen ama nereden başlayacağını bilmeyenler için: acil durum fonu hedefi, düşük maliyetli endeks fonu/ETF araştırması, risk toleransı testi, otomatik yatırım kurulumu, portföyü izleme rutini ve yıllık gözden geçirme prompt'ları.",
+      "why_tr": "Para/cüzdan teması güçlü performans gösteriyor (negotiate-better-deal, debt-payoff, budget serileri); yatırıma başlama açısı havuzda henüz yok.",
+      "angle": "role: act as a fee-only financial planning assistant + concrete goal ([$500]/mo to invest) + deliverables (fund shortlist, risk profile, auto-invest checklist, review calendar) + a realistic estimate",
+      "tools": ["ChatGPT", "Claude", "Gemini"],
+      "published": null,
+      "sources": [
+        "https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt",
+        "https://support.claude.com/en/articles/8241126-what-kinds-of-documents-can-i-upload-to-claude"
+      ],
+      "hints": [],
+      "score": 6
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 0, "Claude": 0, "Gemini": 0, "Grok": 0, "Codex": 0, "Cursor": 0,
+    "Copilot": 1, "Perplexity": 0, "Meta AI": 0, "Mistral": 0, "DeepSeek": 0,
+    "Open models": 0, "Apple": 0, "Higgsfield": 0, "Google": 0, "Social media": 0,
+    "Other": 0, "Prompt pack": 1
+  },
+  "notes_tr": "25+ arama yapıldı: 16 aracın hepsi tek tek tarandı + Codex changelog + en az 5 ekstra 'ilginç AI hikayesi' araması (Fireworks Ember-1, Meta Muse Charm, GitHub trending 'paperclip', OpenAI ajan güvenlik olayları). Son 36 saatte / 7 günde gerçekten YENİ ve havuzda olmayan resmi kaynaklı bir haber çıkmadı: bulunanların hepsi ya havuzda zaten var olan lansmanların devamıydı (ChatGPT Voice+GPT-6 Sol/Luna rollout = gpt-6-sol-luna ile aynı; Higgsfield x GPT-6 Astra = higgsfield-gpt6-astra-speed ile aynı; Meta Muse Charm = meta-muse-charm-device ile aynı; OpenAI ajan güvenlik açıklaması = openai-agents-government-sites-incident / openai-dns-sandbox-escape-pause ile aynı hikayenin devamı; Perplexity Personal Computer Nisan 2026'dan, Google Gemini Spark x Chrome/Photos 3 Eylül'den, Instagram teleprompter Mayıs 2026'dan - hepsi 7 günlük pencerenin çok dışında), ya da (Claude'un Riemann hipotezi ilerlemesi) 10 Ağustos 2026 tarihli, pencere dışı. Fireworks Ember-1 sadece research preview, normal kullanıcı deneyemiyor - kural gereği alınmadı. Bu yüzden bu gather'da sadece 1 evergreen (Copilot ayarları) ve 1 prompt pack (yatırım başlangıç planı) eklendi.",
+  "sources_changed": []
+}
