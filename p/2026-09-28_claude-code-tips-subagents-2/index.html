@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Claude Code Settings · AI Playbooks</title><meta name="description" content="Most Claude Code users have never flipped these 5 switches. Here&#x27;s what each one unlocks:">
+<meta property="og:title" content="Most Claude Code users have never flipped these 5 switches. Here&#x27;s what each one unlocks:"><meta property="og:image" content="https://aiplaybooks.github.io/ai-playbooks/media/2026-09-28_claude-code-tips-subagents-2/cover.jpg">
+<style>
+:root{--bg:#0B0816;--card:#161127;--ink:#F5F2FF;--muted:#A39DBD;--acc:#C06BFF;--acc2:#4F9BFF;--line:#2A2340}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;padding:0 16px 64px}
+.wrap{max-width:680px;margin:0 auto}
+.top{display:flex;align-items:center;gap:10px;padding:18px 0;font-weight:800;letter-spacing:.3px}
+.top i{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--acc),var(--acc2));display:grid;place-items:center;font-style:normal}
+.cv{width:100%;border-radius:18px;display:block;margin:4px 0 18px}
+h1{font-size:26px;line-height:1.2;letter-spacing:-.3px}
+.lead{color:var(--muted);margin:10px 0 22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;margin:14px 0}
+.no{color:var(--acc);font-weight:900;font-size:22px}
+h2{font-size:19px;line-height:1.25;margin:2px 0 4px}
+.sub{color:var(--muted);font-size:15px;margin-bottom:10px}
+.pbox{background:#0E0A1C;border:1px solid var(--line);border-radius:14px;padding:14px;margin-top:8px}
+.pt{white-space:pre-wrap;font-size:15.5px}
+.pt b{color:#fff} .ph{color:var(--acc);font-weight:700}
+.cp{margin-top:12px;width:100%;border:0;border-radius:12px;padding:12px;font-weight:800;font-size:15px;color:#fff;
+ background:linear-gradient(135deg,var(--acc),var(--acc2));cursor:pointer}
+.cp.ok{background:#1f9d62}
+ul{padding-left:20px} li{margin:6px 0}
+code{background:#0E0A1C;border-radius:6px;padding:1px 6px}
+.tip{color:var(--muted);font-size:15px;margin:-4px 4px 14px} .tip b{color:var(--acc2);margin-right:6px}
+.follow{display:block;text-align:center;margin:26px 0 8px;padding:14px;border-radius:14px;border:1px solid var(--acc);color:var(--ink);
+ text-decoration:none;font-weight:800}
+.foot{color:var(--muted);font-size:13px;text-align:center}
+</style></head><body><div class="wrap">
+<div class="top"><i>A</i>AI Playbooks</div><img class="cv" src="https://aiplaybooks.github.io/ai-playbooks/media/2026-09-28_claude-code-tips-subagents-2/cover.jpg" alt="">
+<h1>Most Claude Code users have never flipped these 5 switches. Here&#x27;s what each one unlocks:</h1><p class="lead">Thanks for following! Everything from the post, ready to copy. Fill in the [BRACKETS] with your details.</p>
+<section class="card"><h2>Five switches, what each one does</h2><p class="sub">THE PANEL</p><ul><li>CLAUDE.md — Instructions Claude reads automatically at the start of every session</li><li>Slash commands — Your own reusable <code>/commands</code>, saved as a file</li><li>Permission modes — How much Claude does before it stops and asks</li><li>Hooks — Shell commands that fire on Claude Code&#x27;s own events</li><li>Subagents — Helpers with their own tools and their own context window</li></ul></section><section class="card"><h2>CLAUDE.md: it never forgets your project</h2><p class="sub">SWITCH 1 · MEMORY</p><ul><li>Where it lives — A markdown file in your project&#x27;s root folder</li><li>Turn it on — Run <code>/init</code> — Claude scans the codebase and drafts one</li><li>What goes in it — Build commands, conventions, repeated instructions</li><li>Loads every time — Reads automatically at the start of every session</li></ul></section><section class="card"><div class="no">01</div><h2>Custom slash commands</h2><p class="sub">Add `$ARGUMENTS` inside the file to pass in details, like `/deploy staging`.</p><div class="pbox"><p class="pt">Save a markdown file at <code>.claude/commands/deploy.md</code> with your steps written out, and Claude turns the filename into <code>/deploy</code> — one word instead of retyping the whole routine.</p><button class="cp" data-t="Save a markdown file at `.claude/commands/deploy.md` with your steps written out, and Claude turns the filename into `/deploy` — one word instead of retyping the whole routine.">Copy prompt</button></div></section><section class="card"><h2>Permission modes: how much it asks first</h2><p class="sub">SWITCH 3 · CONTROL</p><ul><li>default: Asks before every file edit and most shell commands</li><li>plan: Only reads and proposes a plan, changes nothing yet</li><li>acceptEdits: Auto-accepts file edits, still asks before risky commands</li><li>bypassPermissions: Skips prompts entirely — for sandboxes, not daily use</li></ul></section><section class="card"><h2>Hooks: your own code on Claude&#x27;s events</h2><p class="sub">SWITCH 4 · AUTOMATION</p><ul><li>What it is — A shell command that runs automatically on a Claude Code event</li><li>Where it lives — The <code>hooks</code> key inside <code>.claude/settings.json</code></li><li>One example — Run your test suite automatically after every file edit</li><li>Check what&#x27;s set — Type <code>/hooks</code> inside Claude Code to see every hook that&#x27;s live</li></ul></section><section class="card"><h2>Subagents: a helper with its own window</h2><p class="sub">SWITCH 5 · DELEGATION</p><ul><li>Where they live — One markdown file per subagent, inside <code>.claude/agents/</code></li><li>What&#x27;s inside — A name, a description, and which tools it&#x27;s allowed to use</li><li>Why it helps — Big searches and logs stay out of your main conversation</li><li>How to call one — Claude picks one automatically, or you name it directly</li></ul></section>
+<a class="follow" href="https://www.instagram.com/aiplaybooks.daily/">New playbook every day → @aiplaybooks.daily</a>
+<p class="foot">AI Playbooks · <a href="https://aiplaybooks.github.io/ai-playbooks/" style="color:var(--muted)">aiplaybooks.github.io</a></p>
+</div><script>
+document.querySelectorAll('.cp').forEach(b=>b.onclick=async()=>{const t=b.dataset.t;
+ try{await navigator.clipboard.writeText(t)}catch(_){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');a.remove()}
+ b.textContent='Copied ✓';b.classList.add('ok');setTimeout(()=>{b.textContent='Copy prompt';b.classList.remove('ok')},1800)});
+</script></body></html>
