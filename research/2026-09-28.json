@@ -1,7 +1,55 @@
 {
- "generated": "2026-09-28T13:30+00:00",
+ "generated": "2026-09-28T18:30+00:00",
  "hours": 36.0,
  "items": [
+  {
+   "source": "GitHub Copilot changelog",
+   "tier": "official",
+   "title": "Claude Sonnet 5.5 in GitHub Copilot",
+   "url": "https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot",
+   "date": "2026-09-28T18:03+00:00",
+   "summary": "Claude Sonnet 5.5, Anthropic’s newest Sonnet model, is now generally available in GitHub Copilot. It is designed for well-scoped everyday work like building features and fixing bugs. In our early… The post Claude Sonnet 5.5 in GitHub Copilot appeared first on The GitHub Blog ."
+  },
+  {
+   "source": "Claude Code releases",
+   "tier": "official",
+   "title": "v2.1.284",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.284",
+   "date": "2026-09-28T18:02+00:00",
+   "summary": "What's changed Added Claude Sonnet 5.5 ( claude-sonnet-5-5 ), now the default Sonnet model on the Anthropic API — 1M context, $2/$10 per Mtok with $0.20/Mtok cache reads Added a \"Yes, but ask again next time\" answer to auto mode's prompt before a read outside the working directories, so you can allow that one read and still be asked about later ones Added dollar amounts to the Claude apps gateway…"
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Google Arts & Culture turns 15 — and gives its app a makeover",
+   "url": "https://blog.google/company-news/outreach-and-initiatives/arts-culture/new-arts-culture-app/",
+   "date": "2026-09-28T16:30+00:00",
+   "summary": "Explore art and culture with visual-first conversation search, a redesigned home feed, AI experiments and 27 new city guides in the Google Arts & Culture app."
+  },
+  {
+   "source": "Mistral news",
+   "tier": "official",
+   "title": "Hallo, Deutschland!",
+   "url": "https://mistral.ai/news/hallo-deutschland/",
+   "date": "2026-09-28T15:57+00:00",
+   "summary": "Mistral opens a Munich hub for Physics AI and Industrial AI research, partnering with German industry."
+  },
+  {
+   "source": "Gemini blog",
+   "tier": "official",
+   "title": "3 ways this grocer cooks for 200 guests with Gemini",
+   "url": "https://blog.google/products-and-platforms/products/gemini/edys-grocer-gemini/",
+   "date": "2026-09-28T15:00+00:00",
+   "summary": "Edy Massih uses Gemini to transform regular recipes into massive catering spreads, automate grocery orders, and adapt menus for dietary restrictions."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "3 ways this grocer cooks for 200 guests with Gemini",
+   "url": "https://blog.google/products-and-platforms/products/gemini/edys-grocer-gemini/",
+   "date": "2026-09-28T15:00+00:00",
+   "summary": "Edy Massih uses Gemini to transform regular recipes into massive catering spreads, automate grocery orders, and adapt menus for dietary restrictions."
+  },
   {
    "source": "Google Keyword blog (all products)",
    "tier": "official",
@@ -9,6 +57,14 @@
    "url": "https://blog.google/products/marketingplatform/360/vertical-video-unification/",
    "date": "2026-09-28T13:00+00:00",
    "summary": "Unify vertical video buys with Google Display & Video 360. See how Unilever boosted reach by 24% using Gemini-powered measurement. Get the details."
+  },
+  {
+   "source": "Meta newsroom (AI + Instagram / WhatsApp / Threads / Facebook)",
+   "tier": "official",
+   "title": "Launching Meta Enterprise Platform",
+   "url": "https://about.fb.com/news/2026/09/launching-meta-enterprise-platform/",
+   "date": "2026-09-28T12:36+00:00",
+   "summary": "Today we are starting Meta Enterprise Platform to help businesses use AI to grow, and Chirantan \"CJ\" Desai will join Meta as Chief Enterprise Platform Officer The post Launching Meta Enterprise Platform appeared first on Meta Newsroom ."
   },
   {
    "source": "Hugging Face blog",
@@ -19,12 +75,44 @@
    "summary": ""
   },
   {
+   "source": "OpenAI News",
+   "tier": "official",
+   "title": "The Lenfest Institute grows landmark program with expanded OpenAI support",
+   "url": "https://openai.com/index/lenfest-ai-collaborative-expansion",
+   "date": "2026-09-28T07:00+00:00",
+   "summary": "OpenAI is expanding the Lenfest AI Collaborative and Fellowship Program with $5 million in funding and up to $5 million in software credits and engineering support."
+  },
+  {
    "source": "Codex CLI releases",
    "tier": "official",
    "title": "0.158.0",
    "url": "https://github.com/openai/codex/releases/tag/rust-v0.158.0",
    "date": "2026-09-28T05:10+00:00",
    "summary": "New Features Configure copy-on-select and right-click paste in the fullscreen TUI. Copied transcript selections now preserve Markdown formatting. ( #47639 , #47896 , #48118 ) Connect to MCP servers that require pre-registered OAuth client secrets, including through codex mcp add --oauth-client-secret . ( #47891 ) Secure direct exec-server WebSocket connections with bearer tokens, including…"
+  },
+  {
+   "source": "Claude release notes",
+   "tier": "official",
+   "title": "Claude release notes: Sep 28, 2026",
+   "url": "https://docs.claude.com/en/release-notes/overview",
+   "date": "2026-09-28T00:00+00:00",
+   "summary": " We've launched Claude Sonnet 5.5 ( claude-sonnet-5-5 ). It's available on the Claude API, Claude in Amazon Bedrock , Claude Platform on AWS , Claude on Google Cloud , and Claude in Microsoft Foundry . For its context window, output limits, and prices, see the Claude Sonnet 5.5 model page . Code written for Claude Sonnet 5 can break on Claude Sonnet 5.5 in five ways. To turn off up-front thinking, send thinking: {\"type\": \"between_tools\"} instead of \"disabled\" , at high effort or below. Forced tool use ( tool_choice types any and tool ) returns a 400 error. Thinking blocks are tied to the model and the conversation. On the Claude API and Google Cloud, the earlier computer_20251124 computer use tool isn't accepted. The advisor tool rejects Claude Opus 4.8, Claude Opus 4.7, and Claude Sonnet 5 as advisors. See What's new in Claude Sonnet 5.5 for each change and the migration guide for…"
+  },
+  {
+   "source": "xAI / Grok API release notes",
+   "tier": "official",
+   "title": "xAI / Grok API release notes: Sep 28, 2026",
+   "url": "https://docs.x.ai/docs/release-notes",
+   "date": "2026-09-28T00:00+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Codex changelog",
+   "tier": "official",
+   "title": "Codex changelog: Sep 28, 2026",
+   "url": "https://developers.openai.com/codex/changelog",
+   "date": "2026-09-28T00:00+00:00",
+   "summary": "Codex CLI 0.158.0 pre]:w-full [&>pre]:max-w-full [&>pre]:mb-0 pt-4\"> $ npm install -g @openai/codex@0.158.0 View details New Features Configure copy-on-select and right-click paste in the fullscreen TUI. Copied transcript selections now preserve Markdown formatting. ( #47639 , #47896 , #48118 ) Connect to MCP servers that require pre-registered OAuth client secrets, including through codex mcp add --oauth-client-secret . ( #47891 ) Secure direct exec-server WebSocket connections with bearer tokens, including connections configured through app-server. ( #47601 , #47648 ) Image generation and editing can explicitly request transparent backgrounds, and edits now accept file-backed conversation images. ( #47484 , #47956 ) Terminal input approval is enabled by default for commands running with elevated permissions; runtime-only grants no longer cause unnecessary reviews. ( #47799 , #48073 )…"
   },
   {
    "source": "Social Media Today",
@@ -109,10 +197,50 @@
   {
    "source": "Hacker News",
    "tier": "community",
+   "title": "Claude Sonnet 5.5",
+   "url": "https://www.anthropic.com/claude-sonnet-5-5",
+   "date": "2026-09-28T17:58+00:00",
+   "summary": "107 points, 68 comments · https://news.ycombinator.com/item?id=49881850"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "The problem is not AI code, but not knowing about system architecture or intent",
+   "url": "https://www.ssp.sh/brain/the-problem-is-not-the-ai-code-but-nobody-knows-anything-anymore/",
+   "date": "2026-09-28T16:11+00:00",
+   "summary": "275 points, 186 comments · https://news.ycombinator.com/item?id=49880312"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Kids turned low-traffic NPR Spotify comments into a secret group chat",
+   "url": "https://www.thisamericanlife.org/897/transcript",
+   "date": "2026-09-28T15:35+00:00",
+   "summary": "126 points, 89 comments · https://news.ycombinator.com/item?id=49879697"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: Hntui – A TUI for Hacker News",
+   "url": "https://github.com/ahmd-sh/hntui",
+   "date": "2026-09-28T12:11+00:00",
+   "summary": "99 points, 59 comments · https://news.ycombinator.com/item?id=49876760"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
    "title": "Parley: Federated, decentralised chat that speaks plain IRC",
    "url": "https://git.mills.io/prologic/parley",
    "date": "2026-09-28T10:30+00:00",
-   "summary": "124 points, 52 comments · https://news.ycombinator.com/item?id=49875913"
+   "summary": "245 points, 121 comments · https://news.ycombinator.com/item?id=49875913"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: PaperMono, e-ink fridge magnet shopping list with mobile web page",
+   "url": "https://github.com/seamusc/papermono-shopping-list",
+   "date": "2026-09-28T10:14+00:00",
+   "summary": "93 points, 45 comments · https://news.ycombinator.com/item?id=49875801"
   },
   {
    "source": "Hacker News",
@@ -120,7 +248,7 @@
    "title": "AI companies in race to demonstrate their model most threatening to humanity",
    "url": "https://thecivilian.co.nz/2026/09/27/ai-companies-in-fierce-arms-race-to-demonstrate-their-model-is-the-most-existentially-threatening-to-humanity/",
    "date": "2026-09-28T08:35+00:00",
-   "summary": "264 points, 183 comments · https://news.ycombinator.com/item?id=49875148"
+   "summary": "412 points, 372 comments · https://news.ycombinator.com/item?id=49875148"
   },
   {
    "source": "Hacker News",
@@ -128,7 +256,7 @@
    "title": "Prompting Claude Opus 5.5",
    "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5",
    "date": "2026-09-28T07:33+00:00",
-   "summary": "156 points, 161 comments · https://news.ycombinator.com/item?id=49874728"
+   "summary": "188 points, 214 comments · https://news.ycombinator.com/item?id=49874728"
   },
   {
    "source": "Hacker News",
@@ -136,7 +264,7 @@
    "title": "Thinking fast and slow in AI: The role of metacognition (2021)",
    "url": "https://arxiv.org/abs/2110.01834",
    "date": "2026-09-28T03:23+00:00",
-   "summary": "131 points, 45 comments · https://news.ycombinator.com/item?id=49873241"
+   "summary": "165 points, 70 comments · https://news.ycombinator.com/item?id=49873241"
   },
   {
    "source": "Hacker News",
@@ -144,7 +272,7 @@
    "title": "As A.I. makes law firms more efficient, clients ask: 'Where's my discount?'",
    "url": "https://www.nytimes.com/2026/09/26/business/dealbook/ai-law-discount-billable-hour.html",
    "date": "2026-09-28T01:30+00:00",
-   "summary": "136 points, 145 comments · https://news.ycombinator.com/item?id=49872522"
+   "summary": "141 points, 154 comments · https://news.ycombinator.com/item?id=49872522"
   },
   {
    "source": "Hacker News",
@@ -152,7 +280,7 @@
    "title": "When did Google get so weird?",
    "url": "https://sancho.bearblog.dev/google-weird/",
    "date": "2026-09-27T20:12+00:00",
-   "summary": "1479 points, 786 comments · https://news.ycombinator.com/item?id=49870367"
+   "summary": "1691 points, 928 comments · https://news.ycombinator.com/item?id=49870367"
   },
   {
    "source": "Hacker News",
@@ -160,7 +288,7 @@
    "title": "Imp is a full port of DSPy to the BEAM",
    "url": "https://github.com/deepfates/imp",
    "date": "2026-09-27T19:28+00:00",
-   "summary": "86 points, 7 comments · https://news.ycombinator.com/item?id=49869995"
+   "summary": "94 points, 10 comments · https://news.ycombinator.com/item?id=49869995"
   },
   {
    "source": "Hacker News",
@@ -168,7 +296,7 @@
    "title": "SNL Weekend Update: Anthropic CEO Dario Amodei on A.I.'S Threat to Humanity [video]",
    "url": "https://www.youtube.com/watch?v=-Nvne3LzBls",
    "date": "2026-09-27T17:32+00:00",
-   "summary": "186 points, 100 comments · https://news.ycombinator.com/item?id=49868831"
+   "summary": "189 points, 102 comments · https://news.ycombinator.com/item?id=49868831"
   },
   {
    "source": "Hacker News",
@@ -176,7 +304,7 @@
    "title": "Ember-1",
    "url": "https://fireworks.ai/blog/ember-1",
    "date": "2026-09-27T17:31+00:00",
-   "summary": "514 points, 227 comments · https://news.ycombinator.com/item?id=49868830"
+   "summary": "565 points, 242 comments · https://news.ycombinator.com/item?id=49868830"
   },
   {
    "source": "Hacker News",
@@ -184,7 +312,7 @@
    "title": "Don't couple your Go code to GitHub",
    "url": "https://iain.rocks/blog/dont-couple-your-go-code-to-github",
    "date": "2026-09-27T16:50+00:00",
-   "summary": "279 points, 137 comments · https://news.ycombinator.com/item?id=49868404"
+   "summary": "313 points, 168 comments · https://news.ycombinator.com/item?id=49868404"
   },
   {
    "source": "Hacker News",
@@ -192,7 +320,7 @@
    "title": "There are no \"rogue\" AI agents",
    "url": "https://eoinhiggins.substack.com/p/there-are-no-rogue-ai-agents",
    "date": "2026-09-27T16:19+00:00",
-   "summary": "374 points, 257 comments · https://news.ycombinator.com/item?id=49868083"
+   "summary": "385 points, 266 comments · https://news.ycombinator.com/item?id=49868083"
   },
   {
    "source": "Hacker News",
@@ -200,7 +328,7 @@
    "title": "Show HN: TinyAIArena watch AI agents battle it out",
    "url": "https://tinyaiarena.com/",
    "date": "2026-09-27T15:51+00:00",
-   "summary": "113 points, 44 comments · https://news.ycombinator.com/item?id=49867775"
+   "summary": "116 points, 45 comments · https://news.ycombinator.com/item?id=49867775"
   },
   {
    "source": "Hacker News",
@@ -208,7 +336,7 @@
    "title": "The Normalization of Inexplicable Failures",
    "url": "https://www.ihatethefuture.com/2026/09/the-normalization-of-inexplicable.html",
    "date": "2026-09-27T15:26+00:00",
-   "summary": "270 points, 115 comments · https://news.ycombinator.com/item?id=49867486"
+   "summary": "274 points, 119 comments · https://news.ycombinator.com/item?id=49867486"
   },
   {
    "source": "Hacker News",
@@ -216,7 +344,7 @@
    "title": "Ten lines of code that changed my world",
    "url": "https://pixelambacht.nl/2026/ten-lines-of-code/",
    "date": "2026-09-27T13:33+00:00",
-   "summary": "135 points, 43 comments · https://news.ycombinator.com/item?id=49866534"
+   "summary": "138 points, 43 comments · https://news.ycombinator.com/item?id=49866534"
   },
   {
    "source": "Hacker News",
@@ -224,15 +352,7 @@
    "title": "\"As a Language Model\": Chat Template Switches LLM Self-Referential Voice",
    "url": "https://arxiv.org/abs/2609.25021",
    "date": "2026-09-27T10:26+00:00",
-   "summary": "102 points, 101 comments · https://news.ycombinator.com/item?id=49865343"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "Unsealed Briefs in Authors’ Case v. Microsoft/OpenAI",
-   "url": "https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/",
-   "date": "2026-09-27T06:19+00:00",
-   "summary": "619 points, 606 comments · https://news.ycombinator.com/item?id=49863864"
+   "summary": "102 points, 104 comments · https://news.ycombinator.com/item?id=49865343"
   }
  ],
  "errors": [],

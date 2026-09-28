@@ -1,0 +1,233 @@
+{
+  "theme": "adaptive",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Meta Muse on AI Glasses",
+  "caption": "🚨 Meta just showed its Muse AI agent moving off your phone and onto your AI glasses.\n\nRight now most smart glasses just take photos or play audio. Muse can actually see what you're looking at and act on it.\n\n→ say its name and it acts on whatever you're looking at\n→ fully hands-free, no phone, no typing\n→ checks a flight, shops a shelf, books a table while you keep talking\n→ new connectors this round: Walmart, Best Buy, Expedia, Instacart\n\nWould you actually talk to your glasses like this, or does it feel too weird? 👇 Save this before Muse starts rolling out.\n\nFollow @aiplaybooks.daily for daily AI tool news.\n\n#ai #metaai #smartglasses #aitools #technology",
+  "captions": {
+    "instagram": "🚨 Meta just showed its Muse AI agent moving off your phone and onto your AI glasses.\n\nRight now most smart glasses just take photos or play audio. Muse can actually see what you're looking at and act on it.\n\n→ say its name and it acts on whatever you're looking at\n→ fully hands-free, no phone, no typing\n→ checks a flight, shops a shelf, books a table while you keep talking\n→ new connectors this round: Walmart, Best Buy, Expedia, Instacart\n\nWould you actually talk to your glasses like this, or does it feel too weird? 👇 Save this before Muse starts rolling out.\n\nFollow @aiplaybooks.daily for daily AI tool news.\n\n#ai #metaai #smartglasses #aitools #technology",
+    "facebook": "Meta just showed its Muse AI agent moving off your phone and onto your face.\n\nAt Connect 2026, Meta demoed Muse working through AI glasses: say its name, look at something, and it acts on it — no describing out loud, no typing.\n\nIn the demo it checked a flight price, shopped a shelf, and booked a table, all while the person kept talking. Meta says the rollout starts in the coming months.\n\nWould you want an AI agent watching through your glasses, or does that cross a line for you?\n\n#ai #metaai #smartglasses #technology",
+    "youtube": {
+      "title": "Meta Muse: The AI Agent Coming to Your Glasses",
+      "description": "Meta just showed its Muse AI agent moving from your phone onto AI glasses.\n\nSay its name, look at what you're looking at, and Muse can act on it: check a flight, shop a shelf, book a table — no phone, no typing needed.\n\nMeta says the rollout starts in the coming months, alongside 100+ AI glasses options by the end of 2026.\n\n#ai #metaai #smartglasses #aitools #technology",
+      "tags": [
+        "meta muse",
+        "ai glasses",
+        "meta ai agent",
+        "smart glasses ai",
+        "hands free ai",
+        "meta connect 2026",
+        "ai agent"
+      ]
+    }
+  },
+  "sources": [
+    "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/"
+  ],
+  "cover": {
+    "headline": "Meta just said its Muse AI agent is coming to your glasses. Look at something and it acts on it:",
+    "em": "Muse AI agent",
+    "person": "Mark Zuckerberg",
+    "layout": "scene_person",
+    "photo_query": [
+      "modern eyewear design",
+      "black eyeglasses product photo",
+      "camera glasses gadget"
+    ],
+    "photo_pick": {
+      "url": "https://live.staticflickr.com/8427/7851208176_b6da5ef4dc_b.jpg",
+      "page": "https://www.flickr.com/photos/83056894@N06/7851208176",
+      "author": "Manjo.",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "source": "Flickr",
+      "file": "Hipster"
+    },
+    "icons": [
+      {
+        "slug": "meta",
+        "style": "tile",
+        "pos": "tr",
+        "size": 150
+      }
+    ],
+    "photo": {
+      "file": "Hipster",
+      "page": "https://www.flickr.com/photos/83056894@N06/7851208176",
+      "author": "Manjo.",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "source": "Flickr"
+    },
+    "layout_used": "scene_person",
+    "person_photo": {
+      "file": "File:Mark Zuckerberg 2019 (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Mark_Zuckerberg_2019_(cropped).jpg",
+      "author": "Anthony Quintano from Westminster, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source": "Wikimedia Commons"
+    }
+  },
+  "design": {
+    "mood": "looking through a smart-glasses HUD at night: near-black glass with an electric-cyan lens glow, thin ring/lens outlines instead of a grid, a warm amber flare where the agent is 'looking' at something — sleek, futuristic, optical",
+    "palette": {
+      "bg": "#0A0E14",
+      "bg2": "#0E1522",
+      "surface": "#101826",
+      "ink": "#EAF3FF",
+      "muted": "#7C93AE",
+      "accent": "#3FD8FF",
+      "accent2": "#FFB454"
+    },
+    "fonts": {
+      "display": "Outfit",
+      "body": "Inter",
+      "mono": "JetBrains Mono"
+    },
+    "display": {
+      "weight": 700,
+      "case": "none",
+      "tracking": -2,
+      "scale": 1.0,
+      "italic_em": false
+    },
+    "shape": {
+      "radius": 26,
+      "border": 1,
+      "shadow": "glow"
+    },
+    "background": {
+      "pattern": "rings",
+      "pattern_opacity": 0.1,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "pill",
+    "prompt": "card",
+    "art": "<svg viewBox='0 0 900 460' xmlns='http://www.w3.org/2000/svg'><g fill='none' stroke='var(--accent)' stroke-width='6'><circle cx='330' cy='230' r='120'/><circle cx='570' cy='230' r='120'/></g><path d='M450 230h0' stroke='var(--accent)' stroke-width='6'/><path d='M210 230h-60M690 230h60' stroke='var(--muted)' stroke-width='6'/><path d='M410 200q40 30 80 0' stroke='var(--muted)' stroke-width='6' fill='none'/><circle cx='330' cy='230' r='46' fill='var(--surface)' stroke='var(--accent2)' stroke-width='4'/><circle cx='330' cy='230' r='10' fill='var(--accent2)'/><g stroke='var(--accent2)' stroke-width='3'><path d='M330 130v-24M330 330v24M230 230h-24M430 230h24'/></g><rect x='560' y='150' width='170' height='90' rx='16' fill='var(--surface)' stroke='var(--accent)' stroke-width='3'/><circle cx='585' cy='175' r='6' fill='var(--accent)'/><path d='M600 178h110M600 200h80M600 222h95' stroke='var(--muted)' stroke-width='5' stroke-linecap='round'/></svg>",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='6' cy='15' r='3'/><circle cx='18' cy='15' r='3'/><path d='M9 15h6M3 15l1-7a2 2 0 0 1 2-2h1M21 15l-1-7a2 2 0 0 1-2-2h-1'/></svg>"
+  },
+  "voice": "am_eric",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "META · MUSE AGENT",
+      "title": "Meta's Muse AI agent is coming to your AI glasses.",
+      "em": "coming to your AI glasses",
+      "sub": "Say its name, look at what you're looking at, and it acts — hands stay free.",
+      "tools": [
+        "Meta AI"
+      ],
+      "voiceover": "Meta just said its Muse AI agent is coming to your smart glasses."
+    },
+    {
+      "type": "facts",
+      "label": "WHAT MUSE DOES",
+      "title": "Not a voice assistant you describe things to",
+      "items": [
+        [
+          "Look and ask",
+          "Say Muse's name and it acts on whatever you're looking at, no describing needed"
+        ],
+        [
+          "Runs in the background",
+          "Muse keeps working on a task while you're still talking about something else"
+        ],
+        [
+          "Fully hands-free",
+          "No phone, no typing — the whole interaction is voice plus your glasses' camera"
+        ],
+        [
+          "Connected apps",
+          "New connectors this round: Walmart, Best Buy, Expedia, Instacart, Notion, GitHub"
+        ]
+      ],
+      "voiceover": "Say Muse's name, look at something, and it acts — no describing, no typing."
+    },
+    {
+      "type": "steps",
+      "label": "SEEING WHAT YOU SEE",
+      "title": "Three things Meta showed it doing",
+      "steps": [
+        [
+          "Shop a shelf",
+          "Look at a product or a flier and ask Muse to check it or add it to your list"
+        ],
+        [
+          "Check a flight",
+          "Ask about a price or a booking while Muse looks through your glasses with you"
+        ],
+        [
+          "Book a table",
+          "Muse can act on a request in the background without breaking your conversation"
+        ]
+      ],
+      "voiceover": "Look at a shelf, a flier, a flight price — Muse can act on what it sees."
+    },
+    {
+      "type": "compare",
+      "label": "OLD VS. NEW",
+      "title": "How this differs from a normal voice assistant",
+      "cols": [
+        {
+          "name": "Typical voice assistant",
+          "points": [
+            "You describe what you see out loud",
+            "One command, one answer, then it stops",
+            "Can't hold a task while you keep talking"
+          ]
+        },
+        {
+          "name": "Muse on glasses",
+          "points": [
+            "It already sees what you're looking at",
+            "Keeps a long, in-depth conversation going",
+            "Finishes tasks in the background as you talk"
+          ]
+        }
+      ],
+      "voiceover": "A normal assistant waits for a command. Muse sees, and keeps working while you talk."
+    },
+    {
+      "type": "stat",
+      "label": "TIMELINE",
+      "value": "Coming months",
+      "title": "When Muse reaches AI glasses",
+      "sub": "Meta says the rollout starts in the coming months and expands through 2026, alongside 100+ AI glasses options by year-end.",
+      "voiceover": "Meta says Muse starts rolling out to AI glasses in the coming months."
+    },
+    {
+      "type": "limits",
+      "label": "WORTH KNOWING",
+      "title": "This isn't the audio-only Ray-Ban launch",
+      "items": [
+        "Different from the earlier Ray-Ban Meta audio glasses news — this is agent software, not new hardware",
+        "Meta hasn't named which specific glasses get Muse first",
+        "\"Coming months\" is Meta's own wording — no fixed date yet"
+      ],
+      "cta": "Full announcement: about.fb.com",
+      "voiceover": "This is the agent, not new hardware — and Meta hasn't fixed an exact date yet."
+    },
+    {
+      "type": "cta",
+      "title": "Hands-free AI",
+      "title2": "is moving to your face.",
+      "lines": [
+        [
+          "Watch for",
+          "Muse rolling out on AI glasses in the coming months"
+        ],
+        [
+          "Read",
+          "about.fb.com/news for the full Connect 2026 recap"
+        ],
+        [
+          "Follow",
+          "@aiplaybooks.daily for daily AI tool news"
+        ]
+      ],
+      "voiceover": "Hands-free AI is moving from your phone to your glasses — follow along with us."
+    }
+  ]
+}

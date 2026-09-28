@@ -1,0 +1,81 @@
+{
+ "generated": "2026-09-28T21:30+00:00",
+ "candidates": [
+  {
+   "id": "claude-sonnet-5-5-launch",
+   "tool": "Claude",
+   "kind": "news",
+   "title": "Anthropic Just Launched Claude Sonnet 5.5 — and It's Already in GitHub Copilot",
+   "summary_tr": "Anthropic bugün Claude Sonnet 5.5'i duyurdu: API'de yeni varsayılan Sonnet modeli, 1M bağlam penceresi, $2/$10 per Mtok fiyatlama (cache read $0.20/Mtok). Aynı gün GitHub Copilot'a da General Availability olarak geldi.",
+   "why_tr": "Hem Claude hem Copilot kitlesini ilgilendiren, aynı gün çıkan büyük bir model lansmanı; fiyat/performans açısından somut ve paylaşılabilir.",
+   "angle": "what's new in Sonnet 5.5 (context, price, migration gotchas) + same-day arrival in GitHub Copilot",
+   "tools": ["Claude", "Copilot"],
+   "published": "2026-09-28",
+   "sources": [
+    "https://docs.claude.com/en/release-notes/overview",
+    "https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot",
+    "https://github.com/anthropics/claude-code/releases/tag/v2.1.284",
+    "https://www.anthropic.com/claude-sonnet-5-5"
+   ],
+   "hints": ["https://news.ycombinator.com/item?id=49881850"],
+   "score": 9
+  },
+  {
+   "id": "grok-bot-finance-plaid",
+   "tool": "Grok",
+   "kind": "news",
+   "title": "You Can Now Let Grok See Your Bank Account",
+   "summary_tr": "xAI'nin Grok Bot'u artık Plaid üzerinden banka, kart ve yatırım hesaplarına bağlanabiliyor; kullanıcılar harcamalarını, birikimlerini ve yatırımlarını Grok'a sorabiliyor. Bağlantı salt-okunur, giriş bilgileri Grok'a gitmiyor ve istenildiğinde koparılabiliyor.",
+   "why_tr": "Para yönetimi + AI kombinasyonu kitlemizin en çok ilgilendiği konulardan biri, aynı zamanda gizlilik açısından merak uyandırıyor.",
+   "angle": "what Grok Finance does + how the Plaid link works + privacy caveats",
+   "tools": ["Grok"],
+   "published": "2026-09-26",
+   "sources": [
+    "https://x.com/bot/status/2103936247995752705"
+   ],
+   "hints": [
+    "https://www.pymnts.com/news/artificial-intelligence/2026/grok-puts-the-ai-assistant-between-consumers-and-their-banks/",
+    "https://www.basenor.com/blogs/news/grok-can-now-manage-your-finances-5-details-that-matter"
+   ],
+   "score": 7
+  },
+  {
+   "id": "chatgpt-projects-evergreen",
+   "tool": "ChatGPT",
+   "kind": "evergreen",
+   "title": "ChatGPT Has a 'Projects' Folder Most People Never Open",
+   "summary_tr": "ChatGPT'nin Projects özelliği, ilgili sohbetleri, dosyaları ve talimatları tek bir yerde tutup ChatGPT'nin bu bağlamı sürekli kullanmasını sağlıyor; tekrarlayan işler (haftalık araştırma, içerik taslakları) için idealdir.",
+   "why_tr": "ChatGPT son zamanlarda az işlendi; Projects gerçek bir üretkenlik özelliği ve göstermesi kolay, pratik bir carousel konusu.",
+   "angle": "what Projects does + 3 ways to use it (recurring work, school, personal tracking) + how to set one up",
+   "tools": ["ChatGPT"],
+   "published": null,
+   "sources": [
+    "https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt"
+   ],
+   "hints": [],
+   "score": 6
+  },
+  {
+   "id": "pack-ai-negotiation-scripts",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Prompts That Write You a Script for Any Awkward Money Conversation",
+   "summary_tr": "Maaş zammı istemek, ev sahibinden kira indirimi almak, bir arkadaştan borç geri istemek gibi zor para konuşmalarını AI'a hazırlatan 5 promptluk bir paket.",
+   "why_tr": "Herkesin başına gelen, utanç verici ama gerçek bir günlük hayat sorunu; paylaşılabilirliği ve kaydetme oranı yüksek olur.",
+   "angle": "Act as a negotiation coach for [SPECIFIC AWKWARD MONEY SITUATION], write a script with [OPENING LINE], [FALLBACK OFFER] and [WALK-AWAY POINT], plus a realistic estimate of how much room to push",
+   "tools": [],
+   "published": null,
+   "sources": [],
+   "hints": [],
+   "score": 7
+  }
+ ],
+ "coverage": {
+  "ChatGPT": 1, "Claude": 1, "Gemini": 0, "Grok": 1, "Codex": 0, "Cursor": 0,
+  "Copilot": 1, "Perplexity": 0, "Meta AI": 0, "Mistral": 0, "DeepSeek": 0,
+  "Open models": 0, "Apple": 0, "Higgsfield": 0, "Google": 0, "Social media": 0,
+  "Prompt pack": 1
+ },
+ "notes_tr": "Bu tarama için asıl haber Claude Sonnet 5.5 lansmanı (Anthropic + aynı gün GitHub Copilot GA) — havuzda yoktu, eklendi. Grok'un Plaid ile banka/yatırım hesabı bağlama özelliği (Grok Bot'un kendi X hesabından, 26 Eylül) de yeni ve havuzda yoktu. Gemini, Codex, Cursor, Perplexity, Meta AI, Mistral, DeepSeek, açık modeller, Apple, Higgsfield, Google (Gemini dışı) ve sosyal medyada son 36 saatte havuzda olmayan, resmi kaynakla doğrulanabilen yeni bir şey bulunamadı — bulunanlar (Perplexity Personal Computer, Instagram Edits AI asistanı, Chrome AI Playback podcast, TikTok AI Outline, DeepSeek V4.1 Flash, Qwen3.8-Max-0902, Higgsfield Genjutsu/GPT-6 Astra) ya zaten havuzda ya da 7 günden eski/tarihi net doğrulanamadı. ChatGPT için Projects özelliğini evergreen olarak ekledim (resmi help center kaynağıyla). Bir para/gündelik hayat prompt paketi eklendi. x.ai/news, ChatGPT release notes ve Perplexity changelog sayfaları script/WebFetch için 403 verdi (beklenen, manual liste); web search ile karşılandı.",
+ "sources_changed": []
+}
