@@ -1,0 +1,274 @@
+{
+  "theme": "adaptive",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Claude Code Settings",
+  "caption": "5 Claude Code settings almost nobody touches — each one takes under a minute to flip on 🔧\n\nMost people install Claude Code and never open the settings panel. That's five real upgrades left on the table: memory, shortcuts, control, automation and delegation.\n\n→ CLAUDE.md — Claude reads it automatically every session\n→ Slash commands — your own `/deploy` in one line\n→ Permission modes — how much it does before it asks\n→ Hooks — your shell commands on Claude's own events\n→ Subagents — helpers with their own context window\n\nWhich one have you never turned on? 👇 Save this before your next session.\n\nFollow @aiplaybooks.daily for a new AI playbook every day.\n\n#claude #claudecode #claudeai #aitools #ai",
+  "captions": {
+    "instagram": "5 Claude Code settings almost nobody touches — each one takes under a minute to flip on 🔧\n\nMost people install Claude Code and never open the settings panel. That's five real upgrades left on the table: memory, shortcuts, control, automation and delegation.\n\n→ CLAUDE.md — Claude reads it automatically every session\n→ Slash commands — your own `/deploy` in one line\n→ Permission modes — how much it does before it asks\n→ Hooks — your shell commands on Claude's own events\n→ Subagents — helpers with their own context window\n\nWhich one have you never turned on? 👇 Save this before your next session.\n\nFollow @aiplaybooks.daily for a new AI playbook every day.\n\n#claude #claudecode #claudeai #aitools #ai",
+    "facebook": "Most people run Claude Code straight out of the box and never touch the settings.\n\nThere are five switches sitting right in the panel — memory, shortcuts, control, automation and delegation — and none of them take more than a minute to turn on.\n\nCLAUDE.md loads every session automatically. Slash commands turn a saved file into your own one-word command. Permission modes set how much Claude does before it stops and asks. Hooks run your own shell commands on Claude Code's events. Subagents are helpers with their own tools and their own context window.\n\nWhich one have you never tried?\n\nFollow AI Playbooks for a new AI tool tip every day.\n\n#claudecode #claudeai #aitools",
+    "youtube": {
+      "title": "Claude Code: 5 Settings Nobody Touches (But Should)",
+      "description": "5 Claude Code settings that take one minute each to turn on, and most people never touch.\n\nCLAUDE.md loads automatically every session. Slash commands turn a saved file into your own /command. Permission modes control how much Claude does before it stops and asks. Hooks run your own shell commands on Claude Code's events. Subagents are helpers with their own tools and their own context window.\n\nStart with /init in your next Claude Code session.\n\n#claudecode #claude #aitools #claudeai #ai",
+      "tags": [
+        "claude code",
+        "claude code tips",
+        "claude code settings",
+        "claude code tutorial",
+        "claude ai",
+        "anthropic",
+        "ai coding assistant",
+        "ai tools"
+      ]
+    }
+  },
+  "sources": [
+    "https://code.claude.com/docs/en/memory",
+    "https://code.claude.com/docs/en/slash-commands",
+    "https://code.claude.com/docs/en/permissions",
+    "https://code.claude.com/docs/en/hooks",
+    "https://code.claude.com/docs/en/sub-agents"
+  ],
+  "cover": {
+    "headline": "Most Claude Code users have never flipped these 5 switches. Here's what each one unlocks:",
+    "em": "5 switches",
+    "person": null,
+    "layout": "scene",
+    "photo_query": [
+      "control panel switches",
+      "circuit breaker panel",
+      "electrical switch panel"
+    ],
+    "photo_pick": {
+      "url": "https://live.staticflickr.com/3511/3881761860_e3d12d5a82_b.jpg",
+      "page": "https://www.flickr.com/photos/27076997@N00/3881761860",
+      "author": "LogicalZero",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source": "Flickr",
+      "file": "Control Panel switch module"
+    },
+    "icons": [
+      {
+        "slug": "claude",
+        "style": "tile",
+        "pos": "tr",
+        "size": 150
+      }
+    ],
+    "photo": {
+      "file": "Control Panel switch module",
+      "page": "https://www.flickr.com/photos/27076997@N00/3881761860",
+      "author": "LogicalZero",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source": "Flickr"
+    },
+    "layout_used": "scene"
+  },
+  "design": {
+    "mood": "a workbench control panel: brushed steel and deep navy, red toggle switches, precise machined lines and dashed measurement guides — flipping hidden switches almost nobody touches",
+    "palette": {
+      "bg": "#0A1830",
+      "bg2": "#0F2140",
+      "surface": "#132A4D",
+      "ink": "#F1F4FA",
+      "muted": "#8CA0C2",
+      "accent": "#E5473C",
+      "accent2": "#F2A93B"
+    },
+    "fonts": {
+      "display": "Space Grotesk",
+      "body": "Inter",
+      "mono": "Space Mono"
+    },
+    "display": {
+      "weight": 700,
+      "case": "none",
+      "tracking": -1,
+      "scale": 1.0,
+      "italic_em": false
+    },
+    "shape": {
+      "radius": 8,
+      "border": 2,
+      "shadow": "hard"
+    },
+    "background": {
+      "pattern": "grid",
+      "pattern_opacity": 0.08,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "mono",
+    "prompt": "terminal",
+    "art": "<svg viewBox='0 0 900 460' xmlns='http://www.w3.org/2000/svg'><rect x='170' y='90' width='560' height='280' rx='14' fill='var(--surface)' stroke='var(--muted)' stroke-width='2'/><g font-family='Space Mono, monospace' font-size='16' fill='var(--muted)'><text x='210' y='140'>MD</text><text x='330' y='140'>CMD</text><text x='450' y='140'>PERM</text><text x='570' y='140'>HOOK</text><text x='690' y='140' fill='var(--accent2)'>SUB</text></g><g stroke='var(--muted)' stroke-width='3'><line x1='210' y1='170' x2='210' y2='210'/><line x1='330' y1='170' x2='330' y2='210'/><line x1='570' y1='170' x2='570' y2='210'/></g><g stroke='var(--accent)' stroke-width='4'><line x1='450' y1='210' x2='450' y2='170'/><line x1='690' y1='210' x2='690' y2='170'/></g><circle cx='210' cy='225' r='16' fill='var(--bg2)' stroke='var(--muted)' stroke-width='3'/><circle cx='330' cy='225' r='16' fill='var(--bg2)' stroke='var(--muted)' stroke-width='3'/><circle cx='450' cy='225' r='16' fill='var(--accent)' stroke='var(--accent)' stroke-width='3'/><circle cx='570' cy='225' r='16' fill='var(--bg2)' stroke='var(--muted)' stroke-width='3'/><circle cx='690' cy='225' r='16' fill='var(--accent2)' stroke='var(--accent2)' stroke-width='3'/><line x1='150' y1='390' x2='750' y2='390' stroke='var(--ink)' stroke-width='2' opacity='0.3' stroke-dasharray='2 10'/></svg>",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='9' width='20' height='6' rx='3'/><circle cx='16' cy='12' r='2.4' fill='currentColor' stroke='none'/></svg>"
+  },
+  "voice": "am_adam",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "CLAUDE CODE · SETTINGS",
+      "title": "5 switches on the Claude Code panel most people never flip.",
+      "em": "never flip",
+      "sub": "Every one of them is a one-line setup once you know where it lives.",
+      "tools": [
+        "Claude"
+      ],
+      "voiceover": "Claude Code has five settings almost nobody flips on."
+    },
+    {
+      "type": "list",
+      "label": "THE PANEL",
+      "title": "Five switches, what each one does",
+      "items": [
+        [
+          "CLAUDE.md",
+          "Instructions Claude reads automatically at the start of every session"
+        ],
+        [
+          "Slash commands",
+          "Your own reusable `/commands`, saved as a file"
+        ],
+        [
+          "Permission modes",
+          "How much Claude does before it stops and asks"
+        ],
+        [
+          "Hooks",
+          "Shell commands that fire on Claude Code's own events"
+        ],
+        [
+          "Subagents",
+          "Helpers with their own tools and their own context window"
+        ]
+      ],
+      "voiceover": "CLAUDE.md, slash commands, permission modes, hooks, and subagents."
+    },
+    {
+      "type": "steps",
+      "label": "SWITCH 1 · MEMORY",
+      "title": "CLAUDE.md: it never forgets your project",
+      "steps": [
+        [
+          "Where it lives",
+          "A markdown file in your project's root folder"
+        ],
+        [
+          "Turn it on",
+          "Run `/init` — Claude scans the codebase and drafts one"
+        ],
+        [
+          "What goes in it",
+          "Build commands, conventions, repeated instructions"
+        ],
+        [
+          "Loads every time",
+          "Reads automatically at the start of every session"
+        ]
+      ],
+      "voiceover": "CLAUDE.md is a file Claude reads at the start of every session."
+    },
+    {
+      "type": "prompt",
+      "label": "SWITCH 2 · SHORTCUTS",
+      "name": "Custom slash commands",
+      "prompt": "Save a markdown file at `.claude/commands/deploy.md` with your steps written out, and Claude turns the filename into `/deploy` — one word instead of retyping the whole routine.",
+      "note": "Add `$ARGUMENTS` inside the file to pass in details, like `/deploy staging`.",
+      "voiceover": "A markdown file in dot claude commands becomes your own slash command."
+    },
+    {
+      "type": "facts",
+      "label": "SWITCH 3 · CONTROL",
+      "title": "Permission modes: how much it asks first",
+      "items": [
+        [
+          "default",
+          "Asks before every file edit and most shell commands"
+        ],
+        [
+          "plan",
+          "Only reads and proposes a plan, changes nothing yet"
+        ],
+        [
+          "acceptEdits",
+          "Auto-accepts file edits, still asks before risky commands"
+        ],
+        [
+          "bypassPermissions",
+          "Skips prompts entirely — for sandboxes, not daily use"
+        ]
+      ],
+      "voiceover": "Permission modes set how much Claude does before it stops and asks you."
+    },
+    {
+      "type": "steps",
+      "label": "SWITCH 4 · AUTOMATION",
+      "title": "Hooks: your own code on Claude's events",
+      "steps": [
+        [
+          "What it is",
+          "A shell command that runs automatically on a Claude Code event"
+        ],
+        [
+          "Where it lives",
+          "The `hooks` key inside `.claude/settings.json`"
+        ],
+        [
+          "One example",
+          "Run your test suite automatically after every file edit"
+        ],
+        [
+          "Check what's set",
+          "Type `/hooks` inside Claude Code to see every hook that's live"
+        ]
+      ],
+      "voiceover": "Hooks run your own shell commands automatically on Claude Code's own events."
+    },
+    {
+      "type": "list",
+      "label": "SWITCH 5 · DELEGATION",
+      "title": "Subagents: a helper with its own window",
+      "items": [
+        [
+          "Where they live",
+          "One markdown file per subagent, inside `.claude/agents/`"
+        ],
+        [
+          "What's inside",
+          "A name, a description, and which tools it's allowed to use"
+        ],
+        [
+          "Why it helps",
+          "Big searches and logs stay out of your main conversation"
+        ],
+        [
+          "How to call one",
+          "Claude picks one automatically, or you name it directly"
+        ]
+      ],
+      "voiceover": "Subagents are separate helpers, each with its own tools and its own context."
+    },
+    {
+      "type": "cta",
+      "title": "Five switches.",
+      "title2": "None of them cost more than a minute.",
+      "lines": [
+        [
+          "Start with",
+          "`/init` in your next Claude Code session"
+        ],
+        [
+          "Read",
+          "code.claude.com/docs"
+        ],
+        [
+          "Follow",
+          "@aiplaybooks.daily for daily AI tool tips"
+        ]
+      ],
+      "voiceover": "Five switches, one minute each — start with slash init in your next session."
+    }
+  ]
+}
