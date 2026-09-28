@@ -16,6 +16,12 @@ writer, the writer (cover headlines) and the caption agent use what works NOW.
 3. Web research (4-6 searches, this week's material first): new hook formats creators talk about (e.g. "viral hook
    formats this week", "reels hook trend", "shorts opening line", creators' breakdowns on X / LinkedIn / blogs,
    Instagram's @creators tips). Keep only formats with a concrete example; skip generic "use a strong hook" advice.
+3a. Pattern library: `research/hooks/*_hooks.json` (hook template libraries the owner saved from his accounts, e.g.
+   hookugc.com: `template`, `category`, the site's own `score`). The site's score is NOT proof for us. Use them as
+   candidate shapes: adapt 1-2 that fit this run's focus to our topics (AI tools, prompts, repos, money) as "Trial
+   patterns" in the playbook (max 4 trials at a time, each with the date it started). A trial becomes a live pattern
+   only when our numbers or a big account's data line back it; after 14 days without that, retire it. Never paste the
+   library's wording as ours; this file is private (never quote it in anything published or committed).
 3b. GitHub repo posts (our single-photo format: plain repo screenshot, all text in the caption). Find this week's
    best-performing repo posts of big AI pages (X, Instagram, Facebook, Threads; searches like "open sourced" GitHub
    repo post, "I just found a GitHub repo", "FR££" / "100% free and open source" + "stars"; the hooks.py data filtered
@@ -26,6 +32,7 @@ writer, the writer (cover headlines) and the caption agent use what works NOW.
      source URL with a real example). Refresh the proof of patterns that still win; move patterns that stopped
      showing up in the top results for 2+ weeks to "Weak patterns" (with the reason). Write templates and OUR OWN
      example lines, never another account's full caption.
+   - "Trial patterns": see 3a (template · our adapted example · started YYYY-MM-DD · what result would promote it).
    - "GitHub repo hooks": at most 8 caption-opening patterns for repo posts, same proof rules (a URL with the
      engagement, or our numbers). Each: template · when to use it (which kind of repo: paid-tool alternative, agent
      tool, course, big-company release ...) · proof. Retire what stops working the same way.

@@ -12,3 +12,4 @@ research/source_health.json
 bot/node_modules/
 bot/.wrangler/
 bin/
+research/hooks/hookugc*

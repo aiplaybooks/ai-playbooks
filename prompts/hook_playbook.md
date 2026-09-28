@@ -82,6 +82,10 @@ engagement numbers by the learning job.
 4. **Must-save + big name** · "🚨 This is an absolute must save resource" / "[Big company] open sourced [thing]" +
    "Extremely useful" · for official releases by a big company. Proof: owner reference (openai/skills post).
 
+## Trial patterns (unproven: from pattern libraries, being tested; max 4, 14 days each)
+Writers may use a trial pattern when it fits the topic better than a live one; set `hook_pattern` to "trial: <name>"
+so the learning job can compare its results. (None yet: the learning job adds them from research/hooks/.)
+
 ## Weak patterns (data says avoid)
 - Long explanatory first sentences (> 25 words) that describe a product like a press release ("X is an AI-powered
   platform that enables anyone to ..."): bottom of the ranking.
