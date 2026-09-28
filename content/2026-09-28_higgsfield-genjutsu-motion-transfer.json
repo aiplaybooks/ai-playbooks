@@ -1,0 +1,242 @@
+{
+  "theme": "adaptive",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Higgsfield Genjutsu",
+  "caption": "Stop reshooting a video just to swap one thing in the shot 🎬\n\nChanging the actor, the location or the product used to mean booking a set again. Higgsfield's new tool Genjutsu takes the video you already have and rebuilds it around a new character, scene or product while the acting, lip sync and camera moves stay exactly the same.\n\n→ Motion Transfer: keep the performance, change who's in it\n→ Object Swap: change one thing, keep the rest of the shot\n→ Works on 4-30 second clips, output up to 1080p\n→ Free to try on Higgsfield\n\nWhat would you recast first: the actor, the location, or the product? 👇\n\nFollow @aiplaybooks.daily for a new AI tool every day.\n\n#ai #aivideo #aitools #film",
+  "captions": {
+    "instagram": "Stop reshooting a video just to swap one thing in the shot 🎬\n\nChanging the actor, the location or the product used to mean booking a set again. Higgsfield's new tool Genjutsu takes the video you already have and rebuilds it around a new character, scene or product while the acting, lip sync and camera moves stay exactly the same.\n\n→ Motion Transfer: keep the performance, change who's in it\n→ Object Swap: change one thing, keep the rest of the shot\n→ Works on 4-30 second clips, output up to 1080p\n→ Free to try on Higgsfield\n\nWhat would you recast first: the actor, the location, or the product? 👇\n\nFollow @aiplaybooks.daily for a new AI tool every day.\n\n#ai #aivideo #aitools #film",
+    "facebook": "Higgsfield just launched a tool that recasts any video without reshooting it.\n\nGenjutsu takes a clip you already have and rebuilds it around a new actor, location or product, while the acting, lip sync and camera moves stay exactly the same. Pick Motion Transfer to swap who's in the shot, or Object Swap to change just one thing and leave the rest untouched.\n\nIt's free to try, works on clips 4 to 30 seconds long, and outputs up to 1080p.\n\nWhat would you recast first?\n\n#ai #aivideo #aitools",
+    "youtube": {
+      "title": "This Free AI Tool Recasts Any Video Without Reshooting",
+      "description": "Higgsfield's new AI tool Genjutsu lets you swap the actor, the location or the product in a video while keeping the exact same performance — no reshoot needed.\n\nMotion Transfer keeps the acting, lip sync and camera moves, then rebuilds the scene around a new character. Object Swap changes one chosen element and leaves the rest of the shot untouched.\n\nIt's free to try, works on reference clips 4 to 30 seconds long, and outputs up to 1080p.\n\n#ai #aivideo #aitools #higgsfield #genjutsu",
+      "tags": [
+        "ai video editing",
+        "ai video tool",
+        "higgsfield ai",
+        "genjutsu ai",
+        "motion transfer ai",
+        "ai filmmaking",
+        "video editing ai",
+        "artificial intelligence",
+        "ai tools"
+      ]
+    }
+  },
+  "sources": [
+    "https://higgsfield.ai/genjutsu",
+    "https://higgsfield.ai/blog/higgsfield-genjutsu",
+    "https://x.com/higgsfield/status/2094856679544533430"
+  ],
+  "cover": {
+    "headline": "You can now swap the actor in any video and keep the exact same performance. Here's the free AI tool that does it:",
+    "em": "swap the actor",
+    "person": null,
+    "layout": "scene",
+    "photo_query": [
+      "movie clapperboard production",
+      "film set camera crew",
+      "video editing screen"
+    ],
+    "photo_pick": {
+      "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvam9iNjc4LTAwMy1sMTY0cjE3Yi5qcGc.jpg",
+      "page": "https://www.rawpixel.com/image/6286359/vector-public-domain-black-illustrations",
+      "author": "unknown",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "rawpixel",
+      "file": "Film slate clipart, object illustration"
+    },
+    "icons": [],
+    "photo": {
+      "file": "Film slate clipart, object illustration",
+      "page": "https://www.rawpixel.com/image/6286359/vector-public-domain-black-illustrations",
+      "author": "unknown",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "rawpixel"
+    },
+    "layout_used": "scene"
+  },
+  "design": {
+    "mood": "an illusion technique cast on a film set: near-black backdrop, a hot-magenta glitch glow splitting into a cool cyan double-exposure, film grain texture, like two realities overlapping on one strip of footage",
+    "palette": {
+      "bg": "#0D0A12",
+      "bg2": "#150E1F",
+      "surface": "#181021",
+      "ink": "#F6EFFB",
+      "muted": "#9C8AAE",
+      "accent": "#FF3FA4",
+      "accent2": "#4DE8FF"
+    },
+    "fonts": {
+      "display": "Unbounded",
+      "body": "Inter",
+      "mono": "Space Mono"
+    },
+    "display": {
+      "weight": 700,
+      "case": "none",
+      "tracking": -2,
+      "scale": 1.0,
+      "italic_em": false
+    },
+    "shape": {
+      "radius": 22,
+      "border": 1,
+      "shadow": "glow"
+    },
+    "background": {
+      "pattern": "noise",
+      "pattern_opacity": 0.12,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "mono",
+    "prompt": "card",
+    "art": "<svg viewBox='0 0 900 460' xmlns='http://www.w3.org/2000/svg'><rect x='40' y='40' width='16' height='380' fill='var(--surface)'/><rect x='844' y='40' width='16' height='380' fill='var(--surface)'/><g fill='var(--bg)'><rect x='40' y='60' width='16' height='24'/><rect x='40' y='120' width='16' height='24'/><rect x='40' y='180' width='16' height='24'/><rect x='40' y='240' width='16' height='24'/><rect x='40' y='300' width='16' height='24'/><rect x='40' y='360' width='16' height='24'/><rect x='844' y='60' width='16' height='24'/><rect x='844' y='120' width='16' height='24'/><rect x='844' y='180' width='16' height='24'/><rect x='844' y='240' width='16' height='24'/><rect x='844' y='300' width='16' height='24'/><rect x='844' y='360' width='16' height='24'/></g><rect x='120' y='70' width='300' height='320' rx='14' fill='var(--surface)' stroke='var(--accent2)' stroke-width='4'/><circle cx='270' cy='190' r='60' fill='none' stroke='var(--accent2)' stroke-width='5'/><path d='M270 250v60M235 340h70' stroke='var(--accent2)' stroke-width='5' stroke-linecap='round'/><rect x='480' y='70' width='300' height='320' rx='14' fill='var(--surface)' stroke='var(--accent)' stroke-width='4'/><path d='M630 140l38 96h-76z' fill='none' stroke='var(--accent)' stroke-width='5' stroke-linejoin='round'/><path d='M630 260v70M596 358h68' stroke='var(--accent)' stroke-width='5' stroke-linecap='round'/><g stroke='var(--muted)' stroke-width='3' stroke-dasharray='2 10' opacity='0.7'><path d='M420 130h60M420 190h60M420 250h60M420 310h60'/></g><path d='M400 100l40 30-40 30M480 100l-40 30 40 30' fill='none' stroke='var(--ink)' stroke-width='5' stroke-linecap='round' stroke-linejoin='round' opacity='0.85'/></svg>",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='6' width='14' height='14' rx='2'/><path d='M16 10l6-3v10l-6-3z'/></svg>"
+  },
+  "voice": "am_puck",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "HIGGSFIELD · GENJUTSU",
+      "title": "Recast any video without reshooting it.",
+      "em": "without reshooting it",
+      "sub": "Same acting, same camera moves — Higgsfield's new tool swaps who or what's in the shot.",
+      "tools": [
+        "Higgsfield"
+      ],
+      "voiceover": "Higgsfield just launched a tool that recasts any video without reshooting it."
+    },
+    {
+      "type": "facts",
+      "label": "WHAT GENJUTSU DOES",
+      "title": "Two modes, one reference video",
+      "items": [
+        [
+          "Motion Transfer",
+          "Keeps the motion, camera work and timing, then rebuilds the scene around a new character"
+        ],
+        [
+          "Object Swap",
+          "Changes one chosen element — a character, outfit, product or location — keeps the rest untouched"
+        ],
+        [
+          "What carries over",
+          "Acting, lip sync, camera movement and VFX stay consistent between the original and the new version"
+        ],
+        [
+          "No prompt needed",
+          "Pick a mode, upload your video, choose a preset or add a short description"
+        ]
+      ],
+      "voiceover": "It keeps the acting, lip sync and camera moves, and rebuilds everything else around them."
+    },
+    {
+      "type": "list",
+      "label": "WHAT YOU CAN RECAST",
+      "title": "Same shot, different world",
+      "items": [
+        [
+          "Swap the character",
+          "Put a different person or costume into the exact same performance"
+        ],
+        [
+          "Swap the location",
+          "Keep the acting and camera work, move the whole scene somewhere else"
+        ],
+        [
+          "Swap the product",
+          "Drop in a different product or wardrobe while the rest of the shot stays the same"
+        ]
+      ],
+      "voiceover": "Swap the character, the location, or just one product in the shot."
+    },
+    {
+      "type": "compare",
+      "label": "OLD WAY VS. GENJUTSU",
+      "title": "What you skip by not reshooting",
+      "cols": [
+        {
+          "name": "Reshooting a scene",
+          "points": [
+            "Book actors, a set and a crew again",
+            "Re-match the exact camera moves by hand",
+            "Redo lighting, VFX and edit from scratch"
+          ]
+        },
+        {
+          "name": "Genjutsu",
+          "points": [
+            "Upload the one video you already have",
+            "Motion, timing and camera moves carry over",
+            "Rebuilds the cast, scene or product around it"
+          ]
+        }
+      ],
+      "voiceover": "Reshooting means booking a set again. Genjutsu just rebuilds the shot you already have."
+    },
+    {
+      "type": "steps",
+      "label": "HOW TO TRY IT",
+      "title": "Three steps, no editing experience needed",
+      "steps": [
+        [
+          "Upload your video",
+          "A reference clip from `4 to 30 seconds` long"
+        ],
+        [
+          "Pick Motion Transfer or Object Swap",
+          "Add up to 30 reference images of the new character, product or location"
+        ],
+        [
+          "Generate and review",
+          "Choose a preset or write a short description, then generate the result"
+        ]
+      ],
+      "voiceover": "Upload a clip, pick a mode, add your references, and generate."
+    },
+    {
+      "type": "stat",
+      "label": "INPUT LIMITS",
+      "value": "4-30 sec",
+      "title": "How long your reference video can be",
+      "sub": "Genjutsu currently supports reference videos from 4 to 30 seconds, plus up to 30 reference images per run.",
+      "voiceover": "Reference videos run from four to thirty seconds long."
+    },
+    {
+      "type": "limits",
+      "label": "WORTH KNOWING",
+      "title": "Free to try, credits after that",
+      "items": [
+        "Free to try on Higgsfield; longer runs and higher resolution cost more credits",
+        "Output resolution goes up to 1080p",
+        "Only tested on Higgsfield's own Genjutsu tool — results vary by footage"
+      ],
+      "cta": "Try it: higgsfield.ai/genjutsu",
+      "voiceover": "It's free to try, and output goes all the way up to 1080p."
+    },
+    {
+      "type": "cta",
+      "title": "Reshoots are becoming",
+      "title2": "optional.",
+      "lines": [
+        [
+          "Try",
+          "higgsfield.ai/genjutsu — free to try"
+        ],
+        [
+          "Remember",
+          "reference clips run 4 to 30 seconds"
+        ],
+        [
+          "Follow",
+          "@aiplaybooks.daily for daily AI tool news"
+        ]
+      ],
+      "voiceover": "Reshoots are becoming optional — follow us for more free AI tools like this."
+    }
+  ]
+}
