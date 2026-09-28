@@ -61,8 +61,18 @@ def check(data):
         long = [p[:40] for p in paras if len(p) > 330 and not p.lstrip().startswith("#")]
         if long: probs.append(f"{pf}: paragraph too long (> 330 chars): {long[0]!r}...")
         if "?" not in t and not re.search(r"(?i)\bcomment\b", t): probs.append(f"{pf}: no question / comment prompt for the audience")
+    repo = data.get("kind") == "repo"  # GitHub repo posts: one photo on IG + FB, no YouTube
     yt = caps.get("youtube") or {}
-    if not yt: probs.append("captions.youtube is missing")
+    if repo:
+        if not (data.get("dm") or {}).get("keyword"): probs.append("repo post without dm.keyword (Instagram sends the link by DM)")
+        if not data.get("fb_comment"): probs.append("repo post without fb_comment (the link on Facebook)")
+        elif (data.get("repo") or {}).get("url", "").lower().rstrip("/") not in data["fb_comment"].lower():
+            probs.append("fb_comment must contain the repo URL")
+        if caps.get("facebook") and not re.search(r"(?i)first comment|in the comments|comments? below", caps["facebook"]):
+            probs.append("facebook: say the link is in the first comment")
+        if re.search(r"(?i)https?://|github\.com/", (caps.get("instagram") or "") + (caps.get("facebook") or "")):
+            probs.append("no links in captions (IG: DM, FB: first comment)")
+    elif not yt: probs.append("captions.youtube is missing")
     else:
         if not yt.get("title"): probs.append("youtube.title is missing")
         elif len(yt["title"]) > LIMITS["youtube"]["title"]: probs.append(f"youtube.title is {len(yt['title'])} chars (max 100 incl. #Shorts)")
@@ -101,7 +111,7 @@ def main():
         if not probs:
             for pf in ("instagram", "facebook"):
                 t = data["captions"][pf]; print(f"{pf}: {len(t)} chars, {len(tags_in(t))} hashtags: {' '.join(tags_in(t))}")
-            print(f"youtube: {data['captions']['youtube']['title']!r}")
+            if data['captions'].get('youtube'): print(f"youtube: {data['captions']['youtube']['title']!r}")
             print("ok")
         sys.exit(1 if probs else 0)
 

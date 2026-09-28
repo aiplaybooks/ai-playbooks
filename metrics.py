@@ -83,7 +83,7 @@ def collect():
         except Exception as ex:
             errors.append(f"Instagram account: {ex}")
         for k, p in posts.items():
-            for step in ("ig_carousel", "ig_reel"):
+            for step in ("ig_carousel", "ig_photo", "ig_reel"):
                 mid = p["ids"].get(step)
                 if not mid: continue
                 try:
@@ -146,7 +146,7 @@ def collect():
     for k, p in posts.items():
         m = p["m"]
         hist.setdefault(k, []).append({"day": today, "yt_views": m.get("yt_short", {}).get("views"),
-                                       "ig_likes": sum(m.get(s, {}).get("likes", 0) or 0 for s in ("ig_carousel", "ig_reel")),
+                                       "ig_likes": sum(m.get(s, {}).get("likes", 0) or 0 for s in ("ig_carousel", "ig_photo", "ig_reel")),
                                        "fb": (m.get("fb_photos", {}).get("reactions", 0) or 0) + (m.get("fb_reel", {}).get("likes", 0) or 0)})
     data = {"updated": datetime.now().astimezone().isoformat(timespec="seconds"), "channel": channel,
             "posts": sorted(posts.values(), key=lambda p: p["date"] or "", reverse=True), "history": hist,

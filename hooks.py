@@ -60,12 +60,15 @@ def ours():
     for p in m.get("posts", []):
         f = ROOT / "content" / f"{p['post']}.json"
         if not f.exists(): f = ROOT / "content" / "clips" / f"{p['post']}.json"
+        if not f.exists(): f = ROOT / "content" / "repos" / f"{p['post']}.json"
         try: c = json.loads(f.read_text(encoding="utf-8"))
         except (OSError, ValueError): continue
         hook = (c.get("cover") or {}).get("headline") or c.get("hook") or c.get("topic")
+        if isinstance(hook, list): hook = hook[0] if hook else ""  # repo posts: hook lines, the first one is the hook
         mm = p.get("m", {})
-        rows.append({"post": p["post"], "hook": hook, "yt_views": (mm.get("yt_short") or {}).get("views"),
-                     "ig": {k: v for k, v in (mm.get("ig_carousel") or mm.get("ig_reel") or {}).items() if k in ("reach", "likes", "saved", "shares", "comments", "views")}})
+        rows.append({"post": p["post"], "kind": c.get("kind") or "carousel", "hook_pattern": c.get("hook_pattern"),
+                     "hook": hook, "yt_views": (mm.get("yt_short") or {}).get("views"),
+                     "ig": {k: v for k, v in (mm.get("ig_carousel") or mm.get("ig_photo") or mm.get("ig_reel") or {}).items() if k in ("reach", "likes", "saved", "shares", "comments", "views")}})
     return rows
 
 

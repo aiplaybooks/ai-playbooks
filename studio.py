@@ -12,6 +12,10 @@ Three workflows:
           carousel as a voiced video, only for YouTube) -> qa (Claude looks at the output, fixes) -> approve (owner:
           publish / revise / reject; can be switched off) -> upload -> ig_carousel -> fb_photos -> yt_short
           -> log (publish_log.jsonl + git commit/push)
+    repo  (GitHub repo post, owner 2026-09-28: one photo of the repo page + captions + the link in the FB first comment /
+          by Instagram DM; candidates come from the daily `repos` job: repos.py -> Claude picks, GitHub tab)
+          write (Claude verifies the README, writes hook/captions draft/fb_comment) -> caption -> card (repocard.py)
+          -> approve -> upload -> ig_photo -> fb_photos -> comments (FB first comment) -> dm (direct link) -> log
     clip  (viral Reel: the owner pastes an X/post link)
           fetch (yt-dlp) -> hook (Claude watches frames, writes hook + caption) -> frame (clip.py) -> qa (Claude
           compares the framed Reel with the source: crop, fit, hook; fixes + re-frames) -> approve
@@ -23,6 +27,7 @@ import sys, os, re, json, time, queue, shutil, pathlib, argparse, threading, sub
 from datetime import datetime, timedelta
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 import telegram_bot as TG
+import remote
 
 ROOT = pathlib.Path(__file__).parent.resolve()
 RUNS = ROOT / "runs"
@@ -33,14 +38,16 @@ NO_WINDOW = getattr(subprocess, "CREATE_NO_WINDOW", 0)
 CLAUDE_TOOLS = ["WebSearch", "WebFetch", "Read", "Write", "Edit", "Glob", "Grep",
                 "Bash(python carousel.py:*)", "Bash(python reel.py:*)", "Bash(python news.py:*)",
                 "Bash(python cover.py:*)", "Bash(python clip.py:*)",
-                "Bash(python tags.py:*)", "Bash(python captions.py:*)", "Bash(python hooks.py:*)"]
+                "Bash(python tags.py:*)", "Bash(python captions.py:*)", "Bash(python hooks.py:*)",
+                "Bash(python repos.py:*)", "Bash(python repocard.py:*)"]
 
 SCAN = [("trigger", "Zamanlayıcı", "trigger"), ("collect", "Haber topla", "code"),
         ("scout", "Ara, doğrula, havuza ekle", "ai"), ("pool", "Havuzdan listele", "code"), ("choose", "Senin seçimin", "human")]
 # background jobs (no canvas, no Telegram): gathers fill the candidate pool 5x a day, learn keeps the hook playbook fresh
 GATHER = [("collect", "Haber topla", "code"), ("scout", "Ara, doğrula, havuza ekle", "ai")]
 LEARN = [("hooks", "Hook trendlerini öğren", "ai")]
-BACKGROUND = ("gather", "learn")
+REPOS = [("rcollect", "Repoları topla", "code"), ("rscout", "Repo seç & doğrula", "ai")]
+BACKGROUND = ("gather", "learn", "repos")
 POST = [("write", "Doğrula & yaz", "ai"), ("caption", "Caption & tag", "ai"), ("cover", "Kapak görseli", "code"), ("carousel", "Carousel", "code"),
         ("reel", "Video · ses + müzik (YouTube)", "code"), ("qa", "Kalite kontrol", "ai"),
         ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"),
@@ -50,7 +57,11 @@ CLIP = [("fetch", "Videoyu indir", "code"), ("hook", "Hook", "ai"), ("caption", 
         ("qa", "Kalite kontrol", "ai"), ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"), ("ig_reel", "Instagram Reel", "publish"),
         ("fb_reel", "Facebook Reel", "publish"), ("yt_short", "YouTube Short", "publish"), ("comments", "Yorumlar", "publish"),
         ("dm", "DM botu kaydı", "publish"), ("log", "Kayıt & GitHub", "code")]
-FLOWS = {"scan": SCAN, "post": POST, "clip": CLIP, "gather": GATHER, "learn": LEARN}
+REPO = [("write", "Repo'yu doğrula & yaz", "ai"), ("caption", "Caption & tag", "ai"), ("card", "Repo görseli", "code"),
+        ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"), ("ig_photo", "Instagram gönderi", "publish"),
+        ("fb_photos", "Facebook gönderi", "publish"), ("comments", "FB ilk yorum (link)", "publish"),
+        ("dm", "DM botu kaydı", "publish"), ("log", "Kayıt & GitHub", "code")]
+FLOWS = {"scan": SCAN, "post": POST, "clip": CLIP, "repo": REPO, "gather": GATHER, "learn": LEARN, "repos": REPOS}
 
 LOCK = threading.RLock()
 POST_Q = queue.Queue()
@@ -95,11 +106,23 @@ def write_json(p, data):
             time.sleep(0.1)
 
 
+# the learning job (hooks + captions, used by every flow) runs 10x a day (owner, 2026-09-28), each run on one focus
+LEARN_TIMES = ["07:00", "08:30", "10:00", "11:30", "13:00", "14:30", "16:00", "17:30", "19:00", "21:00"]
+LEARN_FOCUS = [
+    "news carousels: cover headlines + caption hooks for AI news",
+    "prompt packs: money / daily-life pack headlines and caption openers",
+    "viral clip Reels: hook lines over AI videos",
+    "GitHub repo posts: caption openers (the 'GitHub repo hooks' section)",
+    "captions: first lines, comment CTAs and follow lines that drive comments/saves (caption_playbook.md Lessons)",
+]
+
+
 def settings():
     s = {"scan_times": ["08:00", "18:00"], "approval": True, "last_slot": None, "dm_bot": False,
          "gather_times": ["06:30", "10:30", "13:30", "16:30", "21:30"], "last_gather_slot": None,
-         "learn_time": "11:45", "last_learn_slot": None}
+         "learn_times": LEARN_TIMES, "last_learn_slot": None, "repo_time": "07:15", "last_repo_slot": None}
     s.update(read_json(SETTINGS, {}) or {})
+    s.pop("learn_time", None)  # before 2026-09-28: one learning run a day
     return s
 
 
@@ -390,7 +413,10 @@ def n_pool(run):
 
 
 def n_hooks(run):
-    claude(run, "hooks", "hook_learn", date=run.s["day"], run_id=run.id)
+    today = sum(1 for r in all_runs() if r["kind"] == "learn" and r.get("day") == run.s["day"] and r["created"] < run.s["created"])
+    focus = LEARN_FOCUS[today % len(LEARN_FOCUS)]
+    run.s["focus"] = focus; run.save()
+    claude(run, "hooks", "hook_learn", date=run.s["day"], run_id=run.id, focus=focus, round=today + 1)
     r = read_json(run.dir / "learn.json", {}) or {}
     return (r.get("summary_tr") or "tamam")[:160]
 
@@ -407,7 +433,7 @@ def content_path(run):
 
 
 def out_dir(run):
-    return ROOT / "output" / ("clips" if run.s["kind"] == "clip" else "") / content_path(run).stem
+    return ROOT / "output" / {"clip": "clips", "repo": "repos"}.get(run.s["kind"], "") / content_path(run).stem
 
 
 DM_ON = """## Instagram DM bot (ON)
@@ -425,6 +451,7 @@ def dm_rule():
 
 
 def n_write(run):
+    if run.s["kind"] == "repo": return n_repo_write(run)
     c = run.s["candidate"]
     note = ""
     if run.s.get("note"):
@@ -438,6 +465,106 @@ def n_write(run):
     if not 2 <= n <= 10: raise StepError(f"{n} slayt var (2-10 olmalı)")
     if not (ROOT / "themes" / f"{data.get('theme')}.py").exists(): raise StepError(f"tema yok: {data.get('theme')}")
     return f"{data['theme']} · {n} slayt"
+
+
+# ---------------------------------------------------------------- GitHub repo pillar (owner, 2026-09-28)
+
+REPO_DIR = ROOT / "research" / "repos"
+REPO_POOL_DAYS = 14
+
+
+def posted_repos():
+    """Repos already posted or in production (content/repos/*.json)."""
+    out = {}
+    for f in (ROOT / "content" / "repos").glob("*.json"):
+        d = read_json(f, {}) or {}
+        if (d.get("repo") or {}).get("full_name"): out[d["repo"]["full_name"].lower()] = f.stem
+    return out
+
+
+def repo_pool():
+    """Every picked repo of the last REPO_POOL_DAYS days (newest version per id), not posted yet."""
+    items = {}; cut = f"{now() - timedelta(days=REPO_POOL_DAYS):%Y-%m-%d}"
+    for f in sorted(REPO_DIR.glob("*_picks.json")):
+        if f.name[:10] < cut: continue
+        hm = f.name[11:15]
+        for c in (read_json(f, {}) or {}).get("candidates", []):
+            old = items.get(c["id"])
+            items[c["id"]] = {**c, "first_seen": (old or {}).get("first_seen") or f"{f.name[:10]}T{hm[:2]}:{hm[2:]}"}
+    done = posted_repos()
+    busy = {r["candidate"].get("id"): r["id"] for r in all_runs()
+            if r["kind"] == "repo" and r["status"] not in ("rejected", "canceled") and r.get("candidate")}
+    out = []
+    for c in items.values():
+        if (c.get("full_name") or "").lower() in done and c["id"] not in busy: continue
+        out.append({**c, "run": busy.get(c["id"])})
+    out.sort(key=lambda c: (c.get("run") is not None, -(c.get("score") or 0), c["first_seen"]))
+    return out
+
+
+def n_rcollect(run):
+    tail = sh(run, "rcollect", [PY, "repos.py"])
+    return next((t for t in reversed(tail) if "repos seen" in t), "tamam").split("->")[0].strip()
+
+
+def n_rscout(run):
+    day = run.s["day"]; out = REPO_DIR / f"{day}_{run.s['hhmm']}_picks.json"
+    rel = out.relative_to(ROOT).as_posix()
+    pool = "\n".join(f"- {c['id']} · {c.get('full_name')} · {c.get('stars')} stars" for c in repo_pool()[:80]) or "- (empty)"
+    posted = "\n".join(f"- {k} ({v})" for k, v in posted_repos().items()) or "- (nothing yet)"
+    claude(run, "rscout", "repo_scout", date=day, time=run.s["hhmm"], research=f"research/repos/{day}.json", pool=pool,
+           posted=posted, out=rel)
+    data = read_json(out)
+    if data is None: raise StepError(f"{out.name} yazılmadı ya da geçersiz JSON")
+    return f"{len(data.get('candidates', []))} repo adayı"
+
+
+def n_repo_write(run):
+    c = run.s["candidate"]
+    note = ""
+    if run.s.get("note"):
+        note = (f"## Revision request from the owner\n{run.s['note']}\n\nThe file {run.s['content']} already exists: "
+                "update it according to the request instead of starting over.")
+    claude(run, "write", "repo_write", date=run.s["day"], candidate=json.dumps(c, indent=1, ensure_ascii=False), note=note,
+           content=run.s["content"], run_id=run.id, full_name=c["full_name"], out=out_dir(run).relative_to(ROOT).as_posix())
+    data = read_json(content_path(run))
+    if not data: raise StepError(f"{run.s['content']} yazılmadı ya da geçersiz JSON")
+    if data.get("reject"): raise StepError("Claude bu repoyu uygun bulmadı: " + str(data["reject"])[:200])
+    miss = [k for k in ("repo", "hook", "fb_comment", "dm") if not data.get(k)]
+    if miss: raise StepError("eksik alan: " + ", ".join(miss))
+    return (data["hook"][0] if isinstance(data["hook"], list) else str(data["hook"]))[:120]
+
+
+def n_card(run):
+    tail = sh(run, "card", [PY, "repocard.py", run.s["content"]])
+    return next((t for t in reversed(tail) if t.startswith("card:")), "tamam")[5:].split("->")[0].strip()
+
+
+def start_repo(c, **extra):
+    t = now(); day = f"{t:%Y-%m-%d}"
+    slug = re.sub(r"[^a-z0-9-]+", "-", c["id"].lower()).strip("-")[:50] or "repo"
+    (ROOT / "content" / "repos").mkdir(parents=True, exist_ok=True)
+    content = f"content/repos/{day}_repo-{slug}.json"; k = 2
+    while (ROOT / content).exists(): content = f"content/repos/{day}_repo-{slug}-{k}.json"; k += 1
+    run = Run.create("repo", f"repo-{t:%Y%m%d-%H%M%S}-{slug}"[:80], day=day, candidate=c, content=content,
+                     title=c.get("title") or c.get("full_name"), **extra)
+    enqueue(run)
+    return run
+
+
+def repo_candidate(rid):
+    c = next((x for x in repo_pool() if x["id"] == rid), None)
+    if not c: raise ValueError("repo adayı bulunamadı (ya da paylaşıldı)")
+    if c.get("run"): raise ValueError("bu repo zaten üretimde")
+    return {k: v for k, v in c.items() if k != "run"}
+
+
+def repos_state():
+    s = settings(); last = next((r for r in all_runs() if r["kind"] == "repos"), None)
+    return {"candidates": repo_pool(), "next": iso(next_slot([s["repo_time"]], now())), "last": last and {
+        "id": last["id"], "status": last["status"], "created": last["created"],
+        "msg": next((n.get("msg") for n in reversed(list(last["nodes"].values())) if n.get("msg")), "")},
+        "notes_tr": next(((read_json(f, {}) or {}).get("notes_tr") for f in sorted(REPO_DIR.glob("*_picks.json"), reverse=True)), "")}
 
 
 def n_cover(run):
@@ -521,7 +648,7 @@ def n_log(run):
     rel = run.s["content"]
     record_timings(run, "published")
     for args in (["add", rel, "publish_log.jsonl", "research", "stats"],
-                 ["commit", "-q", "-m", f"{'clip' if run.s['kind'] == 'clip' else 'post'}: {content_path(run).stem}\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"],
+                 ["commit", "-q", "-m", f"{run.s['kind'] if run.s['kind'] in ('clip', 'repo') else 'post'}: {content_path(run).stem}\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"],
                  ["push", "-q"]):
         r = subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace",
                            creationflags=NO_WINDOW)
@@ -530,7 +657,7 @@ def n_log(run):
             raise StepError(f"git {args[0]}: {(r.stderr or r.stdout).strip()[:200]}")
     links = {k: v.get("link") for k, v in read_json(out_dir(run) / "publish.json", {}).items()
              if isinstance(v, dict) and v.get("link")}
-    notify("AI Playbooks", "Paylaşıldı: " + (links.get("ig_carousel") or links.get("ig_reel") or run.s["content"]))
+    notify("AI Playbooks", "Paylaşıldı: " + (links.get("ig_carousel") or links.get("ig_photo") or links.get("ig_reel") or run.s["content"]))
     TG.event("published", run, links=links)
     return "GitHub'a kaydedildi"
 
@@ -603,9 +730,12 @@ def n_caption(run):
     import captions as CAP
     clip = run.s["kind"] == "clip"
     note = f"\n## Owner's note for this post (revision request)\n{run.s['note']}\n" if run.s.get("note") else ""
+    repo = run.s["kind"] == "repo"
     claude(run, "caption", "caption", date=run.s["day"], content=run.s["content"], run_id=run.id, note=note,
-           kind="clip" if clip else "carousel",
+           kind="clip" if clip else "repo" if repo else "carousel",
            kind_hint="a viral video Reel framed with our hook; IG Reel + FB Reel + YouTube Short" if clip
+           else "a GitHub repo post: ONE photo (the plain repo page) on IG + FB, NO YouTube (leave captions.youtube out); "
+                "follow section 6b of the playbook" if repo
            else "a carousel post; IG carousel + FB photo post + a voiced YouTube Short of the slides")
     data = read_json(content_path(run))
     probs = CAP.check(data or {})
@@ -633,7 +763,8 @@ def n_frame(run):
 
 PHASES = {"trigger": "scan", "collect": "scan", "scout": "scan", "pool": "scan", "hooks": "scan", "choose": "wait", "write": "production", "cover": "production",
           "fetch": "production", "hook": "production", "caption": "production", "frame": "production",
-          "carousel": "production", "reel": "production", "qa": "production", "approve": "wait", "upload": "publish",
+          "carousel": "production", "reel": "production", "qa": "production", "approve": "wait", "upload": "publish", "card": "production", "ig_photo": "publish",
+          "rcollect": "scan", "rscout": "scan",
           "ig_carousel": "publish", "ig_reel": "publish", "fb_photos": "publish", "fb_reel": "publish", "yt_short": "publish", "comments": "publish", "dm": "publish", "log": "publish"}
 
 
@@ -670,7 +801,8 @@ def record_timings(run, outcome):
 
 
 NODES = {"trigger": n_trigger, "collect": n_collect, "scout": n_scout, "pool": n_pool, "choose": n_choose, "hooks": n_hooks,
-         "write": n_write, "caption": n_caption, "cover": n_cover, "carousel": n_carousel, "fetch": n_fetch, "hook": n_hook, "frame": n_frame, "reel": n_reel, "qa": n_qa, "approve": n_approve,
+         "write": n_write, "caption": n_caption, "card": n_card, "rcollect": n_rcollect, "rscout": n_rscout,
+         "ig_photo": publish_step("ig_photo"), "cover": n_cover, "carousel": n_carousel, "fetch": n_fetch, "hook": n_hook, "frame": n_frame, "reel": n_reel, "qa": n_qa, "approve": n_approve,
          "upload": publish_step("upload"), "ig_carousel": publish_step("ig_carousel"), "ig_reel": publish_step("ig_reel"),
          "fb_photos": publish_step("fb_photos"), "fb_reel": publish_step("fb_reel"),
          "yt_short": publish_step("yt_short"), "comments": publish_step("comments"), "dm": publish_step("dm"), "log": n_log}
@@ -683,7 +815,7 @@ NODES = {"trigger": n_trigger, "collect": n_collect, "scout": n_scout, "pool": n
 # what to do. Every repair is kept in the run (`repairs`) and code fixes are committed.
 
 NO_REPAIR = {"trigger", "choose", "approve"}  # the owner's steps
-PUBLISH_NODES = {"upload", "ig_carousel", "ig_reel", "fb_photos", "fb_reel", "yt_short", "comments", "dm", "log"}
+PUBLISH_NODES = {"upload", "ig_carousel", "ig_photo", "ig_reel", "fb_photos", "fb_reel", "yt_short", "comments", "dm", "log"}
 RETRY_WAITS = [60, 300]  # seconds before plain retries of a publish step (publish.py never posts twice)
 MAX_REPAIRS = 2
 
@@ -868,7 +1000,8 @@ def scheduler():
                 late = t - slot > timedelta(minutes=10)
                 if start_scan(f"Planlı tarama {slot:%H:%M}" + (" (kaçırılmıştı, telafi)" if late else "")):
                     s["last_slot"] = slot.isoformat(); save_settings(s)
-            for kind, times, key in (("gather", s["gather_times"], "last_gather_slot"), ("learn", [s["learn_time"]], "last_learn_slot")):
+            for kind, times, key in (("gather", s["gather_times"], "last_gather_slot"), ("learn", s["learn_times"], "last_learn_slot"),
+                                     ("repos", [s["repo_time"]], "last_repo_slot")):
                 slot = last_slot(times, t)
                 if slot and (not s.get(key) or s[key] < slot.isoformat()):
                     if start_bg(kind, f"Planlı {slot:%H:%M}" + (" (telafi)" if t - slot > timedelta(minutes=10) else "")):
@@ -891,7 +1024,7 @@ def recover():
             slog("resuming after restart:", run.id, nid)
             if s["kind"] in ("scan",) + BACKGROUND: threading.Thread(target=execute, args=(run,), daemon=True).start()
             else: enqueue(run)
-        elif s["status"] == "queued" and s["kind"] in ("post", "clip"):
+        elif s["status"] == "queued" and s["kind"] in ("post", "clip", "repo"):
             POST_Q.put(s["id"])
 
 
@@ -988,7 +1121,7 @@ def start_clip(url, note="", **extra):
 # (a QA problem still asks, like the global switch).
 
 SHARE = RUNS / "share_pool.json"
-LEAD = {"clip": 45, "post": 90}  # minutes of production (+ time to approve) before the planned time
+LEAD = {"clip": 45, "post": 90, "repo": 30}  # minutes of production (+ time to approve) before the planned time
 
 
 def share_items():
@@ -999,7 +1132,7 @@ def save_share(items):
     with LOCK: write_json(SHARE, items)
 
 
-def share_add(kind, approval=True, url="", note="", scan=None, candidate=None, pack=None):
+def share_add(kind, approval=True, url="", note="", scan=None, candidate=None, pack=None, repo=None):
     items = share_items(); live = [i for i in items if i["status"] in ("pool", "producing")]
     t = now(); item = {"id": f"s{t:%Y%m%d%H%M%S%f}"[:21], "kind": kind, "added": iso(t), "approval": bool(approval),
                        "at": None, "status": "pool"}
@@ -1007,6 +1140,10 @@ def share_add(kind, approval=True, url="", note="", scan=None, candidate=None, p
         url = check_clip_url(url)
         if any(i.get("url", "").split("?")[0] == url.split("?")[0] for i in live): raise ValueError("bu link zaten havuzda")
         item.update(url=url, note=note.strip(), title=url)
+    elif kind == "repo":
+        c = repo_candidate(repo)
+        if any((i.get("candidate") or {}).get("id") == c["id"] for i in live): raise ValueError("bu repo zaten havuzda")
+        item.update(candidate=c, title=c.get("title") or c.get("full_name"))
     else:
         if pack: c = pack_candidate(pack)
         else: sc, c = scan_candidate(scan, candidate); item["scan"] = scan
@@ -1021,6 +1158,7 @@ def share_start(item):
     """Start production for a pool item (called with LOCK held via share_tick or share_now)."""
     extra = {"approval": item["approval"], "share": item["id"], **({"publish_at": item["at"]} if item.get("at") else {})}
     if item["kind"] == "clip": rid = start_clip(item["url"], item.get("note", ""), **extra)
+    elif item["kind"] == "repo": rid = start_repo(item["candidate"], **extra).id
     else:
         rid = start_post(item["candidate"], item.get("scan"), **extra).id
         if item.get("scan") and (RUNS / item["scan"] / "state.json").exists():
@@ -1143,13 +1281,13 @@ def state():
             r["candidates"] = load_candidates(r["candidates_file"], r["id"])
     fg = [r for r in runs if r["kind"] not in BACKGROUND][:40]
     bg = {}
-    for kind, times in (("gather", s["gather_times"]), ("learn", [s["learn_time"]])):
+    for kind, times in (("gather", s["gather_times"]), ("learn", s["learn_times"]), ("repos", [s["repo_time"]])):
         last = next((r for r in runs if r["kind"] == kind), None)
         bg[kind] = {"next": iso(next_slot(times, now())), "last": last and {
             "id": last["id"], "status": last["status"], "created": last["created"],
             "msg": next((n.get("msg") for n in reversed(list(last["nodes"].values())) if n.get("msg")), "")}}
     bg["pool"] = len(pool_items())
-    return {"settings": {k: s[k] for k in ("scan_times", "approval", "gather_times", "learn_time", "dm_bot")},
+    return {"settings": {k: s[k] for k in ("scan_times", "approval", "gather_times", "learn_times", "dm_bot", "repo_time")},
             "next_scan": iso(next_slot(s["scan_times"], now())), "now": iso(), "background": bg,
             "flows": {k: [{"id": n, "label": l, "kind": t} for n, l, t in v] for k, v in FLOWS.items()},
             "runs": fg, "share": share_state(), "lead": LEAD}
@@ -1165,6 +1303,12 @@ def run_detail(rid):
         s["publish"] = read_json(out / "publish.json", {})
         s["qa_result"] = read_json(run.dir / "qa.json")
         s["qa_frames"] = [f"runs/{rid}/qa/{p.name}" for p in sorted((run.dir / "qa").glob("*.jpg"))]
+    if s["kind"] == "repo":
+        out = out_dir(run); rel = out.relative_to(ROOT).as_posix()
+        s["content_data"] = read_json(content_path(run)) or read_json(run.dir / content_path(run).name)
+        s["slides"] = [f"{rel}/{f.name}" for f in sorted(out.glob("slide_*.png"))]
+        s["reel"] = None; s["write_result"] = read_json(run.dir / "write.json")
+        s["publish"] = read_json(out / "publish.json", {})
     if s["kind"] == "post":
         name = content_path(run).stem; out = ROOT / "output" / name
         s["content_data"] = read_json(content_path(run)) or read_json(run.dir / content_path(run).name)
@@ -1199,14 +1343,30 @@ class H(BaseHTTPRequestHandler):
         self.send_header("Content-Length", str(len(body))); self.send_header("Cache-Control", "no-store")
         self.end_headers(); self.wfile.write(body)
 
+    def gate(self, u, q):
+        """Phone access through the tunnel needs the key (remote.py); True = handled (refused or redirected)."""
+        ok, set_cookie = remote.authorized(self.headers, q)
+        if not ok:
+            self.send(401, "<h3>AI Playbooks Studio</h3><p>Bu link geçersiz ya da eski. Telegram'a <b>link</b> yaz, yenisini gönderirim.</p>".encode(),
+                      TYPES[".html"])
+            return True
+        if set_cookie:  # drop the key from the address bar, keep it in a cookie
+            rest = urllib.parse.urlencode({k: v for k, v in q.items() if k != "k"})
+            self.send_response(302); self.send_header("Set-Cookie", remote.cookie_header())
+            self.send_header("Location", u.path + ("?" + rest if rest else "")); self.send_header("Content-Length", "0"); self.end_headers()
+            return True
+        return False
+
     def do_GET(self):
         u = urllib.parse.urlparse(self.path); q = dict(urllib.parse.parse_qsl(u.query))
+        if self.gate(u, q): return
         try:
             if u.path == "/": return self.send(200, (ROOT / "studio" / "index.html").read_bytes(), TYPES[".html"])
             if u.path == "/api/state": return self.send(200, state())
             if u.path == "/api/run": return self.send(200, run_detail(q["id"]))
             if u.path == "/api/history": return self.send(200, history())
             if u.path == "/api/packs": return self.send(200, packs())
+            if u.path == "/api/repos": return self.send(200, repos_state())
             if u.path == "/api/metrics":
                 return self.send(200, {**(read_json(RUNS / "metrics.json", {}) or {}), "refreshing": METRICS_LOCK.locked()})
             if u.path == "/api/viral":
@@ -1250,11 +1410,16 @@ class H(BaseHTTPRequestHandler):
 
     def do_POST(self):
         u = urllib.parse.urlparse(self.path)
+        if not remote.authorized(self.headers, {})[0]: return self.send(401, {"error": "anahtar gerekli"})
         try:
             b = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))) or b"{}")
             if u.path == "/api/gather":
                 rid = start_bg("gather", "Elle başlatıldı")
                 return self.send(200 if rid else 409, {"run": rid} if rid else {"error": "zaten bir toplama çalışıyor"})
+            if u.path == "/api/repos/scan":
+                rid = start_bg("repos", "Elle başlatıldı")
+                return self.send(200 if rid else 409, {"run": rid} if rid else {"error": "repo araması zaten çalışıyor"})
+            if u.path == "/api/repo": return self.send(200, {"run": start_repo(repo_candidate(b["repo"])).id})
             if u.path == "/api/learn":
                 rid = start_bg("learn", "Elle başlatıldı")
                 return self.send(200 if rid else 409, {"run": rid} if rid else {"error": "zaten çalışıyor"})
@@ -1266,7 +1431,7 @@ class H(BaseHTTPRequestHandler):
             if u.path == "/api/clip": return self.send(200, {"run": start_clip(b.get("url", ""), b.get("note", ""))})
             if u.path == "/api/share/add":
                 return self.send(200, {"id": share_add(b["kind"], b.get("approval", True), b.get("url", ""), b.get("note", ""),
-                                                       b.get("scan"), b.get("candidate"), b.get("pack"))})
+                                                       b.get("scan"), b.get("candidate"), b.get("pack"), b.get("repo"))})
             if u.path == "/api/share/edit":
                 share_edit(b["id"], b.get("approval"), b["at"] if "at" in b else False, bool(b.get("remove")), bool(b.get("now")))
                 return self.send(200, {"ok": True})
@@ -1289,9 +1454,13 @@ class H(BaseHTTPRequestHandler):
                     times = sorted({t for t in b["gather_times"] if re.fullmatch(r"([01]\d|2[0-3]):[0-5]\d", t)})
                     if not times: raise ValueError("toplama için geçerli saat yok (SS:DD)")
                     s["gather_times"] = times; s["last_gather_slot"] = (last_slot(times, now()) or now()).isoformat()
-                if b.get("learn_time"):
-                    if not re.fullmatch(r"([01]\d|2[0-3]):[0-5]\d", b["learn_time"]): raise ValueError("öğrenme saati geçersiz")
-                    s["learn_time"] = b["learn_time"]; s["last_learn_slot"] = (last_slot([b["learn_time"]], now()) or now()).isoformat()
+                if b.get("repo_time"):
+                    if not re.fullmatch(r"([01]\d|2[0-3]):[0-5]\d", b["repo_time"]): raise ValueError("repo arama saati geçersiz")
+                    s["repo_time"] = b["repo_time"]; s["last_repo_slot"] = (last_slot([b["repo_time"]], now()) or now()).isoformat()
+                if "learn_times" in b:
+                    times = sorted({t for t in b["learn_times"] if re.fullmatch(r"([01]\d|2[0-3]):[0-5]\d", t)})
+                    if not times: raise ValueError("öğrenme için geçerli saat yok (SS:DD)")
+                    s["learn_times"] = times; s["last_learn_slot"] = (last_slot(times, now()) or now()).isoformat()
                 save_settings(s); return self.send(200, {"ok": True})
             self.send(404, {"error": "yok"})
         except (KeyError, ValueError, TypeError) as ex:
@@ -1316,6 +1485,7 @@ def main():
     threading.Thread(target=post_worker, daemon=True).start()
     threading.Thread(target=scheduler, daemon=True).start()
     TG.start(sys.modules[__name__])
+    remote.start(a.port, slog, on_link=lambda: TG.event("link", None))
     slog(f"Studio running at http://localhost:{a.port}")
     if not a.no_browser: webbrowser.open(f"http://localhost:{a.port}")
     srv.serve_forever()

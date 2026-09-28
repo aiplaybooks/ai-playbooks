@@ -25,6 +25,9 @@ META_PAGE_TOKEN, FB_PAGE_ID, IG_USER_ID in .env
     log          appends the post to publish_log.jsonl
 Viral clip Reels (content/clips/<name>.json, "kind": "clip", made by clip.py in output/clips/<name>/): steps
 prepare, upload, ig_reel, fb_reel, yt_short, comments, log; cover = the framed clip's first frame.
+GitHub repo posts (content/repos/<name>.json, "kind": "repo", made by repocard.py in output/repos/<name>/): ONE photo.
+Steps prepare, upload, ig_photo (single image post), fb_photos (one photo), comments (the `fb_comment` with the repo
+link as our first comment, Facebook only), dm (Instagram: the bot DMs the repo link directly, `dm.mode` "direct"), log.
 Progress is saved to output/<name>/publish.json after every step, so a rerun resumes and never posts twice.
 Token values are never printed.
 """
@@ -40,8 +43,8 @@ RUPLOAD = "https://rupload.facebook.com/video-upload/v25.0"
 PAGES_URL = "https://aiplaybooks.github.io/ai-playbooks"
 PAGES_DIR = ROOT / ".pages"  # git worktree of the gh-pages branch (gitignored)
 LOG = ROOT / "publish_log.jsonl"
-STEPS = ["prepare", "upload", "ig_carousel", "ig_reel", "fb_photos", "fb_reel", "yt_short", "comments", "dm", "log"]
-POSTS = ["ig_carousel", "ig_reel", "fb_photos", "fb_reel", "yt_short"]
+STEPS = ["prepare", "upload", "ig_carousel", "ig_photo", "ig_reel", "fb_photos", "fb_reel", "yt_short", "comments", "dm", "log"]
+POSTS = ["ig_carousel", "ig_photo", "ig_reel", "fb_photos", "fb_reel", "yt_short"]
 
 
 class PublishError(Exception):
@@ -110,7 +113,8 @@ class Post:
         self.data = json.loads(self.content.read_text(encoding="utf-8"))
         self.name = self.content.stem
         self.clip = self.data.get("kind") == "clip"
-        self.out = ROOT / "output" / ("clips" if self.clip else "") / self.name
+        self.repo = self.data.get("kind") == "repo"
+        self.out = ROOT / "output" / ("clips" if self.clip else "repos" if self.repo else "") / self.name
         self.pub = self.out / "publish"
         self.state_file = self.out / "publish.json"
         self.state = json.loads(self.state_file.read_text(encoding="utf-8")) if self.state_file.exists() else {}
@@ -141,7 +145,8 @@ def prepare(p, dry=False):
     reel = p.out / "reel.mp4"
     if p.clip and not reel.exists(): raise PublishError(f"no {reel.name} in {p.out}: run clip.py first")
     if not p.clip and not pngs: raise PublishError(f"no slides in {p.out}: run carousel.py first")
-    if not p.clip and not 2 <= len(pngs) <= 10: raise PublishError(f"Instagram carousels take 2-10 images, this post has {len(pngs)}")
+    if p.repo and len(pngs) != 1: raise PublishError(f"a repo post is one image, {p.out} has {len(pngs)}: run repocard.py")
+    if not p.clip and not p.repo and not 2 <= len(pngs) <= 10: raise PublishError(f"Instagram carousels take 2-10 images, this post has {len(pngs)}")
     for pf in ("instagram", "facebook"):
         cap = CAP.text_for(p.data, pf)
         if not cap.strip(): raise PublishError(f"{pf} caption is empty")
@@ -174,7 +179,8 @@ COMMENT_PERMS = {"instagram_manage_comments", "pages_manage_engagement"}
 
 def check_comments(p):
     """Comments to post: each non-empty and within Instagram's 2200 characters, and the token allowed to comment."""
-    cs = p.data.get("comments") or []
+    cs = [p.data["fb_comment"]] if p.repo and p.data.get("fb_comment") else p.data.get("comments") or []
+    if p.repo and not cs: raise PublishError("repo post without `fb_comment` (the repo link on Facebook)")
     if not cs: return
     if not isinstance(cs, list) or not all(isinstance(c, str) and c.strip() for c in cs):
         raise PublishError("`comments` must be a list of non-empty strings")
@@ -229,10 +235,11 @@ def upload(p):
     dest = wt / "media" / p.name
     shutil.rmtree(dest, ignore_errors=True); dest.mkdir(parents=True)
     for f in files: shutil.copy2(f, dest / f.name)
-    import packpage  # the post's page (what the DM bot sends): p/<name>/index.html
-    cover = next((f for f in files if f.name == "cover.jpg"), None) or next(iter(p.images()), None)
-    page = wt / "p" / p.name; page.mkdir(parents=True, exist_ok=True)
-    (page / "index.html").write_text(packpage.page_html(p.data, p.name, p.url(cover) if cover else None), encoding="utf-8")
+    if not p.repo:  # repo posts link straight to GitHub
+        import packpage  # the post's page (what the DM bot sends): p/<name>/index.html
+        cover = next((f for f in files if f.name == "cover.jpg"), None) or next(iter(p.images()), None)
+        page = wt / "p" / p.name; page.mkdir(parents=True, exist_ok=True)
+        (page / "index.html").write_text(packpage.page_html(p.data, p.name, p.url(cover) if cover else None), encoding="utf-8")
     git("add", "-A", "media", "p", cwd=wt)
     if git("status", "--porcelain", cwd=wt):
         git("commit", "-q", "-m", f"media: {p.name}", cwd=wt)
@@ -303,6 +310,22 @@ def ig_carousel(p):
     mid, link = ig_publish(p, cid, "ig_carousel")
     say(f"ig_carousel: published {link}")
     p.done("ig_carousel", id=mid, link=link)
+
+
+def ig_photo(p):
+    """Instagram single image post (repo posts): one IMAGE container -> media_publish."""
+    ig = p.env["IG_USER_ID"]; img = p.images()
+    if len(img) != 1: raise PublishError(f"ig_photo needs exactly one image, found {len(img)}")
+    cid = p.state.get("ig_photo_container")
+    if not p.state.get("ig_photo_media") and not ig_published(p, cid):
+        if not cid:
+            cid = api("POST", f"{GRAPH}/{ig}/media", {"image_url": p.url(img[0]), "caption": CAP.text_for(p.data, "instagram"),
+                                                      "access_token": p.token})["id"]
+            p.state["ig_photo_container"] = cid; p.save()
+        ig_wait(p, cid, "photo", 300)
+    mid, link = ig_publish(p, cid, "ig_photo")
+    say(f"ig_photo: published {link}")
+    p.done("ig_photo", id=mid, link=link)
 
 
 def ig_reel(p):
@@ -460,12 +483,16 @@ def yt_short(p):
 
 
 def comments(p):
-    cs = [c.strip() for c in p.data.get("comments") or []]
-    if cs and (p.data.get("dm") or {}).get("keyword"):  # behind the DM bot's follow gate: not in public comments
+    if p.repo:  # the repo link: our first comment on Facebook (Instagram gets it by DM)
+        cs = [p.data["fb_comment"].strip()]
+        targets = [("fb_photos", p.state["fb_photos"]["id"])] if p.state.get("fb_photos", {}).get("id") else []
+    else:
+        cs = [c.strip() for c in p.data.get("comments") or []]
+        targets = [(s, p.state[s]["id"]) for s in ("ig_carousel", "ig_reel", "fb_photos", "fb_reel") if p.state.get(s, {}).get("id")]
+    if cs and not p.repo and (p.data.get("dm") or {}).get("keyword"):  # behind the DM bot's follow gate: not in public comments
         say("comments: skipped, the post has a DM keyword (the prompts are on its page)"); p.done("comments", count=0, gated=True); return
     if not cs:
         say("comments: none in the content JSON"); p.done("comments", count=0); return
-    targets = [(s, p.state[s]["id"]) for s in ("ig_carousel", "ig_reel", "fb_photos", "fb_reel") if p.state.get(s, {}).get("id")]
     posted = p.state.setdefault("comment_ids", {})
     for step, obj in targets:
         for i, c in enumerate(cs):
@@ -480,21 +507,24 @@ def comments(p):
 def dm(p):
     """Register the post for the Instagram comment-to-DM bot (gh-pages dm.json: IG media id -> keyword + link)."""
     d = p.data.get("dm") or {}
-    ids = [p.state[s]["id"] for s in ("ig_carousel", "ig_reel") if p.state.get(s, {}).get("id")]
+    ids = [p.state[s]["id"] for s in ("ig_carousel", "ig_photo", "ig_reel") if p.state.get(s, {}).get("id")]
     if not d.get("keyword") or not ids:
         say("dm: no dm.keyword (or no Instagram post): nothing to register"); p.done("dm", keyword=None); return
     wt = pages_worktree(); f = wt / "dm.json"
-    import packpage  # (re)write the page too, so older posts registered for a test get theirs
-    imgs = p.images() or sorted(p.pub.glob("*.jpg"))
-    cover = next((x for x in imgs if x.name == "cover.jpg"), None) or next(iter(imgs), None)
-    page = wt / "p" / p.name; page.mkdir(parents=True, exist_ok=True)
-    (page / "index.html").write_text(packpage.page_html(p.data, p.name, p.url(cover) if cover else None), encoding="utf-8")
+    if not p.repo:
+        import packpage  # (re)write the page too, so older posts registered for a test get theirs
+        imgs = p.images() or sorted(p.pub.glob("*.jpg"))
+        cover = next((x for x in imgs if x.name == "cover.jpg"), None) or next(iter(imgs), None)
+        page = wt / "p" / p.name; page.mkdir(parents=True, exist_ok=True)
+        (page / "index.html").write_text(packpage.page_html(p.data, p.name, p.url(cover) if cover else None), encoding="utf-8")
     try: reg = json.loads(f.read_text(encoding="utf-8"))
     except (OSError, ValueError): reg = {}
-    link = d.get("link") or f"{PAGES_URL}/p/{p.name}/"
-    title = (p.data.get("cover") or {}).get("headline") or p.data.get("topic") or p.name
-    for mid in ids:
+    link = d.get("link") or ((p.data.get("repo") or {}).get("url") if p.repo else None) or f"{PAGES_URL}/p/{p.name}/"
+    title = (p.data.get("repo") or {}).get("full_name") if p.repo else (p.data.get("cover") or {}).get("headline")
+    title = title or p.data.get("topic") or p.name
+    for mid in ids:  # mode "direct": the bot DMs the link right away (repo posts); "gate": follow first
         reg[mid] = {"keyword": d["keyword"].upper(), "link": link, "title": title[:120], "post": p.name,
+                    "mode": d.get("mode") or ("direct" if p.repo else "gate"),
                     "added": datetime.now().astimezone().isoformat(timespec="minutes")}
     f.write_text(json.dumps(reg, indent=1, ensure_ascii=False), encoding="utf-8")
     git("add", "dm.json", "p", cwd=wt)
@@ -506,8 +536,9 @@ def dm(p):
 
 def log(p):
     entry = {"date": datetime.now().astimezone().isoformat(timespec="minutes"), "post": p.name,
-             "kind": "clip" if p.clip else "carousel", "topic": p.data.get("topic"), "theme": p.data.get("theme"),
+             "kind": "clip" if p.clip else "repo" if p.repo else "carousel", "topic": p.data.get("topic"), "theme": p.data.get("theme"),
              "sources": p.data.get("sources", []), **({"source_url": p.data.get("source")} if p.clip else {}),
+             **({"repo": (p.data.get("repo") or {}).get("full_name")} if p.repo else {}),
              **{s: {k: v for k, v in p.state[s].items() if k in ("id", "link")} for s in POSTS if s in p.state}}
     with LOG.open("a", encoding="utf-8") as f: f.write(json.dumps(entry, ensure_ascii=False) + "\n")
     say(f"log: appended to {LOG.name}")
@@ -530,7 +561,7 @@ def dry_run(p):
     req = urllib.request.Request("https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true",
                                  headers={"Authorization": f"Bearer {tok}"})
     with urllib.request.urlopen(req, timeout=30) as r: ch = (json.loads(r.read()).get("items") or [{}])[0]
-    say(f"YouTube ok: {ch.get('snippet', {}).get('title')} ({ch.get('snippet', {}).get('customUrl')})" + ("" if p.clip else f"; Short title: {yt_meta(p)['title']}"))
+    say(f"YouTube ok: {ch.get('snippet', {}).get('title')} ({ch.get('snippet', {}).get('customUrl')})" + ("" if p.clip or p.repo else f"; Short title: {yt_meta(p)['title']}"))
     done = [s for s in STEPS if s in p.state]
     say(f"already done: {', '.join(done) or 'nothing'}")
     say("dry run ok: nothing was uploaded or posted")

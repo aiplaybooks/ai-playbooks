@@ -56,6 +56,21 @@ Every day the pipeline should:
   subscribes Meta's `instagram` webhook: comments, messages, messaging_postbacks). **Until Meta App Review grants
   Advanced Access to instagram_manage_messages, private replies/DMs only reach accounts with a role on the app**
   (the owner tests with their other Instagram accounts) → keep the setting OFF until then.
+- **GitHub repo pillar** (owner, 2026-09-28): ONE photo per post = the repo's real GitHub page (`repocard.py`:
+  dark mode, long file lists cut to ~6 rows so the README start shows, NOTHING written on it) + captions + the link:
+  Facebook = our first comment (`fb_comment`, publish.py `comments` step), Instagram = "Comment WORD" → the DM bot
+  sends the link right away with a follow request (`dm.mode: "direct"`, no follow gate; works for everyone since the
+  app is Live). No YouTube. FREE is always written **FR££**. Hooks must be scroll-stopping like the owner's reference
+  posts ("I JUST FOUND A GITHUB REPO THAT ...", "🚨A solo dev just open sourced a FR££ <paid tool> replacement ...");
+  patterns live in hook_playbook.md "GitHub repo hooks". Research: `repos.py` (GitHub search + Trending + our star
+  history) → daily `repos` job (`repo_time`, prompts/repo_scout.md) → Studio tab "GitHub" (categories: alternative,
+  agents, local_media, learning, creator; own share pool "GitHub havuzu"). Flow `repo`: write (prompts/repo_write.md)
+  → caption → card → approve → upload → ig_photo → fb_photos → comments → dm → log. Content: `content/repos/`,
+  output: `output/repos/`. Every star count rounded DOWN; repocard.py fails when the text claims more stars.
+- **Hook/caption learning 10x a day** (owner, 2026-09-28: "these agents must keep improving, I need them for
+  everything"): the `learn` job runs at `learn_times` (10 slots), each run on one focus in rotation (news, packs,
+  clips, GitHub repos, captions → `LEARN_FOCUS` in studio.py), updating hook_playbook.md + caption_playbook.md Lessons
+  with proof only.
 - **Reel/Short cover = the carousel's first slide** (owner, 2026-09-24): publish.py makes `cover.jpg` (9:16, slide centered
   on a blurred copy) → IG `cover_url`, FB reel thumbnail (needs pages_manage_engagement + pages_read_user_content; the
   token has them since 2026-09-25), YouTube thumbnails.set (works only once the channel may set Shorts covers; never fails the
@@ -109,6 +124,8 @@ Every day the pipeline should:
 carousel.py        render carousel PNGs (1080x1350) + contact.png overview; slide 1 = themes/hookcover.py when the post
                    has a `cover` block + output/<post>/cover_image.jpg
 brand_icons.py     brand icons for the cover (Simple Icons, icons/ cache, tool -> slug map, per-post style/size/corner)
+repos.py           GitHub repo collector (search API + Trending + star history) -> research/repos/<date>.json; --info owner/repo
+repocard.py        repo post image: the plain GitHub page screenshot (1080x1350) -> output/repos/<post>/slide_01.png
 packpage.py        the post's page for the DM bot (p/<post>/index.html on gh-pages: prompts with Copy buttons)
 dm_setup.py        DM bot setup / check / test registration (Cloudflare Worker + Meta webhooks)
 bot/               worker.js (Instagram comment-to-DM bot, Cloudflare Worker) + wrangler.toml
@@ -266,7 +283,7 @@ candidate (and approves the preview), everything else is automatic.
   collect + scout (skipped when the last gather is < 3 h old; waits for a running gather) → **pool** (every candidate
   of the last 7 days not posted yet, `new` since the last delivery first → `research/<date>_<HHMM>_candidates.json`
   with `"pool": true`) → Telegram + toast → owner picks one in the UI.
-- **learn** job, daily at `learn_time` (11:45): prompts/hook_learn.md + `hooks.py` (big AI accounts' opening lines
+- **learn** job, 10x a day at `learn_times` (one focus per run, see Decisions): prompts/hook_learn.md + `hooks.py` (big AI accounts' opening lines
   ranked vs. each account's median, trending Shorts titles, our own hooks + results) + web research → updates
   `prompts/hook_playbook.md` (≤ 12 live patterns with proof). Read by the hook writer, the writer (cover headline) and
   the caption agent (first line). UI: the "Arka plan" line in the candidates tab ("Şimdi topla", "Şimdi öğren").

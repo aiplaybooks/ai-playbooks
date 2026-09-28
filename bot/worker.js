@@ -7,6 +7,8 @@
 //   3. They tap the button (this opens a 24 h messaging window) -> we check is_user_follow_business:
 //      following -> the link (the post's page, from dm.json); not yet -> "follow first" + the button again.
 //   Typing the keyword (or "done") in a DM works too.
+// Posts with `mode: "direct"` in dm.json (GitHub repo posts, owner 2026-09-28) skip the gate: the private reply IS
+// the link, with a friendly request to follow us (no button, no follow check).
 // Which post has which keyword and link: DM_MAP_URL (gh-pages dm.json, written by publish.py's `dm` step).
 // Secrets (wrangler secret put): PAGE_TOKEN, APP_SECRET, VERIFY_TOKEN. Vars in wrangler.toml.
 
@@ -49,7 +51,8 @@ async function onComment(v, env) {
   const post = (await dmMap(env))[mediaId];
   if (!post || !hasWord(text, post.keyword)) return;
   if (await seen(`c-${v.id}`)) return;                                 // Meta sometimes delivers twice
-  const r = await send(env, { comment_id: v.id }, gateMessage(post, mediaId, from.username));
+  const direct = post.mode === "direct";
+  const r = await send(env, { comment_id: v.id }, direct ? directMessage(post, from.username) : gateMessage(post, mediaId, from.username));
   console.log("private reply", v.id, from.username, r.error ? JSON.stringify(r.error) : "ok");
   if (!r.error) await graph(env, "POST", `/${v.id}/replies`, { message: pick(PUBLIC_REPLIES) });
 }
@@ -71,6 +74,7 @@ async function onMessage(m, env) {
   const post = mediaId && map[mediaId];
   if (!post) return;
   const who = { id: m.sender.id };
+  if (post.mode === "direct") { await send(env, who, directMessage(post)); console.log("direct link (dm)", mediaId); return; }
   const prof = await graph(env, "GET", `/${m.sender.id}`, { fields: "username,is_user_follow_business" });
   if (prof.error) console.log("profile error", JSON.stringify(prof.error));
   if (prof.is_user_follow_business) {
@@ -111,6 +115,19 @@ function notYetMessage(post, mediaId, user) {
     ]),
     quick_replies: button(mediaId),
   };
+}
+
+function directMessage(post, user) {  // plain text: the link gets a preview card and works in every client
+  const hi = user ? `Hey @${user}! ` : "Hey! ";
+  const text = hi + pick(["Here's the repo you asked for 👇", "Here you go 👇", "Your link is here 👇"]) + `
+${post.link}
+
+` + pick([
+    "If you find it useful, a follow for @aiplaybooks.daily would mean a lot 🙏 We share a FR££ AI tool every day.",
+    "Enjoy! 🙌 Follow @aiplaybooks.daily so you don't miss the next FR££ tool, we post one every day.",
+    "Have fun with it 🚀 And if you like finds like this, follow @aiplaybooks.daily, new ones every day 🙏",
+  ]);
+  return { text };
 }
 
 function linkMessage(post) {

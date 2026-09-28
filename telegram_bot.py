@@ -90,6 +90,10 @@ def send_media(paths, caption=""):
     """Slides as one album (max 10 photos)."""
     paths = [p for p in paths if pathlib.Path(p).exists()][:10]
     if not paths: return
+    if len(paths) == 1:  # albums need 2-10 items (repo posts are one photo)
+        try: call("sendPhoto", {"chat_id": CHAT, **({"caption": caption[:1000]} if caption else {})}, {"photo": paths[0]}, timeout=120)
+        except Exception as ex: log("photo failed", ex)  # noqa: BLE001
+        return
     media = [{"type": "photo", "media": f"attach://f{i}", **({"caption": caption[:1000]} if i == 0 and caption else {})}
              for i in range(len(paths))]
     try: call("sendMediaGroup", {"chat_id": CHAT, "media": json.dumps(media)}, {f"f{i}": p for i, p in enumerate(paths)}, timeout=180)
@@ -146,10 +150,10 @@ def status():
     sc = latest_scan()
     if sc: out.append(f"🔎 Son tarama {esc(sc['created'][5:16].replace('T', ' '))}: {S_tr(sc['status'])}")
     for r in runs:
-        if r["kind"] in ("post", "clip") and r["status"] in ("running", "queued", "waiting", "error"):
+        if r["kind"] in ("post", "clip", "repo") and r["status"] in ("running", "queued", "waiting", "error"):
             node = next((n for n, v in r["nodes"].items() if v["status"] in ("running", "waiting", "error")), "")
-            out.append(f"{'🎞' if r['kind'] == 'clip' else '🖼'} {esc((r.get('title') or r['id'])[:70])}\n   → {S_tr(r['status'])} · {esc(node)}")
-    done = [r for r in runs if r["kind"] in ("post", "clip") and r["status"] == "done"][:2]
+            out.append(f"{ {'clip': '🎞', 'repo': '🐙'}.get(r['kind'], '🖼') } {esc((r.get('title') or r['id'])[:70])}\n   → {S_tr(r['status'])} · {esc(node)}")
+    done = [r for r in runs if r["kind"] in ("post", "clip", "repo") and r["status"] == "done"][:2]
     for r in done: out.append(f"✅ {esc((r.get('title') or '')[:70])}")
     s = S.settings()
     g = next((r for r in runs if r["kind"] == "gather"), None)
@@ -173,6 +177,10 @@ def preview(rid):
         send(head + f"\n\n<b>Hook:</b> {esc((c.get('title') or '') + ' ' + (c.get('hook') or ''))}\n<b>Kaynak:</b> {esc(d.get('url'))}"
              "\n⚠️ Video başkasına ait; kaynak gösterilir ama bu izin sayılmaz.")
         if d.get("reel"): send_video(str(ROOT / d["reel"]), "Viral Reel önizleme")
+    elif d["kind"] == "repo":
+        send(head + f"\n\n🐙 <b>{esc((c.get('repo') or {}).get('full_name'))}</b> · IG DM kelimesi: <b>{esc((c.get('dm') or {}).get('keyword'))}</b>"
+             f"\n\n<b>Facebook ilk yorum:</b>\n{esc(c.get('fb_comment'))}")
+        send_media([str(ROOT / s) for s in d.get("slides", [])], "GitHub gönderisi")
     else:
         send(head)
         send_media([str(ROOT / s) for s in d.get("slides", [])], "Carousel")
@@ -181,8 +189,17 @@ def preview(rid):
          [[btn("✅ Yayınla", "ask_publish", rid), btn("✎ Revize", "ask_revise", rid), btn("✕ Reddet", "ask_reject", rid)]])
 
 
+def send_link(new=False):
+    import remote
+    url = remote.link()
+    if not url: return send("📱 Studio linki henüz hazır değil (tünel açılıyor). Biraz sonra tekrar <b>link</b> yaz."
+                            + (f"\n⚠️ {esc(remote.STATE['error'])}" if remote.STATE.get("error") else ""))
+    send(("📱 <b>Studio'nun yeni linki</b> (bilgisayar yeniden başladı)" if new else "📱 <b>Studio linki</b>")
+         + f"\n{esc(url)}\n\nSadece sana özel: kimseyle paylaşma. Studio her yeniden başladığında link değişir, yenisini buraya gönderirim.")
+
+
 def waiting_run():
-    return next((r for r in S.all_runs() if r["kind"] in ("post", "clip") and r["nodes"].get("approve", {}).get("status") == "waiting"), None)
+    return next((r for r in S.all_runs() if r["kind"] in ("post", "clip", "repo") and r["nodes"].get("approve", {}).get("status") == "waiting"), None)
 
 
 # ---------------------------------------------------------------- events pushed by the Studio
@@ -192,7 +209,8 @@ def event(kind, run, **kw):
     if not (TOKEN and CHAT): return
     def work():
         try:
-            if kind == "candidates": show_candidates(S.Run(run.id).s)
+            if kind == "link": send_link(new=True)
+            elif kind == "candidates": show_candidates(S.Run(run.id).s)
             elif kind == "approval": preview(run.id)
             elif kind == "published":
                 links = "\n".join(f"• {esc(k)}: {esc(v)}" for k, v in kw.get("links", {}).items())
@@ -238,6 +256,7 @@ def handle_text(text, spoken=False):
         rid = S.start_scan("Telegram'dan başlatıldı")
         return send("🔎 Havuz hazırlanıyor: güncelse hemen, değilse önce toplama yapılır (~5-8 dk). Liste hazır olunca gönderirim." if rid else "Zaten bir tarama çalışıyor.")
     if re.match(r"^/?(durum|ne durumda|status)", t): return status()
+    if re.match(r"^/?(link|studio|stüdyo|arayüz|panel)\b", t): return send_link()
     if re.match(r"^/?(adaylar|aday listesi|liste)", t): return show_candidates()
     if re.match(r"^/?(paketler|prompt ?pack|prompt paket)", t): return show_packs()
     if re.match(r"^/?(önizle|önizleme|onizle|onay)\b", t):
@@ -374,7 +393,8 @@ def help_msg():
          "• <b>3</b> / <b>3'ü seç</b> / <b>gemini'yi seç</b> — aday seç (onay sorulur)\n"
          "• <b>durum</b> — ne çalışıyor, ne bekliyor\n• <b>önizle</b> — onay bekleyen gönderiyi tekrar gönder\n"
          "• <b>yayınla</b> / <b>reddet</b> — onay sorulur\n• <b>revize: kapağı kısalt…</b> — revizyon notu\n"
-         "• <b>bir X linki</b> (ya da X'ten bota paylaş) — viral Reel yap")
+         "• <b>bir X linki</b> (ya da X'ten bota paylaş) — viral Reel yap\n"
+         "• <b>link</b> — Studio'yu telefonda aç (sana özel link)")
 
 
 def on_callback(cq):
@@ -394,7 +414,7 @@ def on_callback(cq):
             return ask("pack", p, f"Bu prompt paketi üretilsin mi?\n<b>{esc(pk.get('title_tr'))}</b>\n<i>{esc(pk.get('headline'))}</i>")
         if kind == "pack":
             rid = S.select_pack(p); return send(f"✍️ Paket üretimi başladı: yazı → kapak → carousel → video → kalite kontrol. Onaya gelince önizlemeyi gönderirim.\n<code>{esc(rid)}</code>")
-        if kind == "ask_publish": return ask("publish", p, "<b>Yayınlansın mı?</b> (Instagram + Facebook" + ("" if p.startswith("clip") else " + YouTube") + ")")
+        if kind == "ask_publish": return ask("publish", p, "<b>Yayınlansın mı?</b> (Instagram + Facebook" + ("" if p.startswith(("clip", "repo")) else " + YouTube") + ")")
         if kind == "publish": S.approve(p); return send("🚀 Onaylandı, paylaşılıyor. Linkleri bitince gönderirim.")
         if kind == "ask_reject": return ask("reject", p, "Reddedilsin mi? Paylaşılmayacak.")
         if kind == "reject": S.reject(p); return send("✕ Reddedildi.")
@@ -458,7 +478,7 @@ def loop():
     try:
         call("setMyCommands", {"commands": [{"command": c, "description": d} for c, d in (
             ("durum", "Ne çalışıyor, ne bekliyor"), ("adaylar", "Son taramanın adayları"), ("paketler", "Prompt paketleri"),("tara", "Şimdi tara"),
-            ("onizle", "Onay bekleyen gönderi"), ("yardim", "Komutlar"))]})
+            ("onizle", "Onay bekleyen gönderi"), ("link", "Studio'yu telefonda aç"), ("yardim", "Komutlar"))]})
     except Exception as ex: log("setMyCommands", ex)  # noqa: BLE001
     while True:
         try:

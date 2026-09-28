@@ -50,6 +50,7 @@ aside{width:380px;min-width:380px;border-right:1px solid var(--line);background:
 .tag{font-size:10.5px;font-weight:700;letter-spacing:.6px;padding:2px 7px;border-radius:5px;background:#3a2f5c;color:#d0bfff}
 .tag.news{background:#123a52;color:#a5d8ff}
 .tag.pp{background:#4a2a12;color:#ffc98a}
+.tag.gh{background:#1f2a1f;color:#8ce99a}
 .cand h4{font-size:14.5px;line-height:1.3;margin-bottom:6px}
 .cand h4 a.ttl{color:var(--text);text-decoration:none;border-bottom:1px dashed #6d6d7c}
 .cand h4 a.ttl:hover{color:#8fb8ff;border-bottom-color:#8fb8ff}
@@ -222,6 +223,35 @@ table.tt td.p{text-align:right;color:var(--muted);width:48px;font-variant-numeri
 .switch{display:flex;align-items:center;gap:10px;margin-top:16px;cursor:pointer}
 .switch input{width:18px;height:18px}
 @media (max-width:1100px){aside{width:300px;min-width:300px}#drawer{width:360px}.apv{grid-template-columns:1fr}}
+/* phone (owner opens the Studio from Telegram's link): one panel at a time, bottom bar switches list / flow */
+#mnav{display:none}
+@media (max-width:760px){
+  html,body{height:100dvh}
+  body{display:flex;flex-direction:column}
+  header{height:auto;flex-wrap:wrap;gap:8px;padding:8px 10px}
+  header .pill,#timeBtn{display:none}
+  .logo{font-size:14px}.grow{display:none}
+  #postSel{order:9;flex:1 1 100%;min-width:0}
+  header button{padding:6px 9px;font-size:13px}
+  main,body.has-banner main{flex:1;min-height:0;height:auto;padding-bottom:52px}
+  #banner{flex-wrap:wrap;padding:8px 10px}
+  aside{width:100%;min-width:0;border-right:0}
+  .tabs{overflow-x:auto}.tabs button{flex:none;padding:11px 12px;white-space:nowrap}
+  body:not(.mv-flow) #vp{display:none}
+  body.mv-flow aside{display:none}
+  #vp{touch-action:none}
+  .runinfo{max-width:calc(100% - 28px);font-size:12px}
+  .legend{display:none}
+  .group{display:none}
+  #drawer{position:fixed;inset:0;width:auto;z-index:40}
+  .modal{padding:0}.mbox{border-radius:0;height:100%;max-height:100%}
+  .apv{grid-template-columns:1fr}.strip img{height:260px}
+  .mf{padding:10px}.mf button{flex:1}
+  #mnav{display:flex;position:fixed;left:0;right:0;bottom:0;height:52px;background:var(--panel);border-top:1px solid var(--line);z-index:30}
+  #mnav button{flex:1;border:0;border-radius:0;background:none;color:var(--muted);font-size:14px}
+  #mnav button.on{color:var(--text);box-shadow:inset 0 3px 0 #ff6d5a}
+  .plats,.pcards{grid-template-columns:1fr 1fr}
+}
 </style>
 </head>
 <body>
@@ -244,6 +274,7 @@ table.tt td.p{text-align:right;color:var(--muted);width:48px;font-variant-numeri
       <button data-tab="raw">Ham haberler</button>
       <button data-tab="packs">Prompt paketleri</button>
       <button data-tab="viral">Viral</button>
+      <button data-tab="repos">GitHub</button>
       <button data-tab="hist">Geçmiş</button>
     </div>
     <div class="side-head" id="scanHead"><select id="scanSel"></select></div>
@@ -284,8 +315,11 @@ table.tt td.p{text-align:right;color:var(--muted);width:48px;font-variant-numeri
     <h5 style="font-size:12px;color:var(--muted);margin:16px 0 8px">ARKA PLAN TOPLAMA SAATLERİ (sessiz, havuza ekler)</h5>
     <div class="times" id="gtimes"></div>
     <button id="addGTime" style="margin-top:8px">+ Saat ekle</button>
-    <h5 style="font-size:12px;color:var(--muted);margin:16px 0 8px">HOOK ÖĞRENME (günde bir)</h5>
-    <input type="time" id="learnTime">
+    <h5 style="font-size:12px;color:var(--muted);margin:16px 0 8px">GITHUB REPO ARAMASI (günde bir, GitHub sekmesine aday ekler)</h5>
+    <input type="time" id="repoTime">
+    <h5 style="font-size:12px;color:var(--muted);margin:16px 0 8px">HOOK & CAPTION ÖĞRENME (her seferinde bir alan: haber, paket, klip, GitHub, caption)</h5>
+    <div class="times" id="ltimes"></div>
+    <button id="addLTime" style="margin-top:8px">+ Saat ekle</button>
     <label class="switch"><input type="checkbox" id="gate"> Yayından önce onay iste</label>
     <label class="switch"><input type="checkbox" id="dmBot"> Instagram DM botu açık (yorum → takip kontrolü → link)</label>
     <p style="font-size:12.5px;color:var(--muted);margin-top:4px">Açıkken yazar uygun gönderilere bir anahtar kelime koyar, caption "Comment KELİME" der. Meta onayı (App Review) gelmeden açma: bot o zamana kadar sadece test hesaplarına cevap verir.</p>
@@ -304,11 +338,12 @@ table.tt td.p{text-align:right;color:var(--muted);width:48px;font-variant-numeri
   <div class="mb" id="pfBody"></div>
 </div></div>
 
+<nav id="mnav"><button data-mv="list" class="on">📋 Liste</button><button data-mv="flow">🔀 Akış</button></nav>
 <div id="lightbox"><img alt=""></div>
 <div class="toast" id="toast"></div>
 
 <script>
-const ICONS={comments:"💬",trigger:"⏰",collect:"📰",scout:"🧠",choose:"👤",write:"✍️",cover:"🧑‍💼",carousel:"🖼️",reel:"🎬",qa:"👁️",approve:"✅",
+const ICONS={card:"🐙",ig_photo:"📸",rcollect:"🐙",rscout:"🧠",comments:"💬",trigger:"⏰",collect:"📰",scout:"🧠",choose:"👤",write:"✍️",cover:"🧑‍💼",carousel:"🖼️",reel:"🎬",qa:"👁️",approve:"✅",
   upload:"☁️",ig_carousel:"📸",ig_reel:"🎞️",fb_photos:"📘",fb_reel:"📘",yt_short:"▶️",log:"📒",fetch:"⬇️",hook:"🪝",caption:"#️⃣",frame:"🎬",pool:"🧺",hooks:"🎓",dm:"📩"};
 const LAYOUT={
   post:{trigger:[0,40],collect:[270,40],scout:[540,40],pool:[810,40],choose:[1080,40],
@@ -316,11 +351,15 @@ const LAYOUT={
     qa:[0,420],approve:[270,420],upload:[540,420],ig_carousel:[810,420],fb_photos:[1080,420],
     yt_short:[0,610],comments:[270,610],dm:[540,610],log:[810,610]},
   clip:{fetch:[0,40],hook:[270,40],caption:[540,40],frame:[810,40],qa:[1080,40],
-    approve:[0,230],upload:[270,230],ig_reel:[540,230],fb_reel:[810,230],yt_short:[1080,230],comments:[0,420],dm:[270,420],log:[540,420]}};
+    approve:[0,230],upload:[270,230],ig_reel:[540,230],fb_reel:[810,230],yt_short:[1080,230],comments:[0,420],dm:[270,420],log:[540,420]},
+  repo:{write:[0,40],caption:[270,40],card:[540,40],approve:[810,40],upload:[1080,40],
+    ig_photo:[0,230],fb_photos:[270,230],comments:[540,230],dm:[810,230],log:[1080,230]}};
 const GROUPS={post:[["① Tarama","scan",0,0],["② Carousel üretimi","post",0,190],["③ Kontrol, onay & yayın","pub",0,380]],
-  clip:[["① Viral Reel üretimi (link yapıştırınca başlar, taramadan bağımsız)","post",0,0],["② Kontrol sonrası onay & yayın","pub",0,190]]};
-const kind=()=>runById(postId)?.kind==="clip"?"clip":"post";
-const POS=new Proxy({},{get:(_,id)=>LAYOUT[kind()][id]||[0,0]});
+  clip:[["① Viral Reel üretimi (link yapıştırınca başlar, taramadan bağımsız)","post",0,0],["② Kontrol sonrası onay & yayın","pub",0,190]],
+  repo:[["① GitHub repo gönderisi (GitHub sekmesinden seçince başlar)","post",0,0],["② Yayın: IG fotoğraf + DM, FB fotoğraf + ilk yorum","pub",0,190]]};
+const kind=()=>{const k=runById(postId)?.kind;return k==="clip"||k==="repo"?k:"post"};
+const MROW=92,isPhone=()=>matchMedia("(max-width:760px)").matches;
+const POS=new Proxy({},{get:(_,id)=>isPhone()?[0,Math.max(0,ORDER().indexOf(id))*MROW]:LAYOUT[kind()][id]||[0,0]});
 const WW=1080+224;let WH=610+78;
 const NW=224,NH=78;
 const $=s=>document.querySelector(s);
@@ -329,6 +368,7 @@ const host=u=>{try{return new URL(u).hostname.replace(/^www\./,"")}catch{return 
 const fmtT=s=>s?new Date(s).toLocaleString("tr-TR",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}):"";
 const file=p=>"/file/"+p.split("/").map(encodeURIComponent).join("/");
 
+let builtPhone=null;
 let S=null, scanId=null, postId=null, tab="cands", sel=null, detail=null, dismissed=new Set(), built=false, builtKind=null;
 let view={x:40,y:40,k:1}, fitted=false;
 
@@ -408,18 +448,18 @@ function setList(L,html){  // skip identical re-renders; keep typed text and foc
 function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove("on"),5000);}
 
 const scans=()=>S.runs.filter(r=>r.kind==="scan");
-const posts=()=>S.runs.filter(r=>r.kind==="post"||r.kind==="clip");
+const posts=()=>S.runs.filter(r=>r.kind==="post"||r.kind==="clip"||r.kind==="repo");
 const runById=id=>S.runs.find(r=>r.id===id);
-const flowOf=nid=>kind()!=="clip"&&S.flows.scan.some(n=>n.id===nid)?"scan":kind();
+const flowOf=nid=>kind()==="post"&&S.flows.scan.some(n=>n.id===nid)?"scan":kind();
 
 /* ---------------- canvas ---------------- */
 function build(){
-  const w=$("#world");w.querySelectorAll(".group,.node").forEach(x=>x.remove());builtKind=kind();
+  const w=$("#world");w.querySelectorAll(".group,.node").forEach(x=>x.remove());builtKind=kind();builtPhone=isPhone();
   for(const [label,key,x,y] of GROUPS[kind()]){
     const g=document.createElement("div");g.className="group";g.style.left=x+"px";g.style.top=y+"px";g.dataset.g=key;
     g.innerHTML=esc(label)+"<span></span>";w.appendChild(g);
   }
-  for(const f of kind()==="clip"?["clip"]:["scan","post"]) for(const n of S.flows[f]){
+  for(const f of kind()==="post"?["scan","post"]:[kind()]) for(const n of S.flows[f]){
     const d=document.createElement("div");d.className="node k-"+n.kind+" s-idle";d.id="n-"+n.id;
     const [x,y]=POS[n.id];d.style.left=x+"px";d.style.top=y+"px";
     d.innerHTML=`<div class="ico">${ICONS[n.id]}</div><div class="tx"><b>${esc(n.label)}</b><small>Bekliyor</small></div><span class="badge"></span><i class="port in"></i><i class="port out"></i>`;
@@ -428,7 +468,7 @@ function build(){
   }
   built=true;
 }
-const ORDER=()=>(kind()==="clip"?S.flows.clip:[...S.flows.scan,...S.flows.post]).map(n=>n.id);
+const ORDER=()=>(kind()==="post"?[...S.flows.scan,...S.flows.post]:S.flows[kind()]).map(n=>n.id);
 function edgePath(a,b){
   const [ax,ay]=POS[a],[bx,by]=POS[b];const x1=ax+NW,y1=ay+NH/2,x2=bx,y2=by+NH/2;
   if(x2>x1) {const c=Math.max(40,(x2-x1)/2);return `M${x1},${y1} C${x1+c},${y1} ${x2-c},${y2} ${x2},${y2}`;}
@@ -452,14 +492,14 @@ function subText(nid,n){
   return n.msg||n.status;
 }
 function renderCanvas(){
-  if(!built||builtKind!==kind()){build();fitted=false;}
+  if(!built||builtKind!==kind()||builtPhone!==isPhone()){build();fitted=false;}
   const ids=ORDER();let paths="";
   for(let i=0;i<ids.length-1;i++){
     const a=nodeState(ids[i]),b=nodeState(ids[i+1]);
     const cls=b.status==="running"?"flow":(a.status==="done"&&b.status!=="idle"&&b.status!=="error"?"done":"");
     paths+=`<path class="${cls}" d="${edgePath(ids[i],ids[i+1])}"/>`;
   }
-  $("#edges").innerHTML=paths;
+  $("#edges").innerHTML=isPhone()?"":paths;
   for(const id of ids){
     const n=nodeState(id),el=$("#n-"+id);
     el.className=`node k-${el.className.match(/k-(\w+)/)[1]} s-${n.status}${sel===id?" sel":""}`;
@@ -470,25 +510,28 @@ function renderCanvas(){
   const gs=document.querySelector('[data-g=scan] span');if(gs)gs.textContent=sc?`${fmtT(sc.created)} · ${sc.trigger_msg||""}`:"henüz tarama yok";
   document.querySelector('[data-g=post] span').textContent=po?(po.title||""):"soldan bir haber seç ya da Viral sekmesinden link yapıştır";
   document.querySelector('[data-g=pub] span').textContent=po?({done:"paylaşıldı",rejected:"reddedildi"}[po.status]||(S.settings.approval?"onay açık":"onay kapalı")):"";
-  const sw=`<span class="fsw">${[["post","🖼️ Carousel akışı"],["clip","🎞 Viral Reel akışı"]].map(([k,l])=>`<button data-flow="${k}" class="${kind()===k?"on":""}">${l}</button>`).join("")}</span>`;
+  const sw=`<span class="fsw">${[["post","🖼️ Carousel akışı"],["clip","🎞 Viral Reel akışı"],["repo","🐙 GitHub akışı"]].map(([k,l])=>`<button data-flow="${k}" class="${kind()===k?"on":""}">${l}</button>`).join("")}</span>`;
   $("#runinfo").innerHTML=sw+(po?`Üretim: <b>${esc(po.title||po.id)}</b> · ${statusTr(po.status)}`:(runById(postId)&&kind()==="post"?"Bu taramadan henüz haber seçilmedi. Soldan bir aday seçince burada canlı akar.":"Henüz üretim yok. Soldan bir aday seçince burada canlı akar."));
-  $("#runinfo").querySelectorAll("[data-flow]").forEach(b=>b.onclick=()=>{const r=posts().find(p=>(p.kind==="clip"?"clip":"post")===b.dataset.flow);
-    if(!r)return toast(b.dataset.flow==="clip"?"Henüz viral Reel yok: Viral sekmesinden bir link yapıştır.":"Henüz carousel üretimi yok: Adaylar'dan bir haber seç.");
+  $("#runinfo").querySelectorAll("[data-flow]").forEach(b=>b.onclick=()=>{const r=posts().find(p=>p.kind===b.dataset.flow);
+    if(!r)return toast({clip:"Henüz viral Reel yok: Viral sekmesinden bir link yapıştır.",repo:"Henüz GitHub gönderisi yok: GitHub sekmesinden bir repo seç."}[b.dataset.flow]||"Henüz carousel üretimi yok: Adaylar'dan bir haber seç.");
     postId=r.id;sel=null;$("#drawer").classList.remove("on");renderAll(true)});
   if(!fitted){fit();fitted=true;}
 }
 function statusTr(s){return{scheduled:"planlı saati bekliyor",queued:"sırada",running:"çalışıyor",waiting:"seni bekliyor",done:"tamamlandı",error:"hata",rejected:"reddedildi",canceled:"durduruldu"}[s]||s}
 function apply(){$("#world").style.transform=`translate(${view.x}px,${view.y}px) scale(${view.k})`;}
 function fit(){
-  WH=(kind()==="clip"?420:610)+78;
+  WH=({clip:420,repo:230}[kind()]??610)+78;
+  if(isPhone()){const vp=$("#vp").getBoundingClientRect();view.k=Math.min(1.2,(vp.width-32)/NW);view.x=(vp.width-NW*view.k)/2;
+    view.y=($("#runinfo").offsetHeight||60)+28;apply();return}
   const vp=$("#vp").getBoundingClientRect(),W=WW,H=WH;
-  const free=vp.width-($("#drawer").classList.contains("on")?470:0);view.k=Math.min(1.25,(free-80)/W,(vp.height-120)/H);view.x=Math.max(30,(free-W*view.k)/2);view.y=Math.max(64,(vp.height-H*view.k)/2+10);apply();
+  const free=vp.width-($("#drawer").classList.contains("on")&&!mobile()?470:0);view.k=Math.min(1.25,(free-80)/W,(vp.height-120)/H);view.x=Math.max(30,(free-W*view.k)/2);view.y=Math.max(64,(vp.height-H*view.k)/2+10);apply();
 }
 (()=>{
   const vp=$("#vp");let d=null;
-  vp.addEventListener("mousedown",e=>{if(e.target.closest(".node,.zoom,button"))return;d={x:e.clientX-view.x,y:e.clientY-view.y};vp.classList.add("drag")});
-  addEventListener("mousemove",e=>{if(!d)return;view.x=e.clientX-d.x;view.y=e.clientY-d.y;apply()});
-  addEventListener("mouseup",()=>{d=null;vp.classList.remove("drag")});
+  // pointer events: mouse on the PC, one-finger pan on the phone
+  vp.addEventListener("pointerdown",e=>{if(e.target.closest(".node,.zoom,button,.runinfo"))return;d={x:e.clientX-view.x,y:e.clientY-view.y};vp.classList.add("drag")});
+  addEventListener("pointermove",e=>{if(!d)return;view.x=e.clientX-d.x;view.y=e.clientY-d.y;apply()});
+  addEventListener("pointerup",()=>{d=null;vp.classList.remove("drag")});addEventListener("pointercancel",()=>{d=null});
   vp.addEventListener("wheel",e=>{e.preventDefault();const r=vp.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top;
     const k=Math.min(2,Math.max(.3,view.k*(e.deltaY<0?1.1:.9)));view.x=mx-(mx-view.x)*k/view.k;view.y=my-(my-view.y)*k/view.k;view.k=k;apply()},{passive:false});
   const z=f=>{const r=vp.getBoundingClientRect(),mx=r.width/2,my=r.height/2,k=Math.min(2,Math.max(.3,view.k*f));
@@ -506,7 +549,8 @@ const TOOLS=["ChatGPT","Claude","Gemini","Grok","Codex","Cursor","Copilot","Perp
 const toolOf=k=>k.tool||(k.tools||[])[0]||"Diğer";
 async function renderSide(force){
   const L=$("#list");
-  $("#scanHead").style.display=tab==="hist"||tab==="viral"||tab==="packs"?"none":"flex";
+  $("#scanHead").style.display=["hist","viral","packs","repos"].includes(tab)?"none":"flex";
+  if(tab==="repos")return renderRepos(L,force);
   if(tab==="packs"){
     if(!force&&L.dataset.t==="packs")return;L.dataset.t="packs";
     const d=await api("/api/packs"),all=d.packs||[];
@@ -538,7 +582,7 @@ async function renderSide(force){
     if(!force&&L.dataset.t==="hist")return;L.dataset.t="hist";
     const h=await api("/api/history");
     L.innerHTML=h.length?h.map(e=>`<div class="hist"><b>${esc(e.topic||e.post)}</b><br><small>${fmtT(e.date)} · ${esc(e.theme||"")}</small><div class="srcs" style="margin:6px 0 0">
-      ${e.ig_carousel?`<a href="${esc(e.ig_carousel.link)}" target="_blank">IG carousel</a>`:""}${e.ig_reel?`<a href="${esc(e.ig_reel.link)}" target="_blank">IG Reel</a>`:""}
+      ${e.ig_carousel?`<a href="${esc(e.ig_carousel.link)}" target="_blank">IG carousel</a>`:""}${e.ig_photo?`<a href="${esc(e.ig_photo.link)}" target="_blank">IG gönderi</a>`:""}${e.ig_reel?`<a href="${esc(e.ig_reel.link)}" target="_blank">IG Reel</a>`:""}
       ${e.fb_photos?`<a href="${esc(e.fb_photos.link)}" target="_blank">FB gönderi</a>`:""}${e.fb_reel?`<a href="${esc(e.fb_reel.link)}" target="_blank">FB Reel</a>`:""}${e.yt_short?`<a href="${esc(e.yt_short.link)}" target="_blank">YouTube</a>`:""}</div></div>`).join(""):`<div class="empty">Henüz paylaşım yok.</div>`;
     return;
   }
@@ -629,9 +673,56 @@ async function renderSide(force){
     openMore.has(id)?openMore.delete(id):openMore.add(id);renderSide(true)});
 }
 
+/* ---------------- GitHub repos tab ---------------- */
+let repoCat=null;const REPO_CATS={alternative:"Ücretli araca alternatif",agents:"Ajanlar / Claude Code",local_media:"Yerel görsel·video·ses",learning:"Öğrenme",creator:"İçerik üretici"};
+const kfmt=n=>n>=1000?(n/1000).toFixed(n>=10000?0:1)+"k":String(n??"");
+async function renderRepos(L,force){
+  L.dataset.t="repos";
+  const d=await api("/api/repos"),all=d.candidates||[];
+  if(repoCat&&!all.some(c=>c.category===repoCat))repoCat=null;
+  const shown=all.filter(c=>!repoCat||c.category===repoCat);
+  const pooled=Object.fromEntries((S.share||[]).filter(i=>i.kind==="repo"&&["pool","producing"].includes(i.status)).map(i=>[i.candidate?.id,i]));
+  const st=d.last?`${fmtT(d.last.created)} ${{done:"✓",error:"⚠ hata",running:"çalışıyor…",queued:"sırada"}[d.last.status]||d.last.status}${d.last.msg?" · "+esc(d.last.msg):""}`:"henüz yok";
+  const nPool=(S.share||[]).filter(i=>i.kind==="repo"&&!["done","canceled"].includes(i.status)).length;
+  const html=`<details class="pool" open><summary style="cursor:pointer"><b>📌 GitHub havuzu</b> · ${nPool} repo</summary>
+    <p style="margin-top:6px">Tek fotoğraf (repo sayfası) + caption. Link: Facebook'ta ilk yorumda, Instagram'da yorum yazanlara DM ile. <b>Planla</b> ile saat ver (üretim ~${S.lead?.repo||30} dk önce başlar) ya da <b>Şimdi paylaş</b>.</p>${shareHtml("repo")}</details>
+    <div class="note" style="line-height:1.6">🐙 <b>Repo araması</b> · son: ${st} · sonraki ${fmtT(d.next)} <button class="tchip" id="repoScan" style="margin-left:6px">Şimdi ara</button>${d.notes_tr?`<br>${esc(d.notes_tr)}`:""}</div>
+    <div class="tchips"><button class="tchip ${repoCat?"":"on"}" data-rcat="">Tümü ${all.length}</button>${Object.entries(REPO_CATS).map(([k,v])=>{const n=all.filter(c=>c.category===k).length;
+      return `<button class="tchip ${repoCat===k?"on":""} ${n?"":"zero"}" data-rcat="${k}" ${n?"":"disabled"}>${esc(v)} ${n}</button>`}).join("")}</div>`+
+    (shown.length?shown.map(c=>`<div class="cand ${c.run?"chosen":""}">
+      <div class="top"><span class="score">${esc(c.score)}</span><span class="tag gh">GITHUB</span><span class="chip" style="font-size:11px;padding:0 7px">${esc(REPO_CATS[c.category]||c.category||"")}</span>
+        <span>⭐ ${kfmt(c.stars)}${c.week_gain?` · +${kfmt(c.week_gain)}/hafta`:""}</span></div>
+      <h4><a class="ttl" href="${esc(c.url)}" target="_blank" title="Repoyu aç">${esc(c.full_name)} ↗</a></h4>
+      <p><b>${esc(c.title||"")}</b></p><p>${esc(c.summary_tr||"")}</p>${c.why_tr?`<p class="why">💡 ${esc(c.why_tr)}</p>`:""}
+      <div class="more" id="more-${esc(c.id)}" ${openMore.has(c.id)?"":"hidden"}>${(c.facts||[]).map(f=>`• ${esc(f)}`).join("<br>")}${c.replaces?`<br><b>Alternatifi:</b> ${esc(c.replaces)}`:""}${c.install?`<br><b>Kurulum:</b> ${esc(c.install)}`:""}</div>
+      <a href="#" class="moreBtn" data-more="${esc(c.id)}">${openMore.has(c.id)?"Detayı gizle":"Doğrulanan bilgiler"}</a>
+      <div class="chips">${[c.license,c.language].filter(Boolean).map(x=>`<span class="chip">${esc(x)}</span>`).join("")}</div>
+      ${c.run?`<button data-run="${esc(c.run)}">Üretimde · göster</button>`:pooled[c.id]?`<button disabled>📌 Havuzda${pooled[c.id].at?" · "+fmtT(pooled[c.id].at):""}</button>`:
+        `<div class="twob"><button class="primary" data-repo="${esc(c.id)}">Bu repoyu paylaş</button><button data-rpool="${esc(c.id)}">📌 Havuza at</button></div>`}
+    </div>`).join(""):`<div class="empty">Henüz repo adayı yok.<br><br><b>Şimdi ara</b>'ya bas (~5-10 dk): GitHub'da yükselen ve çok yıldızlı repoları toplar, Claude doğrulayıp seçer.</div>`);
+  if(!setList(L,html)&&!force)return;
+  wireShare(L);
+  $("#repoScan").onclick=async e=>{e.target.disabled=true;try{await api("/api/repos/scan",{});toast("Repo araması başladı (arka planda, ~5-10 dk).");await refresh()}catch(x){toast(x.message)}};
+  L.querySelectorAll("[data-rcat]").forEach(b=>b.onclick=()=>{repoCat=b.dataset.rcat||null;L._h=null;renderSide(true)});
+  L.querySelectorAll("[data-more]").forEach(a=>a.onclick=e=>{e.preventDefault();const id=a.dataset.more;openMore.has(id)?openMore.delete(id):openMore.add(id);L._h=null;renderSide(true)});
+  L.querySelectorAll("[data-run]").forEach(b=>b.onclick=()=>{postId=b.dataset.run;renderAll(true)});
+  L.querySelectorAll("[data-rpool]").forEach(b=>b.onclick=async()=>{b.disabled=true;
+    try{await api("/api/share/add",{kind:"repo",repo:b.dataset.rpool,approval:S.settings.approval});toast("Havuza atıldı: yukarıdaki GitHub havuzundan planla ya da şimdi paylaş");await refresh();L._h=null;renderSide(true)}catch(e){toast(e.message);b.disabled=false}});
+  L.querySelectorAll("[data-repo]").forEach(b=>b.onclick=async()=>{const c=all.find(x=>x.id===b.dataset.repo);
+    if(!confirm(`${c.full_name}\n\nBu repo için doğrulama, caption ve görsel üretimi başlasın mı?`))return;
+    b.disabled=true;try{const r=await api("/api/repo",{repo:c.id});postId=r.run;L._h=null;await refresh();openNode("write")}catch(e){toast(e.message);b.disabled=false}});
+}
+
+/* ---------------- phone: list / flow switch ---------------- */
+const mobile=()=>matchMedia("(max-width:760px)").matches;
+function mview(v){document.body.classList.toggle("mv-flow",v==="flow");document.querySelectorAll("#mnav button").forEach(b=>b.classList.toggle("on",b.dataset.mv===v));
+  if(v==="flow")setTimeout(fit,0)}
+document.querySelectorAll("#mnav button").forEach(b=>b.onclick=()=>mview(b.dataset.mv));
+
 /* ---------------- drawer ---------------- */
 $("#dClose").onclick=()=>{sel=null;$("#drawer").classList.remove("on");renderCanvas();setTimeout(fit,0)};
 async function openNode(nid){
+  if(mobile())mview("flow");
   const was=$("#drawer").classList.contains("on");
   sel=nid;$("#drawer").classList.add("on");renderCanvas();if(!was)setTimeout(fit,0);await renderDrawer();
 }
@@ -647,8 +738,8 @@ async function renderDrawer(){
   if(reps.length)h+=`<h5>🔧 Otomatik onarımlar</h5><ul class="clean">${reps.map(x=>`<li>${fmtT(x.at)} · <b>${x.retry?"onardı":"onaramadı"}</b>: ${esc(x.cause_tr||"")}${(x.changes||[]).length?"<br><small>"+x.changes.map(esc).join("<br>")+"</small>":""}${x.owner_action_tr?`<br><b>Yapman gereken:</b> ${esc(x.owner_action_tr)}`:""}</li>`).join("")}</ul>`;
   const acts=[];
   if(r&&n.status==="running")acts.push(`<button class="danger" data-a="cancel">■ Durdur</button>`);
-  const posted=r&&(r.nodes.ig_carousel?.status==="done"||r.nodes.ig_reel?.status==="done");
-  if(r&&["error","done"].includes(n.status)&&!["running","queued"].includes(r.status)&&!(f!=="scan"&&posted&&["write","cover","carousel","qa","approve","upload","fetch","hook","caption","frame"].includes(sel)))
+  const posted=r&&(r.nodes.ig_carousel?.status==="done"||r.nodes.ig_reel?.status==="done"||r.nodes.ig_photo?.status==="done");
+  if(r&&["error","done"].includes(n.status)&&!["running","queued"].includes(r.status)&&!(f!=="scan"&&posted&&["write","cover","carousel","card","qa","approve","upload","fetch","hook","caption","frame"].includes(sel)))
     acts.push(`<button data-a="retry">↻ ${n.status==="error"?"Tekrar dene":"Buradan yeniden çalıştır"}</button>`);
   if(sel==="approve"&&n.status==="waiting")acts.push(`<button class="go" data-a="preview">Önizle ve onayla</button>`);
   if(sel==="approve"&&n.status==="scheduled"&&r.share)acts.push(`<button class="go" data-a="shareNow">▶ Beklemeden şimdi paylaş</button>`,`<button class="danger" data-a="cancel">■ İptal et</button>`);
@@ -656,7 +747,14 @@ async function renderDrawer(){
   if(f!=="scan"&&r){
     if(!detail||detail.id!==rid||detail._t<Date.now()-2500){detail=await api("/api/run?id="+encodeURIComponent(rid));detail._t=Date.now();}
     const d=detail;
-    if(sel==="write"){
+    if(sel==="write"&&d.kind==="repo"){const c=d.content_data||{};
+      h+=`<h5>Seçilen repo</h5><div class="kv"><a href="${esc(d.candidate.url)}" target="_blank"><b>${esc(d.candidate.full_name)}</b></a><br>${esc(d.candidate.summary_tr||"")}</div>`;
+      if((c.hook||[]).length)h+=`<h5>Hook${c.hook_pattern?" · "+esc(c.hook_pattern):""}</h5><div class="cap">${esc([].concat(c.hook).join("\n"))}</div>`;
+      if(c.fb_comment)h+=`<h5>Facebook ilk yorum</h5><div class="cap">${esc(c.fb_comment)}</div>`;
+      if(c.dm?.keyword)h+=`<h5>Instagram DM anahtar kelimesi</h5><div class="kv"><b>${esc(c.dm.keyword)}</b> → link direkt DM ile</div>`;
+      if(d.write_result?.verified)h+=`<h5>Doğrulanan bilgiler</h5><ul class="clean">${d.write_result.verified.map(v=>`<li>${esc(v)}</li>`).join("")}</ul>`;
+      if((d.write_result?.left_out||[]).length)h+=`<h5>Doğrulanamadığı için çıkarılanlar</h5><ul class="clean">${d.write_result.left_out.map(v=>`<li>${esc(v)}</li>`).join("")}</ul>`;
+    } else if(sel==="write"){
       h+=`<h5>Seçilen haber</h5><div class="kv"><b>${esc(d.candidate.title)}</b><br>${esc(d.candidate.summary_tr||"")}</div>`;
       if(d.write_result){h+=`<h5>Doğrulanan bilgiler</h5><ul class="clean">${(d.write_result.verified||[]).map(v=>`<li>${esc(v)}</li>`).join("")}</ul>`;
         if((d.write_result.left_out||[]).length)h+=`<h5>Doğrulanamadığı için çıkarılanlar</h5><ul class="clean">${d.write_result.left_out.map(v=>`<li>${esc(v)}</li>`).join("")}</ul>`;}
@@ -673,6 +771,7 @@ async function renderDrawer(){
       h+=`<h5>Hook</h5><div class="kv">${c.title?`<b>${esc(c.title)}</b><br>`:""}${esc(c.hook||c.reject||"")}</div><h5>Caption</h5><div class="cap">${esc(c.caption||"")}</div>`;
       if((c.checked||[]).length)h+=`<h5>Kontrol edilenler</h5><ul class="clean">${c.checked.map(v=>`<li>${esc(v)}</li>`).join("")}</ul>`;}
     if(sel==="frame"&&d.reel&&n.status==="done")h+=`<h5>Reel</h5><video src="${file(d.reel)}" controls preload="metadata"></video>`;
+    if(sel==="card"&&d.slides.length)h+=`<h5>Görsel</h5><div class="thumbs" style="grid-template-columns:1fr"><img src="${file(d.slides[0])}?t=${Date.now()>>14}" data-zoom></div>`;
     if(sel==="carousel"&&d.slides.length)h+=`<h5>Slaytlar</h5><div class="thumbs">${d.slides.map(s=>`<img src="${file(s)}?t=${Date.now()>>14}" data-zoom>`).join("")}</div>`;
     if(sel==="reel"&&d.reel&&n.status==="done")h+=`<h5>Reel</h5><video src="${file(d.reel)}" controls preload="metadata"></video>`;
     if(sel==="qa"&&d.qa_result){const q=d.qa_result;
@@ -716,6 +815,19 @@ async function openApproval(rid){
   apPlan=d.publish_at&&new Date(d.publish_at)>new Date()?d.publish_at:null;
   $("#apGo").textContent=apPlan?`✓ Onayla · ${fmtT(apPlan)}'de paylaşılsın`:"✓ Yayınla (Instagram + Facebook)";
   $("#apTitle").textContent=d.title||c.topic||"Önizleme";
+  if(d.kind==="repo"){
+    $("#apState").textContent=`GitHub · ${c.repo?.full_name||""} · ⭐ ${kfmt(c.repo?.stars)}`;
+    $("#apBody").innerHTML=`<div class="apv"><div>
+      ${capsHtml(c)}
+      <h5 style="font-size:12px;color:var(--muted);margin:14px 0 6px">FACEBOOK İLK YORUM (link)</h5><div class="cap">${esc(c.fb_comment||"")}</div>
+      <h5 style="font-size:12px;color:var(--muted);margin:14px 0 6px">INSTAGRAM DM</h5><div class="kv">Yorumda <b>${esc(c.dm?.keyword||"")}</b> yazana repo linki direkt DM ile gider + takip ricası. Hook kalıbı: ${esc(c.hook_pattern||"—")}</div>
+      <h5 style="font-size:12px;color:var(--muted);margin:14px 0 6px">KAYNAKLAR</h5><div class="srcs">${(c.sources||[]).map(u=>`<a href="${esc(u)}" target="_blank">${esc(u)}</a>`).join("<br>")||"—"}</div>
+      ${d.write_result?.verified?.length?`<details style="margin-top:10px;font-size:13px"><summary style="cursor:pointer;color:var(--muted)">Doğrulanan bilgiler (${d.write_result.verified.length})</summary><ul class="clean" style="margin-top:6px">${d.write_result.verified.map(v=>`<li>${esc(v)}</li>`).join("")}</ul></details>`:""}
+    </div><div>${d.slides[0]?`<img src="${file(d.slides[0])}?t=${Date.now()>>14}" style="width:100%;border-radius:10px;border:1px solid var(--line);cursor:zoom-in" data-zoom>`:""}</div></div>`;
+    $("#apBody").querySelectorAll("[data-zoom]").forEach(i=>i.onclick=()=>zoom(i.src));
+    const waiting=d.nodes.approve.status==="waiting";["#apGo","#apRev","#apRej"].forEach(s=>$(s).disabled=!waiting);
+    $("#revise").classList.remove("on");$("#apModal").classList.add("on");return;
+  }
   if(d.kind==="clip"){
     $("#apState").textContent=`Viral Reel · ${d.clip?.secs||""} sn · kaynak @${d.clip?.uploader_id||""}`;
     $("#apBody").innerHTML=`<div class="apv"><div>
@@ -757,27 +869,28 @@ $("#bannerBtn").onclick=()=>{const w=posts().find(p=>p.nodes.approve?.status==="
 /* ---------------- settings ---------------- */
 function timeRow(v,box="#times"){const d=document.createElement("div");d.innerHTML=`<input type="time" value="${esc(v)}"><button>Sil</button>`;d.querySelector("button").onclick=()=>d.remove();$(box).appendChild(d)}
 $("#setBtn").onclick=()=>{$("#times").innerHTML="";$("#gtimes").innerHTML="";S.settings.scan_times.forEach(v=>timeRow(v));
-  (S.settings.gather_times||[]).forEach(v=>timeRow(v,"#gtimes"));$("#learnTime").value=S.settings.learn_time||"11:45";
+  (S.settings.gather_times||[]).forEach(v=>timeRow(v,"#gtimes"));$("#ltimes").innerHTML="";(S.settings.learn_times||[]).forEach(v=>timeRow(v,"#ltimes"));$("#repoTime").value=S.settings.repo_time||"07:15";
   $("#gate").checked=S.settings.approval;$("#dmBot").checked=!!S.settings.dm_bot;$("#setModal").classList.add("on")};
 $("#addGTime").onclick=()=>timeRow("12:00","#gtimes");
+$("#addLTime").onclick=()=>timeRow("12:00","#ltimes");
 $("#setClose").onclick=()=>$("#setModal").classList.remove("on");
 $("#addTime").onclick=()=>timeRow("12:00");
 $("#setSave").onclick=async()=>{
   const times=[...$("#times").querySelectorAll("input")].map(i=>i.value).filter(Boolean);
   const gtimes=[...$("#gtimes").querySelectorAll("input")].map(i=>i.value).filter(Boolean);
-  try{await api("/api/settings",{scan_times:times,gather_times:gtimes,learn_time:$("#learnTime").value,approval:$("#gate").checked,dm_bot:$("#dmBot").checked});$("#setModal").classList.remove("on");await refresh()}catch(e){toast(e.message)}};
+  try{await api("/api/settings",{scan_times:times,gather_times:gtimes,learn_times:[...$("#ltimes").querySelectorAll("input")].map(i=>i.value).filter(Boolean),repo_time:$("#repoTime").value,approval:$("#gate").checked,dm_bot:$("#dmBot").checked});$("#setModal").classList.remove("on");await refresh()}catch(e){toast(e.message)}};
 $("#scanBtn").onclick=async()=>{try{const r=await api("/api/scan",{});scanId=r.run;tab="cands";await refresh();openNode("collect")}catch(e){toast(e.message)}};
 
 /* ---------------- timings ---------------- */
 const PH={scan:["Tarama","var(--trigger)"],production:["Üretim","var(--ai)"],publish:["Yayın","var(--publish)"]};
-const PHASE={trigger:"scan",collect:"scan",scout:"scan",pool:"scan",choose:"wait",write:"production",cover:"production",fetch:"production",hook:"production",caption:"production",frame:"production",carousel:"production",reel:"production",qa:"production",
+const PHASE={card:"production",ig_photo:"publish",trigger:"scan",collect:"scan",scout:"scan",pool:"scan",choose:"wait",write:"production",cover:"production",fetch:"production",hook:"production",caption:"production",frame:"production",carousel:"production",reel:"production",qa:"production",
   approve:"wait",upload:"publish",ig_carousel:"publish",ig_reel:"publish",fb_photos:"publish",fb_reel:"publish",yt_short:"publish",comments:"publish",dm:"publish",log:"publish"};
 const secsOf=t=>t.started?Math.max(0,((t.ended?new Date(t.ended):new Date())-new Date(t.started))/1000):0;
 function hms(s){s=Math.round(s);if(s<60)return s+" sn";const m=Math.floor(s/60),r=s%60;if(m<60)return m+" dk "+String(r).padStart(2,"0")+" sn";
   return Math.floor(m/60)+" sa "+String(m%60).padStart(2,"0")+" dk";}
 function timingRows(){
   const po=runById(postId),sc=po?runById(po.scan):runById(scanId),rows=[];
-  for(const [r,f] of [[po?.kind==="clip"?null:sc,"scan"],[po,po?.kind||"post"]]) if(r) for(const m of S.flows[f]){
+  for(const [r,f] of [[po&&po.kind!=="post"?null:sc,"scan"],[po,po?.kind||"post"]]) if(r) for(const m of S.flows[f]){
     if(PHASE[m.id]==="wait")continue;  // the owner's picking/approval time is not the system's time
     const n=r.nodes[m.id]||{status:"idle"},tries=[...(n.attempts||[]),...(n.started?[n]:[])];
     rows.push({id:m.id,label:m.label,phase:PHASE[m.id],secs:tries.reduce((a,t)=>a+secsOf(t),0),tries:tries.length,status:n.status});
@@ -818,6 +931,7 @@ $("#tmClose").onclick=()=>$("#tmModal").classList.remove("on");
 const fmtN=v=>v===undefined||v===null?"—":Number(v).toLocaleString("tr-TR");
 const PL=[["yt_short","YouTube Short","views","izlenme",[["watch_minutes","izlenme dk"],["avg_view_sec","ort. sn"],["avg_view_pct","ort. %"],["likes","beğeni"],["comments","yorum"],["shares","paylaşım"],["subs_gained","abone +"]]],
   ["ig_reel","Instagram Reel","views","izlenme",[["reach","erişim"],["likes","beğeni"],["comments","yorum"],["saved","kaydetme"],["shares","paylaşım"]]],
+  ["ig_photo","IG gönderi","views","görüntülenme",[["reach","erişim"],["likes","beğeni"],["comments","yorum"],["saved","kaydetme"],["shares","paylaşım"]]],
   ["ig_carousel","IG carousel","views","görüntülenme",[["reach","erişim"],["likes","beğeni"],["comments","yorum"],["saved","kaydetme"],["shares","paylaşım"]]],
   ["fb_reel","Facebook Reel","plays","oynatma",[["avg_view_sec","ort. sn (tekrar dahil)"],["likes","beğeni"],["comments","yorum"]]],
   ["fb_photos","FB gönderi","reactions","tepki",[["comments","yorum"],["shares","paylaşım"],["reach","erişim"]]]];
@@ -827,7 +941,7 @@ async function renderPerf(){
   $("#pfUpd").textContent=d.refreshing?"yenileniyor…":d.updated?"güncellendi "+fmtT(d.updated):"henüz veri yok";
   if(!d.posts){B.innerHTML=`<div class="empty">${d.refreshing?'<span class="spin"></span> İlk veriler çekiliyor…':"Henüz veri yok. <b>Yenile</b>'ye bas."}</div>`;return;}
   const c=d.channel||{},tot=k=>d.posts.reduce((a,p)=>a+(((p.m||{})[k[0]]||{})[k[1]]||0),0);
-  const allViews=tot(["yt_short","views"])+tot(["ig_reel","views"])+tot(["ig_carousel","views"])+tot(["fb_reel","plays"]);
+  const allViews=tot(["yt_short","views"])+tot(["ig_reel","views"])+tot(["ig_carousel","views"])+tot(["ig_photo","views"])+tot(["fb_reel","plays"]);
   let h=`<div class="pcards">
     <div class="tcard main"><small>Toplam izlenme (tüm platformlar)</small><b>${fmtN(allViews)}</b></div>
     <div class="tcard"><small>YouTube abone</small><b>${fmtN(c.youtube?.subscribers)}</b></div>
@@ -858,7 +972,7 @@ function renderAll(forceSide){
   if(!scanId||!runById(scanId))scanId=sc[0]?.id||null;
   if(!postId||!runById(postId))postId=(po.find(p=>["running","queued","waiting"].includes(p.status))||po[0])?.id||null;
   $("#scanSel").innerHTML=sc.length?sc.slice(0,12).map(r=>`<option value="${esc(r.id)}" ${r.id===scanId?"selected":""}>${fmtT(r.created)} · ${r.candidates?.candidates?r.candidates.candidates.length+" aday":statusTr(r.status)}</option>`).join(""):`<option>Henüz tarama yok</option>`;
-  $("#postSel").innerHTML=po.length?po.slice(0,20).map(r=>`<option value="${esc(r.id)}" ${r.id===postId?"selected":""}>${{running:"▶",queued:"…",waiting:"⏸",scheduled:"⏰",done:"✓",error:"!",rejected:"✕",canceled:"■"}[r.status]||""} ${r.kind==="clip"?"🎞 ":""}${esc((r.title||r.id).slice(0,60))}</option>`).join(""):`<option>Henüz üretim yok</option>`;
+  $("#postSel").innerHTML=po.length?po.slice(0,20).map(r=>`<option value="${esc(r.id)}" ${r.id===postId?"selected":""}>${{running:"▶",queued:"…",waiting:"⏸",scheduled:"⏰",done:"✓",error:"!",rejected:"✕",canceled:"■"}[r.status]||""} ${{clip:"🎞 ",repo:"🐙 "}[r.kind]||""}${esc((r.title||r.id).slice(0,60))}</option>`).join(""):`<option>Henüz üretim yok</option>`;
   $("#nextScan").innerHTML=`Sonraki tarama <b>${fmtT(S.next_scan)}</b>`;
   $("#gatePill").innerHTML=`Onay: <b>${S.settings.approval?"açık":"kapalı"}</b>`;
   const wait=po.filter(p=>p.nodes.approve?.status==="waiting");

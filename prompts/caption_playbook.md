@@ -89,6 +89,59 @@ Shape: hook line → 1-2 short story paragraphs → what's inside → a real que
   ("The full prompt is in the comments 👇"). The creator credit is on the video: not in the caption.
 - Carousel: tell people to swipe and save; the hook can name the number of prompts/tips.
 
+## 6b. GitHub repo posts (`"kind": "repo"`, owner 2026-09-28)
+One photo (the plain GitHub page, no text on it): the caption carries everything. No YouTube for these posts:
+leave `captions.youtube` out.
+- Start from the content JSON's `hook` lines: they are the scroll-stopper and they open BOTH captions almost
+  word for word. Sharpen them if you can, never soften them into a friendly intro.
+
+#### Scroll-stopping hooks (owner, 2026-09-28: "dikkat çekici, öldürücü, scroll stopping", like his references)
+The owner's reference posts (big AI pages, each with 100+ reactions) - study the SHAPE, never copy the words:
+```
+I JUST FOUND A GITHUB REPO THAT TURNS CLAUDE CODE INTO AN ARMY OF AGENTS.
+No tabs. No context switching.
+It's 100% FR££ and open source.
+Run multiple Claude Code agents in parallel (researching, coding, debugging, and documenting) while you simply oversee the work.
+It's called Collaborator.
+```
+```
+🚨A solo dev just open sourced a FR££ ElevenLabs replacement that runs entirely on your machine. It clones voices from a reference clip, dubs video into 646 languages versus ElevenLabs' 32 and offers 14 TTS engines.
+No per-character charges.
+No audio leaving your computer.
+Already at 41K+ GitHub stars.
+```
+```
+The FR££ course includes 14 lectures and 8 hands-on projects teaching how to build environments that make coding agents work longer, verify themselves, and actually finish tasks.
+```
+```
+🚨 This is an absolute must save resource
+OpenAI open sourced a bunch of Codex skills
+Extremely useful
+```
+What makes them stop the scroll:
+- **Line 1 is a pattern interrupt**: ALL-CAPS discovery ("I JUST FOUND A GITHUB REPO THAT ..."), 🚨 + a story
+  ("A solo dev just open sourced ..."), a big name doing something ("OpenAI open sourced ..."), or a save command
+  ("This is an absolute must save resource"). It names the payoff in the first ~10 words.
+- **An enemy or a price**: the paid tool it replaces (ElevenLabs, Midjourney, CapCut ...) or the cost it kills
+  ("No per-character charges", "No subscription").
+- **Concrete numbers beat adjectives**: "646 languages versus ElevenLabs' 32", "14 lectures and 8 projects",
+  "41K+ GitHub stars". A versus-number is the strongest line you can have (only when verified).
+- **Staccato punch lines**: 2-5 word sentences, one per line ("No tabs. No context switching.").
+- **Social proof last**: the star count ("Already at 41K+ GitHub stars.") or who made it.
+- **FR££** always, never "free".
+- Vary the opener type from post to post (check the last 5 repo posts in `content/repos/`).
+- Never: "Check out this cool repo", "Here's a useful tool", questions as the first line, hashtags or emojis spam in
+  the hook, claims the README doesn't support.
+
+- Write FREE as **FR££** (house style, both platforms).
+- **Instagram**: after the hook lines, the keyword CTA: the bot DMs the repo link right away, e.g. "Comment VOICE
+  and I'll DM you the repo link 📩", then ask for the follow ("Follow @aiplaybooks.daily, we post a FR££ AI tool
+  every day"). No URL in the caption.
+- **Facebook**: the same hook lines, then "Link in the first comment 👇" (the publisher posts `fb_comment` as our
+  first comment). No keyword, no URL in the caption. A real question is fine but short.
+- 3-5 hashtags on Instagram, 2-4 on Facebook, e.g. #github #opensource + the topic.
+Length: 250-600 characters.
+
 ## 7. Examples
 Bad (our old captions, 2026-09-25):
 ```
