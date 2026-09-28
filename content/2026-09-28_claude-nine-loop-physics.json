@@ -1,0 +1,245 @@
+{
+  "theme": "adaptive",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Claude Science",
+  "caption": "An AI just spent a week almost alone on a physics problem that had stood since 2023.\n\nClaude was handed a nine-loop scattering amplitude in N=4 super Yang-Mills theory — one loop past the record physicist Lance Dixon set in 2023. Dixon checked the answer himself.\n\n→ what a \"nine-loop amplitude\" actually is\n→ how little supervision the run needed\n→ who else was racing for the same record\n→ why this isn't \"AI does physics now\"\n\nDoes this change how you think about AI in real research? Tell us below.\n\nFollow @aiplaybooks.daily for AI news you can actually use.\n\n#ai #claudeai #anthropic #physics #science",
+  "captions": {
+    "instagram": "An AI just spent a week almost alone on a physics problem that had stood since 2023.\n\nClaude was handed a nine-loop scattering amplitude in N=4 super Yang-Mills theory — one loop past the record physicist Lance Dixon set in 2023. Dixon checked the answer himself.\n\n→ what a \"nine-loop amplitude\" actually is\n→ how little supervision the run needed\n→ who else was racing for the same record\n→ why this isn't \"AI does physics now\"\n\nDoes this change how you think about AI in real research? Tell us below.\n\nFollow @aiplaybooks.daily for AI news you can actually use.\n\n#ai #claudeai #anthropic #physics #science",
+    "facebook": "An AI just quietly broke a physics record that had stood since 2023.\n\nAnthropic handed Claude a nine-loop scattering amplitude in N=4 super Yang-Mills theory, a problem one loop past what physicist Lance Dixon solved in 2023. Claude worked almost alone for about a week, running on 96 CPUs, and came back with an answer. Dixon checked it himself and confirmed it held up.\n\nIt's not proof that AI can run open-ended research alone, physicists still posed the problem and verified the result. But it's a real step.\n\nWhat do you think happens once AI can help verify its own science?\n\n#ai #claudeai #physics #anthropic",
+    "youtube": {
+      "title": "Claude Just Broke a Physics Record That Stood Since 2023",
+      "description": "Claude spent about a week working almost alone and broke a nine-loop physics record that had stood since 2023.\n\nThe problem: a nine-loop scattering amplitude in N=4 super Yang-Mills theory, one loop past the record physicist Lance Dixon set in 2023. Dixon verified Claude's answer himself.\n\nSee what the record actually is, how little supervision the run needed, and why this isn't \"AI does physics now.\"\n\n#claudeai #anthropic #ai #physics #science",
+      "tags": [
+        "claude ai",
+        "claude physics",
+        "anthropic ai",
+        "ai research",
+        "nine loop amplitude",
+        "ai does physics",
+        "claude ai news",
+        "lance dixon",
+        "n=4 super yang-mills",
+        "ai science"
+      ]
+    }
+  },
+  "sources": [
+    "https://www.anthropic.com/research/yes-claude-can-do-nine-loops"
+  ],
+  "cover": {
+    "headline": "Claude just spent a week working almost alone and broke a physics record that stood since 2023. Here's how:",
+    "em": "physics record",
+    "person": "Dario Amodei",
+    "layout": "scene_person",
+    "photo_query": [
+      "chalkboard equations physics",
+      "blackboard math formulas",
+      "physics research lab"
+    ],
+    "photo_pick": {
+      "url": "https://live.staticflickr.com/8281/7613467320_88e515191a_b.jpg",
+      "page": "https://www.flickr.com/photos/35468134321@N01/7613467320",
+      "author": "Micah Sittig",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "source": "Flickr",
+      "file": "A day at work"
+    },
+    "icons": [
+      {
+        "slug": "claude",
+        "style": "tile",
+        "pos": "tr",
+        "size": 160
+      }
+    ],
+    "photo": {
+      "file": "A day at work",
+      "page": "https://www.flickr.com/photos/35468134321@N01/7613467320",
+      "author": "Micah Sittig",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "source": "Flickr"
+    },
+    "layout_used": "scene_person",
+    "person_photo": {
+      "file": "File:Dario Amodei at TechCrunch Disrupt 2023 01 (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Dario_Amodei_at_TechCrunch_Disrupt_2023_01_(cropped).jpg",
+      "author": "TechCrunch",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source": "Wikimedia Commons"
+    }
+  },
+  "design": {
+    "mood": "a physicist's chalkboard at night: deep chalkboard green-black, chalk-white ink, a warm gold accent for the record itself, concentric loop diagrams instead of grid lines — academic, quiet, a little in awe",
+    "palette": {
+      "bg": "#0E1613",
+      "bg2": "#152420",
+      "surface": "#16211D",
+      "ink": "#F4F3EC",
+      "muted": "#9BB0A6",
+      "accent": "#E2B550",
+      "accent2": "#6FB8C4"
+    },
+    "fonts": {
+      "display": "Fraunces",
+      "body": "Inter",
+      "mono": "JetBrains Mono"
+    },
+    "display": {
+      "weight": 600,
+      "case": "none",
+      "tracking": -2,
+      "scale": 1.05,
+      "italic_em": true
+    },
+    "shape": {
+      "radius": 14,
+      "border": 2,
+      "shadow": "soft"
+    },
+    "background": {
+      "pattern": "rings",
+      "pattern_opacity": 0.07,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "mono",
+    "prompt": "terminal",
+    "art": "<svg viewBox='0 0 900 460' xmlns='http://www.w3.org/2000/svg'><g fill='none' stroke='var(--muted)' stroke-width='1.5' opacity='0.55'>\n<circle cx='450' cy='230' r='40'/><circle cx='450' cy='230' r='70'/><circle cx='450' cy='230' r='100'/><circle cx='450' cy='230' r='130'/><circle cx='450' cy='230' r='160'/></g>\n<g stroke='var(--accent2)' stroke-width='3' fill='none'>\n<circle cx='450' cy='230' r='190'/></g>\n<g stroke='var(--accent)' stroke-width='4' fill='none'>\n<circle cx='450' cy='230' r='210'/></g>\n<line x1='120' y1='230' x2='780' y2='230' stroke='var(--ink)' stroke-width='2' opacity='0.4' stroke-dasharray='2 10'/>\n<line x1='450' y1='0' x2='450' y2='460' stroke='var(--ink)' stroke-width='2' opacity='0.25' stroke-dasharray='2 10'/>\n<text x='450' y='240' text-anchor='middle' font-family='JetBrains Mono, monospace' font-size='34' fill='var(--accent)'>L = 9</text>\n</svg>",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3'/><circle cx='12' cy='12' r='7'/><circle cx='12' cy='12' r='10.5'/></svg>"
+  },
+  "voice": "am_eric",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "CLAUDE · SCIENCE",
+      "title": "Claude just broke a physics record that stood since 2023.",
+      "em": "physics record",
+      "sub": "A week of near-solo work cracked a problem that had been frontier physics for years.",
+      "tools": [
+        "Claude"
+      ],
+      "voiceover": "Claude just broke a physics record that had stood since 2023."
+    },
+    {
+      "type": "facts",
+      "label": "THE RECORD",
+      "title": "What Claude actually calculated",
+      "items": [
+        [
+          "The problem",
+          "A nine-loop scattering amplitude in N=4 super Yang-Mills theory"
+        ],
+        [
+          "Previous record",
+          "Eight loops, set by physicist Lance Dixon in 2023"
+        ],
+        [
+          "Who ran it",
+          "Claude Fable 5.1, on Anthropic's Claude Science platform"
+        ],
+        [
+          "Verified by",
+          "Lance Dixon himself, independently checking the result"
+        ]
+      ],
+      "voiceover": "It solved a nine-loop amplitude, one loop past the 2023 record."
+    },
+    {
+      "type": "steps",
+      "label": "HOW IT RAN",
+      "title": "Days of work, almost no hand-holding",
+      "steps": [
+        [
+          "August 7, 2026",
+          "Anthropic's physicists handed Claude the nine-loop challenge"
+        ],
+        [
+          "About a week",
+          "Claude ran on 96 CPUs, mostly just told to keep going"
+        ],
+        [
+          "Two approaches",
+          "It tried a direct bootstrap method and an indirect form-factor method"
+        ],
+        [
+          "September 1, 2026",
+          "The result went to Lance Dixon, who confirmed it independently"
+        ]
+      ],
+      "voiceover": "It ran for about a week on 96 CPUs, barely supervised, trying two different methods."
+    },
+    {
+      "type": "stat",
+      "label": "COST OF A RECORD",
+      "value": "$100-$2K",
+      "title": "That's the whole compute bill",
+      "sub": "A week on 96 CPUs to beat a record that took human physicists years.",
+      "voiceover": "The whole run cost somewhere between one hundred and two thousand dollars."
+    },
+    {
+      "type": "compare",
+      "label": "NOT THE ONLY ONE RACING",
+      "title": "Two AI-assisted teams, the same weeks",
+      "cols": [
+        {
+          "name": "Claude (Anthropic)",
+          "points": [
+            "Full nine-loop amplitude",
+            "About a week, 96 CPUs",
+            "Verified independently by Lance Dixon"
+          ]
+        },
+        {
+          "name": "Song He's group",
+          "points": [
+            "Nine-loop `symbol` only",
+            "About two weeks",
+            "Used GPT-6 assistance, same window"
+          ]
+        }
+      ],
+      "voiceover": "A separate team using GPT-6 reached the nine-loop symbol around the same time."
+    },
+    {
+      "type": "limits",
+      "label": "READ THE RECORD RIGHT",
+      "title": "What this isn't",
+      "items": [
+        [
+          "Toy model",
+          "N=4 super Yang-Mills isn't real-world particle physics, it's a testbed for methods"
+        ],
+        [
+          "Expert-framed",
+          "Physicists posed the exact problem and checked the final answer"
+        ],
+        [
+          "Not full autonomy",
+          "It doesn't mean AI can freely run open-ended research alone"
+        ]
+      ],
+      "cta": "Full writeup: anthropic.com/research/yes-claude-can-do-nine-loops",
+      "voiceover": "It's a toy-model theory, and physicists framed the problem and checked the answer."
+    },
+    {
+      "type": "cta",
+      "title": "A week alone",
+      "title2": "beat a record set by a human physicist.",
+      "lines": [
+        [
+          "Read",
+          "anthropic.com/research/yes-claude-can-do-nine-loops"
+        ],
+        [
+          "Follow",
+          "@aiplaybooks.daily for AI news you can use"
+        ]
+      ],
+      "voiceover": "That's how Claude spent a week alone and came out with a new physics record."
+    }
+  ]
+}
