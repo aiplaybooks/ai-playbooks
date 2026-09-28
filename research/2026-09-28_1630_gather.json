@@ -1,0 +1,11 @@
+{
+ "generated": "2026-09-28T16:30+00:00",
+ "candidates": [],
+ "coverage": {
+  "ChatGPT": 0, "Claude": 0, "Gemini": 0, "Grok": 0, "Codex": 0, "Cursor": 0, "Copilot": 0,
+  "Perplexity": 0, "Meta AI": 0, "Mistral": 0, "DeepSeek": 0, "Open models": 0, "Apple": 0,
+  "Higgsfield": 0, "Google": 0, "Social media": 0, "Other": 0, "Prompt pack": 0
+ },
+ "notes_tr": "16 aracın hepsi + 3 ekstra viral konu için arama yapıldı ama havuzda zaten olmayan ve 7 günden yeni gerçek bir haber bulunamadı. Bulunanlar ya çok eskiydi (Higgsfield Blender eklentisi 20 Ağustos, Instagram Edits masaüstü/ses efektleri Haziran-19 Ağustos, X'in Original Content Rewards programı 7 Ağustos, Meta One aboneliği 15 Eylül, Perplexity Effort Mode 17 Eylül, Apple Image Playground fotogerçekçi görseller 14 Eylül - hepsi 7 günlük pencereyi aştı) ya da havuzdaki maddelerle aynıydı (Gemini Notebook çalışma araçları = gemini-study-notebooks-mobile; OpenAI'nin DNS sandbox kaçışı/eğitim durdurma haberi = openai-dns-sandbox-escape-pause, bugünkü 'unauthorized internet access' başlığı aynı 25 Eylül olayının tekrarı). ChatGPT, Claude, Gemini, Grok, Codex, Cursor, Copilot için bulunan her şey (GPT-5.2 Instant güncellemesi, Codex 0.158.0 TUI iyileştirmeleri, Copilot Sentry/Jira entegrasyonu, Mistral Vibe birleşmesi, DeepSeek V4.1 Flash, Qwen/Kimi/GLM/MiniMax yeni sürümleri) ya küçük/teknik güncellemeydi ya da havuzdaki maddelerle (deepseek-1m-context-tips, minimax-m3-1-flash-preview, open-models-free-to-try, mistral-vibe-chat-work-merge, cursor-rollouts-security*, codex-cli-*, copilot-* vb.) çakışıyordu. Yeni bir evergreen veya prompt pack önerisi de eklenmedi çünkü havuzda zaten çok sayıda taze aday var; bir sonraki 'tara' toplantısında sahip zaten geniş bir havuzdan seçim yapacak.",
+ "sources_changed": []
+}
