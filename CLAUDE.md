@@ -67,6 +67,17 @@ Every day the pipeline should:
   agents, local_media, learning, creator; own share pool "GitHub havuzu"). Flow `repo`: write (prompts/repo_write.md)
   → caption → card → approve → upload → ig_photo → fb_photos → comments → dm → log. Content: `content/repos/`,
   output: `output/repos/`. Every star count rounded DOWN; repocard.py fails when the text claims more stars.
+- **Full autonomy + autopilot** (owner, Telegram 2026-09-28: "never ask me; what goes out when is up to you"):
+  approval OFF; `autopilot_tick` in studio.py fills every free `post_slots` time (default 14:00/17:00/20:00/23:00 TR
+  = US morning-afternoon) of the next ~26 h: an owner-dropped clip first, else a rotation news → repo → pack (next
+  format when a pool is empty). Items are normal share-pool items (`auto: true`); Telegram gets the plan as info.
+  Don't ask the owner "shall I …?" in sessions either: decide, do, report.
+- **Carousels also go out as Reels** (2026-09-29, data: FB photo posts 0 views, IG carousels 0-7, Reels 100-300 with
+  1-3 followers): the post flow publishes the voiced reel.mp4 as IG Reel + FB Reel after the carousel/photo posts
+  (`ig_published` matches media_type so a carousel and its Reel with the same caption are never confused).
+- **Telegram digest at session start** (owner, 2026-09-29): his Telegram messages go to the Studio's chat bot, not to
+  Claude Code. `telegram_bot.py` logs every message to runs/telegram/inbox.jsonl; the SessionStart hook
+  (.claude/settings.json) runs `tools/tg_digest.py`, which prints the new ones. Analyse them first in every session.
 - **Hook/caption learning 10x a day** (owner, 2026-09-28: "these agents must keep improving, I need them for
   everything"): the `learn` job runs at `learn_times` (10 slots), each run on one focus in rotation (news, packs,
   clips, GitHub repos, captions → `LEARN_FOCUS` in studio.py), updating hook_playbook.md + caption_playbook.md Lessons

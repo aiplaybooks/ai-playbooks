@@ -265,26 +265,32 @@ def ig_wait(p, cid, what, limit=900):
         time.sleep(10)
 
 
-def ig_published(p, cid):
+IG_TYPES = {"ig_carousel": "CAROUSEL_ALBUM", "ig_photo": "IMAGE", "ig_reel": "VIDEO"}
+
+
+def ig_published(p, cid, step=None):
     """media_publish sometimes errors (e.g. 'Application request limit reached', 2207051) although the post went
-    live (the container may then even say ERROR): look for a post with our caption made after this run's upload."""
+    live (the container may then even say ERROR): look for a post with our caption made after this run's upload.
+    The media type must match too: a carousel post and its Reel share the caption."""
     if not cid: return None
     cap = CAP.text_for(p.data, "instagram")[:80]
     since = (p.state.get("upload") or {}).get("done", "")[:19]
-    recent = api("GET", f"{GRAPH}/{p.env['IG_USER_ID']}/media", {"fields": "id,caption,timestamp", "limit": 10, "access_token": p.token})
+    others = {p.state.get(s + "_media") for s in IG_TYPES if s != step} - {None}
+    recent = api("GET", f"{GRAPH}/{p.env['IG_USER_ID']}/media", {"fields": "id,caption,timestamp,media_type", "limit": 10, "access_token": p.token})
     return next((m["id"] for m in recent.get("data", [])
-                 if (m.get("caption") or "")[:80] == cap and m.get("timestamp", "")[:19] >= since), None)
+                 if (m.get("caption") or "")[:80] == cap and m.get("timestamp", "")[:19] >= since and m["id"] not in others
+                 and (not step or m.get("media_type") == IG_TYPES[step])), None)
 
 
 def ig_publish(p, cid, step):
     ig = p.env["IG_USER_ID"]
-    mid = p.state.get(step + "_media") or ig_published(p, cid)
+    mid = p.state.get(step + "_media") or ig_published(p, cid, step)
     if not mid:
         try:
             mid = api("POST", f"{GRAPH}/{ig}/media_publish", {"creation_id": cid, "access_token": p.token})["id"]
         except PublishError:
             time.sleep(20)
-            mid = ig_published(p, cid)
+            mid = ig_published(p, cid, step)
             if not mid: raise
             say(f"{step}: media_publish reported an error, but the post is live")
     if p.state.get(step + "_media") != mid:  # saved right away: if anything after this fails, a rerun must not post again
@@ -301,7 +307,7 @@ def ig_carousel(p):
                             {"image_url": p.url(f), "is_carousel_item": "true", "access_token": p.token})["id"])
         p.state["ig_carousel_children"] = kids; p.save()
     cid = p.state.get("ig_carousel_container")
-    if not p.state.get("ig_carousel_media") and not ig_published(p, cid):
+    if not p.state.get("ig_carousel_media") and not ig_published(p, cid, "ig_carousel"):
         for k in kids: ig_wait(p, k, "carousel item", 300)
         cid = api("POST", f"{GRAPH}/{ig}/media", {"media_type": "CAROUSEL", "children": ",".join(kids),
                                                   "caption": CAP.text_for(p.data, "instagram"), "access_token": p.token})["id"]
@@ -317,7 +323,7 @@ def ig_photo(p):
     ig = p.env["IG_USER_ID"]; img = p.images()
     if len(img) != 1: raise PublishError(f"ig_photo needs exactly one image, found {len(img)}")
     cid = p.state.get("ig_photo_container")
-    if not p.state.get("ig_photo_media") and not ig_published(p, cid):
+    if not p.state.get("ig_photo_media") and not ig_published(p, cid, "ig_photo"):
         if not cid:
             cid = api("POST", f"{GRAPH}/{ig}/media", {"image_url": p.url(img[0]), "caption": CAP.text_for(p.data, "instagram"),
                                                       "access_token": p.token})["id"]

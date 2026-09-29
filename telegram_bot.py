@@ -210,6 +210,10 @@ def event(kind, run, **kw):
     def work():
         try:
             if kind == "link": send_link(new=True)
+            elif kind == "plan":
+                icon = {"news": "📰", "repo": "🐙", "pack": "📋", "clip": "🎞"}
+                send("🤖 <b>Otopilot planı</b>\n" + "\n".join(f"{a:%d.%m %H:%M} {icon.get(k, '•')} {esc((t or '')[:80])}"
+                                                            for k, t, a in kw.get("planned", [])))
             elif kind == "candidates": show_candidates(S.Run(run.id).s)
             elif kind == "approval": preview(run.id)
             elif kind == "published":
@@ -297,6 +301,16 @@ def handle_text(text, spoken=False):
 # ---------------------------------------------------------------- free-form: Claude
 
 HISTORY = ROOT / "runs" / "telegram" / "history.json"
+INBOX = ROOT / "runs" / "telegram" / "inbox.jsonl"  # every owner message + the bot's free-form replies, with time
+                                                     # (read by Claude Code at session start: tools/tg_digest.py)
+
+
+def inbox(who, text, **extra):
+    try:
+        INBOX.parent.mkdir(parents=True, exist_ok=True)
+        with INBOX.open("a", encoding="utf-8") as f:
+            f.write(json.dumps({"at": S.iso(), "who": who, "text": text, **extra}, ensure_ascii=False) + "\n")
+    except Exception as ex: log("inbox", ex)  # noqa: BLE001
 CLAUDE_BUSY = threading.Lock()
 
 
@@ -348,6 +362,7 @@ def ask_claude(text, spoken=False):
             send(reply or "Tamam.")
             for a in (data.get("actions") or [])[:5]: propose(a)
             history([{"who": "owner", "text": text}, {"who": "assistant", "text": reply}])
+            inbox("assistant", reply)
         except Exception as ex:  # noqa: BLE001
             log("claude chat failed", ex); send(f"⚠️ Claude'a soramadım: {esc(ex)}")
         finally:
@@ -459,11 +474,12 @@ def on_message(m):
         t = transcribe((m.get("voice") or m.get("audio"))["file_id"])
         if not t: return send("Sesi anlayamadım, tekrar dener misin?")
         send(f"🗣 <i>{esc(t)}</i>")
+        inbox("owner", t, voice=True)
         return handle_text(t, spoken=True)
     text = m.get("text") or m.get("caption") or ""
     for e in m.get("entities") or m.get("caption_entities") or []:  # shared links
         if e.get("type") == "text_link": text += " " + e["url"]
-    if text: handle_text(text)
+    if text: inbox("owner", text); handle_text(text)
 
 
 def save_chat(chat):

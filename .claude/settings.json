@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          { "type": "command", "command": "python tools/tg_digest.py", "timeout": 30 }
+        ]
+      }
+    ]
+  }
+}

@@ -52,6 +52,7 @@ POST = [("write", "Doğrula & yaz", "ai"), ("caption", "Caption & tag", "ai"), (
         ("reel", "Video · ses + müzik (YouTube)", "code"), ("qa", "Kalite kontrol", "ai"),
         ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"),
         ("ig_carousel", "Instagram carousel", "publish"), ("fb_photos", "Facebook gönderi", "publish"),
+        ("ig_reel", "Instagram Reel (video)", "publish"), ("fb_reel", "Facebook Reel (video)", "publish"),
         ("yt_short", "YouTube Short", "publish"), ("comments", "Yorumlar", "publish"), ("dm", "DM botu kaydı", "publish"), ("log", "Kayıt & GitHub", "code")]
 CLIP = [("fetch", "Videoyu indir", "code"), ("hook", "Hook", "ai"), ("caption", "Caption & tag", "ai"), ("frame", "Reel çerçevesi", "code"),
         ("qa", "Kalite kontrol", "ai"), ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"), ("ig_reel", "Instagram Reel", "publish"),
@@ -120,7 +121,8 @@ LEARN_FOCUS = [
 def settings():
     s = {"scan_times": ["08:00", "18:00"], "approval": True, "last_slot": None, "dm_bot": False,
          "gather_times": ["06:30", "10:30", "13:30", "16:30", "21:30"], "last_gather_slot": None,
-         "learn_times": LEARN_TIMES, "last_learn_slot": None, "repo_time": "07:15", "last_repo_slot": None}
+         "learn_times": LEARN_TIMES, "last_learn_slot": None, "repo_time": "07:15", "last_repo_slot": None,
+         "autopilot": True, "post_slots": ["14:00", "17:00", "20:00", "23:00"]}
     s.update(read_json(SETTINGS, {}) or {})
     s.pop("learn_time", None)  # before 2026-09-28: one learning run a day
     return s
@@ -736,7 +738,8 @@ def n_caption(run):
            kind_hint="a viral video Reel framed with our hook; IG Reel + FB Reel + YouTube Short" if clip
            else "a GitHub repo post: ONE photo (the plain repo page) on IG + FB, NO YouTube (leave captions.youtube out); "
                 "follow section 6b of the playbook" if repo
-           else "a carousel post; IG carousel + FB photo post + a voiced YouTube Short of the slides")
+           else "a carousel post; IG carousel + FB photo post, and its voiced video goes out as IG Reel + FB Reel + "
+                "YouTube Short with the SAME IG/FB captions: write them so they fit both (no 'swipe', no 'slide 3')")
     data = read_json(content_path(run))
     probs = CAP.check(data or {})
     if probs: raise StepError("Caption kurallara uymuyor: " + "; ".join(probs)[:280])
@@ -1008,6 +1011,8 @@ def scheduler():
                         s = settings(); s[key] = slot.isoformat(); save_settings(s)
         except Exception as ex:
             slog("scheduler error:", ex)
+        try: autopilot_tick()
+        except Exception as ex: slog("autopilot error:", ex)
         try: share_tick()
         except Exception as ex: slog("share pool error:", ex)
         time.sleep(30)
@@ -1217,6 +1222,77 @@ def share_tick():
             if not publish_at(r) or publish_at(r) <= now(): release(r)
 
 
+# ---------------------------------------------------------------- autopilot (owner, 2026-09-28: "never ask me, you decide
+# what goes out when"). Fills every free publish slot of the next ~day from the pools: a clip the owner dropped in the
+# Viral pool first, else a rotation of news / GitHub repo / prompt pack (next format when one pool is empty). Items are
+# normal share-pool items (approval off, `auto`), so production, "scheduled" and publishing work as for planned ones.
+
+AUTO_ROTATION = ["news", "repo", "pack", "news", "repo", "pack", "news"]
+AUTO = {"checked": 0.0}
+
+
+def auto_news(taken):
+    done = posted(); ids = {x for p in done for x in (p["candidate"], p["slug"]) if x}
+    urls = {_url(u) for p in done for u in p["sources"] if not GENERIC_URL.search(u)}
+    cands = [c for c in pool_items().values() if c.get("kind") in ("news", "evergreen") and c["id"] not in ids | taken
+             and not any(_url(u) in urls for u in c.get("sources", []) if c.get("kind") == "news")]
+    cut = f"{now() - timedelta(hours=48):%Y-%m-%dT%H:%M}"
+    cands.sort(key=lambda c: (c.get("kind") != "news" or c["first_seen"] < cut, -(c.get("score") or 0)))
+    return cands[0] if cands else None
+
+
+def auto_pack(taken):
+    ps = [p for p in packs()["packs"] if not p["used"] and not p["run"] and p["id"] not in taken]
+    if not ps: return None
+    recent = [pathlib.Path(r["content"]).stem for r in all_runs() if r["kind"] == "post" and "pack" in (r.get("content") or "")][:5]
+    used_cats = {p["category"] for p in packs()["packs"] if p["used"] in recent}
+    ps.sort(key=lambda p: p["category"] in used_cats)
+    return pack_candidate(ps[0]["id"])
+
+
+def auto_repo(taken):
+    c = next((c for c in repo_pool() if not c.get("run") and c["id"] not in taken and (c.get("score") or 0) >= 6), None)
+    return {k: v for k, v in c.items() if k != "run"} if c else None
+
+
+def autopilot_tick():
+    s = settings()
+    if not s.get("autopilot") or time.time() - AUTO["checked"] < 600: return
+    AUTO["checked"] = time.time(); t = now(); planned = []
+    with LOCK:
+        items = share_items()
+        live = [i for i in items if i["status"] in ("pool", "producing")]
+        taken = {(i.get("candidate") or {}).get("id") for i in live}
+        slots = []
+        for d in (t.date(), t.date() + timedelta(days=1)):
+            for hm in s["post_slots"]:
+                h, m = map(int, hm.split(":")); at = datetime(d.year, d.month, d.day, h, m).astimezone()
+                if t + timedelta(minutes=100) <= at <= t + timedelta(hours=26): slots.append(at)
+        for n, at in enumerate(sorted(slots)):
+            if any(i.get("at") and abs(datetime.fromisoformat(i["at"]) - at) < timedelta(minutes=45) for i in live): continue
+            clip = next((i for i in live if i["kind"] == "clip" and i["status"] == "pool" and not i.get("at")), None)
+            if clip:
+                clip["at"] = at.isoformat(timespec="seconds"); planned.append(("clip", clip.get("title"), at)); continue
+            start = (at.timetuple().tm_yday * len(s["post_slots"]) + s["post_slots"].index(f"{at:%H:%M}")) % len(AUTO_ROTATION) \
+                if f"{at:%H:%M}" in s["post_slots"] else n
+            order = AUTO_ROTATION[start:] + AUTO_ROTATION[:start]
+            for kind in dict.fromkeys(order):
+                c = {"news": auto_news, "repo": auto_repo, "pack": auto_pack}[kind](taken)
+                if c: break
+            else:
+                continue
+            flow = "repo" if kind == "repo" else "post"
+            item = {"id": f"s{now():%Y%m%d%H%M%S%f}"[:21], "kind": flow, "added": iso(), "approval": False, "auto": True,
+                    "at": at.isoformat(timespec="seconds"), "status": "pool", "candidate": c,
+                    "title": c.get("title") or c.get("full_name")}
+            items.append(item); live.append(item); taken.add(c["id"])
+            planned.append((kind, item["title"], at))
+        if planned: save_share(items)
+    if planned:
+        slog("autopilot planned:", "; ".join(f"{k} {a:%d.%m %H:%M}" for k, _, a in planned))
+        TG.event("plan", None, planned=planned)
+
+
 def share_state():
     runs = {r["id"]: r for r in all_runs()}
     out = []
@@ -1287,7 +1363,7 @@ def state():
             "id": last["id"], "status": last["status"], "created": last["created"],
             "msg": next((n.get("msg") for n in reversed(list(last["nodes"].values())) if n.get("msg")), "")}}
     bg["pool"] = len(pool_items())
-    return {"settings": {k: s[k] for k in ("scan_times", "approval", "gather_times", "learn_times", "dm_bot", "repo_time")},
+    return {"settings": {k: s[k] for k in ("scan_times", "approval", "gather_times", "learn_times", "dm_bot", "repo_time", "autopilot", "post_slots")},
             "next_scan": iso(next_slot(s["scan_times"], now())), "now": iso(), "background": bg,
             "flows": {k: [{"id": n, "label": l, "kind": t} for n, l, t in v] for k, v in FLOWS.items()},
             "runs": fg, "share": share_state(), "lead": LEAD}
@@ -1445,6 +1521,11 @@ class H(BaseHTTPRequestHandler):
                 s = settings()
                 if "approval" in b: s["approval"] = bool(b["approval"])
                 if "dm_bot" in b: s["dm_bot"] = bool(b["dm_bot"])
+                if "autopilot" in b: s["autopilot"] = bool(b["autopilot"]); AUTO["checked"] = 0.0
+                if "post_slots" in b:
+                    times = sorted({t for t in b["post_slots"] if re.fullmatch(r"([01]\d|2[0-3]):[0-5]\d", t)})
+                    if not times: raise ValueError("otopilot için geçerli yayın saati yok (SS:DD)")
+                    s["post_slots"] = times; AUTO["checked"] = 0.0
                 if "scan_times" in b:
                     times = sorted({t for t in b["scan_times"] if re.fullmatch(r"([01]\d|2[0-3]):[0-5]\d", t)})
                     if not times: raise ValueError("geçerli saat yok (SS:DD)")

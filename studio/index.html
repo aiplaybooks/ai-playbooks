@@ -320,6 +320,10 @@ table.tt td.p{text-align:right;color:var(--muted);width:48px;font-variant-numeri
     <h5 style="font-size:12px;color:var(--muted);margin:16px 0 8px">HOOK & CAPTION ÖĞRENME (her seferinde bir alan: haber, paket, klip, GitHub, caption)</h5>
     <div class="times" id="ltimes"></div>
     <button id="addLTime" style="margin-top:8px">+ Saat ekle</button>
+    <label class="switch"><input type="checkbox" id="auto"> 🤖 Otopilot: boş yayın saatlerini sistem kendisi doldurur (haber / GitHub / paket dönüşümlü, havuzdaki klipler önce)</label>
+    <h5 style="font-size:12px;color:var(--muted);margin:10px 0 8px">OTOPİLOT YAYIN SAATLERİ</h5>
+    <div class="times" id="ptimes"></div>
+    <button id="addPTime" style="margin-top:8px">+ Saat ekle</button>
     <label class="switch"><input type="checkbox" id="gate"> Yayından önce onay iste</label>
     <label class="switch"><input type="checkbox" id="dmBot"> Instagram DM botu açık (yorum → takip kontrolü → link)</label>
     <p style="font-size:12.5px;color:var(--muted);margin-top:4px">Açıkken yazar uygun gönderilere bir anahtar kelime koyar, caption "Comment KELİME" der. Meta onayı (App Review) gelmeden açma: bot o zamana kadar sadece test hesaplarına cevap verir.</p>
@@ -349,7 +353,7 @@ const LAYOUT={
   post:{trigger:[0,40],collect:[270,40],scout:[540,40],pool:[810,40],choose:[1080,40],
     write:[0,230],caption:[270,230],cover:[540,230],carousel:[810,230],reel:[1080,230],
     qa:[0,420],approve:[270,420],upload:[540,420],ig_carousel:[810,420],fb_photos:[1080,420],
-    yt_short:[0,610],comments:[270,610],dm:[540,610],log:[810,610]},
+    ig_reel:[0,610],fb_reel:[270,610],yt_short:[540,610],comments:[810,610],dm:[1080,610],log:[0,800]},
   clip:{fetch:[0,40],hook:[270,40],caption:[540,40],frame:[810,40],qa:[1080,40],
     approve:[0,230],upload:[270,230],ig_reel:[540,230],fb_reel:[810,230],yt_short:[1080,230],comments:[0,420],dm:[270,420],log:[540,420]},
   repo:{write:[0,40],caption:[270,40],card:[540,40],approve:[810,40],upload:[1080,40],
@@ -415,7 +419,7 @@ function shareHtml(kind){
   const old=all.filter(i=>["done","canceled"].includes(i.status)).slice(-3).reverse();
   return [...live,...old].map(i=>{const [c,t]=shareStatus(i),busy=i.status==="producing"&&["queued","running","waiting","scheduled"].includes(i.run_status),fin=["done","canceled"].includes(i.status);
     const title=i.kind==="clip"?`<a href="${esc(i.url)}" target="_blank">${esc((i.url||"").replace(/^https?:\/\/(www\.)?/,"").slice(0,70))} ↗</a>`:esc(i.title||"");
-    return `<div class="sitem"><div class="st ${c}">${esc(t)}</div><div class="tt">${title}</div>${i.note?`<div class="why">Not: ${esc(i.note)}</div>`:""}
+    return `<div class="sitem"><div class="st ${c}">${i.auto?"🤖 ":""}${esc(t)}</div><div class="tt">${title}</div>${i.note?`<div class="why">Not: ${esc(i.note)}</div>`:""}
       ${fin?(i.run?`<div class="srow"><button data-run="${esc(i.run)}">Üretimi göster</button><button data-sdel="${esc(i.id)}">Listeden kaldır</button></div>`:""):`
       <div class="srow"><label title="İşaretliyse paylaşmadan önce onayına gelir"><input type="checkbox" data-sapp="${esc(i.id)}" ${i.approval?"checked":""} ${i.run_status==="waiting"||i.run_status==="scheduled"?"disabled":""}> Onay iste</label></div>
       <div class="srow"><input type="datetime-local" data-sat="${esc(i.id)}" value="${esc(sDraft[i.id]??localDT(i.at))}">
@@ -520,7 +524,7 @@ function renderCanvas(){
 function statusTr(s){return{scheduled:"planlı saati bekliyor",queued:"sırada",running:"çalışıyor",waiting:"seni bekliyor",done:"tamamlandı",error:"hata",rejected:"reddedildi",canceled:"durduruldu"}[s]||s}
 function apply(){$("#world").style.transform=`translate(${view.x}px,${view.y}px) scale(${view.k})`;}
 function fit(){
-  WH=({clip:420,repo:230}[kind()]??610)+78;
+  WH=({clip:420,repo:230}[kind()]??800)+78;
   if(isPhone()){const vp=$("#vp").getBoundingClientRect();view.k=Math.min(1.2,(vp.width-32)/NW);view.x=(vp.width-NW*view.k)/2;
     view.y=($("#runinfo").offsetHeight||60)+28;apply();return}
   const vp=$("#vp").getBoundingClientRect(),W=WW,H=WH;
@@ -869,16 +873,18 @@ $("#bannerBtn").onclick=()=>{const w=posts().find(p=>p.nodes.approve?.status==="
 /* ---------------- settings ---------------- */
 function timeRow(v,box="#times"){const d=document.createElement("div");d.innerHTML=`<input type="time" value="${esc(v)}"><button>Sil</button>`;d.querySelector("button").onclick=()=>d.remove();$(box).appendChild(d)}
 $("#setBtn").onclick=()=>{$("#times").innerHTML="";$("#gtimes").innerHTML="";S.settings.scan_times.forEach(v=>timeRow(v));
-  (S.settings.gather_times||[]).forEach(v=>timeRow(v,"#gtimes"));$("#ltimes").innerHTML="";(S.settings.learn_times||[]).forEach(v=>timeRow(v,"#ltimes"));$("#repoTime").value=S.settings.repo_time||"07:15";
+  (S.settings.gather_times||[]).forEach(v=>timeRow(v,"#gtimes"));$("#ltimes").innerHTML="";(S.settings.learn_times||[]).forEach(v=>timeRow(v,"#ltimes"));
+  $("#ptimes").innerHTML="";(S.settings.post_slots||[]).forEach(v=>timeRow(v,"#ptimes"));$("#auto").checked=!!S.settings.autopilot;$("#repoTime").value=S.settings.repo_time||"07:15";
   $("#gate").checked=S.settings.approval;$("#dmBot").checked=!!S.settings.dm_bot;$("#setModal").classList.add("on")};
 $("#addGTime").onclick=()=>timeRow("12:00","#gtimes");
 $("#addLTime").onclick=()=>timeRow("12:00","#ltimes");
+$("#addPTime").onclick=()=>timeRow("12:00","#ptimes");
 $("#setClose").onclick=()=>$("#setModal").classList.remove("on");
 $("#addTime").onclick=()=>timeRow("12:00");
 $("#setSave").onclick=async()=>{
   const times=[...$("#times").querySelectorAll("input")].map(i=>i.value).filter(Boolean);
   const gtimes=[...$("#gtimes").querySelectorAll("input")].map(i=>i.value).filter(Boolean);
-  try{await api("/api/settings",{scan_times:times,gather_times:gtimes,learn_times:[...$("#ltimes").querySelectorAll("input")].map(i=>i.value).filter(Boolean),repo_time:$("#repoTime").value,approval:$("#gate").checked,dm_bot:$("#dmBot").checked});$("#setModal").classList.remove("on");await refresh()}catch(e){toast(e.message)}};
+  try{await api("/api/settings",{scan_times:times,gather_times:gtimes,learn_times:[...$("#ltimes").querySelectorAll("input")].map(i=>i.value).filter(Boolean),post_slots:[...$("#ptimes").querySelectorAll("input")].map(i=>i.value).filter(Boolean),autopilot:$("#auto").checked,repo_time:$("#repoTime").value,approval:$("#gate").checked,dm_bot:$("#dmBot").checked});$("#setModal").classList.remove("on");await refresh()}catch(e){toast(e.message)}};
 $("#scanBtn").onclick=async()=>{try{const r=await api("/api/scan",{});scanId=r.run;tab="cands";await refresh();openNode("collect")}catch(e){toast(e.message)}};
 
 /* ---------------- timings ---------------- */
@@ -974,7 +980,7 @@ function renderAll(forceSide){
   $("#scanSel").innerHTML=sc.length?sc.slice(0,12).map(r=>`<option value="${esc(r.id)}" ${r.id===scanId?"selected":""}>${fmtT(r.created)} · ${r.candidates?.candidates?r.candidates.candidates.length+" aday":statusTr(r.status)}</option>`).join(""):`<option>Henüz tarama yok</option>`;
   $("#postSel").innerHTML=po.length?po.slice(0,20).map(r=>`<option value="${esc(r.id)}" ${r.id===postId?"selected":""}>${{running:"▶",queued:"…",waiting:"⏸",scheduled:"⏰",done:"✓",error:"!",rejected:"✕",canceled:"■"}[r.status]||""} ${{clip:"🎞 ",repo:"🐙 "}[r.kind]||""}${esc((r.title||r.id).slice(0,60))}</option>`).join(""):`<option>Henüz üretim yok</option>`;
   $("#nextScan").innerHTML=`Sonraki tarama <b>${fmtT(S.next_scan)}</b>`;
-  $("#gatePill").innerHTML=`Onay: <b>${S.settings.approval?"açık":"kapalı"}</b>`;
+  $("#gatePill").innerHTML=`${S.settings.autopilot?"🤖 Otopilot <b>açık</b> · ":""}Onay: <b>${S.settings.approval?"açık":"kapalı"}</b>`;
   const wait=po.filter(p=>p.nodes.approve?.status==="waiting");
   $("#banner").classList.toggle("on",wait.length>0);document.body.classList.toggle("has-banner",wait.length>0);
   $("#bannerTxt").textContent=wait.length?`⏸ ${wait.length} gönderi onayını bekliyor: ${wait[0].title||""}`:"";
