@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-29T10:30+00:00",
+ "generated": "2026-09-29T13:30+00:00",
  "hours": 36.0,
  "items": [
   {
@@ -9,6 +9,22 @@
    "url": "https://ai.google.dev/gemini-api/docs/changelog",
    "date": "2026-09-30T00:00+00:00",
    "summary": ". To get started, see the Gemini Omni Flash model page and the omni guide ."
+  },
+  {
+   "source": "Hugging Face blog",
+   "tier": "official",
+   "title": "Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents",
+   "url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
+   "date": "2026-09-29T13:07+00:00",
+   "summary": ""
+  },
+  {
+   "source": "YouTube official blog",
+   "tier": "official",
+   "title": "Mark Rober’s mission to support science classrooms",
+   "url": "https://blog.youtube/creator-and-artist-stories/mark-rober-class-crunchlabs-schools/",
+   "date": "2026-09-29T13:00+00:00",
+   "summary": "Mark Rober shares how Class CrunchLabs brings free, hands-on STEM lessons to grades 6-8, combining YouTube engagement with classroom science."
   },
   {
    "source": "Meta newsroom (AI + Instagram / WhatsApp / Threads / Facebook)",
@@ -171,22 +187,6 @@
    "summary": "OpenAI is expanding the Lenfest AI Collaborative and Fellowship Program with $5 million in funding and up to $5 million in software credits and engineering support."
   },
   {
-   "source": "OpenAI News",
-   "tier": "official",
-   "title": "Are you a Codex Original?",
-   "url": "https://openai.com/form/codex-originals",
-   "date": "2026-09-28T00:00+00:00",
-   "summary": "We’re collecting real stories of builders, tinkerers, researchers, and creators who are using Codex to do incredible things. If you want to be a part of the next chapter of the Codex Originals program, tell us more about your story and project below."
-  },
-  {
-   "source": "OpenAI News",
-   "tier": "official",
-   "title": "Basis completes a tax workbook 2x faster with GPT-6 Astra",
-   "url": "https://openai.com/index/basis-tax-workbook-with-astra",
-   "date": "2026-09-28T00:00+00:00",
-   "summary": "GPT-6 Astra completed a 50-tab tax workbook twice as fast as GPT-5.6 Sol, and its stronger understanding of user intent gives Basis more confidence in real-world use."
-  },
-  {
    "source": "Claude release notes",
    "tier": "official",
    "title": "Claude release notes: Sep 28, 2026",
@@ -283,36 +283,20 @@
    "summary": "Bad news on the MX Keys Mini pickup. Usman showed up at your building around 9:15 and waited, messaged a bunch of times, and nobody came down. He left angry at 9:38 and left a negative rating. Worse, my auto-reply told him \"Yep I'm here!\" at 9:27 when you clearly weren't available, which is on me. That's a bad look and it made the no-show worse. I've sent him an apology from your account owning…"
   },
   {
-   "source": "Simon Willison",
-   "tier": "signal",
-   "title": "2026 in LLMs (so far)",
-   "url": "https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/",
-   "date": "2026-09-27T23:54+00:00",
-   "summary": "On Friday I gave the closing keynote at the WeAreDevelopers World Congress North America in San Jose. I tied together the key trends from the past year into a chronological exploration of everything that happened in 2026. The video is on YouTube ; here are my annotated slides and notes to accompany the talk. And as an annotated presentation : # I'm going to give a lightning tour of everything…"
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Jeeves. Reasoning improves Jev-like decision models",
+   "url": "https://github.com/PostHog/jeeves",
+   "date": "2026-09-29T11:13+00:00",
+   "summary": "81 points, 36 comments · https://news.ycombinator.com/item?id=49891290"
   },
   {
-   "source": "Simon Willison",
-   "tier": "signal",
-   "title": "S3 Is the Future, S3 Is the Past",
-   "url": "https://simonwillison.net/2026/Sep/27/hn-49871741/",
-   "date": "2026-09-27T23:09+00:00",
-   "summary": "My comment on S3 Is the Future, S3 Is the Past — Hacker News. One thing I find notable about S3 today is that, while it used to drop in price reasonably often, there hasn't been a price drop in a full decade : 2006-03-14 $0.150/GB-month 2010-11-01 $0.140/GB-month 2012-02-01 $0.125/GB-month 2012-12-01 $0.095/GB-month 2014-02-01 $0.085/GB-month 2014-04-01 $0.030/GB-month 2016-12-01 $0.023/GB-month…"
-  },
-  {
-   "source": "Social Media Today",
-   "tier": "signal",
-   "title": "Can Meta be trusted with user data to power its AI agents?",
-   "url": "https://www.socialmediatoday.com/news/can-meta-be-trusted-with-user-data-to-power-its-ai-agents/831446/",
-   "date": "2026-09-27T18:38-04:00",
-   "summary": "An incomplete list of the many times that Meta has been accused of misusing people’s data over the years reflects how it prioritizes innovation over safety."
-  },
-  {
-   "source": "Social Media Today",
-   "tier": "signal",
-   "title": "YouTube previews AI-powered Conversational Editing",
-   "url": "https://www.socialmediatoday.com/news/youtube-previews-ai-powered-conversational-editing/831445/",
-   "date": "2026-09-27T18:34-04:00",
-   "summary": "Conversational Editing is meant to make it easier for creators to build and refine their projects using plain language guidance."
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "AI companies leak data to advertisers [pdf]",
+   "url": "https://jorgegarciaherrero.com/wp-content/interactivos/20260916-Prompt-like-a-butterfly-sting-like-a-tracker-(clean).pdf",
+   "date": "2026-09-29T09:03+00:00",
+   "summary": "229 points, 60 comments · https://news.ycombinator.com/item?id=49890226"
   },
   {
    "source": "Hacker News",
@@ -320,7 +304,7 @@
    "title": "Anthropic's IPO prospectus shows AI vision, surging costs",
    "url": "https://www.reuters.com/business/finance/anthropics-ipo-prospectus-shows-sweeping-ai-vision-surging-costs-2026-09-28/",
    "date": "2026-09-28T23:40+00:00",
-   "summary": "106 points, 97 comments · https://news.ycombinator.com/item?id=49886005"
+   "summary": "114 points, 116 comments · https://news.ycombinator.com/item?id=49886005"
   },
   {
    "source": "Hacker News",
@@ -328,7 +312,7 @@
    "title": "ESP32S3 cluster running 1.58-bit (BitNet) Language model",
    "url": "https://github.com/Low-Zi-Hong/ESP32s3-LLM-Cluster",
    "date": "2026-09-28T21:26+00:00",
-   "summary": "102 points, 20 comments · https://news.ycombinator.com/item?id=49884625"
+   "summary": "120 points, 28 comments · https://news.ycombinator.com/item?id=49884625"
   },
   {
    "source": "Hacker News",
@@ -336,7 +320,7 @@
    "title": "Pacing the Frontier is not the actual goal for AI labs",
    "url": "https://www.lesswrong.com/posts/Nm4ewbYovtjq69dvH/pacing-the-frontier-is-not-the-actual-goal-for-ai-labs",
    "date": "2026-09-28T20:47+00:00",
-   "summary": "81 points, 89 comments · https://news.ycombinator.com/item?id=49884119"
+   "summary": "82 points, 90 comments · https://news.ycombinator.com/item?id=49884119"
   },
   {
    "source": "Hacker News",
@@ -344,7 +328,7 @@
    "title": "Jeff – Jev-compatible 0.8B decision models, trained at home, ~30 ms",
    "url": "https://github.com/firelex/jeff",
    "date": "2026-09-28T20:23+00:00",
-   "summary": "498 points, 190 comments · https://news.ycombinator.com/item?id=49883844"
+   "summary": "535 points, 202 comments · https://news.ycombinator.com/item?id=49883844"
   },
   {
    "source": "Hacker News",
@@ -352,7 +336,7 @@
    "title": "World Labs is Joining AMD",
    "url": "https://www.worldlabs.ai/blog/amd-announcement",
    "date": "2026-09-28T20:18+00:00",
-   "summary": "280 points, 111 comments · https://news.ycombinator.com/item?id=49883760"
+   "summary": "290 points, 111 comments · https://news.ycombinator.com/item?id=49883760"
   },
   {
    "source": "Hacker News",
@@ -360,7 +344,7 @@
    "title": "It's Time to Investigate the AI Labs",
    "url": "https://calnewport.com/its-time-to-investigate-the-ai-labs/",
    "date": "2026-09-28T19:53+00:00",
-   "summary": "507 points, 206 comments · https://news.ycombinator.com/item?id=49883471"
+   "summary": "544 points, 232 comments · https://news.ycombinator.com/item?id=49883471"
   },
   {
    "source": "Hacker News",
@@ -368,7 +352,7 @@
    "title": "MicroLLM Lab – Try 7 tiny LLM's in the browser",
    "url": "https://stateofutopia.com/experiments/microllmlab/",
    "date": "2026-09-28T18:58+00:00",
-   "summary": "246 points, 86 comments · https://news.ycombinator.com/item?id=49882781"
+   "summary": "263 points, 96 comments · https://news.ycombinator.com/item?id=49882781"
   },
   {
    "source": "Hacker News",
@@ -376,7 +360,7 @@
    "title": "Sonnet 5.5",
    "url": "https://www.anthropic.com/claude-sonnet-5-5",
    "date": "2026-09-28T17:58+00:00",
-   "summary": "796 points, 533 comments · https://news.ycombinator.com/item?id=49881850"
+   "summary": "836 points, 567 comments · https://news.ycombinator.com/item?id=49881850"
   },
   {
    "source": "Hacker News",
@@ -384,7 +368,7 @@
    "title": "OpenAI still doesn't seem to have a handle on all of its rogue AI activity",
    "url": "https://techcrunch.com/2026/09/28/openai-still-doesnt-seem-to-have-a-handle-on-all-of-its-rogue-ai-activity/",
    "date": "2026-09-28T17:33+00:00",
-   "summary": "106 points, 109 comments · https://news.ycombinator.com/item?id=49881484"
+   "summary": "106 points, 110 comments · https://news.ycombinator.com/item?id=49881484"
   },
   {
    "source": "Hacker News",
@@ -392,7 +376,7 @@
    "title": "The problem is not AI code, but not knowing about system architecture or intent",
    "url": "https://www.ssp.sh/brain/the-problem-is-not-the-ai-code-but-nobody-knows-anything-anymore/",
    "date": "2026-09-28T16:11+00:00",
-   "summary": "365 points, 233 comments · https://news.ycombinator.com/item?id=49880312"
+   "summary": "371 points, 235 comments · https://news.ycombinator.com/item?id=49880312"
   },
   {
    "source": "Hacker News",
@@ -400,7 +384,7 @@
    "title": "Nvidia wants to put a watchdog chip next to every AI agent",
    "url": "https://www.cnbc.com/2026/09/28/nvidia-releases.html",
    "date": "2026-09-28T15:46+00:00",
-   "summary": "177 points, 223 comments · https://news.ycombinator.com/item?id=49879883"
+   "summary": "205 points, 262 comments · https://news.ycombinator.com/item?id=49879883"
   },
   {
    "source": "Hacker News",
@@ -408,7 +392,7 @@
    "title": "Kids turned low-traffic NPR Spotify comments into a secret group chat",
    "url": "https://www.thisamericanlife.org/897/transcript",
    "date": "2026-09-28T15:35+00:00",
-   "summary": "406 points, 223 comments · https://news.ycombinator.com/item?id=49879697"
+   "summary": "446 points, 242 comments · https://news.ycombinator.com/item?id=49879697"
   },
   {
    "source": "Hacker News",
@@ -416,7 +400,7 @@
    "title": "Show HN: HN.watch – Videos of all Hacker News posts",
    "url": "https://hn.watch/",
    "date": "2026-09-28T15:16+00:00",
-   "summary": "180 points, 95 comments · https://news.ycombinator.com/item?id=49879401"
+   "summary": "199 points, 96 comments · https://news.ycombinator.com/item?id=49879401"
   },
   {
    "source": "Hacker News",
@@ -424,7 +408,7 @@
    "title": "Show HN: Hntui – A TUI for Hacker News",
    "url": "https://github.com/ahmd-sh/hntui",
    "date": "2026-09-28T12:11+00:00",
-   "summary": "110 points, 64 comments · https://news.ycombinator.com/item?id=49876760"
+   "summary": "111 points, 65 comments · https://news.ycombinator.com/item?id=49876760"
   },
   {
    "source": "Hacker News",
@@ -432,7 +416,7 @@
    "title": "What would a serious AI product look like?",
    "url": "https://blog.glyph.im/2026/09/serious-ai-product.html",
    "date": "2026-09-28T11:02+00:00",
-   "summary": "154 points, 71 comments · https://news.ycombinator.com/item?id=49876148"
+   "summary": "162 points, 74 comments · https://news.ycombinator.com/item?id=49876148"
   },
   {
    "source": "Hacker News",
@@ -440,7 +424,7 @@
    "title": "Parley: Federated, decentralised chat that speaks plain IRC",
    "url": "https://git.mills.io/prologic/parley",
    "date": "2026-09-28T10:30+00:00",
-   "summary": "315 points, 180 comments · https://news.ycombinator.com/item?id=49875913"
+   "summary": "319 points, 185 comments · https://news.ycombinator.com/item?id=49875913"
   },
   {
    "source": "Hacker News",
@@ -448,7 +432,7 @@
    "title": "Show HN: PaperMono, e-ink fridge magnet shopping list with mobile web page",
    "url": "https://github.com/seamusc/papermono-shopping-list",
    "date": "2026-09-28T10:14+00:00",
-   "summary": "138 points, 58 comments · https://news.ycombinator.com/item?id=49875801"
+   "summary": "140 points, 58 comments · https://news.ycombinator.com/item?id=49875801"
   },
   {
    "source": "Hacker News",
@@ -456,7 +440,7 @@
    "title": "Show HN: Free alternative to graphics design giants",
    "url": "https://scissor.studio/",
    "date": "2026-09-28T08:55+00:00",
-   "summary": "121 points, 48 comments · https://news.ycombinator.com/item?id=49875308"
+   "summary": "125 points, 50 comments · https://news.ycombinator.com/item?id=49875308"
   },
   {
    "source": "Hacker News",
@@ -464,7 +448,7 @@
    "title": "AI companies in race to demonstrate their model most threatening to humanity",
    "url": "https://thecivilian.co.nz/2026/09/27/ai-companies-in-fierce-arms-race-to-demonstrate-their-model-is-the-most-existentially-threatening-to-humanity/",
    "date": "2026-09-28T08:35+00:00",
-   "summary": "431 points, 390 comments · https://news.ycombinator.com/item?id=49875148"
+   "summary": "432 points, 390 comments · https://news.ycombinator.com/item?id=49875148"
   },
   {
    "source": "Hacker News",
@@ -472,7 +456,7 @@
    "title": "Prompting Claude Opus 5.5",
    "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5",
    "date": "2026-09-28T07:33+00:00",
-   "summary": "203 points, 221 comments · https://news.ycombinator.com/item?id=49874728"
+   "summary": "204 points, 221 comments · https://news.ycombinator.com/item?id=49874728"
   },
   {
    "source": "Hacker News",
@@ -480,15 +464,7 @@
    "title": "Thinking fast and slow in AI: The role of metacognition (2021)",
    "url": "https://arxiv.org/abs/2110.01834",
    "date": "2026-09-28T03:23+00:00",
-   "summary": "173 points, 76 comments · https://news.ycombinator.com/item?id=49873241"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "As A.I. makes law firms more efficient, clients ask: 'Where's my discount?'",
-   "url": "https://www.nytimes.com/2026/09/26/business/dealbook/ai-law-discount-billable-hour.html",
-   "date": "2026-09-28T01:30+00:00",
-   "summary": "146 points, 161 comments · https://news.ycombinator.com/item?id=49872522"
+   "summary": "173 points, 77 comments · https://news.ycombinator.com/item?id=49873241"
   }
  ],
  "errors": [],

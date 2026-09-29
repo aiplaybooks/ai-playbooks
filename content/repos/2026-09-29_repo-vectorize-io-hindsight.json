@@ -1,0 +1,42 @@
+{
+  "kind": "repo",
+  "repo": {
+    "full_name": "vectorize-io/hindsight",
+    "url": "https://github.com/vectorize-io/hindsight",
+    "stars": 42102,
+    "license": "MIT",
+    "language": "Python",
+    "description": "Hindsight: Agent Memory That Learns"
+  },
+  "topic": "Hindsight: agent memory that learns instead of just remembering",
+  "hook": [
+    "🚨A solo team just open sourced an agent memory system that actually LEARNS instead of just remembering — and beats RAG.",
+    "One-line Docker install.",
+    "Works with 25+ LLM providers, even fully local ones.",
+    "Already at 42K+ GitHub stars."
+  ],
+  "hook_pattern": "Solo-dev vs. paid giant",
+  "dm": {
+    "keyword": "MEMORY",
+    "mode": "direct"
+  },
+  "fb_comment": "🔗 Hindsight on GitHub:\nhttps://github.com/vectorize-io/hindsight\n\n⭐ 42K+ stars · MIT license · built in Python\n🧠 State-of-the-art on the LongMemEval benchmark, beats RAG and knowledge graph setups\n🤖 Works with 25+ LLM providers — OpenAI, Anthropic, Gemini, and fully local ollama/lmstudio/llamacpp\n💻 One-line Docker install, plugs into Claude Code and Cursor in 2 lines of code\n\nFollow AI Playbooks for a new FR££ AI tool every day 🙏",
+  "caption": "🚨A solo team just open sourced an agent memory system that actually LEARNS instead of just remembering — and beats RAG.\n\nOne-line Docker install.\n\nWorks with 25+ LLM providers, even fully local ones.\n\nAlready at 42K+ GitHub stars.\n\nComment MEMORY and I'll DM you the repo link 📩\n\nSend this to the teammate who's still fighting RAG for their agent.\n\nFollow @aiplaybooks.daily, we post a FR££ AI tool every day.\n\n#ai #github #opensource #aiagents",
+  "captions": {
+    "instagram": "🚨A solo team just open sourced an agent memory system that actually LEARNS instead of just remembering — and beats RAG.\n\nOne-line Docker install.\n\nWorks with 25+ LLM providers, even fully local ones.\n\nAlready at 42K+ GitHub stars.\n\nComment MEMORY and I'll DM you the repo link 📩\n\nSend this to the teammate who's still fighting RAG for their agent.\n\nFollow @aiplaybooks.daily, we post a FR££ AI tool every day.\n\n#ai #github #opensource #aiagents",
+    "facebook": "🚨A solo team just open sourced a system that lets AI agents actually LEARN over time instead of just recalling old chats — and it beats RAG.\n\nMost agents dump chat history into a vector store and call it done. Hindsight is different: it gets smarter the more it's used, and it's already state-of-the-art on the LongMemEval benchmark.\n\nOne-line Docker install. Works with 25+ LLM providers, even fully local ones like Ollama.\n\nLink in the first comment 👇\n\nWould this fix how your agent handles context?\n\n#github #opensource #aiagents"
+  },
+  "x": "🚨A solo team open sourced an agent memory system that LEARNS instead of just remembering — beats RAG.\n\nOne-line Docker install. 25+ LLM providers, even fully local.\n\n📦 vectorize-io/hindsight on GitHub\n\nAlready 42K+ stars.\n\n#opensource #aiagents",
+  "sources": [
+    "https://github.com/vectorize-io/hindsight",
+    "https://hindsight.vectorize.io"
+  ],
+  "checked": [
+    "42,095 stars (rounded down to 42K+), MIT license, Python -> GitHub API (repos.py --info, 2026-09-29)",
+    "\"Hindsight is an agent memory system built to create smarter agents that learn over time\", \"eliminates the shortcomings of alternative techniques such as RAG and knowledge graph\" -> README",
+    "state-of-the-art performance on the LongMemEval benchmark -> README",
+    "works with 25+ LLM providers including fully local ollama/lmstudio/llamacpp -> README Quick Start",
+    "one-line Docker install (docker run ... ghcr.io/vectorize-io/hindsight:latest) -> README Quick Start",
+    "LLM Wrapper integration in 2 lines of code, coding-agent support (Claude Code, Cursor) -> README table of contents / Adding Hindsight to Your Agent section"
+  ]
+}

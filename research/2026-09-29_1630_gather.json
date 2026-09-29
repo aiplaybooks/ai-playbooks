@@ -1,0 +1,69 @@
+{
+ "generated": "2026-09-29T16:30:00+03:00",
+ "candidates": [
+  {
+   "id": "meta-enterprise-platform",
+   "tool": "Meta AI",
+   "kind": "news",
+   "title": "Meta Just Turned Its AI Agent Into Something You Can Hire",
+   "summary_tr": "Meta, Muse modelleri, Muse API, Muse Code ve bir 'Business Agent'i tek bir 'Meta Enterprise Platform' çatısı altında topladı: işletmeler artık Meta'nın AI ajanlarını müşteri sorularını yanıtlamak, ürün önermek, randevu almak ve satış kapatmak için kullanabiliyor.",
+   "why_tr": "Küçük işletme sahibi takipçilerimiz için doğrudan uygulanabilir: 'senin işletmen de bir AI çalışan kiralayabilir' açısı ilgi çekici.",
+   "angle": "what launched (Muse, Business Agent, Muse API, Muse Code) + who it's for + how a small business could try the Business Agent first",
+   "tools": ["Meta AI"],
+   "published": "2026-09-28",
+   "sources": ["https://about.fb.com/news/2026/09/launching-meta-enterprise-platform/"],
+   "hints": ["https://www.socialmediatoday.com/news/meta-launches-enterprise-ai-platform-to-drive-business-opportunities/831548/"],
+   "score": 6
+  },
+  {
+   "id": "codex-cli-instant-interrupt",
+   "tool": "Codex",
+   "kind": "news",
+   "title": "Codex CLI Now Lets You Cut It Off Mid-Answer",
+   "summary_tr": "Codex CLI 0.159.0, 'instant_interrupt' özelliğiyle Codex bir yanıt üretirken veya uzun süren bir kod modu çağrısı sırasında yeni bir girdi yazarak onu anında yönlendirmeye izin veriyor; ayrıca yeni oturumlar için sade bir karşılama ekranı geldi.",
+   "why_tr": "Codex kullanıcıları için gerçek zamanlı, günlük iş akışını hızlandıran küçük ama somut bir özellik; 'artık beklemene gerek yok' açısı paylaşılır.",
+   "angle": "the old wait-it-out problem + the new instant_interrupt fix + how to use it",
+   "tools": ["Codex"],
+   "published": "2026-09-29",
+   "sources": ["https://github.com/openai/codex/releases/tag/rust-v0.159.0"],
+   "hints": [],
+   "score": 5
+  },
+  {
+   "id": "cursor-bugbot-pr-review",
+   "tool": "Cursor",
+   "kind": "evergreen",
+   "title": "Cursor's BugBot Reviews Every Pull Request Before You Do",
+   "summary_tr": "Cursor'ın BugBot özelliği bir GitHub deposunda açıldığında, insan ya da ajan tarafından yazılmış her pull request'i inceleyip regresyonlar, eksik hata yönetimi ve riskli değişiklikler hakkında satır içi yorumlar bırakıyor; önceki yorumları da okuyup tekrar önerilerde bulunmuyor.",
+   "why_tr": "Cursor'da bugün yeni haber yoktu ama BugBot az bilinen, gerçekten faydalı bir özellik: 'kod incelemeni senin yerine kim yapıyor' açısı iyi çalışır.",
+   "angle": "what BugBot catches + how to turn it on for a repo + what it does differently from a human reviewer",
+   "tools": ["Cursor"],
+   "published": null,
+   "sources": ["https://cursor.com/docs/bugbot", "https://cursor.com/changelog/1-0"],
+   "hints": [],
+   "score": 5
+  },
+  {
+   "id": "pack-marketplace-flip-side-income",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Prompts That Turn Flipping Used Stuff Into a Real Side Income",
+   "summary_tr": "ChatGPT veya Claude'u; ucuza alınıp satılabilecek eşyaları bulma, satış ilanını yazma, doğru fiyatı belirleme, alıcıyla pazarlık yapma ve aylık kârı takip etme konusunda uzman bir 'flip danışmanı' rolüne sokan 5 prompt.",
+   "why_tr": "Para + günlük hayat kesişimi, herkesin evinde/mahallesinde uygulayabileceği somut bir yan gelir fikri; owner'ın belirlediği %60 sosyal medya+ajan+para kuralına uyuyor.",
+   "angle": "Act as a resale/flipping expert -> [ITEM CATEGORY] sourcing checklist, listing copy with KEY WORDS, pricing formula, negotiation script, monthly profit tracker with a realistic estimate",
+   "tools": ["Prompt pack"],
+   "published": null,
+   "sources": [],
+   "hints": [],
+   "score": 6
+  }
+ ],
+ "coverage": {
+  "ChatGPT": 0, "Claude": 0, "Gemini": 0, "Grok": 0, "Codex": 1, "Cursor": 1,
+  "Copilot": 0, "Perplexity": 0, "Meta AI": 1, "Mistral": 0, "DeepSeek": 0,
+  "Open models": 0, "Apple": 0, "Higgsfield": 0, "Google": 0, "Social media": 0,
+  "Other": 0, "Prompt pack": 1
+ },
+ "notes_tr": "16 aracın tamamı tek tek arandı (36 saat penceresi): ChatGPT, Claude, Gemini, Grok, Copilot (GitHub+Microsoft), Perplexity, Mistral, DeepSeek, Qwen/Kimi/GLM/MiniMax, Apple, Higgsfield, Google (Arts & Culture dışında), sosyal medya (TikTok Symphony Agent, Instagram küçük güncellemeler) için havuzda zaten olmayan yeni ve resmi kaynakla doğrulanabilir bir şey çıkmadı — hepsi ya havuzdaki maddelerle aynı lansmanın devamıydı ya da resmi kaynakla teyit edilemedi (ör. Perplexity'nin yeni Computer komut paneli: tarih teyit edilemedi, atlandı). Yeni eklenenler: Meta Enterprise Platform (Meta AI, resmi about.fb.com), Codex CLI 0.159.0 instant_interrupt (resmi GitHub releases), Cursor BugBot (evergreen, resmi docs), ve yeni bir prompt pack (eşya çevirme/flip yan geliri). 3+ ekstra arama: viral AI ajan hikayeleri (Moltbook/OpenClaw, Instinct) resmi kaynakla doğrulanamadığı için eklenmedi — sadece topluluk/teknoloji medyası kaynaklı. ÖNEMLİ: OpenAI DevDay bugün 20:00 TR'de başlıyor (bu gather saat 16:30'da yapıldı, henüz başlamadı) — strategy_playbook.md'ye göre 18:00 taramasında/varsa bir sonraki gather'da DevDay haberleri en üst öncelik olmalı, openai.com/index/devday-2026 resmi kaynağıyla doğrulanarak.",
+ "sources_changed": []
+}
