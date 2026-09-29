@@ -15,7 +15,10 @@ from datetime import datetime, timedelta, timezone
 from playwright.sync_api import sync_playwright
 
 ROOT = pathlib.Path(__file__).parent.resolve()
-PROFILE = ROOT / ".cache" / "x-profile"
+PROFILE = ROOT / ".cache" / "x-chrome"  # a profile of the installed Google Chrome (x-profile was Playwright's Chromium)
+CHROME = next((p for p in (pathlib.Path(r"C:\Program Files\Google\Chrome\Application\chrome.exe"),
+                           pathlib.Path(r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"),
+                           pathlib.Path.home() / r"AppData\Local\Google\Chrome\Application\chrome.exe") if p.exists()), None)
 QUERIES = ["(AI OR Sora OR Veo OR Kling OR Seedance OR Higgsfield OR Runway) video",
            "(ChatGPT OR Claude OR Gemini OR Grok) demo", "AI robot", "AI agent demo",
            "made with AI", "AI generated"]
@@ -29,26 +32,33 @@ def num(s):
 
 
 def login():
+    """X freezes its login page in an automated browser (2026-09-29: a `debugger` trap under Playwright), so the login
+    runs in a plain Google Chrome window on our own profile folder; the headless search reuses its cookies."""
+    import subprocess
+    if not CHROME: sys.exit("ERROR: Google Chrome is not installed")
     PROFILE.mkdir(parents=True, exist_ok=True)
-    with sync_playwright() as p:
-        ctx = p.chromium.launch_persistent_context(str(PROFILE), headless=False, viewport={"width": 1200, "height": 900})
-        pg = ctx.new_page(); pg.goto("https://x.com/login")
-        print("Log in with the SECONDARY X account in the window. It closes by itself once the home timeline shows.")
-        for _ in range(600):
-            if "/home" in pg.url: break
-            time.sleep(1)
-        print("logged in" if "/home" in pg.url else "timed out (10 min)")
-        ctx.close()
+    print("Log in with the SECONDARY X account in the Chrome window, then CLOSE that window.")
+    subprocess.run([str(CHROME), f"--user-data-dir={PROFILE}", "--no-first-run", "--no-default-browser-check",
+                    "--new-window", "https://x.com/login"])
+    print("window closed: checking the session ...")
+    try: search(1, 10**9, check_only=True); print("logged in: the session works")
+    except SystemExit as ex: print(ex)
 
 
-def search(days, min_likes, limit_per_query=25):
+def search(days, min_likes, limit_per_query=25, check_only=False):
     if not PROFILE.exists(): sys.exit("ERROR: no X login yet: run `python xscout.py --login` once (owner, secondary account)")
     since = f"{datetime.now(timezone.utc) - timedelta(days=days):%Y-%m-%d}"
     found = {}
     with sync_playwright() as p:
-        ctx = p.chromium.launch_persistent_context(str(PROFILE), headless=True, viewport={"width": 1200, "height": 2400},
-                                                   locale="en-US")
+        ctx = p.chromium.launch_persistent_context(str(PROFILE), channel="chrome", headless=True,
+                                                   viewport={"width": 1200, "height": 2400}, locale="en-US",
+                                                   args=["--disable-blink-features=AutomationControlled"])
         pg = ctx.new_page()
+        if check_only:
+            pg.goto("https://x.com/home", wait_until="domcontentloaded"); pg.wait_for_timeout(4000)
+            ok = "/home" in pg.url and "login" not in pg.url; ctx.close()
+            if not ok: sys.exit("ERROR: not logged in (the X session is missing): run X_giris.bat again")
+            return []
         for q in QUERIES:
             full = f"{q} filter:native_video min_faves:{min_likes} since:{since} lang:en -filter:replies"
             pg.goto("https://x.com/search?" + urllib.parse.urlencode({"q": full, "f": "top"}), wait_until="domcontentloaded")
