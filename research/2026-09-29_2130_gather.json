@@ -1,0 +1,111 @@
+{
+ "generated": "2026-09-29T21:30:00+00:00",
+ "candidates": [
+  {
+   "id": "openai-dots-always-on-agents",
+   "tool": "ChatGPT",
+   "kind": "news",
+   "title": "OpenAI Just Launched an AI Employee You Can Hire",
+   "summary_tr": "OpenAI, DevDay 2026'da GPT-6 Astra ile çalışan 'dots' adlı sürekli açık (always-on) AI ajanlarını duyurdu: kendi bulut bilgisayarı var, 4000'den fazla uygulamaya bağlanabiliyor, ChatGPT/Slack/Teams üzerinden görev veriliyor. Pro ve Business Premium kullanıcılarına 1 dots dahil; $500 seviyesinde yeni bir üst paket de var.",
+   "why_tr": "HN'de 268 puan/158 yorumla en çok konuşulan DevDay haberlerinden biri; 'AI çalışan kiralama' açısı paylaşılabilirliği yüksek.",
+   "angle": "what dots is + who can use it now + why it's a bigger deal than another chat feature",
+   "tools": ["ChatGPT"],
+   "published": "2026-09-29",
+   "sources": ["https://openai.com/index/introducing-dots/", "https://x.com/OpenAI/status/2104984504133918973"],
+   "hints": ["https://techcrunch.com/2026/09/29/openai-launches-dots-its-bubbly-agentic-avatar/", "https://venturebeat.com/technology/openai-launches-dots-always-on-ai-agent-coworkers-and-chatgpt-space-where-they-can-collaborate-with-human-teams", "https://news.ycombinator.com/item?id=49896604"],
+   "score": 9
+  },
+  {
+   "id": "gpt-6-1-sol-launch",
+   "tool": "ChatGPT",
+   "kind": "news",
+   "title": "OpenAI's New Model Matches Its Best One for a Fifth of the Price",
+   "summary_tr": "OpenAI, DevDay'de GPT-6.1 Sol'u tanıttı: agentic kodlama ve bilgisayar kullanımı için GPT-6 Astra'ya yakın performans ama fiyatı Astra'nın beşte biri. Plus/Pro/Business/Enterprise/Edu kullanıcılarına ChatGPT Work ve Codex'te, API'de gpt-6.1-sol olarak açık.",
+   "why_tr": "Fiyat/performans oranı iddiası somut ve resmi; 'aynı kalite çok daha ucuz' herkesin ilgisini çeken bir başlık.",
+   "angle": "what it beats, the 1/5 price claim, where you can use it today",
+   "tools": ["ChatGPT", "Codex"],
+   "published": "2026-09-29",
+   "sources": ["https://openai.com/index/introducing-gpt-6-1-sol/", "https://developers.openai.com/codex/changelog"],
+   "hints": ["https://x.com/OpenAIDevs/status/2104993035507712318", "https://news.ycombinator.com/item?id=49896586"],
+   "score": 8
+  },
+  {
+   "id": "copilot-gpt-6-1-sol",
+   "tool": "Copilot",
+   "kind": "news",
+   "title": "GitHub Copilot Now Runs Both OpenAI's and Anthropic's Newest Models",
+   "summary_tr": "GitHub Copilot değişiklik günlüğüne göre GPT-6.1 Sol artık Copilot'ta genel kullanıma açık (agentic kodlama ve terminal iş akışları için); bir gün önce de Claude Sonnet 5.5 Copilot'a eklenmişti.",
+   "why_tr": "Bir kodlama aracının rakip iki büyük laboratuvarın en yeni modelini aynı anda sunması, 'hangi model ne zaman' içeriği için güçlü bir açı.",
+   "angle": "Copilot now gives you both frontier labs' newest models — when to pick which",
+   "tools": ["Copilot", "ChatGPT", "Claude"],
+   "published": "2026-09-29",
+   "sources": ["https://github.blog/changelog/2026-09-29-gpt-6-1-sol-in-github-copilot", "https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot"],
+   "hints": [],
+   "score": 6
+  },
+  {
+   "id": "apple-creator-studio-sept-update",
+   "tool": "Apple",
+   "kind": "news",
+   "title": "Apple Quietly Gave Every iPhone Filmmaker a Pro Camera Trick",
+   "summary_tr": "Apple, Creator Studio ve Final Cut Camera'ya güncelleme yayınladı: iPhone 18 Pro'da değişken diyafram desteği (çekim SONRASI odak/pozlama ayarı gibi), Freeform'a karanlık mod, klasörler ve Pixelmator Pro entegrasyonu geldi.",
+   "why_tr": "'Fotoğrafı çektikten sonra diyaframı değiştirebilme' görsel olarak gösterilebilir ve iPhone kullanıcılarının çoğunun bilmediği bir özellik.",
+   "angle": "variable aperture after the shot + what else Creator Studio's update adds",
+   "tools": ["Apple"],
+   "published": "2026-09-29",
+   "sources": ["https://www.apple.com/newsroom/2026/09/final-cut-camera-now-supports-variable-aperture-on-iphone-18-pro/", "https://www.apple.com/newsroom/2026/09/new-updates-coming-to-apple-creator-studio/"],
+   "hints": ["https://www.macrumors.com/2026/09/29/apple-creator-studio-new-features/"],
+   "score": 6
+  },
+  {
+   "id": "higgsfield-astra-day-one-features",
+   "tool": "Higgsfield",
+   "kind": "news",
+   "title": "How Higgsfield Shipped a New AI Video Feature in a Single Day",
+   "summary_tr": "Higgsfield, GPT-6 Astra kullanarak yeni video ürün keşif özelliklerini tek mühendisle bir günde geliştirip yayına aldığını duyurdu; küçük işletmeler için video reklam üretimini kolaylaştırıyor.",
+   "why_tr": "'Tek gün, tek mühendis' somut bir hız iddiası; AI araçlarının gerçek üretim hızını gösteren paylaşılabilir bir hikaye.",
+   "angle": "the 1-day build story + what it means for solo creators using Higgsfield",
+   "tools": ["Higgsfield"],
+   "published": "2026-09-28",
+   "sources": ["https://openai.com/index/higgsfield-from-prompt-to-production-with-astra/", "https://higgsfield.ai/blog/generate-ai-videos-ai-agents-2026"],
+   "hints": [],
+   "score": 6
+  },
+  {
+   "id": "gemini-in-chrome-evergreen",
+   "tool": "Gemini",
+   "kind": "evergreen",
+   "title": "5 Things Gemini in Chrome Can Already Do (Most People Never Open the Panel)",
+   "summary_tr": "Chrome'daki Gemini paneli: açık sekmelere göre bağlam farkında yardım, 10'a kadar sekmeyi paylaşma, Gmail/Calendar/Drive bağlantısı, ve izinle siteleri kendi başına gezip çok adımlı görevleri tamamlayan 'auto browse'. Resmi Google Chrome Yardım sayfalarında belgelenmiş.",
+   "why_tr": "Chrome kullanan herkes için anında denenebilir, resmi kaynaklı ve az bilinen bir özellik seti.",
+   "angle": "5 things list: side panel context, tab sharing, Workspace connection, auto browse, sign-in via Password Manager",
+   "tools": ["Gemini"],
+   "published": null,
+   "sources": ["https://support.google.com/chrome/answer/16283624?hl=en", "https://support.google.com/chrome/answer/16821166?hl=en", "https://support.google.com/chrome/a/answer/17031592?hl=en"],
+   "hints": [],
+   "score": 6
+  },
+  {
+   "id": "pack-stock-photo-side-income",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Prompts That Turn the Photos Already on Your Phone Into a Real Side Income",
+   "summary_tr": "İnsanların telefonlarında zaten biriken fotoğrafları (yemek, seyahat, günlük anlar) seçme, etiketleme, stok fotoğraf sitelerine uygun başlık/anahtar kelime yazma ve hangi platformlara yükleneceğine karar verme konusunda AI'dan yardım almasını sağlayan 5 prompt.",
+   "why_tr": "Herkesin zaten sahip olduğu bir şeyi (telefon galerisi) paraya çevirme fikri, düşük eforlu ve merak uyandırıcı bir açı.",
+   "angle": "Act as a stock photo curator: pick your best 20 shots, write titles/keywords that sell, pick 3 marketplaces, set a realistic monthly estimate",
+   "tools": ["Prompt pack"],
+   "published": null,
+   "sources": [],
+   "hints": [],
+   "score": 6
+  }
+ ],
+ "coverage": {
+  "ChatGPT": 2, "Claude": 0, "Gemini": 1, "Grok": 0, "Codex": 1, "Cursor": 0,
+  "Copilot": 1, "Perplexity": 0, "Meta AI": 0, "Mistral": 0, "DeepSeek": 0,
+  "Open models": 0, "Apple": 1, "Higgsfield": 1, "Google": 0, "Social media": 0,
+  "Prompt pack": 1, "Other": 0
+ },
+ "notes_tr": "Odak: bugünün en büyük penceresi OpenAI DevDay (dots + GPT-6.1 Sol) — ikisi de resmi kaynaktan doğrulandı, HN'de yüksek puanlı. Copilot'un aynı gün hem GPT-6.1 Sol hem (bir gün önce) Claude Sonnet 5.5 almasını tek haberde birleştirdim (Claude Sonnet 5.5'in kendisi zaten havuzda). Apple ve Higgsfield'de bugüne/düne ait taze resmi haber vardı. Grok, Cursor, Perplexity, Meta AI, Mistral, DeepSeek ve açık modeller (Qwen3.8-Max, DeepSeek V4.1-Flash) için bulduğum her şey ya zaten havuzda (Grok 4.7, Cursor token-efficiency/BugBot/Projects, Perplexity HP/Comet, Meta Muse/Enterprise, Mistral Vibe birleşmesi) ya da 36 saat/7 gün penceresinin çok dışında (Qwen3.8-Max Ağustos, DeepSeek V4.1-Flash 10 Eylül, Cursor self-hosted machines 2 Eylül, Perplexity Personal Computer Mart/Nisan) — bu yüzden eklenmedi. Threads'in yeni AI 'insights özeti' özelliği ilginç ama resmi bir about.fb.com/help.instagram.com sayfası bulamadım (sadece üçüncü taraf teknoloji siteleri), o yüzden düşürüldü — doğrulanabilir resmi kaynak yoksa eklemeyin kuralı gereği. Gemini'ye resmi kaynaklı bir evergreen (Gemini in Chrome) eklendi çünkü havuzda Gemini'nin kendi ürünü (Chrome değil) için taze haber yoktu. Google'ın kendi ürünleri (Arts & Culture, Search) zaten havuzda dolu; bugün siyasi olabilecek bir haber (Trump'ın America.gov'u Gemini+Grok ile güçlendirmesi) sayfanın apolitik tutumu gereği bilerek eklenmedi.",
+ "sources_changed": []
+}

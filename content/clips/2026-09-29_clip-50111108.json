@@ -1,0 +1,22 @@
+{
+  "kind": "clip",
+  "source": "https://x.com/rpnickson/status/2104234974350111108",
+  "credit": "@rpnickson on X",
+  "topic": "AI agent battle",
+  "title": null,
+  "crop_pos": 0.1,
+  "hook": "We gave 5 different AI models one job: design a bridge strong enough to actually hold weight.",
+  "caption": "5 AI models (Claude, Kimi, Meta, OpenAI, Grok) got the same brief: design, engineer and 3D print a bridge that spans 2 feet on under 500g of filament, then we loaded it with real weight to see which one survives.\n\nSame prompt, five completely different structures.",
+  "checked": ["model names (Claude Opus 5.5, Kimi K3, Meta Muse Spark 1.3, GPT 6 Astra, Grok 4.7) are as labeled on-screen in the source clip by @rpnickson; not independently verified against official model pages since the post is just naming its own test setup, not a claim we're asserting"],
+  "captions": {
+    "instagram": "We gave 5 AI models the same job: build a bridge that holds 🌉\n\nClaude, Kimi, Meta, OpenAI and Grok each got the same brief: design, engineer and 3D print a bridge that spans 2 feet on under 500g of filament. Same prompt, five completely different structures.\n\nThen we loaded every one of them with real weight to see which one actually survives.\n\nSend this to the friend who thinks every AI model is basically the same 👇 Which one do you think held up?\n\nFollow @aiplaybooks.daily for the AI tests everyone's talking about.\n\n#ai #aiagents #chatgpt #claude #artificialintelligence",
+    "facebook": "We gave 5 different AI models the exact same job: design a bridge strong enough to actually hold weight.\n\nClaude, Kimi, Meta, OpenAI and Grok each had to design, engineer and 3D print a bridge that spans 2 feet on under 500g of filament. Same prompt, five completely different structures.\n\nThen came the real test: we loaded every bridge with actual weight to see which one survives.\n\nWhich model do you think engineered the strongest one?\n\n#ai #aiagents #chatgpt #claude",
+    "youtube": {
+      "title": "5 AI Models Built a Bridge. Only One Held the Weight #Shorts",
+      "description": "We gave 5 AI models the same job: design, engineer and 3D print a bridge that spans 2 feet on under 500g of filament, then loaded it with real weight to see which one survives.\n\nClaude, Kimi, Meta, OpenAI and Grok all got the exact same prompt and came back with five completely different structures.\n\nWhich one do you think held up? Let us know in the comments.\n\n#ai #aiagents #artificialintelligence #chatgpt #claude",
+      "tags": ["ai agents", "ai comparison", "chatgpt vs claude", "artificial intelligence", "ai models", "claude ai", "grok", "openai", "3d printing ai", "tech test"]
+    },
+    "x": "We gave 5 AI models the same job: build a bridge that holds 🌉\n\nClaude, Kimi, Meta, OpenAI and Grok. Same prompt, 5 totally different structures. Only one survived the real weight test.\n\n🎥 @rpnickson\n\n#ai #aiagents"
+  },
+  "caption": "We gave 5 AI models the same job: build a bridge that holds 🌉\n\nClaude, Kimi, Meta, OpenAI and Grok each got the same brief: design, engineer and 3D print a bridge that spans 2 feet on under 500g of filament. Same prompt, five completely different structures.\n\nThen we loaded every one of them with real weight to see which one actually survives.\n\nSend this to the friend who thinks every AI model is basically the same 👇 Which one do you think held up?\n\nFollow @aiplaybooks.daily for the AI tests everyone's talking about.\n\n#ai #aiagents #chatgpt #claude #artificialintelligence"
+}
