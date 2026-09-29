@@ -1,4 +1,33 @@
 {
- "clips": [],
+ "clips": [
+  {
+   "url": "https://x.com/rpnickson/status/2104234974350111108",
+   "creator": "@rpnickson",
+   "why": "5 top AI models compete to design, engineer and 3D print a bridge: a real-world agent benchmark anyone gets in seconds",
+   "engagement": "7,800 likes, 408,000 views",
+   "hook_idea": "We gave 5 AI models the same job: build a bridge that holds."
+  },
+  {
+   "url": "https://x.com/JuliaClarky/status/2104068566945255853",
+   "creator": "@JuliaClarky",
+   "why": "Fully AI-made pottery story (Flova), 1M views: pure visual, no text needed, shows how far AI video got",
+   "engagement": "8,000 likes, 1,000,000 views",
+   "hook_idea": "This whole pottery film was made with AI. Not one real frame."
+  },
+  {
+   "url": "https://x.com/simplifyinAI/status/2104216950260035980",
+   "creator": "@simplifyinAI",
+   "why": "Someone open-sourced their own Neuro-sama style AI VTuber: FR££ open source + AI character, fits our repo audience",
+   "engagement": "3,400 likes, 185,000 views",
+   "hook_idea": "Someone just open sourced their own AI streamer. And it's FR££."
+  },
+  {
+   "url": "https://x.com/deedydas/status/2103965547780345859",
+   "creator": "@deedydas",
+   "why": "Claude generated a 2-minute video on the history of Google (704K views): shows Claude Opus 5.5 doing video, trim to the best 60 s",
+   "engagement": "2,700 likes, 704,000 views",
+   "hook_idea": "Claude just made this entire video about Google's history."
+  }
+ ],
  "note": "No live X/browser access this session (WebSearch alone can't confirm real engagement numbers for specific posts within a 72h window, and URLs must never be guessed). Retry next session with browser access, or the owner can drop links into the Viral tab."
 }
