@@ -1,0 +1,190 @@
+{
+  "theme": "prompts",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Prompt Pack · Investing Basics",
+  "caption": "7 ChatGPT prompts to learn investing before you risk a single dollar 💸\n\nMost beginners either freeze and never start, or jump in without understanding fees, risk or their own goals. This pack fixes that before your first $100 goes anywhere.\n\n→ learn every term with a real example\n→ sort your goals by timeline and risk\n→ find your real risk tolerance\n→ see what 5 years of waiting actually costs you\n→ catch the fees quietly eating your returns\n→ dodge the 10 mistakes beginners always make\n→ walk into any advisor meeting prepared\n\nWhich one are you starting with, the goal sorter or the fee detective? 👇\n\nSend this to the friend who keeps saying \"I'll start investing someday.\"\n\nFollow @aiplaybooks.daily for a new playbook every day.\n\n#chatgptprompts #investing #personalfinance #moneytips #ai",
+  "sources": [],
+  "captions": {
+    "instagram": "7 ChatGPT prompts to learn investing before you risk a single dollar 💸\n\nMost beginners either freeze and never start, or jump in without understanding fees, risk or their own goals. This pack fixes that before your first $100 goes anywhere.\n\n→ learn every term with a real example\n→ sort your goals by timeline and risk\n→ find your real risk tolerance\n→ see what 5 years of waiting actually costs you\n→ catch the fees quietly eating your returns\n→ dodge the 10 mistakes beginners always make\n→ walk into any advisor meeting prepared\n\nWhich one are you starting with, the goal sorter or the fee detective? 👇\n\nSend this to the friend who keeps saying \"I'll start investing someday.\"\n\nFollow @aiplaybooks.daily for a new playbook every day.\n\n#chatgptprompts #investing #personalfinance #moneytips #ai",
+    "facebook": "7 ChatGPT prompts to learn investing before you risk a single dollar 💸\n\nMost beginners never start because the terms sound confusing, or they start without knowing their own risk tolerance or the fees quietly eating their returns.\n\nThis pack walks you through both, plus your goals, the real cost of waiting 5 years, the 10 mistakes beginners make, and 12 questions to ask before you trust anyone with your money.\n\nWhich one would help you most right now, the risk profiler or the fee detective?\n\n#investing #personalfinance #chatgptprompts #moneytips",
+    "youtube": {
+      "title": "7 ChatGPT Prompts to Learn Investing Before Your First $100",
+      "description": "7 ChatGPT prompts that teach you what most beginners never learn before they invest a dollar: plain-English terms, your real risk tolerance, what waiting 5 years actually costs you, the fees quietly eating your returns, the 10 mistakes beginners make, and 12 questions to ask before you trust anyone with your money.\n\nUse these with ChatGPT, Claude or Gemini, swap in your own numbers and goals, and you'll walk into your first investing decision already prepared.\n\n#personalfinance #investing #moneytips #chatgptprompts #financialfreedom",
+      "tags": [
+        "chatgpt prompts investing",
+        "personal finance for beginners",
+        "how to start investing",
+        "investing basics",
+        "money tips",
+        "financial literacy",
+        "compound interest",
+        "chatgpt money prompts"
+      ]
+    },
+    "x": "7 ChatGPT prompts to learn investing before you risk your first $100 💸\n\nTerms, real risk tolerance, the cost of waiting, hidden fees, the 10 mistakes beginners make, and 12 questions before you trust any advisor.\n\n#investing #personalfinance"
+  },
+  "cover": {
+    "headline": "Invest your first $100 the smart way. 7 prompts that teach you what most beginners never learn:",
+    "em": "first $100",
+    "person": null,
+    "layout": "scene",
+    "photo_query": [
+      "coins plant growth",
+      "savings coins jar",
+      "stock market"
+    ],
+    "photo_pick": {
+      "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg4MzExMzMtaW1hZ2Uta3d5b2NpYXcuanBn.jpg",
+      "page": "https://www.rawpixel.com/image/5943677/free-public-domain-cc0-photo",
+      "author": "unknown",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "rawpixel",
+      "file": "photo"
+    },
+    "photo": {
+      "file": "photo",
+      "page": "https://www.rawpixel.com/image/5943677/free-public-domain-cc0-photo",
+      "author": "unknown",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "rawpixel"
+    },
+    "layout_used": "scene"
+  },
+  "design": {
+    "mood": "a young plant sprouting out of a coin pile in front of a rising bar chart: quiet confidence, old-money green and gold, a first step that compounds",
+    "palette": {
+      "bg": "#08140F",
+      "bg2": "#0D1F16",
+      "surface": "#122A1D",
+      "ink": "#F2F7EF",
+      "muted": "#8FA895",
+      "accent": "#3FD17E",
+      "accent2": "#E8C468"
+    },
+    "fonts": {
+      "display": "Fraunces",
+      "body": "Inter",
+      "mono": "IBM Plex Mono"
+    },
+    "display": {
+      "weight": 600,
+      "tracking": -1
+    },
+    "shape": {
+      "radius": 22,
+      "border": 1,
+      "shadow": "soft"
+    },
+    "background": {
+      "pattern": "grid",
+      "pattern_opacity": 0.06,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "pill",
+    "prompt": "chat",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 17l6-6 4 4 8-8'/><path d='M15 7h6v6'/></svg>"
+  },
+  "voice": "af_jessica",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "PROMPT PACK",
+      "title": "prompts to understand investing before your first $100",
+      "em": "your first $100",
+      "sub": "Terms, goals, risk, fees, mistakes, all sorted out before you invest a dollar.",
+      "tools": [
+        "ChatGPT",
+        "Claude",
+        "Gemini"
+      ],
+      "voiceover": "Before you invest your first $100, run these 7 prompts."
+    },
+    {
+      "type": "prompt",
+      "name": "The Plain-English Tutor",
+      "sub": "Finally understand the words",
+      "prompt": "Explain these investing terms like I'm a smart 15-year-old, with one everyday example each: index fund, ETF, stock, bond, dividend, expense ratio, diversification, compound interest. Then quiz me with **5 QUESTIONS**.",
+      "tip": "Answer the quiz out loud before you move on — that's how the terms actually stick.",
+      "voiceover": "First, it explains every confusing term with a simple example, then quizzes you."
+    },
+    {
+      "type": "prompt",
+      "name": "The Goal Sorter",
+      "sub": "Which money goes where",
+      "prompt": "Help me sort my goals before investing: [LIST GOALS WITH AMOUNTS AND DATES]. For each, tell me if it's short, medium or long term, why that matters for risk, and which goals should stay in **SAVINGS** instead of investments.",
+      "tip": "Money you need within 2-3 years usually shouldn't be invested at all.",
+      "voiceover": "Then it sorts your goals and tells you which money shouldn't be invested yet."
+    },
+    {
+      "type": "prompt",
+      "name": "The Risk Profiler",
+      "sub": "How much drop can you handle",
+      "prompt": "Ask me 8 questions, one at a time, to understand my risk tolerance: income stability, emergency fund, timeline, how I'd react to a 30% drop. Then describe my profile and what it usually means for a portfolio, **WITHOUT** recommending specific products.",
+      "tip": "Answer honestly about the 30% drop question — that's the one people fake.",
+      "voiceover": "This one interviews you and figures out your real risk tolerance."
+    },
+    {
+      "type": "prompt",
+      "name": "The Compound Visualizer",
+      "sub": "See what time does to money",
+      "prompt": "Show me a table of what [$MONTHLY AMOUNT] a month becomes after 5, 10, 20 and 30 years at 4%, 6% and 8% yearly returns. Then show the same if I start 5 years later, and explain the difference in **TWO SENTENCES**.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "$100/mo at 6% for 30 yrs: ~$100,000",
+          "Same plan, started 5 yrs late: ~$68,000",
+          "Those 5 years cost you ~$32,000"
+        ]
+      },
+      "voiceover": "Then it shows you exactly what waiting five years actually costs you."
+    },
+    {
+      "type": "prompt",
+      "name": "The Fee Detective",
+      "sub": "Small fees, big difference",
+      "prompt": "Compare the long-term cost of a 0.1%, 0.5% and 1.5% yearly fee on [$AMOUNT] invested for [YEARS] years with a 6% return. Show the money lost to fees in a table and list **5 QUESTIONS** to ask about fees before I open any account.",
+      "tip": "A 1.5% fee can quietly eat tens of thousands of dollars over 30 years.",
+      "voiceover": "Next, it hunts down exactly how much fees are quietly costing you."
+    },
+    {
+      "type": "prompt",
+      "name": "The Myth Buster",
+      "sub": "What beginners get wrong",
+      "prompt": "List the 10 most common beginner investing mistakes (timing the market, chasing hype, no emergency fund ...). For each: why people do it, what it can cost, and one **SIMPLE RULE** that prevents it.",
+      "tip": "Keep this list open the next time a hot tip shows up in your feed.",
+      "voiceover": "This one lists the 10 mistakes beginners make, and the rule that prevents each."
+    },
+    {
+      "type": "prompt",
+      "name": "The Advisor Prep",
+      "sub": "Walk into the bank prepared",
+      "prompt": "I'm meeting a financial advisor about investing [$AMOUNT] for [GOAL]. Write 12 questions to ask about fees, conflicts of interest, risk, and how they get paid, plus the **RED FLAGS** in their answers that should make me walk away.",
+      "tip": "\"How do you get paid on my account\" is the one question that reveals the most.",
+      "voiceover": "And the last one preps you with 12 questions before you trust anyone with your money."
+    },
+    {
+      "type": "cta",
+      "title": "Your first $100,",
+      "title2": "invested the smart way.",
+      "lines": [
+        [
+          "Save",
+          "this pack before you open an account."
+        ],
+        [
+          "Send",
+          "it to the friend who keeps saying \"someday.\""
+        ],
+        [
+          "Follow",
+          "@aiplaybooks.daily for a new playbook every day."
+        ]
+      ],
+      "voiceover": "Save this, send it to someone who keeps putting it off, and start today."
+    }
+  ]
+}
