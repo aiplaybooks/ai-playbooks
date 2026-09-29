@@ -1,0 +1,150 @@
+{
+  "generated": "2026-09-29T06:30+00:00",
+  "candidates": [
+    {
+      "id": "codex-cli-voice-default-0-158",
+      "tool": "Codex",
+      "kind": "news",
+      "title": "Codex CLI Now Talks to You By Default",
+      "summary_tr": "Codex CLI 0.158.0 sesli sohbeti varsayılan açtı (F8 ile kapatılabiliyor), tam ekran /tui modu, /usage kullanım paneli ve worktree oturumları ekledi.",
+      "why_tr": "Codex CLI hızlı hareket ediyor ve kitlemiz terminalde konuşan bir asistan fikrini ilginç bulur; somut ve denenebilir bir haber.",
+      "angle": "what's new in 0.158.0 (voice by default, /tui, /usage dashboard) + how to turn voice off if you don't want it",
+      "tools": ["Codex", "ChatGPT"],
+      "published": "2026-09-28",
+      "sources": [
+        "https://github.com/openai/codex/releases/tag/rust-v0.158.0",
+        "https://developers.openai.com/codex/changelog"
+      ],
+      "hints": ["https://www.bighatgroup.com/blog/codex-weekly-2026-09-28/"],
+      "score": 6
+    },
+    {
+      "id": "copilot-assisted-approvals",
+      "tool": "Copilot",
+      "kind": "news",
+      "title": "GitHub Copilot Can Now Approve Its Own Safe Moves",
+      "summary_tr": "GitHub Copilot'ın yeni 'assisted approvals' (önizleme) özelliği, düşük riskli araç çağrılarını otomatik onaylıyor, riskli olanlarda hâlâ sana soruyor; ayrıca önceki bir mesajı düzenleyip ajan oturumunu geri sarabiliyorsun.",
+      "why_tr": "Sürekli 'approve' tıklamaktan sıkılan geliştiriciler için doğrudan işine yarayan, az bilinen bir ayar.",
+      "angle": "what assisted approvals does + how to turn it on + the message-edit rewind trick",
+      "tools": ["Copilot"],
+      "published": "2026-09-25",
+      "sources": [
+        "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21/"
+      ],
+      "hints": [],
+      "score": 6
+    },
+    {
+      "id": "cursor-token-efficiency-7-percent",
+      "tool": "Cursor",
+      "kind": "news",
+      "title": "Cursor Quietly Cut Everyone's AI Bill by 7%",
+      "summary_tr": "Cursor, ajan altyapısını (sistem promptları, önbellek kullanımı, dosya okuma sıkıştırma, alt-ajan davranışı) optimize ederek kalite kaybı olmadan token maliyetini %7 düşürdüğünü açıkladı.",
+      "why_tr": "Cursor kullanan herkesin cebini ilgilendiren, somut bir 'arka planda ne oluyor' hikayesi.",
+      "angle": "what changed under the hood + why longer agent runs got cheaper, no user action needed",
+      "tools": ["Cursor"],
+      "published": "2026-09-23",
+      "sources": [
+        "https://cursor.com/blog/improved-token-efficiency"
+      ],
+      "hints": [],
+      "score": 5
+    },
+    {
+      "id": "instagram-ai-profile-label-enforcement",
+      "tool": "Social media",
+      "kind": "evergreen",
+      "title": "Instagram Will Quietly Bury Your Posts If You Skip This Label",
+      "summary_tr": "Instagram, 'AI Creator' etiketini 'AI-generated profile' olarak değiştirdi ve tam zamanlı AI kişilikli hesapları etiketlemezlerse Reels/Explore'da önerilmekten çıkarıyor; sadece AI ile düzenleme yapanlar etiketlemek zorunda değil.",
+      "why_tr": "Kitlemizin çoğu AI içerik üretiyor; bu kuralı bilmemek görünürlük kaybettirebilir, dolayısıyla paylaşılası bir uyarı+rehber.",
+      "angle": "what the label is for + who actually needs it + how to turn it on before you lose reach",
+      "tools": ["Meta AI"],
+      "published": "2026-08-31",
+      "sources": [
+        "https://help.instagram.com/1555776438852001/"
+      ],
+      "hints": ["https://techcrunch.com/2026/08/31/instagram-puts-new-limits-on-undisclosed-ai-profiles/"],
+      "score": 6
+    },
+    {
+      "id": "prime-intellect-claude-codex-nanogpt-speedrun",
+      "tool": "Other",
+      "kind": "news",
+      "title": "Claude and Codex Just Spent Two Weeks Racing Each Other to Optimize Code",
+      "summary_tr": "Prime Intellect, Claude Code (Opus) ve Codex'i boşta duran GPU gücüyle iki hafta boyunca serbest bırakıp nanoGPT hız rekorunu düşürmeye çalıştırdı: ~10.000 deneme, ~14.000 H200 saati; Claude insan rekorunu (2990 adım) 2930'a indirip kırdı. İlginç yan not: Claude bazen görevi bırakıp insan onayı beklemek için 47 saatlik bir görevin 22 saatinde boşta bekledi.",
+      "why_tr": "İki büyük ajanın baş başa, gerçek bir mühendislik yarışmasında karşılaştığı somut ve ölçülebilir bir hikaye; hem etkileyici hem de sınırları gösteren dürüst bir detay içeriyor.",
+      "angle": "the setup (Claude vs Codex, same task, idle GPUs) + the result (new record) + the funny limitation (Claude idled 22 of 47 hours waiting for a human)",
+      "tools": ["Claude", "Codex"],
+      "published": "2026-09-24",
+      "sources": [
+        "https://www.primeintellect.ai/auto-nanogpt",
+        "https://github.com/PrimeIntellect-ai/experiments-autonomous-speedrunning"
+      ],
+      "hints": ["https://x.com/PrimeIntellect/status/2055056380881744365"],
+      "score": 7
+    },
+    {
+      "id": "open-models-free-today-sept2026",
+      "tool": "Open models",
+      "kind": "evergreen",
+      "title": "5 Free AI Models That Now Beat GPT and Claude on Code (No Subscription)",
+      "summary_tr": "Eylül 2026 itibarıyla Kimi K3, Qwen3.8 Max, DeepSeek V4.1 Flash, GLM-5.3 ve MiniMax M3 — hepsi indirilebilir ağırlıklarla ve ticari kullanıma izin veren lisanslarla, kod yazmada büyük kapalı modellerle yarışıyor.",
+      "why_tr": "Ücretsiz/açık model karşılaştırması her zaman güçlü performans gösteren, güncellenmeye değer bir format.",
+      "angle": "5 free open models worth trying right now + where to run each (app/site/download) + what each is best at",
+      "tools": ["Open models", "DeepSeek"],
+      "published": null,
+      "sources": [
+        "https://qwenlm.github.io",
+        "https://www.deepseek.com",
+        "https://z.ai",
+        "https://www.minimax.io"
+      ],
+      "hints": [],
+      "score": 5
+    },
+    {
+      "id": "pack-instagram-broke-page-agent",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "5 Prompts That Turn a Dead Instagram Page Into an AI-Run Growth Machine",
+      "summary_tr": "Takipçisi az veya büyümesi duran bir Instagram/TikTok sayfasını, ChatGPT veya Claude'u ajan gibi kullanarak (içerik takvimi, hook üretimi, yorum yönetimi, haftalık performans analizi) yeniden canlandıran 5 promptluk paket.",
+      "why_tr": "Kitlemizin büyük kısmı kendi sayfasını büyütmeye çalışıyor; somut, uygulanabilir ve 'ajan' çerçevesiyle güncel bir paket.",
+      "angle": "Act as an expert growth strategist for [PLATFORM] → audit + 30-day content calendar + hook rewrite + comment-reply script + weekly report template, each with a realistic follower/engagement estimate",
+      "tools": ["Prompt pack"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 6
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 1,
+    "Claude": 1,
+    "Gemini": 0,
+    "Grok": 0,
+    "Codex": 1,
+    "Cursor": 1,
+    "Copilot": 1,
+    "Perplexity": 0,
+    "Meta AI": 1,
+    "Mistral": 0,
+    "DeepSeek": 1,
+    "Open models": 1,
+    "Apple": 0,
+    "Higgsfield": 0,
+    "Google": 0,
+    "Social media": 1,
+    "Other": 1,
+    "Prompt pack": 1
+  },
+  "notes_tr": "Sonnet 5.5, Grok 4.7, Grok finans botu, Perplexity/HP, Cursor Projects, Higgsfield Genjutsu, Apple Siri/iOS27, MiniMax gibi gerçek haberlerin hepsi ya havuzda zaten var ya da 'tekrar önerme' listesinde. Yeni bulunanlar: Codex CLI 0.158.0 (sesli sohbet varsayılan), GitHub Copilot'ın 'assisted approvals' özelliği, Cursor'ın token maliyetini %7 düşüren arka plan güncellemesi, Instagram'ın AI-generated profile etiketi zorunluluğu (31 Ağustos, hâlâ güncel ve az bilinen bir kural), ve Prime Intellect'in Claude/Codex'i nanoGPT hız rekorunda yarıştırdığı ilginç ajan hikayesi. Gemini, Perplexity, Mistral, Apple, Higgsfield ve Google (Gemini dışı) için son 36 saatte/7 günde gerçekten yeni ve havuzda olmayan bir şey bulunamadı — bu araçların tamamı için arama yapıldı ama mevcut haberler ya çok eski ya da zaten havuzda/yayınlanmış listede.",
+  "sources_changed": [
+    "Test edildi, eklendi: GitHub Engineering blog (github.blog/engineering/feed/, signal, AI/Copilot filtresiyle) — Copilot'ın arka plan mühendislik yazıları changelog'dan önce burada çıkabiliyor.",
+    "Test edildi, reddedildi: Perplexity blog RSS (perplexity.ai/blog/rss.xml) — 403 engelliyor, manual listede zaten var.",
+    "Test edildi, reddedildi: TikTok newsroom RSS (newsroom.tiktok.com/en-us/rss) — geçersiz XML, manual listede zaten var.",
+    "Test edildi, reddedildi: x.ai/blog/rss.xml — 404, manual listede zaten var.",
+    "Test edildi, reddedildi: LinkedIn blog RSS, Notion blog RSS, GitHub Copilot changelog alternatif URL, Runway blog RSS, ElevenLabs blog RSS, WhatsApp/Threads blog RSS — hepsi 404 veya bozuk XML.",
+    "Test edildi, eklenmedi (yinelenen kapsama): openai.com/blog/rss.xml (zaten OpenAI News ile aynı içerik), Google Photos RSS (zaten Google Keyword blog'un kapsadığı bir alt küme).",
+    "Kaynak sağlığı kontrol edildi: source_health.json'da fail_streak >= 3 veya 30 günden eski 'newest' olan hiçbir kaynak yok, hepsi sağlıklı."
+  ]
+}

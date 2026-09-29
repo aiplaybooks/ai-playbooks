@@ -1,0 +1,88 @@
+{
+ "generated": "2026-09-29T10:30:00+03:00",
+ "candidates": [
+  {
+   "id": "google-arts-culture-ai-makeover",
+   "tool": "Google",
+   "kind": "news",
+   "title": "Google Arts & Culture Gets a Conversational AI Makeover for Its 15th Birthday",
+   "summary_tr": "Google Arts & Culture uygulamasi 15. yasinda gorsel-oncelikli sohbet aramasi, yeniden tasarlanmis ana akis, AI deneyleri ve 27 yeni sehir rehberiyle yenilendi.",
+   "why_tr": "Herkesin bildigi ucretsiz bir Google uygulamasinda gizli kalmis bir AI ozelligi - 'bunu bilmiyordun' formati icin ideal, genis kitleye hitap ediyor.",
+   "angle": "Carousel: 'This free Google app just got an AI upgrade you didn't know about' — show visual-first conversation search + AI experiments, CTA to try it.",
+   "tools": ["Google"],
+   "published": "2026-09-28",
+   "sources": ["https://blog.google/company-news/outreach-and-initiatives/arts-culture/new-arts-culture-app/"],
+   "hints": [],
+   "score": 6
+  },
+  {
+   "id": "tiktok-symphony-creative-studio-evergreen",
+   "tool": "Social media",
+   "kind": "evergreen",
+   "title": "TikTok's Free AI Video Tool Most Small Brands Don't Know About: Symphony Creative Studio",
+   "summary_tr": "TikTok'un Symphony Creative Studio'su metin veya gorselden birkac dakikada reklam-hazir video uretiyor; kucuk isletmeler ve icerik ureticiler icin tamamen ucretsiz (image-to-video, text-to-video).",
+   "why_tr": "Sayfamizin FR££ arac vaadine tam uyuyor ve TikTok tarafi havuzda simdiye kadar hic islenmemis, kapsami genisletiyor.",
+   "angle": "Steps carousel: how to use Symphony Creative Studio free — image-to-video, text-to-video, mandatory AI label.",
+   "tools": ["TikTok"],
+   "published": null,
+   "sources": [
+    "https://newsroom.tiktok.com/en-us/tiktok-symphony-updates",
+    "https://ads.tiktok.com/business/en-US/blog/symphony-creative-studio"
+   ],
+   "hints": [],
+   "score": 6
+  },
+  {
+   "id": "snapchat-lens-plus-chat-to-song",
+   "tool": "Social media",
+   "kind": "evergreen",
+   "title": "Snapchat's Weirdest AI Feature Yet: Turn Any Chat Into a Song",
+   "summary_tr": "Snapchat Lens+ abonelerine chat'i sarkiya ceviren 'Chat to Song', fotograf duzeltme 'AI Photoshoot' ve Snap'i yeniden yorumlayan 'AI Remix' dahil 5 yeni AI ozelligi geldi (21 Eylul 2026).",
+   "why_tr": "Gorsel olarak cok paylasilabilir ve 'bunu deneyin' formatinda gonderilme (forward) potansiyeli yuksek — stratejide vurgulanan 'sends beats likes' ilkesine uygun.",
+   "angle": "Short Reel/carousel closer: demo the Chat to Song feature as a fun, shareable hook.",
+   "tools": ["Snapchat"],
+   "published": "2026-09-21",
+   "sources": ["https://newsroom.snap.com/new-lens-plus-ai-features"],
+   "hints": [
+    "https://www.socialmediatoday.com/news/snapchat-adds-new-ai-features-including-chat-to-song/830966/"
+   ],
+   "score": 5
+  },
+  {
+   "id": "pack-local-service-business-launch",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "7 Prompts to Launch a $3,000/Month Local Service Side Hustle",
+   "summary_tr": "Yerel hizmet isi (arac detaylandirma, temizlik, evcil hayvan bakimi vb.) kurmak icin 7 kopyala-yapistir prompt: fiyatlandirma, ilan metni, reklam metni, rezervasyon mesajlari ve ilk ay buyume plani.",
+   "why_tr": "Cuzdan + gunluk hayat kesisimi, somut $ vaadiyle yuksek kaydetme/gonderme potansiyeli; havuzdaki paketlerin hicbiri yerel hizmet isini islemiyor.",
+   "angle": "Prompts-theme carousel: 7-prompt card deck, cover promises a realistic $3K/month local side hustle plan.",
+   "tools": ["ChatGPT", "Claude", "Gemini"],
+   "published": null,
+   "sources": [],
+   "hints": [],
+   "score": 7
+  }
+ ],
+ "coverage": {
+  "ChatGPT": 0,
+  "Claude": 0,
+  "Gemini": 0,
+  "Grok": 0,
+  "Codex": 0,
+  "Cursor": 0,
+  "Copilot": 0,
+  "Perplexity": 0,
+  "Meta AI": 0,
+  "Mistral": 0,
+  "DeepSeek": 0,
+  "Open models": 0,
+  "Apple": 0,
+  "Higgsfield": 0,
+  "Google": 1,
+  "Social media": 2,
+  "Other": 0,
+  "Prompt pack": 1
+ },
+ "notes_tr": "OpenAI DevDay (10:00 PT / 20:00 TR) henuz gerceklesmedi (simdi TR 10:30) — openai.com/index/devday-2026 ve resmi hesaplar kontrol edildi, henuz duyuru yok; sonraki gather'lar yakalayacak, zorlamadim. ChatGPT, Claude, Gemini, Grok, Codex, Cursor, Copilot, Perplexity, Meta AI, Mistral, DeepSeek, acik agirlikli modeller (Qwen/Kimi/GLM/MiniMax) ve Apple/Higgsfield icin ayri ayri arama yapildi: son 36 saatte havuzdakilerin disinda dogrulanabilir yeni bir haber cikmadi (bulunanlarin hepsi ya zaten havuzda ya da 7 gunden eski — orn. Perplexity Numbat 29 Temmuz, GitHub Copilot Sentry canvas 14-18 Eylul, DeepSeek V4.1 Flash 9 Eylul). Google Arts & Culture uygulama yenilemesi (28 Eylul, resmi blog.google) yeni ve dogrulanmis. Sosyal medya tarafinda TikTok Symphony Creative Studio (evergreen, resmi TikTok newsroom) ve Snapchat Lens+ 'Chat to Song' (21 Eylul, resmi newsroom.snap.com, 7 gunluk pencereye yakin) eklendi — cesitliligi artirmak icin. Yeni bir prompt pack fikri (yerel hizmet isi) eklendi. Kontrol edilemeyen kaynak yok bu turda.",
+ "sources_changed": []
+}

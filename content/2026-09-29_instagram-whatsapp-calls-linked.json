@@ -1,0 +1,253 @@
+{
+  "theme": "adaptive",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Instagram x WhatsApp calls",
+  "caption": "Instagram can now call your phone, through WhatsApp.\n\nMeta is rolling out a setting that lets someone on your Instagram profile tap to call you on WhatsApp, using the number saved in your Accounts Center.\n\n→ Off by default, you turn it on\n→ Calls stay end-to-end encrypted\n→ You choose who can call: everyone, contacts, or no one\n\nWould you leave this on, or switch it to contacts-only? 👇\n\nFollow @aiplaybooks.daily for daily AI tool tips & news.\n\n#instagram #whatsapp #meta #socialmediatips #ai",
+  "captions": {
+    "instagram": "Instagram can now call your phone, through WhatsApp.\n\nMeta is rolling out a setting that lets someone on your Instagram profile tap to call you on WhatsApp, using the number saved in your Accounts Center.\n\n→ Off by default, you turn it on\n→ Calls stay end-to-end encrypted\n→ You choose who can call: everyone, contacts, or no one\n\nWould you leave this on, or switch it to contacts-only? 👇\n\nFollow @aiplaybooks.daily for daily AI tool tips & news.\n\n#instagram #whatsapp #meta #socialmediatips #ai",
+    "facebook": "Instagram can now put your phone number to work.\n\nMeta is rolling out a feature that lets people who find you on Instagram call you directly on WhatsApp, using the number linked in your Accounts Center. It's off by default, and you decide who's allowed: everyone, just your contacts, or no one at all.\n\nThe calls still run through WhatsApp's end-to-end encryption, so nothing changes there.\n\nHave you checked your Accounts Center settings lately?\n\n#instagram #whatsapp #socialmediatips",
+    "youtube": {
+      "title": "Instagram Can Now Call Your WhatsApp, Here's the Setting #Shorts",
+      "description": "Instagram just added a setting that lets people call you on WhatsApp straight from your profile.\n\nIt uses the phone number linked in your Meta Accounts Center, and it's off by default, you choose who can call: everyone, your contacts, or no one.\n\nCalls stay end-to-end encrypted. Here's exactly where to find the setting and change it.\n\n#instagram #whatsapp #meta #socialmediatips",
+      "tags": [
+        "instagram whatsapp call",
+        "whatsapp call from instagram",
+        "instagram settings",
+        "whatsapp tips",
+        "meta accounts center",
+        "whatsapp privacy",
+        "instagram new feature",
+        "ai"
+      ]
+    }
+  },
+  "sources": [
+    "https://help.instagram.com/1754230088373607",
+    "https://www.lesactusdunet.com/2026/09/13/meta-peut-maintenant-vous-faire-sonner-sur-whatsapp-depuis-un-simple-profil-instagram/",
+    "https://faq.whatsapp.com/849367647393371/?cms_platform=web"
+  ],
+  "cover": {
+    "headline": "Instagram can now make your WhatsApp ring. Here's how the new call feature works:",
+    "em": "make your WhatsApp ring",
+    "person": "Mark Zuckerberg",
+    "layout": "scene_person",
+    "photo_query": [
+      "person holding smartphone",
+      "woman talking on phone"
+    ],
+    "photo_pick": {
+      "url": "https://live.staticflickr.com/65535/47698267121_eb944b8983_b.jpg",
+      "page": "https://www.flickr.com/photos/147592390@N06/47698267121",
+      "author": "John Beans",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "source": "Flickr",
+      "file": "person holding smartphone in front of turned-on laptop beside black ceramic mug on oval brown wooden table - Credit to https://myfriendscoffee.com/"
+    },
+    "icons": [
+      {
+        "slug": "whatsapp",
+        "style": "circle",
+        "pos": "tl",
+        "size": 150
+      },
+      {
+        "slug": "instagram",
+        "style": "circle",
+        "pos": "tr",
+        "size": 150
+      }
+    ],
+    "photo": {
+      "file": "person holding smartphone in front of turned-on laptop beside black ceramic mug on oval brown wooden table - Credit to https://myfriendscoffee.com/",
+      "page": "https://www.flickr.com/photos/147592390@N06/47698267121",
+      "author": "John Beans",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "source": "Flickr"
+    },
+    "layout_used": "scene_person",
+    "person_photo": {
+      "file": "File:Mark Zuckerberg 2019 (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Mark_Zuckerberg_2019_(cropped).jpg",
+      "author": "Anthony Quintano from Westminster, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source": "Wikimedia Commons"
+    }
+  },
+  "design": {
+    "mood": "two apps ringing each other: deep charcoal backdrop, WhatsApp green meeting Instagram's warm coral-orange, a phone mid-ring, rounded and friendly",
+    "palette": {
+      "bg": "#12181A",
+      "bg2": "#1A2422",
+      "surface": "#1E2A27",
+      "ink": "#F4FBF6",
+      "muted": "#9FB3AC",
+      "accent": "#25D366",
+      "accent2": "#FF7A59"
+    },
+    "fonts": {
+      "display": "Bricolage Grotesque",
+      "body": "Manrope",
+      "mono": "Space Mono"
+    },
+    "display": {
+      "weight": 700,
+      "case": "none",
+      "tracking": -2,
+      "scale": 1.0,
+      "italic_em": false
+    },
+    "shape": {
+      "radius": 30,
+      "border": 0,
+      "shadow": "glow"
+    },
+    "background": {
+      "pattern": "rings",
+      "pattern_opacity": 0.09,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "pill",
+    "prompt": "card",
+    "art": "<svg viewBox='0 0 900 460' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='var(--accent)'/><stop offset='1' stop-color='var(--accent2)'/></linearGradient></defs><circle cx='330' cy='230' r='120' fill='none' stroke='var(--accent)' stroke-width='4' opacity='0.35'/><circle cx='330' cy='230' r='160' fill='none' stroke='var(--accent)' stroke-width='3' opacity='0.2'/><circle cx='330' cy='230' r='70' fill='var(--surface)' stroke='var(--accent)' stroke-width='6'/><path d='M300 210 q30 40 60 0' stroke='var(--accent)' stroke-width='8' fill='none' stroke-linecap='round'/><circle cx='570' cy='230' r='70' fill='var(--surface)' stroke='var(--accent2)' stroke-width='6'/><rect x='545' y='205' width='50' height='50' rx='12' fill='none' stroke='var(--accent2)' stroke-width='6'/><line x1='400' y1='230' x2='500' y2='230' stroke='url(#g)' stroke-width='6' stroke-dasharray='2 14' stroke-linecap='round'/></svg>",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z'/></svg>"
+  },
+  "voice": "af_sarah",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "META · INSTAGRAM + WHATSAPP",
+      "title": "Instagram can now ring your WhatsApp",
+      "em": "ring your WhatsApp",
+      "sub": "A new setting connects your profile straight to a WhatsApp call.",
+      "tools": [
+        "Instagram",
+        "WhatsApp"
+      ],
+      "voiceover": "Instagram can now make your WhatsApp ring, straight from your profile."
+    },
+    {
+      "type": "facts",
+      "label": "What launched",
+      "title": "WhatsApp calls on Instagram",
+      "items": [
+        [
+          "What it does",
+          "Someone on your Instagram profile can tap to call you on WhatsApp"
+        ],
+        [
+          "Where the number comes from",
+          "The phone number linked in your Meta Accounts Center"
+        ],
+        [
+          "Default",
+          "Off, you turn it on yourself"
+        ],
+        [
+          "Rollout",
+          "Gradually, over the coming months, not everyone has it yet"
+        ]
+      ],
+      "voiceover": "It uses the phone number linked in your Meta Accounts Center, and it's off by default."
+    },
+    {
+      "type": "list",
+      "label": "You stay in control",
+      "title": "Who can call you",
+      "items": [
+        [
+          "Everyone",
+          "Any Instagram profile can start a WhatsApp call to you"
+        ],
+        [
+          "Your contacts",
+          "Only people saved in your phone's contacts"
+        ],
+        [
+          "No one",
+          "Keep the feature fully off"
+        ]
+      ],
+      "voiceover": "You pick who's allowed: everyone, just your contacts, or no one at all."
+    },
+    {
+      "type": "steps",
+      "label": "Check your setting",
+      "title": "Where to find it",
+      "steps": [
+        [
+          "Open Instagram settings",
+          "Go to Accounts Center from your profile"
+        ],
+        [
+          "Tap your linked accounts",
+          "Find the WhatsApp connection"
+        ],
+        [
+          "Open call permissions",
+          "Choose everyone, contacts, or no one"
+        ],
+        [
+          "Save",
+          "The setting applies the next time someone visits your profile"
+        ]
+      ],
+      "voiceover": "Check it in Accounts Center, under your linked WhatsApp account."
+    },
+    {
+      "type": "facts",
+      "label": "Still private",
+      "title": "What doesn't change",
+      "items": [
+        [
+          "Encryption",
+          "WhatsApp calls stay end-to-end encrypted either way"
+        ],
+        [
+          "Messages",
+          "Your WhatsApp chats aren't affected by this setting"
+        ],
+        [
+          "Linking",
+          "You need WhatsApp added to the same Accounts Center as Instagram"
+        ]
+      ],
+      "voiceover": "The calls are still end-to-end encrypted, nothing changes there."
+    },
+    {
+      "type": "limits",
+      "label": "Worth knowing",
+      "title": "Before you turn it on",
+      "items": [
+        "Set to \"everyone\" and any follower can call your number, not just message you",
+        "Requires WhatsApp linked in the same Accounts Center as your Instagram",
+        "Still rolling out, so it may not show up on your account yet"
+      ],
+      "cta": "Set it to contacts-only for people you know."
+    },
+    {
+      "type": "cta",
+      "title": "Your profile just got a phone line.",
+      "title2": "You decide who can dial it.",
+      "lines": [
+        [
+          "Check",
+          "Accounts Center for the new WhatsApp call setting"
+        ],
+        [
+          "Choose",
+          "everyone, contacts, or no one"
+        ],
+        [
+          "Follow",
+          "for daily AI tool tips & news"
+        ]
+      ],
+      "voiceover": "Go check your Accounts Center, and pick who's allowed to call."
+    }
+  ]
+}
