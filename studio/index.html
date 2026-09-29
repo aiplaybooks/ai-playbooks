@@ -120,6 +120,7 @@ aside{width:380px;min-width:380px;border-right:1px solid var(--line);background:
 @keyframes pulse{50%{box-shadow:0 0 0 6px #fcc41922}}
 .port{position:absolute;top:50%;width:11px;height:11px;margin-top:-5.5px;border-radius:50%;background:var(--panel);border:2px solid #5a5a6c}
 .port.in{left:-6.5px}.port.out{right:-6.5px}
+.node.org .port{display:none}
 .zoom{position:absolute;left:14px;bottom:14px;display:flex;gap:6px}
 .zoom button{width:34px;height:34px;padding:0;background:var(--panel)}
 .legend{position:absolute;right:14px;bottom:14px;display:flex;gap:12px;font-size:11.5px;color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
@@ -352,19 +353,31 @@ const ICONS={rreel:"🎬",review:"📈",card:"🐙",ig_photo:"📸",rcollect:"�
 const LAYOUT={
   post:{trigger:[0,40],collect:[270,40],scout:[540,40],pool:[810,40],choose:[1080,40],
     write:[0,230],caption:[270,230],cover:[540,230],carousel:[810,230],reel:[1080,230],
-    qa:[0,420],approve:[270,420],upload:[540,420],ig_carousel:[810,420],fb_photos:[1080,420],
-    ig_reel:[0,610],fb_reel:[270,610],yt_short:[540,610],comments:[810,610],dm:[1080,610],tiktok:[0,800],x_post:[270,800],log:[540,800]},
-  clip:{fetch:[0,40],hook:[270,40],caption:[540,40],frame:[810,40],qa:[1080,40],
-    approve:[0,230],upload:[270,230],ig_reel:[540,230],fb_reel:[810,230],yt_short:[1080,230],comments:[0,420],dm:[270,420],tiktok:[540,420],x_post:[810,420],log:[1080,420]},
-  repo:{write:[0,40],caption:[270,40],card:[540,40],rreel:[810,40],approve:[1080,40],
-    upload:[0,230],ig_photo:[270,230],fb_photos:[540,230],ig_reel:[810,230],fb_reel:[1080,230],comments:[0,420],dm:[270,420],tiktok:[540,420],x_post:[810,420],log:[1080,420]}};
+    qa:[150,420],approve:[420,420]},
+  clip:{fetch:[0,40],hook:[270,40],caption:[540,40],frame:[810,40],qa:[1080,40],approve:[180,230]},
+  repo:{write:[0,40],caption:[270,40],card:[540,40],rreel:[810,40],approve:[1080,40]}};
+// publish phase = org chart (owner, 2026-09-29): upload on top, every platform one box in a row under it,
+// comments + DM bot as side boxes on the stem, the log under the row. Positions are computed from this.
+const TREE={post:{hub:"upload",y:420,kids:["ig_carousel","ig_reel","fb_photos","fb_reel","yt_short","tiktok","x_post"]},
+  clip:{hub:"upload",y:230,kids:["ig_reel","fb_reel","yt_short","tiktok","x_post"]},
+  repo:{hub:"upload",y:230,kids:["ig_photo","ig_reel","fb_photos","fb_reel","tiktok","x_post"]}};
+const OGAP=240,OSIDE=110,OROW=260,OLOG=450;
+for(const [k,T] of Object.entries(TREE)){
+  const L=LAYOUT[k],mid=((T.kids.length-1)*OGAP+224)/2;           // center of the platform row
+  L[T.hub]=[Math.max(0,mid-112),T.y];
+  L.dm=[mid-40-224,T.y+OSIDE];L.comments=[mid+40,T.y+OSIDE];
+  T.kids.forEach((id,i)=>L[id]=[i*OGAP,T.y+OROW]);
+  L.log=[L[T.hub][0],T.y+OLOG];
+  T.side=["dm","comments"];T.all=new Set([T.hub,...T.kids,...T.side,"log"]);
+}
 const GROUPS={post:[["① Tarama","scan",0,0],["② Carousel üretimi","post",0,190],["③ Kontrol, onay & yayın","pub",0,380]],
   clip:[["① Viral Reel üretimi (link yapıştırınca başlar, taramadan bağımsız)","post",0,0],["② Kontrol sonrası onay & yayın","pub",0,190]],
-  repo:[["① GitHub repo gönderisi (GitHub sekmesinden seçince başlar)","post",0,0],["② Yayın: IG fotoğraf + DM, FB fotoğraf + ilk yorum","pub",0,190]]};
+  repo:[["① GitHub repo gönderisi (GitHub sekmesinden seçince başlar)","post",0,0],["② Yayın: medya yüklenir, her platform ayrı kutu (IG link DM ile, FB link ilk yorumda)","pub",0,190]]};
 const kind=()=>{const k=runById(postId)?.kind;return k==="clip"||k==="repo"?k:"post"};
 const MROW=92,isPhone=()=>matchMedia("(max-width:760px)").matches;
 const POS=new Proxy({},{get:(_,id)=>isPhone()?[0,Math.max(0,ORDER().indexOf(id))*MROW]:LAYOUT[kind()][id]||[0,0]});
-const WW=1080+224;let WH=610+78;
+let WW=1080+224,WH=610+78;
+const extent=()=>{const ps=Object.values(LAYOUT[kind()]);return[Math.max(...ps.map(p=>p[0]))+224,Math.max(...ps.map(p=>p[1]))+78]};
 const NW=224,NH=78;
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -465,7 +478,7 @@ function build(){
     g.innerHTML=esc(label)+"<span></span>";w.appendChild(g);
   }
   for(const f of kind()==="post"?["scan","post"]:[kind()]) for(const n of S.flows[f]){
-    const d=document.createElement("div");d.className="node k-"+n.kind+" s-idle";d.id="n-"+n.id;
+    const d=document.createElement("div");d.className="node k-"+n.kind+" s-idle"+(TREE[kind()].all.has(n.id)&&!isPhone()?" org":"");d.id="n-"+n.id;
     const [x,y]=POS[n.id];d.style.left=x+"px";d.style.top=y+"px";
     d.innerHTML=`<div class="ico">${ICONS[n.id]}</div><div class="tx"><b>${esc(n.label)}</b><small>Bekliyor</small></div><span class="badge"></span><i class="port in"></i><i class="port out"></i>`;
     d.onclick=e=>{e.stopPropagation();openNode(n.id)};
@@ -479,6 +492,12 @@ function edgePath(a,b){
   if(x2>x1) {const c=Math.max(40,(x2-x1)/2);return `M${x1},${y1} C${x1+c},${y1} ${x2-c},${y2} ${x2},${y2}`;}
   const my=(y1+y2)/2+6,r=16;
   return `M${x1},${y1} H${x1+24} Q${x1+24+r},${y1} ${x1+24+r},${y1+r} V${my-r} Q${x1+24+r},${my} ${x1+24},${my} H${x2-24} Q${x2-24-r},${my} ${x2-24-r},${my+r} V${y2-r} Q${x2-24-r},${y2} ${x2-24},${y2} H${x2}`;
+}
+function orgPath(a,b){  // right-angled org-chart connector between a parent and a child (or a side box)
+  const [ax,ay]=POS[a],[bx,by]=POS[b],T=TREE[kind()],cx=ax+NW/2;
+  if(T.side.includes(b)){const y=by+NH/2;return `M${cx},${ay+NH} V${y} H${bx<ax?bx+NW:bx}`;}
+  if(b==="log"){const bus=ay+NH+(by-ay-NH)/2;return `M${ax+NW/2},${ay+NH} V${bus} H${bx+NW/2} V${by}`;}
+  const bus=by-34;return `M${cx},${ay+NH} V${bus} H${bx+NW/2} V${by}`;
 }
 // a carousel run belongs to one scan: while another scan is shown (e.g. a new scan just started) its rows stay empty
 const shownPost=()=>{const po=runById(postId);return po&&po.kind==="post"&&po.scan&&scanId&&po.scan!==scanId?null:po;};
@@ -498,8 +517,13 @@ function subText(nid,n){
 }
 function renderCanvas(){
   if(!built||builtKind!==kind()||builtPhone!==isPhone()){build();fitted=false;}
-  const ids=ORDER();let paths="";
+  const ids=ORDER(),T=TREE[kind()];let paths="";
+  const cls=(x,y)=>{const a=nodeState(x),b=nodeState(y);return b.status==="running"?"flow":(a.status==="done"&&b.status!=="idle"&&b.status!=="error"?"done":"")};
+  for(const id of [...T.kids,...T.side])paths+=`<path class="${cls(T.hub,id)}" d="${orgPath(T.hub,id)}"/>`;
+  for(const id of T.kids)paths+=`<path class="${cls(id,"log")}" d="${orgPath(id,"log")}"/>`;
   for(let i=0;i<ids.length-1;i++){
+    if(T.all.has(ids[i])&&!(ids[i+1]===T.hub))continue;
+    if(T.all.has(ids[i+1])&&ids[i+1]!==T.hub)continue;
     const a=nodeState(ids[i]),b=nodeState(ids[i+1]);
     const cls=b.status==="running"?"flow":(a.status==="done"&&b.status!=="idle"&&b.status!=="error"?"done":"");
     paths+=`<path class="${cls}" d="${edgePath(ids[i],ids[i+1])}"/>`;
@@ -507,7 +531,7 @@ function renderCanvas(){
   $("#edges").innerHTML=isPhone()?"":paths;
   for(const id of ids){
     const n=nodeState(id),el=$("#n-"+id);
-    el.className=`node k-${el.className.match(/k-(\w+)/)[1]} s-${n.status}${sel===id?" sel":""}`;
+    el.className=`node k-${el.className.match(/k-(\w+)/)[1]} s-${n.status}${sel===id?" sel":""}${el.classList.contains("org")?" org":""}`;
     el.querySelector("small").textContent=subText(id,n);
     el.title=subText(id,n);
   }
@@ -525,7 +549,7 @@ function renderCanvas(){
 function statusTr(s){return{scheduled:"planlı saati bekliyor",queued:"sırada",running:"çalışıyor",waiting:"seni bekliyor",done:"tamamlandı",error:"hata",rejected:"reddedildi",canceled:"durduruldu"}[s]||s}
 function apply(){$("#world").style.transform=`translate(${view.x}px,${view.y}px) scale(${view.k})`;}
 function fit(){
-  WH=({clip:420,repo:420}[kind()]??800)+78;
+  [WW,WH]=extent();
   if(isPhone()){const vp=$("#vp").getBoundingClientRect();view.k=Math.min(1.2,(vp.width-32)/NW);view.x=(vp.width-NW*view.k)/2;
     view.y=($("#runinfo").offsetHeight||60)+28;apply();return}
   const vp=$("#vp").getBoundingClientRect(),W=WW,H=WH;
