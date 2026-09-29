@@ -55,17 +55,17 @@ POST = [("write", "Doğrula & yaz", "ai"), ("caption", "Caption & tag", "ai"), (
         ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"),
         ("ig_carousel", "Instagram carousel", "publish"), ("fb_photos", "Facebook gönderi", "publish"),
         ("ig_reel", "Instagram Reel (video)", "publish"), ("fb_reel", "Facebook Reel (video)", "publish"),
-        ("yt_short", "YouTube Short", "publish"), ("comments", "Yorumlar", "publish"), ("dm", "DM botu kaydı", "publish"), ("log", "Kayıt & GitHub", "code")]
+        ("yt_short", "YouTube Short", "publish"), ("comments", "Yorumlar", "publish"), ("dm", "DM botu kaydı", "publish"), ("x_post", "X gönderi", "publish"), ("log", "Kayıt & GitHub", "code")]
 CLIP = [("fetch", "Videoyu indir", "code"), ("hook", "Hook", "ai"), ("caption", "Caption & tag", "ai"), ("frame", "Reel çerçevesi", "code"),
         ("qa", "Kalite kontrol", "ai"), ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"), ("ig_reel", "Instagram Reel", "publish"),
         ("fb_reel", "Facebook Reel", "publish"), ("yt_short", "YouTube Short", "publish"), ("comments", "Yorumlar", "publish"),
-        ("dm", "DM botu kaydı", "publish"), ("log", "Kayıt & GitHub", "code")]
+        ("dm", "DM botu kaydı", "publish"), ("x_post", "X gönderi", "publish"), ("log", "Kayıt & GitHub", "code")]
 REPO = [("write", "Repo'yu doğrula & yaz", "ai"), ("caption", "Caption & tag", "ai"), ("card", "Repo görseli", "code"),
         ("rreel", "Repo Reel (kayan sayfa)", "code"),
         ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"), ("ig_photo", "Instagram gönderi", "publish"),
         ("fb_photos", "Facebook gönderi", "publish"), ("ig_reel", "Instagram Reel", "publish"), ("fb_reel", "Facebook Reel", "publish"),
         ("comments", "FB ilk yorum (link)", "publish"),
-        ("dm", "DM botu kaydı", "publish"), ("log", "Kayıt & GitHub", "code")]
+        ("dm", "DM botu kaydı", "publish"), ("x_post", "X gönderi", "publish"), ("log", "Kayıt & GitHub", "code")]
 FLOWS = {"scan": SCAN, "post": POST, "clip": CLIP, "repo": REPO, "gather": GATHER, "learn": LEARN, "repos": REPOS, "strategy": STRATEGY}
 
 LOCK = threading.RLock()
@@ -792,7 +792,7 @@ PHASES = {"trigger": "scan", "collect": "scan", "scout": "scan", "pool": "scan",
           "fetch": "production", "hook": "production", "caption": "production", "frame": "production",
           "carousel": "production", "reel": "production", "qa": "production", "approve": "wait", "upload": "publish", "card": "production", "rreel": "production", "ig_photo": "publish",
           "rcollect": "scan", "rscout": "scan", "review": "scan",
-          "ig_carousel": "publish", "ig_reel": "publish", "fb_photos": "publish", "fb_reel": "publish", "yt_short": "publish", "comments": "publish", "dm": "publish", "log": "publish"}
+          "ig_carousel": "publish", "ig_reel": "publish", "fb_photos": "publish", "fb_reel": "publish", "yt_short": "publish", "x_post": "publish", "comments": "publish", "dm": "publish", "log": "publish"}
 
 
 def secs_between(a, b):
@@ -832,7 +832,7 @@ NODES = {"trigger": n_trigger, "collect": n_collect, "scout": n_scout, "pool": n
          "ig_photo": publish_step("ig_photo"), "cover": n_cover, "carousel": n_carousel, "fetch": n_fetch, "hook": n_hook, "frame": n_frame, "reel": n_reel, "qa": n_qa, "approve": n_approve,
          "upload": publish_step("upload"), "ig_carousel": publish_step("ig_carousel"), "ig_reel": publish_step("ig_reel"),
          "fb_photos": publish_step("fb_photos"), "fb_reel": publish_step("fb_reel"),
-         "yt_short": publish_step("yt_short"), "comments": publish_step("comments"), "dm": publish_step("dm"), "log": n_log}
+         "yt_short": publish_step("yt_short"), "x_post": publish_step("x_post"), "comments": publish_step("comments"), "dm": publish_step("dm"), "log": n_log}
 
 
 # ---------------------------------------------------------------- self-repair (owner, 2026-09-27: "no more errors for me")
@@ -842,7 +842,7 @@ NODES = {"trigger": n_trigger, "collect": n_collect, "scout": n_scout, "pool": n
 # what to do. Every repair is kept in the run (`repairs`) and code fixes are committed.
 
 NO_REPAIR = {"trigger", "choose", "approve"}  # the owner's steps
-PUBLISH_NODES = {"upload", "ig_carousel", "ig_photo", "ig_reel", "fb_photos", "fb_reel", "yt_short", "comments", "dm", "log"}
+PUBLISH_NODES = {"upload", "ig_carousel", "ig_photo", "ig_reel", "fb_photos", "fb_reel", "yt_short", "x_post", "comments", "dm", "log"}
 RETRY_WAITS = [60, 300]  # seconds before plain retries of a publish step (publish.py never posts twice)
 MAX_REPAIRS = 2
 

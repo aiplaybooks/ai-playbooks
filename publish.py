@@ -15,6 +15,8 @@ META_PAGE_TOKEN, FB_PAGE_ID, IG_USER_ID in .env
     fb_reel      Facebook Page Reel: video_reels start -> rupload from the public URL -> finish
     yt_short     YouTube Short: resumable upload of the Reel (YouTube Data API v3). Until the API project passes
                  YouTube's audit, YouTube keeps API uploads private: then make it public in YouTube Studio.
+    x_post       X (Twitter) post via xpost.py: the Reel (or, without one, the first image) + a short text without links
+                 (URLs cost $0.20 a post on X's pay-per-use API; repo posts name the repo as text). Needs x_token.py once.
     dm           Instagram comment-to-DM bot (bot/worker.js, Cloudflare): when the post has `dm.keyword`, registers
                  {IG media id -> keyword, page link} in gh-pages dm.json, which the bot reads. The link is the post's
                  page p/<name>/ (packpage.py; the upload step publishes it for every post).
@@ -44,8 +46,8 @@ RUPLOAD = "https://rupload.facebook.com/video-upload/v25.0"
 PAGES_URL = "https://aiplaybooks.github.io/ai-playbooks"
 PAGES_DIR = ROOT / ".pages"  # git worktree of the gh-pages branch (gitignored)
 LOG = ROOT / "publish_log.jsonl"
-STEPS = ["prepare", "upload", "ig_carousel", "ig_photo", "ig_reel", "fb_photos", "fb_reel", "yt_short", "comments", "dm", "log"]
-POSTS = ["ig_carousel", "ig_photo", "ig_reel", "fb_photos", "fb_reel", "yt_short"]
+STEPS = ["prepare", "upload", "ig_carousel", "ig_photo", "ig_reel", "fb_photos", "fb_reel", "yt_short", "comments", "dm", "x_post", "log"]
+POSTS = ["ig_carousel", "ig_photo", "ig_reel", "fb_photos", "fb_reel", "yt_short", "x_post"]
 
 
 class PublishError(Exception):
@@ -487,6 +489,32 @@ def yt_short(p):
     p.done("yt_short", id=vid, link=link, privacy=privacy, cover=thumb, playlist=playlist,
            studio=f"https://studio.youtube.com/video/{vid}/edit")
     say(f"yt_short: {link} ({privacy}" + (": YouTube Studio'dan herkese açık yap)" if privacy != "public" else ")"))
+
+
+def x_post(p):
+    import xpost as XP
+    tid = p.state.get("x_post_tweet")
+    if not tid:
+        media = p.pub / "reel.mp4"
+        if not media.exists(): media = next(iter(p.images()), None)
+        if not media: prepare(p); media = p.pub / "reel.mp4" if (p.pub / "reel.mp4").exists() else next(iter(p.images()), None)
+        if not media: raise PublishError("x_post: no reel.mp4 or image to post")
+        text = XP.x_text(p.data)
+        try:
+            tok = XP.XT.refresh()
+            mid = p.state.get("x_post_media") or XP.upload(media, tok, say)
+            p.state["x_post_media"] = mid; p.save()  # X keeps uploaded media 24 h: a retry reuses it
+            tid = XP.post(text, mid, tok)
+        except (XP.XError, RuntimeError) as ex:
+            if "HTTP 402" in str(ex) or "no X login" in str(ex):  # X is a bonus platform: never block the run for it
+                say(f"x_post: skipped: {str(ex)[-120:]}"); p.done("x_post", skipped=str(ex)[-200:]); return
+            if "x_post_media" in p.state and "HTTP 4" in str(ex) and "/media/" not in str(ex): p.state.pop("x_post_media"); p.save()
+            raise PublishError(str(ex)) from None
+        p.state["x_post_tweet"] = tid; p.save()  # saved right away: a retry never posts twice
+    user = XP.XT.read_env().get("X_USERNAME") or "i"
+    link = f"https://x.com/{user}/status/{tid}"
+    say(f"x_post: published {link}")
+    p.done("x_post", id=tid, link=link)
 
 
 def comments(p):

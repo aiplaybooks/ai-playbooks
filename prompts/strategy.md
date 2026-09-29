@@ -36,7 +36,7 @@ a) `strategy.json` (keep valid JSON, keep unknown keys):
    - `mix`: autopilot weights per day for "news", "repo", "pack", "clip" (integers; 0 pauses a format). Put the
      weight where the numbers are.
    - `skip`: publish steps to leave out per flow (flows "post", "repo", "clip"; steps: ig_carousel, fb_photos,
-     ig_reel, fb_reel, yt_short, ig_photo). Only skip a platform after >= 5 posts with ~0 results there, never skip
+     ig_reel, fb_reel, yt_short, ig_photo, x_post). Only skip a platform after >= 5 posts with ~0 results there, never skip
      everything of a flow, never skip `comments`/`dm`/`log`.
    - `post_slots`: optional new publish times "HH:MM" (Turkey time; our audience is mostly US/EU) when the data
      shows better hours; null keeps the current ones. 3-6 slots a day.

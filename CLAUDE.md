@@ -82,6 +82,14 @@ Every day the pipeline should:
 - **Carousels also go out as Reels** (2026-09-29, data: FB photo posts 0 views, IG carousels 0-7, Reels 100-300 with
   1-3 followers): the post flow publishes the voiced reel.mp4 as IG Reel + FB Reel after the carousel/photo posts
   (`ig_published` matches media_type so a carousel and its Reel with the same caption are never confused).
+- **X (Twitter) as the 4th platform** (owner, 2026-09-29; paid pay-per-use API, owner accepted ~$2-3/month):
+  account @CluePrintl1 (= the AI Playbooks X account), developer app "AI Playbooks Publisher" (Production, Pay Per
+  Use). Auth: OAuth 2.0 user token with media.write via `x_token.py` / X_baglan.bat (the console's Generate button
+  can't grant media.write); refresh token rotates in .env (X_REFRESH_TOKEN, X_CLIENT_ID/SECRET). publish.py step
+  `x_post` (xpost.py) runs last in every flow (after dm, before log): the reel.mp4 (or the first image) + `captions.x`
+  (caption agent) or a text derived from the IG caption. **Never a URL in an X post** ($0.20 instead of $0.015);
+  repo posts name `owner/repo` as text, clips credit @creator. No replies/DMs on X (declared use case). Missing
+  credits (HTTP 402) or no login → the step is skipped, never blocks IG/FB.
 - **Telegram digest at session start** (owner, 2026-09-29): his Telegram messages go to the Studio's chat bot, not to
   Claude Code. `telegram_bot.py` logs every message to runs/telegram/inbox.jsonl; the SessionStart hook
   (.claude/settings.json) runs `tools/tg_digest.py`, which prints the new ones. Analyse them first in every session.
@@ -144,6 +152,8 @@ carousel.py        render carousel PNGs (1080x1350) + contact.png overview; slid
 brand_icons.py     brand icons for the cover (Simple Icons, icons/ cache, tool -> slug map, per-post style/size/corner)
 repos.py           GitHub repo collector (search API + Trending + star history) -> research/repos/<date>.json; --info owner/repo
 repocard.py        repo post image: the plain GitHub page screenshot (1080x1350) -> output/repos/<post>/slide_01.png
+xpost.py           X posting: chunked v2 media upload + POST /2/tweets; x_text() builds the link-free X text
+x_token.py         one-time X OAuth 2.0 login (PKCE, loopback 127.0.0.1:8766/x) + refresh() (rotating refresh token)
 packpage.py        the post's page for the DM bot (p/<post>/index.html on gh-pages: prompts with Copy buttons)
 dm_setup.py        DM bot setup / check / test registration (Cloudflare Worker + Meta webhooks)
 bot/               worker.js (Instagram comment-to-DM bot, Cloudflare Worker) + wrangler.toml

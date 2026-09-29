@@ -21,6 +21,11 @@ Read `prompts/caption_playbook.md` first and follow it exactly: it is your train
    `"captions": {{"instagram": "...", "facebook": "...", "youtube": {{"title": "...", "description": "...", "tags": [...]}}}}`
    and set `"caption"` to the same text as `captions.instagram`. Different wording per platform where the playbook says
    so (Facebook a bit more story, YouTube title/description for search), same facts.
+   Also `"x"` (X/Twitter, posted with the same video or image): max 270 characters (emoji count 2), the hook line
+   first, one or two short punchy lines, 1-2 hashtags at most. NEVER a link or domain (a URL costs us $0.20 per post
+   on X), no "Comment WORD" (the DM bot is Instagram only), no "follow @aiplaybooks.daily" (other handle on X).
+   Repo posts: name the repo as plain text `owner/repo` ("📦 owner/repo on GitHub"). Clips: credit the creator with
+   their @handle from `credit` ("🎥 @handle").
 5. Run `python captions.py check {content}` and fix until it prints `ok`.
 6. Write `runs/{run_id}/caption.json`: `{{"keywords": [...], "hashtags": {{"instagram": [["#tag", "why: data line"], ...],
    "facebook": [...], "youtube": [...]}}, "rejected": ["#tag: why not"], "lesson_added": "..." | null}}`.
