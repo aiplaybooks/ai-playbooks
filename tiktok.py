@@ -8,7 +8,8 @@ What goes out (owner, 2026-09-29): only OUR OWN content (TikTok's originality ru
 Mode (.env TIKTOK_MODE):
     inbox   (default) the post lands in the TikTok app's inbox as a draft; the owner taps "Post" on the phone.
             Needed while the app is unaudited: TikTok makes every direct post of an unaudited app private.
-    direct  after TikTok's audit: posted publicly right away.
+    direct  only for an audited app (posted publicly right away). We never apply for the audit: TikTok's guidelines
+            reject "a utility tool to upload contents to the account(s) you or your team manages" (2026-09-29).
 Text: `captions.tiktok` (caption agent) or the Instagram caption without the "Comment WORD" CTA (no DM bot on TikTok)
 and without links; max 5 hashtags. Auth: tiktok_token.py (refresh token rotates in .env).
 
