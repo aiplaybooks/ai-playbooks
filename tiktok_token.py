@@ -4,7 +4,7 @@ TikTok only redirects to https URIs, so the registered redirect is our gh-pages 
 https://aiplaybooks.github.io/ai-playbooks/tiktok/callback/ , which forwards ?code=... to this script's loopback
 server http://127.0.0.1:8767/tiktok (the page is on gh-pages: tiktok/callback/index.html).
 1. developers.tiktok.com app "AI Playbooks Publisher": Login Kit (that redirect URI) + Content Posting API
-   (Direct Post on), scopes user.info.basic, video.publish, video.upload.
+   (Direct Post on), scopes user.info.basic, video.publish, video.upload, video.list.
 2. TIKTOK_CLIENT_KEY + TIKTOK_CLIENT_SECRET in .env.
 3. python tiktok_token.py      (browser: log in as @ai.playbooks and authorize)
 
@@ -17,7 +17,7 @@ from x_token import read_env, save_env, ENV
 
 PORT, PATH = 8767, "/tiktok"
 REDIRECT = "https://aiplaybooks.github.io/ai-playbooks/tiktok/callback/"
-SCOPES = ["user.info.basic", "video.publish", "video.upload"]
+SCOPES = ["user.info.basic", "video.publish", "video.upload", "video.list"]  # video.list: our videos' view counts (metrics)
 API = "https://open.tiktokapis.com/v2"
 
 
