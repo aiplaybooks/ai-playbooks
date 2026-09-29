@@ -1,0 +1,184 @@
+{
+  "theme": "prompts",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Prompt Pack · Workout + Meal Routine",
+  "caption": "5 ChatGPT prompts that build your workout + meal plan around the week you actually have 💪\n\nMost fitness plans assume a free hour a day and a stocked fridge. These start with your real schedule, your real budget and your real energy instead.\n\n→ A workout split for the days you actually have\n→ One grocery list, sorted by aisle\n→ Dinner ideas that fit your diet and budget\n→ A one-minute weekly tracker\n→ A \"simplify it\" prompt for the weeks that fall apart\n\nWhich one do you need first — the workout plan or the grocery list? Send this to the friend who keeps saying they'll start Monday.\n\nFollow @aiplaybooks.daily for a new AI playbook every day.\n\n#chatgptprompts #workoutplan #mealprep #ai #chatgpt",
+  "captions": {
+    "instagram": "5 ChatGPT prompts that build your workout + meal plan around the week you actually have 💪\n\nMost fitness plans assume a free hour a day and a stocked fridge. These start with your real schedule, your real budget and your real energy instead.\n\n→ A workout split for the days you actually have\n→ One grocery list, sorted by aisle\n→ Dinner ideas that fit your diet and budget\n→ A one-minute weekly tracker\n→ A \"simplify it\" prompt for the weeks that fall apart\n\nWhich one do you need first — the workout plan or the grocery list? Send this to the friend who keeps saying they'll start Monday.\n\nFollow @aiplaybooks.daily for a new AI playbook every day.\n\n#chatgptprompts #workoutplan #mealprep #ai #chatgpt",
+    "facebook": "5 ChatGPT prompts that build your workout and meal plan around the week you actually have.\n\nMost fitness plans assume a free hour every day and money to spare on meal prep. These prompts start with your real schedule, your real budget and your real energy, then build the plan around that.\n\nThey cover a workout split for your free days, one grocery list sorted by aisle, dinner ideas that fit your diet and budget, a one-minute weekly tracker, and a prompt that simplifies everything when life gets busy.\n\nWhich one would help you most right now — the workout plan or the grocery list?\n\n#chatgpt #workoutplan #mealprep #ai",
+    "youtube": {
+      "title": "5 ChatGPT Prompts for a Workout + Meal Plan That Fits Your Week",
+      "description": "5 ChatGPT and Claude prompts that build a workout and meal plan around the week you actually have, not the one you wish you had.\n\nMost fitness plans assume a free hour a day and money to spare on meal prep. These prompts start with your real schedule, your real budget and your real energy, then build a workout split, a sorted grocery list, dinner ideas and a weekly tracker around it.\n\nWhich prompt are you running first?\n\n#chatgptprompts #workoutplan #mealprep #ai #fitnesstips",
+      "tags": [
+        "chatgpt prompts",
+        "workout plan prompts",
+        "meal plan prompts",
+        "ai fitness plan",
+        "chatgpt meal plan",
+        "workout plan ai",
+        "meal prep prompts",
+        "ai prompts"
+      ]
+    }
+  },
+  "sources": [],
+  "cover": {
+    "headline": "ChatGPT and Claude can build you a workout and meal plan that actually fits your real week. Here are 5 prompts:",
+    "em": "your real week",
+    "person": null,
+    "photo_query": [
+      "home workout dumbbells",
+      "meal prep kitchen"
+    ],
+    "photo_pick": {
+      "url": "https://live.staticflickr.com/1687/23613154259_90cb0717d9_b.jpg",
+      "page": "https://www.flickr.com/photos/92854661@N07/23613154259",
+      "author": "Christos Pontikis",
+      "license": "Public domain",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "source": "Flickr",
+      "file": "My home gym. Use dumbbells in bench to strengthen upper body #fitness #homegym #gym #bench #dumbbells #workout #bodybuilding"
+    },
+    "layout": "scene",
+    "photo": {
+      "file": "My home gym. Use dumbbells in bench to strengthen upper body #fitness #homegym #gym #bench #dumbbells #workout #bodybuilding",
+      "page": "https://www.flickr.com/photos/92854661@N07/23613154259",
+      "author": "Christos Pontikis",
+      "license": "Public domain",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "source": "Flickr"
+    },
+    "layout_used": "scene"
+  },
+  "design": {
+    "mood": "sunrise gym-to-kitchen energy: fresh coral and deep green on a bright morning canvas, upbeat and practical",
+    "palette": {
+      "bg": "#F1F7F0",
+      "bg2": "#E6F0E2",
+      "surface": "#FFFFFF",
+      "ink": "#16241C",
+      "muted": "#5F7568",
+      "accent": "#FF6B45",
+      "accent2": "#1F8A5F"
+    },
+    "fonts": {
+      "display": "Unbounded",
+      "body": "Inter",
+      "mono": "Space Mono"
+    },
+    "display": {
+      "weight": 700,
+      "tracking": -1
+    },
+    "shape": {
+      "radius": 30,
+      "border": 2,
+      "shadow": "soft"
+    },
+    "background": {
+      "pattern": "waves",
+      "pattern_opacity": 0.05,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "bar",
+    "prompt": "chat",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 12h16'/><rect x='1.5' y='9' width='3' height='6' rx='1'/><rect x='19.5' y='9' width='3' height='6' rx='1'/><rect x='6' y='7' width='2' height='10' rx='1'/><rect x='16' y='7' width='2' height='10' rx='1'/></svg>"
+  },
+  "voice": "am_fenrir",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "PROMPT PACK",
+      "title": "prompts to build a workout + meal routine that fits your real week",
+      "em": "fits your real week",
+      "sub": "Give it your schedule, budget and energy — it does the planning.",
+      "tools": [
+        "ChatGPT",
+        "Claude"
+      ],
+      "count": 5,
+      "voiceover": "Here are five prompts that build a workout and meal plan around your real week."
+    },
+    {
+      "type": "prompt",
+      "name": "The Weekly Split",
+      "sub": "A workout plan built around the days you actually have.",
+      "prompt": "Build me a weekly workout plan using only the time I really have: [DAYS I CAN TRAIN], [MINUTES PER SESSION], [EQUIPMENT: HOME / GYM / NONE]. I'm at a [FITNESS LEVEL] level. Make it **SPECIFIC** (sets, reps, rest) and **REALISTIC** for a busy week, not an ideal one.",
+      "tip": "Give it your worst week, not your best one — the plan should still work when Tuesday gets eaten by a late meeting.",
+      "voiceover": "One. Give it your real days and time, not your ideal week."
+    },
+    {
+      "type": "prompt",
+      "name": "The One-List Shop",
+      "sub": "Every ingredient from your meals, combined into one trip.",
+      "prompt": "Take this week's meals: [LIST YOUR MEALS OR PASTE A PLAN]. Combine every ingredient into **ONE** grocery list, grouped by store aisle (produce, protein, pantry...), with quantities for [NUMBER OF PEOPLE]. The goal: no double trips, no guessing.",
+      "tip": "Paste it straight into your phone's notes app — grouped by aisle, it doubles as a map of the store.",
+      "voiceover": "Two. One prompt turns your meals into a single, sorted shopping list."
+    },
+    {
+      "type": "prompt",
+      "name": "Meals For Your Constraints",
+      "sub": "Dinner ideas that fit your diet, budget and time.",
+      "prompt": "Suggest 7 dinner ideas that fit [DIETARY CONSTRAINTS: e.g. vegetarian, no dairy], a weekly budget of [BUDGET], and under [MAX COOK TIME] minutes each. Prioritize meals that **REUSE** the same ingredients so nothing goes to waste.",
+      "tip": "Ask it to reuse the SAME 8-10 ingredients across all 7 meals — that's what actually keeps the grocery bill down.",
+      "voiceover": "Three. It builds meals around your diet, your budget, and how much you cook."
+    },
+    {
+      "type": "prompt",
+      "name": "The Progress Tracker",
+      "sub": "One simple table that shows if it's actually working.",
+      "prompt": "Build me a simple weekly tracker table for [WORKOUTS COMPLETED, WEIGHT OR MEASUREMENTS, ENERGY LEVEL 1-5]. Keep it to one table I can update in under a minute, and have it flag when a number hasn't **MOVED** in 2 weeks.",
+      "tip": "Update it on the same day every week — Sunday night works well — so the trend is actually comparable.",
+      "voiceover": "Four. A simple weekly table shows you if anything's actually moving."
+    },
+    {
+      "type": "prompt",
+      "name": "The Simplify Button",
+      "sub": "For when the plan gets too big to keep up with.",
+      "prompt": "My routine from the prompts above has gotten too complicated and I've skipped it [NUMBER] times this week. Cut it down to the **SMALLEST** version that still counts as progress, based on only [TIME OR DAYS I ACTUALLY HAVE] right now.",
+      "tip": "Run this the moment you notice you're avoiding the plan — before you quit it completely.",
+      "voiceover": "Five. Stuck? One prompt shrinks the plan back to what you'll actually do."
+    },
+    {
+      "type": "howto",
+      "title": "Get more out of this pack",
+      "items": [
+        [
+          "Keep it one thread",
+          "Run all 5 prompts in the same chat so it remembers your schedule, budget and level throughout."
+        ],
+        [
+          "Be exact about your week",
+          "Real days and real minutes beat 'sometime this week' — vague input gives vague plans."
+        ],
+        [
+          "Re-run it every Sunday",
+          "Feed last week's tracker numbers back into prompt one to adjust the plan, not just repeat it."
+        ]
+      ],
+      "voiceover": "Three habits that make these prompts actually stick week after week."
+    },
+    {
+      "type": "cta",
+      "title": "Save this pack.",
+      "title2": "Build your week before Monday.",
+      "lines": [
+        [
+          "Follow",
+          "for daily AI tool tips & news"
+        ],
+        [
+          "Send",
+          "this to the friend who says they'll start Monday"
+        ],
+        [
+          "Comment",
+          "which prompt you're running first"
+        ]
+      ],
+      "voiceover": "Save this pack, and send it to the friend who always says Monday."
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+ "generated": "2026-09-29T13:30:00+03:00",
+ "candidates": [
+  {
+   "id": "meta-muse-small-business",
+   "tool": "Meta AI",
+   "kind": "news",
+   "title": "Meta Just Gave Every Small Business Its Own AI Agent",
+   "summary_tr": "Meta, kişisel Muse ajanının küçük işletmelere özel sürümünü duyurdu: Shopify, QuickBooks, Stripe, Canva, Slack, Notion gibi araçlara bağlanıyor, Instagram/Facebook profesyonel hesap analizlerini ve reklam hesaplarını okuyabiliyor; çoğu özellik ücretsiz, onay olmadan paylaşım/mesaj/satın alma yapmıyor.",
+   "why_tr": "Küçük işletme sahibi takipçilerimiz için doğrudan işine yarayan, bugün (29 Eylül) duyurulmuş taze bir haber; 'ücretsiz AI çalışanı' açısı paylaşılabilir.",
+   "angle": "what Muse for Small Business does + which free tools it connects to + who should try it today",
+   "tools": ["Meta AI", "Instagram", "Facebook"],
+   "published": "2026-09-29",
+   "sources": ["https://about.fb.com/news/2026/09/introducing-muse-small-business/"],
+   "hints": ["https://www.cnbc.com/2026/09/29/meta-launches-muse-for-small-business-zuckerberg-pushes-enterprise-ai.html", "https://www.engadget.com/2271498/meta-now-has-a-version-of-muse-just-for-small-businesses/"],
+   "score": 7
+  },
+  {
+   "id": "nvidia-agent-safety-platform",
+   "tool": "Other",
+   "kind": "news",
+   "title": "Nvidia Built a Kill Switch for Rogue AI Agents",
+   "summary_tr": "Nvidia, açık kaynak OpenShell yazılımı ve BlueField-4 çipleri üzerinde çalışan Sentry adlı bir gözcü sistemden oluşan 'Open Agent Safety Platform'u duyurdu: bir AI ajanı sınırların dışına çıkmaya çalışırsa milisaniyeler içinde durduruluyor. Anthropic, Microsoft ve Palantir dahil 100'den fazla şirket sisteme katıldı.",
+   "why_tr": "Son haftalarda işlediğimiz 'AI ajanı çığırından çıktı' haberlerine (Hugging Face saldırısı, hükümet siteleri, DNS kaçışı) doğrudan bağlanan bir 'çözüm' haberi, seri takip eden takipçiler için tamamlayıcı bir açı.",
+   "angle": "the pattern of rogue-agent incidents this month + Nvidia's fix + who's already using it",
+   "tools": ["Other", "Anthropic", "Microsoft"],
+   "published": "2026-09-28",
+   "sources": ["https://nvidianews.nvidia.com/news/open-agent-safety-platform"],
+   "hints": ["https://www.cnbc.com/2026/09/28/nvidia-releases.html", "https://abcnews.com/Technology/wireStory/nvidia-unveils-security-platform-stop-ai-agents-rogue-136817232"],
+   "score": 6
+  },
+  {
+   "id": "perplexity-comet-browser-tips",
+   "tool": "Perplexity",
+   "kind": "evergreen",
+   "title": "5 Things Perplexity's Free AI Browser Can Do Besides Search",
+   "summary_tr": "Perplexity'nin Comet tarayıcısı hakkında az bilinen, resmi yardım merkezinde belgelenmiş özellikler: sayfa farkında AI asistanı, split-view, sekme döngüsü, kısayollar, reklam engelleyici, cihazlar arası senkron.",
+   "why_tr": "Perplexity son zamanlarda az haber aldı; Comet'in ücretsiz katmanı hâlâ az bilindiği için pratik bir 'sakladığın özellikler' formatı iyi çalışır.",
+   "angle": "5 Comet features from the official help center most people never try",
+   "tools": ["Perplexity"],
+   "published": null,
+   "sources": ["https://comet-help.perplexity.ai/en/collections/18800266-browser-features", "https://www.perplexity.ai/comet/gettingstarted"],
+   "hints": [],
+   "score": 5
+  },
+  {
+   "id": "prompts-holiday-gift-budget-plan",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Prompts That Plan Your Whole Holiday Gift List Without Blowing the Budget",
+   "summary_tr": "Yeni bir prompt paketi fikri: kullanıcının bütçesini, alıcı listesini ve teslim tarihlerini tek seferde ChatGPT/Claude'a verdirip tam bir hediye planı, fiyat karşılaştırması ve alternatif ucuz seçenekler çıkartan 5 prompt.",
+   "why_tr": "Yıl sonu tatil alışverişi mevsimi yaklaşıyor (trend araştırmasında da geçti); para + günlük hayat kesişimi, paylaşılabilir ve yeniden kullanılabilir bir format.",
+   "angle": "Act as a gift-planning assistant -> budget breakdown, recipient list, price-matched ideas, a realistic total estimate",
+   "tools": ["ChatGPT", "Claude"],
+   "published": null,
+   "sources": [],
+   "hints": [],
+   "score": 6
+  }
+ ],
+ "coverage": {
+  "ChatGPT": 0, "Claude": 0, "Gemini": 0, "Grok": 0, "Codex": 0, "Cursor": 0, "Copilot": 0,
+  "Perplexity": 1, "Meta AI": 1, "Mistral": 0, "DeepSeek": 0, "Open models": 0, "Apple": 0,
+  "Higgsfield": 0, "Google": 0, "Social media": 0, "Other": 1, "Prompt pack": 1
+ },
+ "notes_tr": "OpenAI DevDay bugün 20:00 TR'de (10:00 PT) başlıyor; saat 13:30 gather'ında henüz hiçbir resmi duyuru yok, stratejinin istediği gibi bu, akşam taramasından SONRAKİ bir gather'da (veya 18:00 sonrası) ele alınmalı, bugün elde tahmin/söylenti yok. ChatGPT, Claude, Gemini, Grok, Codex, Cursor, Copilot, Mistral, DeepSeek, Open models, Apple, Higgsfield, Google ve genel sosyal medya için son 36 saatte havuzda olmayan yeni, doğrulanabilir bir haber bulunamadı (bulunanların hepsi ya havuzdaki mevcut adaylarla aynı lansmandı ya da 36 saatten eskiydi ya da sadece geliştirici/kurumsal odaklıydı). Codex CLI 0.159.0 (instant_interrupt) resmi ve taze ama havuzda zaten çok sayıda Codex CLI sürüm notu adayı var, tekrar hissi vermemesi için eklenmedi. Higgsfield'in okul/STK bağışı haberi (Higgsfield for Good) resmi higgsfield.ai kaynağıyla doğrulanamadığı için eklenmedi. Moltbook / 'AI agent secret language' viral iddiası resmi bir kaynakla doğrulanamadığı için atlandı.",
+ "sources_changed": []
+}
