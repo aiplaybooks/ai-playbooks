@@ -413,8 +413,9 @@ def n_pool(run):
     run.status(run.s["status"], candidates_file=rel)
     n = len(data.get("candidates", [])); new = sum(1 for c in data.get("candidates", []) if c.get("new"))
     if not n: raise StepError("havuz boş: arka plan toplaması henüz aday bulmadı")
-    notify("AI Playbooks", f"{n} aday hazır ({new} yeni). Studio'dan birini seç.")
-    TG.event("candidates", run)
+    if not settings().get("autopilot"):  # autopilot: the list only feeds the planner, nobody is asked to pick
+        notify("AI Playbooks", f"{n} aday hazır ({new} yeni). Studio'dan birini seç.")
+        TG.event("candidates", run)
     return f"{n} aday · {new} yeni" + (f" ({len(data['hidden'])} paylaşılmış gizlendi)" if data.get("hidden") else "")
 
 
@@ -438,6 +439,8 @@ def n_hooks(run):
 
 
 def n_choose(run):
+    if settings().get("autopilot"):
+        return "Otopilot seçip planlıyor (istersen yine elle seçebilirsin)"
     run.node("choose", status="waiting", msg="Soldaki listeden bir haber seç")
     return None  # stays waiting; select() finishes it
 
