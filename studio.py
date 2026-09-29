@@ -61,8 +61,10 @@ CLIP = [("fetch", "Videoyu indir", "code"), ("hook", "Hook", "ai"), ("caption", 
         ("fb_reel", "Facebook Reel", "publish"), ("yt_short", "YouTube Short", "publish"), ("comments", "Yorumlar", "publish"),
         ("dm", "DM botu kaydı", "publish"), ("log", "Kayıt & GitHub", "code")]
 REPO = [("write", "Repo'yu doğrula & yaz", "ai"), ("caption", "Caption & tag", "ai"), ("card", "Repo görseli", "code"),
+        ("rreel", "Repo Reel (kayan sayfa)", "code"),
         ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"), ("ig_photo", "Instagram gönderi", "publish"),
-        ("fb_photos", "Facebook gönderi", "publish"), ("comments", "FB ilk yorum (link)", "publish"),
+        ("fb_photos", "Facebook gönderi", "publish"), ("ig_reel", "Instagram Reel", "publish"), ("fb_reel", "Facebook Reel", "publish"),
+        ("comments", "FB ilk yorum (link)", "publish"),
         ("dm", "DM botu kaydı", "publish"), ("log", "Kayıt & GitHub", "code")]
 FLOWS = {"scan": SCAN, "post": POST, "clip": CLIP, "repo": REPO, "gather": GATHER, "learn": LEARN, "repos": REPOS, "strategy": STRATEGY}
 
@@ -554,6 +556,11 @@ def n_card(run):
     return next((t for t in reversed(tail) if t.startswith("card:")), "tamam")[5:].split("->")[0].strip()
 
 
+def n_rreel(run):
+    tail = sh(run, "rreel", [PY, "repocard.py", run.s["content"], "--reel"])
+    return next((t for t in reversed(tail) if t.startswith("reel:")), "tamam")[5:].split("->")[0].strip()
+
+
 def start_repo(c, **extra):
     t = now(); day = f"{t:%Y-%m-%d}"
     slug = re.sub(r"[^a-z0-9-]+", "-", c["id"].lower()).strip("-")[:50] or "repo"
@@ -780,7 +787,7 @@ def n_frame(run):
 
 PHASES = {"trigger": "scan", "collect": "scan", "scout": "scan", "pool": "scan", "hooks": "scan", "choose": "wait", "write": "production", "cover": "production",
           "fetch": "production", "hook": "production", "caption": "production", "frame": "production",
-          "carousel": "production", "reel": "production", "qa": "production", "approve": "wait", "upload": "publish", "card": "production", "ig_photo": "publish",
+          "carousel": "production", "reel": "production", "qa": "production", "approve": "wait", "upload": "publish", "card": "production", "rreel": "production", "ig_photo": "publish",
           "rcollect": "scan", "rscout": "scan", "review": "scan",
           "ig_carousel": "publish", "ig_reel": "publish", "fb_photos": "publish", "fb_reel": "publish", "yt_short": "publish", "comments": "publish", "dm": "publish", "log": "publish"}
 
@@ -818,7 +825,7 @@ def record_timings(run, outcome):
 
 
 NODES = {"trigger": n_trigger, "collect": n_collect, "scout": n_scout, "pool": n_pool, "choose": n_choose, "hooks": n_hooks,
-         "write": n_write, "caption": n_caption, "card": n_card, "rcollect": n_rcollect, "rscout": n_rscout, "review": n_review,
+         "write": n_write, "caption": n_caption, "card": n_card, "rreel": n_rreel, "rcollect": n_rcollect, "rscout": n_rscout, "review": n_review,
          "ig_photo": publish_step("ig_photo"), "cover": n_cover, "carousel": n_carousel, "fetch": n_fetch, "hook": n_hook, "frame": n_frame, "reel": n_reel, "qa": n_qa, "approve": n_approve,
          "upload": publish_step("upload"), "ig_carousel": publish_step("ig_carousel"), "ig_reel": publish_step("ig_reel"),
          "fb_photos": publish_step("fb_photos"), "fb_reel": publish_step("fb_reel"),
@@ -1413,7 +1420,7 @@ def run_detail(rid):
         out = out_dir(run); rel = out.relative_to(ROOT).as_posix()
         s["content_data"] = read_json(content_path(run)) or read_json(run.dir / content_path(run).name)
         s["slides"] = [f"{rel}/{f.name}" for f in sorted(out.glob("slide_*.png"))]
-        s["reel"] = None; s["write_result"] = read_json(run.dir / "write.json")
+        s["reel"] = f"{rel}/reel.mp4" if (out / "reel.mp4").exists() else None; s["write_result"] = read_json(run.dir / "write.json")
         s["publish"] = read_json(out / "publish.json", {})
     if s["kind"] == "post":
         name = content_path(run).stem; out = ROOT / "output" / name

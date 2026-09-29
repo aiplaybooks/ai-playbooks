@@ -347,7 +347,7 @@ table.tt td.p{text-align:right;color:var(--muted);width:48px;font-variant-numeri
 <div class="toast" id="toast"></div>
 
 <script>
-const ICONS={card:"🐙",ig_photo:"📸",rcollect:"🐙",rscout:"🧠",comments:"💬",trigger:"⏰",collect:"📰",scout:"🧠",choose:"👤",write:"✍️",cover:"🧑‍💼",carousel:"🖼️",reel:"🎬",qa:"👁️",approve:"✅",
+const ICONS={rreel:"🎬",review:"📈",card:"🐙",ig_photo:"📸",rcollect:"🐙",rscout:"🧠",comments:"💬",trigger:"⏰",collect:"📰",scout:"🧠",choose:"👤",write:"✍️",cover:"🧑‍💼",carousel:"🖼️",reel:"🎬",qa:"👁️",approve:"✅",
   upload:"☁️",ig_carousel:"📸",ig_reel:"🎞️",fb_photos:"📘",fb_reel:"📘",yt_short:"▶️",log:"📒",fetch:"⬇️",hook:"🪝",caption:"#️⃣",frame:"🎬",pool:"🧺",hooks:"🎓",dm:"📩"};
 const LAYOUT={
   post:{trigger:[0,40],collect:[270,40],scout:[540,40],pool:[810,40],choose:[1080,40],
@@ -356,8 +356,8 @@ const LAYOUT={
     ig_reel:[0,610],fb_reel:[270,610],yt_short:[540,610],comments:[810,610],dm:[1080,610],log:[0,800]},
   clip:{fetch:[0,40],hook:[270,40],caption:[540,40],frame:[810,40],qa:[1080,40],
     approve:[0,230],upload:[270,230],ig_reel:[540,230],fb_reel:[810,230],yt_short:[1080,230],comments:[0,420],dm:[270,420],log:[540,420]},
-  repo:{write:[0,40],caption:[270,40],card:[540,40],approve:[810,40],upload:[1080,40],
-    ig_photo:[0,230],fb_photos:[270,230],comments:[540,230],dm:[810,230],log:[1080,230]}};
+  repo:{write:[0,40],caption:[270,40],card:[540,40],rreel:[810,40],approve:[1080,40],
+    upload:[0,230],ig_photo:[270,230],fb_photos:[540,230],ig_reel:[810,230],fb_reel:[1080,230],comments:[0,420],dm:[270,420],log:[540,420]}};
 const GROUPS={post:[["① Tarama","scan",0,0],["② Carousel üretimi","post",0,190],["③ Kontrol, onay & yayın","pub",0,380]],
   clip:[["① Viral Reel üretimi (link yapıştırınca başlar, taramadan bağımsız)","post",0,0],["② Kontrol sonrası onay & yayın","pub",0,190]],
   repo:[["① GitHub repo gönderisi (GitHub sekmesinden seçince başlar)","post",0,0],["② Yayın: IG fotoğraf + DM, FB fotoğraf + ilk yorum","pub",0,190]]};
@@ -525,7 +525,7 @@ function renderCanvas(){
 function statusTr(s){return{scheduled:"planlı saati bekliyor",queued:"sırada",running:"çalışıyor",waiting:"seni bekliyor",done:"tamamlandı",error:"hata",rejected:"reddedildi",canceled:"durduruldu"}[s]||s}
 function apply(){$("#world").style.transform=`translate(${view.x}px,${view.y}px) scale(${view.k})`;}
 function fit(){
-  WH=({clip:420,repo:230}[kind()]??800)+78;
+  WH=({clip:420,repo:420}[kind()]??800)+78;
   if(isPhone()){const vp=$("#vp").getBoundingClientRect();view.k=Math.min(1.2,(vp.width-32)/NW);view.x=(vp.width-NW*view.k)/2;
     view.y=($("#runinfo").offsetHeight||60)+28;apply();return}
   const vp=$("#vp").getBoundingClientRect(),W=WW,H=WH;
@@ -776,6 +776,7 @@ async function renderDrawer(){
       h+=`<h5>Hook</h5><div class="kv">${c.title?`<b>${esc(c.title)}</b><br>`:""}${esc(c.hook||c.reject||"")}</div><h5>Caption</h5><div class="cap">${esc(c.caption||"")}</div>`;
       if((c.checked||[]).length)h+=`<h5>Kontrol edilenler</h5><ul class="clean">${c.checked.map(v=>`<li>${esc(v)}</li>`).join("")}</ul>`;}
     if(sel==="frame"&&d.reel&&n.status==="done")h+=`<h5>Reel</h5><video src="${file(d.reel)}" controls preload="metadata"></video>`;
+    if(sel==="rreel"&&d.reel&&n.status==="done")h+=`<h5>Repo Reel</h5><video src="${file(d.reel)}" controls preload="metadata"></video>`;
     if(sel==="card"&&d.slides.length)h+=`<h5>Görsel</h5><div class="thumbs" style="grid-template-columns:1fr"><img src="${file(d.slides[0])}?t=${Date.now()>>14}" data-zoom></div>`;
     if(sel==="carousel"&&d.slides.length)h+=`<h5>Slaytlar</h5><div class="thumbs">${d.slides.map(s=>`<img src="${file(s)}?t=${Date.now()>>14}" data-zoom>`).join("")}</div>`;
     if(sel==="reel"&&d.reel&&n.status==="done")h+=`<h5>Reel</h5><video src="${file(d.reel)}" controls preload="metadata"></video>`;
@@ -828,7 +829,8 @@ async function openApproval(rid){
       <h5 style="font-size:12px;color:var(--muted);margin:14px 0 6px">INSTAGRAM DM</h5><div class="kv">Yorumda <b>${esc(c.dm?.keyword||"")}</b> yazana repo linki direkt DM ile gider + takip ricası. Hook kalıbı: ${esc(c.hook_pattern||"—")}</div>
       <h5 style="font-size:12px;color:var(--muted);margin:14px 0 6px">KAYNAKLAR</h5><div class="srcs">${(c.sources||[]).map(u=>`<a href="${esc(u)}" target="_blank">${esc(u)}</a>`).join("<br>")||"—"}</div>
       ${d.write_result?.verified?.length?`<details style="margin-top:10px;font-size:13px"><summary style="cursor:pointer;color:var(--muted)">Doğrulanan bilgiler (${d.write_result.verified.length})</summary><ul class="clean" style="margin-top:6px">${d.write_result.verified.map(v=>`<li>${esc(v)}</li>`).join("")}</ul></details>`:""}
-    </div><div>${d.slides[0]?`<img src="${file(d.slides[0])}?t=${Date.now()>>14}" style="width:100%;border-radius:10px;border:1px solid var(--line);cursor:zoom-in" data-zoom>`:""}</div></div>`;
+    </div><div>${d.slides[0]?`<img src="${file(d.slides[0])}?t=${Date.now()>>14}" style="width:100%;border-radius:10px;border:1px solid var(--line);cursor:zoom-in" data-zoom>`:""}
+      ${d.reel?`<video src="${file(d.reel)}" controls preload="metadata" style="margin-top:10px"></video>`:""}</div></div>`;
     $("#apBody").querySelectorAll("[data-zoom]").forEach(i=>i.onclick=()=>zoom(i.src));
     const waiting=d.nodes.approve.status==="waiting";["#apGo","#apRev","#apRej"].forEach(s=>$(s).disabled=!waiting);
     $("#revise").classList.remove("on");$("#apModal").classList.add("on");return;
@@ -890,7 +892,7 @@ $("#scanBtn").onclick=async()=>{try{const r=await api("/api/scan",{});scanId=r.r
 
 /* ---------------- timings ---------------- */
 const PH={scan:["Tarama","var(--trigger)"],production:["Üretim","var(--ai)"],publish:["Yayın","var(--publish)"]};
-const PHASE={card:"production",ig_photo:"publish",trigger:"scan",collect:"scan",scout:"scan",pool:"scan",choose:"wait",write:"production",cover:"production",fetch:"production",hook:"production",caption:"production",frame:"production",carousel:"production",reel:"production",qa:"production",
+const PHASE={rreel:"production",card:"production",ig_photo:"publish",trigger:"scan",collect:"scan",scout:"scan",pool:"scan",choose:"wait",write:"production",cover:"production",fetch:"production",hook:"production",caption:"production",frame:"production",carousel:"production",reel:"production",qa:"production",
   approve:"wait",upload:"publish",ig_carousel:"publish",ig_reel:"publish",fb_photos:"publish",fb_reel:"publish",yt_short:"publish",comments:"publish",dm:"publish",log:"publish"};
 const secsOf=t=>t.started?Math.max(0,((t.ended?new Date(t.ended):new Date())-new Date(t.started))/1000):0;
 function hms(s){s=Math.round(s);if(s<60)return s+" sn";const m=Math.floor(s/60),r=s%60;if(m<60)return m+" dk "+String(r).padStart(2,"0")+" sn";

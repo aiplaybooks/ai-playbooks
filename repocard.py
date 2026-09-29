@@ -80,6 +80,54 @@ def render(content):
     print(f"card: {info['full_name']} · {info['stargazers_count']:,} stars -> {(out / 'slide_01.png').relative_to(ROOT).as_posix()}")
 
 
+REEL_SECS = 14
+HOLD = 2.0  # seconds on the top of the page before the scroll starts
+MAX_TRAVEL = 1100  # px (at 1000 px width): header, files, the README hero; deeper parts are rarely pretty
+
+
+def reel(content):
+    """Repo Reel (strategy backlog 2026-09-29: Reels are the only format that reaches non-followers): the clip-style
+    header (brand + the post's first hook line) on black, below it the repo page scrolling top -> README inside a
+    window, procedural music. -> output/repos/<post>/reel.mp4 (1080x1920, 30 fps, H.264 + AAC)."""
+    import clip as CL
+    content = pathlib.Path(content)
+    data = json.loads(content.read_text(encoding="utf-8"))
+    repo = data.get("repo") or {}; hook = data.get("hook") or [data.get("topic") or repo.get("full_name", "")]
+    hook = hook[0] if isinstance(hook, list) else str(hook)
+    out = ROOT / "output" / "repos" / content.stem; out.mkdir(parents=True, exist_ok=True)
+    hh = CL.header(out, hook, "")
+    top = CL.TOP + hh + 36; win_h = CL.H - CL.BOTTOM_SAFE - 30 - top; win_w = 1000
+    if win_h < 700: sys.exit(f"ERROR: the hook is too long for the Reel header ({hh}px): shorten hook[0]")
+    tall = out / "tall.png"
+    with sync_playwright() as p:  # the page from the repo header down ~3 screens (file list cut, README start)
+        br = p.chromium.launch()
+        pg = br.new_page(viewport={"width": VW, "height": 1500}, device_scale_factor=2, color_scheme="dark", locale="en-US")
+        pg.goto(repo.get("url") or f"https://github.com/{repo['full_name']}", wait_until="domcontentloaded", timeout=60000)
+        pg.wait_for_selector("#repository-container-header", timeout=20000); pg.wait_for_timeout(2500)
+        pg.add_style_tag(content=HIDE); pg.wait_for_timeout(400)
+        y0 = pg.evaluate("document.querySelector('#repository-container-header').getBoundingClientRect().top + scrollY")
+        full = pg.evaluate("document.documentElement.scrollHeight")
+        pg.screenshot(path=str(tall), clip={"x": 0, "y": max(0, y0 - 4), "width": VW, "height": min(3200, full - y0)}, full_page=True)
+        br.close()
+    im = Image.open(tall).convert("RGB"); im = im.resize((win_w, round(im.height * win_w / im.width)), Image.LANCZOS)
+    im.save(tall)
+    bg = Image.new("RGB", (CL.W, CL.H), (0, 0, 0)); hdr = Image.open(out / "header.png")
+    bg.paste(hdr, (0, CL.TOP), hdr); bg.save(out / "reel_bg.png")
+    music = out / "music.wav"
+    subprocess.run([sys.executable, str(ROOT / "music.py"), str(music), str(REEL_SECS)], check=True, capture_output=True)
+    travel = min(MAX_TRAVEL, max(0, im.height - win_h)); speed = travel / (REEL_SECS - HOLD - 1)
+    fc = (f"[1:v]crop={win_w}:{win_h}:0:'min(max(0,t-{HOLD})*{speed:.2f},{travel})'[s];"
+          f"[0:v][s]overlay={(CL.W - win_w) // 2}:{top}:shortest=1,format=yuv420p[v];"
+          f"[2:a]afade=t=out:st={REEL_SECS - 1.5}:d=1.5,volume=0.8[a]")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-loop", "1", "-framerate", "30", "-t", str(REEL_SECS), "-i", str(out / "reel_bg.png"),
+                    "-loop", "1", "-framerate", "30", "-t", str(REEL_SECS), "-i", str(tall), "-i", str(music),
+                    "-filter_complex", fc, "-map", "[v]", "-map", "[a]", "-t", str(REEL_SECS), "-r", "30",
+                    "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart",
+                    str(out / "reel.mp4")], check=True, capture_output=True)
+    for f in (tall, music, out / "reel_bg.png"): f.unlink(missing_ok=True)
+    print(f"reel: {REEL_SECS}s, scroll {travel}px -> {(out / 'reel.mp4').relative_to(ROOT).as_posix()}")
+
+
 if __name__ == "__main__":
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-    render(sys.argv[1])
+    reel(sys.argv[1]) if "--reel" in sys.argv else render(sys.argv[1])

@@ -26,8 +26,9 @@ META_PAGE_TOKEN, FB_PAGE_ID, IG_USER_ID in .env
 Viral clip Reels (content/clips/<name>.json, "kind": "clip", made by clip.py in output/clips/<name>/): steps
 prepare, upload, ig_reel, fb_reel, yt_short, comments, log; cover = the framed clip's first frame.
 GitHub repo posts (content/repos/<name>.json, "kind": "repo", made by repocard.py in output/repos/<name>/): ONE photo.
-Steps prepare, upload, ig_photo (single image post), fb_photos (one photo), comments (the `fb_comment` with the repo
-link as our first comment, Facebook only), dm (Instagram: the bot DMs the repo link directly, `dm.mode` "direct"), log.
+Steps prepare, upload, ig_photo (single image post), fb_photos (one photo), ig_reel + fb_reel (repocard.py --reel:
+the page scrolling under the hook), comments (the `fb_comment` with the repo link as our first comment on Facebook:
+under the photo post and the FB Reel), dm (Instagram: the bot DMs the repo link directly, `dm.mode` "direct"), log.
 Progress is saved to output/<name>/publish.json after every step, so a rerun resumes and never posts twice.
 Token values are never printed.
 """
@@ -491,7 +492,7 @@ def yt_short(p):
 def comments(p):
     if p.repo:  # the repo link: our first comment on Facebook (Instagram gets it by DM)
         cs = [p.data["fb_comment"].strip()]
-        targets = [("fb_photos", p.state["fb_photos"]["id"])] if p.state.get("fb_photos", {}).get("id") else []
+        targets = [(s, p.state[s]["id"]) for s in ("fb_photos", "fb_reel") if p.state.get(s, {}).get("id")]
     else:
         cs = [c.strip() for c in p.data.get("comments") or []]
         targets = [(s, p.state[s]["id"]) for s in ("ig_carousel", "ig_reel", "fb_photos", "fb_reel") if p.state.get(s, {}).get("id")]
