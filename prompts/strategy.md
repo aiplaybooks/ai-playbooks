@@ -19,7 +19,10 @@ conclusion needs >= 5 posts of a format, or a gap of 5x or more.
 - Keep only findings with a concrete example or source; note the URLs.
 
 ## 3. Fresh viral clips for the autopilot
-Our viral clip Reels are by far our best format. Find 3-6 video posts on X (x.com/<user>/status/<id> with a video)
+Our viral clip Reels are by far our best format. First run `python xscout.py --json runs/{run_id}/x.json`
+(headless X search of the last 3 days' AI video posts with likes / views, via a saved login). If it says there is no
+X login or the session expired, put "X girişi gerekli: `python xscout.py --login` (yedek hesapla)" in summary_tr and
+fall back to web search. Pick from that list: find 3-6 video posts on X (x.com/<user>/status/<id> with a video)
 from the last ~72 hours about AI tools / AI video / robots / agents with strong engagement (thousands of likes or
 views), not already posted (`publish_log.jsonl` source_url) and not already in `research/clips/`. Prefer short
 (< 90 s), visual, self-explaining clips; skip talking heads without visuals, politics, NSFW, violence, ads.

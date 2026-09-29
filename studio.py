@@ -40,7 +40,7 @@ CLAUDE_TOOLS = ["WebSearch", "WebFetch", "Read", "Write", "Edit", "Glob", "Grep"
                 "Bash(python carousel.py:*)", "Bash(python reel.py:*)", "Bash(python news.py:*)",
                 "Bash(python cover.py:*)", "Bash(python clip.py:*)",
                 "Bash(python tags.py:*)", "Bash(python captions.py:*)", "Bash(python hooks.py:*)",
-                "Bash(python repos.py:*)", "Bash(python repocard.py:*)", "Bash(python strategy.py:*)"]
+                "Bash(python repos.py:*)", "Bash(python repocard.py:*)", "Bash(python strategy.py:*)", "Bash(python xscout.py:*)"]
 
 SCAN = [("trigger", "Zamanlayıcı", "trigger"), ("collect", "Haber topla", "code"),
         ("scout", "Ara, doğrula, havuza ekle", "ai"), ("pool", "Havuzdan listele", "code"), ("choose", "Senin seçimin", "human")]
