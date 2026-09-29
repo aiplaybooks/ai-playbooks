@@ -1,0 +1,10 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Playbooks · TikTok connect</title><meta name="robots" content="noindex">
+<style>body{font:16px/1.5 system-ui,sans-serif;background:#0d0d14;color:#eee;display:grid;place-items:center;min-height:100vh;margin:0;padding:16px}</style></head>
+<body><p id="m">Connecting your TikTok account to AI Playbooks…</p>
+<script>
+// TikTok only redirects to https pages: hand the one-time code to the owner's local login script (tiktok_token.py).
+var q = location.search;
+if (/[?&](code|error)=/.test(q)) location.replace("http://127.0.0.1:8767/tiktok" + q);
+else document.getElementById("m").textContent = "Nothing to do here.";
+</script></body></html>
