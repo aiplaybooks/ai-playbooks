@@ -348,16 +348,16 @@ table.tt td.p{text-align:right;color:var(--muted);width:48px;font-variant-numeri
 
 <script>
 const ICONS={rreel:"🎬",review:"📈",card:"🐙",ig_photo:"📸",rcollect:"🐙",rscout:"🧠",comments:"💬",trigger:"⏰",collect:"📰",scout:"🧠",choose:"👤",write:"✍️",cover:"🧑‍💼",carousel:"🖼️",reel:"🎬",qa:"👁️",approve:"✅",
-  upload:"☁️",ig_carousel:"📸",ig_reel:"🎞️",fb_photos:"📘",fb_reel:"📘",yt_short:"▶️",x_post:"𝕏",log:"📒",fetch:"⬇️",hook:"🪝",caption:"#️⃣",frame:"🎬",pool:"🧺",hooks:"🎓",dm:"📩"};
+  upload:"☁️",ig_carousel:"📸",ig_reel:"🎞️",fb_photos:"📘",fb_reel:"📘",yt_short:"▶️",x_post:"𝕏",tiktok:"🎵",log:"📒",fetch:"⬇️",hook:"🪝",caption:"#️⃣",frame:"🎬",pool:"🧺",hooks:"🎓",dm:"📩"};
 const LAYOUT={
   post:{trigger:[0,40],collect:[270,40],scout:[540,40],pool:[810,40],choose:[1080,40],
     write:[0,230],caption:[270,230],cover:[540,230],carousel:[810,230],reel:[1080,230],
     qa:[0,420],approve:[270,420],upload:[540,420],ig_carousel:[810,420],fb_photos:[1080,420],
-    ig_reel:[0,610],fb_reel:[270,610],yt_short:[540,610],comments:[810,610],dm:[1080,610],x_post:[0,800],log:[270,800]},
+    ig_reel:[0,610],fb_reel:[270,610],yt_short:[540,610],comments:[810,610],dm:[1080,610],tiktok:[0,800],x_post:[270,800],log:[540,800]},
   clip:{fetch:[0,40],hook:[270,40],caption:[540,40],frame:[810,40],qa:[1080,40],
-    approve:[0,230],upload:[270,230],ig_reel:[540,230],fb_reel:[810,230],yt_short:[1080,230],comments:[0,420],dm:[270,420],x_post:[540,420],log:[810,420]},
+    approve:[0,230],upload:[270,230],ig_reel:[540,230],fb_reel:[810,230],yt_short:[1080,230],comments:[0,420],dm:[270,420],tiktok:[540,420],x_post:[810,420],log:[1080,420]},
   repo:{write:[0,40],caption:[270,40],card:[540,40],rreel:[810,40],approve:[1080,40],
-    upload:[0,230],ig_photo:[270,230],fb_photos:[540,230],ig_reel:[810,230],fb_reel:[1080,230],comments:[0,420],dm:[270,420],x_post:[540,420],log:[810,420]}};
+    upload:[0,230],ig_photo:[270,230],fb_photos:[540,230],ig_reel:[810,230],fb_reel:[1080,230],comments:[0,420],dm:[270,420],tiktok:[540,420],x_post:[810,420],log:[1080,420]}};
 const GROUPS={post:[["① Tarama","scan",0,0],["② Carousel üretimi","post",0,190],["③ Kontrol, onay & yayın","pub",0,380]],
   clip:[["① Viral Reel üretimi (link yapıştırınca başlar, taramadan bağımsız)","post",0,0],["② Kontrol sonrası onay & yayın","pub",0,190]],
   repo:[["① GitHub repo gönderisi (GitHub sekmesinden seçince başlar)","post",0,0],["② Yayın: IG fotoğraf + DM, FB fotoğraf + ilk yorum","pub",0,190]]};
@@ -588,7 +588,7 @@ async function renderSide(force){
     const h=await api("/api/history");
     L.innerHTML=h.length?h.map(e=>`<div class="hist"><b>${esc(e.topic||e.post)}</b><br><small>${fmtT(e.date)} · ${esc(e.theme||"")}</small><div class="srcs" style="margin:6px 0 0">
       ${e.ig_carousel?`<a href="${esc(e.ig_carousel.link)}" target="_blank">IG carousel</a>`:""}${e.ig_photo?`<a href="${esc(e.ig_photo.link)}" target="_blank">IG gönderi</a>`:""}${e.ig_reel?`<a href="${esc(e.ig_reel.link)}" target="_blank">IG Reel</a>`:""}
-      ${e.fb_photos?`<a href="${esc(e.fb_photos.link)}" target="_blank">FB gönderi</a>`:""}${e.fb_reel?`<a href="${esc(e.fb_reel.link)}" target="_blank">FB Reel</a>`:""}${e.yt_short?`<a href="${esc(e.yt_short.link)}" target="_blank">YouTube</a>`:""}${e.x_post?`<a href="${esc(e.x_post.link)}" target="_blank">X</a>`:""}</div></div>`).join(""):`<div class="empty">Henüz paylaşım yok.</div>`;
+      ${e.fb_photos?`<a href="${esc(e.fb_photos.link)}" target="_blank">FB gönderi</a>`:""}${e.fb_reel?`<a href="${esc(e.fb_reel.link)}" target="_blank">FB Reel</a>`:""}${e.yt_short?`<a href="${esc(e.yt_short.link)}" target="_blank">YouTube</a>`:""}${e.tiktok?.link?.startsWith("http")?`<a href="${esc(e.tiktok.link)}" target="_blank">TikTok</a>`:""}${e.x_post?`<a href="${esc(e.x_post.link)}" target="_blank">X</a>`:""}</div></div>`).join(""):`<div class="empty">Henüz paylaşım yok.</div>`;
     return;
   }
   if(tab==="viral"){
@@ -893,7 +893,7 @@ $("#scanBtn").onclick=async()=>{try{const r=await api("/api/scan",{});scanId=r.r
 /* ---------------- timings ---------------- */
 const PH={scan:["Tarama","var(--trigger)"],production:["Üretim","var(--ai)"],publish:["Yayın","var(--publish)"]};
 const PHASE={rreel:"production",card:"production",ig_photo:"publish",trigger:"scan",collect:"scan",scout:"scan",pool:"scan",choose:"wait",write:"production",cover:"production",fetch:"production",hook:"production",caption:"production",frame:"production",carousel:"production",reel:"production",qa:"production",
-  approve:"wait",upload:"publish",ig_carousel:"publish",ig_reel:"publish",fb_photos:"publish",fb_reel:"publish",yt_short:"publish",x_post:"publish",comments:"publish",dm:"publish",log:"publish"};
+  approve:"wait",upload:"publish",ig_carousel:"publish",ig_reel:"publish",fb_photos:"publish",fb_reel:"publish",yt_short:"publish",x_post:"publish",tiktok:"publish",comments:"publish",dm:"publish",log:"publish"};
 const secsOf=t=>t.started?Math.max(0,((t.ended?new Date(t.ended):new Date())-new Date(t.started))/1000):0;
 function hms(s){s=Math.round(s);if(s<60)return s+" sn";const m=Math.floor(s/60),r=s%60;if(m<60)return m+" dk "+String(r).padStart(2,"0")+" sn";
   return Math.floor(m/60)+" sa "+String(m%60).padStart(2,"0")+" dk";}

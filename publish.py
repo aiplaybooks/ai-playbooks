@@ -15,6 +15,8 @@ META_PAGE_TOKEN, FB_PAGE_ID, IG_USER_ID in .env
     fb_reel      Facebook Page Reel: video_reels start -> rupload from the public URL -> finish
     yt_short     YouTube Short: resumable upload of the Reel (YouTube Data API v3). Until the API project passes
                  YouTube's audit, YouTube keeps API uploads private: then make it public in YouTube Studio.
+    tiktok       TikTok via tiktok.py (own content only: carousel -> photo post, repo -> its Reel; clips never). Until
+                 TikTok's audit (TIKTOK_MODE=inbox) the post lands as a draft in the TikTok app: the owner taps Post.
     x_post       X (Twitter) post via xpost.py: the Reel (or, without one, the first image) + a short text without links
                  (URLs cost $0.20 a post on X's pay-per-use API; repo posts name the repo as text). Needs x_token.py once.
     dm           Instagram comment-to-DM bot (bot/worker.js, Cloudflare): when the post has `dm.keyword`, registers
@@ -46,8 +48,8 @@ RUPLOAD = "https://rupload.facebook.com/video-upload/v25.0"
 PAGES_URL = "https://aiplaybooks.github.io/ai-playbooks"
 PAGES_DIR = ROOT / ".pages"  # git worktree of the gh-pages branch (gitignored)
 LOG = ROOT / "publish_log.jsonl"
-STEPS = ["prepare", "upload", "ig_carousel", "ig_photo", "ig_reel", "fb_photos", "fb_reel", "yt_short", "comments", "dm", "x_post", "log"]
-POSTS = ["ig_carousel", "ig_photo", "ig_reel", "fb_photos", "fb_reel", "yt_short", "x_post"]
+STEPS = ["prepare", "upload", "ig_carousel", "ig_photo", "ig_reel", "fb_photos", "fb_reel", "yt_short", "comments", "dm", "tiktok", "x_post", "log"]
+POSTS = ["ig_carousel", "ig_photo", "ig_reel", "fb_photos", "fb_reel", "yt_short", "tiktok", "x_post"]
 
 
 class PublishError(Exception):
@@ -489,6 +491,37 @@ def yt_short(p):
     p.done("yt_short", id=vid, link=link, privacy=privacy, cover=thumb, playlist=playlist,
            studio=f"https://studio.youtube.com/video/{vid}/edit")
     say(f"yt_short: {link} ({privacy}" + (": YouTube Studio'dan herkese açık yap)" if privacy != "public" else ")"))
+
+
+def tiktok(p):
+    import tiktok as TK
+    if p.clip:  # other people's videos: against TikTok's originality rules and what we told TikTok's review
+        say("tiktok: skipped (viral clips are not our own content)"); p.done("tiktok", skipped="clip"); return
+    pid = p.state.get("tiktok_publish")
+    try:
+        tok = TK.TT.refresh()
+        if not pid:
+            reel = p.pub / "reel.mp4"
+            if p.repo and reel.exists(): pid = TK.video(reel, p.data, tok, say)
+            else:
+                imgs = p.images()
+                if not imgs: raise PublishError("tiktok: no slides to post (run upload first)")
+                pid = TK.photos([p.url(f) for f in imgs], p.data, tok, say)
+            p.state["tiktok_publish"] = pid; p.save()  # a retry only waits for this one, never posts again
+        st = TK.wait(pid, tok, say)
+    except RuntimeError as ex:
+        if "no TikTok login" in str(ex): say(f"tiktok: skipped: {ex}"); p.done("tiktok", skipped=str(ex)); return
+        raise PublishError(str(ex)) from None
+    except TK.TikTokError as ex:
+        raise PublishError(str(ex)) from None
+    user = TK.TT.read_env().get("TIKTOK_USERNAME") or "ai.playbooks"
+    if st.get("status") == "SEND_TO_USER_INBOX":
+        link = "taslak: TikTok uygulamasında bildirime dokun → Paylaş"
+    else:
+        ids = st.get("publicaly_available_post_id") or st.get("publicly_available_post_id") or []
+        link = f"https://www.tiktok.com/@{user}/{'photo' if not (p.repo and (p.pub / 'reel.mp4').exists()) else 'video'}/{ids[0]}" if ids else f"https://www.tiktok.com/@{user}"
+    say(f"tiktok: {st.get('status')} {link}")
+    p.done("tiktok", id=pid, link=link, status=st.get("status"))
 
 
 def x_post(p):

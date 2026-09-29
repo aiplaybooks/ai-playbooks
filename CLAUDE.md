@@ -90,6 +90,15 @@ Every day the pipeline should:
   (caption agent) or a text derived from the IG caption. **Never a URL in an X post** ($0.20 instead of $0.015);
   repo posts name `owner/repo` as text, clips credit @creator. No replies/DMs on X (declared use case). Missing
   credits (HTTP 402) or no login → the step is skipped, never blocks IG/FB.
+- **TikTok as the 5th platform** (owner, 2026-09-29): account **@ai.playbooks** (Business). Developer app "AI Playbooks
+  Publisher" (Login Kit + Content Posting API, scopes user.info.basic, video.upload, video.publish, video.list),
+  URL prefix https://aiplaybooks.github.io/ai-playbooks/ verified for production AND sandbox (tiktok*.txt files on
+  gh-pages root; never delete them). We use the **sandbox** keys (TIKTOK_CLIENT_KEY/SECRET) until TikTok's audit;
+  review form saved with a PLACEHOLDER demo video: replace it with a real screen recording before "Submit for
+  review". Login: tiktok_token.py via the https relay page gh-pages tiktok/callback/ -> 127.0.0.1:8767. publish.py
+  step `tiktok` (tiktok.py, after dm): carousels -> photo post (PULL_FROM_URL), repo posts -> their Reel, viral
+  clips NEVER (TikTok originality rules + our review text). `TIKTOK_MODE=inbox` (default: draft in the TikTok app, the
+  owner taps Post; unaudited direct posts are private anyway) / `direct` after the audit.
 - **Telegram digest at session start** (owner, 2026-09-29): his Telegram messages go to the Studio's chat bot, not to
   Claude Code. `telegram_bot.py` logs every message to runs/telegram/inbox.jsonl; the SessionStart hook
   (.claude/settings.json) runs `tools/tg_digest.py`, which prints the new ones. Analyse them first in every session.
@@ -153,6 +162,7 @@ brand_icons.py     brand icons for the cover (Simple Icons, icons/ cache, tool -
 repos.py           GitHub repo collector (search API + Trending + star history) -> research/repos/<date>.json; --info owner/repo
 repocard.py        repo post image: the plain GitHub page screenshot (1080x1350) -> output/repos/<post>/slide_01.png
 xpost.py           X posting: chunked v2 media upload + POST /2/tweets; x_text() builds the link-free X text
+tiktok.py          TikTok posting (photo mode / video, inbox draft or direct); tiktok_token.py: one-time login
 x_token.py         one-time X OAuth 2.0 login (PKCE, loopback 127.0.0.1:8766/x) + refresh() (rotating refresh token)
 packpage.py        the post's page for the DM bot (p/<post>/index.html on gh-pages: prompts with Copy buttons)
 dm_setup.py        DM bot setup / check / test registration (Cloudflare Worker + Meta webhooks)
