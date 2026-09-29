@@ -72,6 +72,13 @@ Every day the pipeline should:
   = US morning-afternoon) of the next ~26 h: an owner-dropped clip first, else a rotation news → repo → pack (next
   format when a pool is empty). Items are normal share-pool items (`auto: true`); Telegram gets the plan as info.
   Don't ask the owner "shall I …?" in sessions either: decide, do, report.
+- **Daily strategy director** (owner, 2026-09-29: "if content doesn't get views/comments/engagement, change it;
+  daily trend analysis; change video, carousel and photo methods and content"): background job `strategy` at
+  `strategy_time` (09:30), prompts/strategy.md. Reads `python strategy.py` (per format x platform results) + web
+  trends, finds fresh viral X clips (research/clips/<date>_clips.json → the autopilot plans them), then changes at
+  most 3 things a day as experiments with success metrics: `strategy.json` (autopilot `mix` incl. clips, `skip`
+  publish steps per flow, `post_slots`, `experiments`) + prompts/strategy_playbook.md (every writer reads it first).
+  Ideas that need code go to strategy/backlog.md; the session-start hook prints open items: build them.
 - **Carousels also go out as Reels** (2026-09-29, data: FB photo posts 0 views, IG carousels 0-7, Reels 100-300 with
   1-3 followers): the post flow publishes the voiced reel.mp4 as IG Reel + FB Reel after the carousel/photo posts
   (`ig_published` matches media_type so a carousel and its Reel with the same caption are never confused).

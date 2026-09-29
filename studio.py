@@ -28,6 +28,7 @@ from datetime import datetime, timedelta
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 import telegram_bot as TG
 import remote
+import strategy as STRAT
 
 ROOT = pathlib.Path(__file__).parent.resolve()
 RUNS = ROOT / "runs"
@@ -39,7 +40,7 @@ CLAUDE_TOOLS = ["WebSearch", "WebFetch", "Read", "Write", "Edit", "Glob", "Grep"
                 "Bash(python carousel.py:*)", "Bash(python reel.py:*)", "Bash(python news.py:*)",
                 "Bash(python cover.py:*)", "Bash(python clip.py:*)",
                 "Bash(python tags.py:*)", "Bash(python captions.py:*)", "Bash(python hooks.py:*)",
-                "Bash(python repos.py:*)", "Bash(python repocard.py:*)"]
+                "Bash(python repos.py:*)", "Bash(python repocard.py:*)", "Bash(python strategy.py:*)"]
 
 SCAN = [("trigger", "Zamanlayıcı", "trigger"), ("collect", "Haber topla", "code"),
         ("scout", "Ara, doğrula, havuza ekle", "ai"), ("pool", "Havuzdan listele", "code"), ("choose", "Senin seçimin", "human")]
@@ -47,7 +48,8 @@ SCAN = [("trigger", "Zamanlayıcı", "trigger"), ("collect", "Haber topla", "cod
 GATHER = [("collect", "Haber topla", "code"), ("scout", "Ara, doğrula, havuza ekle", "ai")]
 LEARN = [("hooks", "Hook trendlerini öğren", "ai")]
 REPOS = [("rcollect", "Repoları topla", "code"), ("rscout", "Repo seç & doğrula", "ai")]
-BACKGROUND = ("gather", "learn", "repos")
+STRATEGY = [("review", "Strateji & trend analizi", "ai")]
+BACKGROUND = ("gather", "learn", "repos", "strategy")
 POST = [("write", "Doğrula & yaz", "ai"), ("caption", "Caption & tag", "ai"), ("cover", "Kapak görseli", "code"), ("carousel", "Carousel", "code"),
         ("reel", "Video · ses + müzik (YouTube)", "code"), ("qa", "Kalite kontrol", "ai"),
         ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"),
@@ -62,7 +64,7 @@ REPO = [("write", "Repo'yu doğrula & yaz", "ai"), ("caption", "Caption & tag", 
         ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"), ("ig_photo", "Instagram gönderi", "publish"),
         ("fb_photos", "Facebook gönderi", "publish"), ("comments", "FB ilk yorum (link)", "publish"),
         ("dm", "DM botu kaydı", "publish"), ("log", "Kayıt & GitHub", "code")]
-FLOWS = {"scan": SCAN, "post": POST, "clip": CLIP, "repo": REPO, "gather": GATHER, "learn": LEARN, "repos": REPOS}
+FLOWS = {"scan": SCAN, "post": POST, "clip": CLIP, "repo": REPO, "gather": GATHER, "learn": LEARN, "repos": REPOS, "strategy": STRATEGY}
 
 LOCK = threading.RLock()
 POST_Q = queue.Queue()
@@ -122,7 +124,7 @@ def settings():
     s = {"scan_times": ["08:00", "18:00"], "approval": True, "last_slot": None, "dm_bot": False,
          "gather_times": ["06:30", "10:30", "13:30", "16:30", "21:30"], "last_gather_slot": None,
          "learn_times": LEARN_TIMES, "last_learn_slot": None, "repo_time": "07:15", "last_repo_slot": None,
-         "autopilot": True, "post_slots": ["14:00", "17:00", "20:00", "23:00"]}
+         "autopilot": True, "post_slots": ["14:00", "17:00", "20:00", "23:00"], "strategy_time": "09:30", "last_strategy_slot": None}
     s.update(read_json(SETTINGS, {}) or {})
     s.pop("learn_time", None)  # before 2026-09-28: one learning run a day
     return s
@@ -414,6 +416,16 @@ def n_pool(run):
     return f"{n} aday · {new} yeni" + (f" ({len(data['hidden'])} paylaşılmış gizlendi)" if data.get("hidden") else "")
 
 
+def n_review(run):
+    """Daily strategy director (prompts/strategy.md): numbers + trends -> strategy.json, strategy_playbook.md,
+    research/clips/, strategy/backlog.md."""
+    claude(run, "review", "strategy", date=run.s["day"], run_id=run.id)
+    r = read_json(run.dir / "strategy_result.json", {}) or {}
+    AUTO["checked"] = 0.0  # re-plan with the new mix / slots
+    if r.get("summary_tr"): TG.event("strategy", run, summary=r["summary_tr"])
+    return (r.get("summary_tr") or "tamam").split("\n")[0][:160]
+
+
 def n_hooks(run):
     today = sum(1 for r in all_runs() if r["kind"] == "learn" and r.get("day") == run.s["day"] and r["created"] < run.s["created"])
     focus = LEARN_FOCUS[today % len(LEARN_FOCUS)]
@@ -639,6 +651,8 @@ def n_approve(run):
 
 def publish_step(step):
     def f(run):
+        if STRAT.skipped(run.s["kind"], step):  # the strategy director turned this platform off for this flow
+            run.log(step, f"strategy.json skip: {run.s['kind']} / {step}"); return "atlandı (strateji: bu platform şu an kapalı)"
         tail = sh(run, step, [PY, "publish.py", run.s["content"], "--steps", step])
         st = read_json(out_dir(run) / "publish.json", {}).get(step, {})
         return st.get("link") or (tail[-1] if tail else "tamam")
@@ -767,7 +781,7 @@ def n_frame(run):
 PHASES = {"trigger": "scan", "collect": "scan", "scout": "scan", "pool": "scan", "hooks": "scan", "choose": "wait", "write": "production", "cover": "production",
           "fetch": "production", "hook": "production", "caption": "production", "frame": "production",
           "carousel": "production", "reel": "production", "qa": "production", "approve": "wait", "upload": "publish", "card": "production", "ig_photo": "publish",
-          "rcollect": "scan", "rscout": "scan",
+          "rcollect": "scan", "rscout": "scan", "review": "scan",
           "ig_carousel": "publish", "ig_reel": "publish", "fb_photos": "publish", "fb_reel": "publish", "yt_short": "publish", "comments": "publish", "dm": "publish", "log": "publish"}
 
 
@@ -804,7 +818,7 @@ def record_timings(run, outcome):
 
 
 NODES = {"trigger": n_trigger, "collect": n_collect, "scout": n_scout, "pool": n_pool, "choose": n_choose, "hooks": n_hooks,
-         "write": n_write, "caption": n_caption, "card": n_card, "rcollect": n_rcollect, "rscout": n_rscout,
+         "write": n_write, "caption": n_caption, "card": n_card, "rcollect": n_rcollect, "rscout": n_rscout, "review": n_review,
          "ig_photo": publish_step("ig_photo"), "cover": n_cover, "carousel": n_carousel, "fetch": n_fetch, "hook": n_hook, "frame": n_frame, "reel": n_reel, "qa": n_qa, "approve": n_approve,
          "upload": publish_step("upload"), "ig_carousel": publish_step("ig_carousel"), "ig_reel": publish_step("ig_reel"),
          "fb_photos": publish_step("fb_photos"), "fb_reel": publish_step("fb_reel"),
@@ -1004,7 +1018,7 @@ def scheduler():
                 if start_scan(f"Planlı tarama {slot:%H:%M}" + (" (kaçırılmıştı, telafi)" if late else "")):
                     s["last_slot"] = slot.isoformat(); save_settings(s)
             for kind, times, key in (("gather", s["gather_times"], "last_gather_slot"), ("learn", s["learn_times"], "last_learn_slot"),
-                                     ("repos", [s["repo_time"]], "last_repo_slot")):
+                                     ("repos", [s["repo_time"]], "last_repo_slot"), ("strategy", [s["strategy_time"]], "last_strategy_slot")):
                 slot = last_slot(times, t)
                 if slot and (not s.get(key) or s[key] < slot.isoformat()):
                     if start_bg(kind, f"Planlı {slot:%H:%M}" + (" (telafi)" if t - slot > timedelta(minutes=10) else "")):
@@ -1227,8 +1241,23 @@ def share_tick():
 # Viral pool first, else a rotation of news / GitHub repo / prompt pack (next format when one pool is empty). Items are
 # normal share-pool items (approval off, `auto`), so production, "scheduled" and publishing work as for planned ones.
 
-AUTO_ROTATION = ["news", "repo", "pack", "news", "repo", "pack", "news"]
 AUTO = {"checked": 0.0}
+CLIP_DAYS = 3  # clips found by the strategy director stay usable this long
+
+
+def auto_clip(taken):
+    """A viral clip found by the strategy director (research/clips/<date>_clips.json), not posted, not planned."""
+    cut = f"{now() - timedelta(days=CLIP_DAYS):%Y-%m-%d}"
+    live = {(i.get("url") or "").split("?")[0] for i in share_items() if i["status"] in ("pool", "producing", "done")}
+    for f in sorted((ROOT / "research" / "clips").glob("*_clips.json"), reverse=True):
+        if f.name[:10] < cut: break
+        for c in (read_json(f, {}) or {}).get("clips", []):
+            u = (c.get("url") or "").split("?")[0]
+            if not u or u in live or u in taken: continue
+            try: check_clip_url(u)
+            except ValueError: continue
+            return {"id": u, "url": u, "note": c.get("hook_idea") or "", "title": u, "why": c.get("why")}
+    return None
 
 
 def auto_news(taken):
@@ -1263,9 +1292,10 @@ def autopilot_tick():
         items = share_items()
         live = [i for i in items if i["status"] in ("pool", "producing")]
         taken = {(i.get("candidate") or {}).get("id") for i in live}
-        slots = []
+        slots = []; strat = STRAT.load(); rot = STRAT.rotation(strat)
+        slots_today = strat.get("post_slots") or s["post_slots"]
         for d in (t.date(), t.date() + timedelta(days=1)):
-            for hm in s["post_slots"]:
+            for hm in slots_today:
                 h, m = map(int, hm.split(":")); at = datetime(d.year, d.month, d.day, h, m).astimezone()
                 if t + timedelta(minutes=100) <= at <= t + timedelta(hours=26): slots.append(at)
         for n, at in enumerate(sorted(slots)):
@@ -1273,18 +1303,18 @@ def autopilot_tick():
             clip = next((i for i in live if i["kind"] == "clip" and i["status"] == "pool" and not i.get("at")), None)
             if clip:
                 clip["at"] = at.isoformat(timespec="seconds"); planned.append(("clip", clip.get("title"), at)); continue
-            start = (at.timetuple().tm_yday * len(s["post_slots"]) + s["post_slots"].index(f"{at:%H:%M}")) % len(AUTO_ROTATION) \
-                if f"{at:%H:%M}" in s["post_slots"] else n
-            order = AUTO_ROTATION[start:] + AUTO_ROTATION[:start]
-            for kind in dict.fromkeys(order):
-                c = {"news": auto_news, "repo": auto_repo, "pack": auto_pack}[kind](taken)
+            start = (at.timetuple().tm_yday * len(slots_today) + slots_today.index(f"{at:%H:%M}")) % len(rot) \
+                if f"{at:%H:%M}" in slots_today else n
+            order = rot[start:] + rot[:start]
+            for kind in list(dict.fromkeys(order)) + [k for k in ("news", "repo", "pack") if k not in order]:
+                c = {"news": auto_news, "repo": auto_repo, "pack": auto_pack, "clip": auto_clip}[kind](taken)
                 if c: break
             else:
                 continue
-            flow = "repo" if kind == "repo" else "post"
-            item = {"id": f"s{now():%Y%m%d%H%M%S%f}"[:21], "kind": flow, "added": iso(), "approval": False, "auto": True,
-                    "at": at.isoformat(timespec="seconds"), "status": "pool", "candidate": c,
-                    "title": c.get("title") or c.get("full_name")}
+            item = {"id": f"s{now():%Y%m%d%H%M%S%f}"[:21], "added": iso(), "approval": False, "auto": True,
+                    "at": at.isoformat(timespec="seconds"), "status": "pool"}
+            if kind == "clip": item.update(kind="clip", url=c["url"], note=c["note"], title=c["url"])
+            else: item.update(kind="repo" if kind == "repo" else "post", candidate=c, title=c.get("title") or c.get("full_name"))
             items.append(item); live.append(item); taken.add(c["id"])
             planned.append((kind, item["title"], at))
         if planned: save_share(items)
@@ -1357,7 +1387,7 @@ def state():
             r["candidates"] = load_candidates(r["candidates_file"], r["id"])
     fg = [r for r in runs if r["kind"] not in BACKGROUND][:40]
     bg = {}
-    for kind, times in (("gather", s["gather_times"]), ("learn", s["learn_times"]), ("repos", [s["repo_time"]])):
+    for kind, times in (("gather", s["gather_times"]), ("learn", s["learn_times"]), ("repos", [s["repo_time"]]), ("strategy", [s["strategy_time"]])):
         last = next((r for r in runs if r["kind"] == kind), None)
         bg[kind] = {"next": iso(next_slot(times, now())), "last": last and {
             "id": last["id"], "status": last["status"], "created": last["created"],
@@ -1496,6 +1526,9 @@ class H(BaseHTTPRequestHandler):
                 rid = start_bg("repos", "Elle başlatıldı")
                 return self.send(200 if rid else 409, {"run": rid} if rid else {"error": "repo araması zaten çalışıyor"})
             if u.path == "/api/repo": return self.send(200, {"run": start_repo(repo_candidate(b["repo"])).id})
+            if u.path == "/api/strategy":
+                rid = start_bg("strategy", "Elle başlatıldı")
+                return self.send(200 if rid else 409, {"run": rid} if rid else {"error": "strateji analizi zaten çalışıyor"})
             if u.path == "/api/learn":
                 rid = start_bg("learn", "Elle başlatıldı")
                 return self.send(200 if rid else 409, {"run": rid} if rid else {"error": "zaten çalışıyor"})

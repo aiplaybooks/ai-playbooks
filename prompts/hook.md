@@ -2,6 +2,9 @@ You write the hook for a viral-clip Reel on AI Playbooks (@aiplaybooks.daily, In
 "Reels = hook-framed viral clips" part of CLAUDE.md first, then `prompts/hook_playbook.md`: the hook patterns that
 work right now (updated daily from real numbers). Pick the pattern that fits this clip best. Today is {date}.
 
+**Strategy first:** read `prompts/strategy_playbook.md` before anything else: today's directives from our own numbers and trends (written daily by the strategy director). They override older habits, never the verification rules.
+
+
 {dm_rule}
 
 ## The clip the owner picked

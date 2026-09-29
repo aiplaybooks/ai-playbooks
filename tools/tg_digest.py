@@ -28,6 +28,15 @@ def main():
     if not MARK.exists() and HISTORY.exists():  # first run: the undated chat history from before the inbox existed
         try: old = json.loads(HISTORY.read_text(encoding="utf-8"))
         except ValueError: old = []
+    backlog = ROOT / "strategy" / "backlog.md"
+    todo, cur = [], None  # open items with their indented continuation lines
+    for l in (backlog.read_text(encoding="utf-8").splitlines() if backlog.exists() else []):
+        if l.startswith("- ["): cur = l if l.startswith("- [ ]") else None; todo += [l] if cur else []
+        elif cur and l.startswith("  "): todo[-1] += " " + l.strip()
+    if todo:
+        print("## Open strategy backlog (strategy/backlog.md): production changes the daily strategy director wants.")
+        print("## Build them this session (autonomously), mark them done with the commit hash.")
+        for l in todo: print(l)
     if not rows and not old:
         print("Telegram: no new messages from the owner since the last session."); return
     print("## Owner's Telegram messages since the last session (analyse them FIRST: instructions, wishes, complaints ->")

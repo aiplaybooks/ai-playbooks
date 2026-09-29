@@ -210,6 +210,8 @@ def event(kind, run, **kw):
     def work():
         try:
             if kind == "link": send_link(new=True)
+            elif kind == "strategy":
+                send("📈 <b>Günlük strateji</b>\n" + esc(kw.get("summary", "")))
             elif kind == "plan":
                 icon = {"news": "📰", "repo": "🐙", "pack": "📋", "clip": "🎞"}
                 send("🤖 <b>Otopilot planı</b>\n" + "\n".join(f"{a:%d.%m %H:%M} {icon.get(k, '•')} {esc((t or '')[:80])}"

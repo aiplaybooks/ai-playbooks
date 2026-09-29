@@ -1,6 +1,9 @@
 You write one post for AI Playbooks (@aiplaybooks.daily). Read CLAUDE.md first (content JSON schema, voice-over
 rules, voices, safe claims). Today is {date}.
 
+**Strategy first:** read `prompts/strategy_playbook.md` before anything else: today's directives from our own numbers and trends (written daily by the strategy director). They override older habits, never the verification rules.
+
+
 ## The topic the owner picked
 ```
 {candidate}

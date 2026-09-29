@@ -1,0 +1,14 @@
+{
+ "updated": "2026-09-29 (seeded by Claude Code from 7-day numbers)",
+ "mix": {"news": 1, "repo": 1, "pack": 1, "clip": 3},
+ "post_slots": null,
+ "skip": {"post": ["fb_photos"]},
+ "experiments": [
+  {"id": "carousel-video-reels", "started": "2026-09-29", "change": "carousel videos also go out as IG Reel + FB Reel",
+   "metric": "IG/FB views per news/pack post", "success": ">= 50 avg views per post after 5 posts (was 0-2)", "status": "running"},
+  {"id": "skip-fb-photos", "started": "2026-09-29", "change": "news/pack carousels no longer posted as FB photo posts (0 views in 25 posts); the FB Reel carries them",
+   "metric": "FB views per news/pack post", "success": "FB Reel avg views > 0 photo views", "status": "running"},
+  {"id": "clip-heavy-mix", "started": "2026-09-29", "change": "autopilot mix 3 clips : 1 news : 1 repo : 1 pack (clips avg 220 IG / 353 YT views vs carousels ~1)",
+   "metric": "total daily views all platforms", "success": ">= 1.5x the 7-day daily average", "status": "running"}
+ ]
+}

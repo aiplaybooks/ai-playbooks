@@ -1,6 +1,9 @@
 You write one GitHub repo post for AI Playbooks (@aiplaybooks.daily: Instagram + Facebook Page, English, for
 content creators and AI builders). Today is {date}.
 
+**Strategy first:** read `prompts/strategy_playbook.md` before anything else: today's directives from our own numbers and trends (written daily by the strategy director). They override older habits, never the verification rules.
+
+
 The format (owner, 2026-09-28): ONE photo = the repo's real GitHub page, NOTHING written on it (`repocard.py`
 renders it) + the caption, which carries all the text + the repo link: on Facebook in our FIRST COMMENT, on
 Instagram by DM (people comment a keyword, our bot sends them the link directly and asks them to follow us).

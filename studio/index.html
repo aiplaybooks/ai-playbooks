@@ -382,13 +382,14 @@ async function api(path,body){
   if(!r.ok) throw new Error(j.error||r.statusText);
   return j;
 }
-function bgHtml(){const b=S.background||{},g=b.gather||{},l=b.learn||{},t=x=>x?new Date(x).toLocaleTimeString("tr-TR",{hour:"2-digit",minute:"2-digit"}):"—";
+function bgHtml(){const b=S.background||{},g=b.gather||{},l=b.learn||{},sg=b.strategy||{},t=x=>x?new Date(x).toLocaleTimeString("tr-TR",{hour:"2-digit",minute:"2-digit"}):"—";
   const st=r=>!r?"henüz yok":`${fmtT(r.created)} ${{done:"✓",error:"⚠ hata",running:"çalışıyor…",queued:"sırada"}[r.status]||r.status}${r.msg?" · "+esc(r.msg):""}`;
   return `<div class="note" style="line-height:1.6">🔄 <b>Arka plan</b> · havuz ${b.pool??"?"} aday<br>Son toplama: ${st(g.last)} · sonraki ${t(g.next)}
     <button class="tchip" id="bgGather" style="margin-left:6px">Şimdi topla</button><br>Hook öğrenme: ${st(l.last)} · sonraki ${t(l.next)}
-    <button class="tchip" id="bgLearn" style="margin-left:6px">Şimdi öğren</button></div>`}
-document.addEventListener("click",async e=>{const id=e.target?.id;if(id!=="bgGather"&&id!=="bgLearn")return;
-  e.target.disabled=true;try{await api(id==="bgGather"?"/api/gather":"/api/learn",{});toast(id==="bgGather"?"Toplama başladı (arka planda, birkaç dakika). Bitince havuza eklenir.":"Hook öğrenme başladı (arka planda).");await refresh()}catch(x){toast(x.message)}});
+    <button class="tchip" id="bgLearn" style="margin-left:6px">Şimdi öğren</button><br>📈 Strateji: ${st(sg.last)} · sonraki ${t(sg.next)}
+    <button class="tchip" id="bgStrat" style="margin-left:6px">Şimdi analiz et</button></div>`}
+document.addEventListener("click",async e=>{const id=e.target?.id;if(!["bgGather","bgLearn","bgStrat"].includes(id))return;
+  e.target.disabled=true;try{await api({bgGather:"/api/gather",bgLearn:"/api/learn",bgStrat:"/api/strategy"}[id],{});toast(id==="bgGather"?"Toplama başladı (arka planda, birkaç dakika). Bitince havuza eklenir.":"Hook öğrenme başladı (arka planda).");await refresh()}catch(x){toast(x.message)}});
 function capsHtml(c){const k=c.captions||{},y=k.youtube||{},H=t=>`<h5 style="font-size:12px;color:var(--muted);margin:14px 0 6px">${t}</h5>`;
   if(!k.instagram)return H("CAPTION")+`<div class="cap">${esc(c.caption||"")}</div>`;
   return H("CAPTION · INSTAGRAM")+`<div class="cap">${esc(k.instagram)}</div>`+
