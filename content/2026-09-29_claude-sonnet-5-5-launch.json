@@ -1,0 +1,249 @@
+{
+  "theme": "adaptive",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Claude Sonnet 5.5",
+  "caption": "Anthropic just shipped a Sonnet update that beats its own flagship model at real coding tasks.\n\nSonnet 5.5 jumped from 10.3% to 70.6% on Terminal-Bench 4.0 (real command-line coding work) — same price as before, and it landed inside GitHub Copilot the same day.\n\n→ 30%+ faster output\n→ 1 million token context window\n→ live now on every paid Copilot plan\n\nSend this to the teammate who manages your team's Copilot seats — it's already there, they don't have to do anything.\n\nWhich number surprises you more: the benchmark jump, or the price staying flat? 👇\n\nFollow @aiplaybooks.daily for daily AI tool news.\n\n#ai #claudeai #claude #githubcopilot #aitools",
+  "captions": {
+    "instagram": "Anthropic just shipped a Sonnet update that beats its own flagship model at real coding tasks.\n\nSonnet 5.5 jumped from 10.3% to 70.6% on Terminal-Bench 4.0 (real command-line coding work) — same price as before, and it landed inside GitHub Copilot the same day.\n\n→ 30%+ faster output\n→ 1 million token context window\n→ live now on every paid Copilot plan\n\nSend this to the teammate who manages your team's Copilot seats — it's already there, they don't have to do anything.\n\nWhich number surprises you more: the benchmark jump, or the price staying flat? 👇\n\nFollow @aiplaybooks.daily for daily AI tool news.\n\n#ai #claudeai #claude #githubcopilot #aitools",
+    "facebook": "Anthropic just shipped a Sonnet update that beats its own flagship model at real coding tasks.\n\nThe new Sonnet 5.5 jumped from 10.3% to 70.6% on Terminal-Bench 4.0, the benchmark for real command-line coding work — and it costs exactly the same as before.\n\nIt also landed inside GitHub Copilot the same day: 30%+ faster, a 1 million token context window, and available now on every paid Copilot plan, from Pro to Enterprise.\n\nIf you manage a team's Copilot seats, this is already live for them — nothing to set up.\n\nHave you noticed AI coding tools getting noticeably faster this year, or does it still feel about the same to you?\n\nFollow AI Playbooks for daily AI tool news.\n\n#ai #claudeai #githubcopilot #anthropic",
+    "youtube": {
+      "title": "Claude Sonnet 5.5 beat Anthropic's own flagship at coding",
+      "description": "Anthropic's new Sonnet 5.5 jumped from 10.3% to 70.6% on Terminal-Bench 4.0, the benchmark for real command-line coding work — beating Anthropic's own flagship Opus 5.5, at the same price as before.\n\nIt shipped inside GitHub Copilot the same day: 30%+ faster output, a 1 million token context window, and it's live now on every paid Copilot plan, from Pro to Enterprise.\n\nIf you manage a team's Copilot seats, it's already there — nothing to set up.\n\n#claude #claudeai #githubcopilot #ai #coding",
+      "tags": [
+        "claude sonnet 5.5",
+        "claude sonnet",
+        "github copilot",
+        "ai coding",
+        "anthropic",
+        "claude ai",
+        "terminal bench",
+        "ai coding assistant"
+      ]
+    },
+    "x": "Anthropic's new Sonnet 5.5 beat its own flagship at real coding work: 10.3% → 70.6% on Terminal-Bench 4.0, same price as before.\n\nShipped inside GitHub Copilot the same day — live now on every paid plan.\n\n#Claude #GitHubCopilot"
+  },
+  "sources": [
+    "https://www.anthropic.com/claude-sonnet-5-5",
+    "https://platform.claude.com/docs/en/release-notes/overview",
+    "https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot",
+    "https://github.com/anthropics/claude-code/releases/tag/v2.1.284"
+  ],
+  "cover": {
+    "headline": "Anthropic just shipped a coding model that beats its own flagship at real terminal tasks — and GitHub Copilot got it the same day:",
+    "em": "beats its own flagship",
+    "person": "Dario Amodei",
+    "layout": "scene_person",
+    "photo_query": [
+      "programmer coding screen",
+      "code editor screen dark",
+      "terminal command line code"
+    ],
+    "photo_pick": {
+      "url": "https://live.staticflickr.com/4781/40245495764_c4e29123e7_b.jpg",
+      "page": "https://www.flickr.com/photos/153311384@N03/40245495764",
+      "author": "∁ormullion",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "Flickr",
+      "file": "julia vim editing terminal"
+    },
+    "icons": [
+      {
+        "slug": "claude",
+        "style": "tile",
+        "pos": "tr",
+        "size": 160
+      },
+      {
+        "slug": "githubcopilot",
+        "style": "circle",
+        "pos": "bl",
+        "size": 140
+      }
+    ],
+    "photo": {
+      "file": "julia vim editing terminal",
+      "page": "https://www.flickr.com/photos/153311384@N03/40245495764",
+      "author": "∁ormullion",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "Flickr"
+    },
+    "layout_used": "scene_person",
+    "person_photo": {
+      "file": "File:Dario Amodei at TechCrunch Disrupt 2023 01 (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Dario_Amodei_at_TechCrunch_Disrupt_2023_01_(cropped).jpg",
+      "author": "TechCrunch",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source": "Wikimedia Commons"
+    }
+  },
+  "design": {
+    "mood": "a lab release note pinned to a clean wall: warm cream paper, clay-terracotta ink, thin ruler-grid lines, a benchmark bar jumping way up — precise, calm, confident, not hacker-dark",
+    "palette": {
+      "bg": "#F6EFE6",
+      "bg2": "#EFE3D3",
+      "surface": "#FBF6EE",
+      "ink": "#2B2420",
+      "muted": "#8A7C6C",
+      "accent": "#C1502E",
+      "accent2": "#2E6B5E"
+    },
+    "fonts": {
+      "display": "Sora",
+      "body": "DM Sans",
+      "mono": "Space Mono"
+    },
+    "display": {
+      "weight": 700,
+      "case": "none",
+      "tracking": -2,
+      "scale": 1.0,
+      "italic_em": false
+    },
+    "shape": {
+      "radius": 18,
+      "border": 2,
+      "shadow": "soft"
+    },
+    "background": {
+      "pattern": "grid",
+      "pattern_opacity": 0.07,
+      "glow": false,
+      "gradient": true
+    },
+    "label": "mono",
+    "prompt": "card",
+    "art": "<svg viewBox='0 0 900 460' xmlns='http://www.w3.org/2000/svg'><line x1='100' y1='380' x2='820' y2='380' stroke='var(--muted)' stroke-width='2'/><rect x='170' y='340' width='90' height='40' fill='var(--muted)' opacity='0.5'/><text x='215' y='330' text-anchor='middle' font-family='Space Mono, monospace' font-size='22' fill='var(--muted)'>10.3%</text><rect x='420' y='120' width='120' height='260' rx='6' fill='var(--accent)'/><text x='480' y='104' text-anchor='middle' font-family='Space Mono, monospace' font-size='26' fill='var(--accent)' font-weight='700'>70.6%</text><path d='M300 360 L400 200' stroke='var(--accent2)' stroke-width='4' fill='none' marker-end='url(#arrow)'/><defs><marker id='arrow' markerWidth='10' markerHeight='10' refX='6' refY='3' orient='auto'><path d='M0,0 L0,6 L6,3 z' fill='var(--accent2)'/></marker></defs><rect x='600' y='60' width='190' height='130' rx='10' fill='var(--surface)' stroke='var(--ink)' stroke-width='2'/><circle cx='624' cy='84' r='6' fill='var(--accent)'/><circle cx='646' cy='84' r='6' fill='var(--muted)'/><circle cx='668' cy='84' r='6' fill='var(--muted)'/><text x='616' y='120' font-family='Space Mono, monospace' font-size='16' fill='var(--ink)'>1M ctx</text><text x='616' y='145' font-family='Space Mono, monospace' font-size='16' fill='var(--ink)'>$2/$10</text><text x='616' y='170' font-family='Space Mono, monospace' font-size='16' fill='var(--ink)'>/Mtok</text></svg>",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 17l6-6 4 4 8-8'/><path d='M21 7v6M21 7h-6'/></svg>"
+  },
+  "voice": "am_liam",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "CLAUDE · SONNET 5.5",
+      "title": "Anthropic's new Sonnet just beat Opus 5.5 at real coding tasks.",
+      "em": "beat Opus 5.5",
+      "sub": "Same price as before. Shipped in GitHub Copilot the same day.",
+      "tools": [
+        "Claude",
+        "Copilot"
+      ],
+      "voiceover": "Anthropic's new Sonnet just beat its own flagship model at coding."
+    },
+    {
+      "type": "stat",
+      "label": "THE NUMBER",
+      "value": "70.6%",
+      "title": "Up from 10.3% on the same benchmark",
+      "sub": "Terminal-Bench 4.0 tests an AI agent on real, multi-step command-line coding work. Sonnet 5.5's score beats Opus 5.5's on this one.",
+      "voiceover": "On real terminal coding tasks, it jumped from 10 percent to over 70."
+    },
+    {
+      "type": "facts",
+      "label": "WHAT CHANGED",
+      "title": "Sonnet 5.5 in three numbers",
+      "items": [
+        [
+          "Speed",
+          "Generates output 30%+ faster than Sonnet 5"
+        ],
+        [
+          "Cost per task",
+          "Up to 30% lower, at the same per-token price"
+        ],
+        [
+          "Context window",
+          "1 million tokens, up from Sonnet 5"
+        ]
+      ],
+      "voiceover": "It's over 30 percent faster and cheaper per task, with a 1 million token context window."
+    },
+    {
+      "type": "compare",
+      "label": "SONNET 5 VS 5.5",
+      "title": "What actually moved",
+      "cols": [
+        {
+          "name": "Sonnet 5",
+          "points": [
+            "10.3% on Terminal-Bench 4.0",
+            "Baseline speed",
+            "$2 / $10 per Mtok"
+          ]
+        },
+        {
+          "name": "Sonnet 5.5",
+          "points": [
+            "70.6% on Terminal-Bench 4.0",
+            "30%+ faster output",
+            "$2 / $10 per Mtok — unchanged"
+          ]
+        }
+      ],
+      "voiceover": "Same price on both, but a massive jump in coding score and speed."
+    },
+    {
+      "type": "steps",
+      "label": "SAME DAY",
+      "title": "It's already inside GitHub Copilot",
+      "steps": [
+        [
+          "Status",
+          "Generally available, not a preview — launched the same day as Sonnet 5.5 itself"
+        ],
+        [
+          "Where",
+          "VS Code, Visual Studio, JetBrains, Xcode, GitHub.com, Copilot CLI — on Pro, Pro+, Business and Enterprise plans"
+        ],
+        [
+          "How to enable it",
+          "Pick `Claude Sonnet 5.5` from the model switcher — on by default unless an admin turned it off"
+        ]
+      ],
+      "voiceover": "It's already live in GitHub Copilot, on every paid plan, in most major editors."
+    },
+    {
+      "type": "list",
+      "label": "WHERE IT FITS",
+      "title": "Sonnet 5.5 vs. Opus 5.5: Anthropic's own split",
+      "items": [
+        [
+          "Sonnet 5.5",
+          "Well-scoped everyday tasks, fixing bugs, polished documents and spreadsheets"
+        ],
+        [
+          "Opus 5.5",
+          "Complex work that needs careful judgment"
+        ],
+        [
+          "Coming next",
+          "A Claude Haiku 5.5, Anthropic says, in the coming weeks"
+        ]
+      ],
+      "voiceover": "Anthropic's own advice: Sonnet for everyday tasks, Opus for the hard judgment calls."
+    },
+    {
+      "type": "cta",
+      "title": "Same price.",
+      "title2": "A very different model.",
+      "lines": [
+        [
+          "Try",
+          "`claude-sonnet-5-5` on the API, or just open Claude"
+        ],
+        [
+          "Check",
+          "your Copilot model switcher — it may already be there"
+        ],
+        [
+          "Follow",
+          "@aiplaybooks.daily for daily AI tool news"
+        ]
+      ],
+      "voiceover": "Same price, a very different model — check your Copilot model switcher today."
+    }
+  ]
+}
