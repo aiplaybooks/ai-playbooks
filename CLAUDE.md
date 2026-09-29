@@ -83,7 +83,7 @@ Every day the pipeline should:
   1-3 followers): the post flow publishes the voiced reel.mp4 as IG Reel + FB Reel after the carousel/photo posts
   (`ig_published` matches media_type so a carousel and its Reel with the same caption are never confused).
 - **X (Twitter) as the 4th platform** (owner, 2026-09-29; paid pay-per-use API, owner accepted ~$2-3/month):
-  account @CluePrintl1 (= the AI Playbooks X account), developer app "AI Playbooks Publisher" (Production, Pay Per
+  account **@AIPlaybooks_** ("AI Playbooks", id 2101796049887150081; was @CluePrintl1), developer app "AI Playbooks Publisher" (Production, Pay Per
   Use). Auth: OAuth 2.0 user token with media.write via `x_token.py` / X_baglan.bat (the console's Generate button
   can't grant media.write); refresh token rotates in .env (X_REFRESH_TOKEN, X_CLIENT_ID/SECRET). publish.py step
   `x_post` (xpost.py) runs last in every flow (after dm, before log): the reel.mp4 (or the first image) + `captions.x`
