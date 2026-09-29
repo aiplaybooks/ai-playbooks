@@ -1,0 +1,173 @@
+{
+  "theme": "prompts",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Prompt Pack · Sleep Reset Plan",
+  "caption": "6 ChatGPT prompts that fix your sleep in 2 weeks, no willpower required 🌙\n\nMost sleep advice is the same 5 tips you already know and ignore. This is different: it audits your actual night, then builds the routine, the screen rules, the bedroom fixes and a day-by-day calendar around YOUR habits.\n\n→ audits what's really breaking your sleep\n→ designs a wind-down routine (+ a 15-min fallback)\n→ writes screen rules you'll actually keep\n→ fixes your bedroom, cheapest changes first\n→ builds a 2-week calendar that shifts your bedtime gradually\n→ tracks it so you can see it working\n\nWhat time do you actually fall asleep right now?\n\nSend this to the friend who's still up at 2am, and follow @aiplaybooks.daily for a new playbook every day.\n\n#chatgptprompts #sleep #chatgpt #ai #productivity",
+  "captions": {
+    "instagram": "6 ChatGPT prompts that fix your sleep in 2 weeks, no willpower required 🌙\n\nMost sleep advice is the same 5 tips you already know and ignore. This is different: it audits your actual night, then builds the routine, the screen rules, the bedroom fixes and a day-by-day calendar around YOUR habits.\n\n→ audits what's really breaking your sleep\n→ designs a wind-down routine (+ a 15-min fallback)\n→ writes screen rules you'll actually keep\n→ fixes your bedroom, cheapest changes first\n→ builds a 2-week calendar that shifts your bedtime gradually\n→ tracks it so you can see it working\n\nWhat time do you actually fall asleep right now?\n\nSend this to the friend who's still up at 2am, and follow @aiplaybooks.daily for a new playbook every day.\n\n#chatgptprompts #sleep #chatgpt #ai #productivity",
+    "facebook": "If you've been falling asleep at 2am and dragging through every day since, this one's for you 🌙\n\nWe built 6 ChatGPT prompts that work like a sleep coach: they audit your actual night, then design your wind-down routine, your screen rules, a bedroom fix list, a 2-week calendar that shifts your bedtime gradually, and a simple tracker to prove it's working.\n\nNo generic tips. Every step is built around your own habits.\n\nWhat time do you actually fall asleep most nights?\n\n#chatgptprompts #sleep #productivity",
+    "youtube": {
+      "title": "6 ChatGPT Prompts That Fix Your Sleep in 2 Weeks",
+      "description": "6 copy-paste ChatGPT prompts that build you a real sleep reset plan: they audit what's breaking your sleep, design your wind-down routine, write screen-time rules, fix your bedroom, build a 2-week bedtime calendar, and track your progress.\n\nCopy each prompt, fill in the [PLACEHOLDERS], and start tonight.\n\n#chatgptprompts #sleep #chatgpt #ai #productivity",
+      "tags": [
+        "chatgpt prompts",
+        "sleep routine",
+        "sleep tracker",
+        "chatgpt sleep",
+        "ai sleep coach",
+        "better sleep tips",
+        "screen time rules",
+        "bedtime routine"
+      ]
+    }
+  },
+  "sources": [],
+  "cover": {
+    "headline": "Your phone is wrecking your sleep. 6 AI prompts build you a real reset plan in 2 weeks:",
+    "em": "2 weeks",
+    "person": null,
+    "layout": "scene",
+    "photo_query": [
+      "dark bedroom phone in bed night",
+      "nightstand lamp bed night",
+      "person sleeping bedroom night"
+    ],
+    "photo_pick": null,
+    "photo": {
+      "file": "Nightstand",
+      "page": "https://www.flickr.com/photos/8687249@N03/25620203250",
+      "author": "benjaflynn",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "source": "Flickr"
+    },
+    "layout_used": "scene"
+  },
+  "design": {
+    "mood": "a quiet bedroom just after midnight: deep indigo dark, one warm lamp glow, calm and orderly, like a reset not a lecture",
+    "palette": {
+      "bg": "#0B0F24",
+      "bg2": "#121935",
+      "surface": "#182047",
+      "ink": "#F1F4FF",
+      "muted": "#8C93C4",
+      "accent": "#6E8CFF",
+      "accent2": "#FFB86B"
+    },
+    "fonts": {
+      "display": "Fraunces",
+      "body": "Inter",
+      "mono": "Space Mono"
+    },
+    "display": {
+      "weight": 600,
+      "tracking": -1
+    },
+    "shape": {
+      "radius": 30,
+      "border": 1,
+      "shadow": "soft"
+    },
+    "background": {
+      "pattern": "waves",
+      "pattern_opacity": 0.08,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "pill",
+    "prompt": "chat",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 14.5A8.5 8.5 0 1 1 11 3a7 7 0 0 0 9 11.5z'/></svg>"
+  },
+  "voice": "af_sarah",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "PROMPT PACK",
+      "title": "prompts that build you a real sleep reset plan",
+      "em": "sleep reset plan",
+      "sub": "Audit, routine, rules, tracker, done in 2 weeks.",
+      "tools": [
+        "ChatGPT",
+        "Claude",
+        "Gemini"
+      ],
+      "voiceover": "If you're falling asleep at 2am again, this is for you."
+    },
+    {
+      "type": "prompt",
+      "name": "The Sleep Audit",
+      "sub": "Find out what's actually breaking your sleep",
+      "prompt": "Act as a sleep coach. Here's my night: [DESCRIBE YOUR EVENING, BEDTIME, PHONE USE, CAFFEINE]. List the 3 biggest problems, rank them by impact, and give me **ONE SMALL CHANGE** to start tonight.",
+      "tip": "Be honest about the phone-in-bed part — that's usually problem #1.",
+      "voiceover": "First, it audits your actual night and ranks what's really breaking it."
+    },
+    {
+      "type": "prompt",
+      "name": "The Wind-Down Architect",
+      "sub": "A 45-minute routine that actually gets you sleepy",
+      "prompt": "Build me a 45-minute wind-down routine before my target bedtime of [TIME]. Include a **SCREEN CUTOFF**, one calming activity, and a fallback version for nights I only have 15 minutes.",
+      "tip": "Keep the fallback version — a broken streak kills the habit faster than a short routine.",
+      "voiceover": "Then it designs a wind-down routine, plus a short version for busy nights."
+    },
+    {
+      "type": "prompt",
+      "name": "The Screen-Time Contract",
+      "sub": "Rules you'll actually follow",
+      "prompt": "Write me a screen-time contract for the hour before bed: which apps are **BANNED** after [TIME], what I'm allowed instead, and one honest consequence if I break it. Keep it realistic, not extreme.",
+      "tip": "One realistic rule you keep beats three strict ones you quit by Wednesday.",
+      "voiceover": "This one writes screen rules strict enough to work, but realistic enough to keep."
+    },
+    {
+      "type": "prompt",
+      "name": "The Bedroom Reset",
+      "sub": "Fix the room, not just the habit",
+      "prompt": "Here's my bedroom setup: [LIGHT, NOISE, TEMPERATURE, WHAT'S ON YOUR NIGHTSTAND]. Give me a **BEDROOM CHECKLIST** to fix before my next reset attempt, cheapest fixes first.",
+      "tip": "Ask for cheapest-first — most fixes here cost nothing.",
+      "voiceover": "Next, it checks your actual room, cheapest fixes first."
+    },
+    {
+      "type": "prompt",
+      "name": "The 2-Week Reset Calendar",
+      "sub": "Move your bedtime gradually, not all at once",
+      "prompt": "I currently fall asleep at [CURRENT TIME] and want to fall asleep by [TARGET TIME]. Build me a **2-WEEK CALENDAR** that shifts my bedtime gradually, day by day, with what to do if I miss a day.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Day 1-3: lights out 15 min earlier",
+          "Day 4-9: hold, add the wind-down routine",
+          "Day 10-14: shift the last 15 min, lock it in"
+        ]
+      },
+      "voiceover": "Then it builds a two-week calendar that moves your bedtime gradually."
+    },
+    {
+      "type": "prompt",
+      "name": "The Tracking Sheet",
+      "sub": "See the reset actually working",
+      "prompt": "Build me a simple daily sleep tracker template: bedtime, wake time, how rested I feel out of 10, and one note field. After 7 days, tell me what to ask you to **ADJUST THE PLAN**.",
+      "tip": "One week of honest numbers beats a month of guessing how you slept.",
+      "voiceover": "And the last one gives you a tracker, so you can see it actually working."
+    },
+    {
+      "type": "cta",
+      "title": "Better sleep,",
+      "title2": "built in 2 weeks.",
+      "lines": [
+        [
+          "Save",
+          "this pack before tonight."
+        ],
+        [
+          "Send",
+          "it to the friend who scrolls until 2am."
+        ],
+        [
+          "Follow",
+          "@aiplaybooks.daily for a new playbook every day."
+        ]
+      ],
+      "voiceover": "Save this, send it to a friend who needs it, and start tonight."
+    }
+  ]
+}
