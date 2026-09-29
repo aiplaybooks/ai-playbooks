@@ -511,8 +511,7 @@ def x_post(p):
             if "x_post_media" in p.state and "HTTP 4" in str(ex) and "/media/" not in str(ex): p.state.pop("x_post_media"); p.save()
             raise PublishError(str(ex)) from None
         p.state["x_post_tweet"] = tid; p.save()  # saved right away: a retry never posts twice
-    user = XP.XT.read_env().get("X_USERNAME") or "i"
-    link = f"https://x.com/{user}/status/{tid}"
+    link = f"https://x.com/i/web/status/{tid}"  # works whatever the account's handle is (it may be renamed)
     say(f"x_post: published {link}")
     p.done("x_post", id=tid, link=link)
 
