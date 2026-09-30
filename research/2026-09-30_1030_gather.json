@@ -1,0 +1,54 @@
+{
+ "generated": "2026-09-30T10:30+00:00",
+ "candidates": [
+  {
+   "id": "openai-agentkit-launch",
+   "tool": "ChatGPT",
+   "kind": "news",
+   "title": "OpenAI Just Gave Everyone the Tools to Build Their Own AI Agent",
+   "summary_tr": "OpenAI, DevDay 2026'da AgentKit'i duyurdu: geliştiricilerin kod yazmadan/az kodla kendi AI agent'ını kurup, dağıtıp optimize edebildiği tam bir araç seti (Agent Builder, ChatKit, Connector Registry, değerlendirme araçları dahil).",
+   "why_tr": "Herkesin 'kendi AI ajanını kur' konusuna merakı çok yüksek; dots haberiyle birlikte gündemin en sıcak konusu, 'nasıl yaparım' formatına çok uygun.",
+   "angle": "what AgentKit is + who it's for + 3 things you could build with it this weekend",
+   "tools": ["ChatGPT", "OpenAI"],
+   "published": "2026-09-29",
+   "sources": ["https://openai.com/index/introducing-agentkit/", "https://openai.com/index/devday-2026-recap/"],
+   "hints": ["https://9to5mac.com/2026/09/29/openai-teases-20-announcements-at-devday-watch-live/"],
+   "score": 7
+  },
+  {
+   "id": "meta-forum-groups-app",
+   "tool": "Meta AI",
+   "kind": "news",
+   "title": "Meta Just Launched a Whole New App Just for Your Facebook Groups",
+   "summary_tr": "Meta, Facebook Gruplarına özel yeni bir uygulama olan Forum'u duyurdu: grup içeriğine daha derin katılım için ayrı, odaklanmış bir alan.",
+   "why_tr": "Facebook tarafında nadir görülen taze bir ürün lansmanı; sayfamızın Facebook takipçileri için de doğrudan ilgili.",
+   "angle": "what Forum is + who it's for + how it's different from the main Facebook app",
+   "tools": ["Meta AI", "Social media"],
+   "published": "2026-09-29",
+   "sources": ["https://about.fb.com/news/2026/09/find-community-forum-dedicated-app-facebook-groups/"],
+   "hints": ["https://www.socialmediatoday.com/news/meta-adds-contributor-badges-to-forums-chat-app/831717/"],
+   "score": 5
+  },
+  {
+   "id": "pack-car-buying-negotiation",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Prompts That Get You a Better Deal on Your Next Car",
+   "summary_tr": "Araba alırken bindirilen fiyat oyunlarına karşı 5 hazır prompt: adil fiyat araştırması, pazarlık senaryosu, ek satışları (extended warranty vs.) eleme, toplam maliyet hesabı ve son teklif mesajı.",
+   "why_tr": "Araba alımı hemen herkesin hayatında büyük ve stresli bir para kararı; somut dolar tasarrufu vaadi paylaşım/kaydetme oranını yükseltir.",
+   "angle": "Act as an expert car-buying negotiator: [BUDGET] + [CAR MODEL] -> fair-price research prompt, dealer negotiation script, add-on red-flag checklist, total-cost-of-ownership calculator prompt, final offer message — a realistic estimate of savings ([$1,500-$3,000])",
+   "tools": ["ChatGPT", "Claude", "Gemini"],
+   "published": null,
+   "sources": [],
+   "hints": [],
+   "score": 6
+  }
+ ],
+ "coverage": {
+  "ChatGPT": 1, "Claude": 0, "Gemini": 0, "Grok": 0, "Codex": 0, "Cursor": 0, "Copilot": 0,
+  "Perplexity": 0, "Meta AI": 1, "Mistral": 0, "DeepSeek": 0, "Open models": 0,
+  "Apple": 0, "Higgsfield": 0, "Google": 0, "Social media": 1, "Prompt pack": 1
+ },
+ "notes_tr": "Havuz zaten çok dolu: news.py + her araç için web araması yapıldı (ChatGPT/dots-AgentKit, Claude, Gemini, Grok, Codex, Cursor, Copilot, Perplexity, Meta AI, Mistral, DeepSeek, Qwen/Kimi/GLM/MiniMax, Apple, Higgsfield, Google/Gemini Notebook, sosyal medya) ama bulunanların neredeyse tamamı ya havuzda zaten var (Grok 4.7, GPT-6.1 Sol, Claude Sonnet 5.5, DeepSeek 1M context, Mistral Vibe, Copilot süper app, Higgsfield/Astra, Perplexity Personal Computer, Apple Siri AI/iOS 27, Gemini Notebook mobil) ya da son 36 saatten eski (Gemini Notebook sesli konuşma 15 Eylül, Instagram 2x hız özelliği eski). Gerçekten yeni ve resmi kaynaklı olanlar: OpenAI AgentKit (DevDay, 29 Eylül) ve Meta'nın yeni Forum uygulaması (29 Eylül). Chinese open-weight modellerde (Qwen3.8 Max, GLM-5.3, Kimi K3, MiniMax M3) kullanıcının deneyebileceği yeni bir lansman yok, hepsi zaten havuzda veya araştırma amaçlı. Ayrı bir evergreen eklemedim: her araç için zaten en az bir evergreen havuzda var, tekrar üretmek yerine yeni bir prompt paketi (araba alım pazarlığı) ekledim.",
+ "sources_changed": []
+}

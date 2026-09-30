@@ -1,0 +1,86 @@
+{
+ "generated": "2026-09-30T07:13+00:00",
+ "candidates": [
+  {
+   "id": "chatgpt-sign-in-with-chatgpt",
+   "tool": "ChatGPT",
+   "kind": "news",
+   "title": "Your ChatGPT Subscription Now Works Inside Notion, Vercel and Devin",
+   "summary_tr": "OpenAI DevDay'de \"Sign in with ChatGPT\" duyuruldu: Plus/Pro aboneliğinin kullanım hakkını Notion, Vercel, Devin gibi 16 farklı uygulamada, ayrı abonelik almadan harcayabiliyorsun; her uygulama için haftalık limit koyabiliyorsun.",
+   "why_tr": "Kitlemiz zaten ChatGPT'ye para ödüyor; bu paranın başka araçlarda da işe yaradığını öğrenmek doğrudan cüzdanına dokunuyor, paylaşılası bir 'bilmiyordum' anı.",
+   "angle": "what it is + which 16 apps + how to turn it on in one app",
+   "tools": ["ChatGPT", "Codex"],
+   "published": "2026-09-29",
+   "sources": ["https://help.openai.com/en/articles/20001410-sign-in-with-chatgpt", "https://developers.openai.com/siwc", "https://openai.com/index/devday-2026-recap"],
+   "hints": ["https://thenewstack.io/sign-in-with-chatgpt/"],
+   "score": 8
+  },
+  {
+   "id": "instagram-pixel-blur-effect",
+   "tool": "Social media",
+   "kind": "news",
+   "title": "Instagram Can Now Pixelate Anyone in Your Story With Just a Prompt",
+   "summary_tr": "Instagram Stories'e Meta AI destekli yeni bir 'Pixel' efekti geldi: bir metin isteğiyle fotoğraftaki bir kişiyi ya da nesneyi otomatik olarak pikselleştirip gizleyebiliyorsun (manuel çıkartma yapıştırmak yerine).",
+   "why_tr": "Herkesin kullandığı bir gizlilik/mahremiyet kısayolu, dene-göster formatına çok uygun ve yorumlarda tartışma yaratıyor (kullanıcılar 'soft launch' şakası yapıyor).",
+   "angle": "before/after demo: hide a face in 2 taps with just a prompt",
+   "tools": ["Meta AI", "Social media"],
+   "published": "2026-09-26",
+   "sources": ["https://about.instagram.com/blog/announcements/new-ai-effects-in-instagram-stories"],
+   "hints": ["https://www.macrumors.com", "https://www.dexerto.com/entertainment/instagram-now-lets-you-blur-people-so-you-can-hide-your-soft-launch-relationship-3412369/"],
+   "score": 7
+  },
+  {
+   "id": "spotify-muse-agent-integration",
+   "tool": "Other",
+   "kind": "news",
+   "title": "Spotify Just Let Meta's AI Agent Muse Loose on Your Playlists",
+   "summary_tr": "Spotify'ın resmi newsroom'u Meta'nın Muse AI ajanının artık Spotify içinde çalıştığını duyurdu: müzik zevkine göre öneri/otomasyon yapan bir ajan entegrasyonu.",
+   "why_tr": "Milyonların günlük kullandığı bir uygulamaya AI ajanın sızması, 'AI her yerde' anlatısının somut ve şaşırtıcı bir örneği - paylaşılası.",
+   "angle": "what Muse does inside Spotify + how to try it today",
+   "tools": ["Meta AI", "Other"],
+   "published": "2026-09-23",
+   "sources": ["https://newsroom.spotify.com/2026-09-23/spotify-meta-muse-agent/"],
+   "hints": [],
+   "score": 6
+  },
+  {
+   "id": "perplexity-personal-computer-mac",
+   "tool": "Perplexity",
+   "kind": "evergreen",
+   "title": "Perplexity's Free AI Agent Can Run 24/7 on an Old Mac Mini",
+   "summary_tr": "Perplexity'nin 'Personal Computer' özelliği bir Mac mini'yi sürekli çalışan bir AI ajanına çeviriyor: yerel dosyalarına ve uygulamalarına erişip arka planda görev takip ediyor, tetikleyicilere göre iş yapıyor. Comet tarayıcısından farklı, ayrı bir ürün; çoğu kullanıcı henüz bilmiyor.",
+   "why_tr": "Perplexity'nin tarayıcısı çok konuşuldu ama bu 'her zaman açık ajan' özelliği az biliniyor; 'bilmediğin özellik' formatı iyi çalışıyor.",
+   "angle": "what it does + who it's for (Max plan) + how it differs from Comet",
+   "tools": ["Perplexity"],
+   "published": null,
+   "sources": ["https://www.perplexity.ai/hub/blog/personal-computer-is-here", "https://www.perplexity.ai/hub/blog/everything-is-computer"],
+   "hints": ["https://www.macworld.com/article/3086893/perplexitys-personal-computer-is-a-mac-mini-running-an-ai-os.html"],
+   "score": 6
+  },
+  {
+   "id": "pack-insurance-renewal-negotiation",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Prompts That Get You a Cheaper Insurance Renewal Before It Auto-Renews",
+   "summary_tr": "Yeni bir prompt paketi fikri: araba/ev/sağlık sigortası yenilemeden önce daha iyi bir teklif almak için kullanılacak 5 prompt (poliçeyi analiz et, rakip teklif senaryosu kur, telefonda ne söyleyeceğini yaz, gizli indirimleri sor, gerçekçi tasarruf tahmini iste).",
+   "why_tr": "Herkesin başına gelen ama kimsenin uğraşmadığı bir 'otomatik yenilenen fatura' anı - cüzdana dokunan, düşük efor yüksek fayda vaadi olan bir paket.",
+   "angle": "Act as an expert insurance negotiator: analyze my policy, build a competing-quote script, write the renewal call script, find hidden discounts, give a realistic savings estimate",
+   "tools": ["Prompt pack"],
+   "published": null,
+   "sources": [],
+   "hints": [],
+   "score": 7
+  }
+ ],
+ "coverage": {"ChatGPT": 1, "Claude": 0, "Gemini": 0, "Grok": 0, "Codex": 0, "Cursor": 0, "Copilot": 0, "Perplexity": 1, "Meta AI": 2, "Mistral": 0, "DeepSeek": 0, "Open models": 0, "Apple": 0, "Higgsfield": 0, "Google": 0, "Social media": 1, "Prompt pack": 1, "Other": 1},
+ "notes_tr": "Bugün en büyük haber penceresi OpenAI DevDay'di (GPT-6.1 Sol, dots, DevDay recap) ve Claude Sonnet 5.5 - ikisi de zaten havuzda, tekrar eklemedim. Havuzdaki 'ChatGPT'nin en büyük DevDay duyurusundan ayrı, az bilinen bir parçasını (Sign in with ChatGPT) ekledim. Gemini/Grok/Codex/Cursor/Copilot/Mistral/DeepSeek/Open models/Apple/Higgsfield/Google için her biri ayrı ayrı arandı ama son 36 saatte (ve çoğu için son 7 günde) havuzda olmayan, gerçekten yeni ve resmi kaynakla doğrulanabilen bir haber çıkmadı - bu alanlar zaten son günlerde çok kez işlendiği için (Sonnet 5.5, Opus 5.5, Grok 4.7, GLM-5.3, Qwen3.8-Max, Kimi K3, MiniMax-M3, Higgsfield Astra, Mistral Vibe hepsi havuzda) tekrara düşmemek için boş bıraktım. Instagram Pixel efekti ve Spotify x Muse haberleri 36 saatten eski (26 ve 23 Eylül) ama 7 günlük pencerede ve havuzda yoktu, resmi kaynakla doğrulandı. Perplexity için 'Personal Computer' (Mac mini ajanı) az bilinen ama gerçek bir özellik olduğu için evergreen olarak eklendi - Comet ve Portable Computer'dan farklı bir ürün, karışmaması için notta belirttim. Yeni prompt paketi: sigorta yenileme pazarlığı (kütüphanede ve havuzda yoktu). xAI'nin dot.com alan adını Grok'a yönlendirmesi (TechCrunch haberi, DevDay'e 'trolleme') eğlenceli ama resmi kaynakla doğrudan teyit edemedim (sadece haber sitesi üzerinden), o yüzden eklemedim.",
+ "sources_changed": [
+  "EKLENDİ: Spotify newsroom RSS (https://newsroom.spotify.com/rss/) - resmi, çalışıyor, milyonların kullandığı bir uygulamaya sızan AI özelliklerini (Muse ajanı, AI Persona etiketleri) yakalıyor.",
+  "TEST EDİLDİ, REDDEDİLDİ: https://www.perplexity.ai/hub/blog/rss.xml - 403 Forbidden, script engelliyor.",
+  "TEST EDİLDİ, REDDEDİLDİ: https://about.instagram.com/blog/rss - geçersiz/bozuk XML (ParseError).",
+  "TEST EDİLDİ, REDDEDİLDİ: https://developers.openai.com/blog/rss.xml - 404 Not Found (yanlış path).",
+  "TEST EDİLDİ, REDDEDİLDİ: https://blog.x.com/en_us/all-posts/rss - 403 Forbidden.",
+  "TEST EDİLDİ, REDDEDİLDİ: https://newsroom.tiktok.com/en-us/rss - geçersiz/bozuk XML (ParseError).",
+  "Mevcut kaynaklarda source_health.json kontrol edildi: hepsi sağlıklı (fail_streak 0, en yenisi 30 günden eski değil), onarım gerekmedi."
+ ]
+}
