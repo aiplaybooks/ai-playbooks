@@ -113,7 +113,7 @@ def write_json(p, data):
 
 
 # the learning job (hooks + captions, used by every flow) runs 10x a day (owner, 2026-09-28), each run on one focus
-LEARN_TIMES = ["07:00", "08:30", "10:00", "11:30", "13:00", "14:30", "16:00", "17:30", "19:00", "21:00"]
+LEARN_TIMES = ["08:30", "19:30"]  # owner, 2026-09-30: 2x a day (10x ate the Claude usage, 8 of 11 runs found nothing new)
 LEARN_FOCUS = [
     "news carousels: cover headlines + caption hooks for AI news",
     "prompt packs: money / daily-life pack headlines and caption openers",

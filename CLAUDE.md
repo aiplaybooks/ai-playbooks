@@ -104,8 +104,9 @@ Every day the pipeline should:
 - **Telegram digest at session start** (owner, 2026-09-29): his Telegram messages go to the Studio's chat bot, not to
   Claude Code. `telegram_bot.py` logs every message to runs/telegram/inbox.jsonl; the SessionStart hook
   (.claude/settings.json) runs `tools/tg_digest.py`, which prints the new ones. Analyse them first in every session.
-- **Hook/caption learning 10x a day** (owner, 2026-09-28: "these agents must keep improving, I need them for
-  everything"): the `learn` job runs at `learn_times` (10 slots), each run on one focus in rotation (news, packs,
+- **Hook/caption learning 2x a day** (owner, 2026-09-28: "these agents must keep improving, I need them for
+  everything"; cut from 10x to 2x on 2026-09-30: 10 runs ate the Claude usage limit and 8 of 11 found nothing new):
+  the `learn` job runs at `learn_times` (08:30, 19:30), each run on one focus in rotation (news, packs,
   clips, GitHub repos, captions → `LEARN_FOCUS` in studio.py), updating hook_playbook.md + caption_playbook.md Lessons
   with proof only.
 - **Reel/Short cover = the carousel's first slide** (owner, 2026-09-24): publish.py makes `cover.jpg` (9:16, slide centered
@@ -323,7 +324,7 @@ candidate (and approves the preview), everything else is automatic.
   collect + scout (skipped when the last gather is < 3 h old; waits for a running gather) → **pool** (every candidate
   of the last 7 days not posted yet, `new` since the last delivery first → `research/<date>_<HHMM>_candidates.json`
   with `"pool": true`) → Telegram + toast → owner picks one in the UI.
-- **learn** job, 10x a day at `learn_times` (one focus per run, see Decisions): prompts/hook_learn.md + `hooks.py` (big AI accounts' opening lines
+- **learn** job, 2x a day at `learn_times` (one focus per run, see Decisions): prompts/hook_learn.md + `hooks.py` (big AI accounts' opening lines
   ranked vs. each account's median, trending Shorts titles, our own hooks + results) + web research → updates
   `prompts/hook_playbook.md` (≤ 12 live patterns with proof). Read by the hook writer, the writer (cover headline) and
   the caption agent (first line). UI: the "Arka plan" line in the candidates tab ("Şimdi topla", "Şimdi öğren").
