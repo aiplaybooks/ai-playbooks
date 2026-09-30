@@ -23,7 +23,9 @@ RACES = [  # the Six Rays (look/tone locked in fb-comment-automation/src/persona
     {"key": "andromedan", "name": "Andromedan", "theme": "Özgürlük", "archetype": "Take back your freedom", "color": "#b69cff"},
     {"key": "lemurian", "name": "Lemurian", "theme": "Toprak, atalar", "archetype": "The earth remembers you", "color": "#8fb35e"},
 ]
-DEFAULT_POOLS = {"arcturian": r"D:\masaustuAI2\ARCTURIAN\videos", "lemurian": r"D:\masaustuAI2\Lemurian\video"}
+POOL_BASE = pathlib.Path(r"D:\masaustuAI2\STARSEED VIDEO HAVUZ")  # owner, 2026-09-30: one folder per race
+DEFAULT_POOLS = {k: str(POOL_BASE / d) for k, d in {"arcturian": "Arcturian", "lyran": "Lyran", "pleiadian": "Pleiadian",
+                                                     "sirian": "Sirian", "andromedan": "andromedan", "lemurian": "Lemurian"}.items()}
 STAGES = [("topic", "Konu"), ("script", "Senaryo"), ("voice", "Ses"), ("capcut", "CapCut · sende"),
           ("approve", "Onay"), ("published", "Yayında")]
 _cache = {"t": 0, "pools": {}}
@@ -38,7 +40,7 @@ def read_json(p, default=None):
 def config():
     c = read_json(CONFIG, {}) or {}
     c.setdefault("pools", {}); c.setdefault("voices", {})
-    for k, v in DEFAULT_POOLS.items(): c["pools"].setdefault(k, v)
+    c["pools"] = {**DEFAULT_POOLS, **c.get("pools_override", {})}
     return c
 
 
