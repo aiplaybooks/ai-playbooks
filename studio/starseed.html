@@ -174,7 +174,7 @@ section{display:none}section.on{display:block}
 
     <section id="s-done">
       <div class="head"><div><h1>Yayın arşivi</h1><p>Onay bekleyen bitmiş videolar ve yayınlananlar.</p></div></div>
-      <h3 class="sidehead" style="padding:0 0 8px">Onay bekliyor · ORTAK/2_BITEN_VIDEOLAR</h3>
+      <h3 class="sidehead" style="padding:0 0 8px">Onay bekliyor · video + thumbnail geldi</h3>
       <div class="list" id="finished"></div>
       <h3 class="sidehead" style="padding:14px 0 8px">Yayınlandı</h3>
       <div class="list" id="published"></div>
@@ -207,11 +207,11 @@ function render(){
   const P=S.projects.filter(p=>!race||p.race===race);
   $("#nLine").textContent=P.length||"";$("#nBooks").textContent=S.books.filter(b=>b.published).length;$("#nDone").textContent=S.published.length||"";
   $("#board").innerHTML=S.stages.map(st=>{
-    const items=st.id==="approve"?S.finished.map(f=>({title:f.name,note:"bitmiş video"})):P.filter(p=>p.stage===st.id);
+    const items=P.filter(p=>p.stage===st.id);
     const you=st.id==="capcut"||st.id==="approve";
     return `<div class="col ${you?"you":""}"><h3>${esc(st.label)}<span>${items.length}</span></h3>${items.map(p=>
-      `<div class="pcard" style="--c:${rc(p.race)}"><b>${esc(p.title)}</b><small>${esc([p.race,p.minutes&&p.minutes+" dk",p.book,p.note].filter(Boolean).join(" · "))}</small></div>`).join("")||
-      `<div class="empty">${{topic:"Konu motoru ilk önerileri hazırlıyor.",capcut:"CapCut'ta seni bekleyen proje yok.",approve:"Bitmiş videoyu ORTAK/2_BITEN_VIDEOLAR klasörüne bırak.",published:"Henüz yayın yok."}[st.id]||"—"}</div>`}</div>`}).join("");
+      `<div class="pcard" style="--c:${rc(p.race)}"><b>${esc(p.title)}</b><small>${esc([p.slot,p.emissary,p.minutes&&p.minutes+" dk",p.book,p.note].filter(Boolean).join(" · "))}</small>${p.stage==="capcut"||p.stage==="approve"?`<small style="display:block;margin-top:4px">${p.video?"🎬 video ✓":"🎬 video bekleniyor"} · ${p.thumb?"🖼 thumbnail ✓":"🖼 thumbnail bekleniyor"}</small>`:""}</div>`).join("")||
+      `<div class="empty">${{topic:"Konu motoru ilk önerileri hazırlıyor.",capcut:"CapCut'ta seni bekleyen proje yok.",approve:"Bitmiş video + thumbnail'i projenin kendi klasörüne koyunca burada görünür.",published:"Henüz yayın yok."}[st.id]||"—"}</div>`}</div>`}).join("");
   $("#families").innerHTML=FAMILIES.map(([t,d,b])=>`<div class="card" style="--c:#7b8cff"><h4>${t}</h4><p>${d}</p><div class="meta"><span class="tag gold">→ ${b}</span></div></div>`).join("");
   $("#books").innerHTML=S.books.filter(b=>!race||b.race===race).map(b=>`<div class="card" style="--c:${rc(b.race)}">
     <h4>${esc(b.name.split(" - ")[0].split(" : ")[0])}</h4><p>${esc(b.name.includes(" - ")?b.name.split(" - ").slice(1).join(" - "):b.name.split(" : ")[1]||"")}</p>
@@ -229,7 +229,7 @@ function render(){
     await fetch("/api/starseed/voice",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({race:r.key,voice:v,on})});
     r.voices=on?[...r.voices,v]:r.voices.filter(x=>x!==v);toast(`${r.name}: ${v} ${on?"eklendi":"çıkarıldı"}`);render()});
   const li=(f,m)=>`<div class="it"><b>${esc(f.name)}</b><span class="tag">${(f.size/2**20).toFixed(0)} MB</span><span class="tag">${new Date(f.time*1000).toLocaleString("tr-TR",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"})}</span>${m||""}</div>`;
-  $("#finished").innerHTML=S.finished.map(f=>li(f,`<span class="tag gold">onay sorulacak</span>`)).join("")||`<div class="empty">Onay bekleyen video yok.</div>`;
+  $("#finished").innerHTML=S.projects.filter(p=>p.stage==="approve").map(p=>`<div class="it"><b>${esc(p.title)}</b><span class="tag">${esc(p.slot||"")}</span><span class="tag gold">onay sorulacak</span></div>`).join("")||`<div class="empty">Onay bekleyen video yok.</div>`;
   $("#published").innerHTML=S.published.map(f=>li(f)).join("")||`<div class="empty">Henüz yayınlanan video yok.</div>`;
 }
 $$("#navs button").forEach(b=>b.onclick=()=>{$$("#navs button").forEach(x=>x.classList.toggle("on",x===b));$$("section").forEach(s=>s.classList.toggle("on",s.id==="s-"+b.dataset.s))});

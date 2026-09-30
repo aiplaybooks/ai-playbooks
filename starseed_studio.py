@@ -14,6 +14,16 @@ VOICES_DIR = BASE / "Kokoro Ses Ornekleri"
 CONFIG = PIPE / "config.json"
 FILE_PREFIXES = ("ORTAK/", "Kokoro Ses Ornekleri/")  # what /starseed/file/ may serve
 VIDEO = {".mp4", ".mov", ".m4v"}
+IMAGE = {".jpg", ".jpeg", ".png", ".webp"}
+OUR_FILES = {"voice", "voice_tts", "preview"}  # stems of files we write into a project folder (never "the final render")
+
+
+def final_files(d):
+    """The owner's final render + thumbnail in a project folder (owner, 2026-09-30: both go into the project's folder)."""
+    vids = [f for f in d.iterdir() if f.is_file() and f.suffix.lower() in VIDEO and f.stem.lower() not in OUR_FILES]
+    thumbs = [f for f in d.iterdir() if f.is_file() and f.suffix.lower() in IMAGE and "clip" not in f.stem.lower()]
+    newest = lambda fs: max(fs, key=lambda f: f.stat().st_mtime) if fs else None
+    return newest(vids), newest(thumbs)
 
 RACES = [  # the Six Rays (look/tone locked in fb-comment-automation/src/personas/characters.json)
     {"key": "arcturian", "name": "Arcturian", "theme": "DNA, kadim kod, plan", "archetype": "Your DNA remembers", "color": "#7b8cff"},
@@ -70,7 +80,11 @@ def projects():
     out = []
     for d in sorted((ORTAK / "1_PROJELER").glob("*/"), reverse=True):
         s = read_json(d / "status.json", {}) or {}
-        out.append({"id": d.name, "title": s.get("title") or d.name, "race": s.get("race"), "stage": s.get("stage", "topic"),
+        vid, thumb = final_files(d)
+        stage = s.get("stage", "topic")
+        if vid and stage == "capcut": stage = "approve"  # the owner's render arrived: approval next
+        out.append({"video": vid.name if vid else None, "thumb": thumb.name if thumb else None, "slot": s.get("slot"),
+                    "emissary": s.get("emissary"), "voice": s.get("voice"), "id": d.name, "title": s.get("title") or d.name, "race": s.get("race"), "stage": stage,
                     "created": s.get("created"), "book": s.get("book"), "minutes": s.get("minutes"), "note": s.get("note")})
     return out
 
@@ -90,7 +104,7 @@ def state():
     return {
         "races": [{**r, "clips": counts.get(r["key"], 0), "pool": c["pools"].get(r["key"]), "voices": voices_of(c, r["key"])} for r in RACES],
         "stages": [{"id": i, "label": l} for i, l in STAGES],
-        "projects": projects(), "finished": files_in("2_BITEN_VIDEOLAR"), "published": files_in("3_YAYINLANDI"),
+        "projects": projects(), "published": files_in("3_YAYINLANDI"),
         "books": books, "samples": samples,
         "checks": {"gumroad": "GUMROAD_ACCESS_TOKEN" in env, "kokoro": bool(samples),
                    "capcut": pathlib.Path(r"E:\masaüstü AI\tools\capcut-cli\dist\index.js").exists(),
@@ -101,7 +115,8 @@ def state():
 def summary():
     """Small numbers for the portfolio home page."""
     s = state()
-    return {"projects": len(s["projects"]), "finished": len(s["finished"]), "published": len(s["published"]),
+    return {"projects": len([p for p in s["projects"] if p["stage"] not in ("approve", "published")]),
+            "finished": len([p for p in s["projects"] if p["stage"] == "approve"]), "published": len(s["published"]),
             "books": len([b for b in s["books"] if b.get("published")]), "sales": sum(b.get("sales") or 0 for b in s["books"]),
             "races_ready": sum(1 for r in s["races"] if r["clips"])}
 
