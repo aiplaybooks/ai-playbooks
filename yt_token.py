@@ -4,6 +4,8 @@
    published (In production, so the refresh token doesn't expire after 7 days), OAuth client "Desktop app"
    downloaded as client_secret.json next to this file (gitignored).
 2. python yt_token.py      (a browser opens: pick the AI Playbooks channel and allow)
+   Another channel (Starseed, 2026-09-30): python yt_token.py --env "E:/masaüstü AI/STARSEED/pipeline/.env" --expect @StarseedTransmission-u9h
+   (same OAuth client; the token goes to that .env; fails if the picked channel isn't the expected handle)
 
 Writes YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN, YT_CHANNEL_ID into .env. Never prints token values.
 Run it again if the token stops working (password change, access removed in the Google account).
@@ -37,7 +39,12 @@ def post(url, data):
 
 
 def main():
+    global ENV
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    import argparse
+    ap = argparse.ArgumentParser(); ap.add_argument("--env"); ap.add_argument("--expect")
+    a = ap.parse_args()
+    if a.env: ENV = pathlib.Path(a.env)
     f = ROOT / "client_secret.json"
     if not f.exists(): sys.exit(f"missing {f}")
     c = json.loads(f.read_text(encoding="utf-8"))["installed"]
@@ -62,7 +69,7 @@ def main():
     redirect = f"http://127.0.0.1:{srv.server_port}"
     url = c["auth_uri"] + "?" + urllib.parse.urlencode({
         "client_id": c["client_id"], "redirect_uri": redirect, "response_type": "code", "scope": " ".join(SCOPES),
-        "access_type": "offline", "prompt": "consent", "state": state,
+        "access_type": "offline", "prompt": "consent select_account", "state": state,
         "code_challenge": challenge, "code_challenge_method": "S256"})
     print("Opening the browser for the Google login. If it doesn't open, visit:\n" + url, flush=True)
     webbrowser.open(url)
@@ -81,6 +88,9 @@ def main():
         items = json.loads(r.read()).get("items", [])
     if not items: sys.exit("this Google login has no YouTube channel: log in again and pick the AI Playbooks channel")
     ch = items[0]
+    handle = ch["snippet"].get("customUrl", "")
+    if a.expect and handle.lower() != a.expect.lower():
+        sys.exit(f"this login is the channel {ch['snippet']['title']} ({handle}), not {a.expect}: run again and pick that channel")
 
     env = read_env()
     env.update(YT_CLIENT_ID=c["client_id"], YT_CLIENT_SECRET=c["client_secret"],
