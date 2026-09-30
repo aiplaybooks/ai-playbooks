@@ -846,6 +846,23 @@ NO_REPAIR = {"trigger", "choose", "approve"}  # the owner's steps
 PUBLISH_NODES = {"upload", "ig_carousel", "ig_photo", "ig_reel", "fb_photos", "fb_reel", "yt_short", "x_post", "tiktok", "comments", "dm", "log"}
 RETRY_WAITS = [60, 300]  # seconds before plain retries of a publish step (publish.py never posts twice)
 MAX_REPAIRS = 2
+# Claude itself unavailable (login refresh failed, session/weekly usage limit, overload): the doctor needs Claude too,
+# so it can't help. Content flows wait and retry on their own (until the limit's reset time when Claude names one);
+# background jobs just skip this round (they run again at their next slot). Seen 2026-09-27/28 (limits) and
+# 2026-09-30 16:00-18:30 (OAuth refresh).
+CLAUDE_DOWN = re.compile(r"Failed to authenticate|OAuth|session limit|weekly limit|usage limit|rate.?limit|overloaded|529|"
+                         r"Could not connect|ECONNRESET|ETIMEDOUT", re.I)
+OUTAGE_WAITS = [300, 900, 1800, 3600, 3600, 3600]  # ~3 h in all
+
+
+def outage_wait(msg, default):
+    """Seconds to wait: until Claude's "resets 5:50pm" / "resets 4am" time (+2 min, max 12 h) when it names one."""
+    m = re.search(r"resets\s+(?:[A-Z][a-z]{2}\s+\d{1,2},\s*)?(\d{1,2})(?::(\d\d))?\s*(am|pm)", msg, re.I)
+    if not m: return default
+    h = int(m.group(1)) % 12 + (12 if m.group(3).lower() == "pm" else 0)
+    at = now().replace(hour=h, minute=int(m.group(2) or 0), second=0, microsecond=0)
+    while at <= now(): at += timedelta(days=1)
+    return min(12 * 3600, (at - now()).total_seconds() + 120)
 
 
 def log_tail(run, nid, n=80):
@@ -905,6 +922,7 @@ def execute(run):
         if run.s["nodes"][nid]["status"] == "done": continue
         run.node(nid, status="running", started=iso(), ended=None, msg="")
         t0 = time.time(); waits = list(RETRY_WAITS) if nid in PUBLISH_NODES else []; repairs = []
+        outage = [] if run.s["kind"] in BACKGROUND else list(OUTAGE_WAITS)
         max_rep = 0 if nid in NO_REPAIR else 1 if run.s["kind"] in BACKGROUND else MAX_REPAIRS
         while True:
             try:
@@ -916,6 +934,13 @@ def execute(run):
                 slog(run.id, nid, "error:", ex)
                 try:
                     if run.id in CANCELED: raise Canceled()
+                    if CLAUDE_DOWN.search(str(ex)):
+                        if outage:
+                            w = outage_wait(str(ex), outage.pop(0))
+                            run.node(nid, msg=f"Claude şu an erişilemiyor, {round(w / 60)} dk sonra kendisi tekrar deneyecek")
+                            run.log(nid, f"----- Claude erişilemiyor, {round(w)} sn beklenip tekrar denenecek -----")
+                            wait_or_cancel(run, w); continue
+                        max_rep = 0  # the doctor would fail the same way
                     if waits:  # platform hiccup? same step again after a pause
                         w = waits.pop(0)
                         run.node(nid, msg=f"Geçici sorun, {w // 60} dk sonra tekrar deneniyor")
