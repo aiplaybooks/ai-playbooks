@@ -95,7 +95,13 @@ section{display:none}section.on{display:block}
 .tag.gold{border-color:#d8b46a55;color:var(--gold2)}
 .big{font-size:28px;font-weight:700;letter-spacing:-.01em}
 .row{display:flex;align-items:center;gap:10px;margin-top:12px;flex-wrap:wrap}
-audio{height:32px;width:100%;margin-top:10px;filter:invert(.92) hue-rotate(200deg)}
+.vhead{margin-top:14px;font-size:12px;color:var(--muted);letter-spacing:.06em}.vhead small{color:var(--dim);letter-spacing:0;margin-left:6px}
+.voices{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.vchip{display:inline-flex;border:1px solid var(--line2);border-radius:99px;overflow:hidden;background:#ffffff06}
+.vchip button{border:0;border-radius:0;background:none;padding:4px 9px;font-size:12px;color:var(--muted)}
+.vchip .vp{border-left:1px solid var(--line2);padding:4px 8px;font-size:10px}
+.vchip i{font-style:normal;margin-left:4px;color:var(--dim);font-size:11px}
+.vchip.on{border-color:var(--c);background:color-mix(in srgb,var(--c) 18%,transparent)}.vchip.on .vt{color:var(--text)}
 .note{border:1px dashed var(--line2);border-radius:14px;padding:14px 16px;color:var(--muted);font-size:13px;margin-bottom:16px;background:#ffffff03}
 .list .it{display:flex;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--panel);margin-bottom:8px}
 .list .it b{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -179,7 +185,7 @@ audio{height:32px;width:100%;margin-top:10px;filter:invert(.92) hue-rotate(200de
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-let S=null,race=null;
+let S=null,race=null;const PLAYER=new Audio();
 const FAMILIES=[["Sana bir şey geliyor","Karar verildi, erken geldi, kavuşma","Wealth Key · Blueprint"],
   ["Görünmeyen koruyucu","Biri seni hep koruyordu, yalnız değildin","Blueprint"],
   ["Adalet ve görülmek","Küçümseyenler gerçeği görüyor, tuzak çözülüyor","Lyran Sunfire"],
@@ -215,18 +221,19 @@ function render(){
   $("#raycards").innerHTML=S.races.filter(r=>!race||r.key===race).map(r=>`<div class="card" style="--c:${r.color}">
     <h4>${r.name}</h4><p>${esc(r.theme)} · <i class="serif">“${esc(r.archetype)}”</i></p>
     <div class="row"><span class="big">${r.clips}</span><span class="tag">${r.clips?"klip":"havuz hazırlanıyor"}</span></div>
-    <div class="row"><select data-voice="${r.key}"><option value="">Ses seçilmedi</option>${vopts.map(v=>`<option ${r.voice===v?"selected":""}>${v}</option>`).join("")}</select></div>
-    <audio controls preload="none" id="au-${r.key}" ${r.voice?`src="/starseed/file/${encodeURIComponent("Kokoro Ses Ornekleri/"+r.voice+"_yavas.wav")}"`:""}></audio></div>`).join("");
-  $$("[data-voice]").forEach(s=>s.onchange=async()=>{
-    const v=s.value,a=$("#au-"+s.dataset.voice);if(v){a.src="/starseed/file/"+encodeURIComponent("Kokoro Ses Ornekleri/"+v+"_yavas.wav");a.play().catch(()=>{})}
-    await fetch("/api/starseed/voice",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({race:s.dataset.voice,voice:v})});
-    toast(v?`${s.dataset.voice}: ${v} kaydedildi`:"Ses kaldırıldı");const r=S.races.find(x=>x.key===s.dataset.voice);if(r)r.voice=v});
+    <div class="vhead">Sesler <small>her videoda biri rastgele seçilir</small></div>
+    <div class="voices">${vopts.map(v=>`<span class="vchip ${r.voices.includes(v)?"on":""}"><button class="vt" data-race="${r.key}" data-v="${v}" title="${r.voices.includes(v)?"Listeden çıkar":"Listeye ekle"}">${r.voices.includes(v)?"✓ ":""}${v.replace(/^[ab][fm]_/,"")}<i>${/^.m_/.test(v)?"♂":"♀"}${v[0]==="b"?" UK":""}</i></button><button class="vp" data-v="${v}" title="Dinle">▶</button></span>`).join("")}</div></div>`).join("");
+  $$(".vp").forEach(b=>b.onclick=()=>{PLAYER.src="/starseed/file/"+encodeURIComponent("Kokoro Ses Ornekleri/"+b.dataset.v+"_yavas.wav");PLAYER.play().catch(()=>{})});
+  $$(".vt").forEach(b=>b.onclick=async()=>{
+    const r=S.races.find(x=>x.key===b.dataset.race),v=b.dataset.v,on=!r.voices.includes(v);
+    await fetch("/api/starseed/voice",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({race:r.key,voice:v,on})});
+    r.voices=on?[...r.voices,v]:r.voices.filter(x=>x!==v);toast(`${r.name}: ${v} ${on?"eklendi":"çıkarıldı"}`);render()});
   const li=(f,m)=>`<div class="it"><b>${esc(f.name)}</b><span class="tag">${(f.size/2**20).toFixed(0)} MB</span><span class="tag">${new Date(f.time*1000).toLocaleString("tr-TR",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"})}</span>${m||""}</div>`;
   $("#finished").innerHTML=S.finished.map(f=>li(f,`<span class="tag gold">onay sorulacak</span>`)).join("")||`<div class="empty">Onay bekleyen video yok.</div>`;
   $("#published").innerHTML=S.published.map(f=>li(f)).join("")||`<div class="empty">Henüz yayınlanan video yok.</div>`;
 }
 $$("#navs button").forEach(b=>b.onclick=()=>{$$("#navs button").forEach(x=>x.classList.toggle("on",x===b));$$("section").forEach(s=>s.classList.toggle("on",s.id==="s-"+b.dataset.s))});
-load();setInterval(()=>{if(![...document.querySelectorAll("audio")].some(a=>!a.paused)&&document.activeElement?.tagName!=="SELECT")load()},30000);
+load();setInterval(()=>{if(PLAYER.paused)load()},30000);
 </script>
 </body>
 </html>

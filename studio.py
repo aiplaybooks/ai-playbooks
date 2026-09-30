@@ -1574,7 +1574,7 @@ class H(BaseHTTPRequestHandler):
         if not remote.authorized(self.headers, {})[0]: return self.send(401, {"error": "anahtar gerekli"})
         try:
             b = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))) or b"{}")
-            if u.path == "/api/starseed/voice": SS.set_voice(b["race"], b.get("voice")); return self.send(200, {"ok": True})
+            if u.path == "/api/starseed/voice": SS.set_voice(b["race"], b["voice"], bool(b.get("on", True))); return self.send(200, {"ok": True})
             if u.path == "/api/gather":
                 rid = start_bg("gather", "Elle başlatıldı")
                 return self.send(200 if rid else 409, {"run": rid} if rid else {"error": "zaten bir toplama çalışıyor"})

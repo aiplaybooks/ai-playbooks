@@ -88,7 +88,7 @@ def state():
     samples = sorted(f.name for f in VOICES_DIR.glob("*.wav")) if VOICES_DIR.is_dir() else []
     env = (PIPE / ".env").read_text(encoding="utf-8") if (PIPE / ".env").exists() else ""
     return {
-        "races": [{**r, "clips": counts.get(r["key"], 0), "pool": c["pools"].get(r["key"]), "voice": c["voices"].get(r["key"])} for r in RACES],
+        "races": [{**r, "clips": counts.get(r["key"], 0), "pool": c["pools"].get(r["key"]), "voices": voices_of(c, r["key"])} for r in RACES],
         "stages": [{"id": i, "label": l} for i, l in STAGES],
         "projects": projects(), "finished": files_in("2_BITEN_VIDEOLAR"), "published": files_in("3_YAYINLANDI"),
         "books": books, "samples": samples,
@@ -106,11 +106,18 @@ def summary():
             "races_ready": sum(1 for r in s["races"] if r["clips"])}
 
 
-def set_voice(race, voice):
+def voices_of(c, race):
+    v = c["voices"].get(race) or []
+    return [v] if isinstance(v, str) else list(v)
+
+
+def set_voice(race, voice, on=True):
+    """Add (on) or remove a Kokoro voice from the race's list; each video picks one of them at random (owner, 2026-09-30)."""
     if race not in {r["key"] for r in RACES}: raise ValueError("bilinmeyen ırk")
-    c = config()
-    if voice: c["voices"][race] = voice
-    else: c["voices"].pop(race, None)
+    c = config(); vs = voices_of(c, race)
+    if on and voice not in vs: vs.append(voice)
+    if not on and voice in vs: vs.remove(voice)
+    c["voices"][race] = vs; c.pop("pools", None)
     save_config(c)
 
 
