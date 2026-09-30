@@ -283,6 +283,14 @@ Override with env vars `KOKORO_PYTHON` / `KOKORO_HF_HOME`. Read-only use — nev
 - Facebook Page "AI Playbooks" id 1283376908201081; Instagram @aiplaybooks.daily (IG user id 17841424416174844). IG quota: 100 posts / 24h.
 - `meta_token.py`: short-lived Explorer user token (in .env) → never-expiring Page token. `.env` (gitignored) holds
   META_APP_ID, META_APP_SECRET, META_PAGE_TOKEN, FB_PAGE_ID, IG_USER_ID. GitHub Secrets: META_PAGE_TOKEN, FB_PAGE_ID, IG_USER_ID.
+  **One Meta login serves BOTH brands** (2026-09-30): the same app also holds the Starseed Transmission page
+  (STARSEED/pipeline/fb_token.py -> its own .env). Re-granting the app in Graph API Explorer with FEWER permissions
+  invalidates every existing page token (happened 2026-09-30): always request the full list (pages_show_list,
+  pages_read_engagement, pages_read_user_content, pages_manage_posts, pages_manage_engagement, pages_manage_metadata,
+  pages_messaging, business_management, read_insights, instagram_basic, instagram_content_publish,
+  instagram_manage_comments, instagram_manage_insights, instagram_manage_messages) with every page ticked, then run
+  fb_token.py (Starseed) BEFORE meta_token.py (it consumes META_SHORT_TOKEN), `gh secret set META_PAGE_TOKEN` and
+  `python dm_setup.py` (the DM bot holds the page token too).
   Never print or commit token values. If the token dies (password change, permissions removed): new Explorer token → rerun meta_token.py → `gh secret set`.
 - Likely gotcha: Facebook posts made by an app in development mode may be visible only to app role users → the app
   probably has to be **published** (needs privacy policy URL, category, icon).
