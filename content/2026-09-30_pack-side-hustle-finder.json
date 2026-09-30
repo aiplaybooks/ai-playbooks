@@ -1,0 +1,191 @@
+{
+  "theme": "prompts",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Prompt Pack · Side Hustle Finder",
+  "caption": "7 ChatGPT prompts that turn your free evenings into a side hustle that actually pays 💸\n\nMost people never start a side hustle because they don't know what to sell or where to start.\n\n→ find the skills people already pay for\n→ match ideas to your hours and budget\n→ kill bad ideas before they cost you\n→ test it in 7 days with a real sale\n→ turn that sale into steady income\n\nWhich one are you starting with, the skill scan or the 7-day test? 👇\n\nSave this before your next free evening.\n\nFollow @aiplaybooks.daily for a new playbook every day.\n\n#chatgpt #aitools #sidehustle #passiveincome #makemoneyonline",
+  "sources": [],
+  "captions": {
+    "instagram": "7 ChatGPT prompts that turn your free evenings into a side hustle that actually pays 💸\n\nMost people never start a side hustle because they don't know what to sell or where to start.\n\n→ find the skills people already pay for\n→ match ideas to your hours and budget\n→ kill bad ideas before they cost you\n→ test it in 7 days with a real sale\n→ turn that sale into steady income\n\nWhich one are you starting with, the skill scan or the 7-day test? 👇\n\nSave this before your next free evening.\n\nFollow @aiplaybooks.daily for a new playbook every day.\n\n#chatgpt #aitools #sidehustle #passiveincome #makemoneyonline",
+    "facebook": "Got 5 free hours a week? These 7 ChatGPT prompts can turn that into a real side hustle 💸\n\nMost people never start one because they don't know what to sell or where to start. This pack finds your sellable skills, matches them to ideas that fit your life, then walks you from a 7-day test to a real offer.\n\n→ find the skills people already pay for\n→ match ideas to your hours and budget\n→ test it in 7 days with a real sale\n→ turn that sale into steady income\n\nWhat's stopping you from starting one: time, money, or not knowing what to sell?\n\n#chatgpt #sidehustle #passiveincome #makemoneyonline",
+    "youtube": {
+      "title": "7 ChatGPT Prompts to Find Your Side Hustle in 5 Hrs/Week #Shorts",
+      "description": "7 ChatGPT prompts that find a side hustle around 5 free hours a week, no quitting your job.\n\nMost people never start a side hustle because they don't know what to sell or where to start. This pack finds your sellable skills, matches them to real ideas that fit your life, then walks you from a 7-day test to a real offer.\n\nWhich one are you starting with: the skill scan or the 7-day test?\n\n#chatgpt #sidehustle #passiveincome #makemoneyonline #aitools",
+      "tags": [
+        "chatgpt prompts",
+        "side hustle",
+        "make money online",
+        "passive income",
+        "ai side hustle",
+        "chatgpt side hustle",
+        "how to make money online",
+        "ai tools",
+        "productivity prompts"
+      ]
+    },
+    "x": "7 ChatGPT prompts to find a side hustle that fits 5 free hours a week 💸\n\nFrom your real skills to a tested offer, no quitting your job.\n\n#sidehustle #chatgpt"
+  },
+  "cover": {
+    "headline": "Turn 5 free hours a week into an extra $1,000 a month. 7 prompts to find your side hustle:",
+    "em": "extra $1,000 a month",
+    "person": null,
+    "layout": "scene",
+    "photo_query": [
+      "laptop evening kitchen",
+      "working from home night",
+      "notebook laptop coffee"
+    ],
+    "photo_pick": {
+      "url": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA0L2JzMTAxMS1pbWFnZS5qcGc.jpg",
+      "page": "https://www.rawpixel.com/image/11515751/persons-hands-notebook-and-cup-coffee",
+      "author": "unknown",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "rawpixel",
+      "file": "Person's hands notebook cup coffee"
+    },
+    "photo": {
+      "file": "Person's hands notebook cup coffee",
+      "page": "https://www.rawpixel.com/image/11515751/persons-hands-notebook-and-cup-coffee",
+      "author": "unknown",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "rawpixel"
+    },
+    "layout_used": "scene"
+  },
+  "design": {
+    "mood": "a planner open on a wood desk next to a laptop and coffee at the start of a side project: warm amber desk-lamp glow against a late-evening indigo, focused hustle energy",
+    "palette": {
+      "bg": "#16130C",
+      "bg2": "#241C10",
+      "surface": "#2E2415",
+      "ink": "#FBF4E6",
+      "muted": "#B8A98C",
+      "accent": "#FFB238",
+      "accent2": "#4FC3E8"
+    },
+    "fonts": {
+      "display": "Space Grotesk",
+      "body": "DM Sans",
+      "mono": "JetBrains Mono"
+    },
+    "display": {
+      "weight": 700,
+      "tracking": -1
+    },
+    "shape": {
+      "radius": 18,
+      "border": 1,
+      "shadow": "soft"
+    },
+    "background": {
+      "pattern": "dots",
+      "pattern_opacity": 0.07,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "pill",
+    "prompt": "chat",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><path d='M12 7v5l3 3'/></svg>"
+  },
+  "voice": "am_eric",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "PROMPT PACK",
+      "title": "prompts to find a side hustle that fits 5 hours a week",
+      "em": "5 hours a week",
+      "sub": "From your real skills to a tested offer, without quitting your job.",
+      "tools": [
+        "ChatGPT",
+        "Claude",
+        "Gemini"
+      ],
+      "voiceover": "Here are seven prompts to find a side hustle that fits five free hours a week."
+    },
+    {
+      "type": "prompt",
+      "name": "The Skill Scanner",
+      "sub": "What you know that others pay for",
+      "prompt": "Interview me to find my sellable skills. Ask me 8 questions, one at a time, about my job, hobbies, what friends ask me for help with, and tools I use. Then list 5 skills people pay for, with **PROOF** that a market exists for each.",
+      "tip": "Answer honestly, even the small stuff — the skill you think is boring is usually the one people pay fastest for.",
+      "voiceover": "One. It interviews you and finds five skills people already pay for."
+    },
+    {
+      "type": "prompt",
+      "name": "The Hustle Matcher",
+      "sub": "Ideas that fit your real life",
+      "prompt": "Act as a career coach. My skills: [SKILLS]. I have [HOURS] hours a week, [$BUDGET] to start, and I prefer [ONLINE/OFFLINE]. Suggest 7 side hustles that fit, with startup cost, time to first income, a realistic monthly range, and the **BIGGEST RISK** of each.",
+      "tip": "Give it your real hours, not your hoped-for hours — a hustle that needs 15 hours will just get abandoned.",
+      "voiceover": "Two. It matches your skills and hours to seven real hustle ideas."
+    },
+    {
+      "type": "prompt",
+      "name": "The Reality Check",
+      "sub": "Kill bad ideas before they cost you",
+      "prompt": "Be brutally honest about this side hustle idea: [IDEA]. What does a typical beginner earn in the first 3 months, what does it really cost in time, what do most people get wrong, and what would make you say **DON'T DO IT**?",
+      "tip": "This one is built to disagree with you — that's the whole point of running it.",
+      "voiceover": "Three. It's brutally honest about what your idea really earns in month one."
+    },
+    {
+      "type": "prompt",
+      "name": "The 7-Day Test",
+      "sub": "Prove it with one small sale",
+      "prompt": "Design a 7-day experiment to test [SIDE HUSTLE] with under [$BUDGET]: day-by-day tasks under 45 minutes, the smallest offer I can sell, where to find the first 3 customers, and the number that tells me to **CONTINUE OR STOP**.",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Day 1-2: pick your smallest offer, price it",
+          "Day 3-5: message 20 people directly",
+          "Day 6-7: deliver 1 sale, decide go/no-go"
+        ]
+      },
+      "voiceover": "Four. A 7-day test that ends with a real sale, not just a plan."
+    },
+    {
+      "type": "prompt",
+      "name": "The Offer Writer",
+      "sub": "Say what you sell in one sentence",
+      "prompt": "Write my offer for [SIDE HUSTLE] for [AUDIENCE]: a one-sentence description, 3 package options with prices, what's included, the delivery time, and a short message I can send to 10 people I know **TODAY**.",
+      "tip": "Send the message to 10 real people before you build anything else — replies are your fastest signal.",
+      "voiceover": "Five. It writes your offer and a message to send ten people today."
+    },
+    {
+      "type": "prompt",
+      "name": "The Time Planner",
+      "sub": "Fit it around a full-time job",
+      "prompt": "I work [WORK HOURS] and have these free slots: [FREE TIME]. Build a weekly schedule for my side hustle [SIDE HUSTLE] that avoids burnout: which tasks go in which slot, what to automate or batch, and **ONE DAY OFF** that stays off.",
+      "tip": "Protect that one day off in the calendar first — everything else fits around it, not the other way.",
+      "voiceover": "Six. A weekly schedule that fits your job and keeps one real day off."
+    },
+    {
+      "type": "prompt",
+      "name": "The Scale Plan",
+      "sub": "From first sale to steady income",
+      "prompt": "My side hustle [SIDE HUSTLE] made [$AMOUNT] last month from [CLIENTS] clients. What should I change to reach [$GOAL] a month without doubling my hours? Cover pricing, packaging, repeat clients, and what to **STOP DOING**.",
+      "tip": "The \"what to stop doing\" line usually matters more than anything you'd add.",
+      "voiceover": "Seven. It turns your first sale into a real plan for steady income."
+    },
+    {
+      "type": "cta",
+      "title": "5 free hours a week.",
+      "title2": "One side hustle away.",
+      "lines": [
+        [
+          "Save",
+          "this pack before your next free evening."
+        ],
+        [
+          "Send",
+          "it to the friend who keeps saying \"I need a side hustle.\""
+        ],
+        [
+          "Follow",
+          "@aiplaybooks.daily for a new playbook every day."
+        ]
+      ],
+      "voiceover": "Save this, send it to a friend, and start your first test this week."
+    }
+  ]
+}
