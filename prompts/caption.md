@@ -26,6 +26,14 @@ Read `prompts/caption_playbook.md` first and follow it exactly: it is your train
    on X), no "Comment WORD" (the DM bot is Instagram only), no "follow @aiplaybooks.daily" (on X we are @AIPlaybooks_).
    Repo posts: name the repo as plain text `owner/repo` ("📦 owner/repo on GitHub"). Clips: credit the creator with
    their @handle from `credit` ("🎥 @handle").
+   Also `"first_comment": {{"instagram": "...", "facebook": "...", "youtube": "..."}}`: OUR first comment, posted
+   under the post right after publishing on every platform (owner, 2026-09-30: every video gets one). It must ADD
+   something the caption doesn't have, then open the conversation: a bonus tip, one extra copy-paste prompt, the key
+   number/takeaway, or the "try this first" step, then a short question people can answer in a few words. 1-4 short
+   lines, max 450 characters, no hashtags, no links or domains. Instagram may repeat "Comment WORD" when the post has
+   a dm.keyword; Facebook and YouTube never say "Comment WORD"; YouTube may end with "Subscribe for daily AI playbooks".
+   Repo posts: only `instagram` (e.g. comment the dm.keyword for the link + one line on what the repo does);
+   Facebook already gets `fb_comment` (the link), YouTube has no repo posts.
 5. Run `python captions.py check {content}` and fix until it prints `ok`.
 6. Write `runs/{run_id}/caption.json`: `{{"keywords": [...], "hashtags": {{"instagram": [["#tag", "why: data line"], ...],
    "facebook": [...], "youtube": [...]}}, "rejected": ["#tag: why not"], "lesson_added": "..." | null}}`.

@@ -87,6 +87,15 @@ def check(data):
         if xpost.URL.search(caps["x"]): probs.append("x: no links or domains (a URL costs $0.20 per post on X)")
         if (k := (data.get("dm") or {}).get("keyword")) and k.lower() in caps["x"].lower(): probs.append("x: no 'Comment WORD' (the DM bot is Instagram only)")
         if len(tags_in(caps["x"])) > 2: probs.append("x: max 2 hashtags")
+    fc = data.get("first_comment") or {}  # our first comment per platform (owner, 2026-09-30), posted by publish.py
+    for pf in ["instagram"] + ([] if repo else ["facebook", "youtube"]):
+        if not (fc.get(pf) or "").strip(): probs.append(f"first_comment.{pf} is missing (our first comment under the post)")
+    for pf, t in fc.items():
+        if len(t) > 450: probs.append(f"first_comment.{pf}: {len(t)} chars (max 450)")
+        if re.search(r"(?i)https?://|www\.|[a-z0-9-]+\.(com|io|ai|dev|org|app)", t): probs.append(f"first_comment.{pf}: no links or domains")
+        if tags_in(t): probs.append(f"first_comment.{pf}: no hashtags")
+        k = (data.get("dm") or {}).get("keyword")
+        if k and pf != "instagram" and re.search(rf"(?i)comment\W+{re.escape(k)}", t): probs.append(f"first_comment.{pf}: no 'Comment WORD' (Instagram only)")
     if caps.get("instagram") and data.get("caption") != caps["instagram"]:
         probs.append("`caption` must equal captions.instagram")
     kw = (data.get("dm") or {}).get("keyword")

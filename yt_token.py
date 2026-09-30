@@ -16,6 +16,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 ROOT = pathlib.Path(__file__).parent.resolve()
 ENV = ROOT / ".env"
 SCOPES = ["https://www.googleapis.com/auth/youtube",  # playlists + editing our videos' settings (youtube.py, 2026-09-27)
+          "https://www.googleapis.com/auth/youtube.force-ssl",  # our first comment under every Short (2026-09-30)
           "https://www.googleapis.com/auth/youtube.upload",
           "https://www.googleapis.com/auth/youtube.readonly",
           "https://www.googleapis.com/auth/yt-analytics.readonly"]

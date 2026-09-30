@@ -36,5 +36,8 @@
     "20% cost reduction, 27% faster execution -> README Numbers table (-20% cost, -27% time vs no-skill baseline)",
     "install via /plugin marketplace add DietrichGebert/ponytail, plus Codex, Copilot CLI, Pi, OpenCode, Gemini CLI, Qoder, 20+ platforms total -> README Install section",
     "not archived, active (latest release v4.10.0, 2026-09-14) -> GitHub API"
-  ]
+  ],
+  "first_comment": {
+    "instagram": "Comment LAZY and the repo link lands in your DMs 📩\n\nIt makes your coding agent ask \"is this needed?\" before it writes more code. Which agent do you use it with? 👇"
+  }
 }

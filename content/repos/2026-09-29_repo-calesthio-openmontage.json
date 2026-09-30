@@ -35,5 +35,8 @@
     "works via Claude Code, Cursor, Copilot, Windsurf, Codex -> README Quick Start + WebFetch of github.com/calesthio/OpenMontage",
     "runs locally, no paid API keys needed (free Piper TTS, Archive.org/NASA/Wikimedia footage, free local video models like WAN 2.2/Hunyuan on GPU) -> README + WebFetch",
     "install via git clone + make setup -> README Quick Start"
-  ]
+  ],
+  "first_comment": {
+    "instagram": "Comment STUDIO and the repo link lands in your DMs 📩\n\nWhat would you make first with a video studio inside Claude Code? 👇"
+  }
 }

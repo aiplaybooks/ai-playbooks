@@ -249,5 +249,10 @@
       ],
       "voiceover": "Go check your Accounts Center, and pick who's allowed to call."
     }
-  ]
+  ],
+  "first_comment": {
+    "instagram": "Before you turn it on: set who can call you to contacts only. Everyone means anyone who finds your profile. 📵\n\nOn, off or contacts only for you? 👇",
+    "facebook": "Before you switch it on, set who can call you to contacts only. \"Everyone\" means anyone who finds your Instagram profile can ring your WhatsApp.\n\nWould you turn this on?",
+    "youtube": "If you turn it on, set who can call you to contacts only. Would you use this? Subscribe for daily AI playbooks."
+  }
 }

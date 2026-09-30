@@ -22,8 +22,10 @@ META_PAGE_TOKEN, FB_PAGE_ID, IG_USER_ID in .env
     dm           Instagram comment-to-DM bot (bot/worker.js, Cloudflare): when the post has `dm.keyword`, registers
                  {IG media id -> keyword, page link} in gh-pages dm.json, which the bot reads. The link is the post's
                  page p/<name>/ (packpage.py; the upload step publishes it for every post).
-    comments     the content JSON's optional `comments` list (e.g. the prompts of a clip), posted in order as our own
-                 first comments under every IG / FB post of this run. Needs instagram_manage_comments +
+    comments     our own first comments under every IG / FB post AND the YouTube Short of this run (owner, 2026-09-30):
+                 `first_comment` {instagram, facebook, youtube} from the caption agent, then the optional `comments`
+                 list (e.g. the prompts of a clip; IG/FB). Repo posts: `fb_comment` (the link) on Facebook. No API
+                 can pin a comment (IG, FB, YouTube): ours is simply the first one. Needs instagram_manage_comments +
                  pages_manage_engagement: `prepare` checks that before anything is posted, so a post never goes out
                  without its comments.
     log          appends the post to publish_log.jsonl
@@ -36,7 +38,7 @@ under the photo post and the FB Reel), dm (Instagram: the bot DMs the repo link 
 Progress is saved to output/<name>/publish.json after every step, so a rerun resumes and never posts twice.
 Token values are never printed.
 """
-import sys, os, re, json, time, shutil, pathlib, argparse, subprocess, urllib.request, urllib.parse, urllib.error
+import sys, os, re, json, time, shutil, hashlib, pathlib, argparse, subprocess, urllib.request, urllib.parse, urllib.error
 from datetime import datetime, timezone
 from PIL import Image, ImageFilter, ImageEnhance
 import captions as CAP
@@ -186,6 +188,10 @@ def check_comments(p):
     """Comments to post: each non-empty and within Instagram's 2200 characters, and the token allowed to comment."""
     cs = [p.data["fb_comment"]] if p.repo and p.data.get("fb_comment") else p.data.get("comments") or []
     if p.repo and not cs: raise PublishError("repo post without `fb_comment` (the repo link on Facebook)")
+    fc = p.data.get("first_comment") or {}
+    if not isinstance(fc, dict) or not all(isinstance(v, str) for v in fc.values()):
+        raise PublishError("`first_comment` must be {instagram, facebook, youtube: text}")
+    cs = cs + [v for v in fc.values() if v.strip()]
     if not cs: return
     if not isinstance(cs, list) or not all(isinstance(c, str) and c.strip() for c in cs):
         raise PublishError("`comments` must be a list of non-empty strings")
@@ -549,26 +555,56 @@ def x_post(p):
     p.done("x_post", id=tid, link=link)
 
 
+COMMENT_TARGETS = [("ig_carousel", "instagram"), ("ig_photo", "instagram"), ("ig_reel", "instagram"),
+                   ("fb_photos", "facebook"), ("fb_reel", "facebook"), ("yt_short", "youtube")]
+
+
+def comment_plan(p):
+    """{step: [(key, text), ...]}: our own first comments under every published post (owner, 2026-09-30: every video
+    gets our first comment). First the caption agent's `first_comment.<platform>` (repo posts on Facebook: the
+    `fb_comment` with the link instead), then the clip's `comments` (prompts; IG/FB only: YouTube has them in the
+    description; not when a DM keyword gates them). TikTok and X: no comment API for us. Keys = step + a hash of the
+    text, so a retry never posts twice; the old index keys (before 2026-09-30) count as posted too."""
+    fc = p.data.get("first_comment") or {}
+    extra = [c.strip() for c in p.data.get("comments") or [] if c.strip()]
+    gated = bool((p.data.get("dm") or {}).get("keyword")) and not p.repo
+    plan = {}
+    for step, pf in COMMENT_TARGETS:
+        if not (p.state.get(step) or {}).get("id"): continue
+        cs, legacy = [], []
+        if p.repo and pf == "facebook":
+            if p.data.get("fb_comment"): cs.append(p.data["fb_comment"].strip()); legacy.append(0)
+        elif (fc.get(pf) or "").strip():
+            cs.append(fc[pf].strip()); legacy.append(None)
+        if extra and not gated and not p.repo and pf != "youtube":
+            cs += extra; legacy += list(range(len(extra)))
+        keys = [(f"{step}:{hashlib.sha1(c.encode()).hexdigest()[:10]}", f"{step}:{i}" if i is not None else None) for c, i in zip(cs, legacy)]
+        if cs: plan[step] = [(k, old, c) for (k, old), c in zip(keys, cs)]
+    return plan
+
+
 def comments(p):
-    if p.repo:  # the repo link: our first comment on Facebook (Instagram gets it by DM)
-        cs = [p.data["fb_comment"].strip()]
-        targets = [(s, p.state[s]["id"]) for s in ("fb_photos", "fb_reel") if p.state.get(s, {}).get("id")]
-    else:
-        cs = [c.strip() for c in p.data.get("comments") or []]
-        targets = [(s, p.state[s]["id"]) for s in ("ig_carousel", "ig_reel", "fb_photos", "fb_reel") if p.state.get(s, {}).get("id")]
-    if cs and not p.repo and (p.data.get("dm") or {}).get("keyword"):  # behind the DM bot's follow gate: not in public comments
-        say("comments: skipped, the post has a DM keyword (the prompts are on its page)"); p.done("comments", count=0, gated=True); return
-    if not cs:
-        say("comments: none in the content JSON"); p.done("comments", count=0); return
-    posted = p.state.setdefault("comment_ids", {})
-    for step, obj in targets:
-        for i, c in enumerate(cs):
-            key = f"{step}:{i}"
-            if key in posted: continue
-            posted[key] = api("POST", f"{GRAPH}/{obj}/comments", {"message": c, "access_token": p.token})["id"]
-            p.save()  # one by one: a retry never posts the same comment twice
-        say(f"comments: {len(cs)} under {step}")
-    p.done("comments", count=len(cs), targets=[s for s, _ in targets])
+    plan = comment_plan(p)
+    if not plan:
+        say("comments: nothing to post (no first_comment / comments in the content JSON)"); p.done("comments", count=0); return
+    posted = p.state.setdefault("comment_ids", {}); errors = {}
+    for step, items in plan.items():
+        obj = p.state[step]["id"]; n = 0
+        for key, old, text in items:
+            if key in posted or (old and old in posted): continue
+            try:
+                if step == "yt_short":
+                    tok = yt_access(p)
+                    posted[key] = YT.call(tok, "POST", "commentThreads", {"part": "snippet"}, {"snippet": {
+                        "videoId": obj, "topLevelComment": {"snippet": {"textOriginal": text}}}})["id"]
+                else:
+                    posted[key] = api("POST", f"{GRAPH}/{obj}/comments", {"message": text, "access_token": p.token})["id"]
+            except (YT.YTError, PublishError) as ex:
+                if step != "yt_short": raise  # Meta problems are ours to fix (retry / doctor)
+                errors[step] = str(ex)[-200:]; break  # YouTube comments are a bonus: never block the run
+            p.save(); n += 1  # one by one: a retry never posts the same comment twice
+        say(f"comments: {n} new under {step}" + (f" (failed: {errors[step]})" if step in errors else ""))
+    p.done("comments", count=sum(len(v) for v in plan.values()), targets=list(plan), **({"errors": errors} if errors else {}))
 
 
 def dm(p):
@@ -649,9 +685,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("content"); ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--steps", help=f"comma list, default all: {','.join(STEPS)}")
+    ap.add_argument("--again", action="store_true", help="rerun `comments` even if done (backfill; never posts twice)")
     a = ap.parse_args()
     steps = a.steps.split(",") if a.steps else None
     if steps and (bad := [s for s in steps if s not in STEPS]): sys.exit(f"unknown steps: {bad}")
+    if a.again:
+        p = Post(a.content); (p.state.get("comments") or {}).pop("done", None); p.save()
     try:
         run(a.content, steps, a.dry_run)
     except PublishError as ex:

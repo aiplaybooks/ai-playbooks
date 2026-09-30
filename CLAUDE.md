@@ -43,6 +43,13 @@ Every day the pipeline should:
   media). Hashtags from data, not guesses: `tags.py` (IG Business Discovery of big AI accounts + most-viewed Shorts'
   tags). `captions.py check` enforces the rules; publish.py sends each platform its own text. The agent adds dated
   "Lessons" to the playbook from runs/metrics.json when our numbers show a pattern.
+- **Our first comment under every post** (owner, 2026-09-30: "pinned comments were missing"): the caption agent writes
+  `first_comment` {instagram, facebook, youtube} (a bonus tip/prompt/number + a short question; no links, no tags;
+  repo posts: Instagram only, Facebook keeps `fb_comment` with the link); publish.py `comments` posts it right after the
+  platforms (then a clip's `comments` prompts on IG/FB). YouTube needs the `youtube.force-ssl` scope (yt_token.py).
+  **No API can pin** a comment on IG, FB or YouTube: ours is just the first one (the owner pins by hand if he wants).
+  TikTok (no comment API) and X (no replies, declared use case) get none. Backfill: `python publish.py <content>
+  --steps comments --again` (keys = text hash, never posts twice).
 - **Instagram comment-to-DM bot with a follow gate** (owner, 2026-09-26; Instagram only; hosted on Cloudflare
   Workers, free): `bot/worker.js`. Comment the post's `dm.keyword` → ONE private reply (Instagram allows one per
   comment, within 7 days) "follow us, then tap ✅" + a varied public reply "Sent you a DM 📩" → tap (opens the 24 h

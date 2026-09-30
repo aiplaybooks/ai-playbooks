@@ -245,5 +245,10 @@
       ],
       "voiceover": "Same price, a very different model — check your Copilot model switcher today."
     }
-  ]
+  ],
+  "first_comment": {
+    "instagram": "Quick check: open GitHub Copilot Chat, tap the model picker, and Sonnet 5.5 should already be there on any paid plan. ⚡\n\nTried it yet? Better or worse than what you used before? 👇",
+    "facebook": "Quick check if you use GitHub Copilot: open Copilot Chat and look in the model picker. Sonnet 5.5 is live on every paid plan, same price as before.\n\nHave you tried it on real code yet?",
+    "youtube": "On a paid Copilot plan? Sonnet 5.5 is already in the model picker. Tried it on real code yet? Subscribe for daily AI playbooks."
+  }
 }

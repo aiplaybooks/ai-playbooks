@@ -38,5 +38,8 @@
     "works with 25+ LLM providers including fully local ollama/lmstudio/llamacpp -> README Quick Start",
     "one-line Docker install (docker run ... ghcr.io/vectorize-io/hindsight:latest) -> README Quick Start",
     "LLM Wrapper integration in 2 lines of code, coding-agent support (Claude Code, Cursor) -> README table of contents / Adding Hindsight to Your Agent section"
-  ]
+  ],
+  "first_comment": {
+    "instagram": "Comment MEMORY and the repo link lands in your DMs 📩\n\nIt even runs fully local. What would you want your agent to remember? 👇"
+  }
 }
