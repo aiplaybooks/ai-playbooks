@@ -295,7 +295,8 @@ Override with env vars `KOKORO_PYTHON` / `KOKORO_HF_HOME`. Read-only use — nev
   for our own use), Desktop client in `client_secret.json` (gitignored). `yt_token.py` → YT_* keys in .env
   (scopes: youtube.upload, youtube.readonly, yt-analytics.readonly).
 - `publish.py` step `yt_short` (Studio node "YouTube Short"): the Reel as a Short, title = cover title + #Shorts.
-- **Until YouTube's API audit passes, API uploads are locked to private** → owner makes them public in YouTube Studio.
+- ~~Until YouTube's API audit passes, API uploads are locked to private~~ Checked 2026-09-30: every upload since
+  2026-09-29 came back `privacyStatus: public` without the audit, so there is no private lock on this project.
   Audit form answers + evidence screenshots: output/youtube-audit/ (FORM_CEVAPLARI.md). Submitted: not yet (2026-09-24).
 - Promise in our privacy policy (keep it true when building analytics): YouTube API data is stored only locally,
   refreshed or deleted at least every 30 days, deleted within 7 days if access is revoked.
