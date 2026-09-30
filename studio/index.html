@@ -25,6 +25,10 @@ select,input,textarea{font:inherit;background:var(--panel2);color:var(--text);bo
 a{color:#8fb8ff}
 header{height:56px;display:flex;align-items:center;gap:14px;padding:0 16px;border-bottom:1px solid var(--line);background:var(--panel)}
 .logo{font-weight:800;letter-spacing:-.3px;font-size:16px;display:flex;align-items:center;gap:8px}
+.pswitch{display:flex;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:3px}
+.pswitch a{padding:4px 10px;border-radius:7px;font-size:12.5px;color:var(--muted);text-decoration:none}
+.pswitch a.on{background:var(--panel2);color:var(--text)}
+@media (max-width:760px){.pswitch a:not(.on):not(:first-child){display:none}}
 .logo i{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,#ff6d5a,#b197fc);display:inline-block}
 .pill{font-size:12px;color:var(--muted);background:var(--panel2);border:1px solid var(--line);border-radius:99px;padding:4px 10px;white-space:nowrap}
 .pill b{color:var(--text);font-weight:600}
@@ -258,6 +262,7 @@ table.tt td.p{text-align:right;color:var(--muted);width:48px;font-variant-numeri
 <body>
 <header>
   <div class="logo"><i></i>AI Playbooks Studio</div>
+  <nav class="pswitch"><a href="/">Portföyler</a><a class="on" href="/ai-playbooks">AI Playbooks</a><a href="/starseed">Starseed</a></nav>
   <span class="pill" id="nextScan">…</span>
   <span class="pill" id="gatePill"></span>
   <div class="grow"></div>

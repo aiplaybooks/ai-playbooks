@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio · Portföyler</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:Inter;src:url(/file/fonts/InterVariable.ttf);font-weight:100 900}
+:root{--bg:#0e0e13;--panel:#16161d;--line:#26262f;--text:#ededf2;--muted:#9a9aab;--dim:#6b6b7a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;background:var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,sans-serif;
+  background-image:radial-gradient(1200px 600px at 15% -10%,#ff6d5a14,transparent 60%),radial-gradient(1000px 600px at 90% 110%,#7b8cff18,transparent 60%)}
+.wrap{max-width:1120px;margin:0 auto;padding:56px 24px 40px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+.brand i{width:8px;height:8px;border-radius:50%;background:#51cf66;box-shadow:0 0 0 4px #51cf6622}
+h1{font-size:clamp(28px,4vw,42px);letter-spacing:-.02em;margin:14px 0 6px;font-weight:750}
+.sub{color:var(--muted);max-width:620px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;margin-top:36px}
+a.card{position:relative;display:flex;flex-direction:column;min-height:360px;border-radius:22px;overflow:hidden;text-decoration:none;color:inherit;
+  border:1px solid var(--line);background:var(--panel);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;isolation:isolate}
+a.card:hover{transform:translateY(-4px);border-color:#3a3a48;box-shadow:0 24px 60px -30px #000}
+a.card:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.art{position:absolute;inset:0;z-index:-1;opacity:.95}
+.ai .art{background:radial-gradient(420px 260px at 85% 0%,#ff6d5a55,transparent 70%),radial-gradient(380px 260px at 0% 30%,#b197fc40,transparent 70%),linear-gradient(180deg,#1b1a22,#15151b 60%)}
+.ss .art{background:radial-gradient(2px 2px at 20% 30%,#fff9,transparent),radial-gradient(1.5px 1.5px at 70% 20%,#fff8,transparent),
+  radial-gradient(1.5px 1.5px at 40% 70%,#fff6,transparent),radial-gradient(1px 1px at 85% 60%,#fff7,transparent),radial-gradient(1px 1px at 12% 80%,#fff5,transparent),
+  radial-gradient(460px 300px at 80% 10%,#7b8cff55,transparent 70%),radial-gradient(360px 260px at 10% 100%,#d8b46a33,transparent 70%),linear-gradient(180deg,#131226,#0d0c18 70%)}
+.top{padding:26px 26px 0;display:flex;align-items:center;gap:12px}
+.mark{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-weight:800;font-size:17px}
+.ai .mark{background:linear-gradient(135deg,#ff6d5a,#b197fc);color:#fff}
+.ss .mark{background:#0c0b17;border:1px solid #d8b46a66;color:#e8cf95;font-family:"Cormorant Garamond",serif;font-size:22px}
+.kicker{font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.name{font-size:24px;font-weight:750;letter-spacing:-.01em}
+.ss .name{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:600;letter-spacing:.01em}
+.desc{padding:14px 26px 0;color:#c9c9d6;max-width:440px}
+.stats{margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#ffffff10;border-top:1px solid #ffffff12}
+.stat{padding:16px 18px;background:#0f0f15cc;backdrop-filter:blur(6px)}
+.stat b{display:block;font-size:22px;font-weight:700}
+.stat span{font-size:12px;color:var(--muted)}
+.go{position:absolute;right:22px;top:26px;font-size:13px;color:var(--muted);display:flex;gap:6px;align-items:center}
+a.card:hover .go{color:var(--text)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:14px 26px 22px}
+.chip{font-size:12px;padding:3px 10px;border-radius:99px;border:1px solid #ffffff1c;color:#d4d4de;background:#ffffff08}
+.foot{margin-top:28px;color:var(--dim);font-size:13px}
+@media (max-width:760px){.wrap{padding:32px 16px}.stats .stat{padding:12px}.stat b{font-size:19px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand"><i></i>Studio · çevrimiçi</div>
+  <h1>Portföyler</h1>
+  <p class="sub">Her marka kendi çalışma alanında: ayrı akışlar, ayrı içerik, ayrı hesaplar. Açmak istediğini seç.</p>
+  <div class="grid">
+    <a class="card ai" href="/ai-playbooks">
+      <div class="art"></div>
+      <div class="top"><div class="mark">AI</div><div><div class="kicker">Otopilot · 5 platform</div><div class="name">AI Playbooks</div></div></div>
+      <span class="go">Aç →</span>
+      <p class="desc">Yapay zeka haberleri, prompt paketleri, GitHub repoları ve viral klipler. Instagram, Facebook, YouTube, TikTok, X.</p>
+      <div class="chips" id="aiChips"></div>
+      <div class="stats"><div class="stat"><b id="aiToday">–</b><span>bugün paylaşıldı</span></div>
+        <div class="stat"><b id="aiNext">–</b><span>sıradaki paylaşım</span></div>
+        <div class="stat"><b id="aiQueue">–</b><span>planlı içerik</span></div></div>
+    </a>
+    <a class="card ss" href="/starseed">
+      <div class="art"></div>
+      <div class="top"><div class="mark">ST</div><div><div class="kicker">Uzun format · Facebook</div><div class="name">Starseed Transmission</div></div></div>
+      <span class="go">Aç →</span>
+      <p class="desc">Six Rays evreninden 15-20 dakikalık transmission'lar: konu, senaryo, Kokoro sesi, CapCut projesi ve Gumroad kitapları.</p>
+      <div class="chips" id="ssChips"></div>
+      <div class="stats"><div class="stat"><b id="ssProj">–</b><span>üretimde</span></div>
+        <div class="stat"><b id="ssWait">–</b><span>onay bekliyor</span></div>
+        <div class="stat"><b id="ssSales">–</b><span>kitap satışı</span></div></div>
+    </a>
+  </div>
+  <p class="foot">İki portföy aynı Studio'da çalışır, aynı Telegram botuna bağlıdır ama birbirinin verisini görmez.</p>
+</div>
+<script>
+const $=s=>document.querySelector(s);
+fetch("/api/home").then(r=>r.json()).then(d=>{
+  $("#aiToday").textContent=d.ai.today;$("#aiNext").textContent=d.ai.next||"—";$("#aiQueue").textContent=d.ai.queue;
+  $("#aiChips").innerHTML=(d.ai.chips||[]).map(c=>`<span class="chip">${c}</span>`).join("");
+  $("#ssProj").textContent=d.starseed.projects;$("#ssWait").textContent=d.starseed.finished;$("#ssSales").textContent=d.starseed.sales;
+  $("#ssChips").innerHTML=[`${d.starseed.races_ready}/6 ırk klip havuzu`,`${d.starseed.books} kitap Gumroad'da`,`${d.starseed.published} yayınlandı`].map(c=>`<span class="chip">${c}</span>`).join("");
+}).catch(()=>{});
+</script>
+</body>
+</html>

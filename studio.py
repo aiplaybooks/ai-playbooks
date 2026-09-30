@@ -29,6 +29,7 @@ from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 import telegram_bot as TG
 import remote
 import strategy as STRAT
+import starseed_studio as SS
 
 ROOT = pathlib.Path(__file__).parent.resolve()
 RUNS = ROOT / "runs"
@@ -1447,7 +1448,20 @@ def history():
 ALLOWED = ("output/", "runs/", "content/", "fonts/", "research/")
 TYPES = {".html": "text/html; charset=utf-8", ".js": "text/javascript", ".css": "text/css", ".png": "image/png",
          ".jpg": "image/jpeg", ".mp4": "video/mp4", ".json": "application/json; charset=utf-8", ".ttf": "font/ttf",
-         ".woff2": "font/woff2", ".log": "text/plain; charset=utf-8", ".md": "text/plain; charset=utf-8"}
+         ".woff2": "font/woff2", ".wav": "audio/wav", ".log": "text/plain; charset=utf-8", ".md": "text/plain; charset=utf-8"}
+
+
+def home_state():
+    """Numbers for the portfolio home page (/): each portfolio's own summary, nothing shared."""
+    today = f"{now():%Y-%m-%d}"
+    try: posted = sum(1 for l in (ROOT / "publish_log.jsonl").read_text(encoding="utf-8").splitlines() if f'"date": "{today}' in l)
+    except OSError: posted = 0
+    plan = sorted((i for i in share_items() if i["status"] == "pool" and i.get("at")), key=lambda i: i["at"])
+    nxt = datetime.fromisoformat(plan[0]["at"]).strftime("%H:%M") if plan else None
+    s = settings()
+    return {"ai": {"today": posted, "next": nxt, "queue": len(plan),
+                   "chips": [("Otopilot açık" if s.get("autopilot") else "Otopilot kapalı"), "IG · FB · YT · TikTok · X"]},
+            "starseed": SS.summary()}
 
 
 class H(BaseHTTPRequestHandler):
@@ -1477,7 +1491,13 @@ class H(BaseHTTPRequestHandler):
         u = urllib.parse.urlparse(self.path); q = dict(urllib.parse.parse_qsl(u.query))
         if self.gate(u, q): return
         try:
-            if u.path == "/": return self.send(200, (ROOT / "studio" / "index.html").read_bytes(), TYPES[".html"])
+            page = {"/": "home.html", "/ai-playbooks": "index.html", "/starseed": "starseed.html"}.get(u.path.rstrip("/") or "/")
+            if page: return self.send(200, (ROOT / "studio" / page).read_bytes(), TYPES[".html"])
+            if u.path == "/api/home": return self.send(200, home_state())
+            if u.path == "/api/starseed/state": return self.send(200, SS.state())
+            if u.path.startswith("/starseed/file/"):
+                f = SS.file_path(urllib.parse.unquote(u.path[len("/starseed/file/"):]))
+                return self.send_file(f) if f else self.send(404, {"error": "yok"})
             if u.path == "/api/state": return self.send(200, state())
             if u.path == "/api/run": return self.send(200, run_detail(q["id"]))
             if u.path == "/api/history": return self.send(200, history())
@@ -1529,6 +1549,7 @@ class H(BaseHTTPRequestHandler):
         if not remote.authorized(self.headers, {})[0]: return self.send(401, {"error": "anahtar gerekli"})
         try:
             b = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))) or b"{}")
+            if u.path == "/api/starseed/voice": SS.set_voice(b["race"], b.get("voice")); return self.send(200, {"ok": True})
             if u.path == "/api/gather":
                 rid = start_bg("gather", "Elle başlatıldı")
                 return self.send(200 if rid else 409, {"run": rid} if rid else {"error": "zaten bir toplama çalışıyor"})
