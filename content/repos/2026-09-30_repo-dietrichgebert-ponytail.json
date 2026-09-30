@@ -1,0 +1,40 @@
+{
+  "kind": "repo",
+  "repo": {
+    "full_name": "DietrichGebert/ponytail",
+    "url": "https://github.com/DietrichGebert/ponytail",
+    "stars": 148790,
+    "license": "MIT",
+    "language": "JavaScript",
+    "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote."
+  },
+  "topic": "Ponytail: stops your coding agent from over-engineering everything",
+  "hook": [
+    "I JUST FOUND A GITHUB REPO THAT MAKES YOUR CODING AGENT STOP OVER-ENGINEERING EVERYTHING.",
+    "54% less code on average, up to 94% when it over-builds.",
+    "It's 100% FR££ and open source.",
+    "It's called Ponytail — already at 148K+ GitHub stars."
+  ],
+  "hook_pattern": "CAPS discovery",
+  "dm": {
+    "keyword": "LAZY",
+    "mode": "direct"
+  },
+  "fb_comment": "🔗 Ponytail on GitHub:\nhttps://github.com/DietrichGebert/ponytail\n\n⭐ 148K+ stars · MIT license · built in JavaScript\n🤖 Works with Claude Code, Cursor, Codex, Copilot and 20+ other platforms\n💻 -54% code, -20% cost, -27% time on real agent tasks, measured against the same agent with no skill\n\nStart here: /plugin marketplace add DietrichGebert/ponytail\n\nFollow AI Playbooks for a new FR££ AI tool every day 🙏",
+  "caption": "I JUST FOUND A GITHUB REPO THAT MAKES YOUR CODING AGENT STOP OVER-ENGINEERING EVERYTHING.\n\n54% less code on average, up to 94% when it over-builds.\n\nIt's 100% FR££ and open source.\n\nIt's called Ponytail — already at 148K+ GitHub stars.\n\nComment LAZY and I'll DM you the repo link 📩\n\nFollow @aiplaybooks.daily, we post a FR££ AI tool every day.\n\n#ai #claudecode #opensource #github #aitools",
+  "captions": {
+    "instagram": "I JUST FOUND A GITHUB REPO THAT MAKES YOUR CODING AGENT STOP OVER-ENGINEERING EVERYTHING.\n\n54% less code on average, up to 94% when it over-builds.\n\nIt's 100% FR££ and open source.\n\nIt's called Ponytail — already at 148K+ GitHub stars.\n\nComment LAZY and I'll DM you the repo link 📩\n\nFollow @aiplaybooks.daily, we post a FR££ AI tool every day.\n\n#ai #claudecode #opensource #github #aitools",
+    "facebook": "I JUST FOUND A GITHUB REPO THAT MAKES YOUR CODING AGENT STOP OVER-ENGINEERING EVERYTHING.\n\n54% less code on average, up to 94% when it over-builds.\n\nIt's 100% FR££ and open source.\n\nIt's called Ponytail — already at 148K+ GitHub stars.\n\nLink in the first comment 👇\n\nDoes your AI coding agent over-build simple stuff too?\n\n#github #opensource #claudecode",
+    "x": "📦 DietrichGebert/ponytail on GitHub — stops your coding agent from over-engineering everything.\n54% less code on average, up to 94% when it over-builds.\n100% FR££ and open source. Already 148K+ stars.\n#opensource #claudecode"
+  },
+  "sources": [
+    "https://github.com/DietrichGebert/ponytail"
+  ],
+  "checked": [
+    "148,788 stars (rounded down to 148K+), MIT license, JavaScript -> GitHub API (repos.py --info, 2026-09-30)",
+    "54% less code on average, up to 94% in over-engineering scenarios (e.g. a date picker) -> README Numbers table + text",
+    "20% cost reduction, 27% faster execution -> README Numbers table (-20% cost, -27% time vs no-skill baseline)",
+    "install via /plugin marketplace add DietrichGebert/ponytail, plus Codex, Copilot CLI, Pi, OpenCode, Gemini CLI, Qoder, 20+ platforms total -> README Install section",
+    "not archived, active (latest release v4.10.0, 2026-09-14) -> GitHub API"
+  ]
+}

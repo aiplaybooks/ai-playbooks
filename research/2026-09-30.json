@@ -1,7 +1,15 @@
 {
- "generated": "2026-09-30T10:30+00:00",
+ "generated": "2026-09-30T13:30+00:00",
  "hours": 36.0,
  "items": [
+  {
+   "source": "YouTube official blog",
+   "tier": "official",
+   "title": "How to watch, shop, & engage with the 2026 Victoria’s Secret Fashion Show",
+   "url": "https://blog.youtube/culture-and-trends/watch-victorias-secret-fashion-show-2026-youtube/",
+   "date": "2026-09-30T13:00+00:00",
+   "summary": "Watch the 2026 Victoria's Secret Fashion Show live on YouTube October 18. Catch performances by Megan Thee Stallion and KATSEYE, stream Angels Among Us, and shop runway …"
+  },
   {
    "source": "Codex CLI releases",
    "tier": "official",
@@ -195,52 +203,12 @@
    "summary": "Every organization has knowledge that is uniquely its own: the way its business operates, the data it has built over time, the expertise of its people and the context behind thousands of everyday decisions. As powerful AI models become more widely available, that unique business intelligence matters more than ever. The difference will come from... The post New Microsoft data innovations unlock…"
   },
   {
-   "source": "OpenAI News",
-   "tier": "official",
-   "title": "Introducing dots",
-   "url": "https://openai.com/index/introducing-dots",
-   "date": "2026-09-29T00:00+00:00",
-   "summary": "Dots by OpenAI are proactive assistants that can keep working across complex projects and everyday tasks. Learn how dots help you stay in control while work moves forward."
-  },
-  {
-   "source": "Ollama blog",
-   "tier": "official",
-   "title": "Ollama now supports Jev-style decision models",
-   "url": "https://ollama.com/blog/ollama-now-supports-jev-style-decision-models",
-   "date": "2026-09-29T00:00+00:00",
-   "summary": "Ollama now supports decision models, based on TypeSafe's Jev API for fast, typed decisions. Decision models can now be run at no cost with low latency. Based on text, decision models answer yes-or-no questions, choices and scores about it, with a probability for every option."
-  },
-  {
    "source": "Codex changelog",
    "tier": "official",
    "title": "Codex changelog: Sep 29, 2026",
    "url": "https://developers.openai.com/codex/changelog",
    "date": "2026-09-29T00:00+00:00",
    "summary": "GPT-6.1 Sol in Codex and ChatGPT Work GPT-6.1 Sol offers near-Astra performance for complex work at a lower cost than Astra. Consider it for repeated, long-running work across code, apps, and documents. Availability depends on your plan, client, and workspace settings. Use gpt-6.1-sol . See Models for availability and model selection to compare models. … Codex CLI 0.159.2 pre]:w-full [&>pre]:max-w-full [&>pre]:mb-0 pt-4\"> $ npm install -g @openai/codex@0.159.2 View details Bug Fixes Suppressed console windows flashing on Windows when Codex launches background processes and sandboxed commands. ( #49385 ) Changelog Full Changelog: rust-v0.159.1...rust-v0.159.2 #49385 [0.159] Backport Windows console suppression for 0.159.2 @andrewgu-oai Full release on Github … Codex CLI 0.159.1 pre]:w-full [&>pre]:max-w-full [&>pre]:mb-0 pt-4\"> $ npm install -g @openai/codex@0.159.1 View details New…"
-  },
-  {
-   "source": "Claude release notes",
-   "tier": "official",
-   "title": "Claude release notes: Sep 28, 2026",
-   "url": "https://docs.claude.com/en/release-notes/overview",
-   "date": "2026-09-28T00:00+00:00",
-   "summary": " We've launched Claude Sonnet 5.5 ( claude-sonnet-5-5 ). It's available on the Claude API, Claude in Amazon Bedrock , Claude Platform on AWS , Claude on Google Cloud , and Claude in Microsoft Foundry . For its context window, output limits, and prices, see the Claude Sonnet 5.5 model page . Code written for Claude Sonnet 5 can break on Claude Sonnet 5.5 in five ways. To turn off up-front thinking, send thinking: {\"type\": \"between_tools\"} instead of \"disabled\" , at high effort or below. Forced tool use ( tool_choice types any and tool ) returns a 400 error. Thinking blocks are tied to the model and the conversation. On the Claude API and Google Cloud, the earlier computer_20251124 computer use tool isn't accepted. The advisor tool rejects Claude Opus 4.8, Claude Opus 4.7, and Claude Sonnet 5 as advisors. See What's new in Claude Sonnet 5.5 for each change and the migration guide for…"
-  },
-  {
-   "source": "xAI / Grok API release notes",
-   "tier": "official",
-   "title": "xAI / Grok API release notes: Sep 28, 2026",
-   "url": "https://docs.x.ai/docs/release-notes",
-   "date": "2026-09-28T00:00+00:00",
-   "summary": ""
-  },
-  {
-   "source": "Codex changelog",
-   "tier": "official",
-   "title": "Codex changelog: Sep 28, 2026",
-   "url": "https://developers.openai.com/codex/changelog",
-   "date": "2026-09-28T00:00+00:00",
-   "summary": "Codex CLI 0.158.0 pre]:w-full [&>pre]:max-w-full [&>pre]:mb-0 pt-4\"> $ npm install -g @openai/codex@0.158.0 View details New Features Configure copy-on-select and right-click paste in the fullscreen TUI. Copied transcript selections now preserve Markdown formatting. ( #47639 , #47896 , #48118 ) Connect to MCP servers that require pre-registered OAuth client secrets, including through codex mcp add --oauth-client-secret . ( #47891 ) Secure direct exec-server WebSocket connections with bearer tokens, including connections configured through app-server. ( #47601 , #47648 ) Image generation and editing can explicitly request transparent backgrounds, and edits now accept file-backed conversation images. ( #47484 , #47956 ) Terminal input approval is enabled by default for commands running with elevated permissions; runtime-only grants no longer cause unnecessary reviews. ( #47799 , #48073 )…"
   },
   {
    "source": "Social Media Today",
@@ -325,10 +293,34 @@
   {
    "source": "Hacker News",
    "tier": "community",
+   "title": "Pi.dev: You Said No MCP",
+   "url": "https://earendil.com/posts/you-said-no-mcp/",
+   "date": "2026-09-30T09:55+00:00",
+   "summary": "239 points, 110 comments · https://news.ycombinator.com/item?id=49906637"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
    "title": "Why Is Sam Altman a Free Man?",
    "url": "https://prospect.org/2026/09/29/artificial-intelligence-agents-openai-microsoft-sam-altman-greg-brockman-ah-nice/",
    "date": "2026-09-30T07:32+00:00",
-   "summary": "111 points, 66 comments · https://news.ycombinator.com/item?id=49905633"
+   "summary": "184 points, 163 comments · https://news.ycombinator.com/item?id=49905633"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "PSSA: A non-transformer language model written from scratch in Rust",
+   "url": "https://github.com/Sparticle62ops/pssa",
+   "date": "2026-09-30T03:19+00:00",
+   "summary": "81 points, 33 comments · https://news.ycombinator.com/item?id=49903993"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "RSS Feeds for Last.fm",
+   "url": "https://lfm.xiffy.nl/",
+   "date": "2026-09-30T03:00+00:00",
+   "summary": "97 points, 29 comments · https://news.ycombinator.com/item?id=49903862"
   },
   {
    "source": "Hacker News",
@@ -336,7 +328,7 @@
    "title": "How our vibe coded website looks like a designer made it",
    "url": "https://railcode.dev/blog/vibe-coded-website",
    "date": "2026-09-29T22:59+00:00",
-   "summary": "115 points, 64 comments · https://news.ycombinator.com/item?id=49901973"
+   "summary": "121 points, 68 comments · https://news.ycombinator.com/item?id=49901973"
   },
   {
    "source": "Hacker News",
@@ -344,7 +336,7 @@
    "title": "Livenerf: Has Opus 5.5 been nerfed yet?",
    "url": "https://github.com/ninjahawk/livenerf",
    "date": "2026-09-29T22:36+00:00",
-   "summary": "642 points, 256 comments · https://news.ycombinator.com/item?id=49901736"
+   "summary": "730 points, 292 comments · https://news.ycombinator.com/item?id=49901736"
   },
   {
    "source": "Hacker News",
@@ -352,7 +344,7 @@
    "title": "AI needs $6T in annual revenue to justify data centre boom",
    "url": "https://www.thenationalnews.com/future/technology/2026/09/29/ai-industry-needs-to-earn-6-trillion-by-2031-to-justify-data-centres/",
    "date": "2026-09-29T19:21+00:00",
-   "summary": "204 points, 300 comments · https://news.ycombinator.com/item?id=49898952"
+   "summary": "209 points, 305 comments · https://news.ycombinator.com/item?id=49898952"
   },
   {
    "source": "Hacker News",
@@ -360,7 +352,7 @@
    "title": "Nicholas Polson has authored 258 academic papers in 2026 so far",
    "url": "https://statmodeling.stat.columbia.edu/2026/08/27/258/",
    "date": "2026-09-29T19:15+00:00",
-   "summary": "145 points, 106 comments · https://news.ycombinator.com/item?id=49898877"
+   "summary": "146 points, 108 comments · https://news.ycombinator.com/item?id=49898877"
   },
   {
    "source": "Hacker News",
@@ -368,7 +360,7 @@
    "title": "The End of a Fair Price: Dynamic Pricing and the Normalization of Gouging",
    "url": "https://prospect.org/2026/09/29/oct-2026-battling-an-army-of-price-setters-owens-review/",
    "date": "2026-09-29T18:09+00:00",
-   "summary": "90 points, 109 comments · https://news.ycombinator.com/item?id=49897826"
+   "summary": "91 points, 111 comments · https://news.ycombinator.com/item?id=49897826"
   },
   {
    "source": "Hacker News",
@@ -376,7 +368,7 @@
    "title": "GLM-5.3 and the spread of advanced cyber capabilities",
    "url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
    "date": "2026-09-29T17:31+00:00",
-   "summary": "225 points, 216 comments · https://news.ycombinator.com/item?id=49897075"
+   "summary": "233 points, 224 comments · https://news.ycombinator.com/item?id=49897075"
   },
   {
    "source": "Hacker News",
@@ -384,7 +376,7 @@
    "title": "ChatGPT Pro 500",
    "url": "https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers",
    "date": "2026-09-29T17:26+00:00",
-   "summary": "205 points, 237 comments · https://news.ycombinator.com/item?id=49896975"
+   "summary": "210 points, 247 comments · https://news.ycombinator.com/item?id=49896975"
   },
   {
    "source": "Hacker News",
@@ -392,7 +384,7 @@
    "title": "Dots: Always-on agents",
    "url": "https://openai.com/index/introducing-dots/",
    "date": "2026-09-29T17:07+00:00",
-   "summary": "630 points, 488 comments · https://news.ycombinator.com/item?id=49896604"
+   "summary": "672 points, 530 comments · https://news.ycombinator.com/item?id=49896604"
   },
   {
    "source": "Hacker News",
@@ -408,7 +400,7 @@
    "title": "GPT 6.1 Sol: Near-Astra intelligence for a fifth of the price",
    "url": "https://openai.com/index/introducing-gpt-6-1-sol/",
    "date": "2026-09-29T17:06+00:00",
-   "summary": "952 points, 837 comments · https://news.ycombinator.com/item?id=49896586"
+   "summary": "992 points, 869 comments · https://news.ycombinator.com/item?id=49896586"
   },
   {
    "source": "Hacker News",
@@ -416,7 +408,7 @@
    "title": "DraftKings is using AI to behaviorally target chronic gamblers",
    "url": "https://www.eff.org/deeplinks/2026/09/draftkings-using-ai-supercharge-harms-online-behavioral-advertising",
    "date": "2026-09-29T16:30+00:00",
-   "summary": "544 points, 401 comments · https://news.ycombinator.com/item?id=49896050"
+   "summary": "545 points, 409 comments · https://news.ycombinator.com/item?id=49896050"
   },
   {
    "source": "Hacker News",
@@ -424,7 +416,7 @@
    "title": "PS5 Relapse Exploit",
    "url": "https://github.com/ntfargo/Relapse-Exploit",
    "date": "2026-09-29T15:44+00:00",
-   "summary": "312 points, 190 comments · https://news.ycombinator.com/item?id=49895304"
+   "summary": "331 points, 206 comments · https://news.ycombinator.com/item?id=49895304"
   },
   {
    "source": "Hacker News",
@@ -432,7 +424,7 @@
    "title": "Show HN: NSL – WSL for Linux",
    "url": "https://frostyard.github.io/nsl/",
    "date": "2026-09-29T14:51+00:00",
-   "summary": "136 points, 82 comments · https://news.ycombinator.com/item?id=49894351"
+   "summary": "145 points, 91 comments · https://news.ycombinator.com/item?id=49894351"
   },
   {
    "source": "Hacker News",
@@ -440,7 +432,7 @@
    "title": "macOS Golden Gate Is a Buggy Mess",
    "url": "https://www.squareorbits.com/blog/2026/09/macos-golden-gate-is-a-buggy-mess/",
    "date": "2026-09-29T14:32+00:00",
-   "summary": "457 points, 334 comments · https://news.ycombinator.com/item?id=49894005"
+   "summary": "462 points, 340 comments · https://news.ycombinator.com/item?id=49894005"
   },
   {
    "source": "Hacker News",
@@ -448,7 +440,7 @@
    "title": "Claude partial outage",
    "url": "https://status.claude.com/incidents/4xvtc2gnq73l",
    "date": "2026-09-29T14:25+00:00",
-   "summary": "171 points, 143 comments · https://news.ycombinator.com/item?id=49893876"
+   "summary": "171 points, 144 comments · https://news.ycombinator.com/item?id=49893876"
   },
   {
    "source": "Hacker News",
@@ -456,7 +448,7 @@
    "title": "Unsurprisingly, Meta's new Muse AI agent blatantly ignores users permissions",
    "url": "https://appleinsider.com/articles/26/09/28/metas-new-ai-agent-blatantly-ignores-users-permissions",
    "date": "2026-09-29T14:15+00:00",
-   "summary": "157 points, 41 comments · https://news.ycombinator.com/item?id=49893709"
+   "summary": "158 points, 41 comments · https://news.ycombinator.com/item?id=49893709"
   },
   {
    "source": "Hacker News",
@@ -464,7 +456,7 @@
    "title": "Ask HN: What are you reading?",
    "url": "https://news.ycombinator.com/item?id=49893157",
    "date": "2026-09-29T13:44+00:00",
-   "summary": "289 points, 573 comments · https://news.ycombinator.com/item?id=49893157"
+   "summary": "340 points, 651 comments · https://news.ycombinator.com/item?id=49893157"
   },
   {
    "source": "Hacker News",
@@ -472,7 +464,7 @@
    "title": "Sustainable energy without the hot air (2008)",
    "url": "https://www.withouthotair.com/",
    "date": "2026-09-29T12:38+00:00",
-   "summary": "143 points, 82 comments · https://news.ycombinator.com/item?id=49892175"
+   "summary": "145 points, 84 comments · https://news.ycombinator.com/item?id=49892175"
   },
   {
    "source": "Hacker News",
@@ -480,7 +472,7 @@
    "title": "Jeeves. Reasoning improves Jev-like decision models",
    "url": "https://github.com/PostHog/jeeves",
    "date": "2026-09-29T11:13+00:00",
-   "summary": "235 points, 91 comments · https://news.ycombinator.com/item?id=49891290"
+   "summary": "237 points, 92 comments · https://news.ycombinator.com/item?id=49891290"
   },
   {
    "source": "Hacker News",
@@ -488,7 +480,7 @@
    "title": "NASA asked several former SR-71A staffers to help secret restart",
    "url": "https://aviationweek.com/defense/aircraft-propulsion/nasa-asked-several-former-sr-71a-staffers-help-secret-restart",
    "date": "2026-09-29T10:10+00:00",
-   "summary": "176 points, 173 comments · https://news.ycombinator.com/item?id=49890733"
+   "summary": "222 points, 211 comments · https://news.ycombinator.com/item?id=49890733"
   },
   {
    "source": "Hacker News",
@@ -496,15 +488,7 @@
    "title": "A Privacy Analysis of Web and Mobile Conversational AI Agents [pdf]",
    "url": "https://jorgegarciaherrero.com/wp-content/interactivos/20260916-Prompt-like-a-butterfly-sting-like-a-tracker-(clean).pdf",
    "date": "2026-09-29T09:03+00:00",
-   "summary": "417 points, 133 comments · https://news.ycombinator.com/item?id=49890226"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "Anthropic's IPO prospectus shows AI vision, surging costs",
-   "url": "https://www.reuters.com/business/finance/anthropics-ipo-prospectus-shows-sweeping-ai-vision-surging-costs-2026-09-28/",
-   "date": "2026-09-28T23:40+00:00",
-   "summary": "134 points, 139 comments · https://news.ycombinator.com/item?id=49886005"
+   "summary": "419 points, 136 comments · https://news.ycombinator.com/item?id=49890226"
   }
  ],
  "errors": [],
