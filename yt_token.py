@@ -5,7 +5,8 @@
    downloaded as client_secret.json next to this file (gitignored).
 2. python yt_token.py      (a browser opens: pick the AI Playbooks channel and allow)
    Another channel (Starseed, 2026-09-30): python yt_token.py --env "E:/masaüstü AI/STARSEED/pipeline/.env" --expect @StarseedTransmission-u9h
-   (same OAuth client; the token goes to that .env; fails if the picked channel isn't the expected handle)
+   (the token goes to that .env; fails if the picked channel isn't the expected handle). Starseed has its own
+   Google Cloud project since 2026-10-01 (own upload quota): add --client "<STARSEED/pipeline>/client_secret_starseed.json"
 
 Writes YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN, YT_CHANNEL_ID into .env. Never prints token values.
 Run it again if the token stops working (password change, access removed in the Google account).
@@ -43,10 +44,10 @@ def main():
     global ENV
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     import argparse
-    ap = argparse.ArgumentParser(); ap.add_argument("--env"); ap.add_argument("--expect")
+    ap = argparse.ArgumentParser(); ap.add_argument("--env"); ap.add_argument("--expect"); ap.add_argument("--client")
     a = ap.parse_args()
     if a.env: ENV = pathlib.Path(a.env)
-    f = ROOT / "client_secret.json"
+    f = pathlib.Path(a.client) if a.client else ROOT / "client_secret.json"  # --client: another Google Cloud project's OAuth client
     if not f.exists(): sys.exit(f"missing {f}")
     c = json.loads(f.read_text(encoding="utf-8"))["installed"]
     verifier = secrets.token_urlsafe(64)
