@@ -176,7 +176,7 @@ section{display:none}section.on{display:block}
     </section>
 
     <section id="s-tube">
-      <div class="head"><div><h1>YouTube arşivi</h1><p>Hazır videoların, olduğu gibi, YouTube'un kendi planlamasıyla yayına giriyor. Günlük kota: 2 yeni uzun + 2 arşiv uzun + 2 Short.</p></div></div>
+      <div class="head"><div><h1>YouTube arşivi</h1><p>Hazır videoların, olduğu gibi, YouTube'un kendi planlamasıyla yayına giriyor. Günde 1 yeni uzun (22:00) + 1 arşiv uzun (02:00) + 2 Short; her videonun altına kitap linkli ilk yorum atılır.</p></div></div>
       <div id="tube"></div>
     </section>
 
@@ -215,7 +215,7 @@ function render(){
   const P=S.projects.filter(p=>!race||p.race===race);
   $("#nLine").textContent=P.length||"";$("#nBooks").textContent=S.books.filter(b=>b.published).length;$("#nDone").textContent=S.published.length||"";
   const sc=S.schedule||{},yt=sc.youtube_times||{},A=S.archive||{};
-  $("#plan").innerHTML=`<b>Günlük plan (TR saati)</b> · Konular ${esc(sc.topic_time||"09:30")}, üretim ${esc(sc.topic_auto||"10:30")} · Yeni uzun video: Facebook ${esc((sc.publish_times||[]).join(" ve "))}, YouTube ${esc((sc.publish_times||[]).map(t=>yt[t]||t).join(" ve "))} · Arşiv uzun: YouTube ${esc((sc.backlog_times||[]).join(" ve "))} · Shorts: ${esc((sc.shorts_times||[]).join(" ve "))}`;
+  $("#plan").innerHTML=`<b>Günlük plan (TR saati)</b> · Konular ${esc(sc.topic_time||"09:30")}, üretim ${esc(sc.topic_auto||"10:30")} · Yeni video: Facebook ${esc((sc.publish_times||[]).join(" ve "))}, YouTube ${esc((sc.publish_times||[]).map(t=>yt[t]||t).join(" ve "))} · Arşiv uzun: YouTube ${esc((sc.backlog_times||[]).join(" ve "))} · Shorts: ${esc((sc.shorts_times||[]).join(" ve "))}`;
   const when=t=>t?new Date(t).toLocaleString("tr-TR",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}):"";
   const pubnote=p=>{const u=p.publish;if(!u)return"";const l=[u.fb_link&&`<a href="${esc(u.fb_link)}" target="_blank" rel="noopener">Facebook ${esc(when(u.fb_scheduled))} ↗</a>`,u.yt_link&&`<a href="${esc(u.yt_link)}" target="_blank" rel="noopener">YouTube ${esc(when(u.yt_scheduled))} ↗</a>`].filter(Boolean).join(" · ");
     return `<small style="display:block;margin-top:4px">${u.uploaded?"📅 zamanlandı · "+l:u.approved?"⬆️ yükleniyor":u.asked?"⏳ Telegram'da onayın bekleniyor":""}${u.errors?" · ⚠️ "+esc(Object.entries(u.errors).map(([k,v])=>k+": "+v).join("; ")):""}</small>`};
@@ -223,7 +223,7 @@ function render(){
   $("#tube").innerHTML=Object.values(A).map(a=>`<h3 class="sidehead" style="padding:14px 0 8px">${esc(a.label)} · ${a.out}/${a.total} yayında${a.last?" · son yayın "+esc(a.last):""}</h3><div class="list">${a.items.filter(i=>!race||i.race===race).map(i=>
     `<div class="it"><b>${esc(i.title)}</b><span class="tag">${esc(when(i.slot))}</span><span class="tag">${esc(i.race||"")}</span>${i.link?`<a class="tag gold" href="${esc(i.link)}" target="_blank" rel="noopener">${new Date(i.slot)<=new Date()?"yayında":"zamanlandı"} ↗</a>`:i.error?`<span class="tag" title="${esc(i.error)}">⚠️ yeniden denenecek</span>`:`<span class="tag">sırada</span>`}</div>`).join("")||`<div class="empty">Kuyruk boş.</div>`}</div>`).join("");
   const T=S.topics,tc=(c,n)=>`<div class="it" style="display:block"><b>${n}. ${esc(c.title)}</b> <span class="tag">${esc(c.race||"")}</span> ${c.slot?`<span class="tag gold">${esc(c.slot)}</span>`:""} <span class="tag">${c.score??""}</span><div style="opacity:.75;font-size:12px;margin-top:4px">${esc(c.summary_tr||"")}${c.book?" · 📖 "+esc(c.book):""}${c.comment_word?" · 💬 "+esc(c.comment_word):""}</div></div>`;
-  $("#today").innerHTML=T?`<div class="note">Bugünün konuları (${esc(T.date)}): ${T.production==="started"?"üretim başladı":T.status==="approved"?"onaylandı":"öneri, itiraz yoksa "+esc(sc.topic_auto||"10:30")+"'da üretim başlar"}. Değiştirmek için Telegram'a yaz ("2. videoya 4. adayı koy").</div>`+T.picks.map((c,i)=>tc(c,i+1)).join("")+T.others.map((c,i)=>tc(c,i+3)).join(""):`<div class="empty">Bugünün konuları henüz çıkmadı (her gün ${esc(sc.topic_time||"09:30")}).</div>`;
+  $("#today").innerHTML=T?`<div class="note">Bugünün konuları (${esc(T.date)}): ${T.production==="started"?"üretim başladı":T.status==="approved"?"onaylandı":"öneri, itiraz yoksa "+esc(sc.topic_auto||"10:30")+"'da üretim başlar"}. Değiştirmek için Telegram'a yaz ("2. videoya 4. adayı koy").</div>`+T.picks.map((c,i)=>tc(c,i+1)).join("")+T.others.map((c,i)=>tc(c,i+1+T.picks.length)).join(""):`<div class="empty">Bugünün konuları henüz çıkmadı (her gün ${esc(sc.topic_time||"09:30")}).</div>`;
   $("#board").innerHTML=S.stages.map(st=>{
     const items=P.filter(p=>p.stage===st.id);
     const you=st.id==="capcut"||st.id==="approve";
