@@ -649,6 +649,15 @@ def hold(run, msg):
 def n_approve(run):
     qa = read_json(run.dir / "qa.json", {})
     need = run.s["approval"] if "approval" in run.s else settings()["approval"]  # pool items carry their own checkbox
+    if run.s.get("auto") and not need and not qa.get("ok", True):
+        # the autopilot picked this itself and QA couldn't clear it: drop it, never ask the owner (full autonomy)
+        why = "; ".join(qa.get("problems", []))[:300] or qa.get("summary_tr", "")[:300]
+        reject(run.id); run.s = read_json(run.dir / "state.json")  # reject() saved through its own Run object
+        run.node("approve", msg=f"Otopilot kendisi reddetti (kalite kontrol): {why}"[:400])
+        slog(run.id, "autopilot rejected after QA:", why)
+        try: TG.send(TG.esc(f"🚫 Otopilot bir içeriği kendisi eledi (kalite kontrol geçmedi)\n{(run.s.get('title') or '')[:90]}\n{why}"))
+        except Exception as ex: slog("telegram info failed", ex)  # noqa: BLE001
+        return None
     if need or not qa.get("ok", True):
         t = publish_at(run)
         run.node("approve", status="waiting", msg="Önizleme hazır: Yayınla / Revize et / Reddet"
@@ -961,6 +970,7 @@ def execute(run):
                     notify("AI Playbooks: yardım gerekiyor", f"{label}: {text[:160]}")
                     TG.event("error", run, label=label, node=nid, msg=text)
                 return
+        if run.s["status"] == "rejected": return  # the autopilot dropped it at the approve node
         if run.s["nodes"][nid]["status"] in ("waiting", "scheduled"):
             run.status(run.s["nodes"][nid]["status"]); return
         fixed = [r for r in repairs if r.get("retry")]
@@ -1211,7 +1221,8 @@ def share_add(kind, approval=True, url="", note="", scan=None, candidate=None, p
 
 def share_start(item):
     """Start production for a pool item (called with LOCK held via share_tick or share_now)."""
-    extra = {"approval": item["approval"], "share": item["id"], **({"publish_at": item["at"]} if item.get("at") else {})}
+    extra = {"approval": item["approval"], "share": item["id"], "auto": bool(item.get("auto")),
+             **({"publish_at": item["at"]} if item.get("at") else {})}
     if item["kind"] == "clip": rid = start_clip(item["url"], item.get("note", ""), **extra)
     elif item["kind"] == "repo": rid = start_repo(item["candidate"], **extra).id
     else:
