@@ -20,7 +20,7 @@ OUR_FILES = {"voice", "voice_tts", "preview"}  # stems of files we write into a 
 
 def final_files(d):
     """The owner's final render + thumbnail in a project folder (owner, 2026-09-30: both go into the project's folder)."""
-    vids = [f for f in d.iterdir() if f.is_file() and f.suffix.lower() in VIDEO and f.stem.lower() not in OUR_FILES]
+    vids = [f for f in d.rglob("*") if f.is_file() and f.suffix.lower() in VIDEO and f.stem.lower() not in OUR_FILES]  # CapCut exports into its own sub-folder
     thumbs = [f for f in d.iterdir() if f.is_file() and f.suffix.lower() in IMAGE and "clip" not in f.stem.lower()]
     newest = lambda fs: max(fs, key=lambda f: f.stat().st_mtime) if fs else None
     return newest(vids), newest(thumbs)
