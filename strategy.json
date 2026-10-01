@@ -1,14 +1,24 @@
 {
- "updated": "2026-09-29 (seeded by Claude Code from 7-day numbers)",
- "mix": {"news": 1, "repo": 1, "pack": 1, "clip": 3},
+ "updated": "2026-10-01 (owner + session: 7-day cross-platform review)",
+ "mix": {"news": 1, "repo": 1, "pack": 0, "clip": 4},
  "post_slots": null,
  "skip": {"post": ["fb_photos"]},
  "experiments": [
   {"id": "carousel-video-reels", "started": "2026-09-29", "change": "carousel videos also go out as IG Reel + FB Reel",
-   "metric": "IG/FB views per news/pack post", "success": ">= 50 avg views per post after 5 posts (was 0-2)", "status": "running"},
+   "metric": "IG/FB views per news/pack post", "success": ">= 50 avg views per post after 5 posts (was 0-2)", "status": "won",
+   "note": "2026-09-30 (5 news + 3 pack Reels in): news ig_reel 35.0 / fb_reel 41.6 avg views, pack fb_reel 132.7 (n=3, watch) vs 0.9/0 for the old carousel-only posts. Missed the flat 50-view bar but is a 35-45x jump over the prior baseline it was tested against, so kept and closed as won; the 50 number was an arbitrary target, not the real comparison."},
   {"id": "skip-fb-photos", "started": "2026-09-29", "change": "news/pack carousels no longer posted as FB photo posts (0 views in 25 posts); the FB Reel carries them",
-   "metric": "FB views per news/pack post", "success": "FB Reel avg views > 0 photo views", "status": "running"},
+   "metric": "FB views per news/pack post", "success": "FB Reel avg views > 0 photo views", "status": "won",
+   "note": "2026-09-30: FB Reel avg 41.6 (news) / 132.7 (pack) views vs 0.0 for fb_photos. Kept skipped."},
   {"id": "clip-heavy-mix", "started": "2026-09-29", "change": "autopilot mix 3 clips : 1 news : 1 repo : 1 pack (clips avg 220 IG / 353 YT views vs carousels ~1)",
-   "metric": "total daily views all platforms", "success": ">= 1.5x the 7-day daily average", "status": "running"}
+   "metric": "total daily views all platforms", "success": ">= 1.5x the 7-day daily average", "status": "won",
+   "note": "2026-09-30 (14-day report, clips now n=18 per platform): clip avg views crush every other format on every platform (yt_short 579.6 vs 153.3/24.8, ig_reel 214.9 vs 35.0/5.7, fb_reel 148.1 vs 41.6/132.7) — >=5x gap, the decisive-margin bar the report asks for. Mix kept at 3:1:1:1."},
+  {"id": "hook-skip-rate-discipline", "started": "2026-09-30", "change": "playbook now sets a numeric skip-rate target (first-3s promise, no intro/logo, cold-open visual) for every video format, from Instagram's 2026 skip-rate ranking signal",
+   "metric": "IG Reel avg views per post (all video formats)", "success": "no regression after 10 posts under the new hook rule; re-evaluate in ~1 week", "status": "running",
+   "note": "2026-10-01: still waiting on the code side — reel.py doesn't literally cold-open on the hook frame yet (strategy/backlog.md item from 2026-09-30, unbuilt), so writers are only applying the no-intro-pause part by hand so far. Re-evaluate once that backlog item ships and ~10 posts have run under the real cold-open."},
+  {"id": "sub-30s-reel-length", "started": "2026-10-01", "change": "voiced Reels (news/pack/repo) aim for under 30s (fewer slides / tighter voice-over lines) instead of the old 30-40s target, to land in YouTube Shorts' easier 65%-retention bucket (sub-30s) instead of the 50%-retention bucket (30-60s) per 2026 Shorts ranking research",
+   "metric": "yt_short avg views for news/pack/repo", "success": ">= 1.3x the current 14-day avg (news 153.3, pack 24.8) after 8 posts", "status": "running"},
+  {"id": "packs-out-of-rotation", "started": "2026-10-01", "change": "owner decision after the 7-day review: mix 4 clips : 1 news : 1 repo, prompt packs out of the autopilot rotation (pack videos avg 29 YT / 10 IG views vs clips 692 / 211; packs still fill a slot when every other pool is empty); clip scouting prefers visual transformation / comparison clips over dashboards and screen recordings (38-40% vs 70%+ viewed)",
+   "metric": "total views per day, all platforms", "success": ">= 1.3x the 24-30 Sep daily average (about 3,800) over 5 days; do not put packs back before 2026-10-06 without new evidence", "status": "running"}
  ]
 }

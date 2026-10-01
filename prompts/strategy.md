@@ -26,6 +26,10 @@ fall back to web search. Pick from that list: find 3-6 video posts on X (x.com/<
 from the last ~72 hours about AI tools / AI video / robots / agents with strong engagement (thousands of likes or
 views), not already posted (`publish_log.jsonl` source_url) and not already in `research/clips/`. Prefer short
 (< 90 s), visual, self-explaining clips; skip talking heads without visuals, politics, NSFW, violence, ads.
+Our numbers (2026-10-01): visual "wow" clips win (a transformation, before/after, models competing on one task, AI
+film scenes: 1,100-4,800 Shorts views, 70%+ viewed); dashboards, charts and plain screen recordings get dropped
+halfway (38-40% viewed): take those only when nothing visual is left. The clip's "AI" angle may be loose (owner): no
+fact-check on clips.
 Write `research/clips/{date}_clips.json`: `{{"clips": [{{"url": "...", "creator": "@...", "why": "...",
 "engagement": "e.g. 12K likes", "hook_idea": "..."}}]}}`. The autopilot turns them into posts (clip flow, hook +
 credit), so only clips you'd be proud to post.
