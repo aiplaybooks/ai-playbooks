@@ -1,0 +1,100 @@
+{
+ "generated": "2026-10-01T21:30+00:00",
+ "candidates": [
+  {
+   "id": "claude-code-mods-you-should-know",
+   "tool": "Claude",
+   "kind": "news",
+   "title": "Claude Code Just Got a Plugin That Watches Your Back While You Code",
+   "summary_tr": "Claude Code v2.1.287 ile iki yeni şey geldi: \"Claude Mods\" (eklentilerin Claude Code'un daha derin davranışlarını değiştirebilmesi) ve opt-in \"You should know\" eklentisi - sen çalışırken yanında ayrı bir ajan çalışıp senin veya Claude'un gözden kaçırabileceği şeyleri işaretliyor. Önceki '5 switches' postundan farklı, yeni versiyonun kendi özellikleri.",
+   "why_tr": "Claude Code takipçilerimiz için gerçek, hemen denenebilir bir güvenlik-ağı özelliği; 'bir ajan seni izliyor' açısı dikkat çekici.",
+   "angle": "what's new in v2.1.287 (Claude Mods + You should know) + how to turn You should know on + why a watchdog agent matters",
+   "tools": ["Claude", "Claude Code"],
+   "published": "2026-10-01",
+   "sources": ["https://github.com/anthropics/claude-code/releases/tag/v2.1.287"],
+   "hints": [],
+   "score": 6
+  },
+  {
+   "id": "gemini-live-guided-vision",
+   "tool": "Gemini",
+   "kind": "news",
+   "title": "Gemini Live Can Now Describe the World to Blind and Low-Vision Users in Real Time",
+   "summary_tr": "Google, görme engelli ve az gören topluluğuyla birlikte geliştirdiği 'Guided Vision' özelliğini Gemini Live'a ekledi: telefonun kamerasını gösterdiğinde gerçek zamanlı, sesli görsel yardım alıyorsun (örn. sokakta yön bulma, etiket okuma).",
+   "why_tr": "Herkesin anlayabileceği, insani ve görsel olarak güçlü bir erişilebilirlik hikayesi; paylaşılabilirliği yüksek.",
+   "angle": "what Guided Vision does + who it's for + how to turn it on in Gemini Live",
+   "tools": ["Gemini", "Google"],
+   "published": "2026-10-01",
+   "sources": ["https://blog.google/innovation-and-ai/products/gemini-app/guided-vision-gemini-live/"],
+   "hints": [],
+   "score": 6
+  },
+  {
+   "id": "higgsfield-ads-studio-launch",
+   "tool": "Higgsfield",
+   "kind": "news",
+   "title": "Higgsfield Just Launched a Tool That Turns One Product Photo Into a Finished Ad",
+   "summary_tr": "Higgsfield, 'Ads Studio' adında yeni bir özellik yayınladı: bir ürün fotoğrafı veriyorsun, platform senin için bitmiş bir reklam videosu/kreatifi üretiyor.",
+   "why_tr": "Küçük işletme/dropshipping kitlemiz için ücretsiz/erişilebilir bir reklam üretim aracı; görsel öncesi-sonrası anlatıma çok uygun.",
+   "angle": "what Ads Studio does + a before/after product-to-ad example + how to try it",
+   "tools": ["Higgsfield"],
+   "published": "2026-10-01",
+   "sources": ["https://higgsfield.ai/blog/higgsfield-ads-studio"],
+   "hints": [],
+   "score": 6
+  },
+  {
+   "id": "copilot-powerpoint-works-while-away",
+   "tool": "Copilot",
+   "kind": "news",
+   "title": "Copilot in PowerPoint Now Keeps Working on Your Deck After You Close Your Laptop",
+   "summary_tr": "Microsoft, Copilot'un PowerPoint'teki uzun süren görevleri kullanıcı uygulamadan çıksa, cihaz değiştirse veya çevrimdışı olsa bile arka planda bitirmesini sağladı; bitince bildirim geliyor. Ekim 2026'da genel kullanıma açılıyor.",
+   "why_tr": "Ofis/öğrenci kitlemiz için somut bir zaman kazandırma hikayesi: 'sunumu başlat, kapat, bildirim gelince bak'.",
+   "angle": "what changed + why it saves real time + how to start a long PowerPoint task and walk away",
+   "tools": ["Copilot", "Microsoft Copilot"],
+   "published": "2026-10-01",
+   "sources": [
+    "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/what%e2%80%99s-new-in-microsoft-copilot--september-2026/4559107",
+    "https://support.microsoft.com/en-us/office/foundations-experiences/copilot-dab/the-copilot-dynamic-action-button-in-word-excel-and-powerpoint"
+   ],
+   "hints": ["https://windowsforum.com/news/powerpoint-copilot-async-notifications-planned-for-mac-in-october-2026.446074/"],
+   "score": 5
+  },
+  {
+   "id": "perplexity-model-access-expansion",
+   "tool": "Perplexity",
+   "kind": "evergreen",
+   "title": "Perplexity Quietly Gives You Free Access to Grok, DeepSeek and Kimi K3",
+   "summary_tr": "Perplexity'nin model listesi büyüdü: GPT-5.6 Terra/Luna, Grok 4.6, DeepSeek V4 Pro, Kimi K3 ve Nvidia Nemotron 3.5 Lightning artık Pro/Max hesaplarda model seçiciden seçilebiliyor - tek bir uygulamadan birçok büyük modeli denemek mümkün.",
+   "why_tr": "Perplexity haberlerinde son zamanlarda az yer verdik; 'tek app'ten kaç farklı modeli deneyebilirsin' pratik ve paylaşılabilir bir açı.",
+   "angle": "how to switch models inside Perplexity + which ones are now available + why that beats paying for each separately",
+   "tools": ["Perplexity"],
+   "published": null,
+   "sources": ["https://docs.perplexity.ai/docs/resources/changelog"],
+   "hints": [],
+   "score": 5
+  },
+  {
+   "id": "pack-medical-bill-negotiation",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Prompts That Build You an AI Agent That Fights Your Medical Bill Down",
+   "summary_tr": "Bir tıbbi faturayı/EOB'yi ChatGPT veya Claude'a yükleyip, hatalı kodlama/aşırı ücretlendirme tespiti yaptıran, hastane finans departmanıyla kullanılacak bir itiraz/pazarlık mektubu yazdıran ve ödeme planı önerisi çıkaran 5 promptluk bir paket.",
+   "why_tr": "Para/cüzdan temalı, gerçek bir dert (şişirilmiş tıbbi faturalar) için somut bir çözüm; yorum/kaydet potansiyeli yüksek.",
+   "angle": "Act as a medical billing advocate: scan the bill for errors, draft the dispute letter, negotiate a payment plan, estimate realistic savings",
+   "tools": ["ChatGPT", "Claude"],
+   "published": null,
+   "sources": [],
+   "hints": [],
+   "score": 6
+  }
+ ],
+ "coverage": {
+  "ChatGPT": 0, "Claude": 1, "Gemini": 1, "Grok": 0, "Codex": 0, "Cursor": 0,
+  "Copilot": 1, "Perplexity": 1, "Meta AI": 0, "Mistral": 0, "DeepSeek": 0,
+  "Open models": 0, "Apple": 0, "Higgsfield": 1, "Google": 0, "Social media": 0,
+  "Other": 0, "Prompt pack": 1
+ },
+ "notes_tr": "research/2026-10-01.json + her araç için en az bir web aramasıyla tarandı (16 araç + 5 ek arama). Çoğu güncel haber havuzda zaten var (GPT-6.1 Sol, dots, Gemini 4 Argon, Mistral Vibe birleşmesi, DeepSeek/Qwen/Kimi evergreen'leri, Apple Siri AI, TikTok yorum özellikleri, Instagram canlı yayın reklamı vb. - hepsi pool'da). Grok'ta son 19 gündür yeni bir şey yok (grok.com/release-notes kontrol edildi); Meta'nın 'Muse Spark' modeli ve Kimi K3 lansmanı ise Nisan/Temmuz 2026'dan kalma, taze değil. ChatGPT, Codex, Cursor, Mistral, DeepSeek, Open models, Apple, Google, Meta AI, Social media için son 36 saatte havuzda olmayan, onaylanabilir taze bir haber bulunamadı (çoğu özellik ya eski tarihli ya da resmi kaynakta doğrulanamadı: Instagram 'Profile Cards' ve X 'Radar' aramaları 2024 tarihli makalelere çıktı, TikTok 'AI Canvas' net bir tarih taşımıyordu) - 6 taze aday (Claude, Gemini, Higgsfield, Copilot, Perplexity evergreen, 1 prompt pack) eklendi.",
+ "sources_changed": []
+}

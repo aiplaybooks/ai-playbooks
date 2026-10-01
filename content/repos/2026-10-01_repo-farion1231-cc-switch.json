@@ -1,0 +1,47 @@
+{
+  "kind": "repo",
+  "repo": {
+    "full_name": "farion1231/cc-switch",
+    "url": "https://github.com/farion1231/cc-switch",
+    "stars": 139363,
+    "license": "MIT",
+    "language": "Rust",
+    "description": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Grok Build & Hermes Agent."
+  },
+  "topic": "CC Switch: one-click API provider switcher for 10 AI coding tools",
+  "hook": [
+    "Stop hand-editing JSON, TOML and YAML just to switch your Claude Code API provider.",
+    "This FR££ desktop app does it in one click.",
+    "10 AI coding tools. 90+ built-in provider presets. Windows, macOS and Linux.",
+    "Already at 139K+ GitHub stars."
+  ],
+  "hook_pattern": "Contrarian strike (repo variant)",
+  "hook_alternatives": [
+    "I JUST FOUND A GITHUB REPO THAT SWITCHES YOUR CLAUDE CODE API PROVIDER IN ONE CLICK. (CAPS discovery) — rejected: used on our last 2 of 3 repo posts (OpenMontage, Ponytail), needs a break",
+    "🚨A solo dev just open sourced a FR££ app that manages Claude Code, Codex, Gemini CLI and 7 other AI coding tools from one place. (Solo-dev vs. paid giant) — rejected: this tool doesn't replace a paid product, it replaces a manual chore (hand-editing config files), so the 'paid giant' framing doesn't fit; used 1 post ago anyway"
+  ],
+  "dm": {
+    "keyword": "SWITCH",
+    "mode": "direct"
+  },
+  "fb_comment": "🔗 CC Switch on GitHub:\nhttps://github.com/farion1231/cc-switch\n\n⭐ 139K+ stars · MIT license · built in Rust\n🤖 One-click API provider switching for Claude Code, Claude Desktop, Codex, Gemini CLI, Grok Build, OpenCode, OpenClaw, Hermes, Pi and MiniMax Code\n📦 90+ built-in provider presets, plus MCP, Skills and prompt management in one place\n💻 Windows (MSI/portable), macOS (Homebrew/DMG) and Linux (.deb/.rpm/AppImage)\n\nFollow AI Playbooks for a new FR££ AI tool every day 🙏",
+  "caption": "Stop hand-editing JSON, TOML and YAML just to switch your Claude Code API provider.\n\nThis FR££ desktop app does it in one click.\n\n10 AI coding tools. 90+ built-in provider presets. Windows, macOS and Linux.\n\nAlready at 139K+ GitHub stars.\n\nComment SWITCH and I'll DM you the repo link 📩\n\nSave this before your next provider switch, or send it to a teammate still hand-editing config files.\n\nFollow @aiplaybooks.daily, we post a FR££ AI tool every day.\n\n#ai #claudecode #opensource #github #aitools",
+  "captions": {
+    "instagram": "Stop hand-editing JSON, TOML and YAML just to switch your Claude Code API provider.\n\nThis FR££ desktop app does it in one click.\n\n10 AI coding tools. 90+ built-in provider presets. Windows, macOS and Linux.\n\nAlready at 139K+ GitHub stars.\n\nComment SWITCH and I'll DM you the repo link 📩\n\nSave this before your next provider switch, or send it to a teammate still hand-editing config files.\n\nFollow @aiplaybooks.daily, we post a FR££ AI tool every day.\n\n#ai #claudecode #opensource #github #aitools",
+    "facebook": "Stop hand-editing JSON, TOML and YAML just to change your Claude Code API provider.\n\nThis FR££ desktop app does it in one click — 10 AI coding tools (Claude Code, Codex, Gemini CLI, Grok Build and more) and 90+ built-in provider presets, all from one place.\n\nWindows, macOS and Linux. Already at 139K+ GitHub stars.\n\nSave this before you change providers again, or send it to a teammate who's still hand-editing config files.\n\nLink in the first comment 👇\n\nHow many config files have you hand-edited this month?\n\n#github #opensource #claudecode",
+    "x": "Stop hand-editing JSON, TOML and YAML to change your Claude Code API provider.\n\n📦 A new FR££ GitHub repo by farion1231 does it in one click — 10 AI coding tools, 90+ provider presets. Already 139K+ stars.\n\n#opensource #claudecode"
+  },
+  "sources": [
+    "https://github.com/farion1231/cc-switch"
+  ],
+  "checked": [
+    "139,363 stars (rounded down to 139K+), MIT license, Rust, not archived, latest release v3.20.4 (2026-09-22), pushed 2026-10-01 -> GitHub API (repos.py --info, 2026-10-01)",
+    "supports 10 AI coding tools: Claude Code, Claude Desktop, Codex, Gemini CLI, Grok Build, OpenCode, OpenClaw, Hermes, Pi, MiniMax Code -> README header",
+    "switches API providers in one click, manages MCP/Skills/Prompts in one place, no more hand-editing JSON/TOML/YAML -> README tagline",
+    "90+ built-in provider presets -> README (WebFetch)",
+    "Windows (MSI/portable, ARM64), macOS (Homebrew cask / DMG, Universal), Linux (.deb/.rpm/AppImage, x86_64/ARM64) -> README install section (WebFetch)"
+  ],
+  "first_comment": {
+    "instagram": "Comment SWITCH and the repo link lands in your DMs 📩\n\nHow many AI coding tools do you juggle providers across? 👇"
+  }
+}
