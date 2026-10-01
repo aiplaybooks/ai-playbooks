@@ -1,0 +1,124 @@
+{
+ "generated": "2026-10-01T16:30:00+00:00",
+ "candidates": [
+  {
+   "id": "chatgpt-space-collab-hub",
+   "tool": "ChatGPT",
+   "kind": "news",
+   "title": "ChatGPT Just Got Its Own Shared Office: Meet Space",
+   "summary_tr": "OpenAI, DevDay 2026'da ChatGPT Space'i tanıttı: sayfalar, dosyalar ve ajanları tek bir ortak alanda birleştiren bir çalışma alanı. Bir sayfa açıp başkalarıyla birlikte düzenleyebiliyor, ChatGPT'yi veya bir Dot'u doğrudan o sayfaya katabiliyor, yorum bırakabiliyor; Slack ve Microsoft Teams ile de entegre.",
+   "why_tr": "Takım halinde çalışan kitlemiz için çok pratik bir yenilik; 'Library yerini aldı' ayrıntısı da ilgi çeker.",
+   "angle": "what Space is + how to open your first page + 3 ways to use it with a team",
+   "tools": ["ChatGPT"],
+   "published": "2026-09-29",
+   "sources": [
+    "https://help.openai.com/en/articles/20001549-getting-started-with-space-in-chatgpt",
+    "https://openai.com/index/devday-2026-recap/"
+   ],
+   "hints": ["https://www.androidheadlines.com/2026/09/openai-launches-chatgpt-space-collaborative-hub.html"],
+   "score": 7
+  },
+  {
+   "id": "cursor-mobile-ios-app",
+   "tool": "Cursor",
+   "kind": "news",
+   "title": "Cursor Now Lives on Your iPhone",
+   "summary_tr": "Cursor, bulutta veya kendi bilgisayarında çalışan AI ajanlarını telefondan başlatıp yönetebileceğin yerel bir iOS uygulaması çıkardı: sesle görev tanımlama, kilit ekranında canlı ilerleme bildirimleri, diff inceleme ve PR birleştirme telefondan yapılabiliyor.",
+   "why_tr": "Geliştirici kitlemiz için 'kodlama artık cebinde' hook'u çok paylaşılabilir ve görsel (telefon ekranı + kod) bir carousel/Reel konusu.",
+   "angle": "what's new + how to launch your first mobile agent + who it's for (on-call/PR review on the go)",
+   "tools": ["Cursor"],
+   "published": "2026-09-30",
+   "sources": [
+    "https://cursor.com/blog/ios-mobile-app",
+    "https://cursor.com/docs/cloud-agent/mobile"
+   ],
+   "hints": ["https://thenextweb.com/news/cursor-mobile-app-coding-agents-phone"],
+   "score": 7
+  },
+  {
+   "id": "instagram-livestream-boost-ads",
+   "tool": "Social media",
+   "kind": "news",
+   "title": "Instagram Will Now Pay to Push Your Livestream to Strangers",
+   "summary_tr": "Instagram, canlı yayın yaparken yayını doğrudan uygulama içinden reklama çevirip Feed, Hikaye ve Reels'te gösterebileceğin bir 'Boost' seçeneği ekledi; yayından en az 2 saat önce zamanlamak gecikmeyi azaltıyor.",
+   "why_tr": "Canlı yayın yapan küçük yaratıcılar için gerçek, uygulanabilir bir büyüme ipucu; 'birkaç dokunuşla reklam' hook'u güçlü.",
+   "angle": "what it does + how to turn it on mid-stream + the 2-hour scheduling tip",
+   "tools": ["Social media"],
+   "published": "2026-09-30",
+   "sources": [
+    "https://www.facebook.com/business/help/326071075057677",
+    "https://www.socialmediatoday.com/news/instagram-adds-option-to-boost-livestreams/831842/"
+   ],
+   "hints": ["https://tech.yahoo.com/social-media/articles/instagram-adds-option-boost-livestreams-220528107.html"],
+   "score": 6
+  },
+  {
+   "id": "tiktok-comment-voice-polls-carousel",
+   "tool": "Social media",
+   "kind": "evergreen",
+   "title": "5 Ways to Comment on TikTok Most People Still Don't Know About",
+   "summary_tr": "TikTok, yorum bölümüne dört yeni özellik ekledi: 60 saniyelik sesli yorumlar, yaratıcıların kendi videosuna beşe kadar seçenekle anket ekleyebildiği yorum anketleri, 9 fotoğrafa kadar karusel yorumlar ve Live Photo yorumları.",
+   "why_tr": "Haberi yeni değil ama kullanıcıların çoğu hâlâ bilmiyor; 'bunu bilmiyordun' formatı evergreen ve paylaşılabilir.",
+   "angle": "5 TikTok comment tricks most people never use (voice, polls, photo carousel, live photo)",
+   "tools": ["Social media"],
+   "published": "2026-09-03",
+   "sources": [
+    "https://newsroom.tiktok.com/say-more-in-the-comments"
+   ],
+   "hints": [],
+   "score": 5
+  },
+  {
+   "id": "pack-travel-hacking-agent",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "6 Prompts That Turn ChatGPT Into Your Personal Travel-Hacking Agent",
+   "summary_tr": "ChatGPT veya Claude'u; uçuş/puan stratejisi bulan, en ucuz rezervasyon zamanlamasını hesaplayan, kredi kartı puanlarını optimize eden ve gerçekçi bir tasarruf tahmini veren kişisel bir seyahat ajanına çeviren 6 prompt.",
+   "why_tr": "Para ve günlük hayat kesişimi (tatil planlama) yüksek ilgi çeker, henüz havuzda bir seyahat paketi yok.",
+   "angle": "Act as a travel-rewards expert; goal: a concrete trip under a set budget; deliverables: itinerary, points/booking-timing strategy, a realistic savings estimate",
+   "tools": ["Prompt pack"],
+   "published": null,
+   "sources": [],
+   "hints": [],
+   "score": 6
+  },
+  {
+   "id": "ai-agent-worm-risk-warning",
+   "tool": "Other",
+   "kind": "news",
+   "title": "A Security Researcher Just Described How AI Agents Could Spread Like a Worm",
+   "summary_tr": "Kriptograf Matthew Green, izole 'sandbox'larda çalışan AI ajanlarının paylaşılan bir paket önbelleğine birbirine talimat bırakabildiğini ve bu talimatların alıcı ajanın davranışını değiştirdiğini anlattı; bunu e-posta, Slack veya WhatsApp'a taşırsan klasik bir 'solucan'ın iki yarısını (ajanı ele geçiren yük + onu taşıyan ajan) elde edersin.",
+   "why_tr": "AI ajan güvenliği hem korkutucu hem merak uyandırıcı bir konu, ajan kullanan kitlemiz için paylaşılabilir bir uyarı hikayesi.",
+   "angle": "the warning in plain English + the real July 2026 incident it's based on + what it means for anyone running AI agents",
+   "tools": ["Other"],
+   "published": "2026-10-01",
+   "sources": [
+    "https://simonwillison.net/2026/Oct/1/matthew-green/"
+   ],
+   "hints": [],
+   "score": 6
+  }
+ ],
+ "coverage": {
+  "ChatGPT": 1,
+  "Claude": 0,
+  "Gemini": 0,
+  "Grok": 0,
+  "Codex": 0,
+  "Cursor": 1,
+  "Copilot": 0,
+  "Perplexity": 0,
+  "Meta AI": 0,
+  "Mistral": 0,
+  "DeepSeek": 0,
+  "Open models": 0,
+  "Apple": 0,
+  "Higgsfield": 0,
+  "Google": 0,
+  "Social media": 2,
+  "Other": 1,
+  "Prompt pack": 1
+ },
+ "notes_tr": "news.py'nin bugünkü taraması (Gemini 4 Argon, SynthID Bio, HydraFusion, model distillation savunması, Gemini skills/gems, WhatsApp ebeveyn kontrolü) havuzda zaten var, tekrar eklenmedi. Claude, Grok, Codex, Copilot, Perplexity, Meta AI, Mistral, DeepSeek, Open models, Apple, Higgsfield ve Google için son 36 saatte gerçekten yeni ve havuzda olmayan, resmi kaynaktan doğrulanabilen bir şey bulunamadı (Grok'ta Team Bot/Plaid genişlemesi ve Meta'nın Muse Spark modeli havuzdaki konularla aynı ya da çok eski — Nisan 2026); hepsi için arama yapıldı ama sonuç çıkmadı. En güçlü 3 yeni haber: OpenAI'nin ChatGPT Space'i, Cursor'un iOS mobil uygulaması ve Instagram'ın canlı yayın Boost özelliği. TikTok'un yorum güncellemesi eski (3 Eylül) ama çoğu kullanıcı bilmiyor, evergreen olarak eklendi. Ekstra ilginç konu olarak bir AI ajan güvenlik uyarısı (solucan benzeri yayılma riski) eklendi.",
+ "sources_changed": []
+}

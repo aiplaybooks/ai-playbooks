@@ -1,7 +1,15 @@
 {
- "generated": "2026-10-01T10:30+00:00",
+ "generated": "2026-10-01T13:30+00:00",
  "hours": 36.0,
  "items": [
+  {
+   "source": "Higgsfield blog",
+   "tier": "official",
+   "title": "How to Make an AI Music Video for a Real Artist in 2026",
+   "url": "https://higgsfield.ai/blog/ai-music-video-real-artist-2026",
+   "date": "2026-10-01T10:40+00:00",
+   "summary": ""
+  },
   {
    "source": "Anthropic News",
    "tier": "official",
@@ -155,14 +163,6 @@
    "summary": "OpenAI is partnering with America’s SBDC to expand hands-on AI training and local support for small businesses, alongside a new report on how small teams are using AI."
   },
   {
-   "source": "Hugging Face blog",
-   "tier": "official",
-   "title": "Open TTS Leaderboard: Scalable Evaluation for Multilingual Text-to-Speech and Voice Cloning",
-   "url": "https://huggingface.co/blog/open-tts-leaderboard",
-   "date": "2026-09-30T00:00+00:00",
-   "summary": ""
-  },
-  {
    "source": "Claude release notes",
    "tier": "official",
    "title": "Claude release notes: Sep 30, 2026",
@@ -185,22 +185,6 @@
    "url": "https://ai.google.dev/gemini-api/docs/changelog",
    "date": "2026-09-30T00:00+00:00",
    "summary": ". To get started, see the Gemini Omni Flash model page and the omni guide ."
-  },
-  {
-   "source": "Ollama releases",
-   "tier": "official",
-   "title": "v0.35.0",
-   "url": "https://github.com/ollama/ollama/releases/tag/v0.35.0",
-   "date": "2026-09-29T23:56+00:00",
-   "summary": "Decision models Ollama now supports decision models through /v1/systemone , based on TypeSafe’s Jev API . Decision models return choices, probabilities, and scores instead of text. Use them for tasks such as ticket triage, model routing, and content classification. Available models: Nimble from Bespoke Labs Tev1 from Together AI ollama pull nimble Send context and one or more questions: curl…"
-  },
-  {
-   "source": "Codex changelog",
-   "tier": "official",
-   "title": "Codex changelog: Sep 29, 2026",
-   "url": "https://developers.openai.com/codex/changelog",
-   "date": "2026-09-29T00:00+00:00",
-   "summary": "GPT-6.1 Sol in Codex and ChatGPT Work GPT-6.1 Sol offers near-Astra performance for complex work at a lower cost than Astra. Consider it for repeated, long-running work across code, apps, and documents. Availability depends on your plan, client, and workspace settings. Use gpt-6.1-sol . See Models for availability and model selection to compare models. … Codex CLI 0.159.2 pre]:w-full [&>pre]:max-w-full [&>pre]:mb-0 pt-4\"> $ npm install -g @openai/codex@0.159.2 View details Bug Fixes Suppressed console windows flashing on Windows when Codex launches background processes and sandboxed commands. ( #49385 ) Changelog Full Changelog: rust-v0.159.1...rust-v0.159.2 #49385 [0.159] Backport Windows console suppression for 0.159.2 @andrewgu-oai Full release on Github … Codex CLI 0.159.1 pre]:w-full [&>pre]:max-w-full [&>pre]:mb-0 pt-4\"> $ npm install -g @openai/codex@0.159.1 View details New…"
   },
   {
    "source": "Simon Willison",
@@ -293,10 +277,18 @@
   {
    "source": "Hacker News",
    "tier": "community",
+   "title": "StreetComplete on iOS is now in public beta",
+   "url": "https://github.com/streetcomplete/StreetComplete/issues/5421",
+   "date": "2026-10-01T10:59+00:00",
+   "summary": "173 points, 34 comments · https://news.ycombinator.com/item?id=49920160"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
    "title": "Gemini 4 Argon (High): Intelligence, Performance and Price Analysis",
    "url": "https://artificialanalysis.ai/models/gemini-4-argon",
    "date": "2026-09-30T20:50+00:00",
-   "summary": "106 points, 60 comments · https://news.ycombinator.com/item?id=49914236"
+   "summary": "108 points, 60 comments · https://news.ycombinator.com/item?id=49914236"
   },
   {
    "source": "Hacker News",
@@ -304,7 +296,15 @@
    "title": "Gitea 28.0",
    "url": "https://blog.gitea.com/release-of-28.0.0/",
    "date": "2026-09-30T20:32+00:00",
-   "summary": "82 points, 35 comments · https://news.ycombinator.com/item?id=49913975"
+   "summary": "86 points, 36 comments · https://news.ycombinator.com/item?id=49913975"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Denying Insulin and Meds: Disturbing Pictures of Neglect in ICE Mortality Report",
+   "url": "https://prospect.org/2026/09/30/ice-neglect-immigration-deportation-mortality-reviews/",
+   "date": "2026-09-30T20:15+00:00",
+   "summary": "81 points, 8 comments · https://news.ycombinator.com/item?id=49913731"
   },
   {
    "source": "Hacker News",
@@ -312,7 +312,7 @@
    "title": "Gemini 4 Argon",
    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
    "date": "2026-09-30T20:04+00:00",
-   "summary": "1405 points, 913 comments · https://news.ycombinator.com/item?id=49913571"
+   "summary": "1483 points, 988 comments · https://news.ycombinator.com/item?id=49913571"
   },
   {
    "source": "Hacker News",
@@ -320,7 +320,7 @@
    "title": "CS240 AI Cheating Retrospective",
    "url": "https://turkeyland.net/thoughts/ai.php",
    "date": "2026-09-30T19:54+00:00",
-   "summary": "106 points, 100 comments · https://news.ycombinator.com/item?id=49913458"
+   "summary": "107 points, 100 comments · https://news.ycombinator.com/item?id=49913458"
   },
   {
    "source": "Hacker News",
@@ -328,7 +328,7 @@
    "title": "EDG C++ front-end goes public",
    "url": "https://edgcpp.org/#transition",
    "date": "2026-09-30T19:26+00:00",
-   "summary": "220 points, 106 comments · https://news.ycombinator.com/item?id=49913192"
+   "summary": "231 points, 115 comments · https://news.ycombinator.com/item?id=49913192"
   },
   {
    "source": "Hacker News",
@@ -336,7 +336,7 @@
    "title": "Launch HN: Magnitude (YC S25) – Self-optimizing inference engine for agents",
    "url": "https://github.com/magnitudedev/magnitude",
    "date": "2026-09-30T17:37+00:00",
-   "summary": "163 points, 84 comments · https://news.ycombinator.com/item?id=49911995"
+   "summary": "177 points, 86 comments · https://news.ycombinator.com/item?id=49911995"
   },
   {
    "source": "Hacker News",
@@ -344,7 +344,7 @@
    "title": "The AI Race Just Got Awkward",
    "url": "https://insufferable.dev/posts/the-ai-race-just-got-awkward/",
    "date": "2026-09-30T15:50+00:00",
-   "summary": "387 points, 430 comments · https://news.ycombinator.com/item?id=49910553"
+   "summary": "394 points, 436 comments · https://news.ycombinator.com/item?id=49910553"
   },
   {
    "source": "Hacker News",
@@ -352,7 +352,7 @@
    "title": "SDF vs. MSDF vs. Slug: GPU Text Rendering",
    "url": "https://alphapixeldev.com/sdf-vs-msdf-vs-slug-vs-rive-gpu-text-rendering/",
    "date": "2026-09-30T13:50+00:00",
-   "summary": "155 points, 58 comments · https://news.ycombinator.com/item?id=49908962"
+   "summary": "161 points, 60 comments · https://news.ycombinator.com/item?id=49908962"
   },
   {
    "source": "Hacker News",
@@ -368,7 +368,15 @@
    "title": "You said no MCP",
    "url": "https://earendil.com/posts/you-said-no-mcp/",
    "date": "2026-09-30T09:55+00:00",
-   "summary": "643 points, 354 comments · https://news.ycombinator.com/item?id=49906637"
+   "summary": "648 points, 356 comments · https://news.ycombinator.com/item?id=49906637"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "OpenDLSS: A Vulkan Reimplementation of Nvidia's DLSS 5 Neural Rendering Network",
+   "url": "https://github.com/maanHimself/OpenDLSS-NR",
+   "date": "2026-09-30T08:43+00:00",
+   "summary": "150 points, 88 comments · https://news.ycombinator.com/item?id=49906100"
   },
   {
    "source": "Hacker News",
@@ -376,7 +384,7 @@
    "title": "Why Is Sam Altman a Free Man?",
    "url": "https://prospect.org/2026/09/29/artificial-intelligence-agents-openai-microsoft-sam-altman-greg-brockman-ah-nice/",
    "date": "2026-09-30T07:32+00:00",
-   "summary": "255 points, 227 comments · https://news.ycombinator.com/item?id=49905633"
+   "summary": "259 points, 231 comments · https://news.ycombinator.com/item?id=49905633"
   },
   {
    "source": "Hacker News",
@@ -392,7 +400,7 @@
    "title": "RSS Feeds for Last.fm",
    "url": "https://lfm.xiffy.nl/",
    "date": "2026-09-30T03:00+00:00",
-   "summary": "127 points, 47 comments · https://news.ycombinator.com/item?id=49903862"
+   "summary": "128 points, 48 comments · https://news.ycombinator.com/item?id=49903862"
   },
   {
    "source": "Hacker News",
@@ -400,31 +408,7 @@
    "title": "Responsible Release of AI-Generated Mathematics",
    "url": "https://agmai.org/general-sep29/",
    "date": "2026-09-30T02:36+00:00",
-   "summary": "94 points, 123 comments · https://news.ycombinator.com/item?id=49903713"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "Show HN: Ledge.sh – Runnable Markdown Notes",
-   "url": "https://ledge.sh",
-   "date": "2026-09-29T23:41+00:00",
-   "summary": "145 points, 61 comments · https://news.ycombinator.com/item?id=49902382"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "How our vibe coded website looks like a designer made it",
-   "url": "https://railcode.dev/blog/vibe-coded-website",
-   "date": "2026-09-29T22:59+00:00",
-   "summary": "133 points, 77 comments · https://news.ycombinator.com/item?id=49901973"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "Livenerf: Has Opus 5.5 been nerfed yet?",
-   "url": "https://github.com/ninjahawk/livenerf",
-   "date": "2026-09-29T22:36+00:00",
-   "summary": "897 points, 380 comments · https://news.ycombinator.com/item?id=49901736"
+   "summary": "103 points, 148 comments · https://news.ycombinator.com/item?id=49903713"
   }
  ],
  "errors": [],
