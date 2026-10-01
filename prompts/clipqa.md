@@ -18,6 +18,10 @@ Frames of the ORIGINAL clip (uncropped): {source_frames}
 5. Credit line "Source: @..." visible under the clip. Hook still matches what the clip shows.
 6. Anything that should not be posted (nudity, gore, hate, a real person mocked in a harmful way): report it.
 
+7. Do NOT fact-check the clip's premise (owner, 2026-10-01): a clip whose "AI" angle is loose, a joke in the source
+   or unproven ("it could have been made with AI") is welcome, it brings reach. That is never a problem and never a
+   reason for `ok: false`. Still a problem: an invented quote or endorsement of a real, named person.
+
 ## Fix
 Edit `{content}` (only `crop_pos`, `fit`, `hook`, `title`), re-render with `python clip.py {content}` and look at the
 new `{out}/check_*.jpg`. At most 2 fix rounds.

@@ -146,6 +146,9 @@ Every day the pipeline should:
   hook, the IG/FB comments (prompts) go into the YouTube description. Discovery: `viral.py`
   (YouTube API = signal only, never downloaded; Reddit API needs manual approval since 2025-11 → not available).
   No fake verified badge.
+  **Clips are not fact-checked** (owner, 2026-10-01): a loose or unproven "AI" angle is fine for reach ("it could have
+  been made with AI"); clip QA only checks framing and content that must not be posted. News posts stay verified.
+  An autopilot item that still fails QA is dropped by the system itself (Telegram info), never sent for approval.
 - **Share pool + planned publishing** (owner, 2026-09-27): Viral tab = clip pool (owner pastes links: "Havuza ekle"
   / "Şimdi paylaş"); Adaylar tab = "📌 Carousel havuzu" filled by "Havuza at" on news candidates and prompt packs.
   Per item: "Onay iste" checkbox (ticked → approval before publishing; unticked → no approval, except a QA problem

@@ -56,8 +56,9 @@ def collect():
             ch = yt_get("https://www.googleapis.com/youtube/v3/channels?part=statistics&mine=true", tok)["items"][0]["statistics"]
             channel["youtube"] = {"subscribers": int(ch.get("subscriberCount", 0)), "views": int(ch.get("viewCount", 0)),
                                   "videos": int(ch.get("videoCount", 0))}
-            if yt_ids:
-                ids = ",".join(yt_ids)
+            all_ids = list(yt_ids)
+            for n in range(0, len(all_ids), 50):  # videos.list takes at most 50 ids per call
+                ids = ",".join(all_ids[n:n + 50])
                 for v in yt_get(f"https://www.googleapis.com/youtube/v3/videos?part=statistics&id={ids}", tok).get("items", []):
                     st = v["statistics"]
                     posts[yt_ids[v["id"]]]["m"]["yt_short"] = {"views": int(st.get("viewCount", 0)), "likes": int(st.get("likeCount", 0)),
@@ -65,7 +66,7 @@ def collect():
                 start = min(p["date"][:10] for p in posts.values() if p["ids"].get("yt_short"))
                 q = urllib.parse.urlencode({"ids": "channel==MINE", "startDate": start, "endDate": datetime.now().strftime("%Y-%m-%d"),
                                             "metrics": "views,estimatedMinutesWatched,averageViewDuration,averageViewPercentage,shares,subscribersGained",
-                                            "dimensions": "video", "filters": f"video=={ids}", "maxResults": 500})
+                                            "dimensions": "video", "filters": f"video=={ids}", "maxResults": 200})
                 rep = yt_get(f"https://youtubeanalytics.googleapis.com/v2/reports?{q}", tok)
                 cols = [c["name"] for c in rep.get("columnHeaders", [])]
                 for row in rep.get("rows", []):
