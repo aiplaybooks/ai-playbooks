@@ -61,8 +61,10 @@ Every day the pipeline should:
   caption agent writes varied "Comment WORD" CTAs (IG only, never on FB). Setup/check: `python dm_setup.py
   [--check | --register content/<post>.json WORD]` (deploys the Worker, uploads secrets without printing them,
   subscribes Meta's `instagram` webhook: comments, messages, messaging_postbacks). **Until Meta App Review grants
-  Advanced Access to instagram_manage_messages, private replies/DMs only reach accounts with a role on the app**
-  (the owner tests with their other Instagram accounts) → keep the setting OFF until then.
+  Advanced Access to instagram_manage_messages, the follow GATE (button tap) only works for accounts with a role on
+  the app.** So since 2026-10-01 (owner: "don't wait for App Review, send the links directly, we need engagement and
+  followers") every post uses `mode: "direct"` (publish.py default): comment the keyword → the link right away + a
+  follow request; the setting is ON. Back to the gate (`"mode": "gate"`) only after Advanced Access is granted.
 - **GitHub repo pillar** (owner, 2026-09-28): ONE photo per post = the repo's real GitHub page (`repocard.py`:
   dark mode, long file lists cut to ~6 rows so the README start shows, NOTHING written on it) + captions + the link:
   Facebook = our first comment (`fb_comment`, publish.py `comments` step), Instagram = "Comment WORD" → the DM bot

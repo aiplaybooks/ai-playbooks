@@ -626,9 +626,11 @@ def dm(p):
     link = d.get("link") or ((p.data.get("repo") or {}).get("url") if p.repo else None) or f"{PAGES_URL}/p/{p.name}/"
     title = (p.data.get("repo") or {}).get("full_name") if p.repo else (p.data.get("cover") or {}).get("headline")
     title = title or p.data.get("topic") or p.name
-    for mid in ids:  # mode "direct": the bot DMs the link right away (repo posts); "gate": follow first
+    # mode "direct" (default since 2026-10-01, owner: don't wait for App Review): the bot DMs the link right away with
+    # a follow request; "gate" (follow first, button) only reaches app-role accounts until Advanced Access is granted
+    for mid in ids:
         reg[mid] = {"keyword": d["keyword"].upper(), "link": link, "title": title[:120], "post": p.name,
-                    "mode": d.get("mode") or ("direct" if p.repo else "gate"),
+                    "mode": d.get("mode") or "direct",
                     "added": datetime.now().astimezone().isoformat(timespec="minutes")}
     f.write_text(json.dumps(reg, indent=1, ensure_ascii=False), encoding="utf-8")
     git("add", "dm.json", "p", cwd=wt)

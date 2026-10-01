@@ -119,13 +119,19 @@ function notYetMessage(post, mediaId, user) {
 
 function directMessage(post, user) {  // plain text: the link gets a preview card and works in every client
   const hi = user ? `Hey @${user}! ` : "Hey! ";
-  const text = hi + pick(["Here's the repo you asked for 👇", "Here you go 👇", "Your link is here 👇"]) + `
+  const repo = /_repo-/.test(post.post || "");  // packs, news and clips: the post's page with everything copy-ready
+  const text = hi + pick(repo ? ["Here's the repo you asked for 👇", "Here you go 👇", "Your link is here 👇"]
+    : ["Here's everything from the post, copy-ready 👇", "Here you go 👇", "Your link is here 👇"]) + `
 ${post.link}
 
-` + pick([
+` + pick(repo ? [
     "If you find it useful, a follow for @aiplaybooks.daily would mean a lot 🙏 We share a FR££ AI tool every day.",
     "Enjoy! 🙌 Follow @aiplaybooks.daily so you don't miss the next FR££ tool, we post one every day.",
     "Have fun with it 🚀 And if you like finds like this, follow @aiplaybooks.daily, new ones every day 🙏",
+  ] : [
+    "If it helps, a follow for @aiplaybooks.daily would mean a lot 🙏 New copy-paste prompts and AI finds every day.",
+    "Enjoy! 🙌 Follow @aiplaybooks.daily so you don't miss the next one, we post every day.",
+    "Have fun with it 🚀 Follow @aiplaybooks.daily for more like this, new ones every day 🙏",
   ]);
   return { text };
 }

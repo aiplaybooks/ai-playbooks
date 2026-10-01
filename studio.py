@@ -460,7 +460,7 @@ DM_ON = """## Instagram DM bot (ON)
 Our comment-to-DM bot is live on Instagram. When the post gives people something to take away (prompts, a setup, a
 guide, the prompt behind a clip), add `"dm": {"keyword": "WORD"}`: one short, easy-to-type English word in capitals
 tied to the topic (AGENT, BUDGET, PROMPTS, GUIDE, SETUP, SKETCH ...), not the keyword of our last 5 posts. Whoever
-comments it gets a DM (follow gate) with the post's page, which lists everything copy-ready. The caption agent writes
+comments it gets a DM right away with the post's page (everything copy-ready) and a request to follow us. The caption agent writes
 the "Comment WORD" call to action; you only choose the word. Clips: with a `dm` keyword the prompts stay OFF the public
 comments (they are the reward): still put them in `comments`, the page and YouTube use them."""
 DM_OFF = "## Instagram DM bot (OFF)\nThe comment-to-DM bot is off: no `dm` block, no \"Comment WORD\" promises."
