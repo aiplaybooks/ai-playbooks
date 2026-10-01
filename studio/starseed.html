@@ -136,34 +136,37 @@ section{display:none}section.on{display:block}
       <button data-s="topics">☉ Konu motoru</button>
       <button data-s="books">❖ Kitaplar <em id="nBooks"></em></button>
       <button data-s="rays">✧ Irklar · ses · klip</button>
-      <button data-s="done">◈ Yayın arşivi <em id="nDone"></em></button>
+      <button data-s="tube">▶ YouTube arşivi <em id="nTube"></em></button>
+      <button data-s="done">◈ Yayınlananlar <em id="nDone"></em></button>
     </div>
     <div class="sidehead">Six Rays</div>
     <div class="rays" id="rays"></div>
   </nav>
   <main>
     <section id="s-line" class="on">
-      <div class="head"><div><h1>Üretim hattı</h1><p>Konudan yayına her video. Mor adımları sistem yapar, altın adımlar senin.</p></div></div>
+      <div class="head"><div><h1>Üretim hattı</h1><p>Konudan yayına her video. Mor adımları sistem yapar, altın adımlar senin. Her şey Telegram'dan da yönetilir.</p></div></div>
+      <div class="note" id="plan"></div>
       <div class="flow">
-        <div class="step me"><small>Sistem</small><b>Konu seçimi</b></div>
-        <div class="step me"><small>Sistem</small><b>Hikaye senaryosu</b></div>
+        <div class="step me"><small>Sistem · 09:30</small><b>Konu seçimi</b></div>
+        <div class="step me"><small>Sistem · 10:30</small><b>Hikaye senaryosu</b></div>
         <div class="step me"><small>Sistem</small><b>Kokoro sesi</b></div>
-        <div class="step me"><small>Sistem</small><b>CapCut projesi</b></div>
-        <div class="step you"><small>Sen</small><b>Altyazı · müzik · kartlar</b></div>
-        <div class="step you"><small>Sen</small><b>Onay</b></div>
-        <div class="step me"><small>Sistem</small><b>Facebook + pinned</b></div>
+        <div class="step me"><small>Sistem</small><b>CapCut projesi + müzik</b></div>
+        <div class="step you"><small>Sen</small><b>Altyazı · kartlar · thumbnail</b></div>
+        <div class="step you"><small>Sen · Telegram</small><b>Onay</b></div>
+        <div class="step me"><small>Sistem</small><b>Facebook + YouTube planla · ilk yorum</b></div>
       </div>
       <div class="board" id="board"></div>
     </section>
 
     <section id="s-topics">
       <div class="head"><div><h1>Konu motoru</h1><p>En kritik adım. Konu aileleri × açılış kalıpları × ırk, rakip başlıkların güncel verisiyle.</p></div></div>
-      <div class="note">Konu motoru kuruluyor. Burada önerilen konular, seçildikleri ırk, eşleşen Gumroad kitabı ve gerekçeleriyle listelenecek.</div>
+      <div class="list" id="today"></div>
+      <h3 class="sidehead" style="padding:14px 0 8px">Konu aileleri</h3>
       <div class="grid" id="families"></div>
     </section>
 
     <section id="s-books">
-      <div class="head"><div><h1>Gumroad kitapları</h1><p>Her videonun pinned comment'i konusuna uyan kitaba gider.</p></div></div>
+      <div class="head"><div><h1>Gumroad kitapları</h1><p>Her videonun ilk yorumu ve açıklaması konusuna uyan kitaba gider.</p></div></div>
       <div class="grid" id="books"></div>
     </section>
 
@@ -172,8 +175,13 @@ section{display:none}section.on{display:block}
       <div class="grid" id="raycards"></div>
     </section>
 
+    <section id="s-tube">
+      <div class="head"><div><h1>YouTube arşivi</h1><p>Hazır videoların, olduğu gibi, YouTube'un kendi planlamasıyla yayına giriyor. Günlük kota: 2 yeni uzun + 2 arşiv uzun + 2 Short.</p></div></div>
+      <div id="tube"></div>
+    </section>
+
     <section id="s-done">
-      <div class="head"><div><h1>Yayın arşivi</h1><p>Onay bekleyen bitmiş videolar ve yayınlananlar.</p></div></div>
+      <div class="head"><div><h1>Yayınlananlar</h1><p>Onay bekleyen bitmiş videolar ve yayına giren yeni uzun videolar.</p></div></div>
       <h3 class="sidehead" style="padding:0 0 8px">Onay bekliyor · video + thumbnail geldi</h3>
       <div class="list" id="finished"></div>
       <h3 class="sidehead" style="padding:14px 0 8px">Yayınlandı</h3>
@@ -199,18 +207,28 @@ const rc=k=>(S.races.find(r=>r.key===k)||{}).color||"#d8b46a";
 
 async function load(){S=await (await fetch("/api/starseed/state")).json();render()}
 function render(){
-  const c=S.checks,ck=[["gumroad","Gumroad"],["kokoro","Kokoro"],["capcut","CapCut CLI"],["shared","Ortak klasör"],["facebook","Facebook"]];
+  const c=S.checks,ck=[["bot","Telegram botu"],["gumroad","Gumroad"],["kokoro","Kokoro"],["capcut","CapCut CLI"],["shared","Ortak klasör"],["facebook","Facebook"],["youtube","YouTube"],["shorts","Shorts kanalı"]];
   $("#checks").innerHTML=ck.map(([k,l])=>`<span class="ck ${c[k]?"ok":"wait"}" title="${c[k]?"bağlı":"bekliyor"}"><i></i>${l}</span>`).join("");
   $("#rays").innerHTML=`<button class="ray ${race?"":"on"}" data-r="" style="--c:#d8b46a"><i></i>Tümü</button>`+S.races.map(r=>
     `<button class="ray ${race===r.key?"on":""} ${r.clips?"":"off"}" data-r="${r.key}" style="--c:${r.color}"><i></i>${r.name}<em>${r.clips?r.clips+" klip":"klip yok"}</em></button>`).join("");
   $$(".ray").forEach(b=>b.onclick=()=>{race=b.dataset.r||null;render()});
   const P=S.projects.filter(p=>!race||p.race===race);
   $("#nLine").textContent=P.length||"";$("#nBooks").textContent=S.books.filter(b=>b.published).length;$("#nDone").textContent=S.published.length||"";
+  const sc=S.schedule||{},yt=sc.youtube_times||{},A=S.archive||{};
+  $("#plan").innerHTML=`<b>Günlük plan (TR saati)</b> · Konular ${esc(sc.topic_time||"09:30")}, üretim ${esc(sc.topic_auto||"10:30")} · Yeni uzun video: Facebook ${esc((sc.publish_times||[]).join(" ve "))}, YouTube ${esc((sc.publish_times||[]).map(t=>yt[t]||t).join(" ve "))} · Arşiv uzun: YouTube ${esc((sc.backlog_times||[]).join(" ve "))} · Shorts: ${esc((sc.shorts_times||[]).join(" ve "))}`;
+  const when=t=>t?new Date(t).toLocaleString("tr-TR",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}):"";
+  const pubnote=p=>{const u=p.publish;if(!u)return"";const l=[u.fb_link&&`<a href="${esc(u.fb_link)}" target="_blank" rel="noopener">Facebook ${esc(when(u.fb_scheduled))} ↗</a>`,u.yt_link&&`<a href="${esc(u.yt_link)}" target="_blank" rel="noopener">YouTube ${esc(when(u.yt_scheduled))} ↗</a>`].filter(Boolean).join(" · ");
+    return `<small style="display:block;margin-top:4px">${u.uploaded?"📅 zamanlandı · "+l:u.approved?"⬆️ yükleniyor":u.asked?"⏳ Telegram'da onayın bekleniyor":""}${u.errors?" · ⚠️ "+esc(Object.entries(u.errors).map(([k,v])=>k+": "+v).join("; ")):""}</small>`};
+  $("#nTube").textContent=Object.values(A).reduce((n,a)=>n+a.total-a.out,0)||"";
+  $("#tube").innerHTML=Object.values(A).map(a=>`<h3 class="sidehead" style="padding:14px 0 8px">${esc(a.label)} · ${a.out}/${a.total} yayında${a.last?" · son yayın "+esc(a.last):""}</h3><div class="list">${a.items.filter(i=>!race||i.race===race).map(i=>
+    `<div class="it"><b>${esc(i.title)}</b><span class="tag">${esc(when(i.slot))}</span><span class="tag">${esc(i.race||"")}</span>${i.link?`<a class="tag gold" href="${esc(i.link)}" target="_blank" rel="noopener">${new Date(i.slot)<=new Date()?"yayında":"zamanlandı"} ↗</a>`:i.error?`<span class="tag" title="${esc(i.error)}">⚠️ yeniden denenecek</span>`:`<span class="tag">sırada</span>`}</div>`).join("")||`<div class="empty">Kuyruk boş.</div>`}</div>`).join("");
+  const T=S.topics,tc=(c,n)=>`<div class="it" style="display:block"><b>${n}. ${esc(c.title)}</b> <span class="tag">${esc(c.race||"")}</span> ${c.slot?`<span class="tag gold">${esc(c.slot)}</span>`:""} <span class="tag">${c.score??""}</span><div style="opacity:.75;font-size:12px;margin-top:4px">${esc(c.summary_tr||"")}${c.book?" · 📖 "+esc(c.book):""}${c.comment_word?" · 💬 "+esc(c.comment_word):""}</div></div>`;
+  $("#today").innerHTML=T?`<div class="note">Bugünün konuları (${esc(T.date)}): ${T.production==="started"?"üretim başladı":T.status==="approved"?"onaylandı":"öneri, itiraz yoksa "+esc(sc.topic_auto||"10:30")+"'da üretim başlar"}. Değiştirmek için Telegram'a yaz ("2. videoya 4. adayı koy").</div>`+T.picks.map((c,i)=>tc(c,i+1)).join("")+T.others.map((c,i)=>tc(c,i+3)).join(""):`<div class="empty">Bugünün konuları henüz çıkmadı (her gün ${esc(sc.topic_time||"09:30")}).</div>`;
   $("#board").innerHTML=S.stages.map(st=>{
     const items=P.filter(p=>p.stage===st.id);
     const you=st.id==="capcut"||st.id==="approve";
     return `<div class="col ${you?"you":""}"><h3>${esc(st.label)}<span>${items.length}</span></h3>${items.map(p=>
-      `<div class="pcard" style="--c:${rc(p.race)}"><b>${esc(p.title)}</b><small>${esc([p.slot,p.emissary,p.minutes&&p.minutes+" dk",p.words&&p.words+" kelime",p.voice,p.capcut&&"CapCut: "+p.capcut,p.book,p.error?"HATA: "+p.error:p.note].filter(Boolean).join(" · "))}</small>${p.stage==="capcut"||p.stage==="approve"?`<small style="display:block;margin-top:4px">${p.video?"🎬 video ✓":"🎬 video bekleniyor"} · ${p.thumb?"🖼 thumbnail ✓":"🖼 thumbnail bekleniyor"}</small>`:""}</div>`).join("")||
+      `<div class="pcard" style="--c:${rc(p.race)}"><b>${esc(p.title)}</b><small>${esc([p.slot,p.emissary,p.minutes&&p.minutes+" dk",p.words&&p.words+" kelime",p.voice,p.capcut&&"CapCut: "+p.capcut,p.book,p.error?"HATA: "+p.error:p.note].filter(Boolean).join(" · "))}</small>${p.stage==="capcut"||p.stage==="approve"?`<small style="display:block;margin-top:4px">${p.video?"🎬 video ✓":"🎬 video bekleniyor"} · ${p.thumb?"🖼 thumbnail ✓":"🖼 thumbnail bekleniyor"}</small>`:""}${pubnote(p)}</div>`).join("")||
       `<div class="empty">${{topic:"Bekleyen konu yok: konular her gün 09:30'da Telegram'a gelir.",capcut:"CapCut'ta seni bekleyen proje yok.",approve:"Bitmiş video + thumbnail'i projenin kendi klasörüne koyunca burada görünür.",published:"Henüz yayın yok."}[st.id]||"—"}</div>`}</div>`}).join("");
   $("#families").innerHTML=FAMILIES.map(([t,d,b])=>`<div class="card" style="--c:#7b8cff"><h4>${t}</h4><p>${d}</p><div class="meta"><span class="tag gold">→ ${b}</span></div></div>`).join("");
   $("#books").innerHTML=S.books.filter(b=>!race||b.race===race).map(b=>`<div class="card" style="--c:${rc(b.race)}">
@@ -229,8 +247,8 @@ function render(){
     await fetch("/api/starseed/voice",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({race:r.key,voice:v,on})});
     r.voices=on?[...r.voices,v]:r.voices.filter(x=>x!==v);toast(`${r.name}: ${v} ${on?"eklendi":"çıkarıldı"}`);render()});
   const li=(f,m)=>`<div class="it"><b>${esc(f.name)}</b><span class="tag">${(f.size/2**20).toFixed(0)} MB</span><span class="tag">${new Date(f.time*1000).toLocaleString("tr-TR",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"})}</span>${m||""}</div>`;
-  $("#finished").innerHTML=S.projects.filter(p=>p.stage==="approve").map(p=>`<div class="it"><b>${esc(p.title)}</b><span class="tag">${esc(p.slot||"")}</span><span class="tag gold">onay sorulacak</span></div>`).join("")||`<div class="empty">Onay bekleyen video yok.</div>`;
-  $("#published").innerHTML=S.published.map(f=>li(f)).join("")||`<div class="empty">Henüz yayınlanan video yok.</div>`;
+  $("#finished").innerHTML=S.projects.filter(p=>p.stage==="approve").map(p=>`<div class="it"><b>${esc(p.title)}</b><span class="tag">${esc(p.slot||"")}</span><span class="tag gold">${p.publish&&p.publish.uploaded?"zamanlandı":p.publish&&p.publish.approved?"yükleniyor":"Telegram'da onay bekliyor"}</span></div>`).join("")||`<div class="empty">Onay bekleyen video yok.</div>`;
+  $("#published").innerHTML=S.published.filter(f=>!race||f.race===race).map(f=>`<div class="it"><b>${esc(f.title)}</b><span class="tag">${esc(f.slot||"")}</span>${f.fb?`<a class="tag gold" href="${esc(f.fb)}" target="_blank" rel="noopener">Facebook ↗</a>`:""}${f.yt?`<a class="tag gold" href="${esc(f.yt)}" target="_blank" rel="noopener">YouTube ↗</a>`:""}</div>`).join("")||`<div class="empty">Henüz yayınlanan video yok.</div>`;
 }
 $$("#navs button").forEach(b=>b.onclick=()=>{$$("#navs button").forEach(x=>x.classList.toggle("on",x===b));$$("section").forEach(s=>s.classList.toggle("on",s.id==="s-"+b.dataset.s))});
 load();setInterval(()=>{if(PLAYER.paused)load()},30000);

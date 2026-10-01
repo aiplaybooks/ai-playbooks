@@ -5,7 +5,7 @@ The Starseed engine and its data live outside this repo, in E:\\masaüstü AI\\S
 ORTAK/ = folder shared with the owner). This module only reads that state for the UI and saves UI settings
 (voice per race) into pipeline/config.json.
 """
-import json, time, pathlib, threading
+import json, time, socket, pathlib, threading, datetime as dt
 
 BASE = pathlib.Path(r"E:\masaüstü AI\STARSEED")
 PIPE = BASE / "pipeline"
@@ -81,13 +81,53 @@ def projects():
     for d in sorted((ORTAK / "1_PROJELER").glob("*/")):  # folder names start with the slot: next video first
         s = read_json(d / "status.json", {}) or {}
         vid, thumb = final_files(d)
-        stage = s.get("stage", "topic")
+        stage = s.get("stage", "topic"); pub = read_json(d / "publish.json")
         if vid and stage == "capcut": stage = "approve"  # the owner's render arrived: approval next
         out.append({"video": vid.name if vid else None, "thumb": thumb.name if thumb else None, "slot": s.get("slot"),
                     "emissary": s.get("emissary"), "voice": s.get("voice"), "id": d.name, "title": s.get("title") or d.name, "race": s.get("race"), "stage": stage,
                     "created": s.get("created"), "book": s.get("book"), "minutes": s.get("minutes"), "note": s.get("note"),
-                    "words": s.get("words"), "capcut": s.get("capcut"), "error": s.get("error")})
+                    "words": s.get("words"), "capcut": s.get("capcut"), "error": s.get("error"), "music": s.get("music"),
+                    "publish": {k: pub.get(k) for k in ("asked", "approved", "uploaded", "fb_link", "yt_link", "fb_scheduled", "yt_scheduled", "errors")} if pub else None})
     return out
+
+
+def published():
+    """ORTAK/3_YAYINLANDI/<project>/ (moved there by the bot after the slot): title, slot, links."""
+    out = []
+    for d in sorted((ORTAK / "3_YAYINLANDI").glob("*/"), reverse=True):
+        s = read_json(d / "status.json", {}) or {}; l = read_json(d / "links.json", {}) or {}
+        out.append({"id": d.name, "title": s.get("title") or d.name, "race": s.get("race"), "slot": s.get("slot"), "minutes": s.get("minutes"),
+                    "fb": l.get("fb_link"), "yt": l.get("yt_link")})
+    return out
+
+
+def topics_today():
+    """Today's topic file of the engine (pipeline/topics/<date>.json): status, the 2 picks, the other candidates."""
+    d = read_json(PIPE / "topics" / f"{dt.date.today()}.json")
+    if not d: return None
+    keys = ("id", "race", "family", "title", "summary_tr", "book", "comment_word", "thumbnail_text", "why_now", "score", "slot")
+    picks = [{k: c.get(k) for k in keys} for c in d.get("picks", [])]; ids = {c["id"] for c in picks}
+    others = sorted((c for c in d.get("candidates", []) if c.get("id") not in ids), key=lambda c: -(c.get("score_final", c.get("score", 0)) or 0))
+    return {"date": d.get("date"), "status": d.get("status"), "production": d.get("production"), "picks": picks,
+            "others": [{k: c.get(k) for k in keys} for c in others]}
+
+
+def archive():
+    """The YouTube archive queues of pipeline/shorts.py: the owner's finished reels and older long videos."""
+    out = {}; now = dt.datetime.now().astimezone().isoformat()
+    for name, label in (("shorts", "Shorts · Transmission Starseed"), ("backlog", "Uzun arşiv · Starseed Transmission")):
+        q = read_json(PIPE / "runs" / f"{name}_queue.json", []) or []
+        out[name] = {"label": label, "total": len(q), "uploaded": sum(1 for i in q if i.get("video")),
+                     "out": sum(1 for i in q if i.get("video") and i["slot"] <= now), "last": q[-1]["slot"][:10] if q else None,
+                     "items": [{k: i.get(k) for k in ("slot", "race", "title", "link", "error")} for i in q]}
+    return out
+
+
+def bot_running():
+    s = socket.socket()
+    try: s.bind(("127.0.0.1", 8797)); return False  # pipeline/bot.py holds this port while it runs
+    except OSError: return True
+    finally: s.close()
 
 
 def files_in(sub):
@@ -105,11 +145,13 @@ def state():
     return {
         "races": [{**r, "clips": counts.get(r["key"], 0), "pool": c["pools"].get(r["key"]), "voices": voices_of(c, r["key"])} for r in RACES],
         "stages": [{"id": i, "label": l} for i, l in STAGES],
-        "projects": projects(), "published": files_in("3_YAYINLANDI"),
+        "projects": projects(), "published": published(), "topics": topics_today(), "archive": archive(),
+        "schedule": c.get("schedule", {}),
         "books": books, "samples": samples,
         "checks": {"gumroad": "GUMROAD_ACCESS_TOKEN" in env, "kokoro": bool(samples),
                    "capcut": pathlib.Path(r"E:\masaüstü AI\tools\capcut-cli\dist\index.js").exists(),
-                   "facebook": "FB_PAGE_TOKEN" in env, "shared": ORTAK.is_dir()},
+                   "facebook": "FB_PAGE_TOKEN" in env, "shared": ORTAK.is_dir(), "youtube": "YT_REFRESH_TOKEN" in env,
+                   "shorts": (PIPE / ".env.shorts").exists(), "bot": bot_running()},
     }
 
 
