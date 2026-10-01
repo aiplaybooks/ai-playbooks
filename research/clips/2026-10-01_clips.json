@@ -1,0 +1,32 @@
+{
+ "clips": [
+  {
+   "url": "https://x.com/Grace_AI_/status/2104656150704849090",
+   "creator": "@Grace_AI_",
+   "why": "Fully AI-generated forest/heartbeat story, cinematic visual payoff, no talking head, strong reach",
+   "engagement": "11,000 likes, 1,100,000 views",
+   "hook_idea": "What if a forest had a heartbeat, and it started to fade? This entire story is AI."
+  },
+  {
+   "url": "https://x.com/TheAIColony/status/2104876472989028667",
+   "creator": "@TheAIColony",
+   "why": "AI-designed 'lifebuoy that flies to you when drowning' — visual, self-explaining robotics/AI demo, fun hook",
+   "engagement": "2,900 likes, 448,000 views",
+   "hook_idea": "China built an AI lifebuoy that flies to you when you're drowning."
+  },
+  {
+   "url": "https://x.com/bcherny/status/2104638725317923228",
+   "creator": "@bcherny",
+   "why": "Anthropic engineer screen-recording Sonnet 5.5 fixing a real bug in Claude Code, 30% faster/less usage — on-brand proof for our Claude Code audience",
+   "engagement": "5,800 likes, 409,000 views",
+   "hook_idea": "Sonnet 5.5 just fixed this bug in Claude Code, 30% faster and using 30% less."
+  },
+  {
+   "url": "https://x.com/OpenAIDevs/status/2104997619152130278",
+   "creator": "@OpenAIDevs",
+   "why": "Codex agent keeps working after you close your laptop — visual product demo, concrete and copyable for our tool-tip audience",
+   "engagement": "5,000 likes, 499,000 views",
+   "hook_idea": "You can close your laptop now. Your Codex agent just keeps working."
+  }
+ ]
+}

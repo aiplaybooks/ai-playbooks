@@ -1,0 +1,69 @@
+{
+ "generated": "2026-10-01T13:30+00:00",
+ "candidates": [
+  {
+   "id": "chatgpt-codex-code-review-desktop",
+   "tool": "ChatGPT",
+   "kind": "news",
+   "title": "OpenAI Just Put Code Review Inside the ChatGPT Desktop App",
+   "summary_tr": "OpenAI, ChatGPT masaüstü uygulamasına 'Code Review' adlı yeni bir özellik ekledi: GitHub pull request / GitLab merge request özetlerini okuyup diff'e bakabiliyor, Codex'e soru sorabiliyor ve gerekirse bulutta otomatik inceleme çalıştırabiliyorsun — hepsi uygulamadan çıkmadan.",
+   "why_tr": "Takipçilerimizin çoğu kod editörü / AI araçları kullanıyor; 'before you push, Codex already reviewed it' gibi somut, görsel bir before/after carousel'e çok uygun ve ChatGPT + Codex'i aynı gönderide birleştiriyor.",
+   "angle": "what's new (PR review inside ChatGPT desktop) + how it works (summary, diff, ask Codex, cloud auto-review) + who should turn it on",
+   "tools": ["ChatGPT", "Codex"],
+   "published": "2026-09-29",
+   "sources": ["https://openai.com/index/devday-2026-recap/"],
+   "hints": ["https://opentools.ai/news/codex-code-review-desktop-github-gitlab-launch"],
+   "score": 7
+  },
+  {
+   "id": "threads-features-you-miss",
+   "tool": "Social media",
+   "kind": "evergreen",
+   "title": "5 Threads Features Almost Nobody Uses",
+   "summary_tr": "Threads 500 milyon aylık kullanıcıya ulaştı ama çoğu kişi 'Your Algo' akış kontrolü, Communities Hub, canlı sohbetler (Live Chats) ve podcast araçları gibi özellikleri hiç açmıyor; bunları toplayan bir evergreen gönderi.",
+   "why_tr": "Instagram/TikTok/Snapchat/WhatsApp 'gizli özellikler' formatımız iyi çalışıyor; havuzda şu ana kadar kendi evergreen'i olan tek büyük platform Threads değildi, 500M kullanıcı eşiği de güncel bir hook veriyor.",
+   "angle": "5 hidden Threads features: Your Algo feed control, Communities Hub, Live Chats, podcast toolkit, parental supervision tools",
+   "tools": ["Social media"],
+   "published": null,
+   "sources": [
+    "https://about.fb.com/news/2026/09/threads-expands-podcast-toolkit-for-creators-and-listeners/",
+    "https://about.fb.com/news/2026/06/meta-launching-new-features-500-million-monthly-threads-users/",
+    "https://about.fb.com/news/2026/04/threads-live-chats/"
+   ],
+   "score": 6
+  },
+  {
+   "id": "pack-unclaimed-money-agent",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Prompts That Build You an AI Agent That Hunts Down Money You're Already Owed",
+   "summary_tr": "ChatGPT veya Claude'u; unutulmuş kullanılmamış hediye kartları, talep edilmemiş iadeler/garanti paraları, kullanılmayan cashback'ler ve 'unclaimed property' kayıtlarını tarayıp bulan bir kişisel 'para avcısı' ajanına çeviren 5 prompt.",
+   "why_tr": "Cüzdana dokunan, herkesin bugün deneyebileceği somut bir vaat ('zaten senin olan parayı bul') — hem 'send this' hem 'save this' potansiyeli yüksek.",
+   "angle": "Act as a personal finance-recovery agent role + prompts for an unclaimed-property search, warranty/rebate claim sweep, forgotten-subscription refund hunt, cashback audit, gift-card sweep, each with a realistic estimate of money found",
+   "tools": ["Prompt pack"],
+   "published": null,
+   "sources": [],
+   "score": 7
+  }
+ ],
+ "coverage": {
+  "ChatGPT": 1,
+  "Claude": 0,
+  "Gemini": 0,
+  "Grok": 0,
+  "Codex": 1,
+  "Cursor": 0,
+  "Copilot": 0,
+  "Perplexity": 0,
+  "Meta AI": 0,
+  "Mistral": 0,
+  "DeepSeek": 0,
+  "Open models": 0,
+  "Apple": 0,
+  "Higgsfield": 0,
+  "Google": 0,
+  "Social media": 1
+ },
+ "notes_tr": "Havuz artık her araç için 1-5+ aday içeriyor, bu yüzden bugünkü tarama çoğunlukla zaten postladığımız konuları doğruladı (Gemini 4 Argon, SynthID Bio, OpenAI model-distillation savunması, Claude Sonnet 5.5, GPT-6.1 Sol, Grok 4.7/Voice Transcribe 2.0 — hepsi >7 gün önce veya havuzda zaten var; MiniMax M3.1-Flash-Preview ve GLM-5.3 de kontrol edildi, ilki havuzda zaten var, ikincisi 14 Ağustos'tan kalma). Gerçekten yeni olan 3 şey eklendi: ChatGPT masaüstü Code Review (Codex ile), Threads'in kendi evergreen'i (havuzda yoktu) ve yeni bir para-odaklı prompt pack. Grok, Mistral, DeepSeek, Perplexity, Copilot, Meta AI, Apple, Higgsfield için 36 saat - 7 gün penceresinde havuzdakilerden farklı, onaylanabilir yeni bir haber bulunamadı (hepsi ya zaten postlanmış konunun devamı ya da çok eski). 'Claude for Government' GA oldu (30 Eylül, resmi kaynak: claude.com/blog) ama kurumsal/devlet odaklı olduğu ve sıradan kullanıcı için paylaşılabilir olmadığı için eklenmedi.",
+ "sources_changed": []
+}

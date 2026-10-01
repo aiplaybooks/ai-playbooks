@@ -1,0 +1,69 @@
+{
+ "generated": "2026-10-01T10:30+00:00",
+ "candidates": [
+  {
+   "id": "copilot-home-code-autopilot",
+   "tool": "Copilot",
+   "kind": "news",
+   "title": "Microsoft Just Rebuilt Copilot From the Ground Up: Home, Code and Autopilot",
+   "summary_tr": "Microsoft, Copilot'u yeniden tasarladi: Chat ve Cowork'u birlestiren yeni 'Home' baslangic ekrani, GitHub Copilot teknolojisiyle calisan 'Code' ve kullanici konusmazken bile arka planda proaktif ilerleyen kisisel ajan 'Autopilot' tanitildi; Word/Excel/PowerPoint de artik dogrudan Copilot icinde (Office in Copilot).",
+   "why_tr": "Is, kodlama ve kisisel asistani tek ekranda birlestiren buyuk bir yeniden tasarim; genis kitleye hitap eden, 'once/sonra' anlatisiyla paylasilabilir bir hikaye.",
+   "angle": "what changed (Home/Code/Autopilot) + what each one actually does + who gets it first",
+   "tools": ["Copilot"],
+   "published": "2026-09-25",
+   "sources": ["https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/"],
+   "hints": ["https://www.unite.ai/microsoft-copilot-overhaul-adds-home-hub-code-builder-and-autopilot-agent/", "https://www.testingcatalog.com/microsoft-brings-home-code-and-autopilot-to-copilot/"],
+   "score": 7
+  },
+  {
+   "id": "perplexity-hp-zbook-preinstall",
+   "tool": "Perplexity",
+   "kind": "news",
+   "title": "Perplexity's AI Agent Is Now Built Into a Brand-New HP Laptop",
+   "summary_tr": "Perplexity ile HP anlasti: yeni HP ZBook Ultra G3a is istasyonlarinda Perplexity'nin 'Computer' ajani dogrudan gorev cubugunda onceden yuklu geliyor; cok adimli isleri yerel dosyalar, Microsoft 365, Autodesk Revit ve yuzlerce baglantiyla tek arayuzden yurutebiliyor.",
+   "why_tr": "Bir AI ajaninin artik donanima gomulu gelmesi somut ve carpici bir 'FR££ zaten kurulu geldi' acisi; Microsoft Copilot'a dogrudan rakip olarak konumlanmasi da ekstra ilgi ceker.",
+   "angle": "the HP partnership + what Perplexity's on-device Computer agent actually does",
+   "tools": ["Perplexity"],
+   "published": "2026-09-15",
+   "sources": ["https://x.com/perplexity_ai/status/2099876468872638717", "https://www.stocktitan.net/news/HPQ/hp-redefines-the-mobile-workstation-for-the-era-of-agentic-fhgq0leqw8fk.html"],
+   "hints": ["https://www.unite.ai/hp-to-pre-load-perplexitys-windows-app-starting-with-zbook-ultra-g3a/"],
+   "score": 6
+  },
+  {
+   "id": "deepseek-free-app-evergreen",
+   "tool": "DeepSeek",
+   "kind": "evergreen",
+   "title": "5 Things DeepSeek's Free App Can Already Do (No Subscription Needed)",
+   "summary_tr": "DeepSeek icin yeni bir lansman yok ama uygulamasinin zaten yapabildigi (dosya/gorsel okuma, kod yazma, 1M token'a kadar uzun belge analizi, ucretsiz API) 5 ozellik az biliniyor; dogrulanmis resmi dokumanlardan bir ipuclari karoselı.",
+   "why_tr": "Haber olmadan da 'bunu biliyor muydun' formatinda DeepSeek icerigi iyi performans gosteriyor ve kitle her zaman ucretsiz arac arayisinda.",
+   "angle": "5 free DeepSeek capabilities most people never try + where to find each one",
+   "tools": ["DeepSeek"],
+   "published": null,
+   "sources": ["https://api-docs.deepseek.com/", "https://www.deepseek.com/"],
+   "hints": [],
+   "score": 5
+  },
+  {
+   "id": "pack-dropshipping-product-validator",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Prompts That Validate a Dropshipping Product Idea Before You Spend a Dollar",
+   "summary_tr": "ChatGPT veya Claude'u bir e-ticaret arastirma analistine donusturen 5 prompt: niş secimi, rakip/fiyat analizi, talep sinyalleri, kar marji tahmini ve ilk 30 gunluk pazarlama plani; hepsi gercekci bir tahminle.",
+   "why_tr": "Girisimcilik ve 'ilk param' hayali gunluk hayata ve cuzdana dokunan, is hesabi hassasiyeti tasimayan, aksiyona donusturulebilir bir pack.",
+   "angle": "role: e-commerce research analyst + niche pick + competitor/price analysis + margin estimate + 30-day launch plan",
+   "tools": ["Prompt pack"],
+   "published": null,
+   "sources": [],
+   "hints": [],
+   "score": 6
+  }
+ ],
+ "coverage": {
+  "ChatGPT": 0, "Claude": 0, "Gemini": 0, "Grok": 0, "Codex": 0, "Cursor": 0,
+  "Copilot": 1, "Perplexity": 1, "Meta AI": 0, "Mistral": 0, "DeepSeek": 1,
+  "Open models": 0, "Apple": 0, "Higgsfield": 0, "Google": 0, "Social media": 0,
+  "Other": 0, "Prompt pack": 1
+ },
+ "notes_tr": "16 arac icin tek tek web arama yapildi + 6 ekstra ilginc hikaye aramasi. Cogu bulgu zaten havuzda: Gemini 4 Argon, Claude Code v2.1.28x, Codex 0.159.x, Copilot HydraFusion, Gemini skills/gems, SynthID Bio, OpenAI distillation savunmasi, Higgsfield $1B, Mistral Vibe Chat+Work birlesmesi, Grok/xAI (Grokipedia v0.3, Grok 4.7 - onemsiz/eski), Meta Muse Spark guncellemeleri (onceki Muse haberleriyle cok ortusuyor), Apple Siri dil genislemesi (zaten Siri AI lansmanini isledik), Qwen4/Kimi K3/GLM 5.4/MiniMax M3 - hepsi henuz CIKMAMIS/soylenti, dogrulanamadi -> eklenmedi. TikTok'un yeni yorum ozellikleri (Voice/Poll/Carousel/Live Photo) resmi TikTok Newsroom'dan dogrulandi ama lansman 2026-09-03, 7 gunluk pencerenin disinda -> eklenmedi (ileride evergreen adayi olabilir). X'in Original Content Rewards programi da Agustos'tan, eski -> eklenmedi. Cursor'un Compile etkinligi (Origin, yeni model, Cursor Mobile) Haziran 2026'dan, eski -> eklenmedi. OpenClaw viral hikayesi zaten havuzda (openclaw-free-agent-evergreen). Yeni: Microsoft'un Copilot'u Home/Code/Autopilot ile yeniden tasarlamasi (resmi blog, 25 Eylul) ve Perplexity'nin HP ZBook Ultra G3a'ya onceden yuklu gelmesi (Perplexity'nin resmi X hesabi + HP basin bulteni, 15 Eylul) -- ikisi de 7 gunluk pencereye yakin ve havuzda yok. DeepSeek icin hicbir yeni haber yok -> evergreen eklendi. Bir yeni prompt pack (dropshipping dogrulama) eklendi.",
+ "sources_changed": []
+}

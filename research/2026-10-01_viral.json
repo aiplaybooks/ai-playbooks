@@ -1,0 +1,53 @@
+{
+ "generated": "2026-10-01T10:30:50+00:00",
+ "reddit": [],
+ "youtube_signal": [
+  {
+   "id": "yt-ehee7Z_nTtM",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "What if: Chiranjeevi & Balakrishna sa RRR? 🔥😱 #rrrmovie #ai #chiranjeevi",
+   "channel": "Mathura Gaanam ",
+   "url": "https://www.youtube.com/shorts/ehee7Z_nTtM",
+   "views": 789146,
+   "date": "2026-09-28T10:31:44Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-XdrLEpizzm4",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Small vs Normal vs HAALAND Size 😭",
+   "channel": "Merica Pov",
+   "url": "https://www.youtube.com/shorts/XdrLEpizzm4",
+   "views": 277049,
+   "date": "2026-09-28T17:15:01Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-VyBfr_ZFNUU",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "China’s robot revolution leaves Hong Kong playing catch-up | DW News",
+   "channel": "DW News",
+   "url": "https://www.youtube.com/shorts/VyBfr_ZFNUU",
+   "views": 152147,
+   "date": "2026-09-29T02:54:24Z",
+   "query": "humanoid robot video"
+  },
+  {
+   "id": "yt-xQ-cILnREuM",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "#shorts#automobile#lifeisbutadream#duet#youtubeshorts#facts#car#reaction#reels",
+   "channel": "SAGOR TV NEWS",
+   "url": "https://www.youtube.com/shorts/xQ-cILnREuM",
+   "views": 136427,
+   "date": "2026-09-28T16:30:35Z",
+   "query": "AI generated video"
+  }
+ ],
+ "errors": [
+  "Reddit: REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET missing in .env"
+ ]
+}

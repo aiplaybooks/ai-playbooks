@@ -1,0 +1,140 @@
+{
+  "generated": "2026-10-01T06:30+00:00",
+  "candidates": [
+    {
+      "id": "gemini-4-argon-launch",
+      "tool": "Gemini",
+      "kind": "news",
+      "title": "Google Just Launched Gemini 4 Argon, Its New Frontier AI Model",
+      "summary_tr": "Google, kodlama, kurumsal bilgi işleri ve siber savunma için yeni amiral gemisi modeli Gemini 4 Argon'u duyurdu; kısa süre içinde kullanıma açılacak. Hacker News'te 1000+ puanla günün en çok konuşulan AI haberiydi.",
+      "why_tr": "Yeni bir frontier model lansmanı her zaman güçlü bir haber; 'yeni Gemini çıktı, ne işe yarıyor' merakı tıklama getirir.",
+      "angle": "what Gemini 4 Argon is + what's new for coding/work use cases + how to try it when it rolls out",
+      "tools": ["Gemini", "Google"],
+      "published": "2026-09-30",
+      "sources": [
+        "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
+      ],
+      "hints": ["https://news.ycombinator.com/item?id=49913571", "https://artificialanalysis.ai/models/gemini-4-argon"],
+      "score": 10
+    },
+    {
+      "id": "chatgpt-plugins-become-apps",
+      "tool": "ChatGPT",
+      "kind": "news",
+      "title": "ChatGPT's Plugins Just Turned Into Full Apps Inside Your Chat",
+      "summary_tr": "OpenAI, ChatGPT eklentilerini (plugin) genişletti: artık kenar çubuğunda kendi sayfası olan, dosya görüntüleyici/düzenleyici içeren ve otomasyonları tetikleyebilen tam uygulamalar gibi çalışıyorlar.",
+      "why_tr": "ChatGPT'yi günlük iş akışı merkezi yapan somut bir özellik; 'bunu nasıl kullanırım' formatı iyi çalışır.",
+      "angle": "what changed in ChatGPT plugins + 3 things you can now do without leaving the chat",
+      "tools": ["ChatGPT"],
+      "published": "2026-09-29",
+      "sources": [
+        "https://developers.openai.com/plugins/build/extensions",
+        "https://help.openai.com/en/articles/11487775-apps-in-chatgpt"
+      ],
+      "hints": ["https://techcrunch.com/2026/09/29/openai-expands-chatgpts-plugins-with-app-like-interfaces-and-automations"],
+      "score": 7
+    },
+    {
+      "id": "perplexity-computer-in-email",
+      "tool": "Perplexity",
+      "kind": "news",
+      "title": "You Can Now Email Perplexity's AI Agent a Task and Get the Finished Work Back",
+      "summary_tr": "Perplexity, Computer agent'ını e-postaya taşıdı: computer@perplexity.com adresine bir görev gönderip (ya da bir e-posta zincirini yönlendirip) aynı thread'de PDF, tablo veya görsel olarak sonucu alabiliyorsun.",
+      "why_tr": "Herkesin zaten kullandığı e-postadan AI ajanına görev vermek çok pratik ve 'bunu dene' formatına uygun.",
+      "angle": "what Computer in Email does + 3 email tasks to try (summarize a thread, draft a deck, build a spreadsheet)",
+      "tools": ["Perplexity"],
+      "published": "2026-08-15",
+      "sources": [
+        "https://www.perplexity.ai/hub/blog/computer-now-works-in-email",
+        "https://www.perplexity.ai/help-center/en/articles/20260715-computer-in-email"
+      ],
+      "hints": ["https://x.com/perplexity_ai/status/2089744150229131651"],
+      "score": 7
+    },
+    {
+      "id": "grok-engineering-marketplace-templates",
+      "tool": "Grok",
+      "kind": "news",
+      "title": "xAI Opened a Marketplace of Ready-Made AI Agent Templates for Grok Bot",
+      "summary_tr": "xAI, Grok Bot için hazır 'bot şablonları' pazar yeri açtı: proje yönetimi, QA, araştırma/fact-check ve mühendislik denetçisi gibi hazır ajanları tek tıkla kopyalayıp kullanabiliyorsun.",
+      "why_tr": "Sıfırdan prompt yazmadan hazır bir AI ajanı kurmak, izleyicinin hemen deneyebileceği somut bir şey.",
+      "angle": "what the Grok Bot Marketplace is + 3 templates worth copying today",
+      "tools": ["Grok"],
+      "published": "2026-09-29",
+      "sources": ["https://x.ai/bot/marketplace", "https://x.ai/bot/marketplace/engineering"],
+      "hints": [],
+      "score": 6
+    },
+    {
+      "id": "higgsfield-1b-revenue",
+      "tool": "Higgsfield",
+      "kind": "news",
+      "title": "This AI Video Startup Just Crossed $1 Billion a Year — And It's Barely 2 Years Old",
+      "summary_tr": "Higgsfield, yıllık gelir koşu hızında (annualized run rate) 1 milyar doları geçtiğini duyurdu; işletme müşterilerinden gelen gelir Haziran'dan beri 10 kat büyümüş, çoğu reklam videosu üreten D2C markalardan geliyor.",
+      "why_tr": "Küçük bir AI video aracının bu hızla büyümesi şaşırtıcı ve paylaşılabilir bir başarı hikayesi.",
+      "angle": "the $1B number + what Higgsfield actually lets a small brand do for ad videos",
+      "tools": ["Higgsfield"],
+      "published": "2026-09-29",
+      "sources": ["https://higgsfield.ai/blog/higgsfield-1b-annualized-revenue-run-rate"],
+      "hints": [],
+      "score": 6
+    },
+    {
+      "id": "openclaw-free-agent-evergreen",
+      "tool": "Other",
+      "kind": "evergreen",
+      "title": "There's a Free, Open-Source AI Agent That Lives in Your WhatsApp, Telegram and Discord",
+      "summary_tr": "OpenClaw (eski adıyla Clawdbot/Moltbot) adlı ücretsiz, açık kaynak AI ajanı kendi bilgisayarında çalışıyor ve WhatsApp, Telegram, Discord, Slack gibi zaten kullandığın uygulamalardan komut alıp gerçek işler yapabiliyor; GitHub'da 197.000+ yıldız topladı.",
+      "why_tr": "'Ücretsiz ve kurulumu kolay bir AI ajanı' her zaman merak uyandırır, FR££ temasına uygun.",
+      "angle": "what OpenClaw is + what makes it different from a chatbot (it DOES things) + how to try it",
+      "tools": ["Other"],
+      "published": null,
+      "sources": ["https://github.com/openclaw/openclaw", "https://openclaw.ai/"],
+      "hints": ["https://www.kdnuggets.com/openclaw-explained-the-free-ai-agent-tool-going-viral-already-in-2026"],
+      "score": 6
+    },
+    {
+      "id": "mistral-vibe-free-features-evergreen",
+      "tool": "Mistral",
+      "kind": "evergreen",
+      "title": "5 Things Mistral's Vibe (Formerly Le Chat) Can Already Do For Free",
+      "summary_tr": "Mistral'ın Le Chat'ten yeniden adlandırılan Vibe asistanı; Google Workspace, Outlook, SharePoint, Slack ve GitHub'a bağlanıp çok adımlı işler (e-postaları sıralama, rapor hazırlama) yapabiliyor — az bilinen bir araç.",
+      "why_tr": "Mistral son zamanlarda az haber aldı; 'bunu bilmiyordun' formatı az bilinen ama gerçek bir aracı öne çıkarır.",
+      "angle": "5 things Vibe does that most people don't know (Work Mode connectors, agent tasks, free tier limits)",
+      "tools": ["Mistral"],
+      "published": null,
+      "sources": ["https://mistral.ai/news/all-new-le-chat/", "https://docs.mistral.ai/resources/changelogs"],
+      "hints": [],
+      "score": 5
+    },
+    {
+      "id": "pack-ai-job-application-agent",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "5 Prompts That Turn ChatGPT Into Your Personal Job-Application Agent",
+      "summary_tr": "İş başvurusu sürecini (ilan tarama, CV'yi role göre uyarlama, ön yazı, mülakat hazırlığı, maaş pazarlığı) tek tek AI'a yaptıran 5 promptluk bir paket fikri; kendi sözcüklerimizle, prompt_packs.json'daki paketlerden farklı.",
+      "why_tr": "İş arayan herkesin işine yarar, kaydetme ve paylaşma oranı yüksek bir günlük hayat/cüzdan teması.",
+      "angle": "Act as a career coach/recruiter role + concrete goal (land 3 interviews in 30 days) + deliverables (tailored resume, cover letter, interview prep sheet, salary script) + a realistic estimate",
+      "tools": ["Prompt pack"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 6
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 1, "Claude": 0, "Gemini": 1, "Grok": 1, "Codex": 0, "Cursor": 0,
+    "Copilot": 0, "Perplexity": 1, "Meta AI": 0, "Mistral": 1, "DeepSeek": 0,
+    "Open models": 0, "Apple": 0, "Higgsfield": 1, "Google": 1, "Social media": 0,
+    "Other": 1, "Prompt pack": 1
+  },
+  "notes_tr": "Bugünün en büyük haberi Gemini 4 Argon lansmanı (HN'de 1000+ puan) - havuza eklendi. Claude, Codex, Cursor, Copilot, Meta AI, DeepSeek, Open models, Apple ve Social media için son 36 saatte gerçek haber yoktu (hepsi web search ile kontrol edildi): bulunan her şey ya zaten havuzda olan haberlerin aynısıydı (Claude Sonnet/Opus 5.5, Codex Cloud/voice, Cursor Projects/token verimliliği, Copilot GPT-6.1 Sol/HydraFusion, Meta Forum app, Apple Siri AI/iOS 27/Final Cut Camera, Instagram'ın Reel-flop asistanı, WhatsApp ebeveyn kontrolü) ya da 36 saatten eski/resmi kaynağı belirsizdi (Instagram 'kendi AI'ını yarat' sohbet özelliği, Qwen/GLM 'landed' haberleri 22 Eylül'den, DeepSeek V4.1 Flash 9 Eylül'den, Meta Muse indirme rakamları zaten çok işlendi) - bu yüzden atlandı. GitHub Copilot'un Agentic Autofix + Copilot Memory özelliği (25 Eylül, resmi GitHub changelog) gerçek ama havuzda zaten çok sayıda Copilot öğesi var, atlandı. İki şüpheli viral 'Other' hikayesi (Çinli AI ajanlarının sahte pazarlıkta yalan söylemesi, AI ajanlarının e-postayla para dilenmesi) net bir resmi kaynağı olmadığı için eklenmedi.",
+  "sources_changed": [
+    "Eklendi: OpenClaw releases (github.com/openclaw/openclaw/releases.atom, tier signal, CI gürültüsü 'release-publish' regex ile filtrelendi) - viral ücretsiz açık kaynak AI ajanı, 197k+ yıldız.",
+    "Test edilip reddedildi: https://news.linkedin.com/news.rss.html/feed (404, LinkedIn'in resmi RSS'i yok).",
+    "Test edilip reddedildi: https://creators.snap.com/blog/rss.xml ve https://newsroom.snap.com/rss.xml (ikisi de 404, Snap'in çalışan bir RSS'i yok).",
+    "Kontrol edildi, sağlıklı kalan mevcut kaynaklar: tüm official/signal feed'ler (source_health.json) fail_streak 0, en eski 'newest' 30 günün altında - düzeltme gerekmedi.",
+    "xAI, Perplexity, Qwen ve Kimi/Moonshot için resmi RSS aranmaya devam edildi - hiçbiri native feed sunmuyor (yalnızca 3. parti scraper'lar var), manual listesinde kalıyorlar."
+  ]
+}
