@@ -1,0 +1,238 @@
+{
+  "theme": "adaptive",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "OpenAI dots",
+  "caption": "OpenAI just hired itself out an AI employee that never logs off 👀\n\nIt's called dots: an always-on agent built on GPT-6 Astra. It gets its own cloud computer, keeps working after you close the chat, and plugs into 4,000+ apps to actually get things done.\n\n→ runs on GPT-6 Astra, OpenAI's flagship model\n→ assign it from ChatGPT, Slack, or Microsoft Teams\n→ remembers your projects and habits over time\n→ one comes free with ChatGPT Pro and Business Premium\n\nWould you trust an AI employee with your own task list? Save this before dots rolls out wider 👇\n\nFollow @aiplaybooks.daily for the AI news that actually matters.\n\n#openai #openaidots #aiagents #chatgpt #ai",
+  "sources": [
+    "https://openai.com/index/introducing-dots/",
+    "https://x.com/OpenAI/status/2104984504133918973",
+    "https://techcrunch.com/2026/09/29/openai-launches-dots-its-bubbly-agentic-avatar/",
+    "https://venturebeat.com/technology/openai-launches-dots-always-on-ai-agent-coworkers-and-chatgpt-space-where-they-can-collaborate-with-human-teams"
+  ],
+  "captions": {
+    "instagram": "OpenAI just hired itself out an AI employee that never logs off 👀\n\nIt's called dots: an always-on agent built on GPT-6 Astra. It gets its own cloud computer, keeps working after you close the chat, and plugs into 4,000+ apps to actually get things done.\n\n→ runs on GPT-6 Astra, OpenAI's flagship model\n→ assign it from ChatGPT, Slack, or Microsoft Teams\n→ remembers your projects and habits over time\n→ one comes free with ChatGPT Pro and Business Premium\n\nWould you trust an AI employee with your own task list? Save this before dots rolls out wider 👇\n\nFollow @aiplaybooks.daily for the AI news that actually matters.\n\n#openai #openaidots #aiagents #chatgpt #ai",
+    "facebook": "OpenAI just gave ChatGPT a coworker that never clocks out.\n\nIt's called dots: an always-on AI agent powered by GPT-6 Astra. Close the chat and it keeps going, with its own cloud computer and access to 4,000+ apps. You can hand it a task from ChatGPT, Slack, or Microsoft Teams, and it checks back in once the job is done. One comes free with ChatGPT Pro and Business Premium.\n\nSave this one, because the pricing for extra dots isn't public yet.\n\nWould you hand a task off to an AI employee this week?\n\n#openai #chatgpt #aiagents",
+    "youtube": {
+      "title": "OpenAI's dots: an AI employee that works 24/7 #Shorts",
+      "description": "OpenAI just launched dots: always-on AI agents built on GPT-6 Astra that keep working after you close the chat.\n\nA dot gets its own cloud computer, plugs into 4,000+ apps, and you can assign it from ChatGPT, Slack, or Microsoft Teams. One comes free with ChatGPT Pro and Business Premium.\n\nSave this before dots rolls out wider, and subscribe for daily AI playbooks.\n\n#openai #openaidots #chatgpt #aiagents #ai",
+      "tags": [
+        "openai dots",
+        "chatgpt agent",
+        "ai agent",
+        "gpt-6 astra",
+        "openai devday",
+        "ai news",
+        "chatgpt update",
+        "always on agent"
+      ]
+    },
+    "x": "OpenAI just hired itself an AI employee that never logs off.\n\nMeet dots: always-on agents on GPT-6 Astra, own cloud computer, plugs into 4,000+ apps.\n\nAssign it from ChatGPT, Slack, or Teams. Free with Pro and Business Premium.\n\n#openai #aiagents"
+  },
+  "first_comment": {
+    "instagram": "The detail that got us: a dot keeps several of your projects moving at once, not just one task.\n\nWhich would you hand off first: email triage, research, or scheduling?",
+    "facebook": "One more thing worth knowing: OpenAI also launched a shared 'ChatGPT Space' where a dot, Codex, and your team can work on the same files together.\n\nWhich task would you hand to an AI employee first?",
+    "youtube": "Bonus detail: a dot can juggle several of your projects at once instead of just one task at a time.\n\nWhich task would you hand off first: email, research, or scheduling?\n\nSubscribe for daily AI playbooks."
+  },
+  "cover": {
+    "headline": "OpenAI just launched an AI employee that works 24/7 across 4,000+ apps. Meet dots:",
+    "em": "an AI employee",
+    "person": "Sam Altman",
+    "layout": "person",
+    "photo_query": [
+      "Sam Altman OpenAI"
+    ],
+    "photo_pick": null,
+    "icons": [
+      {
+        "slug": "openai",
+        "style": "glass",
+        "pos": "br",
+        "size": 150
+      }
+    ],
+    "photo": {
+      "file": "File:Sam Altman TechCrunch SF 2019 Day 2 Oct 3 (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Sam_Altman_TechCrunch_SF_2019_Day_2_Oct_3_(cropped).jpg",
+      "author": "TechCrunch",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source": "Wikimedia Commons"
+    },
+    "layout_used": "person"
+  },
+  "design": {
+    "mood": "a one-person workforce that never clocks out: deep indigo night, a warm amber light still on at an empty desk, calm instead of alarming — the dots pattern is literal, it's the product's own name",
+    "palette": {
+      "bg": "#0A0D1A",
+      "bg2": "#10152A",
+      "surface": "#141A30",
+      "ink": "#ECF1FF",
+      "muted": "#8A92B8",
+      "accent": "#3FE6C9",
+      "accent2": "#FFB454"
+    },
+    "fonts": {
+      "display": "Space Grotesk",
+      "body": "Inter",
+      "mono": "JetBrains Mono"
+    },
+    "display": {
+      "weight": 700,
+      "case": "none",
+      "tracking": -2,
+      "scale": 1.0,
+      "italic_em": false
+    },
+    "shape": {
+      "radius": 22,
+      "border": 1,
+      "shadow": "glow"
+    },
+    "background": {
+      "pattern": "dots",
+      "pattern_opacity": 0.1,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "mono",
+    "prompt": "card",
+    "art": "<svg viewBox='0 0 900 460' xmlns='http://www.w3.org/2000/svg'><circle cx='450' cy='230' r='70' fill='var(--surface)' stroke='var(--accent)' stroke-width='3'/><circle cx='450' cy='230' r='24' fill='var(--accent2)'/><g stroke='var(--accent)' stroke-width='2' opacity='0.8'><line x1='450' y1='230' x2='210' y2='100'/><line x1='450' y1='230' x2='180' y2='260'/><line x1='450' y1='230' x2='250' y2='390'/><line x1='450' y1='230' x2='690' y2='100'/><line x1='450' y1='230' x2='720' y2='260'/><line x1='450' y1='230' x2='650' y2='390'/></g><g fill='var(--accent2)'><circle cx='210' cy='100' r='12'/><circle cx='180' cy='260' r='12'/><circle cx='250' cy='390' r='12'/><circle cx='690' cy='100' r='12'/><circle cx='720' cy='260' r='12'/><circle cx='650' cy='390' r='12'/></g><g fill='none' stroke='var(--muted)' stroke-width='2'><rect x='186' y='78' width='48' height='44' rx='8'/><rect x='156' y='238' width='48' height='44' rx='8'/><rect x='226' y='368' width='48' height='44' rx='8'/><rect x='666' y='78' width='48' height='44' rx='8'/><rect x='696' y='238' width='48' height='44' rx='8'/><rect x='626' y='368' width='48' height='44' rx='8'/></g></svg>",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='3.2'/><circle cx='4' cy='5' r='1.6' fill='currentColor' stroke='none'/><circle cx='20' cy='5' r='1.6' fill='currentColor' stroke='none'/><circle cx='4' cy='19' r='1.6' fill='currentColor' stroke='none'/><circle cx='20' cy='19' r='1.6' fill='currentColor' stroke='none'/><path d='M9.5 10 6 6.5M14.5 10 18 6.5M9.5 14 6 17.5M14.5 14 18 17.5'/></svg>"
+  },
+  "voice": "am_fenrir",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "OPENAI · DEVDAY 2026",
+      "title": "OpenAI just launched an AI employee you can hire. It's called dots.",
+      "em": "AI employee you can hire",
+      "sub": "Always-on, runs on GPT-6 Astra, and it doesn't stop when you close the chat.",
+      "tools": [
+        "ChatGPT"
+      ],
+      "voiceover": "OpenAI just launched an always-on AI employee called dots."
+    },
+    {
+      "type": "stat",
+      "label": "THE NUMBER",
+      "value": "4,000+",
+      "title": "apps a dot can already use",
+      "sub": "It gets its own cloud computer and browser, then logs into your tools through OpenAI's plugin ecosystem.",
+      "voiceover": "It gets its own cloud computer and plugs into over four thousand apps."
+    },
+    {
+      "type": "facts",
+      "label": "WHAT POWERS IT",
+      "title": "The engine behind a dot",
+      "items": [
+        [
+          "Model",
+          "`GPT-6 Astra`, OpenAI's flagship model"
+        ],
+        [
+          "Memory",
+          "Learns your preferences and working habits over time"
+        ],
+        [
+          "Runtime",
+          "Keeps working after you close the chat window"
+        ],
+        [
+          "Scope",
+          "Can keep several of your projects moving at once"
+        ]
+      ],
+      "voiceover": "It runs on GPT-6 Astra and keeps learning how you work."
+    },
+    {
+      "type": "steps",
+      "label": "HOW YOU ASSIGN IT",
+      "title": "Hand a dot a task from anywhere",
+      "steps": [
+        [
+          "Open ChatGPT",
+          "On mobile or web, describe the job in plain English"
+        ],
+        [
+          "Or message it",
+          "Assign and check on tasks right from Slack or Microsoft Teams"
+        ],
+        [
+          "It works solo",
+          "A dot keeps going in the background while you do other things"
+        ],
+        [
+          "Text support next",
+          "OpenAI says texting a dot directly is coming soon"
+        ]
+      ],
+      "voiceover": "You assign it from ChatGPT, Slack, or Microsoft Teams."
+    },
+    {
+      "type": "compare",
+      "label": "REGULAR CHATGPT VS. A DOT",
+      "title": "What actually changes",
+      "cols": [
+        {
+          "name": "Regular ChatGPT",
+          "points": [
+            "Stops the moment you close the tab",
+            "Starts over in a brand new chat",
+            "You chase the follow-up yourself"
+          ]
+        },
+        {
+          "name": "A dot",
+          "points": [
+            "Keeps running in the background",
+            "Remembers the project over time",
+            "Checks back in once it's done"
+          ]
+        }
+      ],
+      "voiceover": "A regular chat stops when you close the tab. A dot doesn't."
+    },
+    {
+      "type": "limits",
+      "label": "WHAT'S CONFIRMED (FOR NOW)",
+      "title": "Who gets one, and what's still unclear",
+      "items": [
+        [
+          "Included free",
+          "One dot comes with ChatGPT Pro and Business Premium plans"
+        ],
+        [
+          "Shared workspace",
+          "A new `ChatGPT Space` lets a dot work alongside your team, Codex and ChatGPT on the same files"
+        ],
+        [
+          "Still undisclosed",
+          "OpenAI hasn't said what extra dots cost or how big your task allowance is"
+        ]
+      ],
+      "cta": "Save this before you lose track of what's actually confirmed.",
+      "voiceover": "One dot is free on Pro and Business Premium. Extra pricing isn't public yet."
+    },
+    {
+      "type": "cta",
+      "title": "An AI employee.",
+      "title2": "That never clocks out.",
+      "lines": [
+        [
+          "Try",
+          "asking ChatGPT Pro or Business Premium to spin up a dot"
+        ],
+        [
+          "Save",
+          "this before dots roll out wider"
+        ],
+        [
+          "Follow",
+          "@aiplaybooks.daily for the AI news that actually matters"
+        ]
+      ],
+      "voiceover": "Save this. OpenAI's always-on AI employee is just getting started."
+    }
+  ]
+}
