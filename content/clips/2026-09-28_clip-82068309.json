@@ -1,19 +1,33 @@
 {
-  "kind": "clip",
-  "source": "https://x.com/mirku21/status/2102866396682068309/video/1",
-  "credit": "@mirku21 on X",
-  "topic": "AI agent failures",
-  "title": null,
-  "hook": "A new study claims 92% of AI agent crashes aren't the model's fault, and this dashboard tracks why.",
-  "caption": "92% of AI agent crashes aren't the model's fault — this dashboard shows why 🤖\n\nThis is a real-time look inside a multi-agent AI system: every retry, re-route and verification gate, mapped live as it runs.\n\nThe claim behind it: most failures trace back to the harness (the scaffolding around the model), not the model itself.\n\nDo you think it's usually the model or the setup around it that fails? 👇\n\nFollow @aiplaybooks.daily for the AI stories worth knowing.\n\n#ai #aiagents #artificialintelligence #aitools",
-  "checked": ["web search for 'Dartmouth study 92% agent errors harness drift' found no confirming source, so the 92%/Dartmouth claim is presented as the post's own claim, not a verified fact"],
-  "captions": {
-    "instagram": "92% of AI agent crashes aren't the model's fault — this dashboard shows why 🤖\n\nThis is a real-time look inside a multi-agent AI system: every retry, re-route and verification gate, mapped live as it runs.\n\nThe claim behind it: most failures trace back to the harness (the scaffolding around the model), not the model itself.\n\nDo you think it's usually the model or the setup around it that fails? 👇\n\nFollow @aiplaybooks.daily for the AI stories worth knowing.\n\n#ai #aiagents #artificialintelligence #aitools",
-    "facebook": "Ever wonder why AI agents fail so often? A new dashboard tracks it live.\n\nIt's a real-time visualization of a multi-agent AI system tracking its own failures — retries, re-routes and verification gates, all mapped as they happen. The claim behind it: most crashes trace back to the harness around the model, not the model itself.\n\nWhat do you think causes more AI agent failures: the model, or the system built around it?\n\n#ai #aiagents #artificialintelligence",
-    "youtube": {
-      "title": "Why 92% of AI Agent Crashes Aren't the Model's Fault",
-      "description": "A real-time dashboard that tracks why AI agents actually fail — and the claim is it's rarely the model itself.\n\nThis is a live visualization of a multi-agent AI system: retries, re-routes and verification gates mapped as they happen. The claim behind it: most crashes trace back to the harness (the scaffolding around the model), not the model.\n\nWhat do you think causes more AI agent failures: the model, or the system built around it?\n\n#aiagents #ai #artificialintelligence #aitools",
-      "tags": ["ai agent", "ai agents", "ai agent errors", "multi agent ai", "ai failure", "artificial intelligence", "ai automation", "ai tools"]
-    }
+ "kind": "clip",
+ "source": "https://x.com/mirku21/status/2102866396682068309/video/1",
+ "credit": "@mirku21 on X",
+ "topic": "AI agent failures",
+ "title": null,
+ "hook": "A new study claims 92% of AI agent crashes aren't the model's fault, and this dashboard tracks why.",
+ "caption": "92% of AI agent crashes aren't the model's fault — this dashboard shows why 🤖\n\nThis is a real-time look inside a multi-agent AI system: every retry, re-route and verification gate, mapped live as it runs.\n\nThe claim behind it: most failures trace back to the harness (the scaffolding around the model), not the model itself.\n\nDo you think it's usually the model or the setup around it that fails? 👇\n\nFollow @aiplaybooks.daily for the AI stories worth knowing.\n\n#ai #aiagents #artificialintelligence #aitools",
+ "checked": [
+  "web search for 'Dartmouth study 92% agent errors harness drift' found no confirming source, so the 92%/Dartmouth claim is presented as the post's own claim, not a verified fact"
+ ],
+ "captions": {
+  "instagram": "92% of AI agent crashes aren't the model's fault — this dashboard shows why 🤖\n\nThis is a real-time look inside a multi-agent AI system: every retry, re-route and verification gate, mapped live as it runs.\n\nThe claim behind it: most failures trace back to the harness (the scaffolding around the model), not the model itself.\n\nDo you think it's usually the model or the setup around it that fails? 👇\n\nFollow @aiplaybooks.daily for the AI stories worth knowing.\n\n#ai #aiagents #artificialintelligence #aitools",
+  "facebook": "Ever wonder why AI agents fail so often? A new dashboard tracks it live.\n\nIt's a real-time visualization of a multi-agent AI system tracking its own failures — retries, re-routes and verification gates, all mapped as they happen. The claim behind it: most crashes trace back to the harness around the model, not the model itself.\n\nWhat do you think causes more AI agent failures: the model, or the system built around it?\n\n#ai #aiagents #artificialintelligence",
+  "youtube": {
+   "title": "Why 92% of AI Agent Crashes Aren't the Model's Fault",
+   "description": "A real-time dashboard that tracks why AI agents actually fail — and the claim is it's rarely the model itself.\n\nThis is a live visualization of a multi-agent AI system: retries, re-routes and verification gates mapped as they happen. The claim behind it: most crashes trace back to the harness (the scaffolding around the model), not the model.\n\nWhat do you think causes more AI agent failures: the model, or the system built around it?\n\n#aiagents #ai #artificialintelligence #aitools",
+   "tags": [
+    "ai agent",
+    "ai agents",
+    "ai agent errors",
+    "multi agent ai",
+    "ai failure",
+    "artificial intelligence",
+    "ai automation",
+    "ai tools"
+   ]
   }
+ },
+ "first_comment": {
+  "youtube": "If 92% of crashes are not the model, the setup is the real work. What breaks your agents most often? Subscribe for daily AI playbooks."
+ }
 }

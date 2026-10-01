@@ -1,25 +1,37 @@
 {
-  "kind": "clip",
-  "source": "https://www.reddit.com/r/HiggsfieldAI/comments/1s9ccgy/how_to_use_your_own_characters_for_fight_scenes/",
-  "credit": "@HiggsfieldAI on Reddit",
-  "topic": "AI video prompts",
-  "title": "Higgsfield AI fight scene prompt:",
-  "hook": "What if you could turn two of your own photos into a full kung-fu movie fight scene?",
-  "caption": "This kung-fu duel was never filmed — two photos and one Higgsfield AI prompt built the whole thing 🥋\n\nTwo reference photos went in: a fighter, an arena, a second fighter. Higgsfield's AI video tool did the rest — full choreography, 360° camera moves, even a Shaw Brothers-style soundtrack cue.\n\n→ your own arena\n→ your own characters, unarmed and locked in\n→ camera angles that follow every hit\n\nThe exact prompt that built this is in the comments, so you can swap in your own photos 👇\n\nWhat fight would you recreate first? Tell us below.\n\nFollow @aiplaybooks.daily for AI tools you can actually use.\n\n#ai #aivideo #higgsfield #aitools #prompt",
-  "captions": {
-    "instagram": "This kung-fu duel was never filmed — two photos and one Higgsfield AI prompt built the whole thing 🥋\n\nTwo reference photos went in: a fighter, an arena, a second fighter. Higgsfield's AI video tool did the rest — full choreography, 360° camera moves, even a Shaw Brothers-style soundtrack cue.\n\n→ your own arena\n→ your own characters, unarmed and locked in\n→ camera angles that follow every hit\n\nThe exact prompt that built this is in the comments, so you can swap in your own photos 👇\n\nWhat fight would you recreate first? Tell us below.\n\nFollow @aiplaybooks.daily for AI tools you can actually use.\n\n#ai #aivideo #higgsfield #aitools #prompt",
-    "facebook": "This martial-arts fight scene was never filmed.\n\nTwo reference photos went in — one fighter, one arena, one more fighter — and Higgsfield's AI video tool built the entire duel around them: full choreography, sweeping 360° camera moves and even a classic kung-fu soundtrack cue.\n\nThe exact prompt that made this is in the comments, so you can try it with your own photos.\n\nWhich movie fight scene would you want to recreate with your own characters?\n\nFollow AI Playbooks for AI tools you can actually use.\n\n#ai #aivideo #higgsfield #aitools",
-    "youtube": {
-      "title": "This AI Turned 2 Photos Into a Kung-Fu Fight Scene #Shorts",
-      "description": "Two reference photos in, a full kung-fu fight scene out.\n\nHiggsfield's AI video tool builds the whole duel: an ancient arena, full choreography, 360° camera moves and even a Shaw Brothers-style soundtrack cue — all from your own character photos.\n\nThe exact prompt used for this video is below, so you can copy it and try it yourself.\n\n#higgsfield #aivideo #ai #aitools",
-      "tags": ["higgsfield ai", "ai video prompts", "ai fight scene", "higgsfield ai video", "ai characters", "chatgpt prompts", "ai video generator", "kung fu ai video"]
-    }
-  },
-  "comments": [
-    "Prompt used for this video:\n\nsetting: location: \"Ancient 'World Martial Arts Tournament' arena [@ Image 2]\" details: \"Clear stone platform textures, intricate Chinese guardian beast carvings, detailed ancient architecture\" audio_style: \"Shaw Brothers classic kung fu cinema soundtrack\" action_sequence: participants: \"[@ Image 1] vs [@ Image 3], both unarmed/bare-handed\" choreography: opening: \"[@ Image 1] moves like lightning with sharp energy-infused strikes; [@ Image 3] parries using fluid Tai Chi grandmaster techniques to neutralize the onslaught.\" climax: \"[@ Image 1] lunges for a tail-whip ambush; [@ Image 3] counters with a powerful qi-palmed strike. [@ Image 1] dodges with ghost-like agility.\" finisher: \"[@ Image 1] fires a Kamehameha at the chest; [@ Image 3] tanks the hit with a qi-shield and counters with a full-force palm strike, knocking [@ Image 1] off the ring.\" cinematography: camera: \"360-degree orbital wrap-around shots, capturing every martial arts exchange\" lighting: \"Dynamic lighting shifts synced with combat intensity to create a tense atmosphere\" visual_style: \"Cinematic photorealism, 8K resolution, film-like texture\" technical_quality: standard: \"Low AI signature, no excessive skin smoothing, natural fluid motion\" negative_constraints: \"No deformed limbs, no extra/missing fingers, no clipping, no blurring, no low resolution, no cluttered backgrounds, no color banding\"\n\n[@ Image 1], [@ Image 2], [@ Image 3] = your own reference photos (character, location, character)."
-  ],
-  "checked": [
-    "Higgsfield has an official fight-scene workflow using reference images/characters: https://www.youtube.com/watch?v=y7BriXeWmcc (\"How to Make AI Fight Scenes With Higgsfield AI\")",
-    "Higgsfield's custom/consistent-character feature (Soul Cast / Soul ID) that this workflow relies on: https://higgsfield.ai/soul-cast-intro"
-  ]
+ "kind": "clip",
+ "source": "https://www.reddit.com/r/HiggsfieldAI/comments/1s9ccgy/how_to_use_your_own_characters_for_fight_scenes/",
+ "credit": "@HiggsfieldAI on Reddit",
+ "topic": "AI video prompts",
+ "title": "Higgsfield AI fight scene prompt:",
+ "hook": "What if you could turn two of your own photos into a full kung-fu movie fight scene?",
+ "caption": "This kung-fu duel was never filmed — two photos and one Higgsfield AI prompt built the whole thing 🥋\n\nTwo reference photos went in: a fighter, an arena, a second fighter. Higgsfield's AI video tool did the rest — full choreography, 360° camera moves, even a Shaw Brothers-style soundtrack cue.\n\n→ your own arena\n→ your own characters, unarmed and locked in\n→ camera angles that follow every hit\n\nThe exact prompt that built this is in the comments, so you can swap in your own photos 👇\n\nWhat fight would you recreate first? Tell us below.\n\nFollow @aiplaybooks.daily for AI tools you can actually use.\n\n#ai #aivideo #higgsfield #aitools #prompt",
+ "captions": {
+  "instagram": "This kung-fu duel was never filmed — two photos and one Higgsfield AI prompt built the whole thing 🥋\n\nTwo reference photos went in: a fighter, an arena, a second fighter. Higgsfield's AI video tool did the rest — full choreography, 360° camera moves, even a Shaw Brothers-style soundtrack cue.\n\n→ your own arena\n→ your own characters, unarmed and locked in\n→ camera angles that follow every hit\n\nThe exact prompt that built this is in the comments, so you can swap in your own photos 👇\n\nWhat fight would you recreate first? Tell us below.\n\nFollow @aiplaybooks.daily for AI tools you can actually use.\n\n#ai #aivideo #higgsfield #aitools #prompt",
+  "facebook": "This martial-arts fight scene was never filmed.\n\nTwo reference photos went in — one fighter, one arena, one more fighter — and Higgsfield's AI video tool built the entire duel around them: full choreography, sweeping 360° camera moves and even a classic kung-fu soundtrack cue.\n\nThe exact prompt that made this is in the comments, so you can try it with your own photos.\n\nWhich movie fight scene would you want to recreate with your own characters?\n\nFollow AI Playbooks for AI tools you can actually use.\n\n#ai #aivideo #higgsfield #aitools",
+  "youtube": {
+   "title": "This AI Turned 2 Photos Into a Kung-Fu Fight Scene #Shorts",
+   "description": "Two reference photos in, a full kung-fu fight scene out.\n\nHiggsfield's AI video tool builds the whole duel: an ancient arena, full choreography, 360° camera moves and even a Shaw Brothers-style soundtrack cue — all from your own character photos.\n\nThe exact prompt used for this video is below, so you can copy it and try it yourself.\n\n#higgsfield #aivideo #ai #aitools",
+   "tags": [
+    "higgsfield ai",
+    "ai video prompts",
+    "ai fight scene",
+    "higgsfield ai video",
+    "ai characters",
+    "chatgpt prompts",
+    "ai video generator",
+    "kung fu ai video"
+   ]
+  }
+ },
+ "comments": [
+  "Prompt used for this video:\n\nsetting: location: \"Ancient 'World Martial Arts Tournament' arena [@ Image 2]\" details: \"Clear stone platform textures, intricate Chinese guardian beast carvings, detailed ancient architecture\" audio_style: \"Shaw Brothers classic kung fu cinema soundtrack\" action_sequence: participants: \"[@ Image 1] vs [@ Image 3], both unarmed/bare-handed\" choreography: opening: \"[@ Image 1] moves like lightning with sharp energy-infused strikes; [@ Image 3] parries using fluid Tai Chi grandmaster techniques to neutralize the onslaught.\" climax: \"[@ Image 1] lunges for a tail-whip ambush; [@ Image 3] counters with a powerful qi-palmed strike. [@ Image 1] dodges with ghost-like agility.\" finisher: \"[@ Image 1] fires a Kamehameha at the chest; [@ Image 3] tanks the hit with a qi-shield and counters with a full-force palm strike, knocking [@ Image 1] off the ring.\" cinematography: camera: \"360-degree orbital wrap-around shots, capturing every martial arts exchange\" lighting: \"Dynamic lighting shifts synced with combat intensity to create a tense atmosphere\" visual_style: \"Cinematic photorealism, 8K resolution, film-like texture\" technical_quality: standard: \"Low AI signature, no excessive skin smoothing, natural fluid motion\" negative_constraints: \"No deformed limbs, no extra/missing fingers, no clipping, no blurring, no low resolution, no cluttered backgrounds, no color banding\"\n\n[@ Image 1], [@ Image 2], [@ Image 3] = your own reference photos (character, location, character)."
+ ],
+ "checked": [
+  "Higgsfield has an official fight-scene workflow using reference images/characters: https://www.youtube.com/watch?v=y7BriXeWmcc (\"How to Make AI Fight Scenes With Higgsfield AI\")",
+  "Higgsfield's custom/consistent-character feature (Soul Cast / Soul ID) that this workflow relies on: https://higgsfield.ai/soul-cast-intro"
+ ],
+ "first_comment": {
+  "youtube": "Two photos in, a full fight scene out. Who would you cast against yourself? Subscribe for daily AI playbooks."
+ }
 }

@@ -1,214 +1,217 @@
 {
-  "theme": "adaptive",
-  "brand": "AI Playbooks",
-  "handle": "@aiplaybooks.daily",
-  "topic": "Social media",
-  "caption": "WhatsApp is quietly testing something new: your own AI agent, living inside a chat.\n\nUp to 5 third-party agents, each boxed into its own separate conversation. Handy for automating things right where you already talk to people every day.\n\n→ how to add one in 3 steps\n→ what an agent can (and can't) see\n→ the privacy catch Meta isn't hiding\n\nWould you trust an AI agent inside your WhatsApp? Yes or no? 👇\n\nFollow @aiplaybooks.daily for AI news you can actually use.\n\n#ai #aiagents #whatsapp #privacy #metaai",
-  "captions": {
-    "instagram": "WhatsApp is quietly testing something new: your own AI agent, living inside a chat.\n\nUp to 5 third-party agents, each boxed into its own separate conversation. Handy for automating things right where you already talk to people every day.\n\n→ how to add one in 3 steps\n→ what an agent can (and can't) see\n→ the privacy catch Meta isn't hiding\n\nWould you trust an AI agent inside your WhatsApp? Yes or no? 👇\n\nFollow @aiplaybooks.daily for AI news you can actually use.\n\n#ai #aiagents #whatsapp #privacy #metaai",
-    "facebook": "WhatsApp is quietly testing something new for a small group of users: the ability to add your own third-party AI agent right into a chat.\n\nUp to 5 agents, each kept in its own separate conversation. It could turn the app you already use every day into a home for AI helpers.\n\nBut there's a catch. Your personal WhatsApp chats stay end-to-end encrypted, but agent chats run through a secure Meta service instead, since an outside developer's agent needs to read and reply.\n\nWould you add an AI agent to your WhatsApp, knowing that?\n\n#ai #whatsapp #aiagents #privacy",
-    "youtube": {
-      "title": "WhatsApp AI Agents: What They Can (and Can't) See",
-      "description": "WhatsApp is testing a way to add your own third-party AI agent into a chat, up to 5 at once, each boxed into a separate conversation.\n\nThis Short covers how to set one up, what the agent can and can't see on your phone, and the privacy detail worth knowing: agent chats aren't end-to-end encrypted the way your personal chats are, since they run through a secure Meta service for the agent's developer.\n\nIt's early testing on iOS and Android, so features and limits can still change before a wider rollout.\n\n#whatsapp #aiagents #ai #metaai #privacy",
-      "tags": [
-        "whatsapp ai agent",
-        "whatsapp update",
-        "ai agents",
-        "meta ai",
-        "whatsapp privacy",
-        "third party ai",
-        "whatsapp new feature",
-        "ai chatbot"
-      ]
-    }
-  },
-  "sources": [
-    "https://faq.whatsapp.com/1349784656772709",
-    "https://faq.whatsapp.com/818760060056834",
-    "https://wabetainfo.com/whatsapp-is-rolling-out-chats-with-third-party-agents/",
-    "https://wabetainfo.com/whatsapp-is-rolling-out-chats-with-third-party-agents-on-ios/"
+ "theme": "adaptive",
+ "brand": "AI Playbooks",
+ "handle": "@aiplaybooks.daily",
+ "topic": "Social media",
+ "caption": "WhatsApp is quietly testing something new: your own AI agent, living inside a chat.\n\nUp to 5 third-party agents, each boxed into its own separate conversation. Handy for automating things right where you already talk to people every day.\n\n→ how to add one in 3 steps\n→ what an agent can (and can't) see\n→ the privacy catch Meta isn't hiding\n\nWould you trust an AI agent inside your WhatsApp? Yes or no? 👇\n\nFollow @aiplaybooks.daily for AI news you can actually use.\n\n#ai #aiagents #whatsapp #privacy #metaai",
+ "captions": {
+  "instagram": "WhatsApp is quietly testing something new: your own AI agent, living inside a chat.\n\nUp to 5 third-party agents, each boxed into its own separate conversation. Handy for automating things right where you already talk to people every day.\n\n→ how to add one in 3 steps\n→ what an agent can (and can't) see\n→ the privacy catch Meta isn't hiding\n\nWould you trust an AI agent inside your WhatsApp? Yes or no? 👇\n\nFollow @aiplaybooks.daily for AI news you can actually use.\n\n#ai #aiagents #whatsapp #privacy #metaai",
+  "facebook": "WhatsApp is quietly testing something new for a small group of users: the ability to add your own third-party AI agent right into a chat.\n\nUp to 5 agents, each kept in its own separate conversation. It could turn the app you already use every day into a home for AI helpers.\n\nBut there's a catch. Your personal WhatsApp chats stay end-to-end encrypted, but agent chats run through a secure Meta service instead, since an outside developer's agent needs to read and reply.\n\nWould you add an AI agent to your WhatsApp, knowing that?\n\n#ai #whatsapp #aiagents #privacy",
+  "youtube": {
+   "title": "WhatsApp AI Agents: What They Can (and Can't) See",
+   "description": "WhatsApp is testing a way to add your own third-party AI agent into a chat, up to 5 at once, each boxed into a separate conversation.\n\nThis Short covers how to set one up, what the agent can and can't see on your phone, and the privacy detail worth knowing: agent chats aren't end-to-end encrypted the way your personal chats are, since they run through a secure Meta service for the agent's developer.\n\nIt's early testing on iOS and Android, so features and limits can still change before a wider rollout.\n\n#whatsapp #aiagents #ai #metaai #privacy",
+   "tags": [
+    "whatsapp ai agent",
+    "whatsapp update",
+    "ai agents",
+    "meta ai",
+    "whatsapp privacy",
+    "third party ai",
+    "whatsapp new feature",
+    "ai chatbot"
+   ]
+  }
+ },
+ "sources": [
+  "https://faq.whatsapp.com/1349784656772709",
+  "https://faq.whatsapp.com/818760060056834",
+  "https://wabetainfo.com/whatsapp-is-rolling-out-chats-with-third-party-agents/",
+  "https://wabetainfo.com/whatsapp-is-rolling-out-chats-with-third-party-agents-on-ios/"
+ ],
+ "cover": {
+  "headline": "WhatsApp is quietly testing a feature that lets you add your own AI agent to a chat. Here's what to know:",
+  "em": "your own AI agent",
+  "person": null,
+  "photo_query": [
+   "texting smartphone hands",
+   "phone chat messaging app",
+   "chatbot phone screen"
   ],
-  "cover": {
-    "headline": "WhatsApp is quietly testing a feature that lets you add your own AI agent to a chat. Here's what to know:",
-    "em": "your own AI agent",
-    "person": null,
-    "photo_query": [
-      "texting smartphone hands",
-      "phone chat messaging app",
-      "chatbot phone screen"
+  "photo_pick": {
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/ODN23L0AC9.jpg",
+   "page": "https://stocksnap.io/photo/iphone-smartphone-ODN23L0AC9",
+   "author": "Adrianna Calvo",
+   "license": "CC0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source": "StockSnap",
+   "file": "Iphone Smartphone"
+  },
+  "layout": "scene",
+  "photo": {
+   "file": "Iphone Smartphone",
+   "page": "https://stocksnap.io/photo/iphone-smartphone-ODN23L0AC9",
+   "author": "Adrianna Calvo",
+   "license": "CC0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source": "StockSnap"
+  },
+  "layout_used": "scene"
+ },
+ "design": {
+  "mood": "a clean phone messaging screen: soft off-white chat background, WhatsApp-teal bubbles, one bubble tagged with a small robot badge like a new contact slipping into your chat list — approachable app UI, not neon or hacker-y; a warm amber accent flags the privacy catch",
+  "palette": {
+   "bg": "#F3F7F1",
+   "bg2": "#E7F1E7",
+   "surface": "#FFFFFF",
+   "ink": "#0F2A22",
+   "muted": "#5C776C",
+   "accent": "#0F8A72",
+   "accent2": "#F0A63A"
+  },
+  "fonts": {
+   "display": "Outfit",
+   "body": "Inter",
+   "mono": "IBM Plex Mono"
+  },
+  "display": {
+   "weight": 700,
+   "case": "none",
+   "tracking": -2,
+   "scale": 1.0,
+   "italic_em": false
+  },
+  "shape": {
+   "radius": 30,
+   "border": 1,
+   "shadow": "soft"
+  },
+  "background": {
+   "pattern": "waves",
+   "pattern_opacity": 0.06,
+   "glow": true,
+   "gradient": true
+  },
+  "label": "pill",
+  "prompt": "chat",
+  "art": "<svg viewBox='0 0 900 460'><rect x='0' y='0' width='900' height='460' fill='none'/><g><rect x='70' y='60' width='300' height='90' rx='30' fill='var(--surface)' stroke='var(--muted)' stroke-width='2' opacity='0.5'/><text x='0' y='0' opacity='0'/><rect x='120' y='190' width='340' height='90' rx='30' fill='var(--accent)'/><rect x='70' y='320' width='360' height='90' rx='30' fill='var(--surface)' stroke='var(--muted)' stroke-width='2' opacity='0.6'/></g><g transform='translate(560,150)'><circle cx='120' cy='120' r='130' fill='var(--accent2)' opacity='0.15'/><rect x='55' y='55' width='130' height='110' rx='26' fill='var(--surface)' stroke='var(--accent2)' stroke-width='4'/><circle cx='90' cy='105' r='10' fill='var(--ink)'/><circle cx='150' cy='105' r='10' fill='var(--ink)'/><rect x='85' y='130' width='70' height='10' rx='5' fill='var(--ink)' opacity='0.6'/><rect x='108' y='30' width='4' height='25' fill='var(--accent2)'/><circle cx='110' cy='24' r='8' fill='var(--accent2)'/><rect x='30' y='90' width='16' height='40' rx='8' fill='var(--surface)' stroke='var(--accent2)' stroke-width='3'/><rect x='194' y='90' width='16' height='40' rx='8' fill='var(--surface)' stroke='var(--accent2)' stroke-width='3'/></g><g transform='translate(430,340)' opacity='0.8'><circle r='6' fill='var(--accent)'/><circle cx='26' cy='0' r='6' fill='var(--accent)' opacity='0.6'/><circle cx='52' cy='0' r='6' fill='var(--accent)' opacity='0.3'/></g></svg>",
+  "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='7' width='14' height='11' rx='3'/><circle cx='9.5' cy='12.5' r='1.2' fill='currentColor'/><circle cx='14.5' cy='12.5' r='1.2' fill='currentColor'/><path d='M12 7V4'/><circle cx='12' cy='3' r='1' fill='currentColor'/><path d='M3 12h2M19 12h2'/></svg>"
+ },
+ "voice_speed": 1.1,
+ "voice": "am_puck",
+ "slides": [
+  {
+   "type": "cover",
+   "kicker": "WHATSAPP",
+   "title": "WhatsApp is testing your own AI agent inside a chat",
+   "em": "your own AI agent",
+   "sub": "Up to 5 agents, each in its own separate chat.",
+   "tools": [
+    "WhatsApp",
+    "Meta AI"
+   ],
+   "voiceover": "WhatsApp is quietly testing a way to add your own AI agent into a chat."
+  },
+  {
+   "type": "stat",
+   "label": "NEW TEST",
+   "value": "5",
+   "title": "Up to 5 third-party agents per account",
+   "sub": "Each agent gets its own separate chat, kept apart from the rest.",
+   "voiceover": "You'll be able to connect up to five third-party agents at once."
+  },
+  {
+   "type": "steps",
+   "label": "HOW TO ADD ONE",
+   "title": "Setting up an agent takes three steps",
+   "steps": [
+    [
+     "Open Settings",
+     "find the new `Agents` section in WhatsApp"
     ],
-    "photo_pick": {
-      "url": "https://cdn.stocksnap.io/img-thumbs/960w/ODN23L0AC9.jpg",
-      "page": "https://stocksnap.io/photo/iphone-smartphone-ODN23L0AC9",
-      "author": "Adrianna Calvo",
-      "license": "CC0",
-      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "source": "StockSnap",
-      "file": "Iphone Smartphone"
-    },
-    "layout": "scene",
-    "photo": {
-      "file": "Iphone Smartphone",
-      "page": "https://stocksnap.io/photo/iphone-smartphone-ODN23L0AC9",
-      "author": "Adrianna Calvo",
-      "license": "CC0",
-      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "source": "StockSnap"
-    },
-    "layout_used": "scene"
+    [
+     "Name it, add a photo",
+     "give the agent an identity, like a contact"
+    ],
+    [
+     "Connect with a key",
+     "paste the API key WhatsApp generates into the agent's platform"
+    ]
+   ],
+   "voiceover": "Setting one up takes three steps: settings, a name and photo, then an API key."
   },
-  "design": {
-    "mood": "a clean phone messaging screen: soft off-white chat background, WhatsApp-teal bubbles, one bubble tagged with a small robot badge like a new contact slipping into your chat list — approachable app UI, not neon or hacker-y; a warm amber accent flags the privacy catch",
-    "palette": {
-      "bg": "#F3F7F1",
-      "bg2": "#E7F1E7",
-      "surface": "#FFFFFF",
-      "ink": "#0F2A22",
-      "muted": "#5C776C",
-      "accent": "#0F8A72",
-      "accent2": "#F0A63A"
-    },
-    "fonts": {
-      "display": "Outfit",
-      "body": "Inter",
-      "mono": "IBM Plex Mono"
-    },
-    "display": {
-      "weight": 700,
-      "case": "none",
-      "tracking": -2,
-      "scale": 1.0,
-      "italic_em": false
-    },
-    "shape": {
-      "radius": 30,
-      "border": 1,
-      "shadow": "soft"
-    },
-    "background": {
-      "pattern": "waves",
-      "pattern_opacity": 0.06,
-      "glow": true,
-      "gradient": true
-    },
-    "label": "pill",
-    "prompt": "chat",
-    "art": "<svg viewBox='0 0 900 460'><rect x='0' y='0' width='900' height='460' fill='none'/><g><rect x='70' y='60' width='300' height='90' rx='30' fill='var(--surface)' stroke='var(--muted)' stroke-width='2' opacity='0.5'/><text x='0' y='0' opacity='0'/><rect x='120' y='190' width='340' height='90' rx='30' fill='var(--accent)'/><rect x='70' y='320' width='360' height='90' rx='30' fill='var(--surface)' stroke='var(--muted)' stroke-width='2' opacity='0.6'/></g><g transform='translate(560,150)'><circle cx='120' cy='120' r='130' fill='var(--accent2)' opacity='0.15'/><rect x='55' y='55' width='130' height='110' rx='26' fill='var(--surface)' stroke='var(--accent2)' stroke-width='4'/><circle cx='90' cy='105' r='10' fill='var(--ink)'/><circle cx='150' cy='105' r='10' fill='var(--ink)'/><rect x='85' y='130' width='70' height='10' rx='5' fill='var(--ink)' opacity='0.6'/><rect x='108' y='30' width='4' height='25' fill='var(--accent2)'/><circle cx='110' cy='24' r='8' fill='var(--accent2)'/><rect x='30' y='90' width='16' height='40' rx='8' fill='var(--surface)' stroke='var(--accent2)' stroke-width='3'/><rect x='194' y='90' width='16' height='40' rx='8' fill='var(--surface)' stroke='var(--accent2)' stroke-width='3'/></g><g transform='translate(430,340)' opacity='0.8'><circle r='6' fill='var(--accent)'/><circle cx='26' cy='0' r='6' fill='var(--accent)' opacity='0.6'/><circle cx='52' cy='0' r='6' fill='var(--accent)' opacity='0.3'/></g></svg>",
-    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='7' width='14' height='11' rx='3'/><circle cx='9.5' cy='12.5' r='1.2' fill='currentColor'/><circle cx='14.5' cy='12.5' r='1.2' fill='currentColor'/><path d='M12 7V4'/><circle cx='12' cy='3' r='1' fill='currentColor'/><path d='M3 12h2M19 12h2'/></svg>"
+  {
+   "type": "facts",
+   "label": "WHAT IT CAN SEE",
+   "title": "Each agent is boxed into its own chat",
+   "items": [
+    [
+     "Reads",
+     "only what you share inside that one chat"
+    ],
+    [
+     "Can't see",
+     "your other chats, contacts or media"
+    ],
+    [
+     "Groups",
+     "not supported yet"
+    ]
+   ],
+   "voiceover": "An agent only sees the one chat you gave it, nothing else on your phone."
   },
-  "voice_speed": 1.1,
-  "voice": "am_puck",
-  "slides": [
-    {
-      "type": "cover",
-      "kicker": "WHATSAPP",
-      "title": "WhatsApp is testing your own AI agent inside a chat",
-      "em": "your own AI agent",
-      "sub": "Up to 5 agents, each in its own separate chat.",
-      "tools": [
-        "WhatsApp",
-        "Meta AI"
-      ],
-      "voiceover": "WhatsApp is quietly testing a way to add your own AI agent into a chat."
-    },
-    {
-      "type": "stat",
-      "label": "NEW TEST",
-      "value": "5",
-      "title": "Up to 5 third-party agents per account",
-      "sub": "Each agent gets its own separate chat, kept apart from the rest.",
-      "voiceover": "You'll be able to connect up to five third-party agents at once."
-    },
-    {
-      "type": "steps",
-      "label": "HOW TO ADD ONE",
-      "title": "Setting up an agent takes three steps",
-      "steps": [
-        [
-          "Open Settings",
-          "find the new `Agents` section in WhatsApp"
-        ],
-        [
-          "Name it, add a photo",
-          "give the agent an identity, like a contact"
-        ],
-        [
-          "Connect with a key",
-          "paste the API key WhatsApp generates into the agent's platform"
-        ]
-      ],
-      "voiceover": "Setting one up takes three steps: settings, a name and photo, then an API key."
-    },
-    {
-      "type": "facts",
-      "label": "WHAT IT CAN SEE",
-      "title": "Each agent is boxed into its own chat",
-      "items": [
-        [
-          "Reads",
-          "only what you share inside that one chat"
-        ],
-        [
-          "Can't see",
-          "your other chats, contacts or media"
-        ],
-        [
-          "Groups",
-          "not supported yet"
-        ]
-      ],
-      "voiceover": "An agent only sees the one chat you gave it, nothing else on your phone."
-    },
-    {
-      "type": "limits",
-      "label": "THE CATCH",
-      "title": "Agent chats are not end-to-end encrypted",
-      "items": [
-        "Your personal WhatsApp chats stay end-to-end encrypted",
-        "Agent chats run through a secure Meta service on behalf of the agent's developer",
-        "That's the tradeoff for letting an outside agent read and reply"
-      ],
-      "cta": "Know what you share before you connect one."
-    },
-    {
-      "type": "list",
-      "label": "WHY IT MATTERS",
-      "title": "WhatsApp is becoming a home for AI agents",
-      "items": [
-        [
-          "Habit meets AI",
-          "your agents live where you already chat, no new app"
-        ],
-        [
-          "Early access",
-          "testing now with a limited number of users on iOS and Android"
-        ],
-        [
-          "Not final yet",
-          "features and limits can still change before a wider rollout"
-        ]
-      ],
-      "voiceover": "It's early testing, but it turns your chat app into a hub for AI agents."
-    },
-    {
-      "type": "cta",
-      "title": "Your favorite AI agent could soon live inside WhatsApp.",
-      "title2": "Just know it's not private the way your chats are.",
-      "lines": [
-        [
-          "Follow",
-          "for daily AI tool tips & news"
-        ],
-        [
-          "Save",
-          "this before the feature reaches you"
-        ],
-        [
-          "Comment",
-          "which AI agent you'd add first"
-        ]
-      ],
-      "voiceover": "Follow for daily AI tips, and tell me which agent you'd add first."
-    }
-  ]
+  {
+   "type": "limits",
+   "label": "THE CATCH",
+   "title": "Agent chats are not end-to-end encrypted",
+   "items": [
+    "Your personal WhatsApp chats stay end-to-end encrypted",
+    "Agent chats run through a secure Meta service on behalf of the agent's developer",
+    "That's the tradeoff for letting an outside agent read and reply"
+   ],
+   "cta": "Know what you share before you connect one."
+  },
+  {
+   "type": "list",
+   "label": "WHY IT MATTERS",
+   "title": "WhatsApp is becoming a home for AI agents",
+   "items": [
+    [
+     "Habit meets AI",
+     "your agents live where you already chat, no new app"
+    ],
+    [
+     "Early access",
+     "testing now with a limited number of users on iOS and Android"
+    ],
+    [
+     "Not final yet",
+     "features and limits can still change before a wider rollout"
+    ]
+   ],
+   "voiceover": "It's early testing, but it turns your chat app into a hub for AI agents."
+  },
+  {
+   "type": "cta",
+   "title": "Your favorite AI agent could soon live inside WhatsApp.",
+   "title2": "Just know it's not private the way your chats are.",
+   "lines": [
+    [
+     "Follow",
+     "for daily AI tool tips & news"
+    ],
+    [
+     "Save",
+     "this before the feature reaches you"
+    ],
+    [
+     "Comment",
+     "which AI agent you'd add first"
+    ]
+   ],
+   "voiceover": "Follow for daily AI tips, and tell me which agent you'd add first."
+  }
+ ],
+ "first_comment": {
+  "youtube": "Worth knowing before you add one: agent chats are not end-to-end encrypted. Would you still let an agent into your WhatsApp? Subscribe for daily AI playbooks."
+ }
 }

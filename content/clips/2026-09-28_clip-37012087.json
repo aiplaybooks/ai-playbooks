@@ -1,21 +1,33 @@
 {
-  "kind": "clip",
-  "source": "https://x.com/0xCarnagee/status/2102559228737012087/video/1",
-  "credit": "@0xCarnagee on X",
-  "topic": "Claude Opus 5.5",
-  "title": null,
-  "hook": "A developer broke down Opus 5.5's 4 breaking changes before they could wreck his agent in production",
-  "caption": "Claude Opus 5.5 just landed, cheaper than Opus 5 and beating GPT-6 Astra on coding benchmarks ⚡\n\nAnthropic's new model is faster and cheaper per token than Opus 5 — but it also changes how tool calls and extended thinking work under the hood.\n\n→ thinking can no longer be turned off\n→ some forced tool-use calls that used to work now error out\n→ thinking blocks are now tied to a specific model and conversation\n→ the old computer_20251124 tool gets rejected\n\nWhich one of these would've broken your agent first? 👇\n\nFollow @aiplaybooks.daily for the AI updates that actually affect your code.\n\n#claude #claudeai #anthropic #ai #aitools",
-  "checked": [
-    "Pricing $4/$20 per 1M tokens (vs Opus 5's $5/$25) and the 4 breaking changes (thinking can't be disabled, forced tool use errors, thinking blocks tied to model/conversation, computer_20251124 tool rejected) confirmed on Anthropic's official migration guide: https://platform.claude.com/docs/en/models/opus-5-5/migration-guide and https://platform.claude.com/docs/en/models/opus-5-5/whats-new-opus-5-5"
-  ],
-  "captions": {
-    "instagram": "Claude Opus 5.5 just landed, cheaper than Opus 5 and beating GPT-6 Astra on coding benchmarks ⚡\n\nAnthropic's new model is faster and cheaper per token than Opus 5 — but it also changes how tool calls and extended thinking work under the hood.\n\n→ thinking can no longer be turned off\n→ some forced tool-use calls that used to work now error out\n→ thinking blocks are now tied to a specific model and conversation\n→ the old computer_20251124 tool gets rejected\n\nWhich one of these would've broken your agent first? 👇\n\nFollow @aiplaybooks.daily for the AI updates that actually affect your code.\n\n#claude #claudeai #anthropic #ai #aitools",
-    "facebook": "Anthropic just shipped Claude Opus 5.5 — and it's already shaking things up for developers.\n\nIt's cheaper than Opus 5 and reportedly ahead of GPT-6 Astra on coding benchmarks. But there's a catch: 4 things that worked fine on Opus 5 now throw errors, from forced tool-use calls to a retired computer-use tool.\n\nIf you're running agents in production, this is the kind of update worth checking before you deploy.\n\nWhat's the last model update that broke your workflow?\n\n#claude #claudeai #anthropic #ai",
-    "youtube": {
-      "title": "Claude Opus 5.5: 4 Breaking Changes for Developers",
-      "description": "Claude Opus 5.5 just launched — cheaper than Opus 5 and ahead of GPT-6 Astra on Terminal-Bench, but it breaks 4 things that worked before.\n\nHere's what changed: extended thinking can't be disabled, some forced tool-use calls now error, thinking blocks are tied to a specific model and conversation, and the old computer_20251124 tool is rejected.\n\nIf you're running Claude in production, check your code before you upgrade.\n\n#claude #claudeai #anthropic #ai",
-      "tags": ["claude opus", "claude opus 5.5", "claude ai", "anthropic", "ai coding", "claude code", "llm", "ai tools"]
-    }
+ "kind": "clip",
+ "source": "https://x.com/0xCarnagee/status/2102559228737012087/video/1",
+ "credit": "@0xCarnagee on X",
+ "topic": "Claude Opus 5.5",
+ "title": null,
+ "hook": "A developer broke down Opus 5.5's 4 breaking changes before they could wreck his agent in production",
+ "caption": "Claude Opus 5.5 just landed, cheaper than Opus 5 and beating GPT-6 Astra on coding benchmarks ⚡\n\nAnthropic's new model is faster and cheaper per token than Opus 5 — but it also changes how tool calls and extended thinking work under the hood.\n\n→ thinking can no longer be turned off\n→ some forced tool-use calls that used to work now error out\n→ thinking blocks are now tied to a specific model and conversation\n→ the old computer_20251124 tool gets rejected\n\nWhich one of these would've broken your agent first? 👇\n\nFollow @aiplaybooks.daily for the AI updates that actually affect your code.\n\n#claude #claudeai #anthropic #ai #aitools",
+ "checked": [
+  "Pricing $4/$20 per 1M tokens (vs Opus 5's $5/$25) and the 4 breaking changes (thinking can't be disabled, forced tool use errors, thinking blocks tied to model/conversation, computer_20251124 tool rejected) confirmed on Anthropic's official migration guide: https://platform.claude.com/docs/en/models/opus-5-5/migration-guide and https://platform.claude.com/docs/en/models/opus-5-5/whats-new-opus-5-5"
+ ],
+ "captions": {
+  "instagram": "Claude Opus 5.5 just landed, cheaper than Opus 5 and beating GPT-6 Astra on coding benchmarks ⚡\n\nAnthropic's new model is faster and cheaper per token than Opus 5 — but it also changes how tool calls and extended thinking work under the hood.\n\n→ thinking can no longer be turned off\n→ some forced tool-use calls that used to work now error out\n→ thinking blocks are now tied to a specific model and conversation\n→ the old computer_20251124 tool gets rejected\n\nWhich one of these would've broken your agent first? 👇\n\nFollow @aiplaybooks.daily for the AI updates that actually affect your code.\n\n#claude #claudeai #anthropic #ai #aitools",
+  "facebook": "Anthropic just shipped Claude Opus 5.5 — and it's already shaking things up for developers.\n\nIt's cheaper than Opus 5 and reportedly ahead of GPT-6 Astra on coding benchmarks. But there's a catch: 4 things that worked fine on Opus 5 now throw errors, from forced tool-use calls to a retired computer-use tool.\n\nIf you're running agents in production, this is the kind of update worth checking before you deploy.\n\nWhat's the last model update that broke your workflow?\n\n#claude #claudeai #anthropic #ai",
+  "youtube": {
+   "title": "Claude Opus 5.5: 4 Breaking Changes for Developers",
+   "description": "Claude Opus 5.5 just launched — cheaper than Opus 5 and ahead of GPT-6 Astra on Terminal-Bench, but it breaks 4 things that worked before.\n\nHere's what changed: extended thinking can't be disabled, some forced tool-use calls now error, thinking blocks are tied to a specific model and conversation, and the old computer_20251124 tool is rejected.\n\nIf you're running Claude in production, check your code before you upgrade.\n\n#claude #claudeai #anthropic #ai",
+   "tags": [
+    "claude opus",
+    "claude opus 5.5",
+    "claude ai",
+    "anthropic",
+    "ai coding",
+    "claude code",
+    "llm",
+    "ai tools"
+   ]
   }
+ },
+ "first_comment": {
+  "youtube": "Check these four before you switch models in production. Did any of them bite you already? Subscribe for daily AI playbooks."
+ }
 }

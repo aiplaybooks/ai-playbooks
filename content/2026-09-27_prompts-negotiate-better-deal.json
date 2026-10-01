@@ -1,185 +1,188 @@
 {
-  "theme": "prompts",
-  "brand": "AI Playbooks",
-  "handle": "@aiplaybooks.daily",
-  "topic": "Prompt Pack · Negotiate a Better Deal",
-  "caption": "5 ChatGPT prompts that could talk your rent, your bill, or your next car deal down by hundreds 💬\n\nMost people just accept the price they're quoted — a landlord's renewal, a car sticker price, a bill that went up. A little leverage and the right script can change the number.\n\n→ Rent renewal counter-offer\n→ Used car target price + script\n→ Retention call to cut your bill\n→ Service provider rate match\n→ Contractor quote counter\n\nWhich one are you running first: the rent one, the car one, or the bill? 👇\n\nSave this before your next renewal, and follow @aiplaybooks.daily for a new playbook every day.\n\n#chatgpt #ai #negotiation #savemoney #aitools",
-  "sources": [],
-  "captions": {
-    "instagram": "5 ChatGPT prompts that could talk your rent, your bill, or your next car deal down by hundreds 💬\n\nMost people just accept the price they're quoted — a landlord's renewal, a car sticker price, a bill that went up. A little leverage and the right script can change the number.\n\n→ Rent renewal counter-offer\n→ Used car target price + script\n→ Retention call to cut your bill\n→ Service provider rate match\n→ Contractor quote counter\n\nWhich one are you running first: the rent one, the car one, or the bill? 👇\n\nSave this before your next renewal, and follow @aiplaybooks.daily for a new playbook every day.\n\n#chatgpt #ai #negotiation #savemoney #aitools",
-    "facebook": "5 ChatGPT prompts that could talk your rent, your bill, or your next car deal down by hundreds of dollars.\n\nMost of us just accept the number we're given — a rent renewal, a car sticker price, a bill that quietly went up. But with the right leverage and a good script, there's almost always room to negotiate.\n\nInside: a rent counter-offer, a used car script with a target price, a retention call that gets you a discount, a rate-match message for any provider, and a contractor counter.\n\nWhat's the last thing you successfully negotiated?\n\nFollow @aiplaybooks.daily for daily AI tool tips & news.\n\n#chatgpt #negotiation #savemoney",
-    "youtube": {
-      "title": "5 ChatGPT Prompts to Negotiate a Better Deal (Rent, Car, Bills) #Shorts",
-      "description": "5 ChatGPT, Claude or Gemini prompts that turn AI into your personal negotiator for rent, cars, bills and more.\n\nGive the AI your leverage — on-time payments, a competing quote, years as a customer — and it hands back a counter-offer script and a realistic number to aim for.\n\nCovers a rent renewal, a used car purchase, a retention call to cut a bill, a service provider rate match, and a contractor quote — swipe through the video for the full prompts.\n\n#chatgptprompts #negotiation #savemoney",
-      "tags": [
-        "chatgpt prompts",
-        "negotiation script",
-        "save money",
-        "ai negotiator",
-        "rent negotiation",
-        "car negotiation",
-        "lower your bill",
-        "chatgpt money hacks"
-      ]
-    }
+ "theme": "prompts",
+ "brand": "AI Playbooks",
+ "handle": "@aiplaybooks.daily",
+ "topic": "Prompt Pack · Negotiate a Better Deal",
+ "caption": "5 ChatGPT prompts that could talk your rent, your bill, or your next car deal down by hundreds 💬\n\nMost people just accept the price they're quoted — a landlord's renewal, a car sticker price, a bill that went up. A little leverage and the right script can change the number.\n\n→ Rent renewal counter-offer\n→ Used car target price + script\n→ Retention call to cut your bill\n→ Service provider rate match\n→ Contractor quote counter\n\nWhich one are you running first: the rent one, the car one, or the bill? 👇\n\nSave this before your next renewal, and follow @aiplaybooks.daily for a new playbook every day.\n\n#chatgpt #ai #negotiation #savemoney #aitools",
+ "sources": [],
+ "captions": {
+  "instagram": "5 ChatGPT prompts that could talk your rent, your bill, or your next car deal down by hundreds 💬\n\nMost people just accept the price they're quoted — a landlord's renewal, a car sticker price, a bill that went up. A little leverage and the right script can change the number.\n\n→ Rent renewal counter-offer\n→ Used car target price + script\n→ Retention call to cut your bill\n→ Service provider rate match\n→ Contractor quote counter\n\nWhich one are you running first: the rent one, the car one, or the bill? 👇\n\nSave this before your next renewal, and follow @aiplaybooks.daily for a new playbook every day.\n\n#chatgpt #ai #negotiation #savemoney #aitools",
+  "facebook": "5 ChatGPT prompts that could talk your rent, your bill, or your next car deal down by hundreds of dollars.\n\nMost of us just accept the number we're given — a rent renewal, a car sticker price, a bill that quietly went up. But with the right leverage and a good script, there's almost always room to negotiate.\n\nInside: a rent counter-offer, a used car script with a target price, a retention call that gets you a discount, a rate-match message for any provider, and a contractor counter.\n\nWhat's the last thing you successfully negotiated?\n\nFollow @aiplaybooks.daily for daily AI tool tips & news.\n\n#chatgpt #negotiation #savemoney",
+  "youtube": {
+   "title": "5 ChatGPT Prompts to Negotiate a Better Deal (Rent, Car, Bills) #Shorts",
+   "description": "5 ChatGPT, Claude or Gemini prompts that turn AI into your personal negotiator for rent, cars, bills and more.\n\nGive the AI your leverage — on-time payments, a competing quote, years as a customer — and it hands back a counter-offer script and a realistic number to aim for.\n\nCovers a rent renewal, a used car purchase, a retention call to cut a bill, a service provider rate match, and a contractor quote — swipe through the video for the full prompts.\n\n#chatgptprompts #negotiation #savemoney",
+   "tags": [
+    "chatgpt prompts",
+    "negotiation script",
+    "save money",
+    "ai negotiator",
+    "rent negotiation",
+    "car negotiation",
+    "lower your bill",
+    "chatgpt money hacks"
+   ]
+  }
+ },
+ "cover": {
+  "headline": "These 5 prompts can talk your rent, your bill, and your next car down by hundreds of dollars. Here's the script:",
+  "em": "hundreds of dollars",
+  "person": null,
+  "photo_query": [
+   "handshake business deal",
+   "man signing contract desk",
+   "car dealership lot"
+  ],
+  "photo_pick": {
+   "url": "https://live.staticflickr.com/1907/45739276192_2d0186083a_b.jpg",
+   "page": "https://www.flickr.com/photos/147875007@N03/45739276192",
+   "author": "Rawpixel Ltd",
+   "license": "CC BY 2.0",
+   "license_url": "https://creativecommons.org/licenses/by/2.0/",
+   "source": "Flickr",
+   "file": "Business person greeted by a handshake"
   },
-  "cover": {
-    "headline": "These 5 prompts can talk your rent, your bill, and your next car down by hundreds of dollars. Here's the script:",
-    "em": "hundreds of dollars",
-    "person": null,
-    "photo_query": [
-      "handshake business deal",
-      "man signing contract desk",
-      "car dealership lot"
+  "photo": {
+   "file": "Business person greeted by a handshake",
+   "page": "https://www.flickr.com/photos/147875007@N03/45739276192",
+   "author": "Rawpixel Ltd",
+   "license": "CC BY 2.0",
+   "license_url": "https://creativecommons.org/licenses/by/2.0/",
+   "source": "Flickr"
+  },
+  "layout_used": "scene"
+ },
+ "design": {
+  "mood": "closing a deal across the table at dusk: deep navy and brass gold, confident, understated power",
+  "palette": {
+   "bg": "#10151F",
+   "bg2": "#182234",
+   "surface": "#1C283C",
+   "ink": "#F4F1E8",
+   "muted": "#93A0B8",
+   "accent": "#D8A94A",
+   "accent2": "#4E8FD1"
+  },
+  "fonts": {
+   "display": "Syne",
+   "body": "Inter",
+   "mono": "IBM Plex Mono"
+  },
+  "display": {
+   "weight": 800,
+   "tracking": -2
+  },
+  "shape": {
+   "radius": 20,
+   "border": 2,
+   "shadow": "soft"
+  },
+  "background": {
+   "pattern": "diagonal",
+   "pattern_opacity": 0.06,
+   "glow": true,
+   "gradient": true
+  },
+  "label": "mono",
+  "prompt": "card",
+  "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M11 17H5a2 2 0 0 1-2-2v-3l4-4 3 3 5-5 5 5v4a2 2 0 0 1-2 2h-2'/><path d='m14 17-2 2-2-2 2-2z'/></svg>"
+ },
+ "voice": "am_adam",
+ "slides": [
+  {
+   "type": "cover",
+   "kicker": "PROMPT PACK",
+   "title": "prompts to get a better deal on almost anything",
+   "em": "better deal",
+   "sub": "Give it your leverage, get a script and a real number.",
+   "tools": [
+    "ChatGPT",
+    "Claude",
+    "Gemini"
+   ],
+   "count": 5,
+   "voiceover": "Here are five prompts that can get you a better deal on almost anything."
+  },
+  {
+   "type": "prompt",
+   "name": "The Rent Rescue",
+   "sub": "Turn a rent increase into a lower renewal offer.",
+   "prompt": "Act as an expert negotiator. My landlord wants to raise my rent from [CURRENT RENT] to [NEW RENT] at [ADDRESS]. My leverage is [ON-TIME PAYMENTS / CHEAPER COMPARABLES / LONG TENANCY]. Write a **POLITE COUNTER-OFFER**, a fallback ask if they refuse, and a realistic estimate of what I could save.",
+   "tip": "Send it in writing, not a phone call — a paper trail gives you room to negotiate again next year.",
+   "voiceover": "One. Turn a rent increase into a lower counter-offer, ready to send."
+  },
+  {
+   "type": "prompt",
+   "name": "The Used Car Closer",
+   "sub": "Walk into the lot with a number and a script.",
+   "prompt": "Act as an expert car negotiator. I'm buying a [YEAR/MAKE/MODEL] listed at [ASKING PRICE] with [MILEAGE/KNOWN ISSUES]. My leverage is [COMPARABLE LISTINGS / CASH OFFER / TIME ON THE LOT]. Give me a **TARGET PRICE**, an opening offer, a back-and-forth script, and a walk-away line.",
+   "tip": "Get three comparable listings ready before you go — specific numbers beat 'it feels expensive.'",
+   "voiceover": "Two. Walk into a car deal with a target price and a full script."
+  },
+  {
+   "type": "prompt",
+   "name": "The Retention Call Script",
+   "sub": "Get a discount before you even threaten to cancel.",
+   "prompt": "Act as an expert negotiator who worked in telecom retention. I want to lower my [INTERNET / PHONE / STREAMING] bill of [CURRENT PRICE] a month. My leverage is [COMPETITOR OFFER / YEARS AS A CUSTOMER]. Write a **STEP-BY-STEP CALL SCRIPT** ending in cancellation, plus a realistic estimate of the discount I could get.",
+   "tip": "Ask to be transferred to the 'retention department' by name — they can offer deals regular support can't.",
+   "voiceover": "Three. Get a retention discount before you even threaten to cancel."
+  },
+  {
+   "type": "prompt",
+   "name": "The Service Provider Reset",
+   "sub": "Cut a bill that just went up, without switching providers.",
+   "prompt": "Act as an expert negotiator. My [INSURANCE / GYM / SOFTWARE] plan costs [CURRENT PRICE] and just went up. My leverage is [X YEARS AS A CUSTOMER / A CHEAPER COMPETITOR QUOTE]. Write a short, firm message asking for a **RATE MATCH OR DISCOUNT**, plus a fallback ask if they say no.",
+   "tip": "Always ask 'is this the best you can do' one more time after their first answer — it often isn't.",
+   "voiceover": "Four. Ask any provider for a rate match, the polite but firm way."
+  },
+  {
+   "type": "prompt",
+   "name": "The Contractor Counter",
+   "sub": "Push back on a quote without losing the job.",
+   "prompt": "Act as an expert negotiator. A contractor quoted me [PRICE] for [JOB]. My leverage is [ANOTHER QUOTE / A FLEXIBLE TIMELINE]. Write a **RESPECTFUL COUNTER** asking for a lower price or added value, plus a realistic range of what I could save.",
+   "tip": "Get a second quote first — it's usually free, and it doubles your leverage in the first message.",
+   "voiceover": "Five. Push back on a contractor's quote without losing the job."
+  },
+  {
+   "type": "howto",
+   "title": "Get more out of this pack",
+   "items": [
+    [
+     "Fill in real numbers",
+     "The more specific your leverage, the sharper the script — vague inputs get vague answers."
     ],
-    "photo_pick": {
-      "url": "https://live.staticflickr.com/1907/45739276192_2d0186083a_b.jpg",
-      "page": "https://www.flickr.com/photos/147875007@N03/45739276192",
-      "author": "Rawpixel Ltd",
-      "license": "CC BY 2.0",
-      "license_url": "https://creativecommons.org/licenses/by/2.0/",
-      "source": "Flickr",
-      "file": "Business person greeted by a handshake"
-    },
-    "photo": {
-      "file": "Business person greeted by a handshake",
-      "page": "https://www.flickr.com/photos/147875007@N03/45739276192",
-      "author": "Rawpixel Ltd",
-      "license": "CC BY 2.0",
-      "license_url": "https://creativecommons.org/licenses/by/2.0/",
-      "source": "Flickr"
-    },
-    "layout_used": "scene"
+    [
+     "Practice it once out loud",
+     "Read the AI's script back to yourself before the real call so it sounds like you."
+    ],
+    [
+     "Always keep a walk-away line",
+     "The best negotiators are ready to leave — ask for one and actually mean it."
+    ]
+   ],
+   "voiceover": "Fill in real numbers, practice the script out loud, and always have a walk-away line."
   },
-  "design": {
-    "mood": "closing a deal across the table at dusk: deep navy and brass gold, confident, understated power",
-    "palette": {
-      "bg": "#10151F",
-      "bg2": "#182234",
-      "surface": "#1C283C",
-      "ink": "#F4F1E8",
-      "muted": "#93A0B8",
-      "accent": "#D8A94A",
-      "accent2": "#4E8FD1"
-    },
-    "fonts": {
-      "display": "Syne",
-      "body": "Inter",
-      "mono": "IBM Plex Mono"
-    },
-    "display": {
-      "weight": 800,
-      "tracking": -2
-    },
-    "shape": {
-      "radius": 20,
-      "border": 2,
-      "shadow": "soft"
-    },
-    "background": {
-      "pattern": "diagonal",
-      "pattern_opacity": 0.06,
-      "glow": true,
-      "gradient": true
-    },
-    "label": "mono",
-    "prompt": "card",
-    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M11 17H5a2 2 0 0 1-2-2v-3l4-4 3 3 5-5 5 5v4a2 2 0 0 1-2 2h-2'/><path d='m14 17-2 2-2-2 2-2z'/></svg>"
-  },
-  "voice": "am_adam",
-  "slides": [
-    {
-      "type": "cover",
-      "kicker": "PROMPT PACK",
-      "title": "prompts to get a better deal on almost anything",
-      "em": "better deal",
-      "sub": "Give it your leverage, get a script and a real number.",
-      "tools": [
-        "ChatGPT",
-        "Claude",
-        "Gemini"
-      ],
-      "count": 5,
-      "voiceover": "Here are five prompts that can get you a better deal on almost anything."
-    },
-    {
-      "type": "prompt",
-      "name": "The Rent Rescue",
-      "sub": "Turn a rent increase into a lower renewal offer.",
-      "prompt": "Act as an expert negotiator. My landlord wants to raise my rent from [CURRENT RENT] to [NEW RENT] at [ADDRESS]. My leverage is [ON-TIME PAYMENTS / CHEAPER COMPARABLES / LONG TENANCY]. Write a **POLITE COUNTER-OFFER**, a fallback ask if they refuse, and a realistic estimate of what I could save.",
-      "tip": "Send it in writing, not a phone call — a paper trail gives you room to negotiate again next year.",
-      "voiceover": "One. Turn a rent increase into a lower counter-offer, ready to send."
-    },
-    {
-      "type": "prompt",
-      "name": "The Used Car Closer",
-      "sub": "Walk into the lot with a number and a script.",
-      "prompt": "Act as an expert car negotiator. I'm buying a [YEAR/MAKE/MODEL] listed at [ASKING PRICE] with [MILEAGE/KNOWN ISSUES]. My leverage is [COMPARABLE LISTINGS / CASH OFFER / TIME ON THE LOT]. Give me a **TARGET PRICE**, an opening offer, a back-and-forth script, and a walk-away line.",
-      "tip": "Get three comparable listings ready before you go — specific numbers beat 'it feels expensive.'",
-      "voiceover": "Two. Walk into a car deal with a target price and a full script."
-    },
-    {
-      "type": "prompt",
-      "name": "The Retention Call Script",
-      "sub": "Get a discount before you even threaten to cancel.",
-      "prompt": "Act as an expert negotiator who worked in telecom retention. I want to lower my [INTERNET / PHONE / STREAMING] bill of [CURRENT PRICE] a month. My leverage is [COMPETITOR OFFER / YEARS AS A CUSTOMER]. Write a **STEP-BY-STEP CALL SCRIPT** ending in cancellation, plus a realistic estimate of the discount I could get.",
-      "tip": "Ask to be transferred to the 'retention department' by name — they can offer deals regular support can't.",
-      "voiceover": "Three. Get a retention discount before you even threaten to cancel."
-    },
-    {
-      "type": "prompt",
-      "name": "The Service Provider Reset",
-      "sub": "Cut a bill that just went up, without switching providers.",
-      "prompt": "Act as an expert negotiator. My [INSURANCE / GYM / SOFTWARE] plan costs [CURRENT PRICE] and just went up. My leverage is [X YEARS AS A CUSTOMER / A CHEAPER COMPETITOR QUOTE]. Write a short, firm message asking for a **RATE MATCH OR DISCOUNT**, plus a fallback ask if they say no.",
-      "tip": "Always ask 'is this the best you can do' one more time after their first answer — it often isn't.",
-      "voiceover": "Four. Ask any provider for a rate match, the polite but firm way."
-    },
-    {
-      "type": "prompt",
-      "name": "The Contractor Counter",
-      "sub": "Push back on a quote without losing the job.",
-      "prompt": "Act as an expert negotiator. A contractor quoted me [PRICE] for [JOB]. My leverage is [ANOTHER QUOTE / A FLEXIBLE TIMELINE]. Write a **RESPECTFUL COUNTER** asking for a lower price or added value, plus a realistic range of what I could save.",
-      "tip": "Get a second quote first — it's usually free, and it doubles your leverage in the first message.",
-      "voiceover": "Five. Push back on a contractor's quote without losing the job."
-    },
-    {
-      "type": "howto",
-      "title": "Get more out of this pack",
-      "items": [
-        [
-          "Fill in real numbers",
-          "The more specific your leverage, the sharper the script — vague inputs get vague answers."
-        ],
-        [
-          "Practice it once out loud",
-          "Read the AI's script back to yourself before the real call so it sounds like you."
-        ],
-        [
-          "Always keep a walk-away line",
-          "The best negotiators are ready to leave — ask for one and actually mean it."
-        ]
-      ],
-      "voiceover": "Fill in real numbers, practice the script out loud, and always have a walk-away line."
-    },
-    {
-      "type": "cta",
-      "title": "Save this pack.",
-      "title2": "Negotiate your next bill.",
-      "lines": [
-        [
-          "Follow",
-          "for daily AI tool tips & news"
-        ],
-        [
-          "Share",
-          "with someone renewing a lease or buying a car"
-        ],
-        [
-          "Comment",
-          "which deal you're negotiating next"
-        ]
-      ],
-      "voiceover": "Save this pack, and follow for a new AI tip every day."
-    }
-  ]
+  {
+   "type": "cta",
+   "title": "Save this pack.",
+   "title2": "Negotiate your next bill.",
+   "lines": [
+    [
+     "Follow",
+     "for daily AI tool tips & news"
+    ],
+    [
+     "Share",
+     "with someone renewing a lease or buying a car"
+    ],
+    [
+     "Comment",
+     "which deal you're negotiating next"
+    ]
+   ],
+   "voiceover": "Save this pack, and follow for a new AI tip every day."
+  }
+ ],
+ "first_comment": {
+  "youtube": "Try The Retention Call Script on your next bill: it is the fastest one to test. What are you negotiating this month? Subscribe for daily AI playbooks."
+ }
 }

@@ -1,183 +1,186 @@
 {
-  "theme": "prompts",
-  "brand": "AI Playbooks",
-  "handle": "@aiplaybooks.daily",
-  "topic": "Prompt Pack · Niche Idea Validator",
-  "caption": "Stop building before you know if your niche idea will sell.\n\nMost side projects die for one reason: nobody checked if the niche had money in it first. This pack walks you from a raw idea to a real go or no-go decision in 48 hours.\n\n→ Turn your skills into 10 rated niche ideas\n→ Find proof people are already paying\n→ X-ray your competitors for the gap\n→ Sketch the smallest offer you can sell this week\n→ Run a 48-hour landing page test\n\nWhich niche are you testing first? Drop it below 👇\n\nSave this before you start building, and follow @aiplaybooks.daily for a new playbook every day.\n\n#chatgpt #ai #startupideas #sidehustle #entrepreneur",
-  "sources": [],
-  "captions": {
-    "instagram": "Stop building before you know if your niche idea will sell.\n\nMost side projects die for one reason: nobody checked if the niche had money in it first. This pack walks you from a raw idea to a real go or no-go decision in 48 hours.\n\n→ Turn your skills into 10 rated niche ideas\n→ Find proof people are already paying\n→ X-ray your competitors for the gap\n→ Sketch the smallest offer you can sell this week\n→ Run a 48-hour landing page test\n\nWhich niche are you testing first? Drop it below 👇\n\nSave this before you start building, and follow @aiplaybooks.daily for a new playbook every day.\n\n#chatgpt #ai #startupideas #sidehustle #entrepreneur",
-    "facebook": "Stop building before you know if your niche idea will sell.\n\nMost side projects die for the same reason: nobody checked if the niche had money in it before the building started. This pack of 7 prompts walks you from a raw idea to a real go or no-go decision in just 48 hours.\n\nYou'll turn your skills into rated niche ideas, dig up proof that people are already paying, find the gap your competitors leave open, and run a real landing page test before you build a single thing.\n\nWhat's the niche you've been sitting on but never tested?\n\n#chatgpt #startupideas #sidehustle #ai",
-    "youtube": {
-      "title": "7 ChatGPT Prompts to Validate a Niche Idea in 48 Hours #Shorts",
-      "description": "7 prompts that take you from a raw niche idea to a real go or no-go decision in 48 hours, before you waste months building the wrong thing.\n\nYou'll turn your skills into rated niche ideas, find proof people are already paying, x-ray your competitors for the gap, and run a real landing page test.\n\nWhich niche are you testing first? Save this pack and try it on your next idea.\n\n#chatgptprompts #startupideas #sidehustle #ai #entrepreneurship",
-      "tags": [
-        "niche idea validation",
-        "chatgpt prompts",
-        "startup validation",
-        "side hustle ideas",
-        "business ideas",
-        "product validation",
-        "ai prompts",
-        "how to validate a business idea",
-        "entrepreneurship"
-      ]
-    }
+ "theme": "prompts",
+ "brand": "AI Playbooks",
+ "handle": "@aiplaybooks.daily",
+ "topic": "Prompt Pack · Niche Idea Validator",
+ "caption": "Stop building before you know if your niche idea will sell.\n\nMost side projects die for one reason: nobody checked if the niche had money in it first. This pack walks you from a raw idea to a real go or no-go decision in 48 hours.\n\n→ Turn your skills into 10 rated niche ideas\n→ Find proof people are already paying\n→ X-ray your competitors for the gap\n→ Sketch the smallest offer you can sell this week\n→ Run a 48-hour landing page test\n\nWhich niche are you testing first? Drop it below 👇\n\nSave this before you start building, and follow @aiplaybooks.daily for a new playbook every day.\n\n#chatgpt #ai #startupideas #sidehustle #entrepreneur",
+ "sources": [],
+ "captions": {
+  "instagram": "Stop building before you know if your niche idea will sell.\n\nMost side projects die for one reason: nobody checked if the niche had money in it first. This pack walks you from a raw idea to a real go or no-go decision in 48 hours.\n\n→ Turn your skills into 10 rated niche ideas\n→ Find proof people are already paying\n→ X-ray your competitors for the gap\n→ Sketch the smallest offer you can sell this week\n→ Run a 48-hour landing page test\n\nWhich niche are you testing first? Drop it below 👇\n\nSave this before you start building, and follow @aiplaybooks.daily for a new playbook every day.\n\n#chatgpt #ai #startupideas #sidehustle #entrepreneur",
+  "facebook": "Stop building before you know if your niche idea will sell.\n\nMost side projects die for the same reason: nobody checked if the niche had money in it before the building started. This pack of 7 prompts walks you from a raw idea to a real go or no-go decision in just 48 hours.\n\nYou'll turn your skills into rated niche ideas, dig up proof that people are already paying, find the gap your competitors leave open, and run a real landing page test before you build a single thing.\n\nWhat's the niche you've been sitting on but never tested?\n\n#chatgpt #startupideas #sidehustle #ai",
+  "youtube": {
+   "title": "7 ChatGPT Prompts to Validate a Niche Idea in 48 Hours #Shorts",
+   "description": "7 prompts that take you from a raw niche idea to a real go or no-go decision in 48 hours, before you waste months building the wrong thing.\n\nYou'll turn your skills into rated niche ideas, find proof people are already paying, x-ray your competitors for the gap, and run a real landing page test.\n\nWhich niche are you testing first? Save this pack and try it on your next idea.\n\n#chatgptprompts #startupideas #sidehustle #ai #entrepreneurship",
+   "tags": [
+    "niche idea validation",
+    "chatgpt prompts",
+    "startup validation",
+    "side hustle ideas",
+    "business ideas",
+    "product validation",
+    "ai prompts",
+    "how to validate a business idea",
+    "entrepreneurship"
+   ]
+  }
+ },
+ "cover": {
+  "headline": "Find a niche that pays and test it in 48 hours. 7 prompts before you waste 6 months:",
+  "em": "test it in 48 hours",
+  "person": null,
+  "photo_query": [
+   "sticky notes wall",
+   "brainstorming whiteboard",
+   "startup office"
+  ],
+  "photo_pick": {
+   "url": "https://live.staticflickr.com/5069/5601758478_e46239b683_b.jpg",
+   "page": "https://www.flickr.com/photos/17207222@N02/5601758478",
+   "author": "smbuckley23",
+   "license": "CC BY 2.0",
+   "license_url": "https://creativecommons.org/licenses/by/2.0/",
+   "source": "Flickr",
+   "file": "97/365"
   },
-  "cover": {
-    "headline": "Find a niche that pays and test it in 48 hours. 7 prompts before you waste 6 months:",
-    "em": "test it in 48 hours",
-    "person": null,
-    "photo_query": [
-      "sticky notes wall",
-      "brainstorming whiteboard",
-      "startup office"
+  "photo": {
+   "file": "Sticky notes wall",
+   "page": "https://www.rawpixel.com/image/6036238/photo-image-sticky-note-public-domain-notes",
+   "author": "unknown",
+   "license": "CC0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source": "rawpixel"
+  },
+  "layout_used": "scene"
+ },
+ "design": {
+  "mood": "a whiteboard covered in sticky notes and marker arrows mid-brainstorm: crisp off-white board, blue marker ink, coral sticky-note accent, energetic startup-sprint energy",
+  "palette": {
+   "bg": "#F6F3EA",
+   "bg2": "#EDE7D6",
+   "surface": "#FFFFFF",
+   "ink": "#1E2430",
+   "muted": "#6B7280",
+   "accent": "#FF6A3D",
+   "accent2": "#2F6FED"
+  },
+  "fonts": {
+   "display": "Archivo",
+   "body": "Inter",
+   "mono": "Space Mono"
+  },
+  "display": {
+   "weight": 800,
+   "tracking": -1
+  },
+  "shape": {
+   "radius": 12,
+   "border": 2,
+   "shadow": "soft"
+  },
+  "background": {
+   "pattern": "grid",
+   "pattern_opacity": 0.07,
+   "glow": false,
+   "gradient": true
+  },
+  "label": "mono",
+  "prompt": "card",
+  "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><circle cx='12' cy='12' r='5'/><circle cx='12' cy='12' r='1'/></svg>"
+ },
+ "voice": "af_jessica",
+ "slides": [
+  {
+   "type": "cover",
+   "kicker": "PROMPT PACK",
+   "title": "prompts to find and test a profitable niche",
+   "em": "profitable niche",
+   "sub": "From raw idea to a real go/no-go decision in 48 hours.",
+   "tools": [
+    "ChatGPT",
+    "Claude",
+    "Gemini"
+   ],
+   "count": 7,
+   "voiceover": "Here are seven prompts to find a niche that pays, and test it in 48 hours."
+  },
+  {
+   "type": "prompt",
+   "name": "The Niche Generator",
+   "sub": "Turn your own life into 10 rated ideas",
+   "prompt": "Act as a niche research expert. My interests: [INTERESTS]. My skills: [SKILLS]. People I know well: [AUDIENCES]. Combine them into 10 specific niches (a person + a problem), and rate each on pain, ability to pay, and how **REACHABLE** they are for me.",
+   "tip": "Be brutally specific about the audience — \"new dog owners in apartments\" beats \"pet lovers\" every time.",
+   "voiceover": "One. Turn your interests and skills into ten rated niche ideas."
+  },
+  {
+   "type": "prompt",
+   "name": "The Demand Detective",
+   "sub": "Proof that people actually want it",
+   "prompt": "For the niche [NICHE], tell me where to look for proof of demand: which forums, search terms, marketplaces and review sites, what signals to look for (complaints, paid products, 'how do I' questions), and what would count as **NO DEMAND**.",
+   "tip": "If you can't find people already paying for a rough version of the fix, that's the real signal to notice.",
+   "voiceover": "Two. Find real proof that people want this before you build anything."
+  },
+  {
+   "type": "prompt",
+   "name": "The Competitor X-Ray",
+   "sub": "Find the gap everyone else leaves open",
+   "prompt": "Here are 3-5 competitors in [NICHE]: [NAMES, LINKS OR DESCRIPTIONS]. Compare their offer, price, audience and weak spots based on their reviews: [PASTE REVIEWS]. Find the **GAP** I could own, in one sentence.",
+   "tip": "One-star reviews are a gift — they tell you exactly what a competitor's customers wish existed instead.",
+   "voiceover": "Three. X-ray your competitors and find the one gap you could own."
+  },
+  {
+   "type": "prompt",
+   "name": "The Offer Sketch",
+   "sub": "Something small enough to sell this week",
+   "prompt": "Design the smallest offer I could sell in [NICHE] within a week: format, price, what's included, delivery, and a one-sentence promise. Then a **BIGGER** version I could build later if the first one sells.",
+   "tip": "Small and shippable beats big and perfect — you're testing demand, not launching a company yet.",
+   "voiceover": "Four. Sketch the smallest offer you could sell in one week."
+  },
+  {
+   "type": "prompt",
+   "name": "The 48-Hour Test",
+   "sub": "A landing page and 100 visitors",
+   "prompt": "Plan a 48-hour test for [OFFER] in [NICHE]: the landing page text (headline, 3 bullets, button), where to get the first 100 visitors for free, what to measure, and the result that means **GO**, **TWEAK** or **KILL**.",
+   "tip": "Decide your GO number before you launch the page — it's too easy to move the goalpost once results come in.",
+   "voiceover": "Five. Run a real 48-hour test with a landing page and 100 visitors."
+  },
+  {
+   "type": "prompt",
+   "name": "The Name & Angle",
+   "sub": "Stand out from the shelf in one line",
+   "prompt": "Suggest 10 names and 5 positioning angles for my offer in [NICHE] for [AUDIENCE]. Avoid generic names, check that the angle is different from [COMPETITORS], and pick the **BEST COMBINATION** with the reason.",
+   "tip": "Say the name out loud and picture it in a comment reply — if it's hard to say, it's hard to remember.",
+   "voiceover": "Six. Get a name and an angle that actually stands out."
+  },
+  {
+   "type": "prompt",
+   "name": "The Kill-or-Continue",
+   "sub": "Decide with numbers, not hope",
+   "prompt": "Here are my test results for [OFFER]: [VISITORS] visitors, [SIGNUPS] signups, [SALES] sales, plus these comments: [PASTE]. Should I continue, change the offer, change the audience, or stop? Explain the decision like an **HONEST INVESTOR**.",
+   "tip": "An honest investor kills a losing idea in a day — don't let sunk cost keep a dead niche on life support.",
+   "voiceover": "Seven. Decide kill, tweak, or go — with numbers, not hope."
+  },
+  {
+   "type": "cta",
+   "title": "Save this pack.",
+   "title2": "Test your next idea in 48 hours.",
+   "lines": [
+    [
+     "Follow",
+     "for daily AI tool tips & news"
     ],
-    "photo_pick": {
-      "url": "https://live.staticflickr.com/5069/5601758478_e46239b683_b.jpg",
-      "page": "https://www.flickr.com/photos/17207222@N02/5601758478",
-      "author": "smbuckley23",
-      "license": "CC BY 2.0",
-      "license_url": "https://creativecommons.org/licenses/by/2.0/",
-      "source": "Flickr",
-      "file": "97/365"
-    },
-    "photo": {
-      "file": "Sticky notes wall",
-      "page": "https://www.rawpixel.com/image/6036238/photo-image-sticky-note-public-domain-notes",
-      "author": "unknown",
-      "license": "CC0",
-      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "source": "rawpixel"
-    },
-    "layout_used": "scene"
-  },
-  "design": {
-    "mood": "a whiteboard covered in sticky notes and marker arrows mid-brainstorm: crisp off-white board, blue marker ink, coral sticky-note accent, energetic startup-sprint energy",
-    "palette": {
-      "bg": "#F6F3EA",
-      "bg2": "#EDE7D6",
-      "surface": "#FFFFFF",
-      "ink": "#1E2430",
-      "muted": "#6B7280",
-      "accent": "#FF6A3D",
-      "accent2": "#2F6FED"
-    },
-    "fonts": {
-      "display": "Archivo",
-      "body": "Inter",
-      "mono": "Space Mono"
-    },
-    "display": {
-      "weight": 800,
-      "tracking": -1
-    },
-    "shape": {
-      "radius": 12,
-      "border": 2,
-      "shadow": "soft"
-    },
-    "background": {
-      "pattern": "grid",
-      "pattern_opacity": 0.07,
-      "glow": false,
-      "gradient": true
-    },
-    "label": "mono",
-    "prompt": "card",
-    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='9'/><circle cx='12' cy='12' r='5'/><circle cx='12' cy='12' r='1'/></svg>"
-  },
-  "voice": "af_jessica",
-  "slides": [
-    {
-      "type": "cover",
-      "kicker": "PROMPT PACK",
-      "title": "prompts to find and test a profitable niche",
-      "em": "profitable niche",
-      "sub": "From raw idea to a real go/no-go decision in 48 hours.",
-      "tools": [
-        "ChatGPT",
-        "Claude",
-        "Gemini"
-      ],
-      "count": 7,
-      "voiceover": "Here are seven prompts to find a niche that pays, and test it in 48 hours."
-    },
-    {
-      "type": "prompt",
-      "name": "The Niche Generator",
-      "sub": "Turn your own life into 10 rated ideas",
-      "prompt": "Act as a niche research expert. My interests: [INTERESTS]. My skills: [SKILLS]. People I know well: [AUDIENCES]. Combine them into 10 specific niches (a person + a problem), and rate each on pain, ability to pay, and how **REACHABLE** they are for me.",
-      "tip": "Be brutally specific about the audience — \"new dog owners in apartments\" beats \"pet lovers\" every time.",
-      "voiceover": "One. Turn your interests and skills into ten rated niche ideas."
-    },
-    {
-      "type": "prompt",
-      "name": "The Demand Detective",
-      "sub": "Proof that people actually want it",
-      "prompt": "For the niche [NICHE], tell me where to look for proof of demand: which forums, search terms, marketplaces and review sites, what signals to look for (complaints, paid products, 'how do I' questions), and what would count as **NO DEMAND**.",
-      "tip": "If you can't find people already paying for a rough version of the fix, that's the real signal to notice.",
-      "voiceover": "Two. Find real proof that people want this before you build anything."
-    },
-    {
-      "type": "prompt",
-      "name": "The Competitor X-Ray",
-      "sub": "Find the gap everyone else leaves open",
-      "prompt": "Here are 3-5 competitors in [NICHE]: [NAMES, LINKS OR DESCRIPTIONS]. Compare their offer, price, audience and weak spots based on their reviews: [PASTE REVIEWS]. Find the **GAP** I could own, in one sentence.",
-      "tip": "One-star reviews are a gift — they tell you exactly what a competitor's customers wish existed instead.",
-      "voiceover": "Three. X-ray your competitors and find the one gap you could own."
-    },
-    {
-      "type": "prompt",
-      "name": "The Offer Sketch",
-      "sub": "Something small enough to sell this week",
-      "prompt": "Design the smallest offer I could sell in [NICHE] within a week: format, price, what's included, delivery, and a one-sentence promise. Then a **BIGGER** version I could build later if the first one sells.",
-      "tip": "Small and shippable beats big and perfect — you're testing demand, not launching a company yet.",
-      "voiceover": "Four. Sketch the smallest offer you could sell in one week."
-    },
-    {
-      "type": "prompt",
-      "name": "The 48-Hour Test",
-      "sub": "A landing page and 100 visitors",
-      "prompt": "Plan a 48-hour test for [OFFER] in [NICHE]: the landing page text (headline, 3 bullets, button), where to get the first 100 visitors for free, what to measure, and the result that means **GO**, **TWEAK** or **KILL**.",
-      "tip": "Decide your GO number before you launch the page — it's too easy to move the goalpost once results come in.",
-      "voiceover": "Five. Run a real 48-hour test with a landing page and 100 visitors."
-    },
-    {
-      "type": "prompt",
-      "name": "The Name & Angle",
-      "sub": "Stand out from the shelf in one line",
-      "prompt": "Suggest 10 names and 5 positioning angles for my offer in [NICHE] for [AUDIENCE]. Avoid generic names, check that the angle is different from [COMPETITORS], and pick the **BEST COMBINATION** with the reason.",
-      "tip": "Say the name out loud and picture it in a comment reply — if it's hard to say, it's hard to remember.",
-      "voiceover": "Six. Get a name and an angle that actually stands out."
-    },
-    {
-      "type": "prompt",
-      "name": "The Kill-or-Continue",
-      "sub": "Decide with numbers, not hope",
-      "prompt": "Here are my test results for [OFFER]: [VISITORS] visitors, [SIGNUPS] signups, [SALES] sales, plus these comments: [PASTE]. Should I continue, change the offer, change the audience, or stop? Explain the decision like an **HONEST INVESTOR**.",
-      "tip": "An honest investor kills a losing idea in a day — don't let sunk cost keep a dead niche on life support.",
-      "voiceover": "Seven. Decide kill, tweak, or go — with numbers, not hope."
-    },
-    {
-      "type": "cta",
-      "title": "Save this pack.",
-      "title2": "Test your next idea in 48 hours.",
-      "lines": [
-        [
-          "Follow",
-          "for daily AI tool tips & news"
-        ],
-        [
-          "Share",
-          "with someone stuck picking a niche"
-        ],
-        [
-          "Comment",
-          "the niche you're testing first"
-        ]
-      ],
-      "voiceover": "Save this pack, and follow for a new AI playbook every day."
-    }
-  ]
+    [
+     "Share",
+     "with someone stuck picking a niche"
+    ],
+    [
+     "Comment",
+     "the niche you're testing first"
+    ]
+   ],
+   "voiceover": "Save this pack, and follow for a new AI playbook every day."
+  }
+ ],
+ "first_comment": {
+  "youtube": "Run The Demand Detective first: it tells you if anyone is searching before you build anything. What niche are you testing? Subscribe for daily AI playbooks."
+ }
 }

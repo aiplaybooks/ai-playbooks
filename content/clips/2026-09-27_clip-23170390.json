@@ -1,20 +1,33 @@
 {
-  "kind": "clip",
-  "source": "https://x.com/DanielSmidstrup/status/2104013515623170390/video/1",
-  "credit": "@DanielSmidstrup on X",
-  "topic": "AI video",
-  "title": null,
-  "hook": "Opus 5.5 built this entire startup promo video in 20 minutes, one prompt, no After Effects.",
-  "caption": "A founder gave Claude Opus 5.5 one prompt and got back a full motion-graphics promo, animated UI, stat cards and all, for his product ClimbX.\n\nNo After Effects, no animator, one pass.",
-  "checked": ["Claude Opus 5.5 is a real, current Anthropic model: https://www.anthropic.com/claude-opus-5-5"],
-  "captions": {
-    "instagram": "Claude Opus 5.5 just replaced an entire motion-graphics team 🤯\n\nA founder gave it one prompt and got back a full startup promo: animated UI, stat cards, smooth transitions, no After Effects, no animator, one pass.\n\n→ one prompt in, a finished promo out\n→ animated UI mockups and stat cards included\n→ zero motion-graphics software touched\n\nWould you trust an AI to make your next product video? Yes or no 👇\n\nFollow @aiplaybooks.daily for the AI tools nobody's talking about yet.\n\n#claude #aivideo #claudeai #motiongraphics #aitools",
-    "facebook": "Claude Opus 5.5 just replaced an entire motion-graphics team.\n\nA founder needed a promo video for his product, ClimbX. Instead of hiring an animator or opening After Effects, he gave Claude Opus 5.5 one prompt and got back a full motion-graphics promo: animated UI, stat cards and smooth transitions, done in one pass.\n\nWould you trust an AI to build your next product video from scratch?\n\n#claude #aivideo #motiongraphics",
-    "youtube": {
-      "title": "Claude Opus 5.5 built this entire promo video from one prompt",
-      "description": "Claude Opus 5.5 turned one prompt into a full startup promo: animated UI, stat cards, transitions, no After Effects, no animator, one pass.\n\nA founder used it to make a product video for ClimbX in minutes instead of hiring a motion-graphics team.\n\nThis is what AI video generation looks like in 2026.\n\n#claude #aivideo #claudeai #motiongraphics #aitools",
-      "tags": ["claude opus 5.5", "ai video generator", "motion graphics ai", "claude ai", "ai promo video", "no after effects", "ai animation", "anthropic claude"]
-    }
-  },
-  "caption": "Claude Opus 5.5 just replaced an entire motion-graphics team 🤯\n\nA founder gave it one prompt and got back a full startup promo: animated UI, stat cards, smooth transitions, no After Effects, no animator, one pass.\n\n→ one prompt in, a finished promo out\n→ animated UI mockups and stat cards included\n→ zero motion-graphics software touched\n\nWould you trust an AI to make your next product video? Yes or no 👇\n\nFollow @aiplaybooks.daily for the AI tools nobody's talking about yet.\n\n#claude #aivideo #claudeai #motiongraphics #aitools"
+ "kind": "clip",
+ "source": "https://x.com/DanielSmidstrup/status/2104013515623170390/video/1",
+ "credit": "@DanielSmidstrup on X",
+ "topic": "AI video",
+ "title": null,
+ "hook": "Opus 5.5 built this entire startup promo video in 20 minutes, one prompt, no After Effects.",
+ "caption": "Claude Opus 5.5 just replaced an entire motion-graphics team 🤯\n\nA founder gave it one prompt and got back a full startup promo: animated UI, stat cards, smooth transitions, no After Effects, no animator, one pass.\n\n→ one prompt in, a finished promo out\n→ animated UI mockups and stat cards included\n→ zero motion-graphics software touched\n\nWould you trust an AI to make your next product video? Yes or no 👇\n\nFollow @aiplaybooks.daily for the AI tools nobody's talking about yet.\n\n#claude #aivideo #claudeai #motiongraphics #aitools",
+ "checked": [
+  "Claude Opus 5.5 is a real, current Anthropic model: https://www.anthropic.com/claude-opus-5-5"
+ ],
+ "captions": {
+  "instagram": "Claude Opus 5.5 just replaced an entire motion-graphics team 🤯\n\nA founder gave it one prompt and got back a full startup promo: animated UI, stat cards, smooth transitions, no After Effects, no animator, one pass.\n\n→ one prompt in, a finished promo out\n→ animated UI mockups and stat cards included\n→ zero motion-graphics software touched\n\nWould you trust an AI to make your next product video? Yes or no 👇\n\nFollow @aiplaybooks.daily for the AI tools nobody's talking about yet.\n\n#claude #aivideo #claudeai #motiongraphics #aitools",
+  "facebook": "Claude Opus 5.5 just replaced an entire motion-graphics team.\n\nA founder needed a promo video for his product, ClimbX. Instead of hiring an animator or opening After Effects, he gave Claude Opus 5.5 one prompt and got back a full motion-graphics promo: animated UI, stat cards and smooth transitions, done in one pass.\n\nWould you trust an AI to build your next product video from scratch?\n\n#claude #aivideo #motiongraphics",
+  "youtube": {
+   "title": "Claude Opus 5.5 built this entire promo video from one prompt",
+   "description": "Claude Opus 5.5 turned one prompt into a full startup promo: animated UI, stat cards, transitions, no After Effects, no animator, one pass.\n\nA founder used it to make a product video for ClimbX in minutes instead of hiring a motion-graphics team.\n\nThis is what AI video generation looks like in 2026.\n\n#claude #aivideo #claudeai #motiongraphics #aitools",
+   "tags": [
+    "claude opus 5.5",
+    "ai video generator",
+    "motion graphics ai",
+    "claude ai",
+    "ai promo video",
+    "no after effects",
+    "ai animation",
+    "anthropic claude"
+   ]
+  }
+ },
+ "first_comment": {
+  "youtube": "One prompt, 20 minutes, no After Effects. Would you ship this for your own product? Subscribe for daily AI playbooks."
+ }
 }

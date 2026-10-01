@@ -1,230 +1,233 @@
 {
-  "theme": "adaptive",
-  "brand": "AI Playbooks",
-  "handle": "@aiplaybooks.daily",
-  "topic": "Siri AI",
-  "caption": "🚨 Apple just rolled out a whole new Siri, and it might be the biggest iPhone update in years\n\nFor years Siri felt stuck while every other assistant got smarter. Siri AI is Apple's answer, and it's rolling out now in beta with iOS 27.\n\n→ Point your Camera at anything and ask Siri about it\n→ Keep asking follow-up questions, it remembers the context\n→ Ask it to act inside apps like WhatsApp and Audible\n\nWhich one are you trying first: Visual Intelligence or the cross-app actions? 👇 Save this before you update to iOS 27.\n\nFollow @aiplaybooks.daily for AI news you can actually use.\n\n#apple #siri #ios27 #ai #appleintelligence",
-  "captions": {
-    "instagram": "🚨 Apple just rolled out a whole new Siri, and it might be the biggest iPhone update in years\n\nFor years Siri felt stuck while every other assistant got smarter. Siri AI is Apple's answer, and it's rolling out now in beta with iOS 27.\n\n→ Point your Camera at anything and ask Siri about it\n→ Keep asking follow-up questions, it remembers the context\n→ Ask it to act inside apps like WhatsApp and Audible\n\nWhich one are you trying first: Visual Intelligence or the cross-app actions? 👇 Save this before you update to iOS 27.\n\nFollow @aiplaybooks.daily for AI news you can actually use.\n\n#apple #siri #ios27 #ai #appleintelligence",
-    "facebook": "Apple just rolled out a whole new Siri, and it might be the biggest iPhone update in years.\n\nFor years Siri lagged behind ChatGPT and Gemini. That's changing: Siri AI is rolling out now in beta with iOS 27, and it can now hold context from one question to the next, look at what's on your screen, and act inside apps like WhatsApp and Audible.\n\nSwipe through for what launched and 3 things worth trying on your iPhone today.\n\nHave you updated to iOS 27 yet? What's the first thing you'd want Siri to do for you?\n\nFollow AI Playbooks for AI news you can actually use.\n\n#apple #siri #ai #appleintelligence",
-    "youtube": {
-      "title": "Siri AI just rolled out in iOS 27, here's what changed",
-      "description": "Apple just gave Siri a full AI rebuild, and it's rolling out now in beta with iOS 27.\n\nIt remembers what you asked a minute ago, understands what's on your screen, and can act inside apps like WhatsApp and Audible.\n\nHere's what launched, and 3 things to try on your iPhone today.\n\n#siriai #apple #ios27 #ai #appleintelligence",
-      "tags": [
-        "siri ai",
-        "apple siri",
-        "ios 27",
-        "apple ai",
-        "siri update",
-        "iphone ai",
-        "apple intelligence",
-        "new siri"
-      ]
-    }
-  },
-  "sources": [
-    "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
-    "https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/",
-    "https://9to5mac.com/2026/09/09/apple-confirms-siri-ai-launches-in-english-this-month-will-add-five-languages-in-october/"
+ "theme": "adaptive",
+ "brand": "AI Playbooks",
+ "handle": "@aiplaybooks.daily",
+ "topic": "Siri AI",
+ "caption": "🚨 Apple just rolled out a whole new Siri, and it might be the biggest iPhone update in years\n\nFor years Siri felt stuck while every other assistant got smarter. Siri AI is Apple's answer, and it's rolling out now in beta with iOS 27.\n\n→ Point your Camera at anything and ask Siri about it\n→ Keep asking follow-up questions, it remembers the context\n→ Ask it to act inside apps like WhatsApp and Audible\n\nWhich one are you trying first: Visual Intelligence or the cross-app actions? 👇 Save this before you update to iOS 27.\n\nFollow @aiplaybooks.daily for AI news you can actually use.\n\n#apple #siri #ios27 #ai #appleintelligence",
+ "captions": {
+  "instagram": "🚨 Apple just rolled out a whole new Siri, and it might be the biggest iPhone update in years\n\nFor years Siri felt stuck while every other assistant got smarter. Siri AI is Apple's answer, and it's rolling out now in beta with iOS 27.\n\n→ Point your Camera at anything and ask Siri about it\n→ Keep asking follow-up questions, it remembers the context\n→ Ask it to act inside apps like WhatsApp and Audible\n\nWhich one are you trying first: Visual Intelligence or the cross-app actions? 👇 Save this before you update to iOS 27.\n\nFollow @aiplaybooks.daily for AI news you can actually use.\n\n#apple #siri #ios27 #ai #appleintelligence",
+  "facebook": "Apple just rolled out a whole new Siri, and it might be the biggest iPhone update in years.\n\nFor years Siri lagged behind ChatGPT and Gemini. That's changing: Siri AI is rolling out now in beta with iOS 27, and it can now hold context from one question to the next, look at what's on your screen, and act inside apps like WhatsApp and Audible.\n\nSwipe through for what launched and 3 things worth trying on your iPhone today.\n\nHave you updated to iOS 27 yet? What's the first thing you'd want Siri to do for you?\n\nFollow AI Playbooks for AI news you can actually use.\n\n#apple #siri #ai #appleintelligence",
+  "youtube": {
+   "title": "Siri AI just rolled out in iOS 27, here's what changed",
+   "description": "Apple just gave Siri a full AI rebuild, and it's rolling out now in beta with iOS 27.\n\nIt remembers what you asked a minute ago, understands what's on your screen, and can act inside apps like WhatsApp and Audible.\n\nHere's what launched, and 3 things to try on your iPhone today.\n\n#siriai #apple #ios27 #ai #appleintelligence",
+   "tags": [
+    "siri ai",
+    "apple siri",
+    "ios 27",
+    "apple ai",
+    "siri update",
+    "iphone ai",
+    "apple intelligence",
+    "new siri"
+   ]
+  }
+ },
+ "sources": [
+  "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
+  "https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/",
+  "https://9to5mac.com/2026/09/09/apple-confirms-siri-ai-launches-in-english-this-month-will-add-five-languages-in-october/"
+ ],
+ "cover": {
+  "headline": "Apple just gave Siri the AI brain transplant it's needed for years. Here's what changed:",
+  "em": "AI brain transplant",
+  "person": "Tim Cook",
+  "layout": "person",
+  "photo_query": [
+   "Tim Cook Apple"
   ],
-  "cover": {
-    "headline": "Apple just gave Siri the AI brain transplant it's needed for years. Here's what changed:",
-    "em": "AI brain transplant",
-    "person": "Tim Cook",
-    "layout": "person",
-    "photo_query": [
-      "Tim Cook Apple"
-    ],
-    "photo_pick": null,
-    "icons": [
-      {
-        "slug": "apple",
-        "style": "glass",
-        "pos": "tr",
-        "size": 170
-      }
-    ],
-    "photo": {
-      "file": "File:Tim Cook (2017) (cropped2).jpg",
-      "page": "https://commons.wikimedia.org/wiki/File:Tim_Cook_(2017)_(cropped2).jpg",
-      "author": "Austin Community College",
-      "license": "CC BY 2.0",
-      "license_url": "https://creativecommons.org/licenses/by/2.0",
-      "source": "Wikimedia Commons"
-    },
-    "layout_used": "person"
+  "photo_pick": null,
+  "icons": [
+   {
+    "slug": "apple",
+    "style": "glass",
+    "pos": "tr",
+    "size": 170
+   }
+  ],
+  "photo": {
+   "file": "File:Tim Cook (2017) (cropped2).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Tim_Cook_(2017)_(cropped2).jpg",
+   "author": "Austin Community College",
+   "license": "CC BY 2.0",
+   "license_url": "https://creativecommons.org/licenses/by/2.0",
+   "source": "Wikimedia Commons"
   },
-  "design": {
-    "mood": "Siri's colorful voice-orb glow: soft light lavender studio backdrop, a warm violet-to-blue gradient, gentle waveform texture, rounded and calm",
-    "palette": {
-      "bg": "#F6F4FB",
-      "bg2": "#ECE8F9",
-      "surface": "#FFFFFF",
-      "ink": "#1C1B22",
-      "muted": "#6B6875",
-      "accent": "#7C4DFF",
-      "accent2": "#00B8D9"
-    },
-    "fonts": {
-      "display": "Sora",
-      "body": "Inter",
-      "mono": "JetBrains Mono"
-    },
-    "display": {
-      "weight": 700,
-      "case": "none",
-      "tracking": -2,
-      "scale": 1.0,
-      "italic_em": false
-    },
-    "shape": {
-      "radius": 32,
-      "border": 0,
-      "shadow": "glow"
-    },
-    "background": {
-      "pattern": "waves",
-      "pattern_opacity": 0.08,
-      "glow": true,
-      "gradient": true
-    },
-    "label": "pill",
-    "prompt": "chat",
-    "art": "<svg viewBox='0 0 900 460' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='var(--accent)'/><stop offset='1' stop-color='var(--accent2)'/></linearGradient></defs><circle cx='450' cy='230' r='150' fill='url(#g)' opacity='0.18'/><circle cx='450' cy='230' r='95' fill='url(#g)' opacity='0.35'/><g stroke='url(#g)' stroke-width='10' stroke-linecap='round'><line x1='250' y1='260' x2='250' y2='200'/><line x1='300' y1='300' x2='300' y2='160'/><line x1='350' y1='330' x2='350' y2='130'/><line x1='400' y1='280' x2='400' y2='180'/><line x1='450' y1='310' x2='450' y2='150'/><line x1='500' y1='280' x2='500' y2='180'/><line x1='550' y1='330' x2='550' y2='130'/><line x1='600' y1='300' x2='600' y2='160'/><line x1='650' y1='260' x2='650' y2='200'/></g></svg>",
-    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='2' width='6' height='12' rx='3'/><path d='M5 10a7 7 0 0 0 14 0'/><line x1='12' y1='17' x2='12' y2='21'/><line x1='8' y1='21' x2='16' y2='21'/></svg>"
+  "layout_used": "person"
+ },
+ "design": {
+  "mood": "Siri's colorful voice-orb glow: soft light lavender studio backdrop, a warm violet-to-blue gradient, gentle waveform texture, rounded and calm",
+  "palette": {
+   "bg": "#F6F4FB",
+   "bg2": "#ECE8F9",
+   "surface": "#FFFFFF",
+   "ink": "#1C1B22",
+   "muted": "#6B6875",
+   "accent": "#7C4DFF",
+   "accent2": "#00B8D9"
   },
-  "voice": "af_jessica",
-  "slides": [
-    {
-      "type": "cover",
-      "kicker": "APPLE · SIRI AI",
-      "title": "Siri finally got the AI brain transplant it needed",
-      "em": "AI brain transplant",
-      "sub": "A whole new Siri is rolling out now in beta, with iOS 27.",
-      "tools": [
-        "Apple"
-      ],
-      "voiceover": "Apple just rolled out Siri AI, a completely rebuilt Siri, in beta."
-    },
-    {
-      "type": "facts",
-      "label": "What launched",
-      "title": "Siri AI, in beta",
-      "items": [
-        [
-          "Rollout",
-          "Began September 14, 2026, with iOS 27"
-        ],
-        [
-          "Language",
-          "English first"
-        ],
-        [
-          "More languages",
-          "French, Japanese, Korean, Portuguese, Spanish in October"
-        ],
-        [
-          "Not yet available",
-          "European Union and China"
-        ]
-      ],
-      "voiceover": "It launched in English on September 14th, with five more languages coming in October."
-    },
-    {
-      "type": "list",
-      "label": "3 things to try today",
-      "title": "What's actually different",
-      "items": [
-        [
-          "Visual Intelligence",
-          "Point your Camera at something and ask Siri about it"
-        ],
-        [
-          "Follow-up questions",
-          "Keep asking without repeating yourself — Siri holds the context"
-        ],
-        [
-          "Cross-app actions",
-          "Ask it to act inside apps like WhatsApp and Audible"
-        ]
-      ],
-      "voiceover": "Three things to try: Visual Intelligence, follow-up questions, and actions inside other apps."
-    },
-    {
-      "type": "steps",
-      "label": "Try it now",
-      "title": "Visual Intelligence, on iPhone",
-      "steps": [
-        [
-          "Open the Camera app",
-          "Point it at whatever you want to ask about"
-        ],
-        [
-          "Tap the Siri AI button",
-          "It appears right in the camera view"
-        ],
-        [
-          "Ask a question",
-          "\"What is this?\" or \"add this event to my calendar\""
-        ],
-        [
-          "Keep going",
-          "Ask a follow-up — it remembers what you just asked"
-        ]
-      ],
-      "voiceover": "On iPhone, Visual Intelligence lives right inside the Camera app."
-    },
-    {
-      "type": "facts",
-      "label": "It understands your screen",
-      "title": "Onscreen awareness",
-      "items": [
-        [
-          "On a website",
-          "Ask it to find something on the page and add it to your calendar"
-        ],
-        [
-          "In your messages",
-          "It can look up something you mentioned earlier and act on it"
-        ],
-        [
-          "Works across",
-          "iPhone, iPad, Mac and Apple Vision Pro"
-        ]
-      ],
-      "voiceover": "Siri can now look at what's on your screen and take action for you."
-    },
-    {
-      "type": "limits",
-      "label": "Not everywhere yet",
-      "title": "Before you get too excited",
-      "items": [
-        "Not available in the European Union at launch",
-        "Not available in China, pending regulatory approval",
-        "English only for now — 5 more languages land in October",
-        "Not available to users under 13"
-      ],
-      "cta": "Check the Apple newsroom for your country's timeline."
-    },
-    {
-      "type": "cta",
-      "title": "Siri AI is here.",
-      "title2": "A completely different assistant.",
-      "lines": [
-        [
-          "Update",
-          "to iOS 27 to get it"
-        ],
-        [
-          "Try",
-          "Visual Intelligence in your Camera app today"
-        ],
-        [
-          "Follow",
-          "for daily AI tool tips & news"
-        ]
-      ],
-      "voiceover": "That's the new Siri AI — update, and try it in your Camera app today."
-    }
-  ]
+  "fonts": {
+   "display": "Sora",
+   "body": "Inter",
+   "mono": "JetBrains Mono"
+  },
+  "display": {
+   "weight": 700,
+   "case": "none",
+   "tracking": -2,
+   "scale": 1.0,
+   "italic_em": false
+  },
+  "shape": {
+   "radius": 32,
+   "border": 0,
+   "shadow": "glow"
+  },
+  "background": {
+   "pattern": "waves",
+   "pattern_opacity": 0.08,
+   "glow": true,
+   "gradient": true
+  },
+  "label": "pill",
+  "prompt": "chat",
+  "art": "<svg viewBox='0 0 900 460' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='var(--accent)'/><stop offset='1' stop-color='var(--accent2)'/></linearGradient></defs><circle cx='450' cy='230' r='150' fill='url(#g)' opacity='0.18'/><circle cx='450' cy='230' r='95' fill='url(#g)' opacity='0.35'/><g stroke='url(#g)' stroke-width='10' stroke-linecap='round'><line x1='250' y1='260' x2='250' y2='200'/><line x1='300' y1='300' x2='300' y2='160'/><line x1='350' y1='330' x2='350' y2='130'/><line x1='400' y1='280' x2='400' y2='180'/><line x1='450' y1='310' x2='450' y2='150'/><line x1='500' y1='280' x2='500' y2='180'/><line x1='550' y1='330' x2='550' y2='130'/><line x1='600' y1='300' x2='600' y2='160'/><line x1='650' y1='260' x2='650' y2='200'/></g></svg>",
+  "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='2' width='6' height='12' rx='3'/><path d='M5 10a7 7 0 0 0 14 0'/><line x1='12' y1='17' x2='12' y2='21'/><line x1='8' y1='21' x2='16' y2='21'/></svg>"
+ },
+ "voice": "af_jessica",
+ "slides": [
+  {
+   "type": "cover",
+   "kicker": "APPLE · SIRI AI",
+   "title": "Siri finally got the AI brain transplant it needed",
+   "em": "AI brain transplant",
+   "sub": "A whole new Siri is rolling out now in beta, with iOS 27.",
+   "tools": [
+    "Apple"
+   ],
+   "voiceover": "Apple just rolled out Siri AI, a completely rebuilt Siri, in beta."
+  },
+  {
+   "type": "facts",
+   "label": "What launched",
+   "title": "Siri AI, in beta",
+   "items": [
+    [
+     "Rollout",
+     "Began September 14, 2026, with iOS 27"
+    ],
+    [
+     "Language",
+     "English first"
+    ],
+    [
+     "More languages",
+     "French, Japanese, Korean, Portuguese, Spanish in October"
+    ],
+    [
+     "Not yet available",
+     "European Union and China"
+    ]
+   ],
+   "voiceover": "It launched in English on September 14th, with five more languages coming in October."
+  },
+  {
+   "type": "list",
+   "label": "3 things to try today",
+   "title": "What's actually different",
+   "items": [
+    [
+     "Visual Intelligence",
+     "Point your Camera at something and ask Siri about it"
+    ],
+    [
+     "Follow-up questions",
+     "Keep asking without repeating yourself — Siri holds the context"
+    ],
+    [
+     "Cross-app actions",
+     "Ask it to act inside apps like WhatsApp and Audible"
+    ]
+   ],
+   "voiceover": "Three things to try: Visual Intelligence, follow-up questions, and actions inside other apps."
+  },
+  {
+   "type": "steps",
+   "label": "Try it now",
+   "title": "Visual Intelligence, on iPhone",
+   "steps": [
+    [
+     "Open the Camera app",
+     "Point it at whatever you want to ask about"
+    ],
+    [
+     "Tap the Siri AI button",
+     "It appears right in the camera view"
+    ],
+    [
+     "Ask a question",
+     "\"What is this?\" or \"add this event to my calendar\""
+    ],
+    [
+     "Keep going",
+     "Ask a follow-up — it remembers what you just asked"
+    ]
+   ],
+   "voiceover": "On iPhone, Visual Intelligence lives right inside the Camera app."
+  },
+  {
+   "type": "facts",
+   "label": "It understands your screen",
+   "title": "Onscreen awareness",
+   "items": [
+    [
+     "On a website",
+     "Ask it to find something on the page and add it to your calendar"
+    ],
+    [
+     "In your messages",
+     "It can look up something you mentioned earlier and act on it"
+    ],
+    [
+     "Works across",
+     "iPhone, iPad, Mac and Apple Vision Pro"
+    ]
+   ],
+   "voiceover": "Siri can now look at what's on your screen and take action for you."
+  },
+  {
+   "type": "limits",
+   "label": "Not everywhere yet",
+   "title": "Before you get too excited",
+   "items": [
+    "Not available in the European Union at launch",
+    "Not available in China, pending regulatory approval",
+    "English only for now — 5 more languages land in October",
+    "Not available to users under 13"
+   ],
+   "cta": "Check the Apple newsroom for your country's timeline."
+  },
+  {
+   "type": "cta",
+   "title": "Siri AI is here.",
+   "title2": "A completely different assistant.",
+   "lines": [
+    [
+     "Update",
+     "to iOS 27 to get it"
+    ],
+    [
+     "Try",
+     "Visual Intelligence in your Camera app today"
+    ],
+    [
+     "Follow",
+     "for daily AI tool tips & news"
+    ]
+   ],
+   "voiceover": "That's the new Siri AI — update, and try it in your Camera app today."
+  }
+ ],
+ "first_comment": {
+  "youtube": "Onscreen awareness is the part that changes daily use. Have you tried the beta yet? Subscribe for daily AI playbooks."
+ }
 }
