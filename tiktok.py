@@ -1,8 +1,10 @@
 """TikTok posting via the official Content Posting API (free). Used by publish.py's `tiktok` step.
 
 What goes out (owner, 2026-09-29): only OUR OWN content (TikTok's originality rules + what we told TikTok's review):
-    carousel posts (news, prompt packs)  -> a PHOTO post (TikTok photo mode) of the slides, pulled from gh-pages
-                                            (URL prefix https://aiplaybooks.github.io/ai-playbooks/ is verified)
+    carousel posts (news, prompt packs)  -> their voiced Reel (reel.mp4: music + voice); without one a PHOTO post of
+                                            the slides, pulled from gh-pages (URL prefix
+                                            https://aiplaybooks.github.io/ai-playbooks/ is verified). A photo DRAFT
+                                            arrives silent: `auto_add_music` only works for direct posts (2026-10-01)
     repo posts                           -> the scrolling repo Reel (reel.mp4), else the single photo
     viral clips (other people's videos)  -> never (skipped)
 Mode (.env TIKTOK_MODE):

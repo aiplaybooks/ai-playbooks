@@ -15,7 +15,7 @@ META_PAGE_TOKEN, FB_PAGE_ID, IG_USER_ID in .env
     fb_reel      Facebook Page Reel: video_reels start -> rupload from the public URL -> finish
     yt_short     YouTube Short: resumable upload of the Reel (YouTube Data API v3). Until the API project passes
                  YouTube's audit, YouTube keeps API uploads private: then make it public in YouTube Studio.
-    tiktok       TikTok via tiktok.py (own content only: carousel -> photo post, repo -> its Reel; clips never). Until
+    tiktok       TikTok via tiktok.py (own content only: the post's Reel, photo post only without one; clips never). Until
                  TikTok's audit (TIKTOK_MODE=inbox) the post lands as a draft in the TikTok app: the owner taps Post.
     x_post       X (Twitter) post via xpost.py: the Reel (or, without one, the first image) + a short text without links
                  (URLs cost $0.20 a post on X's pay-per-use API; repo posts name the repo as text). Needs x_token.py once.
@@ -508,7 +508,8 @@ def tiktok(p):
         tok = TK.TT.refresh()
         if not pid:
             reel = p.pub / "reel.mp4"
-            if p.repo and reel.exists(): pid = TK.video(reel, p.data, tok, say)
+            # a photo draft arrives silent (auto_add_music only works for direct posts): the Reel carries our music + voice
+            if reel.exists(): pid = TK.video(reel, p.data, tok, say)
             else:
                 imgs = p.images()
                 if not imgs: raise PublishError("tiktok: no slides to post (run upload first)")
@@ -525,7 +526,7 @@ def tiktok(p):
         link = "taslak: TikTok uygulamasında bildirime dokun → Paylaş"
     else:
         ids = st.get("publicaly_available_post_id") or st.get("publicly_available_post_id") or []
-        link = f"https://www.tiktok.com/@{user}/{'photo' if not (p.repo and (p.pub / 'reel.mp4').exists()) else 'video'}/{ids[0]}" if ids else f"https://www.tiktok.com/@{user}"
+        link = f"https://www.tiktok.com/@{user}/{'video' if pid.startswith('v_') else 'photo'}/{ids[0]}" if ids else f"https://www.tiktok.com/@{user}"
     say(f"tiktok: {st.get('status')} {link}")
     p.done("tiktok", id=pid, link=link, status=st.get("status"))
 

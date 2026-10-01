@@ -105,7 +105,8 @@ Every day the pipeline should:
   to help upload contents to the account(s) you or your team manages" as an unacceptable use case, so the audit
   would fail and misrepresenting the app breaks TikTok's terms. The production form holds only a placeholder video.
   Permanent setup: inbox drafts, the owner taps Post in the TikTok app (can add a trending sound there). Login: tiktok_token.py via the https relay page gh-pages tiktok/callback/ -> 127.0.0.1:8767. publish.py
-  step `tiktok` (tiktok.py, after dm): carousels -> photo post (PULL_FROM_URL), repo posts -> their Reel, viral
+  step `tiktok` (tiktok.py, after dm): carousels and repo posts -> their Reel (since 2026-10-01: photo drafts
+  arrived without music, `auto_add_music` only works for direct posts; photo post via PULL_FROM_URL only when there is no reel.mp4), viral
   clips NEVER (TikTok originality rules + our review text). `TIKTOK_MODE=inbox` (draft in the TikTok app, the owner taps Post;
   unaudited direct posts would be private). `direct` exists in code but stays unused (no audit).
 - **Telegram digest at session start** (owner, 2026-09-29): his Telegram messages go to the Studio's chat bot, not to
