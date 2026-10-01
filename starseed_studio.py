@@ -78,14 +78,15 @@ def book_race(name):
 def projects():
     """ORTAK/1_PROJELER/<date_topic>/status.json -> {title, race, stage, created, book, words, minutes}."""
     out = []
-    for d in sorted((ORTAK / "1_PROJELER").glob("*/"), reverse=True):
+    for d in sorted((ORTAK / "1_PROJELER").glob("*/")):  # folder names start with the slot: next video first
         s = read_json(d / "status.json", {}) or {}
         vid, thumb = final_files(d)
         stage = s.get("stage", "topic")
         if vid and stage == "capcut": stage = "approve"  # the owner's render arrived: approval next
         out.append({"video": vid.name if vid else None, "thumb": thumb.name if thumb else None, "slot": s.get("slot"),
                     "emissary": s.get("emissary"), "voice": s.get("voice"), "id": d.name, "title": s.get("title") or d.name, "race": s.get("race"), "stage": stage,
-                    "created": s.get("created"), "book": s.get("book"), "minutes": s.get("minutes"), "note": s.get("note")})
+                    "created": s.get("created"), "book": s.get("book"), "minutes": s.get("minutes"), "note": s.get("note"),
+                    "words": s.get("words"), "capcut": s.get("capcut"), "error": s.get("error")})
     return out
 
 
