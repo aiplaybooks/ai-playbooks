@@ -7,9 +7,10 @@ Kev is a family of small decision models built on Qwen3.5 and Qwen3.8 and based 
 ## Highlights
 
 - Yes/no (`noul`), multiple-choice (`choice`) and rating (`score`) questions in one request. The questions share the text but can't read each other.
-- Calibrated probabilities by default: each checkpoint ships with a temperature fitted on held-out data.
+- Calibrated probabilities by default: each checkpoint ships with a fitted temperature.
 - Drop-in for Jev: the TypeSafe Python SDK works against a Kev server unchanged.
-- Four sizes, from a 0.8B that runs on a laptop to a 27B for a single data-centre GPU.
+- Four sizes, versioned together as Kev 1.0: from a 0.8B that runs on a laptop to a 27B for a single data-centre GPU.
+- Documents of up to 65,536 tokens, on CUDA and on Apple Silicon through MLX. Each model card says how long a document can get before accuracy drops.
 - Fine-tune on your own labelled examples. A coding-agent skill runs the whole loop on Modal, from finding your questions to serving the result.
 - Deploy your own HTTPS endpoint with one command. It scales to zero when idle.
 - Try it in the browser first: [huggingface.co/spaces/jaredpalmer/kev](https://huggingface.co/spaces/jaredpalmer/kev).
@@ -18,19 +19,42 @@ Kev is a family of small decision models built on Qwen3.5 and Qwen3.8 and based 
 
 Start with Kev-4B. Move to Kev-9B if you have a bigger GPU, or to Kev-27B if you have an 80 GB GPU and want the most accurate Kev. Use Kev-0.8B when size matters more than accuracy.
 
-| Model | Base | Accuracy: New Sources | Accuracy: Trained Sources | Brier: New Sources | Runs on | Model Card |
+| Model | Base (license) | Runs on: CUDA | Runs on: Mac (MLX) | Validated context | Held-out datasets: index | Card |
 |---|---|---|---|---|---|---|
-| [Kev-0.8B](https://huggingface.co/jaredpalmer/kev-0.8b) | Qwen3.5-0.8B-Base | 0.648 / 0.697 | 0.827 / 0.838 | 0.481 / 0.416 | Any Apple Silicon Mac, L4 | [Details](docs/model-cards/kev-0.8b.md) |
-| [Kev-4B](https://huggingface.co/jaredpalmer/kev-4b) | Qwen3.5-4B-Base | 0.817 / 0.838 | 0.873 / 0.865 | 0.269 / 0.242 | 32 GB Mac, L40S, H100 | [Details](docs/model-cards/kev-4b.md) |
-| [Kev-9B](https://huggingface.co/jaredpalmer/kev-9b) | Qwen3.5-9B-Base | 0.822 / 0.852 | 0.872 / 0.874 | 0.286 / 0.237 | 32 GB Mac, L40S, H100 | [Details](docs/model-cards/kev-9b.md) |
-| [Kev-27B](https://huggingface.co/jaredpalmer/kev-27b) | Qwen3.8-27B (post-trained) | **0.848 / 0.896** | 0.866 / 0.870 | **0.236 / 0.164** | B200, H200, H100 80 GB | [Details](docs/model-cards/kev-27b.md) |
-| Jev | Hosted | 0.857 / – | 0.845 / – | 0.211 / – | TypeSafe's API | – |
+| [Kev-0.8B](https://huggingface.co/jaredpalmer/kev-0.8b) | Qwen3.5-0.8B-Base (Apache-2.0) | L4, any 4 GB GPU | Any Apple Silicon Mac; measured to 65k tokens | 8,192 | 23.3 | [Details](docs/model-cards/kev-0.8b.md) |
+| [Kev-4B](https://huggingface.co/jaredpalmer/kev-4b) | Qwen3.5-4B-Base (Apache-2.0) | L40S, H100 | 32 GB Mac; measured to 65k tokens | 8,192 | 38.0 | [Details](docs/model-cards/kev-4b.md) |
+| [Kev-9B](https://huggingface.co/jaredpalmer/kev-9b) | Qwen3.5-9B-Base (Apache-2.0) | L40S, H100 | 32 GB Mac or larger (expected, not measured) | 8,192 | 41.0 | [Details](docs/model-cards/kev-9b.md) |
+| [Kev-27B](https://huggingface.co/jaredpalmer/kev-27b) | Qwen3.8-27B, post-trained (Apache-2.0) | B200, H200, H100 80 GB | 96–128 GB Mac (expected, not measured) | 65,536 | **52.3** | [Details](docs/model-cards/kev-27b.md) |
+| Jev | Hosted | TypeSafe's API | – | – | 54.0 | – |
 
-Each cell is **development / test**. "New sources" means datasets and policy rules Kev never saw during training. It is the closest thing here to your own questions. "Trained sources" means held-out examples from the datasets Kev was trained on. We pick checkpoints using the development sets and read each test set only once per released model. Jev has only been run on the development sets. Brier scores the whole probability distribution, not just the top answer; lower is better.
+"Held-out datasets" is the chance-corrected index of the community Decision Index, scored on the test split of `breadth-v1`: 14 public datasets in five areas that no Kev trained on. "Validated context" is the longest document, in tokens, for which accuracy on real contracts (CUAD) stays within 3 points of the same model's accuracy at 8k tokens, at the 95 % lower bound; each model card has the measurement by length.
 
-On new sources Kev-27B is within a point of Jev (0.848 vs 0.857), and Kev-4B and Kev-9B are within four points. We don't know what Jev was trained on, so this isn't a controlled comparison of the two architectures. [What to Expect](#what-to-expect) says where Kev is as good as Jev and where it isn't.
+| Model | Accuracy: New Sources | Accuracy: Trained Sources | Brier: New Sources |
+|---|---|---|---|
+| Kev-0.8B | 0.648 / 0.697 | 0.827 / 0.838 | 0.481 / 0.416 |
+| Kev-4B | 0.817 / 0.838 | 0.873 / 0.865 | 0.269 / 0.242 |
+| Kev-9B | 0.820 / 0.852 | 0.874 / 0.873 | 0.289 / 0.217 |
+| Kev-27B | **0.851 / 0.889** | 0.865 / 0.866 | **0.225 / 0.156** |
+| Jev | 0.857 / – | 0.845 / – | 0.211 / – |
 
-Kev-0.8B, 4B and 9B start from Qwen base models and share one training recipe. Kev-27B starts from Qwen's post-trained release, and we don't know what that was trained on. Each model card has the full recipe, all results, and the earlier versions kept as Hub tags. The weights are also in the [GitHub release](https://github.com/jaredpalmer/kev/releases/tag/kev-family), with SHA-256 checksums.
+Each cell is **development / test**. "New sources" means datasets and policy rules Kev never saw during training. It is the closest thing here to your own questions. "Trained sources" means held-out examples from the datasets Kev was trained on. We pick checkpoints using the development sets and read each test set only once per released model. Jev has only been run on the development sets of these two suites. Brier scores the whole probability distribution, not just the top answer; lower is better.
+
+On new sources Kev-27B is within a point of Jev (0.851 vs 0.857), and Kev-4B and Kev-9B are within four points. We don't know what Jev was trained on, so this isn't a controlled comparison of the two architectures. [What to Expect](#what-to-expect) says where Kev is as good as Jev and where it isn't.
+
+Kev-0.8B, 4B and 9B start from Qwen base models and share one training recipe: a small adapter on a frozen base. Kev-27B starts from Qwen's post-trained release, and we don't know what that was trained on; every one of its weights is fine-tuned, so it ships as 51 GB of full weights rather than an adapter. Each model card has the full recipe, all results, and the earlier versions kept as Hub tags.
+
+## Kev 1.0
+
+The four models above are released together as Kev 1.0. Each Hub repo has a `v1.0` tag, so `--run jaredpalmer/kev-4b@v1.0` always loads the same weights, and the GitHub release [`kev-1.0`](https://github.com/jaredpalmer/kev/releases/tag/kev-1.0) has the 0.8B, 4B and 9B checkpoints with SHA-256 checksums. Kev-27B's 51 GB of weights are too large for a release asset and are on the Hub only.
+
+| Model | Hub revision of the weights | Temperature | Trained on states up to |
+|---|---|---|---|
+| Kev-0.8B | `9a45d25e` | 2.35 | 7,552 tokens |
+| Kev-4B | `139fdd94` | 2.41 | 7,552 tokens |
+| Kev-9B | `b5d8c18e` (v2) | 2.19 | 7,552 tokens |
+| Kev-27B | `28be62e9` (v2, full weights) | 1.32 | 32,768 tokens |
+
+Kev 1.0 trains nothing new. It fixes the checkpoints, cards, evaluation suites and serving code that the next generation of Kev will be compared against. The [release notes](docs/releases/kev-1.0.md) list what changed since the previous family release and what is known not to work well.
 
 ## Quick Start
 
@@ -40,51 +64,4 @@ The [Hugging Face Space](https://huggingface.co/spaces/jaredpalmer/kev) runs Kev
 
 ### Run It Locally
 
-You'll need Python 3.12 or 3.13 and [uv](https://docs.astral.sh/uv/). The repo's `.python-version` makes `uv sync` use 3.13; torch has no wheels for 3.14 yet.
-
-```bash
-git clone https://github.com/jaredpalmer/kev.git && cd kev
-uv sync --extra serve
-uv run --extra serve python -m kev.serve --run jaredpalmer/kev-4b --port 8009
-```
-
-This starts Kev-4B on your machine: CUDA or ROCm if you have a GPU, MLX on Apple Silicon. The first run downloads the adapter and the base model. `--run` also accepts a local checkpoint directory or a Hub revision like `jaredpalmer/kev-4b@qwen3`.
-
-In another terminal, send it a ticket:
-
-```bash
-curl -s localhost:8009/v1/systemone -H 'content-type: application/json' -d '{
- "state": "Shoes arrived two weeks late and in the wrong size. Also I see two charges on my card.",
- "model": "kev-latest",
- "questions": {
- "department": {"type": "choice", "instructions": "Which team should handle this?",
- "criteria": {"returns": "Exchanges, refunds, wrong or damaged items",
- "shipping": "Delivery status, delays, lost packages",
- "billing": "Charges, invoices, payment problems"}},
- "escalate": {"type": "noul", "instructions": "Does this need urgent human attention?"},
- "frustration": {"type": "score", "instructions": "How frustrated is the customer?",
- "criteria": ["Calm", "Frustrated", "Very angry"]}
- }}'
-```
-
-Example response from Kev-4B, running in bf16 on an Apple M5:
-
-```json
-{
- "model": "kev-latest",
- "answers": {
- "department": { "type": "choice", "choice": "returns", "confidence": 0.21,
- "probabilities": { "returns": 0.47, "shipping": 0.28, "billing": 0.25 } },
- "escalate": { "type": "noul", "noul": 0.93 },
- "frustration": { "type": "score", "score": 1.44, "confidence": 0.34,
- "legend": { "0": "Calm", "1": "Frustrated", "2": "Very angry" },
- "probabilities": { "0": 0.00, "1": 0.56, "2": 0.44 } }
- },
- "usage": { "input_tokens": 101, "output_tokens": 161 },
- "latency_ms": 495
-}
-```
-
-The ticket mentions a return, a late delivery and a billing problem, and the department probabilities say so. That's why Kev returns probabilities instead of a single label: your code can route the confident cases and send the rest to a person.
-
-### Use It From Python
+You'll need Python 3.12 or 3.13 and [uv](https://docs.astral.sh/uv/). The repo's `.python-version` makes `uv sync` use 3.13; torch has no wheels for 3.14 

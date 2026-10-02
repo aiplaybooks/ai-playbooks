@@ -19,6 +19,17 @@
 
 ---
 
+## Guides and sample artwork
+
+Wallet setup, detailed troubleshooting, multi-card workflows, theme creation, compatibility reporting, and local artwork preparation:
+
+- [简体中文使用指南](docs/guides/README.zh-CN.md)
+- [English getting-started guide](docs/guides/README.en.md)
+- [Card artwork and source notes](assets/skins/README.md)
+- [Offline card artwork editor](tools/card-artwork/README.md) — download a single HTML file, frame an image locally, and export a 1536 × 969 PNG
+
+---
+
 ## Installation
 
 ### macOS (Universal DMG)
@@ -35,6 +46,9 @@
 > sudo xattr -cr /Applications/AirCard.app
 > ```
 
+> [!NOTE]
+> **Windows users:** an unofficial Windows port is available at [**AirCard-Windows**](https://github.com/Lumid-Off/AirCard-Windows).
+
 ---
 
 ## How to Customize Apple Wallet Cards
@@ -48,6 +62,26 @@
 5. Click **Flash Skins**.
 6. Force-close the **Wallet** app on your iPhone from the App Switcher (or reboot) to see your new custom card design!
 
+### Card names and missing-card checks
+
+Scanned cards can now display names from this Mac's Wallet cache. Open **Check
+missing cards** to distinguish current-scan matches from membership entries and
+payment caches that still need confirmation. Use **Reconnect** for connection
+problems and **Read Cache** to reread local metadata.
+
+For payment cards, AirCard uses the NFC activation event for the card you
+actually open. Wallet may also request artwork for several cards; IDs observed
+in those current iPhone log paths can appear in a batch. Once a live ID matches
+one specific remote-device cache, the remaining payment IDs from that same
+cache are included so cards omitted by iOS logging still appear. Saved IDs from
+an earlier run remain hidden until the current scan matches them again.
+
+Cards and skin file paths are saved by ID separately for each iPhone, in stable
+local discovery order. Only IDs matched during the current scan, either live or
+through the live-ID-matched device cache, are shown or eligible to flash; saved
+records only restore their skin after revalidation.
+Cache counts are not the phone's total, and phone Wallet order is not synchronized. See
+[card identification and diagnostics](docs/wallet-discovery.md).
 ### If scanning finds no cards
 
 The scanner uses the iPhone's unified log service, including Info/Debug events.
@@ -76,37 +110,4 @@ for the verified environment and remaining coverage.
 
 > [!TIP]
 > **Universal Language & Bold Text Support:** 
-> AirCard automatically expands and flashes custom keypad assets for all system locales (English, Ukrainian, Russian, Spanish, German, French, etc.) and generates both standard and **Bold Text** cache bitmaps (`--white` and `--white-bold`), ensuring your theme works regardless of your iOS language or accessibility display settings!
-
----
-
-## Building from Source
-
-```sh
-git clone https://github.com/mak5er/AirCard.git
-cd AirCard
-chmod +x build.sh
-./build.sh
-```
-This builds universal binaries (`arm64` + `x86_64`), bundles dependencies into `build/AirCard.app`, and outputs `build/AirCard.dmg`.
-
----
-
-## Contributors
-- **[@mak5er](https://github.com/mak5er)** (Developer) — [GitHub](https://github.com/mak5er) · [Twitter / X](https://x.com/mak5er)
-- **[@Lumid-Off](https://github.com/Lumid-Off)** (Contributor & Developer) — [GitHub](https://github.com/Lumid-Off) · [Twitter / X](https://x.com/LumidOff)
-- **[AirLift](https://github.com/0xjohnnydev/airlift)** by **[0xjohnny (@0xjohnnydev)](https://github.com/0xjohnnydev)**: Original AirTraffic/ATAirlock sandbox escape and proof of concept underlying `AirliftFFI`.
-
-## Credits
-- Core exploit based on `airlift` (AirTraffic sync escape).
-
----
-
-## Support
-
-If you find AirCard useful, you can support future development:
-
-- **PayPal**: [Donate via PayPal](https://www.paypal.com/donate/?hosted_button_id=98QRTC2HFRA4Y)
-- **TON**: `UQBm9KPhtMw-XVVjirUoa09wzrlyWsbeZhKfefl1Uw-qNZ-r`
-- **USDT (TRC20)**: `TDkDMCyjYxgvkWUnQiF5Erk2RyPQMT6G1n`
-- **USDT / BNB (BEP20)**: `0x0954dc491c502849d04956ef74634aa5931a08e8`
+> AirCard automatically expands an

@@ -7,7 +7,7 @@
 [](CHANGELOG.md)
 [](LICENSE)
 
-[官网](https://chatjevs.com) · [隐私政策](PRIVACY.md) · [更新日志](CHANGELOG.md)
+[官网](https://chatjevs.com) · [安装与设置指南](https://chatjevs.com/guides/android-setup.html) · [候选回复使用建议](https://chatjevs.com/guides/review-ai-replies.html) · [隐私政策](PRIVACY.md) · [更新日志](CHANGELOG.md)
 
 ## 开始使用 Jev
 
@@ -145,6 +145,4 @@ adb install -r apk/jev-assistant-v1.4-release.apk
 
 ## 它怎么工作
 
-图中展示数据边界：聊天界面读取与 OCR 在本机完成；触发分析后，文字和启用的背景信息发送到你配置的模型服务商；候选回复由你确认，应用不会代发。详见[隐私政策](PRIVACY.md)。
-
-- **采集**：一个 App 一个适配器，服务按前台包名分发。适配器只负责把当前窗口变成「标题 + 
+图中展示数据边界：聊天界面读取与 OCR 

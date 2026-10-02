@@ -1,0 +1,73 @@
+{
+  "generated": "2026-10-02T06:56+00:00",
+  "candidates": [
+    {
+      "id": "copilot-computer-use-desktop",
+      "tool": "Copilot",
+      "kind": "news",
+      "title": "GitHub Copilot Can Now Click Around Your Desktop Apps For You",
+      "summary_tr": "GitHub Copilot'a 1 Ekim'de \"computer use\" özelliği geldi: CLI ve macOS/Windows masaüstü uygulamasında, Copilot artık ekranı görüp butonlara tıklayabiliyor, metin girip düzenleyebiliyor, sürükleyip bırakabiliyor ve API'si olmayan eski/GUI-only programlarda iş akışlarını senin yerine yürütebiliyor. Her uygulama kontrolünden önce onay istiyor, macOS'ta Erişilebilirlik izinlerini adım adım kuruyor.",
+      "why_tr": "Normal API/CLI entegrasyonu olmayan masaüstü programlarını otomatikleştirmek geliştiricilerin uzun süredir istediği bir şey; somut, gösterilebilir bir demo (Copilot'un ekranda tıklaması) carousel/reel için güçlü bir görsel.",
+      "angle": "what computer use is + how to turn it on (/computer on in CLI, Settings toggle in app) + 3 workflows it unlocks (legacy GUI apps, no-API tools, cross-app automation)",
+      "tools": ["Copilot", "GitHub"],
+      "published": "2026-10-01",
+      "sources": ["https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps"],
+      "hints": [],
+      "score": 8
+    },
+    {
+      "id": "chatgpt-virtual-try-on-shopping",
+      "tool": "ChatGPT",
+      "kind": "news",
+      "title": "ChatGPT Will Now Let You Try On Clothes Before You Buy Them",
+      "summary_tr": "OpenAI, 1 Ekim'de ChatGPT alışveriş sonuçlarına \"Try on\" (Dene) butonu ekledi: bir selfie çekip veya yükleyip, yeni ChatGPT Images 2.5 modeliyle kıyafeti üzerinde görebiliyorsun; bir web sitesinden ekran görüntüsü de verebiliyorsun. Referans fotoğraf kaydediliyor, ürünleri Favoriler'e veya klasörlere ekleyebiliyorsun.",
+      "why_tr": "Herkesin günlük hayatında kullanabileceği, çok görsel ve \"bunu denemeliyim\" dedirten bir özellik - önce/sonra görseliyle carousel'e çok uygun.",
+      "angle": "what it does (selfie -> virtual try-on) + how to use it + before/after demo + save-to-favorites tip",
+      "tools": ["ChatGPT", "OpenAI"],
+      "published": "2026-10-01",
+      "sources": ["https://help.openai.com/en/articles/6825453-chatgpt-release-notes"],
+      "hints": ["https://www.digitaltrends.com/computing/openai-wants-you-to-try-on-clothes-inside-chatgpt-before-buying-them/"],
+      "score": 7
+    },
+    {
+      "id": "higgsfield-features-you-miss",
+      "tool": "Higgsfield",
+      "kind": "evergreen",
+      "title": "5 Higgsfield Features Most People Never Open",
+      "summary_tr": "Higgsfield haber akışımızda hep yeni lansmanlarla (Ads Studio, Astra hızı, Genjutsu) yer aldı ama günlük kullanıcıların açmadığı, zaten var olan özellikler için bir ipuçları gönderisi hiç yapılmadı - ürünün kendi blogundaki özellik sayfalarından (referans görsel sistemi, stil/preset kütüphanesi, video-to-video restyle) 5 tanesini derleyip öğretici bir carousel.",
+      "why_tr": "Higgsfield hep 'büyük lansman' içeriği aldı, 'bunu zaten kullanabilirsin' formatı takip edenler için yeni ve pratik bir açı; az haber alan bir araca evergreen dengesi getiriyor.",
+      "angle": "5 existing Higgsfield features (reference-image consistency, preset/style library, video-to-video restyle, Ads Studio product-to-ad, Genjutsu motion transfer) most users skip, with how to open each",
+      "tools": ["Higgsfield"],
+      "published": null,
+      "sources": ["https://higgsfield.ai/blog", "https://higgsfield.ai/genjutsu", "https://higgsfield.ai/blog/higgsfield-ads-studio"],
+      "hints": [],
+      "score": 6
+    },
+    {
+      "id": "pack-debt-payoff-strategist",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "6 Prompts That Build You an AI Debt-Payoff Strategist",
+      "summary_tr": "Kendi sözlerimizle yeni bir prompt paketi: ChatGPT veya Claude'u kişisel bir borç kapatma stratejistine çeviren 6 prompt - borçları sırala (snowball/avalanche), aylık ödeme planı çıkar, kart şirketiyle faiz indirimi görüşmesi için bir telefon/metin script'i yazdır, balance-transfer seçeneklerini araştırt, kapanış tarihine gerçekçi bir tahmin koydur.",
+      "why_tr": "Cüzdana dokunan, herkesin gerçek bir derdi olan bir konu (kredi kartı/borç), somut bir sonuç vaat ediyor (ör. '14 ay daha erken borçsuz kal') ve mevcut paket kütüphanesinde borç kapatma açısı yok.",
+      "angle": "Act as a debt-payoff strategist: list [YOUR DEBTS] by balance/APR, pick snowball or avalanche, build a month-by-month payoff calendar, draft a call script to ask for a lower APR, scan for 0% balance-transfer offers, give a realistic payoff-date estimate",
+      "tools": ["Prompt pack"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 7
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 1, "Claude": 0, "Gemini": 0, "Grok": 0, "Codex": 0, "Cursor": 0, "Copilot": 1,
+    "Perplexity": 0, "Meta AI": 0, "Mistral": 0, "DeepSeek": 0, "Open models": 0, "Apple": 0,
+    "Higgsfield": 1, "Google": 0, "Social media": 0, "Prompt pack": 1
+  },
+  "notes_tr": "Bu gather'da news.py'nin 36 saatlik toplamı + 16 tool/konu için web araması yapıldı. Claude, Gemini, Apple, Google (beyond Gemini), Threads, Instagram, Mistral, DeepSeek, Grok, Perplexity, Meta AI, Cursor, Codex ve açık model (Qwen/Kimi/GLM/MiniMax) aramalarında bulunan haberlerin hepsi ya havuzda zaten vardı (ör. Gemini 4 Argon, Gemini Live Guided Vision, Grok Voice Transcribe 2, Perplexity Effort Mode / HP ZBook, Mistral Vibe birleşmesi, Apple Siri AI/dil genişlemesi, Claude Code 'You Should Know' modu, Higgsfield Ads Studio haberi) ya da yeterince taze değildi (DeepSeek V4.1 Flash 9 Eylül, Google Pics 1 Eylül, Threads 'Your Algo' Haziran 2026'dan - üçü de 7 günlük pencerenin dışında). Qwen/Kimi/GLM/MiniMax için Ekim'de yeni modeller 'bekleniyor' ama henüz resmi lansman yok - doğrulanamadığı için eklenmedi. Yeni olan ve resmi kaynakla doğrulanan 2 haber (Copilot computer use, ChatGPT try-on) + 1 evergreen (Higgsfield) + 1 prompt pack eklendi.",
+  "sources_changed": [
+    "Eklendi: Google Workspace Updates blog (workspaceupdates.googleblog.com) - resmi RSS çalışıyor, Gemini/Vids/Pics gibi AI özelliklerini blog.google'dan önce yakalıyor; yüksek hacimli idari gönderileri elemek için match regex eklendi.",
+    "Test edildi, reddedildi: xAI blog (x.ai/blog/rss.xml ve x.ai/rss.xml) - ikisi de 404, resmi RSS yok; xAI manual listede kalmaya devam ediyor.",
+    "Test edildi, reddedildi: Perplexity Hub blog (perplexity.ai/hub/blog/rss.xml) - 403 Forbidden, script'leri engelliyor; Perplexity changelog zaten manual listede.",
+    "mevcut kaynaklarda fail_streak >= 3 veya 30 günden eski 'newest' olan kaynak yok - zorunlu bir onarım gerekmedi."
+  ]
+}

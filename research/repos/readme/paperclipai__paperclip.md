@@ -5,13 +5,15 @@ Quickstart &middot;
  Twitter &middot;
  Website 
 
+ Sign up for the Paperclip Cloud waitlist → 
+
 # Paperclip is the app people use to manage AI agents for work.
 
 Open-source orchestration for teams of AI agents.
 
 **If OpenClaw is an _employee_, Paperclip is the _company_.**
 
-Paperclip is a Node.js server and React UI that orchestrates a team of AI agents to run a business. Bring your own agents, assign goals, and track work and costs from one dashboard.
+Paperclip is a Node.js server and React UI that orchestrates a team of AI agents to run a business. Bring your own agents, assign goals, and track work and costs from one dashboard. Choose models and harnesses per agent while keeping your team's tasks, skills, permissions, and history in one place.
 
 It looks like a task manager. Under the hood: org charts, budgets, governance, goal alignment, and agent coordination.
 
@@ -27,11 +29,18 @@ It looks like a task manager. Under the hood: org charts, budgets, governance, g
  OpenClaw 
  Claude Code 
  Codex 
- Cursor 
- Bash 
- HTTP 
+ Cursor + Cloud 
+ Gemini CLI 
+
+ OpenCode 
+ Pi 
+ Hermes + Gateway 
+ Grok Build 
+ Kimi Code 
 
  If it can receive a heartbeat, it's hired. 
+
+Custom processes, HTTP endpoints, and external adapter packages extend the roster. See the [adapter overview](https://docs.paperclip.ing/reference/adapters/overview/) for setup and capabilities.
 
 ## Paperclip is right for you if
 
@@ -50,9 +59,9 @@ Four things have to work for an organization of AI agents to actually produce: t
 | Pillar | Built for | What it covers |
 | --- | --- | --- |
 | **Agentic Task Manager** — Declare intent. Agents work. You verify the output. | Everyone, daily | Tasks, approvals & review gates · proactive agent coworkers · auditable routines & workflows · verify from diffs, screenshots & tests |
-| **Org Chart for Agents** — Roles, permissions & boundaries for humans and agents. | Managers | Mixed human + agent org chart · responsibilities, delegation, specialization · governance: who can do what · scoped secrets & company boundaries |
-| **Agent Employee Training** — Design, train & evaluate your AI employees. | Enablers | Skill Studio & shared org-wide skills · evals & saved test runs · active learning loops & quality metrics · performance reviews for agents |
-| **Agentic OS** — The infrastructure that makes the work run. | IT & platform | Cross-provider runtime: any model, any agent · sandboxing, integrations & MCP servers · SSO, GRC, RBAC & cost controls · data privacy, internal trace collection, compounding data value |
+| **Org Chart for Agents** — Roles, permissions & boundaries for humans and agents. | Managers | Mixed human + agent org chart · responsibilities, delegation, specialization · governance: who can do what · scoped secrets & company boundaries · connection permissions & responsible-user identities |
+| **Agent Employee Training** — Design, train & evaluate your AI employees. | Enablers | Skill Studio & shared org-wide skills · evals & saved test runs · active learning loops & quality metrics · performance reviews for agents · saved test inputs · skill version history & restore · reusable team templates |
+| **Agentic OS** — The infrastructure that makes the work run. | IT & platform | Cross-provider runtime: any model, any agent · sandboxing, integrations & MCP servers · SSO, GRC, RBAC & cost controls · data privacy, internal trace collection, compounding data value · personal & shared app connections · run history & opt-in tracing |
 
 ## Features
 
@@ -60,22 +69,22 @@ Four things have to work for an organization of AI agents to actually produce: t
 Any agent, any runtime, one org chart. If it can receive a heartbeat, it's hired.
 
  🎯 Goal Alignment 
-Every task traces back to the organization mission. Agents know what to do and why .
+Link tasks and projects to your organization goals. Agents receive the goal context behind their work.
 
  💓 Heartbeats 
-Agents wake on a schedule, check work, and act. Delegation flows up and down the org chart.
+Agents wake for assigned work, follow-up messages, or configured schedules. Delegation flows up and down the org chart.
 
  💰 Cost Control 
-Monthly budgets per agent. When they hit the limit, they stop. No runaway costs.
+Company, agent, and project budgets . Track reported spend, get threshold alerts, and pause work at configured limits.
 
  🏢 Multi-Organization 
-One deployment, many organizations. Complete data isolation. One control plane for your portfolio.
+One deployment, many organizations. Separate tasks, agents, permissions, and activity histories for each.
 
- 🎫 Ticket System 
-Every conversation traced. Every decision explained. Full tool-call tracing and immutable audit log.
+ 🎫 Task Threads 
+Keep conversations, plans, blockers, files, and run history attached to the work. Assign tasks to agents or people.
 
  🛡️ Governance 
-Approve hires, override strategy, pause or terminate any agent — at any time.
+Configure review and approval stages , approve hires, and pause, reassign, or stop work when needed.
 
  📊 Org Chart 
 Hierarchies, roles, reporting lines. Your agents have a boss, a title, and a job description.
@@ -83,22 +92,27 @@ Hierarchies, roles, reporting lines. Your agents have a boss, a title, and a job
  📱 Mobile Ready 
 Monitor and manage your autonomous businesses from anywhere.
 
+ 🔗 Apps & Connections 
+ Connect services such as GitHub, Notion, and Railway, or your own MCP server. Set gateway actions to Allowed, Ask first, or Off.
+
+ 👥 Shared Agents, Personal Accounts 
+Choose who can use a connection and which agents can access it . Managed GitHub operations can use the account of the person directing the work.
+
+ 🧠 Skills & Skill Studio 
+Install or write shared skills , test them with saved inputs, inspect results, and restore earlier versions.
+
+ 📅 Scheduled Routines 
+Run recurring work on a schedule or trigger it through an API or webhook. Each run has a task, an owner, and a history.
+
+ 📎 Artifacts & Feedback 
+Find the files and documents agents produce . Preview supported formats and leave comments on specific passages in documents.
+
+ 📦 Ready-Made Teams 
+Preview and install teams with roles, skills, projects, and routines. Choose their runtimes and make the setup your own.
+
+Experimental **Agent Chat** and **chat/email connectors** add conversations with agents in Paperclip and through configured services such as Slack, Discord, Telegram, and AgentMail. Enable the relevant instance settings to try them.
+
 ## Problems Paperclip solves
 
 | Without Paperclip | With Paperclip |
-| ------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| ❌ You have 20 Claude Code tabs open and can't track which one does what. On reboot you lose everything. | ✅ Tasks are ticket-based, conversations are threaded, sessions persist across reboots. |
-| ❌ You manually gather context from several places to remind your bot what you're actually doing. | ✅ Context flows from the task up through the project and company goals — your agent always knows what to do and why. |
-| ❌ Folders of agent configs are disorganized and you're re-inventing task management, communication, and coordination between agents. | ✅ Paperclip gives you org charts, ticketing, delegation, and governance out of the box — so you run a company, not a pile of scripts. |
-| ❌ Runaway loops waste hundreds of dollars of tokens and max your quota before you even know what happened. | ✅ Cost tracking surfaces token budgets and throttles agents when they're out. Management prioritizes with budgets. |
-| ❌ You have recurring jobs (customer support, social, reports) and have to remember to manually kick them off. | ✅ Heartbeats handle regular work on a schedule. Management supervises. |
-| ❌ You have an idea, you have to find your repo, fire up Claude Code, keep a tab open, and babysit it. | ✅ Add a task in Paperclip. Your coding agent works on it until it's done. Management reviews their work. |
-
-## Why Paperclip is special
-
-Paperclip handles the hard orchestration details correctly.
-
-| | |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| **Atomic execution.** | Task checkout and budget enforcement are atomic, so no double-work and no runaway spend. |
-| **Persistent agent st
+| --------------------------------------------------------------------------

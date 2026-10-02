@@ -1,0 +1,53 @@
+{
+ "generated": "2026-10-02T10:30:53+00:00",
+ "reddit": [],
+ "youtube_signal": [
+  {
+   "id": "yt-hLqr-Wa2-Ho",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "VIDEO HOMENAJE A MESSI Y LA SELECCION",
+   "channel": "Maxi Fontán",
+   "url": "https://www.youtube.com/shorts/hLqr-Wa2-Ho",
+   "views": 653493,
+   "date": "2026-10-01T20:35:53Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-9tGaxmfzG8o",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Segredo das Abelhas 🐝#Catsoftiktok #CatLovers #cat #cute #FunnyCats #catcartoon #fyp",
+   "channel": "Snox Zoro 7X",
+   "url": "https://www.youtube.com/shorts/9tGaxmfzG8o",
+   "views": 406000,
+   "date": "2026-10-01T16:31:03Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-O4eAYHNeXvc",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "#shorts#automobile#lifeisbutadream#duet#youtubeshorts#facts#car#reaction#reels",
+   "channel": "SAGOR TV NEWS",
+   "url": "https://www.youtube.com/shorts/O4eAYHNeXvc",
+   "views": 197195,
+   "date": "2026-10-01T09:00:16Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-fh51PigrsuI",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "คลิปอ้าง “รองนายกฯ” วอนอย่าเชื่อเพจดังเตือนน้ำท่วม ที่แท้คลิป AI ปั่นข่าวลวง : Thai PBS Verify",
+   "channel": "Thai PBS",
+   "url": "https://www.youtube.com/shorts/fh51PigrsuI",
+   "views": 145296,
+   "date": "2026-10-01T11:23:50Z",
+   "query": "AI generated video"
+  }
+ ],
+ "errors": [
+  "Reddit: REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET missing in .env"
+ ]
+}

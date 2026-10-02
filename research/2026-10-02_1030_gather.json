@@ -1,0 +1,93 @@
+{
+ "generated": "2026-10-02T10:30+00:00",
+ "candidates": [
+  {
+   "id": "deepseek-harness-desktop-agent",
+   "tool": "DeepSeek",
+   "kind": "news",
+   "title": "DeepSeek Just Shipped a Free Desktop AI Agent That Can Run Your Whole Computer",
+   "summary_tr": "DeepSeek, Harness adlı açık kaynaklı masaüstü AI agent'ını Mac (Apple silicon) ve Windows için public preview olarak yayınladı: dosya/doküman düzenleme, Excel analizi, kod yazma, araştırma ve zamanlanmış arka plan otomasyonu yapabiliyor, plugin mimarisiyle genişletilebiliyor.",
+   "why_tr": "Ücretsiz + açık kaynak + 'kendi bilgisayarında çalışan AI agent' konsepti; DeepSeek'in önceki 'free app' postlarından farklı, somut yeni bir ürün lansmanı.",
+   "angle": "what Harness does + how to install it on Mac/Windows + 3 everyday tasks to hand it first",
+   "tools": ["DeepSeek"],
+   "published": "2026-09-30",
+   "sources": ["https://www.deepseek.com/en/harness/"],
+   "hints": ["https://news.ycombinator.com/item?id=49929489", "https://x.com/DeepSeekHarness/article/2105330281389662575"],
+   "score": 8
+  },
+  {
+   "id": "higgsfield-computer-use-codex",
+   "tool": "Higgsfield",
+   "kind": "news",
+   "title": "Higgsfield's Entire Video Studio Now Lives Inside ChatGPT's Codex",
+   "summary_tr": "Higgsfield, yeni 'computer use' özelliğiyle ChatGPT'ye bir uzantı olarak eklendi: GPT-6.1 Sol destekli Codex içinde, yerel dosyalara erişerek Higgsfield'in tüm otomasyon araçlarını uçtan uca çalıştırabiliyor.",
+   "why_tr": "Hem Higgsfield hem OpenAI/Codex kitlesini aynı anda çeken, 'iki aracı birleştirme' açısı güçlü ve görsel olarak gösterilebilir (ekran kaydı tarzı) bir konu.",
+   "angle": "what changed + how to trigger Higgsfield from inside ChatGPT/Codex + one automation example",
+   "tools": ["Higgsfield", "ChatGPT", "Codex"],
+   "published": "2026-10-01",
+   "sources": ["https://x.com/higgsfield/status/2105354097788412063"],
+   "hints": ["https://techcrunch.com/2026/09/29/openai-launches-gpt-6-1-sol-says-it-nearly-matches-gpt-6-astra-and-costs-less/"],
+   "score": 7
+  },
+  {
+   "id": "copilot-dynamic-workflows-markdown",
+   "tool": "Copilot",
+   "kind": "news",
+   "title": "GitHub Copilot Can Now Run Automations You Write in Plain Markdown",
+   "summary_tr": "Copilot CLI, Copilot app ve Copilot SDK'ya gelen 'dynamic workflows', YAML yerine doğal dilde yazılmış markdown talimatlarıyla hata yönetimi ve adaptif kararlar alabilen otomasyonlar çalıştırıyor; Copilot, Claude Code, Gemini ve Codex'i motor olarak destekliyor.",
+   "why_tr": "Geliştirici kitlesi için 'kod yazmadan otomasyon kur' anlatısı güçlü; GitHub Copilot serisi sayfamızda zaten iyi performans gösteriyor.",
+   "angle": "what dynamic workflows are + a before/after YAML-vs-markdown example + how to try one",
+   "tools": ["Copilot"],
+   "published": "2026-10-01",
+   "sources": ["https://github.blog/changelog/2026-10-01-dynamic-workflows-in-copilot-cli-and-the-copilot-app"],
+   "score": 6
+  },
+  {
+   "id": "codex-guardian-auto-review",
+   "tool": "Codex",
+   "kind": "evergreen",
+   "title": "Codex Has a Built-In Guardian That Approves Its Own Safe Code Changes",
+   "summary_tr": "OpenAI Codex'teki Guardian alt-agent'ı, shell komutları/dosya yazma/ağ erişimi gibi hassas işlemleri risk bazlı değerlendirip insan onayını sadece gerçekten gerektiğinde istiyor; çoğu kullanıcı bu ayarı hiç açmıyor.",
+   "why_tr": "'Az bilinen ayar' formatı Copilot/Cursor ayar postlarında kanıtlanmış şekilde iyi performans gösteriyor; Codex son zamanlarda haber eksikliği çekiyor, evergreen iyi dolduruyor.",
+   "angle": "what Guardian does + how to turn it on (approvals_reviewer: guardian_subagent) + what it still asks you about",
+   "tools": ["Codex"],
+   "published": null,
+   "sources": ["https://developers.openai.com/codex/changelog"],
+   "hints": ["https://x.com/gdb/status/2047489218998628780"],
+   "score": 6
+  },
+  {
+   "id": "gemini-student-hub-workspace",
+   "tool": "Google",
+   "kind": "news",
+   "title": "Gemini Just Got a Dedicated Hub for Students — Now Free for Every School",
+   "summary_tr": "Gemini uygulamasındaki öğrenci merkezi (çalışma defteri, flashcard, pratik quiz) önce kişisel hesaplara geldi, şimdi her yaştan Google Workspace for Education kullanıcısına da açıldı.",
+   "why_tr": "Öğrenci/ebeveyn kitlesi için pratik, paylaşılabilir ve 'nasıl kullanılır' formatına uygun bir konu; Gemini'nin günlük hayata değen tarafı.",
+   "angle": "what the student hub includes + how to open it + 3 study prompts to try first",
+   "tools": ["Gemini", "Google"],
+   "published": "2026-10-01",
+   "sources": ["http://workspaceupdates.googleblog.com/2026/10/find-your-learning-tools-all-in-one-place-with-the-student-hub-in-Gemini.html"],
+   "score": 5
+  },
+  {
+   "id": "pack-dividend-income-tracker",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "6 Prompts That Turn ChatGPT Into Your Personal Dividend-Income Tracker",
+   "summary_tr": "Kullanıcının sahip olduğu hisse/ETF'leri analiz edip aylık temettü takvimi, yeniden yatırım senaryosu ve 'X yıl sonra ne kadar pasif gelir' tahmini çıkaran 6 promptluk bir paket (kendi sözlerimizle, prompt_packs.json'da yok).",
+   "why_tr": "Para/yatırım temalı paketler iyi performans gösteriyor; temettü/pasif gelir açısı havuzda ve kütüphanede henüz işlenmemiş.",
+   "angle": "Act as a dividend-income strategist role + concrete goal [$500/month passive income] + deliverables (dividend calendar, reinvestment plan, a realistic estimate)",
+   "tools": ["Prompt pack"],
+   "published": null,
+   "sources": [],
+   "score": 7
+  }
+ ],
+ "coverage": {
+  "ChatGPT": 0, "Claude": 0, "Gemini": 1, "Grok": 0, "Codex": 1, "Cursor": 0, "Copilot": 1,
+  "Perplexity": 0, "Meta AI": 0, "Mistral": 0, "DeepSeek": 1, "Open models": 0, "Apple": 0,
+  "Higgsfield": 1, "Google": 1, "Social media": 0, "Other": 0, "Prompt pack": 1
+ },
+ "notes_tr": "ChatGPT, Claude, Grok, Cursor, Copilot (computer use/HydraFusion), Perplexity, Meta AI, Mistral, Apple, Social media ve Open-weight Chinese model taraflarında bu 36 saatte ya hiçbir yeni şey yoktu ya da bulunanlar havuzdaki mevcut adaylarla (örn. Gemini 4 Argon, Copilot computer use, Mistral Vibe birleşmesi, Apple Siri AI, TikTok yorum özellikleri, Higgsfield Ads Studio) aynı lansmandı, o yüzden tekrar eklenmedi. Grok için sadece Musk'ın doğrulanmamış 'many great upgrades' tweet'i vardı, resmi kaynak yok, eklenmedi. Qwen/Kimi/GLM/MiniMax'ın Ekim'de gelecek yeni modelleri henüz çıkmadı (söylenti), eklenmedi. Claude'un CRISPR benzeri enzim keşfi haberi 9 gün önceydi ve tartışmalı (bir biyoloğun çalışmasını çaldığı iddiası var), riskli bulunup atlandı. news.py sonuçlarından DeepSeek Harness, Higgsfield x Codex, Copilot dynamic workflows, Codex Guardian ve Gemini öğrenci merkezi resmi kaynaklarla doğrulanıp eklendi.",
+ "sources_changed": []
+}

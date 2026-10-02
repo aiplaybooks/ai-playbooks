@@ -1,0 +1,198 @@
+{
+  "theme": "prompts",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Prompt Pack · Trading Journal Coach",
+  "caption": "I handed ChatGPT my trade journal and it called out the exact habit wrecking my account.\n\nMost traders don't lose because of bad setups. They lose because they never review a single trade.\n\n→ a trade plan with real stop-loss rules\n→ a journal analyst that finds your worst habit\n→ a tilt check before you open the app\n→ a backtest designer that tests ideas before real money\n\nComment COACH and I'll send you all 7 prompts 📩. Save this before your next session.\n\nFollow @aiplaybooks.daily for a new playbook every day.\n\n#chatgpt #ai #tradingpsychology #daytrading #tradingjournal",
+  "captions": {
+    "instagram": "I handed ChatGPT my trade journal and it called out the exact habit wrecking my account.\n\nMost traders don't lose because of bad setups. They lose because they never review a single trade.\n\n→ a trade plan with real stop-loss rules\n→ a journal analyst that finds your worst habit\n→ a tilt check before you open the app\n→ a backtest designer that tests ideas before real money\n\nComment COACH and I'll send you all 7 prompts 📩. Save this before your next session.\n\nFollow @aiplaybooks.daily for a new playbook every day.\n\n#chatgpt #ai #tradingpsychology #daytrading #tradingjournal",
+    "facebook": "I gave ChatGPT my last month of trades and asked it to find my worst habit.\n\nIt didn't just read the journal. It broke down my win rate by setup, by time of day, by how I was feeling when I opened the trade. The pattern was obvious once it was written down.\n\nThis pack has 7 prompts: a trade plan, a position sizer, that journal analyst, a tilt check before you trade, a backtest designer, and a weekly review that scores your discipline.\n\nWhich one would actually change how you trade, the journal analyst or the tilt check?\n\nSave this before your next session.\n\n#trading #tradingpsychology #daytrading",
+    "x": "I gave ChatGPT my trade journal and it called out my worst habit instantly.\n\n7 prompts that turn AI into your trading mentor: plan, position size, tilt check, backtest, weekly review.\n\n#trading #ai",
+    "youtube": {
+      "title": "7 ChatGPT Prompts That Turn AI Into Your Trading Coach",
+      "description": "7 ChatGPT and Claude prompts that turn AI into a trading coach: a trade plan, a journal analyst that finds your worst habit, a tilt check before you trade, and a weekly review.\n\nPaste your own trades and let it find the pattern costing you money.\n\nWhich prompt are you trying first?\nSubscribe for daily AI playbooks.\n\n#trading #tradingpsychology #daytrading #chatgpt #ai",
+      "tags": [
+        "trading",
+        "trading psychology",
+        "chatgpt prompts",
+        "ai trading coach",
+        "day trading",
+        "trading journal",
+        "trading discipline",
+        "ai prompts"
+      ]
+    }
+  },
+  "sources": [],
+  "dm": {
+    "keyword": "COACH"
+  },
+  "cover": {
+    "headline": "ChatGPT, Claude and Gemini can read your trade journal and find your worst habit. 7 prompts to make them your trading coach:",
+    "em": "trading coach",
+    "person": null,
+    "layout": "scene",
+    "photo_query": [
+      "candlestick chart screen",
+      "trading monitors",
+      "forex trading screen"
+    ],
+    "photo_pick": {
+      "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg3NTYyODEtaW1hZ2Uta3d5b24wOHUuanBn.jpg",
+      "page": "https://www.rawpixel.com/image/5945678/free-public-domain-cc0-photo",
+      "author": "unknown",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "rawpixel",
+      "file": "photo"
+    },
+    "photo": {
+      "file": "photo",
+      "page": "https://www.rawpixel.com/image/5945678/free-public-domain-cc0-photo",
+      "author": "unknown",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "rawpixel"
+    },
+    "layout_used": "scene"
+  },
+  "design": {
+    "mood": "a trading terminal at 2am: cold monitor glow, green and red candlesticks on a dark grid, disciplined and sharp, no hype",
+    "palette": {
+      "bg": "#070B10",
+      "bg2": "#0C131B",
+      "surface": "#121B24",
+      "ink": "#EAF2F2",
+      "muted": "#7E97A1",
+      "accent": "#2DD4C8",
+      "accent2": "#F2A93B"
+    },
+    "fonts": {
+      "display": "Space Grotesk",
+      "body": "Inter",
+      "mono": "JetBrains Mono"
+    },
+    "display": {
+      "weight": 700,
+      "tracking": -1
+    },
+    "shape": {
+      "radius": 14,
+      "border": 1,
+      "shadow": "soft"
+    },
+    "background": {
+      "pattern": "grid",
+      "pattern_opacity": 0.08,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "mono",
+    "prompt": "terminal",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='5' y1='2' x2='5' y2='22'/><rect x='3' y='7' width='4' height='7' rx='1'/><line x1='12' y1='2' x2='12' y2='22'/><rect x='10' y='12' width='4' height='7' rx='1'/><line x1='19' y1='2' x2='19' y2='22'/><rect x='17' y='6' width='4' height='5' rx='1'/></svg>"
+  },
+  "first_comment": {
+    "instagram": "Run The Tilt Check before your next session. 6 honest questions about sleep, mood and recent losses, then it tells you to trade normal, go smaller, or skip the day. 🧠\n\nWhich prompt are you starting with?",
+    "facebook": "Run The Journal Analyst first: paste even 10 trades and it finds the one habit costing you the most, by setup, time of day and emotion tag.\n\nWhich one are you trying first, the journal analyst or the tilt check?",
+    "youtube": "Run The Tilt Check before your next session: 6 honest questions, then it tells you to trade normal, go smaller, or skip the day. Subscribe for daily AI playbooks."
+  },
+  "voice": "am_puck",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "PROMPT PACK",
+      "title": "prompts to turn AI into your trading coach",
+      "em": "trading coach",
+      "sub": "A plan, a journal analyst, a tilt check, a backtest designer, a weekly review.",
+      "tools": [
+        "ChatGPT",
+        "Claude",
+        "Gemini"
+      ],
+      "voiceover": "Most traders lose because they never review a single trade."
+    },
+    {
+      "type": "prompt",
+      "name": "The Trade Plan",
+      "sub": "Rules before you click buy",
+      "prompt": "Act as a trading coach. Help me write my trading plan for [MARKET] on the [TIMEFRAME] chart: which setups I take, entry and exit rules, max risk per trade, max trades per day, and the conditions where I **DON'T TRADE** at all.",
+      "tip": "Write it down before your next session. Rules you can see beat rules you remember.",
+      "voiceover": "First, it writes your trading plan: your setups, your limits, your no-trade zone."
+    },
+    {
+      "type": "prompt",
+      "name": "The Position Sizer",
+      "sub": "Never risk more than you planned",
+      "prompt": "My account is [$ACCOUNT], I risk [RISK]% per trade. Entry [PRICE], stop loss [STOP], target [TARGET]. Calculate position size, the money at risk, the reward-to-risk ratio, and tell me if this trade **FITS MY RULES**: [RULES].",
+      "demo": {
+        "kind": "reply",
+        "lines": [
+          "Risking 1% of $5,000 = $50 max loss",
+          "Entry $42.00, stop $41.50 -> 100 shares",
+          "Reward:risk 2.4:1 -> fits your rules"
+        ]
+      },
+      "voiceover": "Then it sizes the position so one bad trade never wrecks your account."
+    },
+    {
+      "type": "prompt",
+      "name": "The Journal Analyst",
+      "sub": "Find the pattern in your losses",
+      "prompt": "Here is my trade journal from the last month: [PASTE TRADES WITH DATE, SETUP, ENTRY, EXIT, RESULT, NOTES]. Find my win rate per setup, time of day, and emotion tag, and name the **ONE HABIT** that costs me the most.",
+      "tip": "Paste even 10 trades. The pattern shows up faster than you'd think.",
+      "voiceover": "This one reads your journal and names the one habit costing you the most."
+    },
+    {
+      "type": "prompt",
+      "name": "The Post-Mortem",
+      "sub": "Learn from one bad trade",
+      "prompt": "Review this losing trade like a strict coach: [DESCRIBE TRADE AND WHAT I WAS THINKING]. Was it a bad trade or a good trade that lost? Which rule did I break, what did I ignore, and what is the **LESSON** in one sentence?",
+      "tip": "Do this right after the loss, while it's still fresh.",
+      "voiceover": "It breaks down your worst trade and gives you the lesson in one line."
+    },
+    {
+      "type": "prompt",
+      "name": "The Tilt Check",
+      "sub": "Stop revenge trading",
+      "prompt": "Before each session, ask me 6 short questions about sleep, mood, recent losses and why I want to trade today. Based on my answers, tell me to trade normally, reduce size, or **SKIP THE DAY**, and explain why.",
+      "tip": "Answer honestly. It only works if you don't lie to it.",
+      "voiceover": "Before you open the app, it checks if you should even be trading today."
+    },
+    {
+      "type": "prompt",
+      "name": "The Backtest Designer",
+      "sub": "Test the idea before real money",
+      "prompt": "I have a trading idea: [DESCRIBE STRATEGY]. Turn it into exact, testable rules, design a manual backtest on [NUMBER] past examples, the numbers to record for each, and the results that would make me **DROP THE IDEA**.",
+      "tip": "Test it on paper first. Real money comes after, not before.",
+      "voiceover": "This one turns a vague idea into exact rules you can test on paper first."
+    },
+    {
+      "type": "prompt",
+      "name": "The Weekly Review",
+      "sub": "One improvement per week",
+      "prompt": "Here's my week: [TRADES, P/L, RULE BREAKS, NOTES]. Write my weekly review: what went well, what went wrong, whether I followed my plan (score 1-10), and **ONE FOCUS** for next week with a way to measure it.",
+      "tip": "Same day, same time, every week. Consistency is the whole point.",
+      "voiceover": "And every week, it scores your discipline and picks your one focus."
+    },
+    {
+      "type": "cta",
+      "title": "Trading is a skill,",
+      "title2": "not a guess.",
+      "lines": [
+        [
+          "Save",
+          "this pack before your next session."
+        ],
+        [
+          "Send",
+          "it to the trader who never reviews a loss."
+        ],
+        [
+          "Follow",
+          "@aiplaybooks.daily for a new playbook every day."
+        ]
+      ],
+      "voiceover": "Save this pack, send it to a trader who needs it, and review your next trade."
+    }
+  ]
+}

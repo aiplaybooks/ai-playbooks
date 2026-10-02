@@ -1,0 +1,447 @@
+{
+ "generated": "2026-10-02T10:30+00:00",
+ "hours": 36.0,
+ "items": [
+  {
+   "source": "Hugging Face blog",
+   "tier": "official",
+   "title": "AutoSynthData: Generating Training Data for Enterprise Agents",
+   "url": "https://huggingface.co/blog/ServiceNow-AI/autosynthdata",
+   "date": "2026-10-02T04:01+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Ollama releases",
+   "tier": "official",
+   "title": "v0.35.1",
+   "url": "https://github.com/ollama/ollama/releases/tag/v0.35.1-rc2",
+   "date": "2026-10-02T03:23+00:00",
+   "summary": "What's Changed feat: allow ten web searches per response by @ParthSareen in #18602 MLX: version bump by @dhiltgen in #18651 llama.cpp: version bump b11232 by @dhiltgen in #18652 create: support explicit model capabilities by @dhiltgen in #18708 Full Changelog : v0.35.0...v0.35.1-rc0"
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Our Project Suncatcher prototype satellite is in orbit.",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-prototype/",
+   "date": "2026-10-01T23:30+00:00",
+   "summary": "Google's prototype satellite for Project Suncatcher, built in partnership with Planet, launched into orbit aboard the Transporter-18 rideshare mission with SpaceX."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Turn your existing social assets into high-impact YouTube ads.",
+   "url": "https://blog.google/products/ads-commerce/creating-assets-youtube-ads/",
+   "date": "2026-10-01T20:30+00:00",
+   "summary": "In this Ads Decoded episode, we discuss ad creative — and how it can make or break your YouTube campaigns."
+  },
+  {
+   "source": "GitHub Copilot changelog",
+   "tier": "official",
+   "title": "GitHub Copilot can now interact with desktop apps with computer use",
+   "url": "https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps",
+   "date": "2026-10-01T19:11+00:00",
+   "summary": "Computer use is now available in public preview in GitHub Copilot CLI and the GitHub Copilot app on macOS and Windows. Copilot can interact with desktop applications on your behalf… The post GitHub Copilot can now interact with desktop apps with computer use appeared first on The GitHub Blog ."
+  },
+  {
+   "source": "GitHub Copilot changelog",
+   "tier": "official",
+   "title": "GitHub Copilot in VS Code, September 2026 releases",
+   "url": "https://github.blog/changelog/2026-10-01-github-copilot-in-vs-code-september-2026-releases",
+   "date": "2026-10-01T19:09+00:00",
+   "summary": "This changelog covers VS Code v1.136 through v1.140, shipped throughout September 2026. September’s releases streamline agent-driven development from implementation through pull request merge. Automations handle repeatable tasks, agent merge helps… The post GitHub Copilot in VS Code, September 2026 releases appeared first on The GitHub Blog ."
+  },
+  {
+   "source": "Claude Code releases",
+   "tier": "official",
+   "title": "v2.1.287",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.287",
+   "date": "2026-10-01T18:43+00:00",
+   "summary": "What's changed Added Claude Mods: plugins may now modify deeper behavior Added You should know, a built-in mod where a side agent watches your back and flags things you or Claude might miss. Turn it on with /plugin enable cc-plugin-you-should-know@builtin (for first-party sessions with telemetry on) Added an n: filter to the agents view that matches session names and tasks; a filter now shows…"
+  },
+  {
+   "source": "OpenAI News",
+   "tier": "official",
+   "title": "The eternal complement",
+   "url": "https://openai.com/index/the-eternal-complement",
+   "date": "2026-10-01T17:00+00:00",
+   "summary": "Advanced AI may matter most for the routine work behind breakthrough ideas. Explore why execution could shape the next economy and the pace of progress."
+  },
+  {
+   "source": "Higgsfield blog",
+   "tier": "official",
+   "title": "Introducing Higgsfield Ads Studio: How It Works and What You Can Create",
+   "url": "https://higgsfield.ai/blog/higgsfield-ads-studio",
+   "date": "2026-10-01T16:31+00:00",
+   "summary": ""
+  },
+  {
+   "source": "GitHub Copilot changelog",
+   "tier": "official",
+   "title": "Dynamic workflows in Copilot CLI and the Copilot app",
+   "url": "https://github.blog/changelog/2026-10-01-dynamic-workflows-in-copilot-cli-and-the-copilot-app",
+   "date": "2026-10-01T16:30+00:00",
+   "summary": "Dynamic workflows are now available in Copilot CLI, the GitHub Copilot app, and the GitHub Copilot SDK. These let you define an orchestration in code to get the reliability and… The post Dynamic workflows in Copilot CLI and the Copilot app appeared first on The GitHub Blog ."
+  },
+  {
+   "source": "Google Workspace Updates blog",
+   "tier": "official",
+   "title": "Find your learning tools all in one place with the student hub in Gemini",
+   "url": "http://workspaceupdates.googleblog.com/2026/10/find-your-learning-tools-all-in-one-place-with-the-student-hub-in-Gemini.html",
+   "date": "2026-10-01T09:22-07:00",
+   "summary": "We recently announced a new, dedicated hub in the Gemini app to help get students started with all of Gemini's learning tools. Initially available in personal accounts, the Gemini student hub is now available to Google Workspace for Education users of all ages. The hub helps keep students organized; they can start a study notebook, create flashcards, take a practice quiz, and more. As Gemini…"
+  },
+  {
+   "source": "Google Workspace Updates blog",
+   "tier": "official",
+   "title": "Simple setup option for Workspace Client-side encryption",
+   "url": "http://workspaceupdates.googleblog.com/2026/10/simple-setup-option-for-workspace-client-side-encryption.html",
+   "date": "2026-10-01T09:03-07:00",
+   "summary": "We are introducing a new option which can make the initial setup of Google Workspace Client-side encryption (CSE) significantly easier and faster for admins. CSE now supports a simple setup path in the Admin console which can help customers get up and running with CSE in minutes. By combining Cloud HSM Keys with Google Identity, we have automated much of the setup flow which could be time…"
+  },
+  {
+   "source": "OpenAI News",
+   "tier": "official",
+   "title": "How Albertsons Companies is reimagining retail from the inside out",
+   "url": "https://openai.com/index/albertsons-reimagining-retail",
+   "date": "2026-10-01T16:00+00:00",
+   "summary": "Albertsons Cos. is using ChatGPT Enterprise and the OpenAI API to help teams work faster and make grocery shopping easier for millions of customers."
+  },
+  {
+   "source": "Gemini blog",
+   "tier": "official",
+   "title": "Guided Vision in Gemini Live: built for accessibility",
+   "url": "https://blog.google/innovation-and-ai/products/gemini-app/guided-vision-gemini-live/",
+   "date": "2026-10-01T16:00+00:00",
+   "summary": "Guided Vision in Gemini Live is built alongside the blind and low-vision community and offers real-time visual assistance."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Guided Vision in Gemini Live: built for accessibility",
+   "url": "https://blog.google/innovation-and-ai/products/gemini-app/guided-vision-gemini-live/",
+   "date": "2026-10-01T16:00+00:00",
+   "summary": "Guided Vision in Gemini Live is built alongside the blind and low-vision community and offers real-time visual assistance."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "1,400 educators joined our Badge-a-thon: Day of AI Learning.",
+   "url": "https://blog.google/products-and-platforms/products/education/ai-educator-series-badge-a-thon/",
+   "date": "2026-10-01T16:00+00:00",
+   "summary": "1,400 educators earned 4,000+ digital badges at the Google Badge-a-thon. Watch the on-demand sessions on YouTube and claim your first badge today."
+  },
+  {
+   "source": "Higgsfield blog",
+   "tier": "official",
+   "title": "9 Best AI Video Generation APIs in 2026",
+   "url": "https://higgsfield.ai/blog/best-ai-video-generation-apis",
+   "date": "2026-10-01T15:52+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Hugging Face blog",
+   "tier": "official",
+   "title": "Introducing Olmo-core 3: Open, scalable training infrastructure for large MoEs",
+   "url": "https://huggingface.co/blog/allenai/olmocore3",
+   "date": "2026-10-01T15:01+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Meta newsroom (AI + Instagram / WhatsApp / Threads / Facebook)",
+   "tier": "official",
+   "title": "Announcing Ranveer Singh as Brand Ambassador for Ray-Ban and Ray-Ban Meta in India along with Exciting New Updates to our AI Glasses",
+   "url": "https://about.fb.com/news/2026/10/announcing-ranveer-singh-as-brand-ambassador-for-ray-ban-and-ray-ban-meta-in-india-along-with-exciting-new-updates-to-our-ai-glasses/",
+   "date": "2026-10-01T14:16+00:00",
+   "summary": "Ranveer Singh becomes the first Brand Ambassador for Ray-Ban and Ray-Ban Meta in India. The post Announcing Ranveer Singh as Brand Ambassador for Ray-Ban and Ray-Ban Meta in India along with Exciting New Updates to our AI Glasses appeared first on Meta Newsroom ."
+  },
+  {
+   "source": "YouTube official blog",
+   "tier": "official",
+   "title": "3 ways YouTube is helping news organizations build for the future",
+   "url": "https://blog.youtube/inside-youtube/youtube-news-working-group-tools-future/",
+   "date": "2026-10-01T14:00+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "5 ways Search can help you perfect your at-home coffee routine",
+   "url": "https://blog.google/products-and-platforms/products/search/coffee-tips-google-search/",
+   "date": "2026-10-01T13:00+00:00",
+   "summary": "Learn how Google Search can help you improve your morning cup of coffee."
+  },
+  {
+   "source": "Higgsfield blog",
+   "tier": "official",
+   "title": "How to Make an AI Music Video for a Real Artist in 2026",
+   "url": "https://higgsfield.ai/blog/ai-music-video-real-artist-2026",
+   "date": "2026-10-01T10:40+00:00",
+   "summary": ""
+  },
+  {
+   "source": "OpenAI News",
+   "tier": "official",
+   "title": "The Den frees up 10-15 hours a week to grow with ChatGPT Work",
+   "url": "https://openai.com/index/the-den-family-social",
+   "date": "2026-10-01T00:00+00:00",
+   "summary": "As it opens a new location, the social club prepares grant applications in 2 hours instead of 3 days and liquor-license materials in 3 hours instead of 4 days."
+  },
+  {
+   "source": "Anthropic News",
+   "tier": "official",
+   "title": "Barclays scales Claude to upgrade operations and improve client experience",
+   "url": "https://www.anthropic.com/news/barclays-scales-claude",
+   "date": "2026-10-01T00:00+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Codex changelog",
+   "tier": "official",
+   "title": "Codex changelog: Oct 01, 2026",
+   "url": "https://developers.openai.com/codex/changelog",
+   "date": "2026-10-01T00:00+00:00",
+   "summary": "Codex CLI 0.160.0 pre]:w-full [&>pre]:max-w-full [&>pre]:mb-0 pt-4\"> $ npm install -g @openai/codex@0.160.0 View details New Features Browse older tasks in the agent command center with a keyboard-accessible “Show more” action. ( #49106 ) Select transcript text and paste with middle-click in fullscreen mode on supported local Linux X11 terminals. ( #49112 ) Start sessions outside a project with workspace defaults when policy permits, and restore saved permissions when resuming. ( #49160 ) Added opt-in Guardian review capabilities to retrieve earlier user instructions and include context from agent handoffs. ( #49036 , #49057 ) Bug Fixes Unsent queued messages now resume after reconnection once uncertain submissions are resolved, avoiding duplicate sends. ( #49105 ) The terminal UI now preserves server provider, reasoning-summary, and verbosity settings and shows the correct sessions in…"
+  },
+  {
+   "source": "Claude release notes",
+   "tier": "official",
+   "title": "Claude release notes: Sep 30, 2026",
+   "url": "https://docs.claude.com/en/release-notes/overview",
+   "date": "2026-09-30T00:00+00:00",
+   "summary": " We announced the deprecation of the Claude Sonnet 4.5 model ( claude-sonnet-4-5-20250929 ), with retirement on the Claude API scheduled for …"
+  },
+  {
+   "source": "Codex changelog",
+   "tier": "official",
+   "title": "Codex changelog: Sep 30, 2026",
+   "url": "https://developers.openai.com/codex/changelog",
+   "date": "2026-09-30T00:00+00:00",
+   "summary": "Codex CLI 0.159.3 pre]:w-full [&>pre]:max-w-full [&>pre]:mb-0 pt-4\"> $ npm install -g @openai/codex@0.159.3 View details New Features Eligible local sessions signed in with ChatGPT can now show optional reminders to complete account security setup. ( #49744 ) Changelog Full Changelog: rust-v0.159.2...rust-v0.159.3 #49744 [0.159] Backport account security setup reminders for 0.159.3 @andrewgu-oai Full release on Github"
+  },
+  {
+   "source": "Gemini API changelog",
+   "tier": "official",
+   "title": "Gemini API changelog: Sep 30, 2026",
+   "url": "https://ai.google.dev/gemini-api/docs/changelog",
+   "date": "2026-09-30T00:00+00:00",
+   "summary": ". To get started, see the Gemini Omni Flash model page and the omni guide ."
+  },
+  {
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "openclaw 2026.8.34",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.8.34",
+   "date": "2026-10-02T00:13+00:00",
+   "summary": "This is a gateway-only extended-stable release, which is our current equivalent to LTS. This release is OpenClaw from the end of August 2026, plus critical security updates, reliability and performance fixes, and features like new model support. The latest version of OpenClaw at the time of this release is 2026.9.7 2026.8.34 Highlights Extended-stable correctness rollup: backport 113…"
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Concerns about social media’s negative impact are growing",
+   "url": "https://www.socialmediatoday.com/news/concerns-about-social-medias-negative-impact-are-growing/831980/",
+   "date": "2026-10-01T18:33-04:00",
+   "summary": "New research from Pew found that sentiment surrounding app usage has soured over the last four years, with adults statistically more worried than teens."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Meta’s Muse app surpasses 5M downloads and 3M weekly users",
+   "url": "https://www.socialmediatoday.com/news/metas-muse-app-surpasses-5m-downloads-and-3m-weekly-users/831979/",
+   "date": "2026-10-01T18:25-04:00",
+   "summary": "Only 23 apps have historically been able to report that level of uptake, according to Yahoo Finance and data from Sensor Tower."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "TikTok U.S. reports generating $81B in economic value",
+   "url": "https://www.socialmediatoday.com/news/tiktok-us-reports-generating-81b-in-economic-value/831978/",
+   "date": "2026-10-01T18:20-04:00",
+   "summary": "A new study commissioned by the app outlined its impact on jobs, small businesses and consumer learning opportunities."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "YouTube updates Shorts algorithm to put more focus on original content",
+   "url": "https://www.socialmediatoday.com/news/youtube-updates-shorts-algorithm-to-put-more-focus-on-original-content/831976/",
+   "date": "2026-10-01T17:13-04:00",
+   "summary": "YouTube's updating its recommendation systems to prioritize creator-made videos, which will also reduce the reach of aggregator accounts."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Threads tests more visual options for quote posts",
+   "url": "https://www.socialmediatoday.com/news/threads-tests-more-visual-options-for-quote-posts/831975/",
+   "date": "2026-10-01T16:56-04:00",
+   "summary": "The feature aligns with similar tools on TikTok and X, and offers users a new way to add context to their posts in the app."
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Quoting Matthew Green",
+   "url": "https://simonwillison.net/2026/Oct/1/matthew-green/",
+   "date": "2026-10-01T06:29+00:00",
+   "summary": "[...] Put these pieces together and you have the two halves of a worm: a payload that hijacks the agent, and an agent that will carry the payload to the next agent. Agents in separately-isolated sandboxes discovered that they could leave instructions for each other in a shared package cache, and those instructions changed what the recipients did. Replace the package cache with email, Slack and…"
+  },
+  {
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "openclaw 2026.9.7",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.9.7",
+   "date": "2026-09-30T23:44+00:00",
+   "summary": "OpenClaw v2026.9.7 518 direct commits · 2,818 pull requests · 334 contributors Changes included in this release The release notes and changelog contain the same content, presented in two formats: Release notes — formatted for people, with expandable sections. Changelog — plain Markdown for AI agents and tools. Thanks @609NFT @Aalmann @aatreya @abacha @abuegab1-spec @ada-KVR @AgentSolomon…"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "DeepSeek Harness Desktop for macOS and Windows",
+   "url": "https://www.deepseek.com/en/harness/",
+   "date": "2026-10-02T03:11+00:00",
+   "summary": "243 points, 119 comments · https://news.ycombinator.com/item?id=49929489"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Frog and Toad and the Increasingly Capable Machines",
+   "url": "https://www.frogandtoad.ai/",
+   "date": "2026-10-01T22:23+00:00",
+   "summary": "179 points, 39 comments · https://news.ycombinator.com/item?id=49927760"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "ArXiv's Updated Rate Limit Policy",
+   "url": "https://blog.arxiv.org/2026/10/01/updated-rate-limit-policy/",
+   "date": "2026-10-01T20:12+00:00",
+   "summary": "121 points, 56 comments · https://news.ycombinator.com/item?id=49926512"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Vote on which of Hacker News' challenges for AI have been met",
+   "url": "https://stoppels.ch/goalposts/",
+   "date": "2026-10-01T17:32+00:00",
+   "summary": "144 points, 175 comments · https://news.ycombinator.com/item?id=49924618"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Git 3.0's upcoming SHA-256 default will be a costly mistake",
+   "url": "https://blog.gitbutler.com/git-3-sha-256",
+   "date": "2026-10-01T16:57+00:00",
+   "summary": "386 points, 361 comments · https://news.ycombinator.com/item?id=49924179"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Ask HN: Who is hiring? (October 2026)",
+   "url": "https://news.ycombinator.com/item?id=49922569",
+   "date": "2026-10-01T15:02+00:00",
+   "summary": "205 points, 204 comments · https://news.ycombinator.com/item?id=49922569"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Ask HN: Who wants to be hired? (October 2026)",
+   "url": "https://news.ycombinator.com/item?id=49922568",
+   "date": "2026-10-01T15:02+00:00",
+   "summary": "110 points, 363 comments · https://news.ycombinator.com/item?id=49922568"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Cops Can Bypass iPhone's Automatic Reboot to Get into Locked Phones",
+   "url": "https://www.404media.co/cops-can-bypass-iphone-automatic-inactivity-reboot-graykey/",
+   "date": "2026-10-01T14:38+00:00",
+   "summary": "263 points, 209 comments · https://news.ycombinator.com/item?id=49922278"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "How to set up SPF, DKIM, and DMARC for your sending domain",
+   "url": "https://mailfully.com/blog/spf-dkim-dmarc-setup",
+   "date": "2026-10-01T14:33+00:00",
+   "summary": "82 points, 28 comments · https://news.ycombinator.com/item?id=49922212"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Meta Uses A.I. Data Centers to Avoid Billions in Federal Taxes",
+   "url": "https://www.nytimes.com/2026/09/30/technology/meta-ai-data-centers-taxes.html",
+   "date": "2026-10-01T13:05+00:00",
+   "summary": "252 points, 237 comments · https://news.ycombinator.com/item?id=49921118"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "An AI sovereign wealth fund isn't progressive – it's techno-imperialism",
+   "url": "https://www.ft.com/content/bc178357-793b-45d8-ae3b-d5929159c243",
+   "date": "2026-10-01T13:01+00:00",
+   "summary": "89 points, 62 comments · https://news.ycombinator.com/item?id=49921051"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "FTC is investigating OpenAI, Anthropic and other AI companies over product risks",
+   "url": "https://www.cnbc.com/2026/09/30/ftc-ai-probe-openai-anthropic.html",
+   "date": "2026-10-01T13:00+00:00",
+   "summary": "204 points, 153 comments · https://news.ycombinator.com/item?id=49921050"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "How to speed up the Rust compiler in September 2026",
+   "url": "https://nnethercote.github.io/2026/09/30/how-to-speed-up-the-rust-compiler-in-september-2026.html",
+   "date": "2026-10-01T12:44+00:00",
+   "summary": "259 points, 142 comments · https://news.ycombinator.com/item?id=49920896"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "StreetComplete on iOS is now in public beta",
+   "url": "https://github.com/streetcomplete/StreetComplete/issues/5421",
+   "date": "2026-10-01T10:59+00:00",
+   "summary": "567 points, 150 comments · https://news.ycombinator.com/item?id=49920160"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "GPT-Synopsys: Frontier Intelligence to Revolutionize Chip Design",
+   "url": "https://news.synopsys.com/2026-09-30-OpenAI-and-Synopsys-Announce-GPT-Synopsys-Frontier-Intelligence-to-Revolutionize-Chip-Design",
+   "date": "2026-10-01T10:21+00:00",
+   "summary": "179 points, 108 comments · https://news.ycombinator.com/item?id=49919910"
+  }
+ ],
+ "errors": [],
+ "manual": [
+  {
+   "name": "xAI news / Grok app updates",
+   "url": "https://x.ai/news",
+   "why": "blocks scripts (403): web search 'Grok' / 'xAI' last 24h"
+  },
+  {
+   "name": "ChatGPT release notes",
+   "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Perplexity changelog",
+   "url": "https://www.perplexity.ai/changelog",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Official X accounts (@AnthropicAI, @OpenAI, @xai, @GoogleDeepMind, @cursor_ai)",
+   "url": "https://x.com",
+   "why": "X needs login / paid API: use web search for big announcements"
+  },
+  {
+   "name": "Social media new features (Instagram @creators/@mosseri, TikTok newsroom, X, LinkedIn, Snapchat)",
+   "url": "https://newsroom.tiktok.com/",
+   "why": "no working RSS (TikTok/WhatsApp/Instagram blogs are HTML, Snap/LinkedIn 404): web search each gather for new features, AI features and creator tools; confirm on the platform's own newsroom/help page"
+  },
+  {
+   "name": "Higgsfield announcements",
+   "url": "https://x.com/higgsfield_ai",
+   "why": "big launches often land on X before the blog"
+  }
+ ]
+}

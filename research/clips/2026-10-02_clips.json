@@ -1,0 +1,39 @@
+{
+ "clips": [
+  {
+   "url": "https://x.com/tavus/status/2105704169009246248",
+   "creator": "@tavus",
+   "why": "Visual 'wow' claim viewers can judge themselves (a video-generation model vs. the Turing test) with a huge, verifiable engagement spike — exactly our best-performing clip shape (transformation/judge-it-yourself, like the teddy-bear-to-soldier and bridge-builder clips that top our 14-day report).",
+   "engagement": "27K likes, 10M views",
+   "hook_idea": "A new AI video model just passed a test almost no AI has passed: can you tell it's fake?"
+  },
+  {
+   "url": "https://x.com/NarryOnTheNet/status/2105248677333717123",
+   "creator": "@NarryOnTheNet",
+   "why": "Same 'AI hackers inject gameplay into a classic game' visual mashup as our 2026-10-01 Call of Duty clip (138 views, 7 shares — our best share count of the week) but a different game (Metal Gear Solid), so it's fresh, not a repeat, and proven to work for us.",
+   "engagement": "3.8K likes, 334K views",
+   "hook_idea": "AI hackers just put skateboarding inside Metal Gear Solid. Watch what happens."
+  },
+  {
+   "url": "https://x.com/eternalhyyh/status/2105780486178308490",
+   "creator": "@eternalhyyh",
+   "why": "Classic before/after 'is this AI or real' visual twist — our top format by a wide margin (14-day report: clip avg beats every other format 5-25x) — self-explaining without context.",
+   "engagement": "5.7K likes, 101K views",
+   "hook_idea": "This looks completely AI-generated. It isn't — and that's the scary part."
+  },
+  {
+   "url": "https://x.com/nsketchai/status/2105753158962094239",
+   "creator": "@nsketchai",
+   "why": "A full fake TV-episode clip made with AI video tools — visual, self-explaining, shows capability growth (AI making show-length scenes, not just a 5s clip), fits the 'wow' bucket our numbers reward over dashboards/screen recordings.",
+   "engagement": "2.7K likes, 180K views",
+   "hook_idea": "This entire TV episode scene was never filmed. AI made every frame."
+  },
+  {
+   "url": "https://x.com/mishig25/status/2105320147145920780",
+   "creator": "@mishig25",
+   "why": "A genuine AI-tool use case (reading physics lectures with AI-generated demo visuals) that's visual and educational, giving the mix some substance alongside the pure spectacle clips — lower engagement than the top 4 so slot it last if a slot runs short.",
+   "engagement": "3.9K likes, 180K views",
+   "hook_idea": "AI now draws the demo while you read the lecture. Here's what that looks like."
+  }
+ ]
+}

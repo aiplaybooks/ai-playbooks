@@ -19,6 +19,8 @@ foundation for native Rust apps built with egui.
 **Playback needs Spotify Premium.** Free accounts can browse and search, but
 cannot play music through Spotifast on this computer or another device.
 
+https://github.com/user-attachments/assets/a5f669ce-b3b7-4f8e-9933-976a78876c7e
+
 See [spotifast.rocks](https://spotifast.rocks/) for installation, setup,
 everyday use, and connection details.
 
@@ -93,4 +95,4 @@ AUR and Homebrew packages now use the Spotifast name. See [rename compatibility]
  artists. **Album**, **playlist**, and **podcast** pages support playback
  from any row. Since 0.8.0, album and playlist scrollbars represent the full track count;
  dragging to an unloaded section fetches that section directly.
- Discography and related-artist cards also have right-click menus (available since 0.8.0).
+ Discogra

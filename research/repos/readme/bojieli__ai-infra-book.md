@@ -4,16 +4,17 @@
 [](LICENSE)
 [](https://github.com/bojieli/ai-infra-book)
 
-**简体中文** · [English](book-en/) · [繁體中文](book-zh-tw/)
+**简体中文** · [English](book-en/) · [繁體中文](book-zh-tw/) · [Русский — community edition](book-ru/)
 
 > [!TIP]
 > **下载与阅读** · [格式与版本说明](#版本与格式说明)
 >
-> - **简体中文**：[PDF](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf) · [EPUB](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.epub) · [在线阅读](https://bojieli.github.io/ai-infra-book/)
-> - **English**: [PDF](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book-EN.pdf) · [EPUB](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book-EN.epub) · [Read online](https://bojieli.github.io/ai-infra-book/en/)
-> - **繁體中文**：[PDF](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book-ZH-TW.pdf) · [EPUB](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book-ZH-TW.epub) · [線上閱讀](https://bojieli.github.io/ai-infra-book/zh-tw/)
+> - **简体中文（原版，作者 [@bojieli](https://github.com/bojieli)）**：[PDF](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf) · [EPUB](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.epub) · [在线阅读](https://bojieli.github.io/ai-infra-book/)
+> - **English（社区翻译，[@tg1482](https://github.com/tg1482)）**: [PDF](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book-EN.pdf) · [EPUB](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book-EN.epub) · [Read online](https://bojieli.github.io/ai-infra-book/en/)
+> - **繁體中文（社区翻译，[@edward821220](https://github.com/edward821220)）**：[PDF](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book-ZH-TW.pdf) · [EPUB](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book-ZH-TW.epub) · [線上閱讀](https://bojieli.github.io/ai-infra-book/zh-tw/)
+> - **Русский — community edition, [@ilkruglov](https://github.com/ilkruglov)**: [PDF](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-in-Depth-RU.pdf) · [EPUB](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-in-Depth-RU.epub) · [Онлайн-чтение](https://bojieli.github.io/ai-infra-book/ru/) · [О переводе](book-ru/)
 
-《深入理解 AI Infra》是 GitHub 上获得 **45k+ Star** 的[《深入理解 AI Agent：设计原理与工程实践》](https://github.com/bojieli/ai-agent-book)的姊妹篇。
+《深入理解 AI Infra》是 GitHub 上获得 **50k+ Star** 的[《深入理解 AI Agent：设计原理与工程实践》](https://github.com/bojieli/ai-agent-book)的姊妹篇。
 
 写完[《深入理解 AI Agent》](https://github.com/bojieli/ai-agent-book)后，在与读者交流的过程中，我越来越感到：要开发好基于模型的应用，还需要理解它赖以运行的基础设施。大多数软件工程师不必亲自开发操作系统、编译器和芯片，却仍要学习操作系统、编译原理和计算机体系结构，因为申请内存、读取文件、调用函数，背后都有资源与时间代价。基于模型开发应用也是如此。延迟相差几倍，产品体验就可能完全不同；成本相差一个数量级，能够支撑的商业模式也随之改变。
 
@@ -90,7 +91,7 @@ python scripts/check_site.py
 python scripts/build_site.py --serve
 ```
 
-预览地址为 ，简体中文位于根目录，英文与繁體中文分别位于 `en/` 和 `zh-tw/`。生成文件位于 `build/`，详细说明见[网站构建与发布](website/README.md)。
+预览地址为 ，简体中文位于根目录，英文、繁體中文和俄语分别位于 `en/`、`zh-tw/` 和 `ru/`。生成文件位于 `build/`，详细说明见[网站构建与发布](website/README.md)。
 
 **全书 PDF 与 EPUB**（另需 Pandoc、XeLaTeX 和字体）：
 
@@ -98,10 +99,10 @@ python scripts/build_site.py --serve
 bash book/build_pdf.sh # 简体中文 → book/AI-Infra-Book.pdf
 bash book-en/build_pdf.sh # English → book-en/AI-Infra-Book-EN.pdf
 bash book-zh-tw/build_pdf.sh # 繁體中文 → book-zh-tw/AI-Infra-Book-ZH-TW.pdf
-python3 book/build_epub.py --edition zh # EPUB 只需 Pandoc 与 Poppler；--edition 可选 zh、en、zh-tw
+python3 book/build_epub.py --edition zh # EPUB 只需 Pandoc 与 Poppler；--edition 可选 zh、en、zh-tw、ru
 ```
 
-译本配图存于 Git LFS，构建前先下载：`git lfs pull --include="book-en/images/**,book-zh-tw/images/**" --exclude=""`。依赖、字体及单章编译方法见 [PDF 编译说明](book/README.md)。GitHub Actions 会检查 Pull Request 的网站与三种语言的 PDF、EPUB 构建；推送到 `main` 后自动发布 Release（三种语言各含 PDF 与 EPUB）并部署三种语言的在线阅读网站。
+译本配图存于 Git LFS，构建前先下载：`git lfs pull --include="book-en/images/**,book-zh-tw/images/**" --exclude=""`。依赖、字体及单章编译方法见 [PDF 编译说明](book/README.md)。GitHub Actions 会检查 Pull Request 的网站与各语言的 PDF、EPUB 构建；推送到 `main` 后自动发布 Release（四种语言各含 PDF 与 EPUB）并部署四种语言的在线阅读网站。
 
 ## 仓库结构
 
@@ -109,16 +110,4 @@ python3 book/build_epub.py --edition zh # EPUB 只需 Pandoc 与 Poppler；--edi
 | --- | --- |
 | [manuscripts/](manuscripts/README.md) | 前言、十二章正文、配图与绘图脚本 |
 | [experiments/](experiments/README.md) | 按章节组织的实验与运行记录 |
-| [calculations/](calculations/README.md) | 资源计算工具、固定输入与复算结果 |
-| [case-studies/](case-studies/README.md) | 模型、硬件和系统案例分析，按章节索引 |
-| [references/](references/README.md) | 引用资料、来源清单与版本快照 |
-| [research/](research/README.md) | 支撑正文的专题调研，以及各章修订记录 |
-| [book/](book/README.md) | PDF 模板、构建与校验工具 |
-| [book-en/](book-en/README.md) | 英文版（社区翻译）：前言与十二章正文、英文配图、翻译工具与 PDF 构建脚本 |
-| [book-zh-tw/](book-zh-tw/README.md) | 繁體中文版（社区贡献）：前言与十二章正文、繁體配图、翻译工具与 PDF 构建脚本 |
-| [website/](website/README.md)、[scripts/](scripts/README.md) | 网站资源、构建与检查脚本 |
-| [archive/](archive/README.md) | 历史大纲、审阅和写作协调记录 |
-
-## 参与贡献
-
-书
+| [calculations/](ca

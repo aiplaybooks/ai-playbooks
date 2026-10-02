@@ -117,6 +117,7 @@ OPENAI_BASE_URL=https://your-openai-compatible-endpoint/v1
 OPENAI_MODEL=your-model-name
 
 # Optional web research tools
+WEB_SEARCH_PROVIDER=serper
 SERPER_API_KEY=
 SERPER_BASE_URL=https://google.serper.dev
 JINA_API_KEY=
@@ -124,6 +125,14 @@ JINA_API_KEY=
 
 Support any Serper.dev-compatible endpoint (like litescrape.com, serpbase.dev,
 and others) by setting `SERPER_BASE_URL` and a provider-issued `SERPER_API_KEY`.
+
+Set `WEB_SEARCH_PROVIDER=parallel` to use the free, keyless
+[Parallel Search MCP](https://docs.parallel.ai/integrations/mcp/search-mcp) for
+`web_search`. Serper remains the default, so existing keys and missing-key
+errors keep their current behavior. Parallel MCP does not support the tool's
+custom region, language, or time filters, or counts above 10 per query; choose
+Serper when those are needed.
+`web_fetch` continues to use its existing fetch provider.
 
 Start the TUI:
 
@@ -143,18 +152,4 @@ only what a task actually needs into ` /.apodex/runtime/native`. The
 ### Install once, launch from any project
 
 To run `frontier-agent` like any other command-line tool, install it from this
-repository with `uv` and keep the endpoint in one user file:
-
-```bash
-uv tool install --python 3.12 git+https://github.com/ApodexAI/FrontierAgent.git
-
-# Put OPENAI_API_KEY, OPENAI_BASE_URL and OPENAI_MODEL into
-# ${XDG_CONFIG_HOME:-$HOME/.config}/apodex/env and chmod 600 it.
-
-cd /path/to/project
-frontier-agent
-```
-
-Exported variables and a project `.env` still take precedence over the user
-file. On macOS with Docker running, the container image has to be built once
-from a clone. [Install once and launch from a
+repository with `uv` and kee
