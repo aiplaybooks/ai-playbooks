@@ -1,0 +1,30 @@
+{
+  "kind": "clip",
+  "source": "https://x.com/bcherny/status/2104638725317923228",
+  "credit": "@bcherny on X",
+  "topic": "Claude Code",
+  "title": "Sonnet 5 vs Sonnet 5.5:",
+  "hook": "Sonnet 5.5 just fixed this bug in Claude Code 30% faster, using 30% less.",
+  "hook_pattern": "2. Big number + insider move",
+  "caption": "Sonnet 5.5 just fixed this Claude Code bug 30% faster, using 30% less ⚡\n\nSame repo. Same failing tests. Same setup.\n\n→ Sonnet 5: 17.5s, 18.2K tokens, $0.08\n→ Sonnet 5.5: 12.3s, 13.3K tokens, $0.05\n\nAll 158 tests green both times. One just got there faster and cheaper.\n\nAre you switching your Claude Code default? Yes or no? 👇\n\nSave this for your next model pick, and follow @aiplaybooks.daily for AI tricks you can actually use.\n\n#claudecode #claudeai #anthropic #aicoding #ai",
+  "captions": {
+    "instagram": "Sonnet 5.5 just fixed this Claude Code bug 30% faster, using 30% less ⚡\n\nSame repo. Same failing tests. Same setup.\n\n→ Sonnet 5: 17.5s, 18.2K tokens, $0.08\n→ Sonnet 5.5: 12.3s, 13.3K tokens, $0.05\n\nAll 158 tests green both times. One just got there faster and cheaper.\n\nAre you switching your Claude Code default? Yes or no? 👇\n\nSave this for your next model pick, and follow @aiplaybooks.daily for AI tricks you can actually use.\n\n#claudecode #claudeai #anthropic #aicoding #ai",
+    "facebook": "Sonnet 5.5 just fixed this Claude Code bug 30% faster, using 30% less ⚡\n\nWatch the race: same repo, same failing tests, same Claude Code setup. Sonnet 5 took 17.5 seconds and 18.2K tokens to get all 158 tests passing. Sonnet 5.5 did the same job in 12.3 seconds with 13.3K tokens, and the run cost $0.05 instead of $0.08.\n\nThat's the kind of gap you feel on every bug you fix in a day.\n\nWhich model do you run Claude Code on right now?\n\n#claudecode #claudeai #anthropic",
+    "youtube": {
+      "title": "Claude Code: Sonnet 5.5 vs Sonnet 5 fixing the same bug",
+      "description": "Claude Code bug fix race: Sonnet 5.5 vs Sonnet 5 on the same repo and the same failing tests.\n\nSonnet 5: 17.5s, 18.2K tokens, $0.08. Sonnet 5.5: 12.3s, 13.3K tokens, $0.05. All 158 tests pass in both runs.\n\nAnthropic says Sonnet 5.5 runs 30%+ faster and costs up to 30% less than Sonnet 5 for most work.\n\nWould you switch your default model? Tell us in the comments.\n\n#claudecode #sonnet5.5 #claudeai #anthropic #ai",
+      "tags": ["claude code", "sonnet 5.5", "claude sonnet 5.5", "sonnet 5.5 vs sonnet 5", "claude code tips", "anthropic claude", "ai coding", "ai", "artificial intelligence"]
+    }
+  },
+  "x": "Sonnet 5.5 just fixed this Claude Code bug 30% faster, using 30% less ⚡\n\nSonnet 5: 17.5s, 18.2K tokens\nSonnet 5.5: 12.3s, 13.3K tokens\nSame 158 tests green.\n\n🎥 @bcherny\n\n#ClaudeCode",
+  "first_comment": {
+    "instagram": "The cheapest win here: switch the model, keep your workflow. In Claude Code just type /model and pick Sonnet 5.5, then rerun the task you fixed last.\n\nDid it come out faster for you too?",
+    "facebook": "Quick way to test it yourself: in Claude Code type /model, pick Sonnet 5.5 and rerun the last bug you fixed. Same task, compare the time.\n\nWhat kind of bugs do you throw at Claude Code most?",
+    "youtube": "Try it on your own repo: in Claude Code type /model, pick Sonnet 5.5 and rerun the last bug you fixed.\n\nFaster for you too, yes or no?\n\nSubscribe for daily AI playbooks."
+  },
+  "checked": [
+    "Claude Sonnet 5.5 is real: announced 2026-09-28, 'runs 30%+ faster and costs up to 30% less for most work' than Sonnet 5, strong at fixing bugs: https://www.anthropic.com/claude-sonnet-5-5",
+    "Clip numbers read from the video frames (median of 7 runs, 1.75x playback): Sonnet 5 17.5 s / $0.08 / 18.2K tokens vs Sonnet 5.5 12.3 s / $0.05 / 13.3K tokens, all 158 tests pass for both",
+    "'30% faster and 30% less usage' is the creator's own claim in the post (Boris Cherny, @bcherny): https://x.com/bcherny/status/2104638725317923228"
+  ]
+}

@@ -1,7 +1,71 @@
 {
- "generated": "2026-10-02T13:30+00:00",
+ "generated": "2026-10-02T18:30+00:00",
  "hours": 36.0,
  "items": [
+  {
+   "source": "Ollama releases",
+   "tier": "official",
+   "title": "v0.35.1",
+   "url": "https://github.com/ollama/ollama/releases/tag/v0.35.1",
+   "date": "2026-10-02T18:28+00:00",
+   "summary": "Clef decision models Ollama now supports Clef and Clef Flash , Cloudflare's new open-source decision models, through /v1/systemone . Clef (27B) and Clef Flash (9B) are multimodal: requests can now include images alongside the text state, shared by all questions and scored jointly with it. \"], \"questions\": { \"has_ollama\": {\"type\": \"noul\", \"instructions\": \"Does this image contain Ollama?\"} } }'\">…"
+  },
+  {
+   "source": "Higgsfield blog",
+   "tier": "official",
+   "title": "How to Automate AI Video Generation With n8n and Make",
+   "url": "https://higgsfield.ai/blog/automate-ai-video-n8n-make",
+   "date": "2026-10-02T17:17+00:00",
+   "summary": ""
+  },
+  {
+   "source": "OpenAI News",
+   "tier": "official",
+   "title": "A model guide for the GPT-6 family",
+   "url": "https://openai.com/index/practical-guide-building-gpt-6",
+   "date": "2026-10-02T16:15+00:00",
+   "summary": "Learn how startups can choose GPT-6 models, tune reasoning effort, improve prompts and skills, coordinate tools, and prepare workflows for production."
+  },
+  {
+   "source": "Apple Developer News",
+   "tier": "official",
+   "title": "Updates to Full Disk Access in macOS",
+   "url": "https://developer.apple.com/news/?id=p6zjojqw",
+   "date": "2026-10-02T09:00-07:00",
+   "summary": "We give developers powerful APIs to build incredible capabilities into their apps for Apple products, backed by a set of controls designed to protect users’ private data. Full Disk Access largely sidesteps these controls in order to allow backup apps to function properly on the Mac. Some developers are using Full Disk Access in ways that could put users at risk, exposing everything on their…"
+  },
+  {
+   "source": "Hugging Face blog",
+   "tier": "official",
+   "title": "Open-sourcing AstaBrief, the fast report-generation model in Asta",
+   "url": "https://huggingface.co/blog/allenai/astabrief",
+   "date": "2026-10-02T15:19+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Google AI blog",
+   "tier": "official",
+   "title": "The latest AI news we announced in September 2026",
+   "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/",
+   "date": "2026-10-02T15:00+00:00",
+   "summary": "Here are Google’s latest AI updates from September 2026"
+  },
+  {
+   "source": "Gemini blog",
+   "tier": "official",
+   "title": "The latest AI news we announced in September 2026",
+   "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/",
+   "date": "2026-10-02T15:00+00:00",
+   "summary": "Here are Google’s latest AI updates from September 2026"
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "The latest AI news we announced in September 2026",
+   "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/",
+   "date": "2026-10-02T15:00+00:00",
+   "summary": "Here are Google’s latest AI updates from September 2026"
+  },
   {
    "source": "Hugging Face blog",
    "tier": "official",
@@ -11,12 +75,28 @@
    "summary": ""
   },
   {
-   "source": "Ollama releases",
+   "source": "OpenAI News",
    "tier": "official",
-   "title": "v0.35.1",
-   "url": "https://github.com/ollama/ollama/releases/tag/v0.35.1-rc2",
-   "date": "2026-10-02T03:23+00:00",
-   "summary": "What's Changed feat: allow ten web searches per response by @ParthSareen in #18602 MLX: version bump by @dhiltgen in #18651 llama.cpp: version bump b11232 by @dhiltgen in #18652 create: support explicit model capabilities by @dhiltgen in #18708 Full Changelog : v0.35.0...v0.35.1-rc0"
+   "title": "Chatham scales its capital markets expertise with OpenAI",
+   "url": "https://openai.com/index/chatham-financial",
+   "date": "2026-10-02T00:00+00:00",
+   "summary": "Chatham Financial uses Codex and GPT-5.6 to build technology and redesign workflows, cutting trade validation from 30 minutes to under 4."
+  },
+  {
+   "source": "Anthropic News",
+   "tier": "official",
+   "title": "Anthropic invests $100 million to train 10,000 engineers and tackle the enterprise AI talent gap",
+   "url": "https://www.anthropic.com/news/claude-frontier-academy",
+   "date": "2026-10-02T00:00+00:00",
+   "summary": ""
+  },
+  {
+   "source": "xAI / Grok API release notes",
+   "tier": "official",
+   "title": "xAI / Grok API release notes: Oct 02, 2026",
+   "url": "https://docs.x.ai/docs/release-notes",
+   "date": "2026-10-02T00:00+00:00",
+   "summary": ". All requests to that slug are routed to grok-voice-transcribe-2.0 at the same price, with higher accuracy. See the Speech to Text docs . September September 25 safety_identifier request field You can now send safety_identifier , an opaque end-user identifier assigned by your application, on Chat Completions, the Responses API, deferred chat completions, the Batch API, and the gRPC GetCompletionsRequest . It lets SpaceXAI attribute a policy violation to one of your end users rather than to your API key. The legacy user field is still accepted. See the Security FAQ . September 21 Grok 4.7 Grok 4.7, SpaceXAI's frontier model for coding, agentic tasks, and knowledge work, is now available on the xAI API as grok-4.7 . It has a 500k context window, text and image inputs with text-only output, and no text output limit. Pricing is $2 / $0.50 / $6 per 1M tokens (input / cached input / output)…"
   },
   {
    "source": "Google Keyword blog (all products)",
@@ -139,14 +219,6 @@
    "summary": ""
   },
   {
-   "source": "Hugging Face blog",
-   "tier": "official",
-   "title": "Introducing Olmo-core 3: Open, scalable training infrastructure for large MoEs",
-   "url": "https://huggingface.co/blog/allenai/olmocore3",
-   "date": "2026-10-01T15:01+00:00",
-   "summary": ""
-  },
-  {
    "source": "Meta newsroom (AI + Instagram / WhatsApp / Threads / Facebook)",
    "tier": "official",
    "title": "Announcing Ranveer Singh as Brand Ambassador for Ray-Ban and Ray-Ban Meta in India along with Exciting New Updates to our AI Glasses",
@@ -179,14 +251,6 @@
    "summary": ""
   },
   {
-   "source": "Anthropic News",
-   "tier": "official",
-   "title": "Barclays scales Claude to upgrade operations and improve client experience",
-   "url": "https://www.anthropic.com/news/barclays-scales-claude",
-   "date": "2026-10-01T00:00+00:00",
-   "summary": ""
-  },
-  {
    "source": "Codex changelog",
    "tier": "official",
    "title": "Codex changelog: Oct 01, 2026",
@@ -197,10 +261,10 @@
   {
    "source": "OpenClaw releases",
    "tier": "signal",
-   "title": "v2026.8.35",
+   "title": "openclaw 2026.8.35",
    "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.8.35",
-   "date": "2026-10-02T12:33+00:00",
-   "summary": "OpenClaw 2026.8.35"
+   "date": "2026-10-02T14:06+00:00",
+   "summary": "This is a gateway-only extended-stable release, which is our current equivalent to LTS. This release is OpenClaw from the end of August 2026, plus critical security updates, reliability and performance fixes, and features like new model support. The latest version of OpenClaw at the time of this release is 2026.9.7 2026.8.35 Highlights GPT-6.1 Sol support: add the current Sol model across OpenAI…"
   },
   {
    "source": "OpenClaw releases",
@@ -251,12 +315,20 @@
    "summary": "The feature aligns with similar tools on TikTok and X, and offers users a new way to add context to their posts in the app."
   },
   {
-   "source": "Simon Willison",
-   "tier": "signal",
-   "title": "Quoting Matthew Green",
-   "url": "https://simonwillison.net/2026/Oct/1/matthew-green/",
-   "date": "2026-10-01T06:29+00:00",
-   "summary": "[...] Put these pieces together and you have the two halves of a worm: a payload that hijacks the agent, and an agent that will carry the payload to the next agent. Agents in separately-isolated sandboxes discovered that they could leave instructions for each other in a shared package cache, and those instructions changed what the recipients did. Replace the package cache with email, Slack and…"
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "AI Makes Me Sad",
+   "url": "https://mondobe.com/ai-makes-me-sad",
+   "date": "2026-10-02T15:18+00:00",
+   "summary": "163 points, 186 comments · https://news.ycombinator.com/item?id=49934487"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: Audionaut – an open-source cross-platform multitrack audio editor",
+   "url": "https://github.com/kvoltmer/Audionaut",
+   "date": "2026-10-02T08:05+00:00",
+   "summary": "124 points, 44 comments · https://news.ycombinator.com/item?id=49931031"
   },
   {
    "source": "Hacker News",
@@ -264,7 +336,15 @@
    "title": "DeepSeek Harness Desktop for macOS and Windows",
    "url": "https://www.deepseek.com/en/harness/",
    "date": "2026-10-02T03:11+00:00",
-   "summary": "291 points, 150 comments · https://news.ycombinator.com/item?id=49929489"
+   "summary": "376 points, 197 comments · https://news.ycombinator.com/item?id=49929489"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: Giving Opus 5.5 a simulated paint canvas",
+   "url": "https://stillwet.art/",
+   "date": "2026-10-02T00:27+00:00",
+   "summary": "108 points, 35 comments · https://news.ycombinator.com/item?id=49928566"
   },
   {
    "source": "Hacker News",
@@ -272,7 +352,7 @@
    "title": "Frog and Toad and the Increasingly Capable Machines",
    "url": "https://www.frogandtoad.ai/",
    "date": "2026-10-01T22:23+00:00",
-   "summary": "273 points, 62 comments · https://news.ycombinator.com/item?id=49927760"
+   "summary": "516 points, 117 comments · https://news.ycombinator.com/item?id=49927760"
   },
   {
    "source": "Hacker News",
@@ -280,7 +360,7 @@
    "title": "Show HN: Janus – Go binary that runs GGUF models via Vulkan on AMD/Intel/Nvidia",
    "url": "https://github.com/Vibra-Ingenn/Janus",
    "date": "2026-10-01T20:36+00:00",
-   "summary": "82 points, 14 comments · https://news.ycombinator.com/item?id=49926773"
+   "summary": "93 points, 17 comments · https://news.ycombinator.com/item?id=49926773"
   },
   {
    "source": "Hacker News",
@@ -288,7 +368,15 @@
    "title": "ArXiv's Updated Rate Limit Policy",
    "url": "https://blog.arxiv.org/2026/10/01/updated-rate-limit-policy/",
    "date": "2026-10-01T20:12+00:00",
-   "summary": "132 points, 66 comments · https://news.ycombinator.com/item?id=49926512"
+   "summary": "141 points, 70 comments · https://news.ycombinator.com/item?id=49926512"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "FLUX 3 Image",
+   "url": "https://bfl.ai/models/flux-3-image",
+   "date": "2026-10-01T19:24+00:00",
+   "summary": "140 points, 24 comments · https://news.ycombinator.com/item?id=49925974"
   },
   {
    "source": "Hacker News",
@@ -296,7 +384,7 @@
    "title": "Vote on which of Hacker News' challenges for AI have been met",
    "url": "https://stoppels.ch/goalposts/",
    "date": "2026-10-01T17:32+00:00",
-   "summary": "172 points, 198 comments · https://news.ycombinator.com/item?id=49924618"
+   "summary": "194 points, 243 comments · https://news.ycombinator.com/item?id=49924618"
   },
   {
    "source": "Hacker News",
@@ -304,7 +392,7 @@
    "title": "Git 3.0's upcoming SHA-256 default will be a costly mistake",
    "url": "https://blog.gitbutler.com/git-3-sha-256",
    "date": "2026-10-01T16:57+00:00",
-   "summary": "438 points, 413 comments · https://news.ycombinator.com/item?id=49924179"
+   "summary": "536 points, 502 comments · https://news.ycombinator.com/item?id=49924179"
   },
   {
    "source": "Hacker News",
@@ -312,7 +400,7 @@
    "title": "Lightweight PDF parser with layout, tables, formulas and bounding boxes",
    "url": "https://github.com/beatrizalmeidaf/papero-pdf-text-extractor",
    "date": "2026-10-01T16:14+00:00",
-   "summary": "81 points, 7 comments · https://news.ycombinator.com/item?id=49923638"
+   "summary": "86 points, 7 comments · https://news.ycombinator.com/item?id=49923638"
   },
   {
    "source": "Hacker News",
@@ -320,7 +408,7 @@
    "title": "Ask HN: Who is hiring? (October 2026)",
    "url": "https://news.ycombinator.com/item?id=49922569",
    "date": "2026-10-01T15:02+00:00",
-   "summary": "224 points, 217 comments · https://news.ycombinator.com/item?id=49922569"
+   "summary": "257 points, 254 comments · https://news.ycombinator.com/item?id=49922569"
   },
   {
    "source": "Hacker News",
@@ -328,7 +416,7 @@
    "title": "Ask HN: Who wants to be hired? (October 2026)",
    "url": "https://news.ycombinator.com/item?id=49922568",
    "date": "2026-10-01T15:02+00:00",
-   "summary": "115 points, 382 comments · https://news.ycombinator.com/item?id=49922568"
+   "summary": "121 points, 414 comments · https://news.ycombinator.com/item?id=49922568"
   },
   {
    "source": "Hacker News",
@@ -336,7 +424,7 @@
    "title": "Cops Can Bypass iPhone's Automatic Reboot to Get into Locked Phones",
    "url": "https://www.404media.co/cops-can-bypass-iphone-automatic-inactivity-reboot-graykey/",
    "date": "2026-10-01T14:38+00:00",
-   "summary": "269 points, 212 comments · https://news.ycombinator.com/item?id=49922278"
+   "summary": "278 points, 218 comments · https://news.ycombinator.com/item?id=49922278"
   },
   {
    "source": "Hacker News",
@@ -344,7 +432,7 @@
    "title": "How to set up SPF, DKIM, and DMARC for your sending domain",
    "url": "https://mailfully.com/blog/spf-dkim-dmarc-setup",
    "date": "2026-10-01T14:33+00:00",
-   "summary": "83 points, 28 comments · https://news.ycombinator.com/item?id=49922212"
+   "summary": "88 points, 29 comments · https://news.ycombinator.com/item?id=49922212"
   },
   {
    "source": "Hacker News",
@@ -352,7 +440,7 @@
    "title": "Meta Uses A.I. Data Centers to Avoid Billions in Federal Taxes",
    "url": "https://www.nytimes.com/2026/09/30/technology/meta-ai-data-centers-taxes.html",
    "date": "2026-10-01T13:05+00:00",
-   "summary": "252 points, 240 comments · https://news.ycombinator.com/item?id=49921118"
+   "summary": "252 points, 243 comments · https://news.ycombinator.com/item?id=49921118"
   },
   {
    "source": "Hacker News",
@@ -368,7 +456,7 @@
    "title": "FTC is investigating OpenAI, Anthropic and other AI companies over product risks",
    "url": "https://www.cnbc.com/2026/09/30/ftc-ai-probe-openai-anthropic.html",
    "date": "2026-10-01T13:00+00:00",
-   "summary": "204 points, 154 comments · https://news.ycombinator.com/item?id=49921050"
+   "summary": "206 points, 159 comments · https://news.ycombinator.com/item?id=49921050"
   },
   {
    "source": "Hacker News",
@@ -376,7 +464,7 @@
    "title": "How to speed up the Rust compiler in September 2026",
    "url": "https://nnethercote.github.io/2026/09/30/how-to-speed-up-the-rust-compiler-in-september-2026.html",
    "date": "2026-10-01T12:44+00:00",
-   "summary": "261 points, 150 comments · https://news.ycombinator.com/item?id=49920896"
+   "summary": "271 points, 160 comments · https://news.ycombinator.com/item?id=49920896"
   },
   {
    "source": "Hacker News",
@@ -384,7 +472,7 @@
    "title": "StreetComplete on iOS is now in public beta",
    "url": "https://github.com/streetcomplete/StreetComplete/issues/5421",
    "date": "2026-10-01T10:59+00:00",
-   "summary": "586 points, 160 comments · https://news.ycombinator.com/item?id=49920160"
+   "summary": "612 points, 169 comments · https://news.ycombinator.com/item?id=49920160"
   },
   {
    "source": "Hacker News",
@@ -392,7 +480,7 @@
    "title": "GPT-Synopsys: Frontier Intelligence to Revolutionize Chip Design",
    "url": "https://news.synopsys.com/2026-09-30-OpenAI-and-Synopsys-Announce-GPT-Synopsys-Frontier-Intelligence-to-Revolutionize-Chip-Design",
    "date": "2026-10-01T10:21+00:00",
-   "summary": "185 points, 109 comments · https://news.ycombinator.com/item?id=49919910"
+   "summary": "186 points, 110 comments · https://news.ycombinator.com/item?id=49919910"
   }
  ],
  "errors": [],

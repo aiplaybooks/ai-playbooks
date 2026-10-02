@@ -1,0 +1,96 @@
+{
+  "generated": "2026-10-02T21:30:00+03:00",
+  "candidates": [
+    {
+      "id": "grok-xchat-group-chats",
+      "tool": "Grok",
+      "kind": "news",
+      "title": "You Can Now Add Grok to Your X Group Chats (But Read This First)",
+      "summary_tr": "X, Premium+ kullanıcılarının Grok'u XChat sohbetlerine (grup dahil) üye olarak eklemesine izin verdi; Grok sohbetin içinden soruları yanıtlıyor. Önemli detay: Grok sohbete eklendiği anda o sohbet uçtan uca şifreli olmaktan çıkıyor, Grok çıkarılınca tekrar şifreleniyor (aradaki mesajlar şifresiz kalıyor).",
+      "why_tr": "Herkesin kullandığı bir uygulamada yeni AI özelliği + 'gizlilik tuzağı' açısı: kaydetme/paylaşma tetikler.",
+      "angle": "what it does + how to add Grok to a chat + the encryption catch + 3 ways to use it in a group",
+      "tools": ["Grok", "X"],
+      "published": "2026-10-02",
+      "sources": ["https://help.x.com/en/using-x/about-chat"],
+      "hints": ["https://www.basenor.com/blogs/news/grok-is-now-live-in-xchat-ask-it-anything", "https://www.ababnews.com/news/2ea38137-beb9-48b9-955d-162880c7b55d"],
+      "score": 7
+    },
+    {
+      "id": "grok-primary-bot-proactive",
+      "tool": "Grok",
+      "kind": "news",
+      "title": "Grok Bot Now Offers to Do Your Work Before You Even Ask",
+      "summary_tr": "Grok Bot'a 'Primary Bot' geldi: ana asistanın, senin yerine yapabileceği işleri kendisi fark edip teklif ediyor ve görevleri diğer Bot'larına dağıtıyor. Resmi @bot hesabı 1 Ekim'de duyurdu ('Grok Bot can now suggest ways to help without you needing to ask'); kademeli açılıyor, öneriler kullanım limitinden düşmüyor (son detay ikincil kaynaklardan, yazarken doğrulanmalı).",
+      "why_tr": "'Proaktif AI çalışan' konsepti (OpenAI dots, Meta Muse ile yarış) ilgi çekiyor; resmi gönderi 1 günde 2M+ izlenme almış.",
+      "angle": "what Primary Bot is + how it hands work to your other Bots + how to set one + dots vs Muse vs Grok in one line",
+      "tools": ["Grok"],
+      "published": "2026-10-01",
+      "sources": ["https://x.com/bot/status/2105713240701538538"],
+      "hints": ["https://daily.dev/posts/grok-bot-adds-a-primary-bot-that-suggests-tasks-on-its-own-gempxa7mz", "https://www.progressiverobot.com/2026/10/02/primary-bot-grok-4-7-base-model-proactive-grok-bot/", "https://www.threads.com/@testingcatalog/post/Dd8y8-ugC8l/grok-bot-is-getting-a-primary-bot-primary-bot-is-meant-to-be-your-main-ai/"],
+      "score": 6
+    },
+    {
+      "id": "flux-3-image-layout-control",
+      "tool": "Other",
+      "kind": "news",
+      "title": "This New AI Image Model Lets You Place Every Object Exactly Where You Want It",
+      "summary_tr": "Black Forest Labs 1 Ekim'de FLUX 3 Image'ı çıkardı: kutularla (bounding box) her nesnenin yerini önceden çiziyorsun, tek seferde 10 referans görsel kullanabiliyorsun, resmin geri kalanını bozmadan sadece seçili kısmı düzenleyebiliyorsun, 4K'ya kadar çıktı. Higgsfield'a da aynı gün eklendi (OpenRouter'da da var).",
+      "why_tr": "Görsel üretenler için somut, gösterilebilir yenilik (önce/sonra, kutu düzeni) – carousel için çok görsel bir konu.",
+      "angle": "the 3 new tricks (box layouts, 10 references, edit one part only) + where to try it (Higgsfield) + 3 prompt ideas",
+      "tools": ["FLUX", "Higgsfield"],
+      "published": "2026-10-01",
+      "sources": ["https://docs.bfl.ai/flux_3/flux3_image_overview", "https://higgsfield.ai/creator-hub/changelog"],
+      "hints": ["https://the-decoder.com/black-forest-labs-launches-flux-3-image-with-multi-step-editing-that-leaves-the-rest-of-your-picture-alone/", "https://x.com/OpenRouter/status/2105759062835220852"],
+      "score": 7
+    },
+    {
+      "id": "google-suncatcher-satellite-orbit",
+      "tool": "Google",
+      "kind": "news",
+      "title": "Google Just Put Its AI Chips in Space",
+      "summary_tr": "Google'ın Project Suncatcher prototip uydusu (Planet ortaklığı) 1 Ekim'de SpaceX Transporter-18 ile yörüngeye çıktı, iletişim kuruldu ve normal çalışıyor. İçindeki TPU'ların radyasyon ve aşırı sıcaklık koşullarına nasıl dayandığını ölçecek; amaç gelecekte uzayda güneş enerjili AI veri merkezleri.",
+      "why_tr": "Herkesin anlayacağı, şaşırtıcı ve paylaşılabilir bir 'AI uzaya çıktı' hikâyesi; güçlü kapak görseli.",
+      "angle": "what launched + why Google wants AI data centers in orbit (solar power) + what the satellite tests + what's next",
+      "tools": ["Google"],
+      "published": "2026-10-01",
+      "sources": ["https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-prototype/"],
+      "hints": [],
+      "score": 6
+    },
+    {
+      "id": "claude-one-claude-docs-slides-evergreen",
+      "tool": "Claude",
+      "kind": "evergreen",
+      "title": "Claude Can Now Write the Report AND Build the Slides in One Chat",
+      "summary_tr": "16 Eylül'de Chat ve Cowork tek 'Claude' oldu (Pro/Max'e kademeli açılıyor, Team ve Free sonra): artık mod seçmiyorsun, Claude işi kendisi yönlendiriyor; sohbet içinde Claude Docs & Slides (beta) ile belge ve sunum oluşturup PowerPoint/PDF indirebiliyor, çok adımlı görevleri yürütüp seninle ara ara kontrol ediyor. Bu birleşme henüz paylaşmadığımız bir konu.",
+      "why_tr": "Pratik 'bunu bilmiyordun' içeriği: tek prompt ile rapor + 5 slayt; kaydedilecek türden.",
+      "angle": "what changed (no more Chat vs Cowork) + 5 things to try: report + slides in one prompt, download as PowerPoint, shareable link, multi-step tasks, connectors",
+      "tools": ["Claude"],
+      "published": "2026-09-16",
+      "sources": ["https://claude.com/blog/cowork-is-now-claude", "https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude"],
+      "hints": ["https://the-decoder.com/anthropic-merges-claude-chat-cowork-and-more-into-a-single-product/"],
+      "score": 7
+    },
+    {
+      "id": "pack-pinterest-affiliate-agent",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "5 Prompts That Turn a Pinterest Account Into a $1,500/Month Affiliate Machine",
+      "summary_tr": "Sıfırdan bir Pinterest hesabını AI ajanı ile affiliate gelir kaynağına çeviren paket: niş + ürün seçimi, 30 günlük pin planı, SEO'lu pin başlık/açıklamaları, basit bir landing/blog sayfası ve haftalık performans analizi. Hedef ve 'gerçekçi tahmin' içeren, [PLACEHOLDER]'lı promptlar.",
+      "why_tr": "Sosyal medya + para + AI ajanı üçlüsü (paketlerin %60 kuralı); Pinterest yüzlerce kişinin denemediği, az doymuş bir kanal.",
+      "angle": "Niche & product picker · 30-day pin calendar · Pin SEO writer · Bridge page builder · Weekly stats coach (each: role, [GOAL], deliverables, a realistic estimate)",
+      "tools": ["ChatGPT", "Claude"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 6
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 0, "Claude": 1, "Gemini": 0, "Grok": 2, "Codex": 0, "Cursor": 0, "Copilot": 0,
+    "Perplexity": 0, "Meta AI": 0, "Mistral": 0, "DeepSeek": 0, "Open models": 0, "Apple": 0,
+    "Higgsfield": 0, "Google": 1, "Social media": 0, "Other": 1, "Prompt pack": 1
+  },
+  "notes_tr": "Bu turda yeni: Grok'un XChat grup sohbetlerine girmesi (şifreleme uyarısıyla), Grok Bot 'Primary Bot' (kaynak resmi @bot X gönderisi; xAI dokümanında henüz yok), FLUX 3 Image (Higgsfield'da da), Google Suncatcher uydusu + Claude birleşmesi evergreen'i + Pinterest affiliate paketi. Diğer araçlarda (ChatGPT try-on/Space/dots, Copilot computer use/workflows, Codex CLI 0.160, Claude Code mods, Higgsfield Ads Studio, Gemini student hub/Guided Vision, Perplexity, Mistral, DeepSeek Harness, Apple) yeni olan ya havuzda zaten var ya da küçük (Codex 0.160 küçük; Perplexity'nin Amex teklifi kurumsal; Mistral sadece Kanada ofisi/ortaklıklar; Qwen4/GLM-5.4/Kimi K3.x henüz çıkmadı; Meta Muse 5M indirme sadece istatistik). ÖNEMLİ STRATEJİ NOTU: YouTube 1 Ekim'de (Creator Insider, Rene Ritchie) Shorts önerilerinde orijinal içeriği öne alıp başkasının kliplerini az değişiklikle yeniden yükleyen kanalların erişimini düşüreceğini açıkladı; 'ekrandakini anlatan seslendirme, küçük teknik düzenleme, şablonla toplu değişiklik' orijinal sayılmıyor. Bizim viral klip Shorts'larımız (hook çerçevesi + kredi) tam bu riske giriyor: strateji direktörü değerlendirmeli (yorum/hikâye ekleme). Resmi URL bulunamadığı için aday yapılmadı (ipuçları: socialmediatoday.com/news/youtube-updates-shorts-algorithm-to-put-more-focus-on-original-content/831976/, searchenginejournal.com/youtube-original-shorts-reposted-clips-reach/591774/). Ayrıca Threads alıntı-üstü-fotoğraf testi ve TikTok AI içerik kaydırıcısı (2025'ten eski) resmi/yeni değil, atlandı. ChatGPT çok sayfalı belge tarama → PDF iddiası resmi notlarda doğrulanamadı.",
+  "sources_changed": []
+}
