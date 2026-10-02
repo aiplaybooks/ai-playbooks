@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-02T10:30+00:00",
+ "generated": "2026-10-02T13:30+00:00",
  "hours": 36.0,
  "items": [
   {
@@ -179,14 +179,6 @@
    "summary": ""
   },
   {
-   "source": "OpenAI News",
-   "tier": "official",
-   "title": "The Den frees up 10-15 hours a week to grow with ChatGPT Work",
-   "url": "https://openai.com/index/the-den-family-social",
-   "date": "2026-10-01T00:00+00:00",
-   "summary": "As it opens a new location, the social club prepares grant applications in 2 hours instead of 3 days and liquor-license materials in 3 hours instead of 4 days."
-  },
-  {
    "source": "Anthropic News",
    "tier": "official",
    "title": "Barclays scales Claude to upgrade operations and improve client experience",
@@ -203,28 +195,12 @@
    "summary": "Codex CLI 0.160.0 pre]:w-full [&>pre]:max-w-full [&>pre]:mb-0 pt-4\"> $ npm install -g @openai/codex@0.160.0 View details New Features Browse older tasks in the agent command center with a keyboard-accessible “Show more” action. ( #49106 ) Select transcript text and paste with middle-click in fullscreen mode on supported local Linux X11 terminals. ( #49112 ) Start sessions outside a project with workspace defaults when policy permits, and restore saved permissions when resuming. ( #49160 ) Added opt-in Guardian review capabilities to retrieve earlier user instructions and include context from agent handoffs. ( #49036 , #49057 ) Bug Fixes Unsent queued messages now resume after reconnection once uncertain submissions are resolved, avoiding duplicate sends. ( #49105 ) The terminal UI now preserves server provider, reasoning-summary, and verbosity settings and shows the correct sessions in…"
   },
   {
-   "source": "Claude release notes",
-   "tier": "official",
-   "title": "Claude release notes: Sep 30, 2026",
-   "url": "https://docs.claude.com/en/release-notes/overview",
-   "date": "2026-09-30T00:00+00:00",
-   "summary": " We announced the deprecation of the Claude Sonnet 4.5 model ( claude-sonnet-4-5-20250929 ), with retirement on the Claude API scheduled for …"
-  },
-  {
-   "source": "Codex changelog",
-   "tier": "official",
-   "title": "Codex changelog: Sep 30, 2026",
-   "url": "https://developers.openai.com/codex/changelog",
-   "date": "2026-09-30T00:00+00:00",
-   "summary": "Codex CLI 0.159.3 pre]:w-full [&>pre]:max-w-full [&>pre]:mb-0 pt-4\"> $ npm install -g @openai/codex@0.159.3 View details New Features Eligible local sessions signed in with ChatGPT can now show optional reminders to complete account security setup. ( #49744 ) Changelog Full Changelog: rust-v0.159.2...rust-v0.159.3 #49744 [0.159] Backport account security setup reminders for 0.159.3 @andrewgu-oai Full release on Github"
-  },
-  {
-   "source": "Gemini API changelog",
-   "tier": "official",
-   "title": "Gemini API changelog: Sep 30, 2026",
-   "url": "https://ai.google.dev/gemini-api/docs/changelog",
-   "date": "2026-09-30T00:00+00:00",
-   "summary": ". To get started, see the Gemini Omni Flash model page and the omni guide ."
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "v2026.8.35",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.8.35",
+   "date": "2026-10-02T12:33+00:00",
+   "summary": "OpenClaw 2026.8.35"
   },
   {
    "source": "OpenClaw releases",
@@ -283,20 +259,12 @@
    "summary": "[...] Put these pieces together and you have the two halves of a worm: a payload that hijacks the agent, and an agent that will carry the payload to the next agent. Agents in separately-isolated sandboxes discovered that they could leave instructions for each other in a shared package cache, and those instructions changed what the recipients did. Replace the package cache with email, Slack and…"
   },
   {
-   "source": "OpenClaw releases",
-   "tier": "signal",
-   "title": "openclaw 2026.9.7",
-   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.9.7",
-   "date": "2026-09-30T23:44+00:00",
-   "summary": "OpenClaw v2026.9.7 518 direct commits · 2,818 pull requests · 334 contributors Changes included in this release The release notes and changelog contain the same content, presented in two formats: Release notes — formatted for people, with expandable sections. Changelog — plain Markdown for AI agents and tools. Thanks @609NFT @Aalmann @aatreya @abacha @abuegab1-spec @ada-KVR @AgentSolomon…"
-  },
-  {
    "source": "Hacker News",
    "tier": "community",
    "title": "DeepSeek Harness Desktop for macOS and Windows",
    "url": "https://www.deepseek.com/en/harness/",
    "date": "2026-10-02T03:11+00:00",
-   "summary": "243 points, 119 comments · https://news.ycombinator.com/item?id=49929489"
+   "summary": "291 points, 150 comments · https://news.ycombinator.com/item?id=49929489"
   },
   {
    "source": "Hacker News",
@@ -304,7 +272,15 @@
    "title": "Frog and Toad and the Increasingly Capable Machines",
    "url": "https://www.frogandtoad.ai/",
    "date": "2026-10-01T22:23+00:00",
-   "summary": "179 points, 39 comments · https://news.ycombinator.com/item?id=49927760"
+   "summary": "273 points, 62 comments · https://news.ycombinator.com/item?id=49927760"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: Janus – Go binary that runs GGUF models via Vulkan on AMD/Intel/Nvidia",
+   "url": "https://github.com/Vibra-Ingenn/Janus",
+   "date": "2026-10-01T20:36+00:00",
+   "summary": "82 points, 14 comments · https://news.ycombinator.com/item?id=49926773"
   },
   {
    "source": "Hacker News",
@@ -312,7 +288,7 @@
    "title": "ArXiv's Updated Rate Limit Policy",
    "url": "https://blog.arxiv.org/2026/10/01/updated-rate-limit-policy/",
    "date": "2026-10-01T20:12+00:00",
-   "summary": "121 points, 56 comments · https://news.ycombinator.com/item?id=49926512"
+   "summary": "132 points, 66 comments · https://news.ycombinator.com/item?id=49926512"
   },
   {
    "source": "Hacker News",
@@ -320,7 +296,7 @@
    "title": "Vote on which of Hacker News' challenges for AI have been met",
    "url": "https://stoppels.ch/goalposts/",
    "date": "2026-10-01T17:32+00:00",
-   "summary": "144 points, 175 comments · https://news.ycombinator.com/item?id=49924618"
+   "summary": "172 points, 198 comments · https://news.ycombinator.com/item?id=49924618"
   },
   {
    "source": "Hacker News",
@@ -328,7 +304,15 @@
    "title": "Git 3.0's upcoming SHA-256 default will be a costly mistake",
    "url": "https://blog.gitbutler.com/git-3-sha-256",
    "date": "2026-10-01T16:57+00:00",
-   "summary": "386 points, 361 comments · https://news.ycombinator.com/item?id=49924179"
+   "summary": "438 points, 413 comments · https://news.ycombinator.com/item?id=49924179"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Lightweight PDF parser with layout, tables, formulas and bounding boxes",
+   "url": "https://github.com/beatrizalmeidaf/papero-pdf-text-extractor",
+   "date": "2026-10-01T16:14+00:00",
+   "summary": "81 points, 7 comments · https://news.ycombinator.com/item?id=49923638"
   },
   {
    "source": "Hacker News",
@@ -336,7 +320,7 @@
    "title": "Ask HN: Who is hiring? (October 2026)",
    "url": "https://news.ycombinator.com/item?id=49922569",
    "date": "2026-10-01T15:02+00:00",
-   "summary": "205 points, 204 comments · https://news.ycombinator.com/item?id=49922569"
+   "summary": "224 points, 217 comments · https://news.ycombinator.com/item?id=49922569"
   },
   {
    "source": "Hacker News",
@@ -344,7 +328,7 @@
    "title": "Ask HN: Who wants to be hired? (October 2026)",
    "url": "https://news.ycombinator.com/item?id=49922568",
    "date": "2026-10-01T15:02+00:00",
-   "summary": "110 points, 363 comments · https://news.ycombinator.com/item?id=49922568"
+   "summary": "115 points, 382 comments · https://news.ycombinator.com/item?id=49922568"
   },
   {
    "source": "Hacker News",
@@ -352,7 +336,7 @@
    "title": "Cops Can Bypass iPhone's Automatic Reboot to Get into Locked Phones",
    "url": "https://www.404media.co/cops-can-bypass-iphone-automatic-inactivity-reboot-graykey/",
    "date": "2026-10-01T14:38+00:00",
-   "summary": "263 points, 209 comments · https://news.ycombinator.com/item?id=49922278"
+   "summary": "269 points, 212 comments · https://news.ycombinator.com/item?id=49922278"
   },
   {
    "source": "Hacker News",
@@ -360,7 +344,7 @@
    "title": "How to set up SPF, DKIM, and DMARC for your sending domain",
    "url": "https://mailfully.com/blog/spf-dkim-dmarc-setup",
    "date": "2026-10-01T14:33+00:00",
-   "summary": "82 points, 28 comments · https://news.ycombinator.com/item?id=49922212"
+   "summary": "83 points, 28 comments · https://news.ycombinator.com/item?id=49922212"
   },
   {
    "source": "Hacker News",
@@ -368,7 +352,7 @@
    "title": "Meta Uses A.I. Data Centers to Avoid Billions in Federal Taxes",
    "url": "https://www.nytimes.com/2026/09/30/technology/meta-ai-data-centers-taxes.html",
    "date": "2026-10-01T13:05+00:00",
-   "summary": "252 points, 237 comments · https://news.ycombinator.com/item?id=49921118"
+   "summary": "252 points, 240 comments · https://news.ycombinator.com/item?id=49921118"
   },
   {
    "source": "Hacker News",
@@ -376,7 +360,7 @@
    "title": "An AI sovereign wealth fund isn't progressive – it's techno-imperialism",
    "url": "https://www.ft.com/content/bc178357-793b-45d8-ae3b-d5929159c243",
    "date": "2026-10-01T13:01+00:00",
-   "summary": "89 points, 62 comments · https://news.ycombinator.com/item?id=49921051"
+   "summary": "90 points, 63 comments · https://news.ycombinator.com/item?id=49921051"
   },
   {
    "source": "Hacker News",
@@ -384,7 +368,7 @@
    "title": "FTC is investigating OpenAI, Anthropic and other AI companies over product risks",
    "url": "https://www.cnbc.com/2026/09/30/ftc-ai-probe-openai-anthropic.html",
    "date": "2026-10-01T13:00+00:00",
-   "summary": "204 points, 153 comments · https://news.ycombinator.com/item?id=49921050"
+   "summary": "204 points, 154 comments · https://news.ycombinator.com/item?id=49921050"
   },
   {
    "source": "Hacker News",
@@ -392,7 +376,7 @@
    "title": "How to speed up the Rust compiler in September 2026",
    "url": "https://nnethercote.github.io/2026/09/30/how-to-speed-up-the-rust-compiler-in-september-2026.html",
    "date": "2026-10-01T12:44+00:00",
-   "summary": "259 points, 142 comments · https://news.ycombinator.com/item?id=49920896"
+   "summary": "261 points, 150 comments · https://news.ycombinator.com/item?id=49920896"
   },
   {
    "source": "Hacker News",
@@ -400,7 +384,7 @@
    "title": "StreetComplete on iOS is now in public beta",
    "url": "https://github.com/streetcomplete/StreetComplete/issues/5421",
    "date": "2026-10-01T10:59+00:00",
-   "summary": "567 points, 150 comments · https://news.ycombinator.com/item?id=49920160"
+   "summary": "586 points, 160 comments · https://news.ycombinator.com/item?id=49920160"
   },
   {
    "source": "Hacker News",
@@ -408,7 +392,7 @@
    "title": "GPT-Synopsys: Frontier Intelligence to Revolutionize Chip Design",
    "url": "https://news.synopsys.com/2026-09-30-OpenAI-and-Synopsys-Announce-GPT-Synopsys-Frontier-Intelligence-to-Revolutionize-Chip-Design",
    "date": "2026-10-01T10:21+00:00",
-   "summary": "179 points, 108 comments · https://news.ycombinator.com/item?id=49919910"
+   "summary": "185 points, 109 comments · https://news.ycombinator.com/item?id=49919910"
   }
  ],
  "errors": [],

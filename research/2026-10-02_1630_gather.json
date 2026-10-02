@@ -1,0 +1,77 @@
+{
+  "generated": "2026-10-02T16:30+00:00",
+  "candidates": [
+    {
+      "id": "apple-siri-ai-five-languages-october",
+      "tool": "Apple",
+      "kind": "news",
+      "title": "Siri's New AI Brain Just Learned Five More Languages",
+      "summary_tr": "Apple'ın Eylül'de İngilizce beta olarak çıkardığı yeni yapay zeka destekli Siri, Ekim'de Fransızca, Japonca, Korece, Portekizce ve İspanyolca desteğiyle genişliyor.",
+      "why_tr": "Siri'nin büyük yeniden lansmanı zaten konuştuğumuz bir konu; dil genişlemesi milyonlarca yeni kullanıcıyı kapsıyor ve 'artık senin dilinde' açısı paylaşılabilir.",
+      "angle": "what changed (beta English -> +5 languages) + who gets it (recent iPhones) + how to turn it on",
+      "tools": ["Apple"],
+      "published": "2026-10-01",
+      "sources": [
+        "https://www.apple.com/newsroom/2026/09/major-updates-for-apples-software-platforms-are-now-available/",
+        "https://www.apple.com/newsroom/2026/06/apple-introduces-siri-ai-a-profoundly-more-capable-and-personal-assistant/"
+      ],
+      "hints": [
+        "https://9to5mac.com/2026/09/09/apple-confirms-siri-ai-launches-in-english-this-month-will-add-five-languages-in-october/"
+      ],
+      "score": 6
+    },
+    {
+      "id": "mistral-vibe-connectors-workday",
+      "tool": "Mistral",
+      "kind": "evergreen",
+      "title": "Mistral's Free AI Agent Can Already Run Your Whole Workday",
+      "summary_tr": "Mistral'in Le Chat'ten yeniden adlandırdığı Vibe, e-posta, takvim, Slack, GitHub ve Jira dahil 100'den fazla bağlayıcıyla (connector) tek bir ajan üzerinden çok adımlı işleri kendi başına halledebiliyor — ücretsiz başlıyor.",
+      "why_tr": "Mistral son zamanlarda havuzda az yer aldı; 'bunu zaten ücretsiz yapabiliyor' açısı pratik ve paylaşılabilir.",
+      "angle": "what Work Mode + connectors already do for free + 3 everyday tasks to try today",
+      "tools": ["Mistral"],
+      "published": null,
+      "sources": [
+        "https://chat.mistral.ai/",
+        "https://mistral.ai/news"
+      ],
+      "hints": [
+        "https://www.heise.de/en/news/Mistral-s-chatbot-is-now-called-Vibe-and-gains-new-capabilities-11311685.html"
+      ],
+      "score": 5
+    },
+    {
+      "id": "pack-grocery-bill-shrinker",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "5 Prompts That Shrink Your Grocery Bill Without Changing How You Shop",
+      "summary_tr": "Kullanıcının mevcut market fişlerini/alışveriş listesini ChatGPT'ye verip aynı markaları ve ürünleri daha ucuza nereden alacağını, hangi ürünlerin marka değiştirilebileceğini ve kupon/indirim fırsatlarını bulduran 5 promptluk bir paket.",
+      "why_tr": "Gündelik hayatı ve cüzdanı doğrudan ilgilendiren, herkesin hemen deneyebileceği bir market/para paketi — sosyal medya+para teması dışında kalan finans tarafını besliyor.",
+      "angle": "Act as a grocery-budget analyst: [RECEIPT/LIST] -> cheaper swaps, store comparison, coupon stacking, a realistic monthly savings estimate",
+      "tools": ["Prompt pack"],
+      "published": null,
+      "sources": [],
+      "score": 5
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 0,
+    "Claude": 0,
+    "Gemini": 0,
+    "Grok": 0,
+    "Codex": 0,
+    "Cursor": 0,
+    "Copilot": 0,
+    "Perplexity": 0,
+    "Meta AI": 0,
+    "Mistral": 1,
+    "DeepSeek": 0,
+    "Open models": 0,
+    "Apple": 1,
+    "Higgsfield": 0,
+    "Google": 0,
+    "Social media": 0,
+    "Prompt pack": 1
+  },
+  "notes_tr": "research/2026-10-02.json + 16 araç için ayrı web araması + 'viral/ilginç AI hikayesi' için ekstra aramalar yapıldı. Havuzda zaten olanların büyük kısmı tekrar çıktı: Copilot computer-use/desktop app (copilot-computer-use-desktop ile aynı lansman), Microsoft Copilot Home/Today (copilot-home-code-autopilot ile aynı 25 Eylül lansmanı), Claude Code mods çatısı (claude-code-mods-you-should-know ile aynı 2.1.287 sürümü/aynı gün), Codex instant_interrupt (codex-cli-instant-interrupt ile aynı), GPT-6 Astra Ultrafast (openai-ultrafast-speed-tier ile aynı), Perplexity HP ZBook (perplexity-hp-zbook-preinstall ile aynı), MiniMax M3.1 (minimax-m3-1-flash-preview ile aynı), Instagram Edits (instagram-edits-ai-assistant ile aynı) — bunlar tekrar yazılmadı. Doğrulanamayanlar da elendi: Meta'nın 'Watermelon' modeli ve 'Hatch' ajanı sadece sızdırılmış belgelere dayanıyor, Meta resmi olarak doğrulamamış (droplandı). Instagram 'Instants' özelliği Mayıs 2026'dan kalma, 36 saat/7 gün penceresinin çok dışında (droplandı). Grok için Musk'ın 1 Ekim tweeti somut bir özellik adı vermiyor ('Many great upgrades!'), resmi kaynakla doğrulanamadı (droplandı). Qwen4/GLM 5.4-5.5 Ekim için bekleniyor ama henüz çıkmadı (rumor, droplandı). Haber tarafında gerçekten yeni ve doğrulanabilen tek öğe Apple'ın Siri AI dil genişlemesi oldu. Gemini, Grok, ChatGPT, Codex, Cursor, Copilot, Perplexity, Meta AI, DeepSeek, Open models, Higgsfield, Google, Social media için bu gather'da havuza eklenecek yeni bir şey çıkmadı (hepsi zaten havuzda veya resmi kaynaksız).",
+  "sources_changed": []
+}
