@@ -1,0 +1,134 @@
+{
+  "generated": "2026-10-03T13:55:00+03:00",
+  "candidates": [
+    {
+      "id": "perplexity-computer-tradingview-charts",
+      "tool": "Perplexity",
+      "kind": "news",
+      "title": "Perplexity's AI Agent Now Draws Live Trading Charts Right Inside Your Chat",
+      "summary_tr": "Perplexity Computer'a 'Inline Visualizations' geldi: hisse, ETF, kripto ya da ekonomik veri sorduğunda analiz yanında etkileşimli grafik çıkıyor; finans verisinde TradingView Lightweight Charts ile mum grafik, hacim, hareketli ortalama, yakınlaştırma. Grafiği sohbetle değiştiriyorsun ('mum grafiğe çevir, hacim ekle, son aya odaklan'). TradingView resmi blogu 1 Ekim. Havuzdaki Automations/e-posta haberlerinden farklı bir özellik.",
+      "why_tr": "Trading/para kitlemize doğrudan hitap eder; 'NVIDIA grafiğini çiz' gibi denenebilir istemler ve görsel mum grafikler carousel/Reel için çok uygun.",
+      "angle": "what's new + 5 chart prompts to try (price history → candlesticks + volume → compare 3 stocks → add a moving average → portfolio dashboard)",
+      "tools": ["Perplexity", "TradingView"],
+      "published": "2026-10-01",
+      "sources": [
+        "https://www.tradingview.com/blog/en/perplexity-computer-integrates-tradingview-lightweight-charts-61346/"
+      ],
+      "hints": [
+        "https://alphasignal.ai/news/perplexity-computer-now-renders-live-financial-charts-inside-your-research",
+        "https://cryptobriefing.com/perplexity-computer-tradingview-interactive-charts/"
+      ],
+      "score": 7
+    },
+    {
+      "id": "suno-speech-beta",
+      "tool": "Other",
+      "kind": "news",
+      "title": "Suno Can Now Turn Any Text Into a Voiceover With Its Own Soundtrack",
+      "summary_tr": "Suno 1 Ekim'de 'Speech (beta)'yı herkese açtı: bir fikir, şiir ya da kendi metnini yazıp ses ve müzik tarzını tarif ediyorsun, Suno konuşmayı ve orijinal arka plan müziğini tek parça üretiyor. Resmi örnekler: arkadaşının mesajlarının dramatik okuması, sesli notlara epik müzik, meditasyon, motivasyon konuşması, çocuklara uyku masalı.",
+      "why_tr": "Herkesin hemen deneyebileceği eğlenceli bir AI ses aracı; içerik üreticileri için 'seslendirme + müzik tek tıkla' vaadi, kaydedilir ve paylaşılır.",
+      "angle": "what Speech does + where to find it (Create tab → Speech) + 5 things to make with it (roast a friend's texts, bedtime story, pep talk, meditation, Reel voiceover)",
+      "tools": ["Suno"],
+      "published": "2026-10-01",
+      "sources": [
+        "https://suno.com/blog/introducing-speech-beta"
+      ],
+      "hints": [
+        "https://www.theverge.com/ai-artificial-intelligence/1003925/suno-speech-ai-voice-feature-beta-availability"
+      ],
+      "score": 7
+    },
+    {
+      "id": "manus-cue-agents-phone-wallet",
+      "tool": "Other",
+      "kind": "news",
+      "title": "This AI Agent Gets Its Own Phone Number, Email and Wallet",
+      "summary_tr": "Manus 28 Eylül'de Manus 2.0 ve Cue'yu çıkardı: Cue'daki her ajanın kendi e-postası, telefon numarası, cüzdanı ve bilgisayarı var; mesaj atıyor, senin belirlediğin bütçe içinde ödeme yapıyor, aramalarını açıp özet bırakıyor, birden çok ajan grup sohbetinde iş paylaşıyor. Cue erken erişimde, davet koduyla ücretsiz (web, masaüstü, mobil; iOS App Store onayı bekliyor).",
+      "why_tr": "'Ajanının kendi telefonu ve cüzdanı var' çok çarpıcı ve paylaşılabilir bir AI ajan hikâyesi; Meta Muse ile rekabet açısı da var.",
+      "angle": "what Cue agents can do (email, phone, wallet, computer) + 3 real tasks + how to get in (early access, invite code) + what to watch out for (budget limits)",
+      "tools": ["Manus", "Cue"],
+      "published": "2026-09-28",
+      "sources": [
+        "https://manus.im/blog/introducing-manus-2-0"
+      ],
+      "hints": [
+        "https://thenextweb.com/news/manus-2-0-cue-ai-agents-email-phone-wallet",
+        "https://pandaily.com/manus-2-0-cascade-agent-harness-cue-personal-agents"
+      ],
+      "score": 7
+    },
+    {
+      "id": "elevenlabs-v4-acting-voices",
+      "tool": "Other",
+      "kind": "news",
+      "title": "ElevenLabs' New AI Voice Doesn't Just Read — It Acts",
+      "summary_tr": "ElevenLabs 28 Eylül'de Eleven v4 ve v4 Turbo'yu çıkardı: ton, tempo ve duyguyu metinden yorumluyor, [laughs] / [whispering, fearful] gibi satır içi etiketlerle yönetiliyor, 90+ dil, 10 saniyelik sesle klonlama. Turbo canlı ajanlar için hızlı sürüm. Creator+ planlarda ek ücret yok; 12 Ekim'e kadar 3x kredi kampanyası.",
+      "why_tr": "Seslendirme yapan içerik üreticileri için doğrudan işe yarar; etiket örnekleri ('[said angrily in French accent]') carousel'de kopyalanabilir istem gibi çalışır.",
+      "angle": "what's new in v4 + 5 audio tags to try (copy-paste) + 10-second voice clone + the Oct 12 credit deal",
+      "tools": ["ElevenLabs"],
+      "published": "2026-09-28",
+      "sources": [
+        "https://elevenlabs.io/blog/eleven-v4",
+        "https://elevenlabs.io/blog/elevenlabs-audio-tags-list"
+      ],
+      "hints": [
+        "https://www.techtimes.com/articles/328298/20260930/elevenlabs-eleven-v4-shifts-voice-ai-reading-acting-turbo-hits-sub-150ms-latency.htm"
+      ],
+      "score": 6
+    },
+    {
+      "id": "google-photos-ai-tricks-evergreen",
+      "tool": "Google",
+      "kind": "evergreen",
+      "title": "5 Free AI Tricks Hiding in Google Photos That Most People Never Tap",
+      "summary_tr": "Google Photos'taki ücretsiz AI araçları: Düzenle → Ask ile 'arka plandaki arabaları sil', 'bu eski fotoğrafı onar' gibi yazarak düzenleme; Create sekmesinde Photo remix şablonları, Photo to video, Magic Eraser ve Unblur. Google beyond Gemini bir süredir haber almadı; resmi yardım sayfaları var.",
+      "why_tr": "Telefonunda Google Photos olan herkes hemen dener; önce/sonra görselleriyle Reel'e ve kaydetmeye çok uygun.",
+      "angle": "5 tricks with exact taps: Edit → Ask ('remove the cars', 'restore this old photo'), Create → Photo remix, Photo to video, Magic Eraser, Unblur + who gets them (18+ for remix, personal accounts)",
+      "tools": ["Google Photos", "Gemini"],
+      "published": null,
+      "sources": [
+        "https://support.google.com/photos/answer/16763021",
+        "https://www.google.com/intl/en_us/photos/editing/",
+        "https://blog.google/products-and-platforms/products/photos/nano-banana-ai-templates-ask-photos/"
+      ],
+      "hints": [],
+      "score": 7
+    },
+    {
+      "id": "pack-etsy-print-on-demand-agent",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "5 Prompts That Build You an AI-Run Etsy Print-on-Demand Shop Making $2,000 a Month",
+      "summary_tr": "Etsy'de baskılı ürün (tişört, poster, kupa) dükkânını bir AI ajanıyla kuran paket: niş ve trend bulma, tasarım fikirleri + görsel istemleri, SEO'lu ürün başlığı/etiketleri, fiyat ve kâr hesabı, Pinterest/Instagram tanıtım planı; her istem 'gerçekçi bir tahmin' istiyor.",
+      "why_tr": "Para + sosyal medya + AI ajanı üçlüsü; stok gerektirmeyen yan gelir fikri çok kaydedilir, havuzda ve kütüphanede Etsy paketi yok.",
+      "angle": "Etsy Niche Hunter · Design Idea Generator · Listing SEO Writer · Profit & Pricing Calculator · AI Promo Agent (Pinterest + Reels)",
+      "tools": ["ChatGPT", "Claude"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 7
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 0,
+    "Claude": 0,
+    "Gemini": 0,
+    "Grok": 0,
+    "Codex": 0,
+    "Cursor": 0,
+    "Copilot": 0,
+    "Perplexity": 1,
+    "Meta AI": 0,
+    "Mistral": 0,
+    "DeepSeek": 0,
+    "Open models": 0,
+    "Apple": 0,
+    "Higgsfield": 0,
+    "Google": 1,
+    "Social media": 0,
+    "Other": 3,
+    "Prompt pack": 1
+  },
+  "notes_tr": "Yeni: Perplexity Computer'da TradingView grafikleri, Suno Speech (ses + müzik tek parça), Manus Cue (kendi telefonu/cüzdanı olan ajanlar), ElevenLabs v4, Google Photos AI evergreen, Etsy POD paketi. Yeni bir şey çıkmayanlar: ChatGPT (sanal deneme havuzda; 'Scan → çok sayfalı PDF' ve Favoriler üçüncü taraf haberde geçiyor ama help.openai.com 403, resmi kaynakla doğrulanamadı → elendi), Claude (Code mods/2.1.288 havuzda ya da küçük), Gemini (Skills/öğrenci hub havuzda; Vids altyazı stili küçük), Grok (yalnız transcribe-1.0 emekliliği), Codex (0.160.0 küçük), Cursor (Ekim girdisi yok), Copilot (kod inceleme API'si, model emekliliği: geliştirici odaklı), Meta (Muse Gadgets havuzda; Muse Image etiketleme Temmuz'da kaldırılmıştı), Mistral (Kanada = iş haberi), DeepSeek/açık modeller (Ekim sürümleri hâlâ söylenti), Apple (iOS 27.1 iPhone Duo ile 23 Ekim'de), Higgsfield (FLUX 3 havuzda), sosyal medya (WhatsApp ebeveyn kontrolü ve YouTube Shorts havuzda; TikTok AI kaydırıcısı eski). Elenen: Ataraxos Stratego (araştırma, ürün yok), Kling 4.0 (tam sürüm henüz çıkmadı, yalnız Ultra yıllık abonelere Flash), Perplexity Decisions API (geliştirici). manus.im blogu doğrudan açılmadı (ECONNRESET); içerik arama sonuçlarındaki resmi blog ve TNW'den doğrulandı.",
+  "sources_changed": []
+}

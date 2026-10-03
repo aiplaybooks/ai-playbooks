@@ -1,0 +1,145 @@
+{
+  "generated": "2026-10-03T06:55:00+03:00",
+  "candidates": [
+    {
+      "id": "youtube-shorts-originality-update",
+      "tool": "Social media",
+      "kind": "news",
+      "title": "YouTube Just Changed Shorts: Re-Uploads Are About to Lose Their Reach",
+      "summary_tr": "YouTube 1 Ekim'de Shorts öneri sistemini güncelledi: başkalarının videolarını kendi katkısı olmadan yeniden yükleyen/derleyen kanalların erişimi düşecek, orijinal içerik öne çıkacak. YouTube resmi yardım forumu duyurusu: 'kendi yorumunu, özgün kurgunu ya da hikâyeni ekle'.",
+      "why_tr": "Shorts üreten herkesi (ve bizim klip formatımızı) doğrudan ilgilendiren, 'ne yapmalıyım' sorusu doğuran, paylaşılmaya ve kaydedilmeye çok uygun bir platform haberi.",
+      "angle": "what changed + who loses reach + what YouTube says counts as 'adding your own' (commentary, unique edits, storytelling) + 3 ways to stay safe",
+      "tools": ["YouTube"],
+      "published": "2026-10-01",
+      "sources": [
+        "https://support.google.com/youtube/thread/470890423/prioritizing-original-content-on-shorts?hl=en",
+        "https://support.google.com/youtube/answer/2801973"
+      ],
+      "hints": [
+        "https://www.socialmediatoday.com/news/youtube-updates-shorts-algorithm-to-put-more-focus-on-original-content/831976/",
+        "https://musically.com/2026/10/02/youtube-shorts-algorithm-will-now-prioritise-original-content/"
+      ],
+      "score": 8
+    },
+    {
+      "id": "meta-muse-gadgets-diy",
+      "tool": "Meta AI",
+      "kind": "news",
+      "title": "Meta Just Let You Build Your Own AI Gadget for Its Muse Agent",
+      "summary_tr": "Meta, Muse ajanını kendi cihazına taşıman için Muse Gadgets'ı açık kaynak (Apache 2.0) yayınladı: ESP32 firmware + Raspberry Pi/Linux SDK; örnekler e-ink ekran, yuvarlak dokunmatik ekran, TV HDMI çubuğu. Ayrıca ABD'de aktif Muse aboneliği olanlara ücretsiz 'Muse Home Link' cihazı (Ekim'de kargoda, stok sınırlı).",
+      "why_tr": "Görsel olarak çok güçlü (minik ekranlı DIY cihazlar), Muse şu an en hızlı büyüyen AI uygulamalarından biri; 'kendi Alexa'nı yap' hissi yüksek paylaşım getirir.",
+      "angle": "what Muse Gadgets is + 5 gadgets Meta shows (e-ink, round AMOLED, pocket StickS3, TV stick, Pi 5 home hub) + the free Home Link offer",
+      "tools": ["Meta AI", "Muse"],
+      "published": "2026-10-02",
+      "sources": [
+        "https://gadgets.muse.ai"
+      ],
+      "hints": [
+        "https://www.engadget.com/2276312/meta-muse-gadgets-open-source-smart-home-link/",
+        "https://techcrunch.com/2026/10/02/meta-wants-you-to-build-your-own-muse-gadget/",
+        "https://www.theverge.com/tech/1004330/meta-muse-ai-gadgets-home-link"
+      ],
+      "score": 7
+    },
+    {
+      "id": "perplexity-computer-automations",
+      "tool": "Perplexity",
+      "kind": "news",
+      "title": "Perplexity's AI Agent Can Now Run Your Recurring Work On Its Own",
+      "summary_tr": "Perplexity Computer'a 29 Eylül'de 'Automations' geldi: görevler bir takvimle ya da Slack, Gmail, Outlook, Linear, GitHub'daki bir olayla tetikleniyor; her çalıştırma öncekini hatırlıyor, eski Scheduled Tasks bunun içine taşınıyor. Havuzdaki 'Computer'a e-postayla görev' haberinden farklı bir özellik.",
+      "why_tr": "'Ajan uyurken çalışsın' vaadi kitlemizin en sevdiği tema; kurulabilir somut örnekler (her sabah gelen kutusu özeti, geciken yanıt uyarısı) carousel'e çok uygun.",
+      "angle": "what Automations are + schedule vs event triggers + 5 automations to set up today (inbox digest, overdue-reply alert ...)",
+      "tools": ["Perplexity"],
+      "published": "2026-09-29",
+      "sources": [
+        "https://www.perplexity.ai/en-GB/hub/blog/computer-adds-automations-for-ongoing-work",
+        "https://x.com/perplexity_ai/status/2104976036274552963"
+      ],
+      "hints": [
+        "https://alphasignal.ai/news/perplexity-s-computer-agent-now-automates-recurring-work-across-slack-gmail-and"
+      ],
+      "score": 7
+    },
+    {
+      "id": "apple-mac-full-disk-access-ai-agents",
+      "tool": "Apple",
+      "kind": "news",
+      "title": "Apple Is Locking Down Your Mac Because AI Agents Are Getting Too Powerful",
+      "summary_tr": "Apple 2 Ekim'de macOS'ta 'Full Disk Access' iznine ek kontroller getireceğini duyurdu: izni vermek için çok açık bir kullanıcı adımı gerekecek. Gerekçe resmi metinde: 'AI ajanları daha yetenekli ve otonom oldukça bu erişimin riskleri büyük ölçüde artacak.'",
+      "why_tr": "AI ajanı kullanan (Claude Code, Codex, Perplexity Computer) Mac kullanıcılarını doğrudan ilgilendiren, Apple'ın ajanlara karşı ilk somut adımı; güvenlik + 'ne yapmalıyım' açısı iyi kaydedilir.",
+      "angle": "what Apple announced + the AI-agents quote + how to check which apps have Full Disk Access today (System Settings > Privacy & Security)",
+      "tools": ["Apple", "macOS"],
+      "published": "2026-10-02",
+      "sources": [
+        "https://developer.apple.com/news/?id=p6zjojqw"
+      ],
+      "hints": [
+        "https://techcrunch.com/2026/10/02/apple-says-its-tightening-macos-full-disk-access-controls-due-to-new-risks-from-ai-agents/",
+        "https://www.theverge.com/tech/1004295/apple-limit-mac-disk-access-ai-agents"
+      ],
+      "score": 6
+    },
+    {
+      "id": "chatgpt-sites-evergreen",
+      "tool": "ChatGPT",
+      "kind": "evergreen",
+      "title": "ChatGPT Will Build, Host and Share a Website for You — Just Say 'Website'",
+      "summary_tr": "ChatGPT Sites (public beta; Plus, Pro, Business, Enterprise, Edu): istemde 'website' yaz ya da @Sites an, ChatGPT site/web uygulaması/oyun kurup barındırıyor, veri kaydetme, dosya yükleme, giriş; paylaşım herkese açık link ya da seçili kişiler. Bugün Hacker News'te 227 puanla yeniden gündem oldu; havuzda ve yayınlarımızda yok.",
+      "why_tr": "'Kod bilmeden 5 dakikada site' çok geniş kitleye hitap eder; somut örnek istemlerle (portfolyo, takip panosu, mini oyun) kaydetme değeri yüksek.",
+      "angle": "how to start a Site (say 'website' or @Sites) + 5 things to build with copy-paste prompts + who gets it + sharing options",
+      "tools": ["ChatGPT"],
+      "published": null,
+      "sources": [
+        "https://learn.chatgpt.com/docs/sites",
+        "https://help.openai.com/en/articles/20001339-creating-and-managing-chatgpt-sites",
+        "https://help.openai.com/en/collections/20001370-chatgpt-sites"
+      ],
+      "hints": [
+        "https://news.ycombinator.com/item?id=49927747"
+      ],
+      "score": 8
+    },
+    {
+      "id": "pack-online-course-launch",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "5 Prompts That Turn What You Already Know Into a $2,000/Month Online Course",
+      "summary_tr": "Bildiğin bir konuyu satılabilir bir mini kursa çeviren paket: konu doğrulama, müfredat, ders senaryoları, satış sayfası ve AI ajanıyla tanıtım planı; her istem 'gerçekçi bir tahmin' istiyor.",
+      "why_tr": "Para + sosyal medya + AI ajanı üçlüsü; herkesin 'bildiğim bir şey var' hissine dokunur, kaydedilir ve paylaşılır.",
+      "angle": "Course Topic Validator · Curriculum Architect · Lesson Script Writer · Sales Page Builder · AI Launch-Content Agent",
+      "tools": ["ChatGPT", "Claude"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 7
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 1,
+    "Claude": 0,
+    "Gemini": 0,
+    "Grok": 0,
+    "Codex": 0,
+    "Cursor": 0,
+    "Copilot": 0,
+    "Perplexity": 1,
+    "Meta AI": 1,
+    "Mistral": 0,
+    "DeepSeek": 0,
+    "Open models": 0,
+    "Apple": 1,
+    "Higgsfield": 0,
+    "Google": 0,
+    "Social media": 1,
+    "Other": 0,
+    "Prompt pack": 1
+  },
+  "notes_tr": "Yeni: YouTube Shorts orijinallik güncellemesi (bizim klipleri de ilgilendiriyor: hook-frame + kendi metnimiz şart), Meta Muse Gadgets (açık kaynak DIY cihazlar), Perplexity Computer Automations, Apple'ın AI ajanları gerekçesiyle Full Disk Access sıkılaştırması, ChatGPT Sites (evergreen). Yeni bir şey çıkmayanlar: Claude (yalnız 100M$ Frontier Academy = eğitim/fon haberi, elendi; Claude Code 2.1.288 küçük), Gemini (Vids TTS yükseltmesi küçük, Skills/Student hub havuzda), Grok (transcribe-2 havuzda), Codex (küçük düzeltmeler), Cursor (Ekim girdisi yok), Copilot (kod inceleme API'si + model emekliliği: geliştirici odaklı küçük), Mistral (Kanada genişlemesi = iş haberi), DeepSeek ve açık modeller (Ekim'de beklenen sürümler henüz söylenti), Higgsfield (FLUX 3 havuzda), Google. Elenen: 'AI kodlama ajanları 13.000 ekran görüntüsünü GitHub'a sızdırdı' (Glow Labs PixelLeak) — birincil resmi kaynak bulunamadı; Threads alıntı görseli testi — yalnız Social Media Today; TikTok AI içerik kaydırıcısı — 2025'ten eski. chatgpt.com, help.openai.com ve perplexity.ai doğrudan açılmadı (403); içerik learn.chatgpt.com ve arama sonuçlarındaki resmi sayfalardan doğrulandı.",
+  "sources_changed": [
+    "Kaynak sağlığı: tüm aktif kaynaklar sağlıklı (fail_streak 0); düzeltme/kapatma gerekmedi.",
+    "Eklendi: The Verge AI (https://www.theverge.com/rss/ai-artificial-intelligence/index.xml, signal) — test geçti, güncel tüketici odaklı AI haberleri.",
+    "Eklendi: Mistral Vibe releases (github.com/mistralai/mistral-vibe/releases.atom, official) — test geçti, Vibe özelliklerini Mistral RSS'ten önce yakalar.",
+    "Reddedildi: Qwen Code releases (QwenLM/qwen-code releases.atom) — her gün nightly sürüm, gürültü çok.",
+    "Reddedildi: TechCrunch AI feed — techcrunch.com zaten TechCrunch Social ile listede (aynı site)."
+  ]
+}

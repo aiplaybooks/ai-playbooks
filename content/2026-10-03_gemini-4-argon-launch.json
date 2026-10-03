@@ -1,0 +1,224 @@
+{
+  "theme": "adaptive",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Gemini 4 Argon",
+  "caption": "Google's Gemini 4 Argon just set a new record on real coding work, and you're not allowed to use it yet 🔒\n\nGoogle DeepMind built its strongest model so far, then held it back. Trusted cyber defenders get it first. Paid API customers and Google AI Ultra subscribers are next.\n\n→ 77.9% on DeepSWE, a new state of the art on long coding tasks\n→ top score on Zapier's AutomationBench for business tasks\n→ up to 1 million output tokens in one answer (was 64K)\n→ intro API price: $2 in, $10 out per million tokens\n\nComment ARGON and I'll DM you the rollout order + a day-one prompt to stress-test that 1M output 📩\n\nWould you pay for Ultra to get it first? Yes or no?\n\nSave this for the day it opens up, and send it to the dev who lives in Gemini.\n\n#gemini #googleai #aicoding #technews #ai",
+  "captions": {
+    "instagram": "Google's Gemini 4 Argon just set a new record on real coding work, and you're not allowed to use it yet 🔒\n\nGoogle DeepMind built its strongest model so far, then held it back. Trusted cyber defenders get it first. Paid API customers and Google AI Ultra subscribers are next.\n\n→ 77.9% on DeepSWE, a new state of the art on long coding tasks\n→ top score on Zapier's AutomationBench for business tasks\n→ up to 1 million output tokens in one answer (was 64K)\n→ intro API price: $2 in, $10 out per million tokens\n\nComment ARGON and I'll DM you the rollout order + a day-one prompt to stress-test that 1M output 📩\n\nWould you pay for Ultra to get it first? Yes or no?\n\nSave this for the day it opens up, and send it to the dev who lives in Gemini.\n\n#gemini #googleai #aicoding #technews #ai",
+    "facebook": "Google built its strongest AI model yet, then locked it away from almost everyone.\n\nGoogle's new Gemini 4 model set a new state of the art on long real-world coding tasks (77.9% on DeepSWE) and ranks first on Zapier's AutomationBench for business work. It can also write up to 1 million tokens in a single answer, up from 64K.\n\nBut you can't use it yet. Google DeepMind is giving it to trusted cyber defenders first. Paid API customers and Google AI Ultra subscribers come next, everyone else \"as soon as possible\".\n\n→ Now: cyber defenders in Google's Fairwind Program\n→ Next: paid API users + AI Ultra subscribers\n→ Later: developers, enterprises and consumers\n\nIs holding a model back for security the right call, or just hype? What do you think?\n\n#gemini #aicoding #ainews",
+    "youtube": {
+      "title": "Gemini 4 Argon: Google's record-setting AI you can't use yet",
+      "description": "Gemini 4 Argon is Google DeepMind's new frontier model, and it's held back: trusted cyber defenders get it first.\n\nIt sets a new state of the art on long coding tasks (77.9% on DeepSWE v1.1), ranks first on Zapier's AutomationBench and can write up to 1 million output tokens in one answer, up from 64K.\n\nRollout: cyber defenders in Google's Fairwind Program now, then paid API customers and Google AI Ultra subscribers, then developers, enterprises and consumers. Intro API price: $2 input / $10 output per 1M tokens.\n\nWould you pay for Ultra to get it first? Tell us in the comments.\n\n#gemini #aicoding #ainews",
+      "tags": [
+        "gemini 4",
+        "gemini 4 argon",
+        "google gemini",
+        "google ai",
+        "google deepmind",
+        "ai news",
+        "new ai model",
+        "gemini api",
+        "ai coding"
+      ]
+    },
+    "x": "Google built its strongest Gemini 4 model, then held it back 🔒\n\nNew record on long coding tasks. 1M tokens in one answer.\n\nCyber defenders get it first. Paid API + AI Ultra next. Everyone else waits.\n\n#Gemini #AI"
+  },
+  "first_comment": {
+    "instagram": "The number that matters most to me: 1M output tokens. That's a whole codebase migration in ONE reply, not 20 \"continue\" messages.\n\nComment ARGON for the stress-test prompt.\n\nWhat would you make it write first?",
+    "facebook": "The number that matters most: 1M output tokens. That's a full codebase migration in ONE reply instead of 20 \"continue\" messages.\n\nWhat would you have it write first?",
+    "youtube": "Biggest change: 1M output tokens, up from 64K. A full codebase migration in one reply instead of 20 \"continue\" messages.\n\nWhat would you make it write first? Subscribe for daily AI playbooks."
+  },
+  "sources": [
+    "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+    "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/"
+  ],
+  "dm": {
+    "keyword": "ARGON"
+  },
+  "cover": {
+    "headline": "Google built Gemini 4 Argon, then held it back. Only trusted cyber defenders get it first:",
+    "em": "held it back",
+    "person": "Demis Hassabis",
+    "layout": "person",
+    "photo_query": [
+      "Demis Hassabis",
+      "Sundar Pichai"
+    ],
+    "photo_pick": null,
+    "icons": [
+      {
+        "slug": "googlegemini",
+        "style": "glass",
+        "pos": "tr",
+        "size": 170
+      }
+    ],
+    "photo": {
+      "file": "File:Demis Hassabis, 2024 Nobel Prize Laureate in Chemistry (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Demis_Hassabis,_2024_Nobel_Prize_Laureate_in_Chemistry_(cropped).jpg",
+      "author": "Arthur Petron",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "Wikimedia Commons"
+    },
+    "layout_used": "person"
+  },
+  "design": {
+    "mood": "argon gas lighting up a glass discharge tube in a dark physics lab: near-black violet backdrop, a lavender-blue noble-gas glow, a periodic-table tile for element 18, thin plus-marks like a lab bench grid; precise, cold, a little ominous",
+    "palette": {
+      "bg": "#09070F",
+      "bg2": "#120E1F",
+      "surface": "#161226",
+      "ink": "#F1EEFF",
+      "muted": "#9C95B8",
+      "accent": "#B79CFF",
+      "accent2": "#5CC8FF"
+    },
+    "fonts": {
+      "display": "Syne",
+      "body": "Manrope",
+      "mono": "IBM Plex Mono"
+    },
+    "display": {
+      "weight": 800,
+      "case": "none",
+      "tracking": -2,
+      "scale": 1.0,
+      "italic_em": false
+    },
+    "shape": {
+      "radius": 6,
+      "border": 2,
+      "shadow": "glow"
+    },
+    "background": {
+      "pattern": "plus",
+      "pattern_opacity": 0.09,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "bar",
+    "prompt": "terminal",
+    "art": "<svg viewBox='0 0 900 460' xmlns='http://www.w3.org/2000/svg'><rect x='70' y='110' width='220' height='240' rx='6' fill='var(--surface)' stroke='var(--accent)' stroke-width='4'/><text x='92' y='160' font-family='monospace' font-size='34' fill='var(--muted)'>18</text><text x='180' y='275' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='120' fill='var(--accent)'>Ar</text><text x='180' y='325' text-anchor='middle' font-family='monospace' font-size='26' fill='var(--muted)'>39.948</text><rect x='360' y='190' width='480' height='80' rx='40' fill='none' stroke='var(--ink)' stroke-width='3' opacity='0.55'/><rect x='378' y='206' width='444' height='48' rx='24' fill='var(--accent)' opacity='0.28'/><rect x='392' y='216' width='416' height='28' rx='14' fill='var(--accent)' opacity='0.55'/><rect x='410' y='224' width='380' height='12' rx='6' fill='var(--ink)' opacity='0.85'/><rect x='330' y='205' width='34' height='50' rx='4' fill='var(--muted)'/><rect x='836' y='205' width='34' height='50' rx='4' fill='var(--muted)'/><line x1='347' y1='255' x2='347' y2='360' stroke='var(--muted)' stroke-width='3'/><line x1='853' y1='255' x2='853' y2='360' stroke='var(--muted)' stroke-width='3'/><line x1='347' y1='360' x2='853' y2='360' stroke='var(--muted)' stroke-width='3'/><g fill='var(--accent2)'><circle cx='470' cy='150' r='5'/><circle cx='560' cy='128' r='4'/><circle cx='650' cy='152' r='6'/><circle cx='740' cy='132' r='4'/><circle cx='520' cy='312' r='4'/><circle cx='700' cy='318' r='5'/></g><path d='M600 360 l-14 22 h28 z' fill='var(--accent2)'/></svg>",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='9' width='20' height='6' rx='3'/><path d='M6 12h12'/><path d='M5 5l1.5 2M12 3v3M19 5l-1.5 2M5 19l1.5-2M19 19l-1.5-2'/></svg>"
+  },
+  "voice": "am_liam",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "GOOGLE DEEPMIND · SEP 30, 2026",
+      "title": "Google built Gemini 4 Argon, then held it back.",
+      "em": "held it back",
+      "sub": "Its new frontier model goes to trusted cyber defenders first. Everyone else waits.",
+      "tools": [
+        "Gemini"
+      ],
+      "voiceover": "Google built Gemini 4 Argon, and you can't use it yet."
+    },
+    {
+      "type": "stat",
+      "label": "THE NUMBER",
+      "value": "1M",
+      "title": "output tokens in one answer",
+      "sub": "Up from 64K. Google raised it for longer, more complex jobs in a single reply.",
+      "voiceover": "It can write up to a million tokens in one answer."
+    },
+    {
+      "type": "list",
+      "label": "WHAT IT BEAT",
+      "title": "Where it leads",
+      "items": [
+        [
+          "DeepSWE v1.1: 77.9%",
+          "New state of the art on long real-world coding tasks"
+        ],
+        [
+          "AutomationBench: #1",
+          "51.3% on Zapier's end-to-end business task test"
+        ],
+        [
+          "CWE-bench v1: 68%",
+          "Tied for first at fixing security vulnerabilities"
+        ],
+        [
+          "Vals Index: #1",
+          "Leads on finance, coding, legal and tax work"
+        ]
+      ],
+      "voiceover": "Google says it's number one on real coding and business tasks."
+    },
+    {
+      "type": "steps",
+      "label": "WHO GETS IT WHEN",
+      "title": "The rollout, in order",
+      "steps": [
+        [
+          "Now",
+          "Trusted cyber defenders in Google's Fairwind Program"
+        ],
+        [
+          "Next",
+          "Paid API customers and Google AI Ultra subscribers"
+        ],
+        [
+          "Later",
+          "Developers, enterprises and consumers, 'as soon as possible'"
+        ]
+      ],
+      "voiceover": "Cyber defenders get it first. Then paid API users and Ultra subscribers."
+    },
+    {
+      "type": "facts",
+      "label": "WHAT IT COSTS",
+      "title": "API pricing per 1M tokens",
+      "items": [
+        [
+          "Intro input",
+          "$2"
+        ],
+        [
+          "Intro output",
+          "$10"
+        ],
+        [
+          "Regular",
+          "$4 in / $20 out"
+        ],
+        [
+          "Cached input",
+          "95% off"
+        ]
+      ],
+      "voiceover": "Intro API price: two dollars in, ten dollars out per million."
+    },
+    {
+      "type": "prompt",
+      "label": "DAY-ONE TEST",
+      "name": "The 1M-token stress test",
+      "prompt": "You are a senior engineer. Read my repo [REPO OR FILES] and write the full migration from [OLD FRAMEWORK] to [NEW FRAMEWORK]: every changed file in full, in order, plus a test plan and a rollback plan. Don't summarize, write all of it.",
+      "note": "Long-output prompts like this are exactly what the 1M limit is for.",
+      "voiceover": "When you get access, run this prompt to test that giant output."
+    },
+    {
+      "type": "cta",
+      "title": "Gemini 4 Argon.",
+      "title2": "Locked, for now.",
+      "lines": [
+        [
+          "Save",
+          "this so you know the rollout order"
+        ],
+        [
+          "Send",
+          "it to the dev who lives in Gemini"
+        ],
+        [
+          "Follow",
+          "@aiplaybooks.daily for the day it opens up"
+        ]
+      ],
+      "voiceover": "Save this, and follow us for the day it opens up."
+    }
+  ]
+}

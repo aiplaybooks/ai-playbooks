@@ -1,0 +1,399 @@
+{
+ "generated": "2026-10-03T10:30+00:00",
+ "hours": 36.0,
+ "items": [
+  {
+   "source": "Claude Code releases",
+   "tier": "official",
+   "title": "v2.1.288",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.288",
+   "date": "2026-10-02T20:19+00:00",
+   "summary": "What's changed Added $.ui.selection() for mods: returns the text you last selected in fullscreen mode and, when the selection lies within one transcript row, that row Added a built-in gh api to cloud sessions whose image has no GitHub CLI, and fixed the built-in sending control characters from file names, jq filters or GitHub errors to the terminal Added recovery for a prompt cleared with Ctrl+C:…"
+  },
+  {
+   "source": "GitHub Copilot changelog",
+   "tier": "official",
+   "title": "Copilot code review: API support and new default effort level",
+   "url": "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level",
+   "date": "2026-10-02T19:13+00:00",
+   "summary": "You can now request a GitHub Copilot code review through the REST and GraphQL APIs and set the review effort level for each request. Balanced is also now the default… The post Copilot code review: API support and new default effort level appeared first on The GitHub Blog ."
+  },
+  {
+   "source": "Google Workspace Updates blog",
+   "tier": "official",
+   "title": "Google Workspace Weekly Recap - October 2, 2026",
+   "url": "http://workspaceupdates.googleblog.com/2026/10/weekly-recap-10-02-2026.html",
+   "date": "2026-10-02T11:43-07:00",
+   "summary": "Create more natural, expressive AI voiceovers in Google Vids with upgraded Gemini 3.8 Flash Lite TTS We are upgrading the underlying text-to-speech (TTS) engine powering AI voiceovers and avatar narration in Google Vids to the latest Gemini 3.8 Flash Lite TTS model. | Learn more . Introducing skills in the Gemini app and Workspace, plus what’s next for Gems We recently introduced skills—reusable…"
+  },
+  {
+   "source": "Ollama releases",
+   "tier": "official",
+   "title": "v0.35.1",
+   "url": "https://github.com/ollama/ollama/releases/tag/v0.35.1",
+   "date": "2026-10-02T18:28+00:00",
+   "summary": "Clef decision models Ollama now supports Clef and Clef Flash , Cloudflare's new open-source decision models, through /v1/systemone . Clef (27B) and Clef Flash (9B) are multimodal: requests can now include images alongside the text state, shared by all questions and scored jointly with it. \"], \"questions\": { \"has_ollama\": {\"type\": \"noul\", \"instructions\": \"Does this image contain Ollama?\"} } }'\">…"
+  },
+  {
+   "source": "GitHub Copilot changelog",
+   "tier": "official",
+   "title": "Selected models in GitHub Copilot deprecated",
+   "url": "https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated",
+   "date": "2026-10-02T18:24+00:00",
+   "summary": "As of today, October 2, 2026, we have deprecated the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions). Model… The post Selected models in GitHub Copilot deprecated appeared first on The GitHub Blog ."
+  },
+  {
+   "source": "Higgsfield blog",
+   "tier": "official",
+   "title": "How to Automate AI Video Generation With n8n and Make",
+   "url": "https://higgsfield.ai/blog/automate-ai-video-n8n-make",
+   "date": "2026-10-02T17:17+00:00",
+   "summary": ""
+  },
+  {
+   "source": "OpenAI News",
+   "tier": "official",
+   "title": "A model guide for the GPT-6 family",
+   "url": "https://openai.com/index/practical-guide-building-gpt-6",
+   "date": "2026-10-02T16:15+00:00",
+   "summary": "Learn how startups can choose GPT-6 models, tune reasoning effort, improve prompts and skills, coordinate tools, and prepare workflows for production."
+  },
+  {
+   "source": "Apple Developer News",
+   "tier": "official",
+   "title": "Updates to Full Disk Access in macOS",
+   "url": "https://developer.apple.com/news/?id=p6zjojqw",
+   "date": "2026-10-02T09:00-07:00",
+   "summary": "We give developers powerful APIs to build incredible capabilities into their apps for Apple products, backed by a set of controls designed to protect users’ private data. Full Disk Access largely sidesteps these controls in order to allow backup apps to function properly on the Mac. Some developers are using Full Disk Access in ways that could put users at risk, exposing everything on their…"
+  },
+  {
+   "source": "Hugging Face blog",
+   "tier": "official",
+   "title": "Open-sourcing AstaBrief, the fast report-generation model in Asta",
+   "url": "https://huggingface.co/blog/allenai/astabrief",
+   "date": "2026-10-02T15:19+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Google AI blog",
+   "tier": "official",
+   "title": "The latest AI news we announced in September 2026",
+   "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/",
+   "date": "2026-10-02T15:00+00:00",
+   "summary": "Here are Google’s latest AI updates from September 2026"
+  },
+  {
+   "source": "Gemini blog",
+   "tier": "official",
+   "title": "The latest AI news we announced in September 2026",
+   "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/",
+   "date": "2026-10-02T15:00+00:00",
+   "summary": "Here are Google’s latest AI updates from September 2026"
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "The latest AI news we announced in September 2026",
+   "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/",
+   "date": "2026-10-02T15:00+00:00",
+   "summary": "Here are Google’s latest AI updates from September 2026"
+  },
+  {
+   "source": "Hugging Face blog",
+   "tier": "official",
+   "title": "AutoSynthData: Generating Training Data for Enterprise Agents",
+   "url": "https://huggingface.co/blog/ServiceNow-AI/autosynthdata",
+   "date": "2026-10-02T04:01+00:00",
+   "summary": ""
+  },
+  {
+   "source": "OpenAI News",
+   "tier": "official",
+   "title": "Chatham scales its capital markets expertise with OpenAI",
+   "url": "https://openai.com/index/chatham-financial",
+   "date": "2026-10-02T00:00+00:00",
+   "summary": "Chatham Financial uses Codex and GPT-5.6 to build technology and redesign workflows, cutting trade validation from 30 minutes to under 4."
+  },
+  {
+   "source": "Anthropic News",
+   "tier": "official",
+   "title": "Anthropic invests $100 million to train 10,000 engineers and tackle the enterprise AI talent gap",
+   "url": "https://www.anthropic.com/news/claude-frontier-academy",
+   "date": "2026-10-02T00:00+00:00",
+   "summary": ""
+  },
+  {
+   "source": "xAI / Grok API release notes",
+   "tier": "official",
+   "title": "xAI / Grok API release notes: Oct 02, 2026",
+   "url": "https://docs.x.ai/docs/release-notes",
+   "date": "2026-10-02T00:00+00:00",
+   "summary": ". All requests to that slug are routed to grok-voice-transcribe-2.0 at the same price, with higher accuracy. See the Speech to Text docs . September September 25 safety_identifier request field You can now send safety_identifier , an opaque end-user identifier assigned by your application, on Chat Completions, the Responses API, deferred chat completions, the Batch API, and the gRPC GetCompletionsRequest . It lets SpaceXAI attribute a policy violation to one of your end users rather than to your API key. The legacy user field is still accepted. See the Security FAQ . September 21 Grok 4.7 Grok 4.7, SpaceXAI's frontier model for coding, agentic tasks, and knowledge work, is now available on the xAI API as grok-4.7 . It has a 500k context window, text and image inputs with text-only output, and no text output limit. Pricing is $2 / $0.50 / $6 per 1M tokens (input / cached input / output)…"
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Our Project Suncatcher prototype satellite is in orbit.",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-prototype/",
+   "date": "2026-10-01T23:30+00:00",
+   "summary": "Google's prototype satellite for Project Suncatcher, built in partnership with Planet, launched into orbit aboard the Transporter-18 rideshare mission with SpaceX."
+  },
+  {
+   "source": "Codex changelog",
+   "tier": "official",
+   "title": "Codex changelog: Oct 01, 2026",
+   "url": "https://developers.openai.com/codex/changelog",
+   "date": "2026-10-01T00:00+00:00",
+   "summary": "Codex CLI 0.160.0 pre]:w-full [&>pre]:max-w-full [&>pre]:mb-0 pt-4\"> $ npm install -g @openai/codex@0.160.0 View details New Features Browse older tasks in the agent command center with a keyboard-accessible “Show more” action. ( #49106 ) Select transcript text and paste with middle-click in fullscreen mode on supported local Linux X11 terminals. ( #49112 ) Start sessions outside a project with workspace defaults when policy permits, and restore saved permissions when resuming. ( #49160 ) Added opt-in Guardian review capabilities to retrieve earlier user instructions and include context from agent handoffs. ( #49036 , #49057 ) Bug Fixes Unsent queued messages now resume after reconnection once uncertain submissions are resolved, avoiding duplicate sends. ( #49105 ) The terminal UI now preserves server provider, reasoning-summary, and verbosity settings and shows the correct sessions in…"
+  },
+  {
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "openclaw 2026.9.8",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.9.8",
+   "date": "2026-10-03T09:40+00:00",
+   "summary": "OpenClaw v2026.9.8 58 commits · 43 pull requests · 21 contributors Changes included in this release The release notes and changelog contain the same content, presented in two formats: Release notes — formatted for people, with expandable sections. Changelog — plain Markdown for AI agents and tools. Thanks @609NFT @aniketkrs @aniruddhaadak80 @EndeavorPioneer @ericcaiwx-star @fuller-stack-dev…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Meta open sources code to let you make Muse AI gadgets",
+   "url": "https://www.theverge.com/tech/1004330/meta-muse-ai-gadgets-home-link",
+   "date": "2026-10-02T17:08-04:00",
+   "summary": "Meta now lets you make your own Muse gadgets that feature the company's new AI agent with code that the company open sourced . The company suggests projects like loading Muse on a color E Ink display to show reminders, adding it to an HDMI stick so you can display Muse on a big screen, or putting Muse on a small touchscreen device to make what looks kind of like a DIY Muse Charm . \"Muse gadgets…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Apple will limit Mac disk access as AI agents ‘substantially’ increase risk",
+   "url": "https://www.theverge.com/tech/1004295/apple-limit-mac-disk-access-ai-agents",
+   "date": "2026-10-02T16:08-04:00",
+   "summary": "Apple will add new limits for \"full disk access\" on Mac in response to risks posed by AI agents, as reported earlier by TechCrunch . In an update on Friday , Apple says it's rolling out new controls to \"ensure that users who genuinely wish to grant an app this extraordinary level of access can only do so with very explicit user action.\" The change comes just weeks after Inc 's Jason Aten found…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "OpenAI’s Dot agent is enterprise software that can also order your dinner",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1004096/openai-chatgpt-dots-hands-on-agent",
+   "date": "2026-10-02T14:00-04:00",
+   "summary": "New helpful little guy just dropped. | Photo: Allison Johnson / The Verge It's a tale as old as last week: OpenAI's new agent platform , called Dots, is full of cute little guys who can do your bidding. But unlike the ultra-approachable Meta Muse, Dots feel very much like using workplace software that happens to be able to order you a burrito - emphasis on work. OpenAI announced Dots earlier this…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Breaking up (with Elon Musk) is hard to do",
+   "url": "https://www.theverge.com/tech/1004177/elon-musk-unfollows-shivon-zilis",
+   "date": "2026-10-02T13:37-04:00",
+   "summary": "In a throwback to MySpace-style internet drama, Shivon Zilis announced that she and the father of her four children, Elon Musk, had broken up on X. To do so, she quote-tweeted a post from \"Big Tech Alert,\" an account that, among other things, monitors what accounts are following and unfollowing each other. That post noted Musk was no longer following her on X. It was also sponsored by Kalshi ,…"
+  },
+  {
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "openclaw 2026.8.35",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.8.35",
+   "date": "2026-10-02T14:06+00:00",
+   "summary": "This is a gateway-only extended-stable release, which is our current equivalent to LTS. This release is OpenClaw from the end of August 2026, plus critical security updates, reliability and performance fixes, and features like new model support. The latest version of OpenClaw at the time of this release is 2026.9.7 2026.8.35 Highlights GPT-6.1 Sol support: add the current Sol model across OpenAI…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "AI hallucinations are making entitled customers even worse",
+   "url": "https://www.theverge.com/report/1002963/ai-hallucinations-customer-service-jobs-agents",
+   "date": "2026-10-02T08:00-04:00",
+   "summary": "Madison, a server in New York City, greets every table by asking about each diner's allergies. Lately, there have been some close calls. \"Sometimes people will tell me they have a shellfish allergy, and I'll come back, and they won't ask me any questions,\" says Madison, who asked that her last name be withheld to protect her identity. \"And they'll order a fish dish that comes with a broth that is…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "If a data center is camouflaged in the woods, will anyone hate it?",
+   "url": "https://www.theverge.com/tech/1003681/microsoft-data-centers-ai-environment-biomimicry",
+   "date": "2026-10-02T08:00-04:00",
+   "summary": "San Antonio City Councilmember Ric Galvan remembers when data centers first arrived in his city in the 2000s, looking like relatively unassuming office buildings. But that's changed in recent years, as data centers have grown into massive \"hyperscale\" facilities spanning millions of square feet and housing the physical infrastructure for AI. There are now more than a dozen data centers in…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Amazon writes scary blog warning communities not to block data centers",
+   "url": "https://www.theverge.com/tech/1003929/amazon-ai-data-center-blog-warning",
+   "date": "2026-10-02T07:52-04:00",
+   "summary": "Amazon is calling for people to support AI data center projects, or risk irreparable harm to the US economy and national security. In a more than 3,000 word blog posted today, Amazon web services CEO Matt Garman pushed back on public concerns around the impact that data centers may have on jobs, power demands, and the environment, saying \"our nation can't afford to lose\" the race for AI…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "AI music maker Suno now generates spoken words",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1003925/suno-speech-ai-voice-feature-beta-availability",
+   "date": "2026-10-02T05:42-04:00",
+   "summary": "Suno is branching out from the world of AI music, launching a new feature that generates spoken voices based on scripts or prompted descriptions. Speech is now available in public beta across Suno's web and mobile platforms, and allows you to simultaneously generate voiceovers and background music to accompany them. \"Music will always be at the heart of Suno and what we build. At the same time,…"
+  },
+  {
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "openclaw 2026.8.34",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.8.34",
+   "date": "2026-10-02T00:13+00:00",
+   "summary": "This is a gateway-only extended-stable release, which is our current equivalent to LTS. This release is OpenClaw from the end of August 2026, plus critical security updates, reliability and performance fixes, and features like new model support. The latest version of OpenClaw at the time of this release is 2026.9.7 2026.8.34 Highlights Extended-stable correctness rollup: backport 113…"
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Concerns about social media’s negative impact are growing",
+   "url": "https://www.socialmediatoday.com/news/concerns-about-social-medias-negative-impact-are-growing/831980/",
+   "date": "2026-10-01T18:33-04:00",
+   "summary": "New research from Pew found that sentiment surrounding app usage has soured over the last four years, with adults statistically more worried than teens."
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Cloudflare OHTTP gateway",
+   "url": "https://blog.cloudflare.com/announcing-cloudflare-ohttp-gateway/",
+   "date": "2026-10-03T03:15+00:00",
+   "summary": "82 points, 22 comments · https://news.ycombinator.com/item?id=49941091"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: Made an open-source Lego AI generator",
+   "url": "https://github.com/anteloc/ldraw-nova",
+   "date": "2026-10-02T20:00+00:00",
+   "summary": "115 points, 44 comments · https://news.ycombinator.com/item?id=49937916"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Muse Gadgets",
+   "url": "https://gadgets.muse.ai",
+   "date": "2026-10-02T19:26+00:00",
+   "summary": "198 points, 87 comments · https://news.ycombinator.com/item?id=49937504"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Crypto Capture of Foreign Aid",
+   "url": "https://www.nber.org/papers/w35655",
+   "date": "2026-10-02T18:14+00:00",
+   "summary": "93 points, 35 comments · https://news.ycombinator.com/item?id=49936725"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "From the creator of Redis; run LLM locally with ds4",
+   "url": "https://dwarfstar.sh/",
+   "date": "2026-10-02T18:01+00:00",
+   "summary": "246 points, 67 comments · https://news.ycombinator.com/item?id=49936575"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "One month coding with GLM 5.3 Flash",
+   "url": "https://wagtail.org/blog/one-month-on-glm-53-flash/",
+   "date": "2026-10-02T15:29+00:00",
+   "summary": "164 points, 125 comments · https://news.ycombinator.com/item?id=49934620"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "AI Makes Me Sad",
+   "url": "https://mondobe.com/ai-makes-me-sad",
+   "date": "2026-10-02T15:18+00:00",
+   "summary": "187 points, 224 comments · https://news.ycombinator.com/item?id=49934487"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "With most information hidden, the game Stratego had stumped AI until now",
+   "url": "https://arstechnica.com/science/2026/10/ai-finally-beat-the-best-stratego-player-in-history-and-did-it-on-a-budget/",
+   "date": "2026-10-02T14:11+00:00",
+   "summary": "218 points, 109 comments · https://news.ycombinator.com/item?id=49933740"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Venice’s failed war against Constantinople led to the first bond market",
+   "url": "https://bigthink.com/books/a-fabulous-debt/",
+   "date": "2026-10-02T13:17+00:00",
+   "summary": "123 points, 36 comments · https://news.ycombinator.com/item?id=49933230"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "F.02 Decommission",
+   "url": "https://www.figure.ai/news/f-02-decommission",
+   "date": "2026-10-02T10:57+00:00",
+   "summary": "82 points, 36 comments · https://news.ycombinator.com/item?id=49932079"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: Audionaut – an open-source cross-platform multitrack audio editor",
+   "url": "https://github.com/kvoltmer/Audionaut",
+   "date": "2026-10-02T08:05+00:00",
+   "summary": "138 points, 46 comments · https://news.ycombinator.com/item?id=49931031"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "DeepSeek Harness Desktop for macOS and Windows",
+   "url": "https://www.deepseek.com/en/harness/",
+   "date": "2026-10-02T03:11+00:00",
+   "summary": "389 points, 210 comments · https://news.ycombinator.com/item?id=49929489"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Greg Kroah-Hartman – Security in the LLM Age [video]",
+   "url": "https://www.youtube.com/watch?v=NnV_cWeoo5Q",
+   "date": "2026-10-02T02:51+00:00",
+   "summary": "242 points, 75 comments · https://news.ycombinator.com/item?id=49929391"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: Giving Opus 5.5 a simulated paint canvas",
+   "url": "https://stillwet.art/",
+   "date": "2026-10-02T00:27+00:00",
+   "summary": "279 points, 88 comments · https://news.ycombinator.com/item?id=49928566"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: Pyxel – A Python retro game engine with built-in art and sound editors",
+   "url": "https://github.com/kitao/pyxel",
+   "date": "2026-10-01T23:26+00:00",
+   "summary": "84 points, 8 comments · https://news.ycombinator.com/item?id=49928215"
+  }
+ ],
+ "errors": [],
+ "manual": [
+  {
+   "name": "xAI news / Grok app updates",
+   "url": "https://x.ai/news",
+   "why": "blocks scripts (403): web search 'Grok' / 'xAI' last 24h"
+  },
+  {
+   "name": "ChatGPT release notes",
+   "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Perplexity changelog",
+   "url": "https://www.perplexity.ai/changelog",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Official X accounts (@AnthropicAI, @OpenAI, @xai, @GoogleDeepMind, @cursor_ai)",
+   "url": "https://x.com",
+   "why": "X needs login / paid API: use web search for big announcements"
+  },
+  {
+   "name": "Social media new features (Instagram @creators/@mosseri, TikTok newsroom, X, LinkedIn, Snapchat)",
+   "url": "https://newsroom.tiktok.com/",
+   "why": "no working RSS (TikTok/WhatsApp/Instagram blogs are HTML, Snap/LinkedIn 404): web search each gather for new features, AI features and creator tools; confirm on the platform's own newsroom/help page"
+  },
+  {
+   "name": "Higgsfield announcements",
+   "url": "https://x.com/higgsfield_ai",
+   "why": "big launches often land on X before the blog"
+  }
+ ]
+}
