@@ -1,0 +1,39 @@
+{
+  "kind": "clip",
+  "source": "https://x.com/NarryOnTheNet/status/2105248677333717123",
+  "credit": "@NarryOnTheNet on X",
+  "topic": "AI game mods",
+  "title": "AI game mods in 2026:",
+  "hook": "AI hackers just put a full skate game inside Metal Gear Solid. Watch what happens.",
+  "caption": "Someone dropped a whole skate game inside Metal Gear Solid 🛹\n\nGrinds, kickflips and a combo counter, on the tanker level of a 2001 classic, until the ship goes up in flames.\n\nThis isn't a reskin. People are pouring whole genres into the games they grew up with, so the ones you already finished turn into games you've never played.\n\nWhich classic would you want rebuilt like this? 👇\n\nSave this one, and send it to the friend who still replays MGS.\n\nFollow @aiplaybooks.daily for the AI builds everyone's talking about.\n\n#ai #aivideo #gamemodding #gaming #generativeai",
+  "captions": {
+    "instagram": "Someone dropped a whole skate game inside Metal Gear Solid 🛹\n\nGrinds, kickflips and a combo counter, on the tanker level of a 2001 classic, until the ship goes up in flames.\n\nThis isn't a reskin. People are pouring whole genres into the games they grew up with, so the ones you already finished turn into games you've never played.\n\nWhich classic would you want rebuilt like this? 👇\n\nSave this one, and send it to the friend who still replays MGS.\n\nFollow @aiplaybooks.daily for the AI builds everyone's talking about.\n\n#ai #aivideo #gamemodding #gaming #generativeai",
+    "facebook": "Someone dropped a whole skate game inside Metal Gear Solid 🛹\n\nThe tanker level from 2001 is still there. What's new is a skater grinding the railings, landing kickflips and racking up combo points on a score counter, until the whole ship goes up in flames.\n\nModding used to mean new textures and new skins. Now people are pouring entire genres into the games they grew up with — a skate game here, a shooter somewhere else — and the engine just takes it.\n\nThat means the classics you already finished are turning into games you have never played.\n\nWhich old game would you want rebuilt this way?\n\n#ai #aivideo #gaming",
+    "youtube": {
+      "title": "AI game mods in 2026: a skate game inside Metal Gear Solid",
+      "description": "AI game mods are moving past texture packs: this one runs a full skateboarding game, complete with combo scoring, inside Metal Gear Solid's tanker level.\n\nThat's the shift worth watching. Instead of reskinning a game, people are dropping an entire other genre into an engine built in 2001 — so the classics you already finished become games you have never played. Expect fan-made genre swaps to be the next big modding wave.\n\nClip: @NarryOnTheNet on X\n\nSubscribe for a new AI playbook every day.\n\n#ai #aivideo #gamemodding #gaming #mods",
+      "tags": [
+        "ai game mod",
+        "ai video",
+        "game modding",
+        "metal gear solid mod",
+        "skate game mod",
+        "ai gaming",
+        "generative ai video",
+        "ai mods 2026"
+      ]
+    },
+    "x": "Someone dropped a whole skate game inside Metal Gear Solid 🛹\n\nGrinds, kickflips, a combo counter on the 2001 tanker level — until the ship blows.\n\nModding isn't reskins anymore. It's whole genres poured into old games.\n\n🎥 @NarryOnTheNet\n\n#ai #gamemodding"
+  },
+  "first_comment": {
+    "instagram": "The giveaway that this is more than a skin: the score counter. Combo logic, trick names and a timer are game systems, not textures — that's the hard part someone actually built.\n\nSkate game, racing or a shooter — which genre would you force into your favourite old game?",
+    "facebook": "The detail that makes this impressive: the score counter. Trick names, combos and a timer are game systems, not new textures — that's the part someone had to build from scratch.\n\nWhich genre would you force into your favourite old game?",
+    "youtube": "Watch the HUD, not the skater: trick names, combos and a timer are real game systems, not a texture swap — that's the part that was actually built.\n\nWhich classic game should get this treatment next?\n\nSubscribe for daily AI playbooks."
+  },
+  "checked": [
+    "No tool or model is named in the hook or caption, so there is nothing to verify against an official page.",
+    "Hook describes only what the frames show: a skater character doing grinds/kickflips with a Tony-Hawk-style score HUD inside Metal Gear Solid 2's tanker level, ending with the ship exploding and a 'UNIQUE Mission Completed!!' banner (runs/clip-20261003-221522-33717123/frames/frame_1..8.jpg).",
+    "Framing follows the owner's revision request and the clip-own-take directive in prompts/strategy_playbook.md (2026-10-03): the caption carries our stance, not a description of the screen.",
+    "No dm.keyword: this clip has nothing copy-ready (no prompts or setup) to deliver as a reward."
+  ]
+}
