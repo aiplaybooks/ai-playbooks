@@ -85,7 +85,7 @@ def check(data):
         import xpost
         if xpost.weight(caps["x"]) > xpost.LIMIT: probs.append(f"x: {xpost.weight(caps['x'])} weighted chars (max {xpost.LIMIT}, emoji count 2)")
         if xpost.URL.search(caps["x"]): probs.append("x: no links or domains (a URL costs $0.20 per post on X)")
-        if (k := (data.get("dm") or {}).get("keyword")) and k.lower() in caps["x"].lower(): probs.append("x: no 'Comment WORD' (the DM bot is Instagram only)")
+        if (k := (data.get("dm") or {}).get("keyword")) and re.search(rf"(?i)(comment|type|drop)\W+(\w+\W+)?{re.escape(k)}\b", caps["x"]): probs.append("x: no 'Comment WORD' (the DM bot is Instagram only)")
         if len(tags_in(caps["x"])) > 2: probs.append("x: max 2 hashtags")
     fc = data.get("first_comment") or {}  # our first comment per platform (owner, 2026-09-30), posted by publish.py
     for pf in ["instagram"] + ([] if repo else ["facebook", "youtube"]):
@@ -101,7 +101,7 @@ def check(data):
     kw = (data.get("dm") or {}).get("keyword")
     if kw and kw.lower() not in (caps.get("instagram") or "").lower():
         probs.append(f"instagram: the post has dm.keyword {kw!r}: the caption must tell people to comment it")
-    if kw and kw.lower() in (caps.get("facebook") or "").lower():
+    if kw and re.search(rf"(?i)(comment|type|drop)\W+(\w+\W+)?{re.escape(kw)}\b", caps.get("facebook") or ""):
         probs.append("facebook: no 'Comment WORD' there (the DM bot is Instagram only); ask a real question instead")
     if data.get("comments") and not kw and not re.search(r"(?i)comment", caps.get("instagram", "")):
         probs.append("the post has `comments` (e.g. the prompts): the caption should say they're in the comments")

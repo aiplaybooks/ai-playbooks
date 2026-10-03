@@ -763,7 +763,8 @@ def n_hook(run):
 
 def n_caption(run):
     """Caption agent: per-platform captions + researched hashtags (prompts/caption.md, trained by caption_playbook.md)."""
-    import captions as CAP
+    import captions as CAP, importlib
+    CAP = importlib.reload(CAP)  # the agent/doctor may have fixed captions.py while the Studio runs
     clip = run.s["kind"] == "clip"
     note = f"\n## Owner's note for this post (revision request)\n{run.s['note']}\n" if run.s.get("note") else ""
     repo = run.s["kind"] == "repo"
