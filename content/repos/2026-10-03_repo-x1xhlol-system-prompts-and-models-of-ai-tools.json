@@ -1,0 +1,43 @@
+{
+  "kind": "repo",
+  "repo": {
+    "full_name": "x1xhlol/system-prompts-and-models-of-ai-tools",
+    "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+    "stars": 144001,
+    "license": "GPL-3.0",
+    "language": "Plain text / Markdown (no code to install)",
+    "description": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models"
+  },
+  "topic": "System prompts of 28 AI tools in one FR££ repo",
+  "hook": [
+    "🚨 Absolute must-save: the FULL system prompts behind Cursor, Claude Code, Devin, v0 and 20+ more AI tools.",
+    "28 AI tools. One FR££ GitHub repo.",
+    "See exactly how the pros instruct their agents.",
+    "Then borrow the structure for your own prompts.",
+    "Already at 144K+ GitHub stars."
+  ],
+  "hook_pattern": "Must-save + big name",
+  "dm": {"keyword": "SECRETS", "mode": "direct"},
+  "fb_comment": "🔗 System Prompts and Models of AI Tools on GitHub:\nhttps://github.com/x1xhlol/system-prompts-and-models-of-ai-tools\n\n⭐ 144K+ stars · GPL-3.0 license\n📂 One folder per tool: Cursor, Claude Code, Devin AI, v0, Windsurf, Lovable, Manus, Perplexity and more\n💻 Nothing to install: plain text files you can read in the browser\n\nFollow AI Playbooks for a new FR££ AI tool every day 🙏",
+  "caption": "🚨 Absolute must-save: the FULL system prompts behind Cursor, Claude Code, Devin, v0 and 20+ more AI tools.\n\n28 AI tools. One FR££ GitHub repo.\nNothing to install. Just read.\n\nSee exactly how the pros instruct their agents, then borrow the structure for your own prompts.\n\nAlready at 144K+ GitHub stars.\n\nWant it? Comment SECRETS and the repo link hits your DMs 📩\n\nSave this for the next time you write a system prompt, or send it to the friend who still types \"you are a helpful assistant\".\n\nFollow @aiplaybooks.daily, we post a FR££ AI tool every day.\n\n#promptengineering #systemprompts #claudecode #github #ai",
+  "captions": {
+    "instagram": "🚨 Absolute must-save: the FULL system prompts behind Cursor, Claude Code, Devin, v0 and 20+ more AI tools.\n\n28 AI tools. One FR££ GitHub repo.\nNothing to install. Just read.\n\nSee exactly how the pros instruct their agents, then borrow the structure for your own prompts.\n\nAlready at 144K+ GitHub stars.\n\nWant it? Comment SECRETS and the repo link hits your DMs 📩\n\nSave this for the next time you write a system prompt, or send it to the friend who still types \"you are a helpful assistant\".\n\nFollow @aiplaybooks.daily, we post a FR££ AI tool every day.\n\n#promptengineering #systemprompts #claudecode #github #ai",
+    "facebook": "🚨 Absolute must-save: the FULL system prompts behind Cursor, Claude Code, Devin, v0 and 20+ more AI tools.\n\n28 AI tools. One FR££ GitHub repo. Plain text files, nothing to install: you read them right in the browser.\n\nThis is how the teams behind the biggest AI coding tools actually instruct their agents. Read a few, then borrow the structure for your own prompts.\n\nAlready at 144K+ GitHub stars.\n\nLink in the first comment 👇\n\nWhich tool's prompt would you open first?\n\n#promptengineering #systemprompts #github #opensource",
+    "x": "🚨 The FULL system prompts behind Cursor, Claude Code, Devin, v0 and 20+ more AI tools.\n\n28 tools. One FR££ repo. Already 144K+ stars.\n\n📦 x1xhlol/system-prompts-and-models-of-ai-tools on GitHub\n\n#promptengineering"
+  },
+  "first_comment": {
+    "instagram": "Comment SECRETS and the link lands in your DMs 📩\n\nTry this first: open the Cursor and Claude Code folders side by side and compare how each one sets rules for its agent.\n\nWhich tool's prompt are you reading first? 👇"
+  },
+  "sources": [
+    "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+    "https://api.github.com/repos/x1xhlol/system-prompts-and-models-of-ai-tools"
+  ],
+  "checked": [
+    "system prompts of Cursor, Claude Code, Devin AI, v0 + others -> repo description (GitHub API) + top-level folders",
+    "28 tools named in the description (Augment Code ... Dia & v0) -> GitHub API description, counted",
+    "144,001 stars -> GitHub API 2026-10-03, rounded down to 144K+",
+    "GPL-3.0 license -> GitHub API",
+    "plain text, nothing to install -> language null in the API, folders hold text/markdown files",
+    "active, not archived (pushed 2026-08-11, README 'Latest Update: 12/07/2026') -> GitHub API + README"
+  ]
+}

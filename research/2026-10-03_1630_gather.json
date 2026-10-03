@@ -1,0 +1,117 @@
+{
+  "generated": "2026-10-03T16:45:00+03:00",
+  "candidates": [
+    {
+      "id": "claude-opus-dodo-1615-ship-log",
+      "tool": "Claude",
+      "kind": "news",
+      "title": "Claude Just Found a Dodo Sighting Historians Missed for 400 Years",
+      "summary_tr": "Tarihçi Benjamin Breen, Claude Opus 5.5'i Hollanda Doğu Hindistan Şirketi'nin ücretsiz GLOBALISE arşivinde çalıştırdı; model kendi kopyalarını açıp birçok dilde kaynak okudu ve 1615 tarihli, daha önce fark edilmemiş görünen bir gemi jurnalinde Mauritius'ta dodo yakalandığını bulan kaydı çıkardı. Ayrıca 1890'daki bir Fransızca yanlış çevirinin sakladığı 1638 tarihli 'red rail' kaydını düzeltti (kaynak: tarihçinin kendi yazısı, 1 Ekim).",
+      "why_tr": "Yapay zekanın gerçek bir keşif yaptığı, herkesin anlayabileceği ve paylaşacağı şaşırtıcı bir hikaye; 'AI ile araştırma nasıl yapılır' açısından da öğretici.",
+      "angle": "the 400-year-old ship log + how the historian did it (download archive → semantic search → Claude reads and ranks → human checks) + how you can copy the workflow on any big document pile; keep his own hedges ('appears to be new')",
+      "tools": ["Claude"],
+      "published": "2026-10-01",
+      "sources": [
+        "https://resobscura.substack.com/p/using-opus-55-to-discover-a-new-eyewitness"
+      ],
+      "hints": [
+        "https://www.webpronews.com/how-anthropics-opus-5-5-unearthed-a-forgotten-1615-dodo-sighting",
+        "https://artificiallyintimidating.com/p/ai-brief-october-2-2026"
+      ],
+      "score": 7
+    },
+    {
+      "id": "kling-4-30-second-video",
+      "tool": "Other",
+      "kind": "news",
+      "title": "AI Video Just Doubled: Kling 4.0 Makes 30-Second Clips in One Shot",
+      "summary_tr": "Kling AI, Kling 4.0'ı duyurdu: tek seferde 3-30 saniyelik video (3.0'da en fazla 15 sn), 10'a kadar keyframe, 15 referans (görsel/video/ses), stereo ses, 10-bit HDR ve yerleşik video düzenleme. Kling 4.0 Flash 28 Eylül'den beri sınırlı erken erişimde; tam model Ekim'de herkese açılacak.",
+      "why_tr": "AI video üreten kitlemiz için en büyük sınırlardan biri (klip uzunluğu) ikiye katlandı; 3.0 vs 4.0 karşılaştırması görsel olarak çok güçlü bir carousel/Reel olur.",
+      "angle": "3.0 vs 4.0 side by side (length, keyframes, references, audio, HDR) + who can use it now vs. October + 3 prompt ideas for a 30-second one-shot",
+      "tools": ["Kling"],
+      "published": "2026-09-30",
+      "sources": [
+        "https://kling.ai/blog/kling-4-vs-3",
+        "https://kling.ai/feature/kling-4-ai-video-generation"
+      ],
+      "hints": [
+        "https://fal.ai/learn/tools/what-is-kling-4-0",
+        "https://morphic.com/resources/models/kling-4"
+      ],
+      "score": 7
+    },
+    {
+      "id": "ideogram-4-5-precise-edit",
+      "tool": "Other",
+      "kind": "news",
+      "title": "This AI Image Editor Lets You Edit the Same Photo 10 Times Without Ruining It",
+      "summary_tr": "Ideogram, 30 Eylül'de Ideogram 4.5'i çıkardı: aynı görsel üzerinde tekrar tekrar düzenleme yaparken artefakt, piksel kayması ve renk bozulması birikmesini engelleyen 'precise edit' modeli. Dokunulmayan pikseller birebir kopyalanıyor, sonuç orijinal boyutta dönüyor; Ideogram uygulamasında, API'de ve Picsart, Krea, Runway gibi ortaklarda canlı, açık ağırlıklar 'yakında'.",
+      "why_tr": "Ürün fotoğrafı, eski fotoğraf onarma, yazı çevirme gibi herkesin yaşadığı 'her düzenlemede bozuluyor' derdine çözüm; önce/sonra görselleri carousel için ideal.",
+      "angle": "the problem (drift after each edit) + 4 uses (recolor a product, relight, restore an old photo, translate text in a design) + where to try it; competitor comparison only as Ideogram's own claim",
+      "tools": ["Ideogram"],
+      "published": "2026-09-30",
+      "sources": [
+        "https://developer.ideogram.ai/",
+        "https://x.com/ideogram_ai/status/2105327223431737780"
+      ],
+      "hints": [
+        "https://alternativeto.net/news/2026/10/ideogram-4-5-introduces-multi-turn-editing-at-native-2k/",
+        "https://runtimewire.com/article/ideogram-45-multi-turn-image-editing",
+        "https://www.recraft.ai/blog/ideogram-4-5-is-coming-to-recraft-studio"
+      ],
+      "score": 6
+    },
+    {
+      "id": "claude-reflect-time-focus-evergreen",
+      "tool": "Claude",
+      "kind": "evergreen",
+      "title": "Claude Has a Monthly 'Wrapped' for How You Work — Most People Never Open It",
+      "summary_tr": "Claude'un Settings > Reflect bölümü (Free, Pro, Max; web + masaüstü, beta, hafıza açık olmalı) her ay hangi konularda zaman geçirdiğini, en aktif gün/saatini ve Claude ile nasıl çalıştığına dair gözlemleri gösteriyor; yanında Settings > Time and focus ile mola hatırlatıcısı ve sessiz saatler ayarlanabiliyor.",
+      "why_tr": "Ücretsiz planda da olan, çoğu kişinin bilmediği, ekran görüntüsüyle kolay anlatılan bir 'gizli özellik' postu; kaydetme ve paylaşma potansiyeli yüksek.",
+      "angle": "where Reflect lives + what it shows + Time and focus (break reminders, quiet hours) + 3 prompts to act on your recap",
+      "tools": ["Claude"],
+      "published": "2026-07-09",
+      "sources": [
+        "https://support.claude.com/en/articles/12138966-release-notes"
+      ],
+      "hints": [],
+      "score": 6
+    },
+    {
+      "id": "pack-tiktok-shop-affiliate-agent",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "5 Prompts That Turn a TikTok Shop Affiliate Account Into a $2,500/Month AI-Run Side Income",
+      "summary_tr": "TikTok Shop affiliate hesabını AI ile kurup yöneten 5 prompt: ürün seçimi, hook'lu kısa video senaryoları, yüz göstermeden çekim planı, haftalık içerik takvimi ve komisyon/izlenme takibiyle gerçekçi gelir tahmini.",
+      "why_tr": "Sosyal medya + para ekseninde, kütüphanede olmayan (Pinterest/Etsy havuzda, TikTok Shop yok) ve hemen denenebilir bir paket.",
+      "angle": "Act as a TikTok Shop affiliate strategist: pick 5 [NICHE] products with real commission math · write 10 scroll-stopping 20-second scripts · faceless filming plan with just a phone · 30-day posting calendar · weekly numbers review + a realistic $[2,500]/month estimate",
+      "tools": ["ChatGPT", "Claude"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 6
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 0,
+    "Claude": 2,
+    "Gemini": 0,
+    "Grok": 0,
+    "Codex": 0,
+    "Cursor": 0,
+    "Copilot": 0,
+    "Perplexity": 0,
+    "Meta AI": 0,
+    "Mistral": 0,
+    "DeepSeek": 0,
+    "Open models": 0,
+    "Apple": 0,
+    "Higgsfield": 0,
+    "Google": 0,
+    "Social media": 0,
+    "Other": 2,
+    "Prompt pack": 1
+  },
+  "notes_tr": "16 aracın hepsi için arama yapıldı; son 36 saatte havuzda olmayan büyük bir resmi duyuru çıkmadı. ChatGPT: 1 Ekim notlarındaki deneme kabini havuzda, belge tarama (iOS) ve Pro 500 planı küçük kaldı (release notes sayfası 403, doğrulanamadı). Gemini Skills, Muse, Apple Full Disk Access, Suno Speech, Copilot/Codex/Higgsfield yenilikleri zaten havuzda. Grok (sadece API transkripsiyon), Cursor, Perplexity, Mistral (Kanada ofisi), DeepSeek, Qwen/Kimi/GLM/MiniMax (sadece söylentiler) için yeni ürün yok. Copilot code review API/efor seviyesi ve Anthropic Frontier Academy (sadece kurumlara, aday gösterimle) kitleye uygun bulunmadı. Tavus Griffin yalnızca seçili test kullanıcılarına açık (ve dün klip olarak seçildi), atlandı. Sosyal medyada yeni resmi duyuru bulunamadı (Instagram First Draft Ağustos'tan). Dışarıdan: Claude'un 400 yıllık dodo kaydını bulması (kaynak tarihçinin kendi yazısı), Kling 4.0 ve Ideogram 4.5 (resmi sayfası 403/404, geliştirici dokümanı + resmi X hesabıyla doğrulandı).",
+  "sources_changed": []
+}

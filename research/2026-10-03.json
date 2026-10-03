@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-03T10:30+00:00",
+ "generated": "2026-10-03T13:30+00:00",
  "hours": 36.0,
  "items": [
   {
@@ -107,14 +107,6 @@
    "summary": ""
   },
   {
-   "source": "OpenAI News",
-   "tier": "official",
-   "title": "Chatham scales its capital markets expertise with OpenAI",
-   "url": "https://openai.com/index/chatham-financial",
-   "date": "2026-10-02T00:00+00:00",
-   "summary": "Chatham Financial uses Codex and GPT-5.6 to build technology and redesign workflows, cutting trade validation from 30 minutes to under 4."
-  },
-  {
    "source": "Anthropic News",
    "tier": "official",
    "title": "Anthropic invests $100 million to train 10,000 engineers and tackle the enterprise AI talent gap",
@@ -129,22 +121,6 @@
    "url": "https://docs.x.ai/docs/release-notes",
    "date": "2026-10-02T00:00+00:00",
    "summary": ". All requests to that slug are routed to grok-voice-transcribe-2.0 at the same price, with higher accuracy. See the Speech to Text docs . September September 25 safety_identifier request field You can now send safety_identifier , an opaque end-user identifier assigned by your application, on Chat Completions, the Responses API, deferred chat completions, the Batch API, and the gRPC GetCompletionsRequest . It lets SpaceXAI attribute a policy violation to one of your end users rather than to your API key. The legacy user field is still accepted. See the Security FAQ . September 21 Grok 4.7 Grok 4.7, SpaceXAI's frontier model for coding, agentic tasks, and knowledge work, is now available on the xAI API as grok-4.7 . It has a 500k context window, text and image inputs with text-only output, and no text output limit. Pricing is $2 / $0.50 / $6 per 1M tokens (input / cached input / output)…"
-  },
-  {
-   "source": "Google Keyword blog (all products)",
-   "tier": "official",
-   "title": "Our Project Suncatcher prototype satellite is in orbit.",
-   "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-prototype/",
-   "date": "2026-10-01T23:30+00:00",
-   "summary": "Google's prototype satellite for Project Suncatcher, built in partnership with Planet, launched into orbit aboard the Transporter-18 rideshare mission with SpaceX."
-  },
-  {
-   "source": "Codex changelog",
-   "tier": "official",
-   "title": "Codex changelog: Oct 01, 2026",
-   "url": "https://developers.openai.com/codex/changelog",
-   "date": "2026-10-01T00:00+00:00",
-   "summary": "Codex CLI 0.160.0 pre]:w-full [&>pre]:max-w-full [&>pre]:mb-0 pt-4\"> $ npm install -g @openai/codex@0.160.0 View details New Features Browse older tasks in the agent command center with a keyboard-accessible “Show more” action. ( #49106 ) Select transcript text and paste with middle-click in fullscreen mode on supported local Linux X11 terminals. ( #49112 ) Start sessions outside a project with workspace defaults when policy permits, and restore saved permissions when resuming. ( #49160 ) Added opt-in Guardian review capabilities to retrieve earlier user instructions and include context from agent handoffs. ( #49036 , #49057 ) Bug Fixes Unsent queued messages now resume after reconnection once uncertain submissions are resolved, avoiding duplicate sends. ( #49105 ) The terminal UI now preserves server provider, reasoning-summary, and verbosity settings and shows the correct sessions in…"
   },
   {
    "source": "OpenClaw releases",
@@ -227,28 +203,12 @@
    "summary": "Suno is branching out from the world of AI music, launching a new feature that generates spoken voices based on scripts or prompted descriptions. Speech is now available in public beta across Suno's web and mobile platforms, and allows you to simultaneously generate voiceovers and background music to accompany them. \"Music will always be at the heart of Suno and what we build. At the same time,…"
   },
   {
-   "source": "OpenClaw releases",
-   "tier": "signal",
-   "title": "openclaw 2026.8.34",
-   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.8.34",
-   "date": "2026-10-02T00:13+00:00",
-   "summary": "This is a gateway-only extended-stable release, which is our current equivalent to LTS. This release is OpenClaw from the end of August 2026, plus critical security updates, reliability and performance fixes, and features like new model support. The latest version of OpenClaw at the time of this release is 2026.9.7 2026.8.34 Highlights Extended-stable correctness rollup: backport 113…"
-  },
-  {
-   "source": "Social Media Today",
-   "tier": "signal",
-   "title": "Concerns about social media’s negative impact are growing",
-   "url": "https://www.socialmediatoday.com/news/concerns-about-social-medias-negative-impact-are-growing/831980/",
-   "date": "2026-10-01T18:33-04:00",
-   "summary": "New research from Pew found that sentiment surrounding app usage has soured over the last four years, with adults statistically more worried than teens."
-  },
-  {
    "source": "Hacker News",
    "tier": "community",
    "title": "Cloudflare OHTTP gateway",
    "url": "https://blog.cloudflare.com/announcing-cloudflare-ohttp-gateway/",
    "date": "2026-10-03T03:15+00:00",
-   "summary": "82 points, 22 comments · https://news.ycombinator.com/item?id=49941091"
+   "summary": "112 points, 39 comments · https://news.ycombinator.com/item?id=49941091"
   },
   {
    "source": "Hacker News",
@@ -256,7 +216,7 @@
    "title": "Show HN: Made an open-source Lego AI generator",
    "url": "https://github.com/anteloc/ldraw-nova",
    "date": "2026-10-02T20:00+00:00",
-   "summary": "115 points, 44 comments · https://news.ycombinator.com/item?id=49937916"
+   "summary": "121 points, 47 comments · https://news.ycombinator.com/item?id=49937916"
   },
   {
    "source": "Hacker News",
@@ -264,7 +224,7 @@
    "title": "Muse Gadgets",
    "url": "https://gadgets.muse.ai",
    "date": "2026-10-02T19:26+00:00",
-   "summary": "198 points, 87 comments · https://news.ycombinator.com/item?id=49937504"
+   "summary": "212 points, 92 comments · https://news.ycombinator.com/item?id=49937504"
   },
   {
    "source": "Hacker News",
@@ -272,7 +232,7 @@
    "title": "Crypto Capture of Foreign Aid",
    "url": "https://www.nber.org/papers/w35655",
    "date": "2026-10-02T18:14+00:00",
-   "summary": "93 points, 35 comments · https://news.ycombinator.com/item?id=49936725"
+   "summary": "94 points, 35 comments · https://news.ycombinator.com/item?id=49936725"
   },
   {
    "source": "Hacker News",
@@ -280,7 +240,7 @@
    "title": "From the creator of Redis; run LLM locally with ds4",
    "url": "https://dwarfstar.sh/",
    "date": "2026-10-02T18:01+00:00",
-   "summary": "246 points, 67 comments · https://news.ycombinator.com/item?id=49936575"
+   "summary": "279 points, 74 comments · https://news.ycombinator.com/item?id=49936575"
   },
   {
    "source": "Hacker News",
@@ -288,7 +248,7 @@
    "title": "One month coding with GLM 5.3 Flash",
    "url": "https://wagtail.org/blog/one-month-on-glm-53-flash/",
    "date": "2026-10-02T15:29+00:00",
-   "summary": "164 points, 125 comments · https://news.ycombinator.com/item?id=49934620"
+   "summary": "181 points, 141 comments · https://news.ycombinator.com/item?id=49934620"
   },
   {
    "source": "Hacker News",
@@ -296,7 +256,7 @@
    "title": "AI Makes Me Sad",
    "url": "https://mondobe.com/ai-makes-me-sad",
    "date": "2026-10-02T15:18+00:00",
-   "summary": "187 points, 224 comments · https://news.ycombinator.com/item?id=49934487"
+   "summary": "188 points, 229 comments · https://news.ycombinator.com/item?id=49934487"
   },
   {
    "source": "Hacker News",
@@ -304,7 +264,7 @@
    "title": "With most information hidden, the game Stratego had stumped AI until now",
    "url": "https://arstechnica.com/science/2026/10/ai-finally-beat-the-best-stratego-player-in-history-and-did-it-on-a-budget/",
    "date": "2026-10-02T14:11+00:00",
-   "summary": "218 points, 109 comments · https://news.ycombinator.com/item?id=49933740"
+   "summary": "238 points, 115 comments · https://news.ycombinator.com/item?id=49933740"
   },
   {
    "source": "Hacker News",
@@ -312,7 +272,15 @@
    "title": "Venice’s failed war against Constantinople led to the first bond market",
    "url": "https://bigthink.com/books/a-fabulous-debt/",
    "date": "2026-10-02T13:17+00:00",
-   "summary": "123 points, 36 comments · https://news.ycombinator.com/item?id=49933230"
+   "summary": "141 points, 40 comments · https://news.ycombinator.com/item?id=49933230"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Blogging with Gleam, Org-Mode and Pandoc",
+   "url": "https://byzantine-systems.github.io/blogging-with-gleam-org-mode-and-pandoc/",
+   "date": "2026-10-02T11:34+00:00",
+   "summary": "81 points, 16 comments · https://news.ycombinator.com/item?id=49932340"
   },
   {
    "source": "Hacker News",
@@ -328,7 +296,7 @@
    "title": "Show HN: Audionaut – an open-source cross-platform multitrack audio editor",
    "url": "https://github.com/kvoltmer/Audionaut",
    "date": "2026-10-02T08:05+00:00",
-   "summary": "138 points, 46 comments · https://news.ycombinator.com/item?id=49931031"
+   "summary": "139 points, 46 comments · https://news.ycombinator.com/item?id=49931031"
   },
   {
    "source": "Hacker News",
@@ -336,7 +304,7 @@
    "title": "DeepSeek Harness Desktop for macOS and Windows",
    "url": "https://www.deepseek.com/en/harness/",
    "date": "2026-10-02T03:11+00:00",
-   "summary": "389 points, 210 comments · https://news.ycombinator.com/item?id=49929489"
+   "summary": "391 points, 211 comments · https://news.ycombinator.com/item?id=49929489"
   },
   {
    "source": "Hacker News",
@@ -344,23 +312,7 @@
    "title": "Greg Kroah-Hartman – Security in the LLM Age [video]",
    "url": "https://www.youtube.com/watch?v=NnV_cWeoo5Q",
    "date": "2026-10-02T02:51+00:00",
-   "summary": "242 points, 75 comments · https://news.ycombinator.com/item?id=49929391"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "Show HN: Giving Opus 5.5 a simulated paint canvas",
-   "url": "https://stillwet.art/",
-   "date": "2026-10-02T00:27+00:00",
-   "summary": "279 points, 88 comments · https://news.ycombinator.com/item?id=49928566"
-  },
-  {
-   "source": "Hacker News",
-   "tier": "community",
-   "title": "Show HN: Pyxel – A Python retro game engine with built-in art and sound editors",
-   "url": "https://github.com/kitao/pyxel",
-   "date": "2026-10-01T23:26+00:00",
-   "summary": "84 points, 8 comments · https://news.ycombinator.com/item?id=49928215"
+   "summary": "264 points, 95 comments · https://news.ycombinator.com/item?id=49929391"
   }
  ],
  "errors": [],
