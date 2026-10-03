@@ -1,0 +1,39 @@
+{
+  "kind": "clip",
+  "source": "https://x.com/tavus/status/2105704169009246248",
+  "credit": "@tavus on X",
+  "topic": "AI video",
+  "title": "Real or AI:",
+  "hook": "48% of people on a live video call thought she was human. Your next Zoom call may not be.",
+  "caption": "A new AI video model just passed a test almost no AI has passed: can you tell it's fake? 👀\n\nTavus' Griffin talks to you live on video. It listens, nods, laughs and even interrupts, like a real person on a call.\n\nIn their live study, 26 of 54 people (48%) thought they had talked to a human. The older system fooled under 3%.\n\nThe real takeaway: \"is this person real?\" is now a question for every video call you take.\n\nWould you have spotted it? Yes or no 👇\n\nSave this, send it to the friend who trusts every video call, and follow @aiplaybooks.daily for the AI news everyone's talking about.\n\n#ai #aivideo #turingtest #realvsai #artificialintelligence",
+  "checked": [
+    "Griffin = Tavus' 'first Human Interaction Model', research preview; claims first video Turing test pass: https://www.tavus.io/griffin",
+    "48% figure: 26 of 54 participants believed the Griffin persona was a real person after a one-minute live call; previous system Phoenix-4.5: 1 of 41 (2.4%); company-run study: https://www.businesstoday.in/technology/artificial-intelligence/story/beyond-chatbots-tavuss-griffin-model-passes-video-turing-test-with-48-human-success-rate-559295-2026-10-03",
+    "#1 on NVIDIA's VideoFDB full-duplex video benchmark (perception + generation), per Tavus: https://www.tavus.io/griffin"
+  ],
+  "captions": {
+    "instagram": "A new AI video model just passed a test almost no AI has passed: can you tell it's fake? 👀\n\nTavus' Griffin talks to you live on video. It listens, nods, laughs and even interrupts, like a real person on a call.\n\nIn their live study, 26 of 54 people (48%) thought they had talked to a human. The older system fooled under 3%.\n\nThe real takeaway: \"is this person real?\" is now a question for every video call you take.\n\nWould you have spotted it? Yes or no 👇\n\nSave this, send it to the friend who trusts every video call, and follow @aiplaybooks.daily for the AI news everyone's talking about.\n\n#ai #aivideo #turingtest #realvsai #artificialintelligence",
+    "facebook": "A new AI video model just passed a test almost no AI has passed: can you tell it's fake?\n\nTavus built Griffin, an AI that sits on a live video call with you. It listens, nods, laughs and interrupts the way people do.\n\nThen they ran a live test. After a one-minute call, 26 of 54 people (48%) believed they had talked to a real person. Their previous system fooled just 1 in 41.\n\nOur take: the next scam call won't be a strange voice. It will be a friendly face that reacts to you.\n\nWould you have known it was AI after one minute?\n\n#ai #aivideo #turingtest",
+    "youtube": {
+      "title": "AI video model fooled 48% of people on a live call: real or AI?",
+      "description": "An AI video model that 48% of people mistook for a real human on a live call: Tavus' Griffin and its \"video Turing test\".\n\nOur take: Griffin listens, nods, laughs and interrupts in real time, and that changes what a video call proves. In Tavus' own study, 26 of 54 people thought they talked to a person after one minute; their older system fooled 1 of 41. A face on a screen is no longer proof that someone is there.\n\nWhat to do: on any surprise video call about money or passwords, ask something only the real person would know.\n\nVideo: @tavus on X\n\n#aivideo #turingtest #ai",
+      "tags": [
+        "ai video",
+        "turing test",
+        "video turing test",
+        "real or ai",
+        "ai vs human",
+        "tavus griffin",
+        "ai video call",
+        "artificial intelligence",
+        "ai"
+      ]
+    },
+    "x": "A new AI video model just passed a test almost no AI has passed 👀\n\n48% of people on a live video call thought it was human. Older systems fooled under 3%.\n\nCould you tell? 🎥 @tavus\n\n#AI #AIvideo"
+  },
+  "first_comment": {
+    "instagram": "Easiest defence: agree on a family \"safe word\" today. If a video call ever asks for money or codes, ask for the word first. No word, no money.\n\nDo you have one yet: yes or no?",
+    "facebook": "One simple defence: agree on a family \"safe word\" today. If a video call ever asks for money or codes, ask for the word first.\n\nDoes your family have one?",
+    "youtube": "Easiest defence: agree on a family \"safe word\" today. Any video call asking for money or codes gets the word question first.\n\nWould you have spotted Griffin: yes or no? Subscribe for daily AI playbooks."
+  }
+}
