@@ -48,9 +48,19 @@ CLAUDE_TOOLS = ["WebSearch", "WebFetch", "Read", "Write", "Edit", "Glob", "Grep"
 # on Haiku, everything else on Sonnet. A fallback model keeps a job alive when its model is overloaded,
 # so an overload does not fail the step and pull in an Opus repair run.
 STEP_MODEL_DEFAULT = "sonnet"
-STEP_MODEL = {"doctor": "opus",        # self-repair: the only step allowed on Opus
-              "caption": "haiku",      # caption & hashtags
-              "hook": "haiku"}         # Reel hook lines
+# Owner rule (2026-10-04): Opus ONLY for writing code (doctor); light, pattern-following steps on Haiku;
+# research / verification / writing on Sonnet. Every template is listed so a new one is a conscious choice.
+STEP_MODEL = {"doctor": "opus",          # self-repair: writes and commits code
+              "caption": "haiku",        # caption & hashtags (rules checked by captions.py)
+              "hook": "haiku",           # Reel hook lines
+              "clipqa": "haiku",         # clip framing check
+              "scout": "sonnet",         # news research + verification (web)
+              "repo_scout": "sonnet",    # GitHub repo pick + verification
+              "write": "sonnet",         # news/pack post writer
+              "repo_write": "sonnet",    # repo post writer
+              "qa": "sonnet",            # post QA: slides + video frames, may fix content
+              "strategy": "sonnet",      # daily strategy director
+              "hook_learn": "sonnet"}    # learning job
 FALLBACK_MODEL = {"opus": "sonnet", "sonnet": "haiku"}
 # tools per prompt: fewer tools = less context per turn. caption never searched the web in any past run
 # (runs/*/caption.log: Bash, Read, Edit, Write, Grep, Glob only), so it does not get the web tools.
