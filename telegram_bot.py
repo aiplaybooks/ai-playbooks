@@ -354,7 +354,10 @@ def ask_claude(text, spoken=False):
                 history="\n".join(f"{m['who']}: {m['text']}" for m in h) or "(none)",
                 state=json.dumps(state_summary(), ensure_ascii=False, indent=1))
             envv = dict(os.environ, PYTHONIOENCODING="utf-8"); envv.pop("CLAUDECODE", None)
-            r = subprocess.run([S.CLAUDE, "-p", "--output-format", "json", "--allowedTools", "Read", "Glob", "Grep", "WebSearch", "WebFetch"],
+            # chat is not code work: Sonnet, never the Opus of the user settings (owner, 2026-10-04)
+            r = subprocess.run([S.CLAUDE, "-p", "--output-format", "json", "--model", "sonnet", "--strict-mcp-config",
+                                *S.LEAN_FLAGS, "--fallback-model", "haiku",
+                                "--allowedTools", "Read", "Glob", "Grep", "WebSearch", "WebFetch"],
                                input=prompt, cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace",
                                env=envv, creationflags=NO_WINDOW, timeout=420)
             res = json.loads(r.stdout or "{}").get("result", "")

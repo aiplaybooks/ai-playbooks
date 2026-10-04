@@ -42,6 +42,25 @@ CLAUDE_TOOLS = ["WebSearch", "WebFetch", "Read", "Write", "Edit", "Glob", "Grep"
                 "Bash(python cover.py:*)", "Bash(python clip.py:*)",
                 "Bash(python tags.py:*)", "Bash(python captions.py:*)", "Bash(python hooks.py:*)",
                 "Bash(python repos.py:*)", "Bash(python repocard.py:*)", "Bash(python strategy.py:*)", "Bash(python xscout.py:*)"]
+# Claude model per prompt (owner, 2026-10-04: the agents ran on Opus because no --model was passed and the
+# user settings default to it; one publish round ate millions of tokens of the 5 hour window).
+# Only code work may use Opus: that is `doctor` (self-repair writes and commits code). Routine writing runs
+# on Haiku, everything else on Sonnet. A fallback model keeps a job alive when its model is overloaded,
+# so an overload does not fail the step and pull in an Opus repair run.
+STEP_MODEL_DEFAULT = "sonnet"
+STEP_MODEL = {"doctor": "opus",        # self-repair: the only step allowed on Opus
+              "caption": "haiku",      # caption & hashtags
+              "hook": "haiku"}         # Reel hook lines
+FALLBACK_MODEL = {"opus": "sonnet", "sonnet": "haiku"}
+# tools per prompt: fewer tools = less context per turn. caption never searched the web in any past run
+# (runs/*/caption.log: Bash, Read, Edit, Write, Grep, Glob only), so it does not get the web tools.
+STEP_TOOLS = {"caption": [t for t in CLAUDE_TOOLS if not t.startswith("Web")]}
+
+# Lean headless context (measured 2026-10-04: 60k -> 12.5k tokens per turn, every turn re-reads it): the project
+# CLAUDE.md (10k), skills list, project hooks and unused built-in tool schemas are not loaded. Prompts that say
+# "Read CLAUDE.md" still can, as a file.
+LEAN_FLAGS = ["--setting-sources", "user", "--disable-slash-commands",
+              "--tools", "WebSearch,WebFetch,Read,Write,Edit,Glob,Grep,Bash"]
 
 SCAN = [("trigger", "Zamanlayıcı", "trigger"), ("collect", "Haber topla", "code"),
         ("scout", "Ara, doğrula, havuza ekle", "ai"), ("pool", "Havuzdan listele", "code"), ("choose", "Senin seçimin", "human")]
@@ -113,7 +132,8 @@ def write_json(p, data):
 
 
 # the learning job (hooks + captions, used by every flow) runs 10x a day (owner, 2026-09-28), each run on one focus
-LEARN_TIMES = ["08:30", "19:30"]  # owner, 2026-09-30: 2x a day (10x ate the Claude usage, 8 of 11 runs found nothing new)
+LEARN_TIMES = ["08:30"]  # owner, 2026-09-30: 2x a day; 2026-10-04: 2x a WEEK (it ate the 5 hour usage window)
+LEARN_DAYS = (0, 3)      # Monday + Thursday: with one time a day that is the 2 runs a week the owner asked for
 LEARN_FOCUS = [
     "news carousels: cover headlines + caption hooks for AI news",
     "prompt packs: money / daily-life pack headlines and caption openers",
@@ -125,11 +145,13 @@ LEARN_FOCUS = [
 
 def settings():
     s = {"scan_times": ["08:00", "18:00"], "approval": True, "last_slot": None, "dm_bot": False,
-         "gather_times": ["06:30", "10:30", "13:30", "16:30", "21:30"], "last_gather_slot": None,
+         "gather_times": ["12:30"], "last_gather_slot": None,
          "learn_times": LEARN_TIMES, "last_learn_slot": None, "repo_time": "07:15", "last_repo_slot": None,
          "autopilot": True, "post_slots": ["14:00", "17:00", "20:00", "23:00"], "strategy_time": "09:30", "last_strategy_slot": None}
     s.update(read_json(SETTINGS, {}) or {})
     s.pop("learn_time", None)  # before 2026-09-28: one learning run a day
+    if not s.get("learn_weekly"):  # one-time move to 2x a week (owner, 2026-10-04); the UI can still edit the time
+        s["learn_times"] = list(LEARN_TIMES); s["learn_weekly"] = True
     return s
 
 
@@ -272,9 +294,12 @@ def claude(run, nid, template, prompt_name=None, **fields):
     prompt = (ROOT / "prompts" / f"{template}.md").read_text(encoding="utf-8").format(**fields)
     (run.dir / f"{prompt_name or nid}.prompt.md").write_text(prompt, encoding="utf-8")
     env = dict(os.environ, PYTHONIOENCODING="utf-8"); env.pop("CLAUDECODE", None)
+    model = STEP_MODEL.get(template, STEP_MODEL_DEFAULT)
     cmd = [CLAUDE, "-p", "--output-format", "stream-json", "--verbose", "--permission-mode", "acceptEdits",
-           "--allowedTools", *CLAUDE_TOOLS]
-    run.log(nid, f"$ claude -p < prompts/{template}.md")
+           "--model", model, "--strict-mcp-config", *LEAN_FLAGS]
+    if FALLBACK_MODEL.get(model): cmd += ["--fallback-model", FALLBACK_MODEL[model]]
+    cmd += ["--allowedTools", *STEP_TOOLS.get(template, CLAUDE_TOOLS)]
+    run.log(nid, f"$ claude -p --model {model} < prompts/{template}.md")
     p = subprocess.Popen(cmd, cwd=ROOT, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                          text=True, encoding="utf-8", errors="replace", env=env, creationflags=NO_WINDOW)
     PROCS[run.id] = p
@@ -312,7 +337,7 @@ def n_trigger(run):
 
 
 POOL_DAYS = 7          # a candidate stays in the pool this long after it was first found (unless posted)
-FRESH_HOURS = 3        # a scan uses the pool as is when the last gather is younger than this
+FRESH_HOURS = 20       # a scan uses the pool as is when the last gather is younger than this (1 gather a day at 12:30, owner 2026-10-04: token budget)
 
 
 def last_gather():
@@ -431,8 +456,10 @@ def n_review(run):
 
 
 def n_hooks(run):
-    today = sum(1 for r in all_runs() if r["kind"] == "learn" and r.get("day") == run.s["day"] and r["created"] < run.s["created"])
-    focus = LEARN_FOCUS[today % len(LEARN_FOCUS)]
+    # rotate the focus over every learning run, not over the runs of one day: since 2026-10-04 there is only
+    # one run a day, so a per-day counter would always pick the first focus and never learn the other four.
+    done = sum(1 for r in all_runs() if r["kind"] == "learn" and r["created"] < run.s["created"])
+    focus = LEARN_FOCUS[done % len(LEARN_FOCUS)]
     run.s["focus"] = focus; run.save()
     claude(run, "hooks", "hook_learn", date=run.s["day"], run_id=run.id, focus=focus, round=today + 1)
     r = read_json(run.dir / "learn.json", {}) or {}
@@ -1015,9 +1042,11 @@ def enqueue(run):
     run.status("queued"); POST_Q.put(run.id)
 
 
-def last_slot(times, t):
+def last_slot(times, t, days=None):
+    """The most recent planned slot at or before t; `days` limits it to those weekdays (0 = Monday)."""
     slots = []
     for d in (t.date() - timedelta(days=1), t.date()):
+        if days is not None and d.weekday() not in days: continue
         for hm in times:
             h, m = map(int, hm.split(":"))
             slots.append(datetime(d.year, d.month, d.day, h, m).astimezone())
@@ -1025,9 +1054,11 @@ def last_slot(times, t):
     return max(past) if past else None
 
 
-def next_slot(times, t):
+def next_slot(times, t, days=None):
     slots = []
-    for d in (t.date(), t.date() + timedelta(days=1)):
+    for i in range(9 if days is not None else 2):  # a weekly job can be up to 7 days away
+        d = t.date() + timedelta(days=i)
+        if days is not None and d.weekday() not in days: continue
         for hm in times:
             h, m = map(int, hm.split(":"))
             slots.append(datetime(d.year, d.month, d.day, h, m).astimezone())
@@ -1064,9 +1095,11 @@ def scheduler():
                 late = t - slot > timedelta(minutes=10)
                 if start_scan(f"Planlı tarama {slot:%H:%M}" + (" (kaçırılmıştı, telafi)" if late else "")):
                     s["last_slot"] = slot.isoformat(); save_settings(s)
-            for kind, times, key in (("gather", s["gather_times"], "last_gather_slot"), ("learn", s["learn_times"], "last_learn_slot"),
-                                     ("repos", [s["repo_time"]], "last_repo_slot"), ("strategy", [s["strategy_time"]], "last_strategy_slot")):
-                slot = last_slot(times, t)
+            for kind, times, key, days in (("gather", s["gather_times"], "last_gather_slot", None),
+                                           ("learn", s["learn_times"], "last_learn_slot", LEARN_DAYS),
+                                           ("repos", [s["repo_time"]], "last_repo_slot", None),
+                                           ("strategy", [s["strategy_time"]], "last_strategy_slot", None)):
+                slot = last_slot(times, t, days)
                 if slot and (not s.get(key) or s[key] < slot.isoformat()):
                     if start_bg(kind, f"Planlı {slot:%H:%M}" + (" (telafi)" if t - slot > timedelta(minutes=10) else "")):
                         s = settings(); s[key] = slot.isoformat(); save_settings(s)
@@ -1435,9 +1468,10 @@ def state():
             r["candidates"] = load_candidates(r["candidates_file"], r["id"])
     fg = [r for r in runs if r["kind"] not in BACKGROUND][:40]
     bg = {}
-    for kind, times in (("gather", s["gather_times"]), ("learn", s["learn_times"]), ("repos", [s["repo_time"]]), ("strategy", [s["strategy_time"]])):
+    for kind, times, days in (("gather", s["gather_times"], None), ("learn", s["learn_times"], LEARN_DAYS),
+                              ("repos", [s["repo_time"]], None), ("strategy", [s["strategy_time"]], None)):
         last = next((r for r in runs if r["kind"] == kind), None)
-        bg[kind] = {"next": iso(next_slot(times, now())), "last": last and {
+        bg[kind] = {"next": iso(next_slot(times, now(), days)), "last": last and {
             "id": last["id"], "status": last["status"], "created": last["created"],
             "msg": next((n.get("msg") for n in reversed(list(last["nodes"].values())) if n.get("msg")), "")}}
     bg["pool"] = len(pool_items())
@@ -1642,7 +1676,8 @@ class H(BaseHTTPRequestHandler):
                 if "learn_times" in b:
                     times = sorted({t for t in b["learn_times"] if re.fullmatch(r"([01]\d|2[0-3]):[0-5]\d", t)})
                     if not times: raise ValueError("öğrenme için geçerli saat yok (SS:DD)")
-                    s["learn_times"] = times; s["last_learn_slot"] = (last_slot(times, now()) or now()).isoformat()
+                    s["learn_times"] = times
+                    s["last_learn_slot"] = (last_slot(times, now(), LEARN_DAYS) or now()).isoformat()
                 save_settings(s); return self.send(200, {"ok": True})
             self.send(404, {"error": "yok"})
         except (KeyError, ValueError, TypeError) as ex:
