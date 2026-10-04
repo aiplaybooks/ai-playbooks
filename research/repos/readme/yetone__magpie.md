@@ -47,7 +47,7 @@ and there is a terminal version (`magpie tui`) and a plain CLI.
 - **Providers with one field.** Pick a preset (Anthropic, OpenAI, Gemini,
  DeepSeek, Kimi, GLM, MiniMax, StepFun, Qwen, Baidu Qianfan, Tencent Cloud Token Plan,
  Huawei Cloud MaaS, Volcengine Ark, Mistral, Groq, xAI, OpenRouter, Together,
- Fireworks, SiliconFlow, NVIDIA NIM, ModelScope, AiHubMix, 302.AI, Ollama, LM Studio…),
+ Fireworks, SiliconFlow, NVIDIA NIM, ModelScope, AiHubMix, PipeLLM, 302.AI, Ollama, LM Studio…),
  paste a key, done. Custom vendors need a name and a base URL. magpie never
  reads keys from your shell environment.
 - **Real model lists, nothing compiled in.** With a key in hand magpie asks
@@ -81,16 +81,12 @@ and there is a terminal version (`magpie tui`) and a plain CLI.
 | OmO (omo-ai) | `~/.omo/agent/settings.json` (+ `models.json`; `$OMO_CODING_AGENT_DIR`, `$SENPI_CODING_AGENT_DIR`) | model |
 | Goose | `~/.config/goose/config.yaml` | model |
 | Cursor CLI | `~/.cursor/cli-config.json` | model |
+| Zed | `~/.config/zed/settings.json` (`$XDG_CONFIG_HOME` on Linux, `%APPDATA%\Zed` on Windows) | model (a `magpie` OpenAI-compatible provider; its catalog in Zed's picker) |
+| VS Code (Chat) | `~/Library/Application Support/Code/User/settings.json` + `chatLanguageModels.json` (`~/.config/Code/User` on Linux, `%APPDATA%\Code\User` on Windows) | model (`chat.defaultModel`; a `magpie` Custom Endpoint group, its catalog in Chat's model picker; VS Code 1.122+, no Copilot sign-in or key needed) |
+| JetBrains Air | `acp.json` in `~/Library/Application Support/JetBrains/Air` (`~/.config/JetBrains/Air` on Linux, `%APPDATA%\JetBrains\Air` on Windows) + `magpie-opencode.json` beside it | model (a `Magpie` ACP agent: OpenCode's `opencode acp` on magpie's provider alone, its models and routing groups in Air's model menu; needs OpenCode installed) |
 | Copilot CLI | `~/.copilot/settings.json` | model |
 | Crush | `~/.config/crush/crush.json` | large, small |
 | DeepSeek Harness (dsh) | `~/.dsh/profiles/*/cordis.patch.yml` (`$DSH_HOME`; a custom provider, Magpie), or `~/.dsh/config.yaml` before dsh 0.1.5 | model, effort |
 | Command Code | `~/.commandcode/settings.json` (+ `providers.json`) | model |
 | fx | `~/.fx/settings.json` | model (a keyless `magpie` provider) |
-| omp (oh-my-pi) | `~/.omp/agent/config.yml` (+ `models.yml`) | model |
-| Devin | `~/.config/devin/config.json` (`%APPDATA%\devin\config.json` on Windows) | model |
-| Hermes Agent | `~/.hermes/config.yaml` (`$HERMES_HOME`) | model |
-| Kimi Code | `~/.kimi/config.toml` (`$KIMI_SHARE_DIR`) | model (a `magpie` provider; magpie's models in Kimi's /model) |
-| MiniMax Code (mcode) | `~/.minimax/config.yaml` (`$MINIMAX_DATA_DIR`) | model (a `magpie` custom provider; magpie's models in its /model) |
-| Droid (Factory) | `~/.factory/settings.json` (`$FACTORY_HOME_OVERRIDE`) | model (magpie's models as BYOK `customModels`, in Droid's /model) |
-| Cline (CLI) | `~/.cline/data/settings/providers.json` (`$CLINE_DIR`) | model, effort (magpie takes its openai-compatible provider) |
-| Qoder (CLI) | `~/.qoder/settings.json` (`$QODER_CONFIG_DIR`) | model, effort (a `magpie` custom provide
+| omp (oh-my-pi) | `~/.

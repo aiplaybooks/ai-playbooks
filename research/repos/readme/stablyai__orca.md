@@ -13,7 +13,7 @@ Orca
 
 Monitor and steer your agents from your phone — get notified when an agent finishes and send follow-ups from anywhere.
 
-[iOS App Store](https://apps.apple.com/us/app/orca-ide/id6766130217) · [Android APK 0.0.50](https://github.com/stablyai/orca/releases/download/mobile-android-v0.0.50/app-release.apk) · [Docs →](https://www.onorca.dev/docs/mobile)
+[iOS App Store](https://apps.apple.com/us/app/orca-ide/id6766130217) · [Android APK 0.0.52](https://github.com/stablyai/orca/releases/download/mobile-android-v0.0.52/app-release.apk) · [Docs →](https://www.onorca.dev/docs/mobile)
 
 ### Parallel Worktrees
 
@@ -100,6 +100,7 @@ Works with **any CLI agent** — if it runs in a terminal, it runs in Orca.
  Autohand Code &nbsp;
  Charm &nbsp;
  Cline &nbsp;
+ CodeBuddy &nbsp;
  Codebuff &nbsp;
  Freebuff &nbsp;
  Command Code &nbsp;
@@ -138,7 +139,7 @@ yay -S stably-orca-bin
 Pair with your desktop app to monitor and steer your agents from your phone.
 
 - **iOS:** [Download on the App Store](https://apps.apple.com/us/app/orca-ide/id6766130217)
-- **Android:** [Download APK 0.0.50](https://github.com/stablyai/orca/releases/download/mobile-android-v0.0.50/app-release.apk) · [Install guide](https://www.onorca.dev/docs/android-apk)
+- **Android:** [Download APK 0.0.52](https://github.com/stablyai/orca/releases/download/mobile-android-v0.0.52/app-release.apk) · [Install guide](https://www.onorca.dev/docs/android-apk)
 
 ---
 
@@ -146,7 +147,7 @@ Pair with your desktop app to monitor and steer your agents from your phone.
 
 - **Discord:** Join the community on **[Discord](https://discord.gg/fzjDKHxv8Q)**.
 - **Twitter / X:** Follow **[@orca_build](https://x.com/orca_build)** for updates and announcements.
-- **WeChat:** Scan to join the Orca community WeChat group 10.
+- **WeChat:** Scan to join the Orca community WeChat group 11.
 
 - **Feedback &amp; Ideas:** We ship fast. Missing something? [Request a new feature](https://github.com/stablyai/orca/issues).
 - **Privacy:** See the [privacy &amp; telemetry docs](https://www.onorca.dev/docs/telemetry) for what anonymous usage data Orca collects and how to opt out.
@@ -158,4 +159,4 @@ Pair with your desktop app to monitor and steer your agents from your phone.
 
 Want to contribute or run locally? See our [CONTRIBUTING.md](.github/CONTRIBUTING.md) guide.
 
-The relay that pairs the mobile app with a desktop host is also in this repository un
+The relay that pairs the mobile app with a desktop host is also in 

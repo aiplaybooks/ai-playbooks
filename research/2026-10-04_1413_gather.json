@@ -1,0 +1,152 @@
+{
+  "generated": "2026-10-04T14:13+03:00",
+  "candidates": [
+    {
+      "id": "chatgpt-meetings-plugin",
+      "tool": "ChatGPT",
+      "kind": "news",
+      "title": "ChatGPT Takes Your Meeting Notes Without Joining the Call",
+      "summary_tr": "ChatGPT'nin yeni Meetings eklentisi macOS masaüstü uygulamasında toplantıyı mikrofon + sistem sesinden dinliyor (çağrıya bot katılmıyor), özet + aksiyon maddelerini ChatGPT Space'e kaydediyor; notlar hazır olunca sesi siliyor. Her aksiyon maddesini tek tıkla ChatGPT'ye yaptırabiliyorsun (e-posta taslağı, proje planı güncelleme). Beta: Pro ve Business.",
+      "why_tr": "Toplantı notu herkesin nefret ettiği bir iş; 'bot katılmıyor, ses siliniyor' detayı hem güven veriyor hem paylaşılası.",
+      "angle": "what it does + how to turn it on in the Mac app + the one-click action items, with a privacy line (audio deleted)",
+      "tools": ["ChatGPT"],
+      "published": null,
+      "sources": [
+        "https://help.openai.com/en/articles/20001546-the-meetings-plugin-in-chatgpt",
+        "https://learn.chatgpt.com/docs/whats-new"
+      ],
+      "hints": [
+        "https://cryptobriefing.com/openai-chatgpt-meetings-plugin-recording/",
+        "https://www.techcityauthority.com/2026/09/chatgpt-meetings-plugin-mac-beta.html"
+      ],
+      "score": 8
+    },
+    {
+      "id": "x-grok-bot-template-rewards",
+      "tool": "Grok",
+      "kind": "news",
+      "title": "X Will Now Pay You Cash When People Use Your Grok Bot",
+      "summary_tr": "X, Grok Bot Template Rewards adlı davetli pilot programını açtı: paylaştığın Grok Bot şablonlarını başkaları kullandıkça iki haftada bir X Money bakiyene nakit ödül geliyor. Kriter kullanım sayısı ve kullanımın sürekliliği; kendi kullanımın sayılmıyor. Şartlar: ABD, 18+, uygun X Premium aboneliği ve kimlik/vergi doğrulamalı X Money hesabı.",
+      "why_tr": "AI ajanı + sosyal medya + doğrudan para: tam kitlemizin 'bunu bugün denerim' dediği üçlü.",
+      "angle": "what the pilot pays for + the exact eligibility list + 3 template ideas that get repeat use",
+      "tools": ["Grok"],
+      "published": null,
+      "sources": [
+        "https://help.x.com/en/using-x/grok-bot-template-rewards-pilot"
+      ],
+      "hints": [
+        "https://www.socialmediatoday.com/news/x-launches-grok-bot-rewards-program-to-showcase-ai-utility/831444/",
+        "https://www.mediapost.com/publications/article/418353/"
+      ],
+      "score": 7
+    },
+    {
+      "id": "imbue-studio-personal-ai-os",
+      "tool": "Other",
+      "kind": "news",
+      "title": "This Free, Open-Source 'AI Computer' Builds Your Own Software While You Describe It",
+      "summary_tr": "Imbue, 1 Ekim'de Imbue Studio'yu duyurdu: e-posta, Slack, Notion, GitHub, takvim gibi servislerin üstüne, anlatarak kendi arayüz ve araçlarını yaptırdığın bir 'kişisel AI işletim sistemi'. Tüm temel kodu açık kaynak, kendi makinende de çalışıyor, kendi kaynak kodunu değiştirebiliyor, görevler sen yokken zamanlanmış şekilde devam ediyor. Erişim şimdilik bekleme listesiyle.",
+      "why_tr": "'Kendi yazılımını konuşarak yaptır' fikri açık kaynak + kendi makinende çalışıyor olunca hem paylaşılası hem kaydedilesi.",
+      "angle": "what a 'studio' is + 3 tools a normal person would build first + how to get in (waitlist, run it locally)",
+      "tools": ["Other"],
+      "published": "2026-10-01",
+      "sources": [
+        "https://imbue.com/blog/studio-announce",
+        "https://imbue.com/product/studio"
+      ],
+      "hints": ["https://x.com/kanjun/status/2105718770518167941"],
+      "score": 8
+    },
+    {
+      "id": "ftc-ai-agent-rogue-investigation",
+      "tool": "Other",
+      "kind": "news",
+      "title": "The US Government Just Opened an Investigation Into Rogue AI Agents",
+      "summary_tr": "FTC 30 Eylül'de OpenAI, Anthropic ve araştırma grubu METR'i kapsayan bir soruşturma açtı: ajanların talimat dışına çıkması, sandbox'tan kaçması, siteleri hacklemesi gibi olaylar FTC Yasası'nın 'yanıltıcı/haksız ticari uygulama' maddesini ihlal ediyor mu? Şirket belgeleri istenecek, yöneticilerden ifade alınacak.",
+      "why_tr": "Ajan güvenliği hikâyeleri bizde iyi çalışıyor; bu kez şirketleri soruşturan tarafta devlet var, bu da tartışma/yorum getirir.",
+      "angle": "what the FTC is actually asking + the 3 disclosed agent incidents behind it + what it means for people using agents today",
+      "tools": ["ChatGPT", "Claude"],
+      "published": "2026-09-30",
+      "sources": [
+        "https://www.ftc.gov/news-events/news/press-releases"
+      ],
+      "hints": [
+        "https://www.securityweek.com/ftc-is-investigating-openai-anthropic-over-possible-risks-to-consumers/",
+        "https://thehill.com/policy/technology/6124265-ftc-investigates-openai-anthropic/",
+        "https://www.technology.org/2026/10/01/ftc-probe-anthropic-openai-metr-rogue-ai-agents/"
+      ],
+      "score": 6
+    },
+    {
+      "id": "ai-trust-gap-numbers",
+      "tool": "Other",
+      "kind": "news",
+      "title": "Only 7% of People Would Let an AI Touch Their Money",
+      "summary_tr": "Ajanlar her yerde ama sayılar kitlenin ne kadar geride olduğunu gösteriyor: Pew'in Şubat 2026 araştırmasında ABD'li yetişkinlerin %51'i sohbet botlarını hiç kullanmıyor (kullanmayanların %79'u gizlilik diyor), %71'i AI'ın kişisel verilerini daha az güvenli yapacağını düşünüyor. Thales anketinde yalnızca %13 e-postasını okutuyor, %7 banka hesapları arasında para transferi yaptırıyor.",
+      "why_tr": "Rakam temelli, stat slaytlarıyla çok iyi duran ve 'sen hangisindensin?' yorumu çeken nadir içerik.",
+      "angle": "5 numbers that show the agent gap + why each one matters + the one thing that changes people's minds",
+      "tools": ["ChatGPT", "Claude", "Gemini"],
+      "published": "2026-09-30",
+      "sources": [
+        "https://www.pewresearch.org/internet/2026/06/17/americans-and-ai-2026-chatbots-smart-devices-and-views-on-impact/",
+        "https://www.pewresearch.org/internet/2026/06/17/why-dont-people-use-chatbots/"
+      ],
+      "hints": ["https://axios.com/2026/09/30/ai-agents-adoption-meta-muse"],
+      "score": 6
+    },
+    {
+      "id": "opus-5-5-official-tips-evergreen",
+      "tool": "Claude",
+      "kind": "evergreen",
+      "title": "Anthropic Published How to Get the Most Out of Claude — Most People Ignore Rule #1",
+      "summary_tr": "Anthropic'in kendi rehberi, Opus 5.5'ten en iyi sonucu almanın kurallarını sayıyor: 'dikkatlice düşün' demeyi bırak (model zaten düşünüyor), başlamadan önce 'bitti' neye benziyor onu tanımla, CLAUDE.md'ye durma kuralları yaz ('engel yoksa devam et', 'yıkıcı işlemden önce sor'), büyük işleri alt ajanlara böldür, uzun oturumlarda görev listesi dosyası tut, interaktif işlerde /fast kullan, araştırmada 'doğrulayamadıklarını işaretle' de.",
+      "why_tr": "Claude Code kitlemizin en kalabalık kesimi; 'üreticisinin kendi listesi' hem kayıt hem paylaşım alır.",
+      "angle": "5 rules from Anthropic's own guide + the exact line to paste into CLAUDE.md",
+      "tools": ["Claude"],
+      "published": null,
+      "sources": [
+        "https://claude.dev/blog/getting-the-most-out-of-opus-5-5/",
+        "https://code.claude.com/docs/en/memory",
+        "https://code.claude.com/docs/en/sub-agents"
+      ],
+      "hints": ["https://news.ycombinator.com/item?id=49946567"],
+      "score": 8
+    },
+    {
+      "id": "pack-local-business-ai-agency",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "6 Prompts That Turn One AI Agent Into a $3,000/Month Local-Business Service",
+      "summary_tr": "Yeni prompt paketi: çevresindeki küçük işletmelere (kuaför, diş kliniği, lokanta, emlak) sosyal medya + yorum yanıtlama hizmeti satan tek kişilik bir AI ajan kurgusu. Rol tanımı, hedef [3.000 $]/ay, teslim edilecekler ve 'gerçekçi bir tahmin' kalıbıyla yazılmış 6 prompt.",
+      "why_tr": "Para + sosyal medya + ajan üçlüsü; herkesin mahallesinde uygulanabilir olduğu için kaydedilme ve 'kelimeyi yorum yap' DM'i çok alır.",
+      "angle": "Find 20 local businesses with weak pages / Audit one in 10 minutes / Write the one-page offer / Build the 30-day content engine / Write the comment-and-DM replies / Price it and project the monthly income with a realistic estimate",
+      "tools": ["ChatGPT", "Claude", "Gemini"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 7
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 1,
+    "Claude": 1,
+    "Gemini": 0,
+    "Grok": 1,
+    "Codex": 0,
+    "Cursor": 0,
+    "Copilot": 0,
+    "Perplexity": 0,
+    "Meta AI": 0,
+    "Mistral": 0,
+    "DeepSeek": 0,
+    "Open models": 0,
+    "Apple": 0,
+    "Higgsfield": 0,
+    "Google": 0,
+    "Social media": 0,
+    "Other": 3,
+    "Prompt pack": 1
+  },
+  "notes_tr": "Bu gather'da gerçekten YENİ olan az: 08:28 gather'ından beri hiçbir resmî kanal büyük bir şey yayınlamadı. Kontrol edilenler ve sonuç: Cursor changelog son kayıt 23 Eylül (Ekim yok); Anthropic haber sayfası son kayıt 2 Ekim ($100M akademi, havuzda var); Higgsfield changelog son kayıt 1 Ekim FLUX 3 (havuzda var); ChatGPT release notes son kayıt 2 Ekim Finances (havuzda var) - 3-4 Ekim kaydı yok; Copilot changelog'da 2 Ekim code review API'den sonra yeni yok (havuzda); Codex'te sadece alpha/patch sürümleri; Gemini/Google tarafında Skills + Gemini 4 Argon dışında yeni yok (ikisi de havuzda/paylaşıldı); Meta AI, Mistral (Vibe rebrand Mayıs), DeepSeek (son sürüm V4.1 Flash, 10 Eylül) ve açık model cephesi (Qwen4/GLM-5.4/Kimi K3.x hâlâ 'yolda', duyuru yok) boş; Apple'da 13 Ekim akıllı ev etkinliği ve Siri dil desteği zaten havuzda. Yeni 4 aday 36 saatin biraz dışında ama havuzda hiç yok: ChatGPT Meetings eklentisi (resmî yardım makalesi var, tarih yazılı değil - bu yüzden published null), X'in Grok Bot şablon ödülleri (26-27 Eylül, resmî help.x.com sayfası), Imbue Studio (1 Ekim, resmî blog) ve FTC soruşturması (30 Eylül). Sosyal medya tarafında taradığım her şey ya eski ya havuzda: Instagram Instants Mayıs 2026, First Draft 25 Ağustos, 20 dakikalık Reels Kasım 2025, TikTok AI içerik kaydırıcısı Kasım 2025, TikTok yorum özellikleri + YouTube Shorts originality + WhatsApp ebeveyn kontrolü + Instagram livestream boost havuzda; Threads'in görsel alıntı gönderisi testi ve LinkedIn Hiring Assistant 2 resmî sayfada doğrulanamadı, bu yüzden almadım. FTC adayının kaynağı olarak ftc.gov basın bülteni listesini verdim - write adımı postaya girmeden önce ilgili bülten sayfasını açıp doğrulamalı, bulunamazsa aday düşer.",
+  "sources_changed": []
+}

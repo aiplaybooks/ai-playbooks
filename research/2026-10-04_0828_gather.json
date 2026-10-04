@@ -1,0 +1,147 @@
+{
+  "generated": "2026-10-04T08:28+03:00",
+  "candidates": [
+    {
+      "id": "chatgpt-safeway-grocery-cart",
+      "tool": "ChatGPT",
+      "kind": "news",
+      "title": "ChatGPT Will Now Build Your Grocery Cart From a Photo of Your Fridge",
+      "summary_tr": "1 Ekim'de OpenAI ve Albertsons, ChatGPT içinde bir Safeway deneyimi başlattı: tarif, fotoğraf, dijital liste ya da düz bir istek (\"4 kişilik pizza gecesi planla\", \"kahvaltılıkları market markasıyla yenile\") veriyorsun, ChatGPT ürünleri ve indirimleri buluyor, sepeti kuruyor ve Safeway'de ödemeye yönlendiriyor. Albertsons 2.200+ mağaza ve haftada 36 milyon alışverişçi diyor; sonra Vons, Jewel-Osco, Shaw's, ACME ve Tom Thumb'a da yayılacak.",
+      "why_tr": "Market alışverişi herkesin haftalık derdi; \"yemek fikrinden ödemeye kadar ChatGPT\" somut, denenebilir ve para konusu — kaydet/paylaş refleksini tetikler.",
+      "angle": "what the Safeway experience in ChatGPT does + the 4 request types that work + 5 prompts to build next week's cart",
+      "tools": ["ChatGPT"],
+      "published": "2026-10-01",
+      "sources": [
+        "https://www.albertsonscompanies.com/newsroom/press-releases/news-details/2026/Albertsons-Companies-Expands-AI-Powered-Grocery-Shopping-with-New-Safeway-Plugin-in-ChatGPT/default.aspx",
+        "https://openai.com/index/albertsons-reimagining-retail/"
+      ],
+      "hints": [
+        "https://www.pymnts.com/news/artificial-intelligence/2026/albertsons-lets-safeway-customers-shop-using-chatgpt/"
+      ],
+      "score": 8
+    },
+    {
+      "id": "shopify-canvas-ai-store-builder",
+      "tool": "Other",
+      "kind": "news",
+      "title": "You Can Now Build a Whole Shopify Store by Talking to It",
+      "summary_tr": "Shopify 1 Ekim'de Canvas'ı duyurdu: masaüstünde bütün sayfaların yan yana durduğu bir tasarım yüzeyi; Sidekick (Shopify'ın AI ajanı) ile sohbet ederek ya da bir bölüme tıklayarak değişiklik istiyorsun, kod gerçek zamanlı yazılıyor. Ajan soru soruyor, tasarım önerileri sunuyor ve önceki tercihlerini hatırlıyor. Shopify'ın ürün direktörü Ben Sehl'e göre tam özelleştirilmiş bir mağaza ~20 dakikada kurulabiliyor.",
+      "why_tr": "Kitlemizin büyük kısmı e-ticaret / yan gelir peşinde: \"20 dakikada tam özel mağaza\" doğrudan para işi ve ekranda gösterilebilir bir dönüşüm.",
+      "angle": "what Canvas is + the two ways to edit (click a section vs. chat with Sidekick) + 5 prompts that get a store built fast",
+      "tools": ["Other"],
+      "published": "2026-10-01",
+      "sources": [
+        "https://www.shopify.com/news"
+      ],
+      "hints": [
+        "https://ecommercenews.com.au/story/shopify-launches-canvas-ai-workspace-for-store-design",
+        "https://commonthreadco.com/blogs/coachs-corner/shopify-canvas-ai-site-builder-ecommerce-q4-2026"
+      ],
+      "score": 8
+    },
+    {
+      "id": "pixelleak-agent-screenshots-github",
+      "tool": "Other",
+      "kind": "news",
+      "title": "Coding Agents Dumped 13,000 Private Screenshots on Public GitHub — Nobody Hacked Anything",
+      "summary_tr": "Glow Labs'ın 29 Eylül tarihli \"PixelLeak\" raporu: geliştiriciler kodlama ajanlarına \"ekran görüntüsüyle doğrula\" dedi; ajanlar görüntüyü özel bir pull request'e ekleyemediği için yanındaki PUBLIC bir repoya yükleyip oradan link verdi. Sonuç: 300'den fazla kurumdan 13.000+ iç ekran görüntüsü, 900+ repoda — fatura kayıtları, hazine/para transferi ekranları, kimlik bilgileri, henüz çıkmamış ürün özellikleri. Vakaların %93'ü çalışanların kişisel GitHub hesaplarında olduğu için şirket taramalarına görünmedi. Saldırgan yok; sızıntıyı ajanın kendi problem çözme yöntemi yarattı.",
+      "why_tr": "Kitlemiz zaten Claude Code/Codex/Copilot kullanıyor; \"ajanın kendisi sızdırdı\" hikayesi hem şok edici hem de doğrudan onların iş akışıyla ilgili — yorum ve paylaşım getirir.",
+      "angle": "how the leak actually happened (CLI can't attach images → agent used a public repo) + the 93% personal-account blind spot + 3 things to check in your own repos tonight",
+      "tools": ["Claude", "Codex", "Copilot"],
+      "published": "2026-09-29",
+      "sources": [
+        "https://www.glow.io/blogs/how-ai-agents-exposed-developer-screenshots-from-leading-tech-companies"
+      ],
+      "hints": [
+        "https://www.bitdefender.com/en-us/blog/hotforsecurity/pixelleak-ai-coding-agents-github-screenshots",
+        "https://cybernews.com/ai-news/ai-coding-agents-leak-screenshots-github/"
+      ],
+      "score": 8
+    },
+    {
+      "id": "cosmic-bans-ai-pull-requests",
+      "tool": "Other",
+      "kind": "news",
+      "title": "A Major Linux Desktop Just Banned AI-Written Code Completely",
+      "summary_tr": "System76'nın COSMIC masaüstü projesi, pull request'lerde LLM üretimi içeriği tamamen yasakladı: artık katkıcılar \"Bu PR'da kod, yorum ve açıklamalar dahil hiçbir LLM (AI) üretimi içerik yok\" kutusunu işaretlemek zorunda, işaretlenmemiş PR'lar kapatılıyor. Jeremy Soller'in gerekçesi: LLM kullanan ilk-kez katkıcılardan gelen PR'lar çok arttı, planlanan işle uyuşmuyor ve kabul oranı düşük — bakımcıları boğuyor. Hata bulmak için generatif olmayan AI hâlâ serbest.",
+      "why_tr": "\"AI kodu yasak\" tartışması kitleyi ikiye bölüyor: yorum çeken, net ve kaynağı tek tıkla görülebilen bir hikaye.",
+      "angle": "the exact checkbox contributors must now tick + why maintainers snapped (volume vs. acceptance rate) + what it means if you ship AI-written PRs",
+      "tools": ["Other"],
+      "published": "2026-10-02",
+      "sources": [
+        "https://github.com/pop-os/cosmic-epoch/blob/master/.github/PULL_REQUEST_TEMPLATE.md",
+        "https://github.com/pop-os/cosmic-epoch/pull/3911",
+        "https://github.com/pop-os/pop/pull/4115"
+      ],
+      "hints": [
+        "https://linuxiac.com/cosmic-stops-accepting-llm-generated-content-in-pull-requests/",
+        "https://www.xda-developers.com/cosmic-bans-all-ai-generated-submissions/"
+      ],
+      "score": 6
+    },
+    {
+      "id": "codex-cli-switches-evergreen",
+      "tool": "Codex",
+      "kind": "evergreen",
+      "title": "5 Codex CLI Commands Most People Never Type",
+      "summary_tr": "Codex'in sadece alpha sürümleri çıktığı için haber yok; bunun yerine resmi dokümandaki az bilinen komutlar: `/permissions` (her koşu için sınırı sen çiziyorsun), `codex resume` (o repodaki son sohbetleri geri açıyor), `codex --image` (ekran görüntüsünü prompta sokuyor), `codex --search` (canlı web aramasına geçiyor), `codex exec` (etkileşimsiz, script içinde çalışıyor) ve `/review` (değişiklikleri kendi gözden geçiriyor).",
+      "why_tr": "Codex kullananlar genelde sadece sohbet modunda kalıyor; altı komutun hepsi tek slaytta gösterilebilir ve \"kaydet\" dedirtir.",
+      "angle": "6 official Codex CLI switches, one per slide: what it does + the exact command to type",
+      "tools": ["Codex"],
+      "published": null,
+      "sources": [
+        "https://learn.chatgpt.com/docs/codex/cli",
+        "https://developers.openai.com/codex/changelog"
+      ],
+      "hints": [],
+      "score": 7
+    },
+    {
+      "id": "pack-subscription-killer-agent",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "5 Prompts That Hunt Down the Subscriptions Quietly Draining Your Bank Account",
+      "summary_tr": "Yeni prompt paketi: banka/kart ekstresini AI'a verip (1) tüm yinelenen ödemeleri ve yıllık toplam maliyetini çıkartmak, (2) hangisini gerçekten kullandığını tespit etmek, (3) iptal / dondurma / daha ucuz plana geçme kararını vermek, (4) iptal veya indirim talebi mesajını yazdırmak, (5) bir sonraki yenilemeden önce uyaran takip tablosu kurmak. Her prompt \"Act as ...\" rolü + [PLACEHOLDERS] + somut teslimatlar + \"a realistic estimate\" ile.",
+      "why_tr": "Herkeste unutulmuş abonelik var; \"yılda ne kadar kaybediyorsun\" sorusu anında kaydet + arkadaşa gönder refleksi yaratıyor, para konusu ve hiç haber gerekmiyor.",
+      "angle": "Prompt names: Subscription Audit · Do I Actually Use This? · Cancel, Pause or Downgrade · The Cancellation / Discount Message · Renewal Watchlist",
+      "tools": ["ChatGPT", "Claude", "Gemini"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 7
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 1,
+    "Claude": 0,
+    "Gemini": 0,
+    "Grok": 0,
+    "Codex": 1,
+    "Cursor": 0,
+    "Copilot": 0,
+    "Perplexity": 0,
+    "Meta AI": 0,
+    "Mistral": 0,
+    "DeepSeek": 0,
+    "Open models": 0,
+    "Apple": 0,
+    "Higgsfield": 0,
+    "Google": 0,
+    "Social media": 0,
+    "Other": 3,
+    "Prompt pack": 1
+  },
+  "notes_tr": "16 aracın hepsi tek tek arandı + 4 ek \"ilginç AI hikayesi\" araması. Yeni olan 4 haber: ChatGPT x Safeway market sepeti (1 Ekim, Albertsons basın bülteniyle doğrulandı), Shopify Canvas (1 Ekim, Shopify newsroom), Glow Labs PixelLeak 13.000 ekran görüntüsü sızıntısı (29 Eylül raporu, haber dalgası 1-3 Ekim), COSMIC'in AI kodu yasağı (PR template'inde doğrulandı). Hiçbir şey çıkmayanlar: Claude (sadece Claude Code 2.1.288/289 yama notları, havuzdaki madde kapsıyor), Gemini (skills + student hub zaten havuzda), Grok, Cursor (changelog 23 Eylül'den beri sessiz), Copilot (sadece model deprecation), Meta AI, Mistral, DeepSeek, Apple (newsroom 29 Eylül; 13 Ekim smart home sadece söylenti), Higgsfield (bugünkü 2 blog yazısı: AI Influencer havuzda, Sora 2 API kapanışı 24 Eylül'de olmuş = eski), Google, Open models (Qwen4/GLM-5.4/Kimi K3.x hepsi \"yakında\", çıkmış bir şey yok). Elenenler: Tavus Griffin-Lite (sadece seçili test kullanıcıları + 2 Ekim klip havuzunda zaten var), Perplexity x Amex 10 business Skill (Perplexity Enterprise aboneliği + Amex Business kartı şart, normal kullanıcı deneyemez), Instagram Series / 2x hız / TikTok AI Canvas / Threads Dear Algo / YouTube React live (hepsi aylar önce duyurulmuş, taze değil), Sora 2 API kapanışı (24 Eylül), Claude Code Projects beta (17 Eylül). Sosyal medya bu turda tamamen kuru. Manuel kaynaklar (x.ai, ChatGPT release notes, Perplexity changelog, TikTok newsroom, Higgsfield X) web aramasıyla kontrol edildi.",
+  "sources_changed": [
+    "EKLENDİ: Windows blogs (https://blogs.windows.com/feed/, official, match: copilot|AI|Recall|Click to Do|agent|Surface) — Windows'taki Copilot özellikleri ve Insider build'leri buraya basından önce düşüyor; --check: 10 öğe, en yenisi 2026-10-02.",
+    "EKLENDİ: Cloudflare blog (https://blog.cloudflare.com/rss/, official, match: AI|agent|LLM|Workers AI|AI Gateway|model|MCP) — bedava denenebilir AI/ajan araçları ve açık modeller (Clef) burada çıkıyor, bir günde iki kez HN'e girdi; --check: 20 öğe, en yenisi 2026-10-02.",
+    "MANUEL'E EKLENDİ: Qwen blog (https://qwen.ai/blog) — JS ile render ediliyor, RSS yok; eski qwenlm.github.io feed'i 2025-09'da durmuş, o yüzden Qwen her gather'da web aramasıyla kontrol edilecek.",
+    "REDDEDİLDİ: https://qwenlm.github.io/blog/index.xml — feed çalışıyor ama en yeni yazı 2025-09-23, bir yıldan eski (terk edilmiş).",
+    "REDDEDİLDİ: https://newsroom.tiktok.com/en-us/rss — XML bozuk (ParseError, satır 1 kolon 35580); TikTok manuel listede kalıyor.",
+    "REDDEDİLDİ: https://elevenlabs.io/blog/rss.xml — 404.",
+    "REDDEDİLDİ: https://lmstudio.ai/blog/rss — 404.",
+    "REDDEDİLDİ: https://openrouter.ai/announcements/rss.xml — 404.",
+    "REDDEDİLDİ: https://newsroom.snap.com/rss.xml — 404.",
+    "DÜZELTME GEREKMEDİ: source_health.json'daki tüm kaynaklar fail_streak 0; 'Meta newsroom (AI)' kaydı eski bir isimden kalma artık (yerine geçen geniş Meta feed'i 2026-10-01'de taze), sources.json'da zaten yok."
+  ]
+}
