@@ -1,0 +1,89 @@
+{
+  "generated": "2026-10-05T12:45:00+00:00",
+  "candidates": [
+    {
+      "id": "gemini-free-users-lose-pro-oct-9",
+      "tool": "Gemini",
+      "kind": "news",
+      "title": "Free Gemini Users Lose Access to Pro on October 9 — Here's What You Keep",
+      "summary_tr": "Google'ın resmi destek sayfasına göre 9 Ekim'den itibaren ücretsiz Gemini kullanıcıları sadece Flash-Lite modeline erişecek, AI Plus Flash-Lite ve Flash'ta kalacak, AI Pro tüm modelleri ve Deep Think'i alacak. Ayrıca her model için düşük/orta/yüksek 'effort' seviyeleri geliyor.",
+      "why_tr": "Milyonlarca ücretsiz Gemini kullanıcısını doğrudan etkileyen, 4 gün içinde yürürlüğe girecek bir değişiklik; 'ne kaybediyorum, ne yapmalıyım' merakıyla çok paylaşılır.",
+      "angle": "what changes on Oct 9 per plan (Free / Plus / Pro / Ultra) + what effort levels do + what to do before the switch",
+      "tools": ["Gemini"],
+      "published": "2026-10-03",
+      "sources": ["https://support.google.com/gemini/answer/17004136"],
+      "hints": ["https://9to5google.com/2026/10/03/gemini-model-limits-oct-26/"],
+      "score": 8
+    },
+    {
+      "id": "gpt-6-1-sol-launch",
+      "tool": "ChatGPT",
+      "kind": "news",
+      "title": "OpenAI's New GPT-6.1 Sol Nearly Matches Its Best Model at One-Fifth the Price",
+      "summary_tr": "OpenAI, DevDay'de GPT-6.1 Sol'u duyurdu: ajan tabanlı kodlama ve bilgisayar kullanımında Astra'ya yakın performans, API'de milyon token başına $2 girdi / $10 çıktı. ChatGPT Work ve Codex'te Plus, Pro, Business, Enterprise ve Edu kullanıcılarına açık; GitHub Copilot'ta da var. Daha önce paylaştığımız 'GPT-6 Sol & Luna' yazısından farklı, yeni bir model.",
+      "why_tr": "Fiyat/performans karşılaştırması ('en iyiye yakın, 5 kat ucuz') ve Codex/Copilot'ta hemen denenebilir olması yüksek ilgi çeker.",
+      "angle": "what 6.1 Sol is + price vs Astra + where you can use it today (ChatGPT Work, Codex, Copilot) + who should switch",
+      "tools": ["ChatGPT", "Codex", "Copilot"],
+      "published": "2026-09-29",
+      "sources": [
+        "https://openai.com/index/introducing-gpt-6-1-sol/",
+        "https://learn.chatgpt.com/docs/whats-new/september-28-october-2-2026"
+      ],
+      "hints": ["https://techcrunch.com/2026/09/29/openai-launches-gpt-6-1-sol-says-it-nearly-matches-gpt-6-astra-and-costs-less/"],
+      "score": 6
+    },
+    {
+      "id": "claude-projects-evergreen",
+      "tool": "Claude",
+      "kind": "evergreen",
+      "title": "Claude Projects Turn One Chat Into a Workspace That Already Knows Your Job",
+      "summary_tr": "Claude Projects: her proje için ayrı sohbet geçmişi, yüklediğin belgelerden oluşan bilgi tabanı ve özel talimatlar. Ücretsiz hesapta 5 proje, ücretli planlarda sınırsız; ücretli planlarda RAG ile çok daha fazla içerik sığıyor.",
+      "why_tr": "Çoğu kişi her seferinde aynı bağlamı yeniden yapıştırıyor; 'bir kere kur, hep kullan' pratik ve kaydedilesi bir ipucu.",
+      "angle": "what a Project is + 3 setups (client work, study, writing voice) + a copy-paste instruction prompt",
+      "tools": ["Claude"],
+      "published": null,
+      "sources": ["https://support.claude.com/en/articles/9517075-what-are-projects"],
+      "score": 6
+    },
+    {
+      "id": "pack-marketplace-flipping-agent",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "5 Prompts That Turn Facebook Marketplace Flipping Into a $2,000/Month AI-Run Side Income",
+      "summary_tr": "Marketplace/eBay'de ucuz ürün bulup satan bir 'flipping' ajanı için 5 prompt: ürün avı, fiyat araştırması, ilan metni, pazarlık mesajları ve aylık kâr tahmini.",
+      "why_tr": "Para kazanma vaadi + günlük hayata yakın, yeni başlayan biri için somut; paket formatımızda iyi çalışan bir konu.",
+      "angle": "Act as a resale expert: find underpriced items, price-check, write the listing, negotiate, and estimate monthly profit",
+      "tools": ["ChatGPT", "Claude"],
+      "published": null,
+      "sources": [],
+      "score": 6
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 1,
+    "Claude": 1,
+    "Gemini": 1,
+    "Grok": 0,
+    "Codex": 0,
+    "Cursor": 0,
+    "Copilot": 0,
+    "Perplexity": 0,
+    "Meta AI": 0,
+    "Mistral": 0,
+    "DeepSeek": 0,
+    "Open models": 0,
+    "Apple": 0,
+    "Higgsfield": 0,
+    "Google": 0,
+    "Social media": 0,
+    "Prompt pack": 1
+  },
+  "notes_tr": "Yeni: Gemini'de 9 Ekim ücretsiz/Plus model kısıtlaması (resmi destek sayfası doğrulandı), GPT-6.1 Sol (havuzda yoktu), Claude Projects evergreen, 1 prompt paketi. Grok, Cursor, Perplexity, Mistral, DeepSeek, Apple, Higgsfield, Google'da havuzda olmayan yeni resmi haber bulunamadı. Elenenler: Instagram AI şarkı (DM) ve X video düzenleyici (resmi kaynak yok, sadece Social Media Today), Meta Muse adres sızıntısı (sadece kullanıcı paylaşımı/basın, resmi kaynak yok), Aleph Alpha Kolibri (78 GB, normal kullanıcı için kolay değil), Perplexity-Amex Skills (sadece Enterprise). OpenAI yardım sayfaları botlara 403 verdiği için ChatGPT sürüm notları doğrudan okunamadı; learn.chatgpt.com üzerinden doğrulandı. GPT-6.1 Sol'un openai.com sayfası da 403 verdi, resmi sayfa arama sonucunda ve learn.chatgpt.com üzerinden doğrulandı.",
+  "sources_changed": [
+    "EKLENDİ: TestingCatalog (https://www.testingcatalog.com/rss/, signal) — resmi duyurudan önce beta/yakında gelecek yapay zeka özelliklerini yakalıyor; 100 tarihli öğe, en yeni 2026-10-03.",
+    "REDDEDİLDİ: Chrome blog RSS (blog.google/products/chrome/rss/) — çalışıyor ama en yeni öğe 2026-09-24, zaten Google Keyword feed'i kapsıyor.",
+    "REDDEDİLDİ: TikTok newsroom RSS (newsroom.tiktok.com/rss.xml) — ParseError, feed değil.",
+    "REDDEDİLDİ: LM Studio releases.atom — tarihli öğe yok / geçersiz feed.",
+    "REDDEDİLDİ: Goose releases (github.com/block/goose) — çalışıyor ama kitlemiz için niş bir CLI ajanı, şimdilik eklenmedi."
+  ]
+}

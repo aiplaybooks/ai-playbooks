@@ -11,9 +11,14 @@ Read in your language:
  العربية ·
  Русский ·
  Türkçe 
- Translated landing pages, committed to the repo. English is canonical; lesson pages are machine-translated on the translations branch. See docs/i18n.md . 
 
-## From the creator of [Agent Memory - #1 Persistent memory ⭐](https://github.com/rohitg00/agentmemory) which naturally works with any agents or chat assistants.
+### Sponsors
+
+ Thank you to our sponsors. 
+ Your support keeps every lesson free and open source. 
+
+ See all supporters 
+ Become a sponsor 
 
 ```text
 ░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒
@@ -53,14 +58,6 @@ or the [website prerequisites guide](https://aiengineeringfromscratch.com/prereq
 
 Compare four core domains and six career routes in the [AI Engineering Learning Paths](https://aiengineeringfromscratch.com/learning-paths.html).
 
-### Sponsors
-
- Thank you to our sponsors. 
- Your support keeps every lesson free and open source. 
-
- See all supporters 
- Become a sponsor 
-
 ### Use every lesson the same way
 
 1. **Read** `docs/en.md` and explain the core idea in your own words.
@@ -92,4 +89,17 @@ terminal output as your first evidence.
 
 If Node.js, `npx`, and a skill-capable coding agent are already installed,
 your coding agent can become your tutor in two commands. A repository clone is
-not needed to install or read the tutor. Ru
+not needed to install or read the tutor. Runnable focused-path labs need
+`python3`. Agent Skills host labs also need a selected host and a writable
+user or project skill scope.
+
+Check the local requirements first:
+
+```bash
+node --version
+npx --version
+python3 --version
+```
+
+Then install the curriculum skills and choose the host and scope you intend to
+use when

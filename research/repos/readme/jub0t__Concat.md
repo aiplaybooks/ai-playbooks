@@ -1,6 +1,8 @@
 Concat 
  The truly free, and open-source cross-platform CapCut replacement. 
 
+**🇬🇧 English** · [🇩🇪 Deutsch](docs/README.de.md) · [🇪🇸 Español](docs/README.es.md) · [🇫🇷 Français](docs/README.fr.md) · [🇮🇹 Italiano](docs/README.it.md) · [🇧🇷 Português (Brasil)](docs/README.pt-BR.md) · [🇷🇺 Русский](docs/README.ru.md) · [🇺🇦 Українська](docs/README.uk.md) · [🇹🇷 Türkçe](docs/README.tr.md) · [🇭🇷 Hrvatski](docs/README.hr.md) · [🇮🇩 Bahasa Indonesia](docs/README.id.md) · [🇻🇳 Tiếng Việt](docs/README.vi.md) · [🇯🇵 日本語](docs/README.ja.md) · [🇰🇷 한국어](docs/README.ko.md) · [🇨🇳 简体中文](docs/README.zh-Hans.md) · [🇹🇼 繁體中文](docs/README.zh-TW.md) · [🇸🇦 العربية](docs/README.ar.md) · [🇮🇱 עברית](docs/README.he.md) · [🇮🇷 فارسی](docs/README.fa.md) · [🇮🇳 हिन्दी](docs/README.hi.md) · [🇵🇰 اردو](docs/README.ur.md)
+
 ## Paid Sponsors
 
  Proxyon 
@@ -50,9 +52,9 @@ Concat is in **beta**: it works, and it still has edges. [Say so](https://github
 
 - ✅ **Windows** · x86_64 and ARM. A setup and an `.msi`. If SmartScreen stops an unsigned build: **More info** › **Run anyway**
 - ✅ **macOS** · Intel and Apple silicon. If macOS refuses to open an unsigned build: `xattr -dr com.apple.quarantine /Applications/Concat.app`
-- ✅ **Linux** · x86_64 and ARM. `.deb`, `.rpm`, `.AppImage` and an Arch package
+- ✅ **Linux** · x86_64 and ARM. `.deb`, `.rpm`, `.AppImage` and an Arch package. Also a Flatpak on **[Flatpark](https://flatpark.org/apps/app.concat.editor/)**, a community Flatpak remote that wraps the x86_64 `.deb` of each release and updates with it
 - ✅ **Android** · phones and tablets
-- 🧪 **iOS / iPadOS** · iPhone and iPad, sideloaded
+- ✅ **iOS / iPadOS** · iPhone and iPad, sideloaded
 
 ✅ Supported · 🚧 Work in progress · 🧪 To be tested
 
@@ -85,18 +87,4 @@ Concat has no paywall and never will: no watermark, no account, no paid tier. Sp
 
 The [roadmap](https://concatenate.pages.dev/roadmap) lays out what sponsorship pays for, and what each piece costs.
 
-**Payment Methods**
-
-Pick a tier on [the website](https://concatenate.pages.dev/#sponsor), or send straight to a wallet.
-
-| Method | Address |
-|---|---|
-| 🌐 **Website** | |
-| ₿ **Bitcoin** (BTC) | `bc1qm83zxguthu0swkl0kw4wdna9j8qegkekzxcf6s` |
-| ɱ **Monero** (XMR) | `46vFjD41NbNdf7yfdm2WYmJidaaExYpA1RaDnayjFyp7KCtCeMfjNKudKbSt52rHvLLuowwpeoNpFUkAtSca3L6TSXfAzcf` |
-| Ł **Litecoin** (LTC) | `LbaYr9JEiUUJB5S9rEgriseMoPoUZzAaZS` |
-
-> [!IMPORTANT]
-> Donated in crypto? A wallet transfer carries no name, so do say hello: reach out through any of the socials on [the maintainer's GitHub profile](https://github.com/jub0t), or in the [Concat Discord server](https://discord.gg/DVuPfpXfqP).
-
-Not in a position to chip in? A star, a bug report, or a word to someone who edits video counts for a lot too.
+Pick a tier on [t

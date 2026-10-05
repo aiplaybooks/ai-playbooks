@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-04T11:13+00:00",
+ "generated": "2026-10-04T16:00+00:00",
  "hours": 36.0,
  "items": [
   {
@@ -17,6 +17,14 @@
    "url": "https://ai.google.dev/gemini-api/docs/changelog",
    "date": "2026-10-05T00:00+00:00",
    "summary": ", tracked on the deprecations page."
+  },
+  {
+   "source": "Claude Code releases",
+   "tier": "official",
+   "title": "v2.1.289",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.289",
+   "date": "2026-10-03T23:07+00:00",
+   "summary": "What's changed Fixed a deny or ask rule on a nested part of a compound shell command not holding over a user-installed mod's approval on managed machines Fixed the terminal freezing on short code blocks with many unclosed tags or deeply nested ${ substitutions Fixed Read deny rules not applying to files @-mentioned, changed, or selected in the IDE through a symlink [VSCode] Reverted a 2.1.288…"
   },
   {
    "source": "Hugging Face blog",
@@ -43,20 +51,12 @@
    "summary": ""
   },
   {
-   "source": "Anthropic News",
-   "tier": "official",
-   "title": "Anthropic invests $100 million to train 10,000 engineers and tackle the enterprise AI talent gap",
-   "url": "https://www.anthropic.com/news/claude-frontier-academy",
-   "date": "2026-10-02T00:00+00:00",
-   "summary": ""
-  },
-  {
-   "source": "xAI / Grok API release notes",
-   "tier": "official",
-   "title": "xAI / Grok API release notes: Oct 02, 2026",
-   "url": "https://docs.x.ai/docs/release-notes",
-   "date": "2026-10-02T00:00+00:00",
-   "summary": ". All requests to that slug are routed to grok-voice-transcribe-2.0 at the same price, with higher accuracy. See the Speech to Text docs . September September 25 safety_identifier request field You can now send safety_identifier , an opaque end-user identifier assigned by your application, on Chat Completions, the Responses API, deferred chat completions, the Batch API, and the gRPC GetCompletionsRequest . It lets SpaceXAI attribute a policy violation to one of your end users rather than to your API key. The legacy user field is still accepted. See the Security FAQ . September 21 Grok 4.7 Grok 4.7, SpaceXAI's frontier model for coding, agentic tasks, and knowledge work, is now available on the xAI API as grok-4.7 . It has a 500k context window, text and image inputs with text-only output, and no text output limit. Pricing is $2 / $0.50 / $6 per 1M tokens (input / cached input / output)…"
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "An AI couldn’t beat humans at StarCraft, so it decided to cheat",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1004543/openai-gpt-cheat-starcraft",
+   "date": "2026-10-04T11:21-04:00",
+   "summary": "StarSkirmish pits AI-made StarCraft-playing bots against one another, as well as against human-made bots. OpenAI's GPT-6 Astra and Claude Opus 5.5 were essentially tied as the best-performing AI-made bots, but they couldn't top Stardust, the top-rated human-made bot. On Friday, GPT was facing off against Claude and the human-created bot Pluto, but according to Kotaku , it couldn't quite get an…"
   },
   {
    "source": "Simon Willison",
@@ -117,10 +117,18 @@
   {
    "source": "Hacker News",
    "tier": "community",
+   "title": "Run Qwen 3.8 Flash Next (125B) on consumer hardware (RTX 4090) at 100T/s",
+   "url": "https://github.com/Niko1221/Strata",
+   "date": "2026-10-04T12:51+00:00",
+   "summary": "227 points, 110 comments · https://news.ycombinator.com/item?id=49953495"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
    "title": "Religious scholars met with Anthropic",
    "url": "https://www.nytimes.com/2026/09/29/us/anthropic-claude-morals-ai.html",
    "date": "2026-10-04T02:34+00:00",
-   "summary": "86 points, 188 comments · https://news.ycombinator.com/item?id=49950052"
+   "summary": "140 points, 317 comments · https://news.ycombinator.com/item?id=49950052"
   },
   {
    "source": "Hacker News",
@@ -128,7 +136,7 @@
    "title": "OpenAI safety leader quits, warning AI company's culture is 'broken'",
    "url": "https://www.theguardian.com/technology/2026/oct/03/openai-safety-leader-quits-warning-ai-companys-culture-is-broken",
    "date": "2026-10-03T22:18+00:00",
-   "summary": "263 points, 3 comments · https://news.ycombinator.com/item?id=49948332"
+   "summary": "265 points, 3 comments · https://news.ycombinator.com/item?id=49948332"
   },
   {
    "source": "Hacker News",
@@ -136,7 +144,7 @@
    "title": "We want you to build the next Git platform on Cloudflare",
    "url": "https://blog.cloudflare.com/next-git-platform-on-cloudflare/",
    "date": "2026-10-03T19:33+00:00",
-   "summary": "139 points, 121 comments · https://news.ycombinator.com/item?id=49947051"
+   "summary": "177 points, 155 comments · https://news.ycombinator.com/item?id=49947051"
   },
   {
    "source": "Hacker News",
@@ -144,7 +152,7 @@
    "title": "The work by Valve's Timur Kristóf on improving old AMD GPUs on Linux",
    "url": "https://www.phoronix.com/news/XDC-2026-Valve-Timur-AMDGPU",
    "date": "2026-10-03T19:14+00:00",
-   "summary": "311 points, 49 comments · https://news.ycombinator.com/item?id=49946895"
+   "summary": "379 points, 67 comments · https://news.ycombinator.com/item?id=49946895"
   },
   {
    "source": "Hacker News",
@@ -152,7 +160,15 @@
    "title": "Getting the most out of Opus 5.5 in Claude and Claude Code",
    "url": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5/",
    "date": "2026-10-03T18:29+00:00",
-   "summary": "220 points, 151 comments · https://news.ycombinator.com/item?id=49946567"
+   "summary": "225 points, 154 comments · https://news.ycombinator.com/item?id=49946567"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "What Meta got right with Muse",
+   "url": "https://metedata.substack.com/p/what-meta-got-right-with-muse",
+   "date": "2026-10-03T18:23+00:00",
+   "summary": "91 points, 121 comments · https://news.ycombinator.com/item?id=49946526"
   },
   {
    "source": "Hacker News",
@@ -160,7 +176,7 @@
    "title": "Pop!_OS bans AI-generated code from much of its codebase",
    "url": "https://www.neowin.net/news/system76-bans-ai-generated-code-across-many-of-its-cosmic-codebases/",
    "date": "2026-10-03T17:57+00:00",
-   "summary": "105 points, 156 comments · https://news.ycombinator.com/item?id=49946321"
+   "summary": "113 points, 161 comments · https://news.ycombinator.com/item?id=49946321"
   },
   {
    "source": "Hacker News",
@@ -168,7 +184,7 @@
    "title": "LeCun has \"zero concerns\" about AI wiping out humanity, recent \"rogue\" incidents",
    "url": "https://fortune.com/2026/10/01/ai-godfather-yann-lecun-has-zero-concerns-about-human-extinction-says-anthropic-ceo-dario-amodei-is-deuded/",
    "date": "2026-10-03T17:44+00:00",
-   "summary": "153 points, 209 comments · https://news.ycombinator.com/item?id=49946228"
+   "summary": "259 points, 401 comments · https://news.ycombinator.com/item?id=49946228"
   },
   {
    "source": "Hacker News",
@@ -176,7 +192,7 @@
    "title": "City building games have a Soul Problem pt.2",
    "url": "https://www.radical-elements.com/minor-epiphanies/city-building-games-have-a-soul-problem-pt2",
    "date": "2026-10-03T15:52+00:00",
-   "summary": "138 points, 134 comments · https://news.ycombinator.com/item?id=49945323"
+   "summary": "154 points, 147 comments · https://news.ycombinator.com/item?id=49945323"
   },
   {
    "source": "Hacker News",
@@ -184,7 +200,7 @@
    "title": "FTL: A new operating system for clouds",
    "url": "https://ftl-os.org/",
    "date": "2026-10-03T15:02+00:00",
-   "summary": "177 points, 68 comments · https://news.ycombinator.com/item?id=49944912"
+   "summary": "190 points, 74 comments · https://news.ycombinator.com/item?id=49944912"
   },
   {
    "source": "Hacker News",
@@ -192,7 +208,7 @@
    "title": "I quit OpenAI because its culture is broken",
    "url": "https://www.theatlantic.com/technology/2026/10/openai-safety-team-resignation/688881/?gift=v5U_UzUTothfWXsPxtvNVAh7esWToMRD6XnbXmc5WgA",
    "date": "2026-10-03T13:46+00:00",
-   "summary": "249 points, 507 comments · https://news.ycombinator.com/item?id=49944227"
+   "summary": "354 points, 594 comments · https://news.ycombinator.com/item?id=49944227"
   },
   {
    "source": "Hacker News",
@@ -200,24 +216,26 @@
    "title": "Aleph Alpha Kolibri: How the sovereign German LLM works",
    "url": "https://tej.as/blog/aleph-alpha-kolibri",
    "date": "2026-10-03T10:43+00:00",
-   "summary": "413 points, 12 comments · https://news.ycombinator.com/item?id=49943034"
+   "summary": "415 points, 12 comments · https://news.ycombinator.com/item?id=49943034"
   },
   {
    "source": "Hacker News",
    "tier": "community",
-   "title": "Cloudflare OHTTP gateway",
-   "url": "https://blog.cloudflare.com/announcing-cloudflare-ohttp-gateway/",
-   "date": "2026-10-03T03:15+00:00",
-   "summary": "194 points, 92 comments · https://news.ycombinator.com/item?id=49941091"
+   "title": "Former SR-71 engineer talks NASA's Blackbird revival program",
+   "url": "https://www.twz.com/air/former-sr-71-engineer-talks-nasas-blackbird-revival-program",
+   "date": "2026-10-03T07:32+00:00",
+   "summary": "86 points, 49 comments · https://news.ycombinator.com/item?id=49942130"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: Thoreau BASIC – What if BASIC hadn't gone out of fashion?",
+   "url": "https://thoreaubasic.com/",
+   "date": "2026-10-03T07:28+00:00",
+   "summary": "80 points, 46 comments · https://news.ycombinator.com/item?id=49942103"
   }
  ],
- "errors": [
-  "OpenAI News: URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
-  "Claude Code releases: URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
-  "Codex CLI releases: URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
-  "Gemini CLI releases: URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
-  "Google AI blog: URLError: <urlopen error [Errno 11001] getaddrinfo failed>"
- ],
+ "errors": [],
  "manual": [
   {
    "name": "xAI news / Grok app updates",

@@ -1,0 +1,260 @@
+{
+ "generated": "2026-10-05T09:30+00:00",
+ "hours": 36.0,
+ "items": [
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Making AI training available to UK and Ireland educators",
+   "url": "https://blog.google/products-and-platforms/products/education/making-ai-training-available-to-uk-and-ireland-educators/",
+   "date": "2026-10-05T07:00+00:00",
+   "summary": "Google's AI tools aim to help educators achieve their teaching goals and provide students with personalized learning experiences."
+  },
+  {
+   "source": "Ollama releases",
+   "tier": "official",
+   "title": "v0.40.0",
+   "url": "https://github.com/ollama/ollama/releases/tag/v0.40.0-rc3",
+   "date": "2026-10-05T00:17+00:00",
+   "summary": "What's Changed Models run on MLX on Apple Silicon by default In this release, on Apple Silicon devices, model architectures supported by the MLX runtime will automatically run on MLX. ollama pull qwen3.8 ollama run qwen3.8 Additional models include gemma4 , qwen3.6 and qwen3.5 Decision models are now available on MLX as well: Nimble tev1 clef clef-flash We will continue testing and enabling…"
+  },
+  {
+   "source": "OpenAI API changelog",
+   "tier": "official",
+   "title": "OpenAI API changelog: Oct 05, 2026",
+   "url": "https://platform.openai.com/docs/changelog",
+   "date": "2026-10-05T00:00+00:00",
+   "summary": ". See pricing for details. Sep 3 Feature gpt-6-astra v1/responses v1/chat/completions Released GPT-6 Astra , our most capable model, built for the hardest end-to-end work. Use GPT-6 Astra for reasoning, coding, computer use, research, and document creation. It combines these capabilities to carry complex tasks from an initial request to a finished result, using the context and tools you provide. Key changes to consider when migrating: GPT-6 Astra does not support the none reasoning effort level. GPT-6 Astra does not support custom temperature or top_p values or log probabilities ( logprobs ). Tool calling requires the Responses API. If you use tools with Chat Completions, follow the Responses migration guide . Misalignment monitoring asynchronously checks for potential issues during agent work in supported Responses API requests. Checks can trigger safety alerts or stop a conversation…"
+  },
+  {
+   "source": "Gemini API changelog",
+   "tier": "official",
+   "title": "Gemini API changelog: Oct 05, 2026",
+   "url": "https://ai.google.dev/gemini-api/docs/changelog",
+   "date": "2026-10-05T00:00+00:00",
+   "summary": ", tracked on the deprecations page."
+  },
+  {
+   "source": "Claude Code releases",
+   "tier": "official",
+   "title": "v2.1.289",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.289",
+   "date": "2026-10-03T23:07+00:00",
+   "summary": "What's changed Fixed a deny or ask rule on a nested part of a compound shell command not holding over a user-installed mod's approval on managed machines Fixed the terminal freezing on short code blocks with many unclosed tags or deeply nested ${ substitutions Fixed Read deny rules not applying to files @-mentioned, changed, or selected in the IDE through a symlink [VSCode] Reverted a 2.1.288…"
+  },
+  {
+   "source": "Hugging Face blog",
+   "tier": "official",
+   "title": "The Agent Said It Was Done. The Database Disagreed.",
+   "url": "https://huggingface.co/blog/microsoft/thinkingbox",
+   "date": "2026-10-03T22:56+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Influencer marketing has an AI trust problem",
+   "url": "https://www.socialmediatoday.com/spons/influencer-marketing-has-an-ai-trust-problem/831579/",
+   "date": "2026-10-05T05:00-04:00",
+   "summary": "AI influencers are harder to spot, making transparency essential to protecting consumer trust."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "X launches updated video composer",
+   "url": "https://www.socialmediatoday.com/news/x-launches-updated-video-composer/832088/",
+   "date": "2026-10-04T17:30-04:00",
+   "summary": "The new editor features an improved captioning process and a more intuitive layout."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Instagram tests read-only mode",
+   "url": "https://www.socialmediatoday.com/news/instagram-tests-read-only-mode/832087/",
+   "date": "2026-10-04T17:27-04:00",
+   "summary": "The feature would allow users to view profiles but would not enable liking, messaging or following."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Instagram adds AI songs to DMs",
+   "url": "https://www.socialmediatoday.com/news/instagram-adds-ai-songs-to-dms/832086/",
+   "date": "2026-10-04T17:23-04:00",
+   "summary": "Users can leverage artificial intelligence to generate music to share with their friends, echoing a similar paid Snapchat feature."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Instagram adds Threads sharing sticker for Stories",
+   "url": "https://www.socialmediatoday.com/news/instagram-adds-threads-sharing-sticker-for-stories/832085/",
+   "date": "2026-10-04T17:18-04:00",
+   "summary": "The feature allows users to add previously liked or saved Threads posts to a Stories frame."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Meta’s Muse AI collects private user data",
+   "url": "https://www.socialmediatoday.com/news/metas-muse-ai-collects-private-user-data/832084/",
+   "date": "2026-10-04T17:06-04:00",
+   "summary": "Security researchers found that the artificial intelligence-powered app extracted information on users’ personal contacts, per reporting from Wired."
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "NJ’s former Lt Gov is using AI to say he’s innocent of sexual harassment",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1004549/well-if-ai-said-it-it-must-be-true",
+   "date": "2026-10-04T12:16-04:00",
+   "summary": "Well, if AI said it, it must be true. | Bloomberg via Getty Images New Jersey's lieutenant governor Dale Caldwell was forced to resign on September 25th after an investigation found he had sexually harassed a staffer and repeatedly violated ethics rules. The now-former Lt. governor has been making the media rounds trying to clear his name. But he took a particularly odd tactic during an interview…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "An AI couldn’t beat humans at StarCraft, so it decided to cheat",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1004543/openai-gpt-cheat-starcraft",
+   "date": "2026-10-04T11:21-04:00",
+   "summary": "StarSkirmish pits AI-made StarCraft-playing bots against one another, as well as against human-made bots. OpenAI's GPT-6 Astra and Claude Opus 5.5 were essentially tied as the best-performing AI-made bots, but they couldn't top Stardust, the top-rated human-made bot. On Friday, GPT was facing off against Claude and the human-created bot Pluto, but according to Kotaku , it couldn't quite get an…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "We're going to need default hard budget caps on pretty much everything",
+   "url": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/",
+   "date": "2026-10-03T23:34+00:00",
+   "summary": "Here's a product feature which the world is going to need a whole lot more of over the coming months and years: default hard budget caps . I'm talking about the feature of pay-by-usage services and APIs that lets you say \"after $X/month, cut this thing off and return errors\". These need to be hard limits. Soft caps, \"after $X/month, send me a warning email\", will not cut it. Coding agents, and…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "September sponsors-only newsletter",
+   "url": "https://simonwillison.net/2026/Oct/3/newsletter/",
+   "date": "2026-10-03T22:00+00:00",
+   "summary": "I just sent the September edition of my sponsors-only monthly newsletter . If you are a sponsor (or start a sponsorship now) you can access it here . This month: More Fable class models A pricing war 3D graphics, Blender, and pixel art LLMs come for mathematics So many more accidental cyberattacks The vulnapocalypse comes for Datasette What I'm using right now My software releases this month 2026…"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Powerless F1 drivers frustrated by Bahrain F1 software glitch",
+   "url": "https://www.motorsport.com/f1/news/horrible-totally-unacceptable-powerless-f1-drivers-frustrated-by-bahrain-f1-software-glitch/10861968/",
+   "date": "2026-10-05T01:54+00:00",
+   "summary": "195 points, 163 comments · https://news.ycombinator.com/item?id=49959869"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "ArtCraft Apps – open-source Adobe compatible suite written in Rust",
+   "url": "https://getartcraft.com/apps",
+   "date": "2026-10-04T23:02+00:00",
+   "summary": "102 points, 121 comments · https://news.ycombinator.com/item?id=49958850"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Turn off Apple Intelligence on macOS 27 and get its disk space back",
+   "url": "https://github.com/omlahore/RemoveMacAI",
+   "date": "2026-10-04T19:42+00:00",
+   "summary": "565 points, 378 comments · https://news.ycombinator.com/item?id=49957116"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "A browser-native classic Visual Basic VB6 IDE",
+   "url": "https://wieslawsoltes.github.io/VB6/",
+   "date": "2026-10-04T18:49+00:00",
+   "summary": "232 points, 72 comments · https://news.ycombinator.com/item?id=49956681"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Xray-core concealed a certificate verification bypass vulnerability",
+   "url": "https://github.com/net4people/bbs/issues/672",
+   "date": "2026-10-04T17:38+00:00",
+   "summary": "82 points, 10 comments · https://news.ycombinator.com/item?id=49956003"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Run Qwen 3.8 Flash Next (125B) on consumer hardware (RTX 4090) at 100T/s",
+   "url": "https://github.com/Niko1221/Strata",
+   "date": "2026-10-04T12:51+00:00",
+   "summary": "798 points, 355 comments · https://news.ycombinator.com/item?id=49953495"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: AI search for every photo and every frame of video on macOS",
+   "url": "https://github.com/allenv0/SCM",
+   "date": "2026-10-04T09:24+00:00",
+   "summary": "151 points, 68 comments · https://news.ycombinator.com/item?id=49952111"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "How to scale intent, quality, and artistry with AI [video]",
+   "url": "https://www.youtube.com/watch?v=GLvFTMtw4Jk",
+   "date": "2026-10-04T08:41+00:00",
+   "summary": "86 points, 30 comments · https://news.ycombinator.com/item?id=49951891"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Emitting metadata early makes building/checking Rust up to twice as fast",
+   "url": "https://github.com/PowderworksCode/headstart",
+   "date": "2026-10-04T06:26+00:00",
+   "summary": "136 points, 34 comments · https://news.ycombinator.com/item?id=49951218"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Religious scholars met with Anthropic",
+   "url": "https://www.nytimes.com/2026/09/29/us/anthropic-claude-morals-ai.html",
+   "date": "2026-10-04T02:34+00:00",
+   "summary": "159 points, 416 comments · https://news.ycombinator.com/item?id=49950052"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "OpenAI safety leader quits, warning AI company's culture is 'broken'",
+   "url": "https://www.theguardian.com/technology/2026/oct/03/openai-safety-leader-quits-warning-ai-companys-culture-is-broken",
+   "date": "2026-10-03T22:18+00:00",
+   "summary": "267 points, 3 comments · https://news.ycombinator.com/item?id=49948332"
+  }
+ ],
+ "errors": [],
+ "manual": [
+  {
+   "name": "xAI news / Grok app updates",
+   "url": "https://x.ai/news",
+   "why": "blocks scripts (403): web search 'Grok' / 'xAI' last 24h"
+  },
+  {
+   "name": "ChatGPT release notes",
+   "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Perplexity changelog",
+   "url": "https://www.perplexity.ai/changelog",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Official X accounts (@AnthropicAI, @OpenAI, @xai, @GoogleDeepMind, @cursor_ai)",
+   "url": "https://x.com",
+   "why": "X needs login / paid API: use web search for big announcements"
+  },
+  {
+   "name": "Social media new features (Instagram @creators/@mosseri, TikTok newsroom, X, LinkedIn, Snapchat)",
+   "url": "https://newsroom.tiktok.com/",
+   "why": "no working RSS (TikTok/WhatsApp/Instagram blogs are HTML, Snap/LinkedIn 404): web search each gather for new features, AI features and creator tools; confirm on the platform's own newsroom/help page"
+  },
+  {
+   "name": "Higgsfield announcements",
+   "url": "https://x.com/higgsfield_ai",
+   "why": "big launches often land on X before the blog"
+  },
+  {
+   "name": "Qwen blog (Alibaba)",
+   "url": "https://qwen.ai/blog",
+   "why": "JS-rendered, no RSS (the old qwenlm.github.io feed stopped in 2025-09): web search 'Qwen' each gather for new open-weight releases"
+  }
+ ]
+}
