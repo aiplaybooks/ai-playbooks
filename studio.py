@@ -471,7 +471,7 @@ def n_hooks(run):
     done = sum(1 for r in all_runs() if r["kind"] == "learn" and r["created"] < run.s["created"])
     focus = LEARN_FOCUS[done % len(LEARN_FOCUS)]
     run.s["focus"] = focus; run.save()
-    claude(run, "hooks", "hook_learn", date=run.s["day"], run_id=run.id, focus=focus, round=today + 1)
+    claude(run, "hooks", "hook_learn", date=run.s["day"], run_id=run.id, focus=focus, round=done + 1)
     r = read_json(run.dir / "learn.json", {}) or {}
     return (r.get("summary_tr") or "tamam")[:160]
 
