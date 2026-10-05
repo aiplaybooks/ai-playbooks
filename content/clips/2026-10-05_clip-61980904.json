@@ -1,0 +1,28 @@
+{
+  "kind": "clip",
+  "source": "https://x.com/AIWarper/status/2106466745661980904/video/1",
+  "credit": "@AIWarper on X",
+  "topic": "AI anime",
+  "title": "Retro anime sequence:",
+  "hook": "This is what AI anime production looks like.",
+  "caption": "Anime production just got a visible pipeline.\n\nRetro 80s anime on top, raw 3D structure underneath. That's Opus 5.5 directing Blender MCP and Seedance 2.5 working together — same frame, two layers of output.\n\nThis is how AI anime gets built now. You're watching the system, not just the result.\n\nWould you use this for character design or full scenes? Let us know 👇\n\nFollow @aiplaybooks.daily for AI tools that show you how they work.\n\n#aianime #seedance #blender #aitools #aianimation",
+  "captions": {
+    "instagram": "Anime production just got a visible pipeline.\n\nRetro 80s anime on top, raw 3D structure underneath. That's Opus 5.5 directing Blender MCP and Seedance 2.5 working together — same frame, two layers of output.\n\nThis is how AI anime gets built now. You're watching the system, not just the result.\n\nWould you use this for character design or full scenes? Let us know 👇\n\nFollow @aiplaybooks.daily for AI tools that show you how they work.\n\n#aianime #seedance #blender #aitools #aianimation",
+    "facebook": "Anime production just got a visible pipeline.\n\nRetro 80s anime on top, raw 3D structure underneath — Opus 5.5 directing Blender MCP and Seedance 2.5 in the same frame. You're not just watching the finished anime, you're seeing how the system builds it.\n\nBig shift for animators and AI developers: transparency in the render.\n\nWould you use this pipeline for character work, backgrounds, or full-scene generation? Tell us which one.\n\n#aianime #seedance #aitools #aianimation",
+    "youtube": {
+      "title": "Anime production pipeline: Opus 5.5 + Seedance 2.5",
+      "description": "Anime production just shifted. Opus 5.5 directed Blender MCP and Seedance 2.5 to build retro 80s anime in two simultaneous layers: finished anime on top, raw 3D structure underneath.\n\nThis is how AI animators now see what happens under the hood — transparency in every frame, one pipeline, two types of output at once.\n\nWatch how the same source becomes both polished anime and structural geometry.\n\n🎥 @AIWarper on X",
+      "tags": ["anime generation", "seedance", "blender mcp", "ai animation", "anime production"]
+    }
+  },
+  "x": "Anime production just got visible. Opus 5.5 + Blender + Seedance 2.5 = finished anime + 3D structure in one frame. This is the pipeline now.\n\n🎥 @AIWarper",
+  "first_comment": {
+    "instagram": "Try this: export the 3D structure layer separately to build your own style overlay. The geometry is the most reusable part across different anime styles.\n\nWhich frame style would you rebuild first — the characters or the backgrounds?",
+    "facebook": "The real unlock here: use the 3D layer as a starting point for other art styles. Drop the Seedance anime treatment, keep the structure, build your own aesthetic on top.\n\nHave you worked with Blender MCP before, or is this your first time seeing it in action?",
+    "youtube": "Save this pipeline if you're experimenting with anime style-transfer. The key: Opus 5.5 orchestrates both outputs at once, so your anime and 3D layers stay perfectly aligned.\n\nWhat's your next AI animation project? Subscribe for daily AI tools like this."
+  },
+  "checked": [
+    "https://dreamina.capcut.com/seedance/seedance-2-5 — Seedance 2.5 confirmed for anime generation",
+    "claude.ai — Opus 5.5 confirmed as current Claude model"
+  ]
+}
