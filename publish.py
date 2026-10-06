@@ -30,7 +30,8 @@ META_PAGE_TOKEN, FB_PAGE_ID, IG_USER_ID in .env
                  without its comments.
     log          appends the post to publish_log.jsonl
 Viral clip Reels (content/clips/<name>.json, "kind": "clip", made by clip.py in output/clips/<name>/): steps
-prepare, upload, ig_reel, fb_reel, yt_short, comments, log; cover = the framed clip's first frame.
+prepare, upload, ig_reel, fb_reel, yt_short, comments, log; cover = the clip's first frame. Since 2026-10-06 the clip
+is published raw (nothing drawn on it) and the creator credit is a `Credit: @handle` line in the captions.
 GitHub repo posts (content/repos/<name>.json, "kind": "repo", made by repocard.py in output/repos/<name>/): ONE photo.
 Steps prepare, upload, ig_photo (single image post), fb_photos (one photo), ig_reel + fb_reel (repocard.py --reel:
 the page scrolling under the hook), comments (the `fb_comment` with the repo link as our first comment on Facebook:
@@ -361,7 +362,25 @@ def ig_reel(p):
     p.done("ig_reel", id=mid, link=link)
 
 
+# Owner, 2026-10-06: no carousel/photo posts on the Facebook Page until it has 250 followers ("nobody sees them":
+# 29 photo posts, 0.0 avg views). The Reel of the same post still goes out. Follower count comes from the metrics
+# collector (runs/metrics.json, refreshed every 6 h); unknown count = stay skipped.
+FB_PHOTOS_MIN_FOLLOWERS = 250
+
+
+def fb_followers():
+    try:
+        d = json.loads((ROOT / "runs" / "metrics.json").read_text(encoding="utf-8"))
+        return ((d.get("channel") or {}).get("facebook") or {}).get("followers")
+    except (OSError, ValueError): return None
+
+
 def fb_photos(p):
+    n = fb_followers()
+    if (n or 0) < FB_PHOTOS_MIN_FOLLOWERS:
+        say(f"fb_photos: skipped (Facebook Page has {n if n is not None else '?'} followers, "
+            f"the owner turned photo posts off until {FB_PHOTOS_MIN_FOLLOWERS}; the Reel still goes out)")
+        p.done("fb_photos", skipped=f"under {FB_PHOTOS_MIN_FOLLOWERS} followers"); return
     page = p.env["FB_PAGE_ID"]; ids = p.state.get("fb_photo_ids") or []
     if not ids:
         for f in p.images():
@@ -419,7 +438,7 @@ def yt_access(p):
 def yt_meta(p):
     """Title (<=100 chars), description and tags for the Short. From `captions.youtube` (the caption agent) when there,
     else from the cover title + caption. Clips: our IG/FB comments (e.g. prompts) go into the description, because we
-    don't post YouTube comments. No source links (owner, 2026-09-26: credits live on the media, not in captions)."""
+    don't post YouTube comments. No source links in captions; the only credit line is a clip's `Credit: @handle`."""
     yt = (p.data.get("captions") or {}).get("youtube") or {}
     if yt.get("title"): title = yt["title"]
     elif p.clip: title = " ".join(x for x in (p.data.get("title"), p.data.get("hook")) if x) or p.data.get("topic") or p.name
@@ -546,7 +565,8 @@ def x_post(p):
             p.state["x_post_media"] = mid; p.save()  # X keeps uploaded media 24 h: a retry reuses it
             tid = XP.post(text, mid, tok)
         except (XP.XError, RuntimeError) as ex:
-            if "HTTP 402" in str(ex) or "no X login" in str(ex):  # X is a bonus platform: never block the run for it
+            dead = "X token request failed (400)" in str(ex) or "X token request failed (401)" in str(ex)  # login revoked/expired: re-run x_token.py
+            if "HTTP 402" in str(ex) or "no X login" in str(ex) or dead:  # X is a bonus platform: never block the run for it
                 say(f"x_post: skipped: {str(ex)[-120:]}"); p.done("x_post", skipped=str(ex)[-200:]); return
             if "x_post_media" in p.state and "HTTP 4" in str(ex) and "/media/" not in str(ex): p.state.pop("x_post_media"); p.save()
             raise PublishError(str(ex)) from None

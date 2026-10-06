@@ -17,12 +17,16 @@ LIMITS = {"instagram": {"chars": 2200, "tags": 5, "first": 125},   # IG: max 5 h
           "facebook": {"chars": 5000, "tags": 5, "first": 150},
           "youtube": {"chars": 4800, "tags": 5, "first": 120, "title": 100}}
 SOURCE_LINE = re.compile(r"^\s*(📷\s*)?(photo|source|credit|image|video|via)\s*[:：]", re.I)
+# Viral clips (owner, 2026-10-06): the Reel is the raw clip with nothing drawn on it, so the creator credit moved
+# into the caption. This one line is allowed - and required - on clip posts only.
+CREDIT_LINE = re.compile(r"^\s*(🎥\s*)?credit\s*[:：]\s*@?\S+", re.I)
 
 
-def tidy(text):
-    """Readable paragraphs: no trailing spaces, no source/credit lines, max one blank line, hashtags on one line."""
+def tidy(text, keep_credit=False):
+    """Readable paragraphs: no trailing spaces, no source/credit lines, max one blank line, hashtags on one line.
+    keep_credit (clip posts): the single `Credit: @handle ...` line stays."""
     lines = [l.rstrip() for l in (text or "").replace("\r\n", "\n").replace("\r", "\n").split("\n")]
-    lines = [l for l in lines if not SOURCE_LINE.match(l)]
+    lines = [l for l in lines if not SOURCE_LINE.match(l) or (keep_credit and CREDIT_LINE.match(l))]
     out = re.sub(r"\n{3,}", "\n\n", "\n".join(lines)).strip()
     # a hashtag-only block at the end becomes one line
     m = re.search(r"((?:\n\s*#\w+(?:\s+#\w+)*\s*)+)$", "\n" + out)
@@ -39,16 +43,20 @@ def tags_in(text):
 def text_for(data, platform):
     """Caption text for instagram / facebook (falls back to the old single `caption`)."""
     c = (data.get("captions") or {}).get(platform) or data.get("caption", "")
-    return tidy(c)
+    return tidy(c, keep_credit=data.get("kind") == "clip")
 
 
 def check(data):
     probs = []
     caps = data.get("captions") or {}
+    clip = data.get("kind") == "clip"   # raw-clip Reel: hook + creator credit live in the caption
+    handle = re.sub(r"\s+on\s+\w+$", "", (data.get("credit") or "").strip()).strip().lstrip("@")
     for pf in ("instagram", "facebook"):
         t = caps.get(pf)
         if not t: probs.append(f"captions.{pf} is missing"); continue
-        lim = LIMITS[pf]; tidied = tidy(t)
+        lim = LIMITS[pf]; tidied = tidy(t, keep_credit=clip)
+        if clip and handle and handle.lower() not in t.lower():
+            probs.append(f"{pf}: the creator credit (@{handle}) is missing; the clip Reel carries no credit any more")
         if tidied != t.strip(): probs.append(f"{pf}: not tidy (source/credit lines, extra blank lines or trailing spaces): run `python captions.py tidy`")
         if len(t) > lim["chars"]: probs.append(f"{pf}: {len(t)} chars (max {lim['chars']})")
         n = len(tags_in(t))

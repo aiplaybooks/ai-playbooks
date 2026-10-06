@@ -1,43 +1,26 @@
-"""Frame a video clip as a hook Reel (1080x1920): black background, brand line + big hook text on top, the clip below.
+"""Turn a picked video clip into our Reel (1080x1920): the clip ITSELF, full screen, nothing drawn on it.
+
+Owner, 2026-10-06: the old hook-framed look (black frame, brand line + hook on top, "Source: @creator" under the clip)
+is gone. The clip is published as it is; hook, description and credit live in the CAPTION (prompts/caption.md).
 
 Usage:
-    python clip.py <video file or post URL> --hook "Someone recreated the iPhone Duo's folding animation on a MacBook"
-                   [--title "Higgsfield Seedance 2.5 Prompt:"] [--credit "@creator on X"] [--name my-clip]
-
-A URL (X / Reddit / ...) is fetched with yt-dlp: only for a single post the owner picked (see CLAUDE.md, viral Reels).
-`--title` is an optional bold first line above the hook. `--credit` adds a small "Source: @creator on X" line under the clip.
-    python clip.py content/clips/<name>.json      (Studio: hook/title/credit/source from the JSON; the clip is
+    python clip.py <video file or post URL> [--name my-clip] [--fit auto|contain|fill] [--crop-pos 0.5]
+    python clip.py content/clips/<name>.json      (Studio: layout options from the JSON; the clip is
                                                   output/clips/<name>/source.mp4 if already fetched)
-Layout options (CLI or JSON): fit "auto" (default: a tall clip may lose up to 25% top+bottom to fill the space) |
-"contain" (never crop: the whole clip, smaller); crop_pos 0..1 = which part a crop keeps (0 top, 0.5 middle, 1 bottom).
-Output: output/clips/<name>/reel.mp4 (+ header.png, cover.jpg = first frame, meta.json)
+A URL (X / Reddit / ...) is fetched with yt-dlp: only for a single post the owner picked (see CLAUDE.md, viral Reels).
+Layout (CLI or JSON): fit "auto" (default: a clip that is already about 9:16 fills the screen, any other shape is shown
+whole on a blurred copy of itself) | "fill" (always crop to full screen) | "contain" (never crop); crop_pos 0..1 = which
+part a crop keeps (0 top, 0.5 middle, 1 bottom). Black bars baked into the source are detected and cut first.
+Output: output/clips/<name>/reel.mp4 (+ cover.jpg = first frame, check_1..5.jpg, meta.json)
 Keeps the clip's own audio (loudness-normalised); max 90 s. Needs ffmpeg + ffprobe on PATH.
 """
-import sys, json, re, html, shutil, pathlib, argparse, subprocess
-from playwright.sync_api import sync_playwright
+import sys, json, re, pathlib, argparse, subprocess
 
 ROOT = pathlib.Path(__file__).parent.resolve()
-FONTS = ROOT / "fonts"
 W, H = 1080, 1920
-TOP = 250            # below the IG top safe zone (~190 px)
-BOTTOM_SAFE = 330    # IG caption/buttons area
 MAX_SECS = 90
+NEAR = 0.08          # a clip within 8% of 9:16 is treated as vertical: crop it to full screen
 VIDEO = (".mp4", ".webm", ".mkv", ".mov")
-e = html.escape
-
-HEADER = """<!DOCTYPE html><html><head><meta charset="utf-8"><style>
-@font-face{font-family:Inter;src:url(%(inter)s);font-weight:100 900}
-*{margin:0;padding:0;box-sizing:border-box}
-html,body{background:transparent;width:1080px}
-.h{padding:0 64px;color:#fff;font-family:Inter,sans-serif}
-.brand{display:flex;align-items:center;gap:14px;font-size:38px;font-weight:800;letter-spacing:-.5px}
-.logo{width:48px;height:48px;border-radius:13px;background:linear-gradient(135deg,#C06BFF,#4F9BFF);display:grid;place-items:center;font-size:26px;font-weight:900}
-.handle{font-size:27px;font-weight:500;color:#8E8E96;margin-left:4px}
-.title{margin-top:34px;font-size:%(ts)spx;font-weight:800;line-height:1.18;letter-spacing:-.6px}
-.hook{margin-top:%(hm)spx;font-size:%(hs)spx;font-weight:%(hw)s;line-height:1.2;letter-spacing:-.8px;text-wrap:pretty}
-</style></head><body><div class="h" id="h">
-<div class="brand"><div class="logo">A</div>AI Playbooks<span class="handle">@aiplaybooks.daily</span></div>
-%(title)s<div class="hook">%(hook)s</div></div></body></html>"""
 
 
 def run(cmd, **kw):
@@ -61,87 +44,89 @@ def fetch(url, out):
     return next(f for f in out.glob("source.*") if f.suffix in VIDEO)
 
 
-def header(out, hook, title):
-    n = len(hook)
-    hs = 66 if n <= 60 else 58 if n <= 100 else 50
-    ctx = {"inter": (FONTS / "InterVariable.ttf").as_uri(), "hook": e(hook), "hs": hs, "hw": 500 if title else 500,
-           "hm": 22 if title else 34, "ts": 56, "title": f'<div class="title">{e(title)}</div>' if title else ""}
-    f = out / "header.html"; f.write_text(HEADER % ctx, encoding="utf-8")
-    with sync_playwright() as p:
-        br = p.chromium.launch(); pg = br.new_page(viewport={"width": W, "height": 900})
-        pg.goto(f.as_uri()); pg.wait_for_timeout(200)
-        box = pg.locator("#h").bounding_box()
-        pg.locator("#h").screenshot(path=str(out / "header.png"), omit_background=True)
-        br.close()
-    return int(box["height"])
+def debar(src, vw, vh, dur):
+    """Black bars baked into the source (a 2.39:1 film inside a 16:9 frame) would become bars inside our frame:
+    find them with cropdetect and cut them away first. Returns (w, h, filter prefix)."""
+    best = {}
+    for t0 in (dur * 0.2, dur * 0.5, dur * 0.8):
+        try:
+            r = subprocess.run(["ffmpeg", "-hide_banner", "-ss", f"{t0:.2f}", "-i", str(src), "-frames:v", "14",
+                                "-vf", "cropdetect=limit=16:round=2:reset=0", "-f", "null", "-"],
+                               capture_output=True, text=True, timeout=120)
+        except (OSError, subprocess.SubprocessError): return vw, vh, ""
+        for m in re.finditer(r"crop=(\d+):(\d+):(\d+):(\d+)", r.stderr or ""):
+            best[tuple(int(x) for x in m.groups())] = best.get(tuple(int(x) for x in m.groups()), 0) + 1
+    if not best: return vw, vh, ""
+    cw, ch, cx, cy = max(best, key=lambda k: (k[0] * k[1], best[k]))
+    cw, ch = cw // 2 * 2, ch // 2 * 2
+    if cw < 16 or ch < 16 or cw > vw or ch > vh: return vw, vh, ""
+    if cw * ch >= vw * vh * 0.985: return vw, vh, ""          # nothing worth cutting
+    if cw * ch < vw * vh * 0.25: return vw, vh, ""            # suspicious (a dark scene, not bars)
+    # only act on a real band: a dark-styled clip whose edges merely read as black must stay untouched
+    if (vw - cw) / vw < 0.06 and (vh - ch) / vh < 0.06: return vw, vh, ""
+    return cw, ch, f"crop={cw}:{ch}:{cx}:{cy},"
 
 
-def badge(out, text):
-    f = out / "credit.html"
-    f.write_text(f'''<!DOCTYPE html><html><head><meta charset="utf-8"><style>@font-face{{font-family:Inter;src:url({(FONTS / "InterVariable.ttf").as_uri()});font-weight:100 900}}
-*{{margin:0}}html,body{{background:transparent}}#c{{display:inline-block;font:500 28px Inter,sans-serif;color:#9A9AA4}}</style></head>
-<body><span id="c">Source: {e(text)}</span></body></html>''', encoding="utf-8")
-    with sync_playwright() as p:
-        br = p.chromium.launch(); pg = br.new_page(viewport={"width": W, "height": 200})
-        pg.goto(f.as_uri()); pg.wait_for_timeout(150)
-        pg.locator("#c").screenshot(path=str(out / "credit.png"), omit_background=True); br.close()
+def layout(vw, vh, fit, crop_pos, pre=""):
+    """How the clip is placed on the 1080x1920 canvas -> (mode, filter chain, shown size, share cropped away)."""
+    target, ratio = W / H, vw / vh
+    fill = fit == "fill" or (fit == "auto" and abs(ratio - target) / target <= NEAR)
+    if fill:  # scale up to cover the canvas, cut the overflow (crop_pos picks which part stays)
+        sw = max(W, round(H * ratio / 2) * 2); sh = max(H, round(W / ratio / 2) * 2)
+        x = round((sw - W) * (crop_pos if sw > W else 0.5)); y = round((sh - H) * (crop_pos if sh > H else 0.5))
+        lost = round(1 - (W * H) / (sw * sh), 3)
+        fc = (f"[0:v]{pre}scale={sw}:{sh}:flags=lanczos,crop={W}:{H}:{x}:{y},setsar=1,fps=30,format=yuv420p[out]")
+        return "fill", fc, [W, H], lost
+    # any other shape: the whole clip, centered on a blurred, darkened copy of itself (the platform-native look)
+    if ratio > target: sw = W; sh = round(W / ratio / 2) * 2
+    else: sh = H; sw = round(H * ratio / 2) * 2
+    fc = (f"[0:v]{pre}split=2[a][b];"
+          f"[a]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},gblur=sigma=42,eq=brightness=-0.14[bg];"
+          f"[b]scale={sw}:{sh}:flags=lanczos,setsar=1[v];"
+          f"[bg][v]overlay=(W-w)/2:(H-h)/2:format=auto,fps=30,format=yuv420p[out]")
+    return "contain", fc, [sw, sh], 0.0
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("src"); ap.add_argument("--hook"); ap.add_argument("--title")
-    ap.add_argument("--credit"); ap.add_argument("--name")
-    ap.add_argument("--fit", choices=["auto", "contain"], default="auto"); ap.add_argument("--crop-pos", type=float, default=0.5)
+    ap.add_argument("src"); ap.add_argument("--name")
+    ap.add_argument("--fit", choices=["auto", "contain", "fill"], default="auto")
+    ap.add_argument("--crop-pos", type=float, default=0.5)
+    ap.add_argument("--hook"); ap.add_argument("--title"); ap.add_argument("--credit")  # kept for meta.json / old calls
     a = ap.parse_args()
     if a.src.endswith(".json"):
         d = json.loads(pathlib.Path(a.src).read_text(encoding="utf-8"))
-        a.name = pathlib.Path(a.src).stem; a.hook = d["hook"]; a.title = d.get("title"); a.credit = d.get("credit")
-        a.fit = d.get("fit") if d.get("fit") in ("auto", "contain") else "auto"
+        a.name = pathlib.Path(a.src).stem; a.hook = d.get("hook"); a.credit = d.get("credit")
+        a.fit = d.get("fit") if d.get("fit") in ("auto", "contain", "fill") else "auto"
         a.crop_pos = min(1.0, max(0.0, float(d.get("crop_pos", 0.5))))
         got = [f for f in sorted((ROOT / "output" / "clips" / a.name).glob("source.*")) if f.suffix in VIDEO]
         a.src = str(got[0]) if got else d["source"]
-    if not a.hook: ap.error("--hook is required")
-    name = a.name or re.sub(r"[^a-z0-9]+", "-", a.hook.lower()).strip("-")[:50]
+    name = a.name or re.sub(r"[^a-z0-9]+", "-", (a.hook or pathlib.Path(a.src).stem).lower()).strip("-")[:50]
     out = ROOT / "output" / "clips" / name; out.mkdir(parents=True, exist_ok=True)
     src = fetch(a.src, out) if re.match(r"https?://", a.src) else pathlib.Path(a.src)
     vw, vh, dur, audio = probe(src)
     dur = min(dur, MAX_SECS)
+    # a clip that is already about 9:16 is our target shape: never shrink it looking for bars
+    cw, ch, pre = (vw, vh, "") if abs(vw / vh - W / H) / (W / H) <= NEAR else debar(src, vw, vh, dur)
+    mode, fc, shown, lost = layout(cw, ch, a.fit, a.crop_pos, pre)
 
-    hh = header(out, a.hook, a.title)
-    y = TOP + hh + 40                                   # clip starts under the header
-    room = H - BOTTOM_SAFE - y - (60 if a.credit else 0)
-    sw = W; sh = round(vh * W / vw / 2) * 2              # full width ...
-    crop = ""; lost = 0.0
-    if sh > room:                                        # ... tall clip: grow it so a crop of <= 25% fills the room
-        keep = 1.0 if a.fit == "contain" else 0.75
-        sw = min(W, round(room / keep * vw / vh / 2) * 2); sh = round(vh * sw / vw / 2) * 2
-        if sh > room:
-            ch = room // 2 * 2; lost = round(1 - ch / sh, 3)
-            crop = f",crop={sw}:{ch}:0:{round((sh - ch) * a.crop_pos)}"; sh = ch
-    sx = (W - sw) // 2
-    if sh < room: y += (room - sh) // 3                  # short (landscape) clips sit a bit lower, not glued to the text
-
-    inputs = ["-loop", "1", "-i", str(out / "header.png")]
-    credit = ""
-    if a.credit:
-        badge(out, a.credit); inputs += ["-loop", "1", "-i", str(out / "credit.png")]
-        credit = f"[c];[c][2:v]overlay=64:{y + sh + 22}:format=auto"
-    fc = (f"color=c=black:s={W}x{H}:d={dur:.3f}:r=30[bg];[0:v]scale={sw}:-2:flags=lanczos{crop},setsar=1,fps=30[v];"
-          f"[bg][v]overlay={sx}:{y}[b];[b][1:v]overlay=0:{TOP}:format=auto{credit},format=yuv420p[out]")
-    cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", str(src), *inputs,
-           "-filter_complex", fc, "-map", "[out]"]
+    cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", str(src), "-filter_complex", fc, "-map", "[out]"]
     if audio: cmd += ["-map", "0:a:0", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000", "-c:a", "aac", "-b:a", "192k"]
     cmd += ["-t", f"{dur:.3f}", "-c:v", "libx264", "-preset", "slow", "-crf", "19", "-profile:v", "high",
             "-movflags", "+faststart", str(out / "reel.mp4")]
     run(cmd)
-    run(["ffmpeg", "-y", "-loglevel", "error", "-ss", "0.5", "-i", str(out / "reel.mp4"), "-frames:v", "1", "-q:v", "2", str(out / "cover.jpg")])
+    run(["ffmpeg", "-y", "-loglevel", "error", "-ss", "0.3", "-i", str(out / "reel.mp4"), "-frames:v", "1", "-q:v", "2", str(out / "cover.jpg")])
     for i in range(5):  # check frames for the QA step (and for humans)
         run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{dur * (i + 0.5) / 5:.2f}", "-i", str(out / "reel.mp4"),
              "-frames:v", "1", "-vf", "scale=540:-2", str(out / f"check_{i + 1}.jpg")])
-    (out / "meta.json").write_text(json.dumps({"src": a.src, "hook": a.hook, "title": a.title, "credit": a.credit,
-                                               "secs": round(dur, 2), "clip": [vw, vh], "fit": a.fit, "crop_pos": a.crop_pos,
-                                               "cropped": lost, "shown": [sw, sh], "top": y, "header_h": hh}, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
-    print("saved", out / "reel.mp4")
+    for old in ("header.png", "header.html", "credit.png", "credit.html"):  # leftovers of the old framed look
+        (out / old).unlink(missing_ok=True)
+    (out / "meta.json").write_text(json.dumps({"src": a.src, "hook": a.hook, "credit": a.credit, "secs": round(dur, 2),
+                                               "clip": [vw, vh], "bars_cut": None if (cw, ch) == (vw, vh) else [cw, ch],
+                                               "fit": a.fit, "mode": mode, "crop_pos": a.crop_pos,
+                                               "cropped": lost, "shown": shown}, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    bars = "" if (cw, ch) == (vw, vh) else f" bars cut -> {cw}x{ch},"
+    print(f"saved {out / 'reel.mp4'} ({mode}, clip {vw}x{vh},{bars} shown {shown[0]}x{shown[1]}, {dur:.1f}s)")
 
 
 if __name__ == "__main__":

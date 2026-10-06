@@ -17,7 +17,8 @@ Three workflows:
           write (Claude verifies the README, writes hook/captions draft/fb_comment) -> caption -> card (repocard.py)
           -> approve -> upload -> ig_photo -> fb_photos -> comments (FB first comment) -> dm (direct link) -> log
     clip  (viral Reel: the owner pastes an X/post link)
-          fetch (yt-dlp) -> hook (Claude watches frames, writes hook + caption) -> frame (clip.py) -> qa (Claude
+          fetch (yt-dlp) -> hook (Claude watches frames, writes hook + caption) -> frame (clip.py: the raw clip as a
+          1080x1920 Reel, nothing drawn on it) -> qa (Claude
           compares the framed Reel with the source: crop, fit, hook; fixes + re-frames) -> approve
           -> upload -> ig_reel -> fb_reel -> yt_short -> comments -> log
 State lives in runs/<run-id>/state.json, logs in runs/<run-id>/<node>.log; a failed node can be retried from the UI.
@@ -86,7 +87,7 @@ POST = [("write", "Doğrula & yaz", "ai"), ("caption", "Caption & tag", "ai"), (
         ("ig_carousel", "Instagram carousel", "publish"), ("fb_photos", "Facebook gönderi", "publish"),
         ("ig_reel", "Instagram Reel (video)", "publish"), ("fb_reel", "Facebook Reel (video)", "publish"),
         ("yt_short", "YouTube Short", "publish"), ("comments", "Yorumlar", "publish"), ("dm", "DM botu kaydı", "publish"), ("tiktok", "TikTok", "publish"), ("x_post", "X gönderi", "publish"), ("log", "Kayıt & GitHub", "code")]
-CLIP = [("fetch", "Videoyu indir", "code"), ("hook", "Hook", "ai"), ("caption", "Caption & tag", "ai"), ("frame", "Reel çerçevesi", "code"),
+CLIP = [("fetch", "Videoyu indir", "code"), ("hook", "Hook", "ai"), ("caption", "Caption & tag", "ai"), ("frame", "Reel videosu", "code"),
         ("qa", "Kalite kontrol", "ai"), ("approve", "Yayından önce onay", "human"), ("upload", "Medya yükle", "code"), ("ig_reel", "Instagram Reel", "publish"),
         ("fb_reel", "Facebook Reel", "publish"), ("yt_short", "YouTube Short", "publish"), ("comments", "Yorumlar", "publish"),
         ("dm", "DM botu kaydı", "publish"), ("tiktok", "TikTok", "publish"), ("x_post", "X gönderi", "publish"), ("log", "Kayıt & GitHub", "code")]
@@ -807,7 +808,7 @@ def n_caption(run):
     repo = run.s["kind"] == "repo"
     claude(run, "caption", "caption", date=run.s["day"], content=run.s["content"], run_id=run.id, note=note,
            kind="clip" if clip else "repo" if repo else "carousel",
-           kind_hint="a viral video Reel framed with our hook; IG Reel + FB Reel + YouTube Short" if clip
+           kind_hint="a viral video Reel: the RAW clip, nothing drawn on it (owner, 2026-10-06), so the caption carries everything: first line = the post's `hook`, and a `Credit: @handle on X` line last before the hashtags on IG, FB and in the YouTube description; IG Reel + FB Reel + YouTube Short" if clip
            else "a GitHub repo post: ONE photo (the plain repo page) on IG + FB, NO YouTube (leave captions.youtube out); "
                 "follow section 6b of the playbook" if repo
            else "a carousel post; IG carousel + FB photo post, and its voiced video goes out as IG Reel + FB Reel + "

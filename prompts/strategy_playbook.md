@@ -4,7 +4,21 @@ Read by every writing agent (news/pack writer, hook writer, caption agent, repo 
 Written every day by the strategy director (prompts/strategy.md) from our numbers (strategy.py) and trend research.
 Directives here override older habits, never the fixed rules (verified facts, no fake quotes, credits on clips).
 
-## Current directives (2026-10-03)
+## Current directives (2026-10-06)
+- **Clips end with a share line (2026-10-06):** DM shares are Instagram's heaviest ranking signal. The caption's last
+  line: "Send this to the friend who ..." (specific, not generic). Experiment `clip-dm-share-cta`.
+- **Clips: transformations and shareable memes first (2026-10-06, xscout):** kids' drawings brought to life 16K likes / 1M
+  views, "AI generated this" reveal 91K / 9.6M. Skip tool-launch ads (Higgsfield, Genex) and politics. Experiment
+  `transformation-clips-pref`.
+
+## Directives (2026-10-05)
+- **Clips: Seedance 2.5 crossover/action scenes and game mashups are this week's X winners (2026-10-05, xscout):**
+  "John Wick vs Mr. Bean" 19K likes / 1.8M views, Bruce Lee / Gordon Ramsay 2.8-3.7K, Opus 5.5 driving Blender MCP +
+  Seedance anime 477K views, Mario-in-Halo. Hook = our take in <= 8 words. Clip weight is 5 (experiments `clip-mix-5`,
+  `seedance-action-clips`). Instagram flags watermarked/recycled Reels (originality score,
+  https://syncstudio.ai/blog/instagram-reels-algorithm-2026): use the clean source file, no visible TikTok/CapCut marks.
+
+## Directives (2026-10-03)
 - **Clips: say OUR take, don't describe the screen (2026-10-03, YouTube's Shorts originality update of 2026-10-01,
   https://ppc.land/re-uploaded-shorts-lose-reach-as-youtube-favours-original-clips/):** YouTube now shows less of
   "channels primarily aggregating or re-uploading other creators' videos" in the Shorts feed; template edits and
@@ -35,6 +49,12 @@ Directives here override older habits, never the fixed rules (verified facts, no
   happens") over neutral announcement phrasing ("X company launches Y feature"). This is a wording note for every
   writer, not a visual-design change — no experiment to track (can't isolate it from other changes), just apply it.
 
+## Owner rules you cannot change (not experiments)
+- **Facebook photo/carousel posts stay off until the Page has 250 followers** (owner, 2026-10-06). publish.py enforces
+  it (`FB_PHOTOS_MIN_FOLLOWERS`). Never put `fb_photos` back into a flow for carousel posts, whatever the numbers say.
+- **Viral clips are published raw** (owner, 2026-10-06): no hook frame, no credit on the video; hook and
+  `Credit: @handle` live in the caption. Don't propose bringing the old framed look back.
+
 ## Still-standing directives
 - Repo posts: the "Comment WORD → DM" CTA got 8 comments on the first repo post: keep it on every repo post.
 - Carousels: their voiced video also goes out as IG Reel + FB Reel. Write the carousel so the VIDEO works:
@@ -59,6 +79,8 @@ reel-length` (2026-10-01, needs 8 posts), `packs-out-of-rotation` (2026-10-01, d
   changes kept permanently.
 
 ## Log
+- 2026-10-06: 14-day: clips yt 510 / ig 230 / fb 160 (n=32) vs news yt 202, ig 52; pack ig 10; repo fb_reel 450 (n=4, noisy). No mix change. Added DM-share CTA + transformation-clip experiments; 5 clips in research/clips/2026-10-06_clips.json. Sources: https://www.relevantaudience.com/youtube/youtube-shorts-original-content-reach-update/ , https://syncstudio.ai/blog/instagram-reels-algorithm-2026
+- 2026-10-05: 14-day: clips ig 233 / fb 165 views (n=28) vs news ig 58, pack ig 10, repo fb_reel 450 (n=4). Mix clip 4->5. xscout worked (29 posts); 5 clips in research/clips/2026-10-05_clips.json; skipped story films, politics, brand posts, drama.
   descriptions carry our own take after YouTube's 2026-10-01 Shorts originality update (re-upload channels lose
   Shorts-feed reach; Meta has the same rule since 2026-03). Backlog: voiced "our take" card on clip Shorts. xscout
   worked (35 video posts): 6 clips into `research/clips/2026-10-03_clips.json` (AI game mashup montage 19K likes/4M,

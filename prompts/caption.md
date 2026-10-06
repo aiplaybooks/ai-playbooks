@@ -24,8 +24,10 @@ Read `prompts/caption_playbook.md` first and follow it exactly: it is your train
    Also `"x"` (X/Twitter, posted with the same video or image): max 270 characters (emoji count 2), the hook line
    first, one or two short punchy lines, 1-2 hashtags at most. NEVER a link or domain (a URL costs us $0.20 per post
    on X), no "Comment WORD" (the DM bot is Instagram only), no "follow @aiplaybooks.daily" (on X we are @AIPlaybooks_).
-   Repo posts: name the repo as plain text `owner/repo` ("📦 owner/repo on GitHub"). Clips: credit the creator with
-   their @handle from `credit` ("🎥 @handle").
+   Repo posts: name the repo as plain text `owner/repo` ("📦 owner/repo on GitHub"). Clips: the video is the raw
+   clip with nothing drawn on it, so the caption carries the hook AND the credit (see playbook section 6): first line =
+   the post's `hook`, and a `Credit: @handle on X` line (from `credit`) last before the hashtags, on IG, FB and in the
+   YouTube description.
    Also `"first_comment": {{"instagram": "...", "facebook": "...", "youtube": "..."}}`: OUR first comment, posted
    under the post right after publishing on every platform (owner, 2026-09-30: every video gets one). It must ADD
    something the caption doesn't have, then open the conversation: a bonus tip, one extra copy-paste prompt, the key

@@ -34,6 +34,9 @@ clip / repo flows → publish.py → log. Claude steps run `claude -p` with prom
   `strategy.json` (clips-heavy). The daily **strategy director** (09:30) tunes mix/skips/experiments from metrics; items
   needing code go to `strategy/backlog.md` (build them). `learn` job 1x/day updates hook/caption playbooks.
 - **Carousels also go out as Reels**; per strategy.json `skip` lists some steps (e.g. fb_photos, ig_carousel).
+- **No Facebook photo/carousel posts until the Page has 250 followers** (owner, 2026-10-06: "nobody sees them"):
+  publish.py's `fb_photos` skips itself below `FB_PHOTOS_MIN_FOLLOWERS`, reading the count from runs/metrics.json.
+  The Reel of the same post still goes out. Not a strategy experiment: the director must not re-enable it.
 - **X**: never a URL in a post ($0.20 vs $0.015), no replies. **TikTok**: sandbox keys, inbox drafts only, never submit the
   app for review. **YouTube**: no paid promotion, AI-content flag on, tags include `ai`, playlist `YT_PLAYLIST_ID`.
 - **Token budget (2026-10-04)**: agents run on `sonnet` (`caption`/`hook` on haiku, only `doctor` on opus), lean flags
@@ -77,10 +80,14 @@ A module in `themes/` exports `render(data) -> list[str]` (one 1080x1350 HTML do
 `ACCENT`, `ANIM_SEL`, `TYPE_SEL`, `DRAW_SEL`, `REEL_CSS`, `CC_ACTIVE` (+ optional `CC_CSS`, `configure(data)`).
 Always visually check `contact.png` and a few Reel frames.
 
-## Clips (Reels = hook-framed viral clips)
-Black frame, brand line, hook text on top, clip below, "Source: @creator on X" (`clip.py`, yt-dlp fetch of one picked post).
-Hook states OUR take (what it means / what to do with it), not a description of the screen. Clips go to IG Reel, FB Reel,
-YouTube Short (+ X; never TikTok). QA checks framing and must-not-post content only, not facts.
+## Clips (Reels = the raw viral clip)
+**Owner, 2026-10-06: no frame any more.** `clip.py` publishes the clip ITSELF as a 1080x1920 Reel with nothing drawn on
+it: already ~9:16 → full screen; any other shape → the whole clip centered on a blurred copy of itself; black bars baked
+into the source are cut first (`fit` auto|fill|contain, `crop_pos`). Hook, description and credit are in the CAPTION:
+first line = `hook` (max ~120 chars, states OUR take, not a description of the screen), and a `Credit: @handle on X`
+line last before the hashtags on IG, FB and in the YouTube description (the one credit line captions.py allows, clips
+only). Clips go to IG Reel, FB Reel, YouTube Short (+ X; never TikTok). QA checks the crop, size, sound, the caption
+credit and must-not-post content, not facts.
 
 ## Running locally (Windows)
 `python carousel.py content/<post>.json`, `python reel.py content/<post>.json [--voice X --no-voice]`,

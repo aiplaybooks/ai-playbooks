@@ -84,9 +84,13 @@ Shape: hook line → 1-2 short story paragraphs → what's inside → a real que
 5. Write down why each tag was picked (the data line) in the result file.
 
 ## 6. Clips (viral Reels) vs carousels
-- Clip: the caption explains what we see and why it's interesting in 2-3 short blocks, then the question. If the post
-  has `comments` (e.g. the prompts behind the video), say clearly that they're in the comments
-  ("The full prompt is in the comments 👇"). The creator credit is on the video: not in the caption.
+- Clip (format changed 2026-10-06: the video is now the raw clip, nothing is drawn on it, so the caption carries
+  everything the frame used to): **first line = the hook** (the line that used to sit on top of the video; it must work
+  on its own and fit before "more"), then 2-3 short blocks on what we see and why it matters, then the question.
+  **The creator credit is now in the caption**: a line `Credit: @handle on X` (from the post's `credit` field) as the
+  last line before the hashtags, on Instagram, Facebook and in the YouTube description. It is the one "Credit:" line
+  captions.py still allows, and only for clips. If the post has `comments` (e.g. the prompts behind the video), say
+  clearly that they're in the comments ("The full prompt is in the comments 👇").
 - Carousel: tell people to swipe and save; the hook can name the number of prompts/tips.
 
 ## 6b. GitHub repo posts (`"kind": "repo"`, owner 2026-09-28)
@@ -204,7 +208,48 @@ Follow @aiplaybooks.daily for AI news you can actually use.
 ```
 
 ## 8. Lessons (from our own numbers; the agent adds dated lines here only when runs/metrics.json shows a clear pattern)
-- (none yet: the page is new; 2026-09-26)
+- 2026-09-29: the comment-keyword CTA in section 6b (repo posts) works — our first repo post (OpenMontage) got 8
+  comments on 16 IG views (50%), our highest comment rate of any post to date, and real accounts (instagram.com/
+  reel/DakrLG1MwgV, instagram.com/p/Da-ccAlJIih) run the identical "Comment [WORD] and I'll send you the GitHub
+  repo" shape on their own repo posts. Keep this CTA on every repo post exactly as section 6b writes it, placed
+  after the hook lines (moving it earlier, into the first ~125 characters, is not supported by our own data and
+  would push the hook lines out of the "before more" window).
+- 2026-09-30 (trial, not yet AI-niche-proven): Metricool's own cross-account measurement found that @-tagging a
+  relevant account in the caption (e.g. the tool's official page on a news post) beats every other CTA type they
+  measured for accounts under 10,000 followers specifically — +45% comments, +20% reach — but the same tag hurts
+  accounts over 1M followers (metricool.com/create-a-call-to-action-that-converts, Sep 2026). We are exactly the
+  small-account profile this applies to (1-3 followers). Worth testing on a news carousel/clip about a named tool
+  (tag its real account once, not spammed): if it lifts comments/reach on our own numbers, promote to a standing
+  rule; this is general cross-niche data, not AI-account-specific, so it stays a trial until our own metrics confirm
+  or contradict it.
+- 2026-10-03: news posts — open the caption (and the cover) with the STAKES or the conflict, not with "[Company] just
+  launched X. Meet X:". Our news Reels on YouTube (hooks.py OURS, 2026-10-03): conflict/record/rule-breaking lines got
+  441-972 views ("Claude ... broke a physics record that stood since 2023" 972, "Anthropic just shipped a coding model
+  that beats its own flagship" 586, "An OpenAI training agent tried to sneak a question past its sandbox ... caught in
+  15 minutes" 441) vs. 12-57 for plain launch/feature lines ("ChatGPT can now track your Experian credit score" 12,
+  "Apple just gave Siri ..." 43, "... Meet dots:" 50, "... Meet GPT-6 Sol and Luna:" 57). Name what was beaten,
+  broken or caught; keep the product name, drop the "Meet X:" close.
+- 2026-10-03: prompt packs — the first line names the concrete TASK the AI does for you, the $ figure (if any) comes
+  after it. Same accounts, same carousel format (hooks.py, 21 days): skill/daily-life openers "ChatGPT isn't just for
+  answering questions anymore. It can also help you build complete presentations ..." 7.65x and "... your personal
+  language tutor ..." 3.8x (@chatgptips), "ChatGPT can now be your interior designer." 4.36x (@chatgptricks) vs. money
+  openers 0.51-0.95x ("... income streams" @chatgptips 0.95x, "You don't need to earn more money ..." 0.72x,
+  "Claude can now launch your business like ... Steve Jobs" @godofprompt 0.51x). Ours agree: money-promise pack lines
+  0-2 IG views; the bank-statement capability line 7 views / 6 comments.
+- 2026-10-04: news — when the story has a real PERSON in it, open the caption with that person and hold the outcome
+  back for the slides; don't summarise the outcome in the first line. Same week, same news story, same carousel
+  format (hooks.py, 21 days): @theaifield's narrative version "A woman told ChatGPT she was deleting the app so she
+  could spend more time with her newborn, but the farewell quickly became far more emotional than she expected."
+  got 70.51x its median (2,434 likes) — the highest carousel line in the window — while @chatgptricks' resolved,
+  short version of the same story ("She deleted ChatGPT, then immediately came back.") got 6.19x. Keep the first
+  ~125 characters on the person and the unresolved turn ("but what happened next ...", "but it was far worse than
+  he expected"). Hook playbook pattern #5.
+- 2026-10-04: news — pick the real-world story over the feature story, and say what the thing physically DOES.
+  Ours (hooks.py OURS): "China just built an AI lifebuoy that flies to you when you're drowning." 377 YT / 143 IG
+  views / 2 likes, our best-engaged news carousel, vs. 12-152 YT for feature/announcement captions ("... Experian
+  credit score" 12, "Apple just gave Siri ..." 43, "... Meet dots:" 62, Muse-AI-on-glasses 131). Big accounts split
+  the same way: @rowancheung's four best lines are all hardware/physical (hip surgery 33.1x, house-as-robot 7.1x,
+  Dyson toothbrush 6.17x, lab-reproducibility 142.02x) while @therundownai's software-feature lines top out at 8x.
 
 ## Sources (research 2026-09-26)
 - Instagram 5-hashtag cap (Dec 2025), Mosseri on hashtags: https://www.socialmediatoday.com/news/instagram-implements-new-limits-on-hashtag-use/808309/
