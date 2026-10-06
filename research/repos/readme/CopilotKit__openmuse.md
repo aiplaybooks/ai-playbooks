@@ -67,6 +67,7 @@ cp .env.example .env
 npx copilotkit@latest login
 npx copilotkit@latest project select
 # Set CPK_INTELLIGENCE_API_KEY in .env to the generated server-only project key.
+# Keep the CLI-generated CPK_TELEMETRY_ID too, including in deployed server environments.
 pnpm dev
 ```
 
@@ -80,5 +81,4 @@ Open [localhost:8081](http://localhost:8081). The API runs at [localhost:8787/ap
 
 ### Try it
 
-1. In Chat, send **“Complete the permission slip”**. Open the task, supply fictional form values, inspect the saved PDF, and review the prepared reply. This writes only to the local mailbox.
-2. In **Goals →
+1. In Chat, send **“Complete the permission slip”**. Open the task, supply fictional form values, inspect the saved 

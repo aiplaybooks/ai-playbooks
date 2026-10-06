@@ -1,0 +1,53 @@
+{
+ "generated": "2026-10-06T11:28:52+00:00",
+ "reddit": [],
+ "youtube_signal": [
+  {
+   "id": "yt-RXvadYhwCUw",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Basi Roti Ko Kachre Mein Fenkne Se Bachaya 😱 #SaasBahu #FamilyDrama #Shorts #trending #viral",
+   "channel": "The Palak Edit ",
+   "url": "https://www.youtube.com/shorts/RXvadYhwCUw",
+   "views": 568778,
+   "date": "2026-10-04T14:12:56Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-U0IzzJApvUY",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "AI Generated? Cops watching Women Dancers video sparks Reactions! 😳 #shorts",
+   "channel": "Neon Man Shorts",
+   "url": "https://www.youtube.com/shorts/U0IzzJApvUY",
+   "views": 283523,
+   "date": "2026-10-04T03:30:10Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-x0UxFYbtZKA",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Ai hai ye real?👀",
+   "channel": "Sarthak Xplains",
+   "url": "https://www.youtube.com/shorts/x0UxFYbtZKA",
+   "views": 273600,
+   "date": "2026-10-04T15:00:02Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-hjxAhNVk8oQ",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Neden her yerde bu robot var? #tech #science #robot #technology #bilim #teknoloji",
+   "channel": "Ekrem Bulut",
+   "url": "https://www.youtube.com/shorts/hjxAhNVk8oQ",
+   "views": 122201,
+   "date": "2026-10-03T14:05:08Z",
+   "query": "humanoid robot video"
+  }
+ ],
+ "errors": [
+  "Reddit: REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET missing in .env"
+ ]
+}

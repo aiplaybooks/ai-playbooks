@@ -1,0 +1,580 @@
+{
+ "generated": "2026-10-06T11:28+00:00",
+ "hours": 36.0,
+ "items": [
+  {
+   "source": "Mistral Vibe releases",
+   "tier": "official",
+   "title": "v2.26.0",
+   "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.26.0",
+   "date": "2026-10-06T10:27+00:00",
+   "summary": "Added The app-server can discover built-in plugins from roots an embedding application ships, alongside the ones inside the package. Vibe Code warns when the selected model cannot view attached images. Vibe Code sessions list their background processes in a side panel with live status indicators and a Stop action for running ones. The ~/.vibe/.env fallback for the API key when the OS keyring is…"
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Why we're backing America's existing nuclear plants",
+   "url": "https://blog.google/company-news/why-were-backing-americas-existing-nuclear-plants/",
+   "date": "2026-10-06T10:00+00:00",
+   "summary": "Our new agreement with Constellation Energy brings the total new nuclear capacity we’ve enabled for the U.S. energy system from uprates and restarts to over 1.5 GW."
+  },
+  {
+   "source": "Hugging Face blog",
+   "tier": "official",
+   "title": "Falcon-Emirati: When an LLM Learns the Dialect, the Culture, and the Nuance",
+   "url": "https://huggingface.co/blog/tiiuae/falcon-emirati",
+   "date": "2026-10-06T06:44+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Claude Code releases",
+   "tier": "official",
+   "title": "v2.1.291",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.291",
+   "date": "2026-10-06T03:55+00:00",
+   "summary": "What's changed Fixed a regression in 2.1.290 where cloud sessions could drop answers to permission prompts Fixed a regression in 2.1.288 where the last messages of a session could be lost when quitting"
+  },
+  {
+   "source": "Ollama releases",
+   "tier": "official",
+   "title": "v0.40.0",
+   "url": "https://github.com/ollama/ollama/releases/tag/v0.40.0-rc5",
+   "date": "2026-10-06T01:53+00:00",
+   "summary": "What's Changed Models run on MLX on Apple Silicon by default In this release, on Apple Silicon devices, model architectures supported by the MLX runtime will automatically run on MLX. ollama pull qwen3.8 ollama run qwen3.8 Additional models include gemma4 , qwen3.6 and qwen3.5 Decision models are now available on MLX as well: Nimble tev1 clef clef-flash We will continue testing and enabling…"
+  },
+  {
+   "source": "Claude Code releases",
+   "tier": "official",
+   "title": "v2.1.290",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.290",
+   "date": "2026-10-05T23:33+00:00",
+   "summary": "What's changed Added serverToolUses to the result of a mod's turn.step hook: the tool calls the API ran itself (the advisor), each with its id, name, input, start and end Added agentId to the tool.check event of plugin hooks, so a hook can tell a subagent's permission check from the main session's Added ceiling to the question and verdict a mod's tool.check hook reads, naming the approval an…"
+  },
+  {
+   "source": "Higgsfield blog",
+   "tier": "official",
+   "title": "Hugo Blendl: How a Rick and Morty Animator Makes a Daily Show on Higgsfield",
+   "url": "https://higgsfield.ai/blog/hugo-blendl-zero-to-hero",
+   "date": "2026-10-05T21:17+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Apple Developer News",
+   "tier": "official",
+   "title": "Showcase your apps with new assets on the App Store",
+   "url": "https://developer.apple.com/news/?id=ljpl7kyn",
+   "date": "2026-10-05T13:00-07:00",
+   "summary": "Make your apps and games stand out with new creative assets on the App Store and asset management tools in App Store Connect. Market your app or game in new ways Use new creative assets on your product page headers and in search result assets to highlight your brand, promote seasonal offerings, showcase new content, and more. These new image and video assets complement your existing app previews…"
+  },
+  {
+   "source": "Codex CLI releases",
+   "tier": "official",
+   "title": "0.160.1",
+   "url": "https://github.com/openai/codex/releases/tag/rust-v0.160.1",
+   "date": "2026-10-05T18:31+00:00",
+   "summary": "Bug Fixes Preserve SYSTEMROOT , TEMP , and TMP when launching remote stdio MCP servers with explicitly configured remote environment variables, allowing Unix hosts to retain the Windows executor's startup environment. Changelog #51121 : Backport Windows remote MCP environment preservation to 0.160."
+  },
+  {
+   "source": "Higgsfield blog",
+   "tier": "official",
+   "title": "How to Keep Characters and Art Style Consistent Across an AI Animated Series",
+   "url": "https://higgsfield.ai/blog/keep-characters-consistent-ai-animated-series",
+   "date": "2026-10-05T17:57+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Higgsfield blog",
+   "tier": "official",
+   "title": "9 Best Creatify Alternatives in 2026 (Tested & Compared)",
+   "url": "https://higgsfield.ai/blog/best-creatify-alternatives",
+   "date": "2026-10-05T16:33+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "I use technology to give students a voice and become critical digital citizens.",
+   "url": "https://blog.google/products-and-platforms/products/education/teacher-voices-sweden/",
+   "date": "2026-10-05T16:00+00:00",
+   "summary": "Empower students using Google Sites, Gemini, and Vids to build critical thinking skills. See how these tools help kids find their voice today."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Technology helps my students balance big creative ideas with tight deadlines.",
+   "url": "https://blog.google/products-and-platforms/products/education/media-teacher-gemini/",
+   "date": "2026-10-05T16:00+00:00",
+   "summary": "Students use Google Drive for video assets and Sheets for production timelines to meet tight deadlines. See how these tools boost classroom output."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Here’s how I use technology to bring science to life in my classroom.",
+   "url": "https://blog.google/products-and-platforms/products/education/science-teacher-gemini/",
+   "date": "2026-10-05T16:00+00:00",
+   "summary": "See how this teacher uses Gemini and Gemini Notebook to build digital literacy and refine lesson plans. Read the full story to improve your teaching."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "World Teachers’ Day 2026",
+   "url": "https://blog.google/products-and-platforms/products/education/world-teachers-day-2026/",
+   "date": "2026-10-05T16:00+00:00",
+   "summary": "To celebrate World Teachers’ Day 2026, educators share their stories about how they use tech in the classroom."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "I teach my students that in the AI era, critical thinking comes first.",
+   "url": "https://blog.google/products-and-platforms/products/education/teacher-stories-gemini-middle-school/",
+   "date": "2026-10-05T16:00+00:00",
+   "summary": "A California teacher uses Gemini to streamline lesson planning in Google Drive. See how she prioritizes critical thinking in the AI era."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "My eighth-grade students built our school newscast from scratch with Gemini.",
+   "url": "https://blog.google/products-and-platforms/products/education/gemini-student-newscast/",
+   "date": "2026-10-05T16:00+00:00",
+   "summary": "Eighth graders built The Cougar Rumble newscast using Gemini and Google Docs. See how these students streamlined their production workflow today."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "My students use Gemini to brainstorm creative ideas.",
+   "url": "https://blog.google/products-and-platforms/products/education/teacher-voices-gemini-creativity/",
+   "date": "2026-10-05T16:00+00:00",
+   "summary": "Fifth graders use Google Gemini to write songs about history and create art. See how this teacher integrates AI into the classroom."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Technology is helping my fellow math teachers trade weekend prep for personalized learning.",
+   "url": "https://blog.google/products-and-platforms/products/education/education-officer-gemini/",
+   "date": "2026-10-05T16:00+00:00",
+   "summary": "Teachers use Gemini to build custom K-6 math worksheets and save hours of prep time. See how Google AI transforms classroom instruction."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Gemini helps me bring hands-on learning into the classroom.",
+   "url": "https://blog.google/products-and-platforms/products/education/english-teacher-gemini/",
+   "date": "2026-10-05T16:00+00:00",
+   "summary": "A teacher uses Google Gemini to design interactive role-playing simulations and nutrition lessons. See how AI boosts classroom engagement."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "I replaced traditional coding tests with real conversations about how my students solve problems using AI.",
+   "url": "https://blog.google/products-and-platforms/products/education/gemini-google-colab/",
+   "date": "2026-10-05T16:00+00:00",
+   "summary": "Replace coding tests with AI-driven interviews using Google Gemini in Colab. See how this professor evaluates student judgment. Read the full report."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Gemini helps me give a voice to students who cannot write.",
+   "url": "https://blog.google/products-and-platforms/products/education/special-education-gemini/",
+   "date": "2026-10-05T16:00+00:00",
+   "summary": "Special education teachers use Google Gemini to generate visual guides and voice prompts, empowering non-writing students. Read the full story."
+  },
+  {
+   "source": "OpenAI News",
+   "tier": "official",
+   "title": "Our approach to EU text provenance rules",
+   "url": "https://openai.com/index/eu-text-provenance",
+   "date": "2026-10-05T15:00+00:00",
+   "summary": "How OpenAI is approaching text watermarking under EU rules. Learn where watermarks apply, how detection works, and why access starts with researchers."
+  },
+  {
+   "source": "Cloudflare blog",
+   "tier": "official",
+   "title": "Everything we launched during Birthday Week 2026",
+   "url": "https://blog.cloudflare.com/birthday-week-2026-wrap-up/",
+   "date": "2026-10-05T13:00+00:00",
+   "summary": "We celebrated our 16th birthday with 46 announcements across open source, post-quantum security, AI agents, and developer platform upgrades. Here’s a day-by-day roundup of everything we shipped."
+  },
+  {
+   "source": "Cloudflare blog",
+   "tier": "official",
+   "title": "One year later: the power of 1.1.1.1 interns",
+   "url": "https://blog.cloudflare.com/one-year-later-1111-interns/",
+   "date": "2026-10-05T13:00+00:00",
+   "summary": "A year after announcing our goal to hire 1,111 interns, more than 750 early-career builders have shipped real products across 48 teams at Cloudflare. From Birthday Week launches to post-quantum security, our interns prove that AI amplifies human potential instead of replacing it."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Wheels up: Trends and tips for 2026 holiday travel",
+   "url": "https://blog.google/products-and-platforms/products/search/holiday-travel-trends-2026/",
+   "date": "2026-10-05T12:00+00:00",
+   "summary": "Explore this year’s trends and tips for holiday travel — from insights on booking the lowest fare to trending destinations for Thanksgiving and Christmas."
+  },
+  {
+   "source": "OpenAI News",
+   "tier": "official",
+   "title": "Building advertising for the way people use AI",
+   "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
+   "date": "2026-10-05T10:00+00:00",
+   "summary": "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Making AI training available to UK and Ireland educators",
+   "url": "https://blog.google/products-and-platforms/products/education/making-ai-training-available-to-uk-and-ireland-educators/",
+   "date": "2026-10-05T07:00+00:00",
+   "summary": "Google's AI tools aim to help educators achieve their teaching goals and provide students with personalized learning experiences."
+  },
+  {
+   "source": "Codex changelog",
+   "tier": "official",
+   "title": "Codex changelog: Oct 05, 2026",
+   "url": "https://developers.openai.com/codex/changelog",
+   "date": "2026-10-05T00:00+00:00",
+   "summary": "Codex CLI 0.160.1 pre]:w-full [&>pre]:max-w-full [&>pre]:mb-0 pt-4\"> $ npm install -g @openai/codex@0.160.1 View details Bug Fixes Preserve SYSTEMROOT , TEMP , and TMP when launching remote stdio MCP servers with explicitly configured remote environment variables, allowing Unix hosts to retain the Windows executor's startup environment. Changelog #51121 : Backport Windows remote MCP environment preservation to 0.160. Full release on Github"
+  },
+  {
+   "source": "OpenAI API changelog",
+   "tier": "official",
+   "title": "OpenAI API changelog: Oct 05, 2026",
+   "url": "https://platform.openai.com/docs/changelog",
+   "date": "2026-10-05T00:00+00:00",
+   "summary": ". See pricing for details. Sep 3 Feature gpt-6-astra v1/responses v1/chat/completions Released GPT-6 Astra , our most capable model, built for the hardest end-to-end work. Use GPT-6 Astra for reasoning, coding, computer use, research, and document creation. It combines these capabilities to carry complex tasks from an initial request to a finished result, using the context and tools you provide. Key changes to consider when migrating: GPT-6 Astra does not support the none reasoning effort level. GPT-6 Astra does not support custom temperature or top_p values or log probabilities ( logprobs ). Tool calling requires the Responses API. If you use tools with Chat Completions, follow the Responses migration guide . Misalignment monitoring asynchronously checks for potential issues during agent work in supported Responses API requests. Checks can trigger safety alerts or stop a conversation…"
+  },
+  {
+   "source": "Gemini API changelog",
+   "tier": "official",
+   "title": "Gemini API changelog: Oct 05, 2026",
+   "url": "https://ai.google.dev/gemini-api/docs/changelog",
+   "date": "2026-10-05T00:00+00:00",
+   "summary": ", tracked on the deprecations page."
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Amazon Alexa Plus keeps creepily singing ‘lalala’ for minutes on end",
+   "url": "https://www.theverge.com/tech/1005342/amazon-alexa-plus-keeps-creepily-singing-lalala-for-minutes-on-end",
+   "date": "2026-10-06T06:53-04:00",
+   "summary": "The Amazon Echo Studio is one of the speakers that runs Alexa Plus. | Photo by John Higgins / The Verge An unsettling Alexa Plus bug has seen some Amazon Echo smart home speakers reduced to saying - and sometimes singing - nothing but \"lalala\" on repeat for minutes at a time, often in the middle of conversations with users. When quizzed about the behavior, Alexa is apparently entirely unaware of…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Quoting Felix Rieseberg",
+   "url": "https://simonwillison.net/2026/Oct/5/felix-rieseberg/",
+   "date": "2026-10-05T23:56+00:00",
+   "summary": "The \"old\" version of Cowork runs model inference in the cloud, executing tool calls in an Anthropic-provided VM we shipped to your computer. We added the VM for capability, safety, and security reasons - mapping in just the data you explicitly added to your session. People loved what they were able to do with Claude but didn't love the disk, battery, and performance cost of running the VM…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Gemini Call for Me might tell your mom you’re running late",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1005177/google-gemini-call-for-me-expansion-rumors",
+   "date": "2026-10-05T19:09-04:00",
+   "summary": "Google may be expanding its \"Call for Me\" AI feature beyond business calls so you can use it to send messages to friends and family. Android Authority reports finding a \"Gemini Calling\" introductory screen in an APK teardown with examples that include \"Call Mom and tell her I will be 15 minutes late\" and \"Call John and ask if he is coming for dinner.\" Based on those examples, even with this…"
+  },
+  {
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "openclaw 2026.10.1-beta.1",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.1-beta.1",
+   "date": "2026-10-05T22:51+00:00",
+   "summary": "2026.10.1 Highlights Sessions and memory: preserved usage across registry changes, delivered worker attachments from remote workspaces, prevented queued cancellations and transcript aliases from stalling active turns, kept continuation signatures aligned, and migrated embedding caches in bounded batches with oversized-row reporting. ( #164217 , #164219 , #163708 , #164230 , #164251 , #164289 ,…"
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Meta adds parental oversight to Meta AI app",
+   "url": "https://www.socialmediatoday.com/news/meta-adds-parental-oversight-to-meta-ai-app/832204/",
+   "date": "2026-10-05T18:22-04:00",
+   "summary": "The company is including supervision controls to allow parents and guardians to see the topics their children have been inquiring about, but not the conversations."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Instagram tests option to open to Reels",
+   "url": "https://www.socialmediatoday.com/news/instagram-tests-option-to-open-to-reels/832202/",
+   "date": "2026-10-05T17:34-04:00",
+   "summary": "The app has been prioritizing Reels over its main feed for a while and this move suggests a further shift away from Stories."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "TikTok outlines US election preparations",
+   "url": "https://www.socialmediatoday.com/news/tiktok-outlines-us-election-preparations/832201/",
+   "date": "2026-10-05T17:22-04:00",
+   "summary": "The app stressed its security and reliability ahead of the potentially divisive November midterms."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Social media platforms resist U.K. safety disclosures",
+   "url": "https://www.socialmediatoday.com/news/social-media-platforms-resist-uk-safety-disclosures/832199/",
+   "date": "2026-10-05T17:14-04:00",
+   "summary": "Meta, TikTok and X are challenging requests from digital regulator Ofcom asking for detailed ​content moderation metrics, per Reuters."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Google shares early holiday travel trend data",
+   "url": "https://www.socialmediatoday.com/news/google-shares-early-holiday-travel-trend-data/832197/",
+   "date": "2026-10-05T16:52-04:00",
+   "summary": "Search results culled from the company’s domestic and international travel flight data identified top destinations and pricing information."
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "This startup is issuing AI-generated acne prescriptions",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1005075/nolla-health-acne-ai-prescriptions",
+   "date": "2026-10-05T16:14-04:00",
+   "summary": "People in Utah can now use AI to get a prescription for acne treatment. On Monday, healthcare startup Nolla Health announced that users in the state can scan their faces using its app, allowing its AI system to analyze acne severity and autonomously write a prescription, as reported earlier by Bloomberg . The service is launching as a pilot program with gradually loosening physician oversight.…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "All the drama around AI’s takeover of mathematics",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1004933/ai-math-openai-breakthrough-solution",
+   "date": "2026-10-05T15:28-04:00",
+   "summary": "This past year, OpenAI, Anthropic, and other labs have announced breakthroughs on numerous long-standing mathematical problems, in some cases pushing well beyond what researchers expected current systems to be capable of — including resolving one of the famous Millennium Prize problems. But in classic Silicon Valley style, AI labs are moving fast and breaking things , barreling through the…"
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "TikTok unveils AI-powered updates at Advertising Week",
+   "url": "https://www.socialmediatoday.com/news/tiktok-unveils-ai-powered-updates-at-advertising-week/832192/",
+   "date": "2026-10-05T15:13-04:00",
+   "summary": "The platform presented improved shopping and product discovery features, as well as expanded ad placement opportunities in the U.S."
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Wikipedia operator says OpenAI’s ‘rogue’ bots may be linked to a May outage",
+   "url": "https://www.theverge.com/news/1004929/wikipedia-openai-rogue-bots-wikimedia-foundation-outage",
+   "date": "2026-10-05T15:05-04:00",
+   "summary": "Following many recent disclosures about AI agents accessing third-party websites and services, the Wikimedia Foundation, which hosts Wikipedia, says that it \"can confirm that we have discovered some activity\" by \"rogue\" OpenAI agents on Wikimedia platforms. The activity includes edits to Wikimedia wikis, \"unsuccessful attempts\" to \"exploit\" the Etherpad note-taking tool that the Wikimedia…"
+  },
+  {
+   "source": "TechCrunch Social",
+   "tier": "signal",
+   "title": "Instinct brings its AI agent to group chats, even for friends without an account",
+   "url": "https://techcrunch.com/2026/10/05/instinct-brings-its-ai-agent-to-group-chats-even-for-friends-without-an-account/",
+   "date": "2026-10-05T18:54+00:00",
+   "summary": "Instinct is launching group chats that let friends use its AI agent together for tasks like planning trips, organizing carpools, and coordinating events. The company says personal accounts remain separate, with permission required before personal agents share information or take action."
+  },
+  {
+   "source": "TechCrunch Social",
+   "tier": "signal",
+   "title": "TikTok rolls out an AI shopping assistant and one-click checkout",
+   "url": "https://techcrunch.com/2026/10/05/tiktok-rolls-out-an-ai-shopping-assistant-and-one-click-checkout/",
+   "date": "2026-10-05T18:29+00:00",
+   "summary": "TikTok describes its new Shopping Assistant as a conversational AI agent designed to help users discover and purchase products."
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "OpenAI is adding text watermarking in ChatGPT and Codex",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1004880/openai-chatgpt-text-watermarks-eu-ai-act",
+   "date": "2026-10-05T14:08-04:00",
+   "summary": "An invisible, machine-readable watermark in text output is rolling out to ChatGPT and Codex, but only for users in the European Union at first. OpenAI says its textGrain watermarking \"matched or exceeded\" other approaches like Google DeepMind's SynthID for text, which is also the basis for the watermarking Anthropic announced in August . Like OpenAI, Anthropic made the move to meet the…"
+  },
+  {
+   "source": "TechCrunch Social",
+   "tier": "signal",
+   "title": "Hot Girl Hotline is like ‘Dear Abby’ for the AI era",
+   "url": "https://techcrunch.com/2026/10/05/hot-girl-hotline-is-like-dear-abby-for-the-ai-era/",
+   "date": "2026-10-05T17:29+00:00",
+   "summary": "Founded by two sisters, Hot Girl Hotline uses AI to give young women personalized dating and relationship advice, with an emphasis on safety and avoiding emotional dependency."
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "OpenAI PR tells journalist to ‘move on’ while asking Sam Altman about a ChatGPT user’s suicide",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1004827/openai-sam-altman-vanity-fair-interview-pr",
+   "date": "2026-10-05T12:55-04:00",
+   "summary": "An OpenAI publicist tried to change the topic of CEO Sam Altman's interview with Vanity Fair 's Mark Guiducci after the editor brought up a ChatGPT user's suicide. When Guiducci confronted Altman about the incident, the publicist warned Guiducci about running out of time, saying she'd like to \"move on\" to another topic. The interruption came shortly after Guiducci asked Altman if he knew who…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Sam Altman says ‘some bad things’ will happen, but AI is totally worth it",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1004811/openai-altman-bad-things-ai-tradeoff",
+   "date": "2026-10-05T12:44-04:00",
+   "summary": "Sam Altman thinks that the benefits of AI will be so great that \"the world should accept some bad things happening\" along the way. The OpenAI CEO pointed to hacks, scams, and \"other bad things\" as costs society should expect to tolerate because \"people will do tremendously orders of magnitude more good stuff\" with AI, without elaborating on the potential benefits. His comments come as OpenAI…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Sen. Adam Schiff on AI regulation, free speech, and impeaching Trump one more time",
+   "url": "https://www.theverge.com/podcast/1004286/senator-adam-schiff-ai-trump-regulation-corruption",
+   "date": "2026-10-05T10:30-04:00",
+   "summary": "Today, I’m talking with Sen. Adam Schiff, a Democrat from California. Schiff sits on a number of committees with oversight into tech and AI: intellectual property, antitrust, privacy and technology — it’s all there. I really wanted to ask him about how we might regulate anything related to the tech industry at this moment in time. Verge subscribers, don’t forget you get exclusive access to…"
+  },
+  {
+   "source": "TestingCatalog",
+   "tier": "signal",
+   "title": "Figure plans to release Hark AI assistant this week",
+   "url": "https://www.testingcatalog.com/figure-plans-to-release-hark-ai-assistant-this-week/",
+   "date": "2026-10-05T14:12+00:00",
+   "summary": "Hark's developing personal AI system points to custom widgets, persistent memory, browser skills and plans with higher usage limits."
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "An open-source tool lets you delete 12GB of Apple Intelligence data on macOS",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1004672/mac-delete-apple-intelligence-ai-tool",
+   "date": "2026-10-05T09:47-04:00",
+   "summary": "Getting some extra storage space on your Mac could be as easy as deleting Apple's AI features with a new open-source command line tool called RemoveMacAI . There used to be a single Settings toggle for disabling Apple Intelligence , but that was removed in macOS 27. Now, the models stay on your disk, and the features are split up across different settings panes. As spotted earlier by MacRumors ,…"
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Influencer marketing has an AI trust problem",
+   "url": "https://www.socialmediatoday.com/spons/influencer-marketing-has-an-ai-trust-problem/831579/",
+   "date": "2026-10-05T05:00-04:00",
+   "summary": "AI influencers are harder to spot, making transparency essential to protecting consumer trust."
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Qwen3.8 27B addition in words",
+   "url": "https://simonwillison.net/2026/Oct/4/qwen38-addition-in-words/",
+   "date": "2026-10-04T23:34+00:00",
+   "summary": "Research: Qwen3.8 27B addition in words Colin Frasier posted on Bluesky about an experiment he ran over two years ago using GPT-4o to see how well it could \"compute the sum but return the answer in words\" across increasingly large numbers. Here's the chart he shared of those results: I'm confident GPT-4o didn't cheat and use a calculator, especially since it got so many of the calculations wrong,…"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Photopea creator weighs in on Photosuite project",
+   "url": "https://github.com/eolix/photosuite/issues/77",
+   "date": "2026-10-06T00:41+00:00",
+   "summary": "121 points, 76 comments · https://news.ycombinator.com/item?id=49972730"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "ChatGPT is adding real cartoonists' signatures to fake New Yorker cartoons",
+   "url": "https://www.niemanlab.org/2026/10/chatgpt-is-adding-real-cartoonists-signatures-to-fake-new-yorker-cartoons/",
+   "date": "2026-10-05T22:46+00:00",
+   "summary": "460 points, 335 comments · https://news.ycombinator.com/item?id=49971846"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Opus 5.5 agents discover two room-temperature magnetic semiconductor candidates",
+   "url": "https://www.vals.ai/blogs/room-temperature-magnetic-semiconductors",
+   "date": "2026-10-05T21:00+00:00",
+   "summary": "370 points, 251 comments · https://news.ycombinator.com/item?id=49970667"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Incident with Actions",
+   "url": "https://www.githubstatus.com/incidents/3q1yb5m7ltvb",
+   "date": "2026-10-05T20:09+00:00",
+   "summary": "100 points, 63 comments · https://news.ycombinator.com/item?id=49969961"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Beam: Reflection's 501B open-weight model",
+   "url": "https://reflection.ai/blog/introducing-beam",
+   "date": "2026-10-05T19:16+00:00",
+   "summary": "472 points, 149 comments · https://news.ycombinator.com/item?id=49969183"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "OpenAI \"rogue\" agent activities found on Wikimedia projects",
+   "url": "https://diff.wikimedia.org/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/",
+   "date": "2026-10-05T17:53+00:00",
+   "summary": "283 points, 186 comments · https://news.ycombinator.com/item?id=49968105"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Making a GTK application in Haskell, part 1",
+   "url": "https://floreal.tech/blog/2026/making-a-gtk-app-in-haskell-part-1/",
+   "date": "2026-10-05T14:23+00:00",
+   "summary": "161 points, 45 comments · https://news.ycombinator.com/item?id=49965308"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "The lamps in my house",
+   "url": "https://arslan.io/2026/10/05/the-lamps-in-my-house/",
+   "date": "2026-10-05T14:12+00:00",
+   "summary": "227 points, 99 comments · https://news.ycombinator.com/item?id=49965152"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Linux containers in 500 lines of code (2016)",
+   "url": "https://blog.lizzie.io/linux-containers-in-500-loc.html",
+   "date": "2026-10-05T14:09+00:00",
+   "summary": "127 points, 33 comments · https://news.ycombinator.com/item?id=49965118"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Mold Linker Version 3.0.0 Release – Rewritten in Rust",
+   "url": "https://github.com/rui314/mold/releases/tag/v3.0.0",
+   "date": "2026-10-05T11:17+00:00",
+   "summary": "240 points, 174 comments · https://news.ycombinator.com/item?id=49963385"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Anthropic reported diary entry to police, woman faces felony charge",
+   "url": "https://www.techspot.com/news/114091-florida-woman-used-claude-diary-anthropic-reported-shoot.html",
+   "date": "2026-10-05T05:37+00:00",
+   "summary": "744 points, 574 comments · https://news.ycombinator.com/item?id=49961057"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Powerless F1 drivers frustrated by Bahrain F1 software glitch",
+   "url": "https://www.motorsport.com/f1/news/horrible-totally-unacceptable-powerless-f1-drivers-frustrated-by-bahrain-f1-software-glitch/10861968/",
+   "date": "2026-10-05T01:54+00:00",
+   "summary": "286 points, 248 comments · https://news.ycombinator.com/item?id=49959869"
+  }
+ ],
+ "errors": [],
+ "manual": [
+  {
+   "name": "xAI news / Grok app updates",
+   "url": "https://x.ai/news",
+   "why": "blocks scripts (403): web search 'Grok' / 'xAI' last 24h"
+  },
+  {
+   "name": "ChatGPT release notes",
+   "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Perplexity changelog",
+   "url": "https://www.perplexity.ai/changelog",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Official X accounts (@AnthropicAI, @OpenAI, @xai, @GoogleDeepMind, @cursor_ai)",
+   "url": "https://x.com",
+   "why": "X needs login / paid API: use web search for big announcements"
+  },
+  {
+   "name": "Social media new features (Instagram @creators/@mosseri, TikTok newsroom, X, LinkedIn, Snapchat)",
+   "url": "https://newsroom.tiktok.com/",
+   "why": "no working RSS (TikTok/WhatsApp/Instagram blogs are HTML, Snap/LinkedIn 404): web search each gather for new features, AI features and creator tools; confirm on the platform's own newsroom/help page"
+  },
+  {
+   "name": "Higgsfield announcements",
+   "url": "https://x.com/higgsfield_ai",
+   "why": "big launches often land on X before the blog"
+  },
+  {
+   "name": "Qwen blog (Alibaba)",
+   "url": "https://qwen.ai/blog",
+   "why": "JS-rendered, no RSS (the old qwenlm.github.io feed stopped in 2025-09): web search 'Qwen' each gather for new open-weight releases"
+  }
+ ]
+}

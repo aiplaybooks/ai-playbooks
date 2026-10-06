@@ -1,8 +1,21 @@
 # AirCard 🎴
 
-> **Apple Wallet Card Skinner & Lockscreen Passcode Themer for iOS 18+ (No Jailbreak Required)** 
-> **Tested on iOS 27 release.**
+> **Apple Wallet Card Skinner & Lockscreen Passcode Themer (No Jailbreak Required)** 
+> **Supports iOS 18.0 – 27.0.1 & iOS 27.2 beta 1–2** (iOS 27.2 beta 3+ patched) 
 > Powered by the `airlift` AirTraffic sync exploit.
+
+---
+
+## Compatibility
+
+| iOS Version | Status | Notes |
+| :--- | :--- | :--- |
+| **iOS 18.0 – 27.0.1** | ✅ Supported | Full support for Wallet skins and Lockscreen passcode themes |
+| **iOS 27.2 beta 1 – beta 2** | ✅ Supported | Working |
+| **iOS 27.2 beta 3+** | ❌ Patched | Apple patched the underlying `airlift` exploit. Flashing will not work. |
+
+> [!IMPORTANT]
+> Do not update to **iOS 27.2 beta 3 or newer** if you want to continue using AirCard. The underlying AirTraffic sync exploit was patched by Apple in beta 3.
 
 ---
 
@@ -46,6 +59,12 @@ Wallet setup, detailed troubleshooting, multi-card workflows, theme creation, co
 > sudo xattr -cr /Applications/AirCard.app
 > ```
 
+> [!TIP]
+> **macOS Developer Tools / Python Requirement:**
+> AirCard uses macOS native Python 3 (`/usr/bin/python3`). If macOS prompts that Developer Tools are required or if you recently installed/updated Xcode:
+> - Install Command Line Tools: `xcode-select --install`
+> - Accept Xcode license if applicable: `sudo xcodebuild -license accept`
+
 > [!NOTE]
 > **Windows users:** an unofficial Windows port is available at [**AirCard-Windows**](https://github.com/Lumid-Off/AirCard-Windows).
 
@@ -61,6 +80,10 @@ Wallet setup, detailed troubleshooting, multi-card workflows, theme creation, co
 4. Click on any card mockup or drag & drop an image directly onto the card.
 5. Click **Flash Skins**.
 6. Force-close the **Wallet** app on your iPhone from the App Switcher (or reboot) to see your new custom card design!
+
+> [!NOTE]
+> **Apple Card:**
+> The Apple Card (titanium/digital card) uses dynamic vector rendering based on your spending categories instead of static cached card skins. Custom skins apply to standard debit/credit cards, transit cards, and passes.
 
 ### Card names and missing-card checks
 
@@ -88,26 +111,4 @@ The scanner uses the iPhone's unified log service, including Info/Debug events.
 On iOS 18.6.2, the legacy log service can show Wallet activity while omitting the
 resource lookup messages that contain card identifiers.
 
-Open **Log** and check for `Connected to the unified device log stream`, then
-double-click the side button, authenticate, and tap or switch cards. If the log
-reader stops, reconnect and unlock the iPhone, then start another scan. Values
-that iOS replaces with ` ` cannot be recovered by the scanner.
-
-If your device previously connected but scanning found zero cards, please try
-this build and report whether it helps. Include your iPhone model, iOS version,
-macOS version, and the AirCard version or commit tested. Avoid posting full
-device logs or card identifiers. See [scanner validation](docs/wallet-card-detection.md)
-for the verified environment and remaining coverage.
-
----
-
-## How to Apply Lockscreen Passcode Themes (.passthm)
-1. Switch to the **Passcode Themes** tab at the top of AirCard.
-2. Drag & drop any `.passthm` file into the app (or click **Choose .passthm File**).
-3. AirCard will inspect the theme and display an interactive preview on the numeric keypad (0–9, *, #).
-4. Click **Apply Passcode Theme**.
-5. Restart your iPhone to reload the lock screen cache and see your custom passcode buttons!
-
-> [!TIP]
-> **Universal Language & Bold Text Support:** 
-> AirCard automatically expands an
+Open **Log** and check for `Connected to the unified 

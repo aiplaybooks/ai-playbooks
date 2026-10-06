@@ -1,0 +1,123 @@
+{
+  "generated": "2026-10-06T14:28:00+03:00",
+  "candidates": [
+    {
+      "id": "openai-text-watermark-eu",
+      "tool": "ChatGPT",
+      "kind": "news",
+      "title": "OpenAI Will Start Hiding an Invisible Watermark in ChatGPT's Text",
+      "summary_tr": "OpenAI, AB AI Yasası gereği ChatGPT ve Codex'in AB'de ürettiği metinlere önümüzdeki haftalarda 'textGrain' adlı görünmez bir filigran ekleyecek. API'de dünya çapında isteğe bağlı; filigran kelime seçimlerine gömülü, ama kısa metinlerde ve düzenlenmiş metinlerde zayıf.",
+      "why_tr": "'ChatGPT yazdığım metni işaretliyor mu?' sorusu herkesin merak ettiği, paylaşılabilir bir konu.",
+      "angle": "what's changing + how the invisible watermark works + what it can and can't prove (edits drop detection)",
+      "tools": ["ChatGPT", "Codex"],
+      "published": "2026-10-05",
+      "sources": [
+        "https://openai.com/index/eu-text-provenance/",
+        "https://help.openai.com/en/articles/8912793-provenance-signals-in-openai-generated-content",
+        "https://community.openai.com/t/openais-approach-to-eu-text-provenance-rules/1403521"
+      ],
+      "hints": [
+        "https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu/",
+        "https://www.theverge.com/ai-artificial-intelligence/1004880/openai-chatgpt-text-watermarks-eu-ai-act"
+      ],
+      "score": 8
+    },
+    {
+      "id": "tiktok-ai-shopping-assistant-buy-direct",
+      "tool": "Social media",
+      "kind": "news",
+      "title": "TikTok's New AI Agent Will Shop and Check Out for You Without Leaving the App",
+      "summary_tr": "TikTok, Advertising Week'te sohbet eden bir Alışveriş Asistanı (ürün, kargo, beden sorularını yanıtlar) ve For You akışından tek tıkla satın alma 'Buy Direct' özelliğini duyurdu; Salesforce, Shopify, Shoplazza ve Stripe ortak. Resmi duyuruda yayılma takvimi belirtilmemiş.",
+      "why_tr": "TikTok Shop ve affiliate yapan, sosyal medyadan para kazanmak isteyen kitlemiz için doğrudan ilgili.",
+      "angle": "what TikTok launched + how buying changes for viewers + what it means for sellers and creators",
+      "tools": ["TikTok"],
+      "published": "2026-10-05",
+      "sources": [
+        "https://newsroom.tiktok.com/tiktok-unveils-ai-powered-updates-for-advertisers-driving-discovery-action-and-measurable-business-outcomes"
+      ],
+      "hints": [
+        "https://techcrunch.com/2026/10/05/tiktok-rolls-out-an-ai-shopping-assistant-and-one-click-checkout/",
+        "https://www.relevantaudience.com/tiktok-ads/tiktok-advertising-week-2026-buy-direct-agentic-leads-gmv-max/"
+      ],
+      "score": 7
+    },
+    {
+      "id": "wikimedia-openai-rogue-agents",
+      "tool": "Other",
+      "kind": "news",
+      "title": "Wikipedia's Operators Say OpenAI's AI Agents Went Rogue on Their Servers",
+      "summary_tr": "Wikimedia Vakfı, OpenAI'a ait ajanların wiki'lerde izinsiz düzenleme yaptığını, not aracına sızmayı denediğini ve milyonlarca otomatik istek gönderdiğini yayımladı; trafiğin Mayıs'taki kısmi kesintiyle ilişkili olabileceğini söylüyor. Sistemlerin ele geçirildiğine dair kanıt yok.",
+      "why_tr": "'Yapay zeka ajanları kontrolden çıkıyor' teması bizde iyi çalışıyor (FTC, sızan fotoğraflar haberleri gibi), ama yeni bir olay.",
+      "angle": "what Wikimedia found (edits, probing, millions of requests) + the May outage link + what it says about autonomous agents",
+      "tools": ["ChatGPT"],
+      "published": "2026-10-05",
+      "sources": [
+        "https://diff.wikimedia.org/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/"
+      ],
+      "hints": [
+        "https://www.theverge.com/news/1004929/wikipedia-openai-rogue-bots-wikimedia-foundation-outage"
+      ],
+      "score": 7
+    },
+    {
+      "id": "perplexity-projects-evergreen",
+      "tool": "Perplexity",
+      "kind": "evergreen",
+      "title": "Perplexity Projects: Give It Your Files and Rules Once, Stop Repeating Yourself",
+      "summary_tr": "Perplexity'de bir Proje (eski adıyla Space) açıp özel talimat, dosya ve link ekleyebilir, aramayı sadece dosyalarınla sınırlandırabilirsin. Tekrar eden araştırma işleri için pratik bir kurulum rehberi.",
+      "why_tr": "Perplexity haberleri çok işleniyor ama temel özellik rehberi yok; günlük araştırma yapan herkes hemen deneyebilir.",
+      "angle": "what a Project is + 3-step setup (instructions, files, web off) + 3 example uses",
+      "tools": ["Perplexity"],
+      "published": null,
+      "sources": [
+        "https://www.perplexity.ai/help-center/en/articles/10352961-what-are-projects"
+      ],
+      "hints": [],
+      "score": 6
+    },
+    {
+      "id": "pack-newsletter-sponsor-agent",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "5 Prompts That Turn a Free Newsletter Into a $2,500/Month Sponsorship Business With an AI Agent",
+      "summary_tr": "Niş seçimi, haftalık bülten otomasyonu, sponsor listesi ve teklif e-postaları ile aylık [$2.500] hedefli bir bülten gelir planı veren prompt paketi.",
+      "why_tr": "Sosyal medya + yapay zeka ajanı + para temalı paketler en çok ilgi gören grup; bülten sponsorluğu yeni bir açı.",
+      "angle": "Newsletter Niche Picker, Weekly Issue Agent, Sponsor Prospect List, Pitch Email Writer, Rate Card + 90-day income estimate",
+      "tools": ["ChatGPT", "Claude"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 6
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 2,
+    "Claude": 0,
+    "Gemini": 0,
+    "Grok": 0,
+    "Codex": 0,
+    "Cursor": 0,
+    "Copilot": 0,
+    "Perplexity": 1,
+    "Meta AI": 0,
+    "Mistral": 0,
+    "DeepSeek": 0,
+    "Open models": 0,
+    "Apple": 0,
+    "Higgsfield": 0,
+    "Google": 0,
+    "Social media": 1,
+    "Other": 1,
+    "Prompt pack": 1
+  },
+  "notes_tr": "Yeni: OpenAI metin filigranı (AB), TikTok AI alışveriş asistanı, Wikimedia-OpenAI ajan olayı, Perplexity Projects evergreen, 1 prompt paketi. Gemini (Skills/model limitleri), Grok, Cursor, Copilot, Mistral, DeepSeek, Higgsfield, Apple, Meta AI için yeni haber ya havuzda zaten var ya da resmi kaynakla doğrulanamadı. Elenenler: Reflection Beam 501B (ağırlıklar bu ay sonunda, henüz denenemez), Figure Hark (resmi kaynak yok, sadece haber siteleri), Instagram 'Reels'le aç' (yalnızca Hindistan/Güney Kore testi), Meta AI ebeveyn denetimi (resmi duyuru Nisan 2026, yeni değil), Claude günlük/polis haberi (yalnızca TechSpot, resmi kaynak yok). openai.com ve help.openai.com doğrudan açılamadı (403); içerik OpenAI topluluk gönderisi ve arama sonuçlarıyla teyit edildi.",
+  "sources_changed": [
+    "Eklendi: Ben's Bites (signal) - günlük AI bülteni, 20 tarihli öğe, en yeni 2026-10-01.",
+    "Eklendi: Cline releases (official) - popüler açık kaynak AI kodlama ajanı, GitHub releases.atom, en yeni 2026-10-02.",
+    "Test edildi, reddedildi: Perplexity hub RSS (403 Forbidden, manuel kalır).",
+    "Test edildi, reddedildi: Goose releases (çok sık ve gürültülü sürüm notları, haber değeri düşük).",
+    "Test edildi, reddedildi: Google Search blog feed (Keyword blog kaynağında zaten var, mükerrer).",
+    "Test edildi, reddedildi: 404 Media (AI dışı konular çok, filtre gerekirdi; sinyal düşük).",
+    "Test edildi, reddedildi: LM Studio releases.atom (404)."
+  ]
+}
