@@ -1,0 +1,108 @@
+{
+ "generated": "2026-10-07T09:30:44+00:00",
+ "reddit": [],
+ "youtube_signal": [
+  {
+   "id": "yt-IpntV--lp2Q",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "El papel de los chicles en Japón 🍬",
+   "channel": "Dehz",
+   "url": "https://www.youtube.com/shorts/IpntV--lp2Q",
+   "views": 815887,
+   "date": "2026-10-05T22:00:13Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-RXvadYhwCUw",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Basi Roti Ko Kachre Mein Fenkne Se Bachaya 😱 #SaasBahu #FamilyDrama #Shorts #trending #viral",
+   "channel": "The Palak Edit ",
+   "url": "https://www.youtube.com/shorts/RXvadYhwCUw",
+   "views": 586262,
+   "date": "2026-10-04T14:12:56Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-o_SLnvex8VU",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "It is one of the world's most venomous creatures 🙄#animals #venomous #worldfacts #newfacts",
+   "channel": "Unique Fact Official",
+   "url": "https://www.youtube.com/shorts/o_SLnvex8VU",
+   "views": 406229,
+   "date": "2026-10-05T01:00:12Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-x0UxFYbtZKA",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Ai hai ye real?👀",
+   "channel": "Sarthak Xplains",
+   "url": "https://www.youtube.com/shorts/x0UxFYbtZKA",
+   "views": 376070,
+   "date": "2026-10-04T15:00:02Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-t8Sm6bF9RHU",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "India Jhoome Che Garbe Ghoome Che | Bhoomi Trivedi | World’s First AI Generated Garba Music Video",
+   "channel": "Bhoomi Trivedi",
+   "url": "https://www.youtube.com/shorts/t8Sm6bF9RHU",
+   "views": 287008,
+   "date": "2026-10-05T13:59:09Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-yVGCiFGhhBg",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "#ultra",
+   "channel": "ZOBOND",
+   "url": "https://www.youtube.com/shorts/yVGCiFGhhBg",
+   "views": 256062,
+   "date": "2026-10-04T12:43:10Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-8dIQf_lSTSA",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "MICTIA REACCIONA A VIDEO HECHO CON IA DE ELLA Y SPREEN ✘",
+   "channel": "Mati Clips",
+   "url": "https://www.youtube.com/shorts/8dIQf_lSTSA",
+   "views": 241886,
+   "date": "2026-10-05T02:12:49Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-DPBw65xlBRw",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "How Old Would These Legends Be Today?! 😳💔",
+   "channel": "RapClubs",
+   "url": "https://www.youtube.com/shorts/DPBw65xlBRw",
+   "views": 229323,
+   "date": "2026-10-04T17:50:13Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-_FxnAyVmK2E",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Chintu baitha private jet me | #comedy #dubai #skydiving #papa #memes #funny #chintu",
+   "channel": "Laughingggodha",
+   "url": "https://www.youtube.com/shorts/_FxnAyVmK2E",
+   "views": 181083,
+   "date": "2026-10-05T06:04:07Z",
+   "query": "AI generated video"
+  }
+ ],
+ "errors": [
+  "Reddit: REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET missing in .env"
+ ]
+}

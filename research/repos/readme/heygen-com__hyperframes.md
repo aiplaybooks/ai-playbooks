@@ -1,5 +1,6 @@
 Write HTML. Render video. Built for agents. 
 
+ Studio |
  Quickstart |
  Showcase |
  Playground |
@@ -79,4 +80,4 @@ This writes `dist/hyperframes-plugin.zip` with a `hyperframes/` root folder and 
 | `/pr-to-video` | A **GitHub pull request** (PR URL, `owner/repo#N` ref, or "this PR") → changelog / feature-reveal / fix / refactor explainer, read via the `gh` CLI. |
 | `/embedded-captions` | Adding **captions / subtitles** to an existing talking-head video (footage untouched) — verbatim rail, embedded climax behind the subject, or pure-cinematic embed. |
 | `/talking-head-recut` | Packaging an existing talking-head / interview / podcast video with **designed graphic overlays** — lower-thirds, data callouts, kinetic titles, pull-quotes, side panels, PiP. |
-| `/motion-graphics` | A short, **unnarrated, design-led motion graphic** (~under 10s) — kinetic type, stat / chart hit, logo sting, lower-third, animated tweet / headline
+| `/motion-graphics` | A short, **unnarrated, design-led motion graphic** (~under 10s) — kinetic type, stat / chart hit, logo sting, lower-third, animated tweet 

@@ -1,0 +1,246 @@
+{
+  "theme": "adaptive",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Gemini free plan model access changes, October 9",
+  "caption": "On October 9, free Gemini users lose Pro.\n\nHere's what each plan keeps after the switch:\n→ Free keeps Flash-Lite only\n→ AI Plus adds Flash\n→ AI Pro and Ultra get Flash-Lite, Flash, Pro\n→ Every model now has Low, Medium and High effort\n\nIf you use Pro today, upgrade by October 9.\n\nComment PLANS and I'll send you the full breakdown 📩\n\nFollow @aiplaybooks.daily for AI news you can actually use.\n\n#gemini #googleai #aitools #ai #deepthink",
+  "captions": {
+    "instagram": "On October 9, free Gemini users lose Pro.\n\nHere's what each plan keeps after the switch:\n→ Free keeps Flash-Lite only\n→ AI Plus adds Flash\n→ AI Pro and Ultra get Flash-Lite, Flash, Pro\n→ Every model now has Low, Medium and High effort\n\nIf you use Pro today, upgrade by October 9.\n\nComment PLANS and I'll send you the full breakdown 📩\n\nFollow @aiplaybooks.daily for AI news you can actually use.\n\n#gemini #googleai #aitools #ai #deepthink",
+    "facebook": "On October 9, free Gemini users lose Pro.\n\nHere's what each plan keeps after the switch:\n→ Free keeps Flash-Lite only\n→ AI Plus adds Flash\n→ AI Pro and Ultra get Flash-Lite, Flash, Pro\n→ Every model now has Low, Medium and High effort\n\nIf you use Pro today, you have until October 9 to upgrade.\n\nWhich plan are you on — will you stay free or upgrade?\n\nFollow @aiplaybooks.daily for AI news you can actually use.\n\n#gemini #googleai #aitools #ai",
+    "youtube": {
+      "title": "Gemini free plan changes October 9 — here's what you keep #Shorts",
+      "description": "On October 9, Gemini is removing Pro access from free users. Here's what each plan keeps:\n\nFree: Flash-Lite only\nAI Plus: adds Flash\nAI Pro/Ultra: Flash-Lite, Flash, and Pro (Deep Think is Ultra only)\n\nUsage limits also scale by plan. Check your current plan this week — if you rely on Pro, you'll need to upgrade before October 9.\n\n#gemini #googleai #aitools",
+      "tags": [
+        "gemini",
+        "free plan",
+        "google ai",
+        "model access",
+        "deepthink",
+        "ai tools",
+        "googlegemini"
+      ]
+    },
+    "x": "On October 9, free Gemini gets smaller 🔻\n\nFree: Flash-Lite only\nAI Plus: adds Flash\nPro/Ultra: all models (Deep Think: Ultra)\n\nUpgrade this week if you need Pro.\n\n#gemini #ai"
+  },
+  "first_comment": {
+    "instagram": "Save this: you have until October 9 to finish any Pro work. Then swap your prompts over to Flash-Lite or upgrade your plan.\n\nWhich plan are you switching to, or are you already set?",
+    "facebook": "Save this timeline: finish Pro work by October 9, then test your prompts on Flash-Lite or upgrade.\n\nWhich plan are you on today?",
+    "youtube": "Mark your calendar: October 9 is the cutoff. Save your Pro prompts and test them on Flash-Lite this week, or plan your upgrade.\n\nSubscribe for daily AI playbooks."
+  },
+  "sources": [
+    "https://support.google.com/gemini/answer/17004136"
+  ],
+  "dm": {
+    "keyword": "PLANS"
+  },
+  "comments": [],
+  "cover": {
+    "headline": "On October 9, free Gemini users lose Pro. Here's exactly what you keep on every plan:",
+    "em": "lose Pro",
+    "person": "Sundar Pichai",
+    "layout": "person",
+    "photo_query": [
+      "Sundar Pichai"
+    ],
+    "photo_pick": null,
+    "icons": [
+      {
+        "slug": "gemini",
+        "style": "tile",
+        "pos": "tr",
+        "size": 170
+      }
+    ],
+    "photo": {
+      "file": "File:Sundar Pichai - 2023 (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Sundar_Pichai_-_2023_(cropped).jpg",
+      "author": "Lukasz Kobus (European Commission)",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "source": "Wikimedia Commons"
+    },
+    "layout_used": "person"
+  },
+  "design": {
+    "mood": "midnight sky with a four-point Gemini sparkle, deep indigo to electric blue, soft glow, a ladder of model tiers",
+    "palette": {
+      "bg": "#0A0B1E",
+      "bg2": "#141640",
+      "surface": "#15183A",
+      "ink": "#EEF0FF",
+      "muted": "#8E95C9",
+      "accent": "#6EA8FF",
+      "accent2": "#C58BFF"
+    },
+    "fonts": {
+      "display": "Sora",
+      "body": "DM Sans",
+      "mono": "JetBrains Mono"
+    },
+    "display": {
+      "weight": 700,
+      "case": "none",
+      "tracking": -3,
+      "scale": 0.97,
+      "italic_em": false
+    },
+    "shape": {
+      "radius": 30,
+      "border": 2,
+      "shadow": "glow"
+    },
+    "background": {
+      "pattern": "dots",
+      "pattern_opacity": 0.1,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "pill",
+    "prompt": "chat",
+    "art": "<svg viewBox='0 0 900 460' xmlns='http://www.w3.org/2000/svg'><g fill='var(--surface)' stroke='var(--accent)' stroke-width='3'><rect x='120' y='300' width='660' height='80' rx='20'/><rect x='200' y='200' width='500' height='80' rx='20' stroke='var(--accent2)'/><rect x='280' y='100' width='340' height='80' rx='20' stroke='var(--muted)' stroke-dasharray='10 8'/></g><path d='M450 120 L460 140 L480 150 L460 160 L450 180 L440 160 L420 150 L440 140 Z' fill='var(--accent2)'/><path d='M760 40 L768 58 L786 66 L768 74 L760 92 L752 74 L734 66 L752 58 Z' fill='var(--accent)'/><circle cx='170' cy='340' r='12' fill='var(--accent)'/><circle cx='250' cy='240' r='12' fill='var(--accent2)'/><g stroke='var(--muted)' stroke-width='4' fill='none' stroke-linecap='round'><rect x='330' y='128' width='28' height='22' rx='4' fill='var(--muted)'/><path d='M336 128 v-8 a8 8 0 0 1 16 0 v8'/></g></svg>",
+    "icon": "<svg viewBox='0 0 24 24' fill='currentColor'><path d='M12 2l2.2 6.8L21 11l-6.8 2.2L12 20l-2.2-6.8L3 11l6.8-2.2z'/></svg>"
+  },
+  "voice": "af_jessica",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "GEMINI · OCT 9",
+      "title": "Free Gemini users lose Pro on October 9.",
+      "em": "lose Pro",
+      "sub": "Here's what each plan keeps after the switch.",
+      "tools": [
+        "Gemini"
+      ],
+      "voiceover": "On October 9, free Gemini users lose access to Pro. Here's what you keep."
+    },
+    {
+      "type": "stat",
+      "label": "Free plan",
+      "value": "1 model",
+      "title": "Free keeps Flash-Lite only",
+      "sub": "No Flash, no Pro, starting October 9, per Google's support page.",
+      "voiceover": "Without a plan, you're down to one model: Flash-Lite. That's it."
+    },
+    {
+      "type": "compare",
+      "label": "Who gets what",
+      "title": "Model access by plan",
+      "cols": [
+        {
+          "name": "Free",
+          "points": [
+            "Flash-Lite"
+          ]
+        },
+        {
+          "name": "AI Plus",
+          "points": [
+            "Flash-Lite",
+            "Flash"
+          ]
+        },
+        {
+          "name": "AI Pro / Ultra",
+          "points": [
+            "Flash-Lite",
+            "Flash",
+            "Pro"
+          ]
+        }
+      ],
+      "voiceover": "AI Plus adds Flash. AI Pro and Ultra get Flash-Lite, Flash and Pro."
+    },
+    {
+      "type": "list",
+      "label": "New: effort",
+      "title": "Every model gets an effort level",
+      "items": [
+        [
+          "Low",
+          "Lighter on your usage allowance"
+        ],
+        [
+          "Medium",
+          "The middle setting"
+        ],
+        [
+          "High",
+          "Handles harder tasks, uses more allowance"
+        ],
+        [
+          "Deep Think",
+          "Only for AI Ultra subscribers"
+        ]
+      ],
+      "voiceover": "Each model now has low, medium and high effort. Higher effort eats more of your limit."
+    },
+    {
+      "type": "facts",
+      "label": "Usage limits",
+      "title": "Limits scale with your plan",
+      "items": [
+        [
+          "Free",
+          "Standard"
+        ],
+        [
+          "AI Plus",
+          "2x standard"
+        ],
+        [
+          "AI Pro",
+          "4x standard"
+        ],
+        [
+          "AI Ultra",
+          "5x or 20x Pro's limit"
+        ]
+      ],
+      "voiceover": "Limits reset every five hours, until you hit a weekly cap. Higher plans get more."
+    },
+    {
+      "type": "steps",
+      "label": "Before Oct 9",
+      "title": "What to do this week",
+      "steps": [
+        [
+          "Finish Pro work",
+          "Run anything that needs Pro before the switch"
+        ],
+        [
+          "Save your prompts",
+          "Copy the ones that work so you can re-run them on Flash-Lite"
+        ],
+        [
+          "Check your plan",
+          "If you need Pro, it comes with AI Pro or Ultra"
+        ],
+        [
+          "Try effort levels",
+          "Set High on the tasks that matter, Low on the rest"
+        ]
+      ],
+      "voiceover": "This week, finish your Pro tasks and save the prompts that matter."
+    },
+    {
+      "type": "cta",
+      "title": "Free keeps Flash-Lite.",
+      "title2": "Pro needs a plan.",
+      "lines": [
+        [
+          "Check",
+          "Your Gemini plan before October 9"
+        ],
+        [
+          "Read",
+          "support.google.com/gemini"
+        ],
+        [
+          "Follow",
+          "@aiplaybooks.daily for daily AI news"
+        ]
+      ],
+      "voiceover": "Check your plan before October 9, and follow for more AI changes."
+    }
+  ]
+}
