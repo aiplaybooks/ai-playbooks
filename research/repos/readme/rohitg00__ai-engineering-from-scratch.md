@@ -14,11 +14,7 @@ Read in your language:
 
 ### Sponsors
 
- Thank you to our sponsors. 
- Your support keeps every lesson free and open source. 
-
- See all supporters 
- Become a sponsor 
+ Your support keeps every lesson free and open source. See all supporters · Become a sponsor 
 
 ```text
 ░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒░░░▒▒▒
@@ -102,4 +98,7 @@ python3 --version
 ```
 
 Then install the curriculum skills and choose the host and scope you intend to
-use when
+use when the installer asks:
+
+```bash
+np

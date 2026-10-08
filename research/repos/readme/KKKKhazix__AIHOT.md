@@ -1,6 +1,8 @@
 一个自己找热点、自己写日报的网站框架。 
  把信源换成你的，把精选标准换成你的 KnowHow，它就是你的行业热点站。
 
+ 简体中文 · English 
+
  跑起来 ·
  改成你的行业 ·
  它是怎么工作的 ·
@@ -32,7 +34,7 @@
 
 ## 它是怎么工作的
 
-一条资料从信源进来，先判重，再预筛；可能重要的独立打两次分，写好中文标题和摘要，和别的报道聚成事件，算进热度。分数过了门槛、又不是精选里已有新闻的重复，才进精选；日报按规则编出当天要闻，周报、月报再从日报里汇编。每一步的提示词都在 [`industry/prompts/`](industry/prompts/)，改标准不用改代码。详见 [精选与校准](docs/selection.md)。
+一条资料从信源进来，先判重，再预筛；可能重要的独立打两次分，写好中文标题和摘要，和别的报道聚成事件，算进热度。X 帖子没有正文或只有链接时，保留原帖的链接和图片，不调用写作或翻译模型。分数过了门槛、又不是精选里已有新闻的重复，才进精选；日报按规则编出当天要闻，周报、月报再从日报里汇编。每一步的提示词都在 [`industry/prompts/`](industry/prompts/)，改标准不用改代码。详见 [精选与校准](docs/selection.md)。
 
 ### 聚簇与热点
 
@@ -139,7 +141,3 @@ AIHOT 曾经只是我无数个深夜里，一个很小、很小的念头。
 ## 许可
 
 代码使用 [MIT 许可证](LICENSE)。AIHOT 的名字和 Logo 不在许可范围内。字体有自己的许可，见 [NOTICE](NOTICE)。
-
----
-
- **In English:** AIHOT ([aihot.news](https://aihot.news)) is an AI news site that collects from many sources, lets a language model screen every item and score the promising ones twice, writes Chinese headlines and summaries, clusters reports of the same story into one event, ranks events by how many independent sources discuss them, and publishes daily, weekly and monthly briefings. This repository is its engine and framework, including every prompt and threshold; a few AI-only features stay on AIHOT. Hand it to your coding agent with `AGENTS.md` and `docs/customize.md` to turn

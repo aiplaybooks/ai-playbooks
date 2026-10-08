@@ -36,6 +36,10 @@ graphify-out/
 └── graph.json the full graph — query it anytime without re-reading your files
 ```
 
+The persisted graph includes `graph.schema_version` so integrations can detect
+incompatible format changes, plus `graph.graphify_version` identifying the
+Graphify release that produced it.
+
 **Works in** Claude Code, Cursor, Codex, Gemini CLI, GitHub Copilot, and 15+ more — [pick your platform](#install).
 
 ---
@@ -85,6 +89,7 @@ What you get out of the box:
 | LOCOMO (n=300) | recall@10 | **0.497** | mem0 0.048, supermemory 0.149 |
 | LOCOMO (n=300) | QA accuracy | 45.3% | supermemory 49.7%, mem0 27.3% |
 | LongMemEval-S (n=50) | QA accuracy | **76%** | tied with dense RAG |
+| ERPNext cross-tool (n=6) | key-fact coverage | **82.0%** | grep/read baseline 70.8% |
 | Graph build | LLM credits | **0** | per-token for most systems |
 
 Every system ran on the same harness with the same model and budgets, scored by a judge blind-validated against a second judge (90.6% agreement, Cohen's kappa 0.81). Full per-system tables, the code-intelligence result, and reproduction commands: **[BENCHMARKS.md](./BENCHMARKS.md)**.
@@ -127,18 +132,4 @@ The official source repository is [Graphify-Labs/graphify](https://github.com/Gr
 **Step 1 — install the package:**
 
 ```bash
-# Recommended (isolated env; if 'graphify' isn't found after, run: uv tool update-shell):
-uv tool install graphifyy
-
-# Alternatives:
-pipx install graphifyy
-pip install graphifyy # may need PATH setup — see note below
-```
-
-**Step 2 — register the skill with your AI assistant:**
-
-```bash
-graphify install
-```
-
-That's it. Open your AI assistant and type `/gr
+# Recommended (isolated env; if 'graphify' isn't found after, run: uv tool upd

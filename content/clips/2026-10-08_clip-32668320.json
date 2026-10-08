@@ -1,0 +1,24 @@
+{
+  "kind": "clip",
+  "source": "https://x.com/SahilExec/status/2107444680732668320",
+  "credit": "@SahilExec on X",
+  "topic": "AI game development",
+  "hook": "One AI agent rebuilt Terraria in 3D in 8 days. Solo devs just got a studio.",
+  "captions": {
+    "instagram": "One AI agent rebuilt Terraria in 3D in 8 days. Solo devs just got a studio. 🤖\n\nClaude Opus 5.5 built a complete 3D recreation with 3,369 items, 313 enemies and bosses, and 346,000 lines of custom C# code—all without touching a single line of human code.\n\nNo game engine. No framework. Just AI doing the work of a studio.\n\nWhat game would you rebuild with AI? Tell us below 👇\n\nCredit: @SahilExec on X\n\n#gamedev #indiedev #ai #aitools #gamedevelopment",
+    "facebook": "One AI agent rebuilt Terraria in 3D in 8 days. Solo devs just got a studio.\n\nClaude Opus 5.5 didn't just make a game—it rebuilt an entire classic in 3D from scratch. 3,369 items, 313 enemies and bosses, 346,000 lines of C# code. No engine. No framework. All AI.\n\nThis is what's changing: solo developers aren't waiting for teams anymore. They're using AI to build what teams used to require.\n\nWhat game are you dreaming of building? Drop it in the comments.\n\nCredit: @SahilExec on X\n\n#gamedev #indiedev #aitools #ai",
+    "youtube": {
+      "title": "Solo dev? AI just built an entire 3D game #Shorts",
+      "description": "One AI agent rebuilt Terraria in 3D in 8 days—3,369 items, 313 enemies, 346,000 lines of code, zero human code.\n\nClaude Opus 5.5 did what a studio does in a few hours. No game engine. No boilerplate. Just AI handling all the heavy lifting.\n\nThis is the shift: game dev solo? You've got your team now.\n\nCredit: @SahilExec on X",
+      "tags": ["AI game dev", "game development", "indie games", "solo developer", "AI tools", "gamedev", "3D games", "Terraria", "Claude AI"]
+    }
+  },
+  "caption": "One AI agent rebuilt Terraria in 3D in 8 days. Solo devs just got a studio. 🤖\n\nClaude Opus 5.5 built a complete 3D recreation with 3,369 items, 313 enemies and bosses, and 346,000 lines of custom C# code—all without touching a single line of human code.\n\nNo game engine. No framework. Just AI doing the work of a studio.\n\nWhat game would you rebuild with AI? Tell us below 👇\n\nCredit: @SahilExec on X\n\n#gamedev #indiedev #ai #aitools #gamedevelopment",
+  "first_comment": {
+    "instagram": "The full prompt is in the comments 👇\n\nThe real flex: 346K lines of type-safe C# with custom game logic, procedural generation, and boss AI—all auto-generated. This isn't a template or a low-code tool; it's Claude reading a game spec and writing production-grade code from scratch.\n\nWhich game are you rebuilding next?",
+    "facebook": "The full prompt is in the comments 👇\n\nThe real win here isn't the speed—it's the quality. 346,000 lines of production-grade C# with type safety, custom logic, and boss AI patterns. Claude didn't use a template; it wrote the actual engine code.\n\nWhat would you build if code wasn't the limiting factor?",
+    "youtube": "The full prompt is in the comments 👇\n\nWhat stands out: 346K lines of type-safe C#, custom boss logic, procedural generation—Claude wrote a real game engine, not a template. Zero copy-paste code, all original.\n\nSubscribe for daily AI playbooks about building and shipping with AI."
+  },
+  "x": "One AI agent rebuilt Terraria in 3D in 8 days.\n\n3,369 items. 313 enemies. 346,000 lines of C# code. Zero human code.\n\nSolo devs aren't waiting for teams anymore.\n\nCredit: @SahilExec on X\n\n#gamedev #ai",
+  "checked": ["Claude Opus 5.5 game-building capabilities confirmed on yuv.ai and AI community reports (2026-09-22 launch); Terraria 3D 8-day rebuild reported by @SahilExec on X"]
+}

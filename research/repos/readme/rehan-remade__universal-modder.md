@@ -1,7 +1,8 @@
 Skills, tools and a shared knowledge base that let any AI coding agent mod almost any PC game you own. 
- Works with Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, OpenCode, or anything that reads AGENTS.md . 
  The agent finds the game, works out the engine and the route, reads the real code, builds the mod, makes art, 3D and sound
  with fal , tests it in the running game, cuts the video, and writes down what it learned for the next agent.
+
+ Coming next: the mod hub. Publish your mods, remix other people's, and make new ones. 
 
 ## Install
 
@@ -9,8 +10,8 @@ Pick your agent. Each gets the same skills (Agent Skills format), the fal MCP se
 
 | Agent | Install |
 |---|---|
-| **Claude Code** | `/plugin marketplace add rehan-remade/universal-modder`, then `/plugin install universal-modder@universal-modder` |
-| **Codex** | `codex plugin marketplace add rehan-remade/universal-modder`, then `codex plugin add universal-modder@universal-modder` |
+| **Claude Code** | `/plugin marketplace add rehan-remade/universal-modder` `/plugin install universal-modder@universal-modder` |
+| **Codex** | `codex plugin marketplace add rehan-remade/universal-modder` `codex plugin add universal-modder@universal-modder` |
 | **Gemini CLI** | `gemini extensions install https://github.com/rehan-remade/universal-modder` |
 | **VS Code / Copilot** | Enable `chat.plugins.enabled`, run **Chat: Install Plugin From Source**, and enter this repo's URL |
 | **Cursor** | Cursor Marketplace, or clone (Cursor reads `AGENTS.md` and `.cursor/mcp.json`) |
@@ -32,7 +33,7 @@ uv tool install git+https://github.com/rehan-remade/universal-modder # or: pipx 
 ```bash
 export FAL_KEY=...
 ```
-You also need Python 3.10+ and ffmpeg. `uv` is recommended. Blender is needed for 3D → sprite renders.
+You also need Git, Python 3.10+ and ffmpeg. `uv` is recommended. Blender is needed for 3D → sprite renders.
 Windows games are driven natively or from WSL.
 
 ## Try it
@@ -41,6 +42,8 @@ Windows games are driven natively or from WSL.
 > Make a new civilization for Age of Empires II with a unique unit rendered from 3D.
 
 > Put real Minecraft inside GTA V story mode. Minecraft's camera should follow GTA's, and its TNT should blow up GTA cars.
+
+> Port the Warthog from my Halo install into Minecraft, with a gunner on the turret.
 
 > What engine is `C:\Games\Foo`, and has anyone modded it before?
 
@@ -78,21 +81,20 @@ Browse [`knowledge/INDEX.md`](knowledge/INDEX.md). Every game is welcome. Contri
 AIs, are in [`CONTRIBUTING.md`](CONTRIBUTING.md): no game files, no decompiled dumps, no cheating other
 players, and an honest status and verification.
 
+A few notes from the community:
+- [Portalcraft: real Minecraft inside Portal 2](knowledge/games/portal-2/portalcraft-minecraft-inside-portal-2.md)
+- [Halo 3 weapons, Covenant, vehicles and maps ported into Minecraft](knowledge/games/halo-3-mcc/halo-3-weapons-covenant-vehicles-and-maps-ported-into-minecr.md)
+- [Bloons TD 6 inside Minecraft, with the game's rules as a headless sim](knowledge/games/minecraft/bloons-td-6-in-minecraft.md)
+- [A CS2-style conversion of Elden Ring offline, as a native Rust DLL](knowledge/games/elden-ring/cs2-conversion-of-elden-ring-offline-native-rust-dll-via-me3.md)
+
 ## What's inside
 
 **Skills** (`skills/`, Agent Skills format)
 
-| Skill | What it does |
-|---|---|
-| `mod-any-game` | The whole loop, hard safety rules, and **12 engine playbooks**: Unity, Unreal, .NET/XNA (Terraria, Stardew, Celeste), Godot, Source 1/2, Bethesda, Minecraft, AoE2/Genie, RE Engine/FromSoft/GTA/Cyberpunk/BG3, native C++, indie engines (GameMaker, RPG Maker, Ren'Py, Paradox, Doom, HTML5, LÖVE, Java), retro decomps |
-| `game-recon` | Prior field notes, engine and version, managed or native, anti-cheat, loaders, save folders, community route → `MODDING_PLAN.md` |
-| `reverse-engineering` | ILSpy / Cpp2IL / Vineflower / Ghidra and IDA over MCP / Cheat Engine / Frida / RenderDoc; reverse-engineer a file format and prove it with a round trip |
-| `fal-assets` | Sprites with real transparency, consistent variants, pixel art, seamless textures, PBR maps, image-to-3D, auto-rigging, SFX, music, voice, cutscene video |
-| `asset-pipeline` | Art → engine-exact frames: cutout, nearest-neighbour fit, palettes, sheets, team-colour masks, 3D → 8/16-heading sprites |
-| `game-automation` | Launch, screenshot (GPU-safe), click/type safely, windowed mode, crash-reporter cleanup, in-game agent bridges |
-| `showcase-video` | Record the window with only the game's audio, pick moments, cut a styled video from an EDL |
-| `mashup-mods` | Game inside a game: content ports, passthrough mods (worked example: Minecraft × GTA V), decomps as libraries, reimplementations |
-| `publish-mod` | Lint, package per platform, credits, the post |
-| `share-field-notes` | Search the knowledge base, write your own note, open the PR |
+ Skill What it does 
 
-**The 
+ mod-any-game The whole loop, hard safety rules, and 12 engine playbooks : Unity, Unreal, .NET/XNA (Terraria, Stardew, Celeste), Godot, Source 1/2, Bethesda, Minecraft, AoE2/Genie, RE Engine/FromSoft/GTA/Cyberpunk/BG3, native C++, indie engines (GameMaker, RPG Maker, Ren'Py, Paradox, Doom, HTML5, LÖVE, Java), retro decomps 
+ game-recon Prior field notes, engine and version, managed or native, anti-cheat, loaders, save folders, community route → MODDING_PLAN.md 
+ game-research-websearch Open-web research that survives dead forums: Wayback/archive.today, GitHub/code and Nexus/Workshop/Thunderstore APIs, Reddit/YouTube, login-gated handoff, screenshots as evidence 
+ reverse-engineering ILSpy / Cpp2IL / Vineflower / Ghidra and IDA over MCP / Cheat Engine / Frida / RenderDoc; reverse-engineer a file format and prove it with a round trip 
+ fal-assets Sprites with real transparency, consi

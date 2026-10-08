@@ -1,0 +1,132 @@
+{
+  "generated": "2026-10-08T12:30:00+03:00",
+  "candidates": [
+    {
+      "id": "gpt-6-intelligent-ui-everyone",
+      "tool": "ChatGPT",
+      "kind": "news",
+      "title": "ChatGPT Now Answers With Charts, Diagrams and Tappable Buttons Instead of Walls of Text",
+      "summary_tr": "OpenAI, GPT-6'yı tüm kullanıcılara açarken 'Intelligent UI' özelliğini de getirdi: ChatGPT artık cevabı metinle birlikte görseller, grafikler, formlar ve dokunulabilir butonlarla veriyor.",
+      "why_tr": "Herkesin her gün kullandığı ChatGPT'de gözle görülür bir değişiklik; ekran kaydıyla çok iyi anlatılır ve paylaşılır.",
+      "angle": "what's new (visual, interactive answers) + who gets it + 5 prompts that make it show charts/forms",
+      "tools": ["ChatGPT"],
+      "published": "2026-10-07",
+      "sources": ["https://openai.com/index/gpt-6-for-everyone"],
+      "hints": ["https://www.theverge.com/ai-artificial-intelligence/1007276/openai-chatgpt-intelligent-ui-gpt-6", "https://www.testingcatalog.com/openai-rolls-out-gpt-6-with-intelligent-ui-in-chatgpt/"],
+      "score": 9
+    },
+    {
+      "id": "claude-google-workspace-sidebar",
+      "tool": "Claude",
+      "kind": "news",
+      "title": "Claude Now Lives Inside Google Docs, Sheets and Slides and Edits Your File Directly",
+      "summary_tr": "Anthropic, Google Docs, Sheets ve Slides için Claude kenar çubuğu ekledi (beta; Pro, Max, Team, Enterprise). Açık dosyayı okuyup doğrudan düzenliyor, formül ve slayt üretiyor. Havuzdaki 'Claude Docs+Slides tek sohbet' içeriğinden farklı: bu, Google'ın içine kurulan eklenti.",
+      "why_tr": "Google Workspace kullanan milyonlarca kişiye hitap ediyor; kopyala-yapıştır derdini bitirdiği için çok paylaşılır.",
+      "angle": "what's new + how to install from Workspace Marketplace + 4 things to ask it in Docs/Sheets/Slides",
+      "tools": ["Claude", "Google"],
+      "published": "2026-10-06",
+      "sources": ["https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides"],
+      "hints": ["https://www.testingcatalog.com/claude-adds-editing-in-google-docs-sheets-and-slides/", "https://letsdatascience.com/news/anthropic-brings-claude-into-google-workspace-apps-b90b792e"],
+      "score": 8
+    },
+    {
+      "id": "claude-haiku-5-5-launch",
+      "tool": "Claude",
+      "kind": "news",
+      "title": "Anthropic's New Claude Haiku 5.5 Costs About 75% Less Than the Old One",
+      "summary_tr": "Anthropic 7 Ekim'de Claude Haiku 5.5'i çıkardı: milyon token başına $0.10 girdi / $0.50 çıktı, Haiku 4.5'ten yaklaşık %75 ucuz, ayarlanabilir 'effort' seviyesi var. Büyük ölçüde API/geliştirici haberi; Claude Code ve GitHub Copilot'ta da var.",
+      "why_tr": "Haiku 'en ucuz ve en hızlı' model olarak gündemde (HN'de 870+ puan), fiyat karşılaştırması iyi bir görsel olur.",
+      "angle": "what's new + price vs old Haiku + where you can use it (Claude Code, Copilot) + who it's for",
+      "tools": ["Claude", "Copilot"],
+      "published": "2026-10-07",
+      "sources": ["https://www.anthropic.com/claude-haiku-5-5", "https://docs.claude.com/en/release-notes/overview", "https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot"],
+      "hints": ["https://simonwillison.net/2026/Oct/7/claude-haiku-5-5/", "https://www.latent.space/p/ainews-claude-haiku-55-better-than"],
+      "score": 7
+    },
+    {
+      "id": "google-playground-custom-games",
+      "tool": "Google",
+      "kind": "news",
+      "title": "Google Just Launched a Tool That Builds a Playable Game From a Sentence",
+      "summary_tr": "Google 'Playground' adlı deneysel platformu açtı (playground.google): oyun fikrini yazıyorsun, oyunu üretiyor; fizik, kural ve karakterleri yazıyla değiştirebiliyorsun, paylaşabiliyorsun. Şimdilik ABD'de, 18+ ve Google AI abonelik seviyesine göre erişim.",
+      "why_tr": "'Bir cümleden oyun' çok görsel ve denenebilir bir vaat; Reel'de oyun ekranlarıyla çok izlenir.",
+      "angle": "what it is + what you can tweak + availability limits (US, 18+) + 3 game ideas to try",
+      "tools": ["Google", "Gemini"],
+      "published": "2026-10-07",
+      "sources": ["https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/"],
+      "hints": ["https://news.ycombinator.com/item?id=49991823"],
+      "score": 8
+    },
+    {
+      "id": "synthid-detector-global",
+      "tool": "Google",
+      "kind": "news",
+      "title": "Google Opened a Free Tool That Tells You If a Photo, Video or Audio Is AI-Made",
+      "summary_tr": "Google, SynthID Detector'ı herkese açtı (synthid.com, ücretsiz, İngilizce, küresel): görsel, video veya ses dosyasının Google, OpenAI, NVIDIA, Kakao ya da Apple araçlarıyla üretilip üretilmediğini filigrandan kontrol ediyor. Filigransız/başka araçla üretilmiş içeriği yakalamaz.",
+      "why_tr": "'Bu AI mı?' sorusu herkesin derdi; hemen denenebilir, güven ve merak çekiyor.",
+      "angle": "what it checks + how to use it in 3 steps + what it can NOT tell you",
+      "tools": ["Google", "Gemini"],
+      "published": "2026-10-07",
+      "sources": ["https://blog.google/innovation-and-ai/models-and-research/google-deepmind/synth-id-ai-content/", "https://synthid.com/"],
+      "hints": [],
+      "score": 7
+    },
+    {
+      "id": "instagram-edits-carousel-tools",
+      "tool": "Social media",
+      "kind": "news",
+      "title": "Instagram's Edits App Now Builds Carousels With Video-Editor Fonts, Overlays and Cutout Stickers",
+      "summary_tr": "Instagram'ın Edits uygulaması karosel düzenleme araçları aldı: foto/video bırakıp düzen seçiyor, Edits yazı tipleri ve metin stillerini kullanıyor, kendi çıkartmalarını kesebiliyorsun. Şu an iOS'ta, Android 'yakında'.",
+      "why_tr": "Karosel üreten her içerik üreticisi hemen deneyebilir; ücretsiz bir yaratıcı araç.",
+      "angle": "what's new in Edits carousel + 4 things to try + iOS only for now",
+      "tools": ["Instagram"],
+      "published": "2026-10-07",
+      "sources": ["https://www.instagram.com/p/DeMhid3kUtk/"],
+      "hints": ["https://www.socialmediatoday.com/news/edits-gets-carousel-editing-tools/832448/"],
+      "score": 5
+    },
+    {
+      "id": "gemini-gems-become-skills-evergreen",
+      "tool": "Gemini",
+      "kind": "evergreen",
+      "title": "Gemini Gems Are Turning Into Skills in November: Build Your Own Assistant Now",
+      "summary_tr": "Gemini Gems (kendi talimatlarını ve dosyalarını kaydettiğin özel asistanlar) Kasım 2026'dan itibaren kişisel hesaplarda 'skills'e dönüşecek (Google destek sayfası). Gem nasıl kurulur: Yeni Gem, ad, talimat, isteğe bağlı dosya.",
+      "why_tr": "Az bilinen ama günlük işi kısaltan bir özellik; 'taşınıyor' bilgisi aciliyet katıyor.",
+      "angle": "what a Gem is + 4 steps to make one + 3 ready Gem instructions to paste + note that Gems move to skills in November",
+      "tools": ["Gemini"],
+      "published": null,
+      "sources": ["https://support.google.com/gemini/answer/15146780"],
+      "hints": [],
+      "score": 6
+    },
+    {
+      "id": "pack-email-list-builder-agent",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "5 Prompts That Turn an AI Agent Into a Niche Email-List Builder Making $1,500 a Month",
+      "summary_tr": "Bir niş seçip ücretsiz bir lead magnet, açılış sayfası metni, 5 e-postalık karşılama serisi ve haftalık bülten planı çıkaran 5'li prompt paketi; sosyal medya + AI ajan ve para teması.",
+      "why_tr": "Sosyal medya + AI ajan + aylık gelir vaadi bizim en çok beklenen paket türümüz.",
+      "angle": "Niche Picker, Lead Magnet Builder, Landing Page Copy, 5-Email Welcome Sequence, Weekly Newsletter + Sponsor Pitch",
+      "tools": ["ChatGPT", "Claude"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 6
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 1, "Claude": 2, "Gemini": 1, "Grok": 0, "Codex": 0, "Cursor": 0, "Copilot": 0, "Perplexity": 0,
+    "Meta AI": 0, "Mistral": 0, "DeepSeek": 0, "Open models": 0, "Apple": 0, "Higgsfield": 0, "Google": 2,
+    "Social media": 1, "Other": 0, "Prompt pack": 1
+  },
+  "notes_tr": "Yeni: GPT-6 Intelligent UI, Claude Google Workspace kenar çubuğu, Haiku 5.5, Google Playground, SynthID Detector, Edits karosel araçları. Grok, Codex, Cursor, Perplexity, Mistral, DeepSeek, açık modeller, Apple ve Higgsfield için son 36 saatte doğrulanabilir yeni haber çıkmadı (web aramaları eski sonuçlar döndürdü; Codex 0.161 sadece GPT-6.1 Sol varsayılan model, küçük sürüm). Nano Banana 2.1 (Gemini API changelog 6 Ekim) tüketici tarafında resmi kaynak bulunamadı, eklenmedi. Microsoft Windows 'hybrid intelligence' Copilot özellikleri 'önümüzdeki aylarda' geliyor, şimdi denenemiyor, eklenmedi. OpenAI sayfaları 403 verdi; ChatGPT haberi resmi OpenAI RSS özeti + Verge ile doğrulandı. Muse iPad haberi küçük, geçildi.",
+  "sources_changed": [
+    "Eklendi: TechCrunch AI (techcrunch.com/category/artificial-intelligence/feed/), 20 tarihli öğe, en yeni 2026-10-07; ChatGPT/Claude/Muse haberlerini aynı gün veriyor.",
+    "Eklendi: 9to5Mac (9to5mac.com/feed/), 100 tarihli öğe, en yeni 2026-10-08; Apple/Siri haberleri için, AI filtresi (match) ile.",
+    "Reddedildi: Anthropic Engineering RSS (anthropic.com/engineering/rss.xml), 404.",
+    "Reddedildi: Open WebUI releases, en yeni 2026-09-21 (haftalık değil, eski).",
+    "Reddedildi: Continue releases, en yeni 2026-06-19 (4 aydır sessiz).",
+    "Reddedildi: Qwen3 GitHub releases, tarihli öğe yok.",
+    "Reddedildi: Google Chrome blog feed, en yeni 2026-09-24 ve zaten Google Keyword feed'i kapsıyor."
+  ]
+}

@@ -1,0 +1,852 @@
+{
+ "generated": "2026-10-08T09:30+00:00",
+ "hours": 36.0,
+ "items": [
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "Desktop v0.0.45",
+   "url": "https://github.com/cline/cline/releases/tag/desktop-v0.0.45",
+   "date": "2026-10-08T06:50+00:00",
+   "summary": "SSH remotes start again. Since 0.0.38, connecting to an SSH environment failed with SyntaxError: Invalid character On SSH environments, the git branch label no longer opens two new SSH logins every 5 seconds. It checks every 30 seconds now, and switching branches from the picker still updates it right away Long model names in the composer show in full when the row has room, and only truncate when…"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "CLI v3.0.70",
+   "url": "https://github.com/cline/cline/releases/tag/cli-v3.0.70",
+   "date": "2026-10-08T05:55+00:00",
+   "summary": "Commit message generation and tasks with reasoning off no longer fail with a 400 error on GPT-6 Astra, GPT-6.1 Sol, Claude Fable 5 or Claude Opus 5.5 Cline no longer exits about 3 seconds after an MCP server or hook quits before reading all of its input Settings migrated from the VS Code extension no longer add an empty SAP AI Core provider cline mcp add keeps your --header values when it opens…"
+  },
+  {
+   "source": "Meta newsroom (AI + Instagram / WhatsApp / Threads / Facebook)",
+   "tier": "official",
+   "title": "Meta Donates 1,000 AI Glasses to Singapore’s Disability Community",
+   "url": "https://about.fb.com/news/2026/10/meta-donates-1000-ai-glasses-to-singapores-disability-community/",
+   "date": "2026-10-08T05:49+00:00",
+   "summary": "Meta donates 1,000 Ray-Ban Meta AI glasses to four Singapore community organisations to help persons with disabilities. The post Meta Donates 1,000 AI Glasses to Singapore’s Disability Community appeared first on Meta Newsroom ."
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "SDK v0.0.92",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fsdk%2Fv0.0.92",
+   "date": "2026-10-08T05:09+00:00",
+   "summary": "The AI SDK moves together to one release line: ai 7.0.120 and every @ai-sdk/* package on @ai-sdk/provider-utils 5.0.50 (previously ai 7.0.79 with packages bumped one by one). Turning reasoning off no longer sends reasoning.effort: \"none\" to OpenAI models that can't turn it off, such as GPT-6 Astra and GPT-6.1 Sol (GPT-6 Astra answered with a 400, for example from commit message generation);…"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "sdk/core/v0.0.92",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fcore%2Fv0.0.92",
+   "date": "2026-10-08T05:09+00:00",
+   "summary": "@cline/core@0.0.92"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "sdk/agents/v0.0.92",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fagents%2Fv0.0.92",
+   "date": "2026-10-08T05:09+00:00",
+   "summary": "@cline/agents@0.0.92"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "sdk/llms/v0.0.92",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fllms%2Fv0.0.92",
+   "date": "2026-10-08T05:09+00:00",
+   "summary": "@cline/llms@0.0.92"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "sdk/shared/v0.0.92",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fshared%2Fv0.0.92",
+   "date": "2026-10-08T05:09+00:00",
+   "summary": "@cline/shared@0.0.92"
+  },
+  {
+   "source": "Claude Code releases",
+   "tier": "official",
+   "title": "v2.1.294",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.294",
+   "date": "2026-10-08T05:03+00:00",
+   "summary": "What's changed Fixed prompt and agent hooks written as instructions (such as \"Block commands that...\") allowing what they should block Improved how prompt hooks on Stop and SubagentStop written as instructions (such as \"Carry on if the build is broken\") are judged, so Claude is less likely to stop early"
+  },
+  {
+   "source": "Ollama releases",
+   "tier": "official",
+   "title": "v0.40.1",
+   "url": "https://github.com/ollama/ollama/releases/tag/v0.40.1",
+   "date": "2026-10-08T02:09+00:00",
+   "summary": "What's Changed server: proxy cloud usage and balance APIs by @drifkin in #18829 llama: fix clef head reads past 2GiB on windows by @Gigrise in #18777 cmd: remove account step from CLI onboarding by @hoyyeva in #18826 manifest: avoid symlinks on Windows by @dhiltgen in #18852 docs: fix 6 dead links in README community integrations list by @aniketkrs in #18814 docs: fix broken download links in app…"
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "This winter, use Google Maps and Waze to find the best fuel prices in the UK.",
+   "url": "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/google-maps-waze-fuel-prices-uk/",
+   "date": "2026-10-08T00:01+00:00",
+   "summary": "Find the cheapest petrol and diesel prices in the UK using Google Maps and Waze. Search for fuel stations near you to save money. See the latest rates."
+  },
+  {
+   "source": "Claude release notes",
+   "tier": "official",
+   "title": "Claude release notes: Oct 08, 2026",
+   "url": "https://docs.claude.com/en/release-notes/overview",
+   "date": "2026-10-08T00:00+00:00",
+   "summary": " The Compliance API chat endpoints now also return chats from the unified Claude experience, in beta for Claude Enterprise organizations, with your existing Compliance Access Key. See Retrieve and delete chats, files, and projects . …"
+  },
+  {
+   "source": "Meta newsroom (AI + Instagram / WhatsApp / Threads / Facebook)",
+   "tier": "official",
+   "title": "Why Data Centers Are Such a Big Part of Meta’s AI Approach",
+   "url": "https://about.fb.com/news/2026/10/meta-data-centers-ai-approach/",
+   "date": "2026-10-07T23:19+00:00",
+   "summary": "Developer and creator Tom Shaw sat down with Meta’s Head of Infrastructure, Santosh Janardhan, to talk about why we need data centers and how Meta is leading the charge to build them. The post Why Data Centers Are Such a Big Part of Meta’s AI Approach appeared first on Meta Newsroom ."
+  },
+  {
+   "source": "Apple Newsroom",
+   "tier": "official",
+   "title": "Apple, The King’s Trust launch initiative to empower young creatives",
+   "url": "https://www.apple.com/newsroom/2026/10/apple-the-kings-trust-launch-initiative-to-empower-young-creatives/",
+   "date": "2026-10-07T21:01+00:00",
+   "summary": "Apple and The King’s Trust are building on their longstanding partnership by launching an immersive new education program to help young people move into the world of work."
+  },
+  {
+   "source": "GitHub Copilot changelog",
+   "tier": "official",
+   "title": "Claude Haiku 5.5 in GitHub Copilot",
+   "url": "https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot",
+   "date": "2026-10-07T20:12+00:00",
+   "summary": "Claude Haiku 5.5, Anthropic’s newest lightweight model, is now generally available in GitHub Copilot. It is designed for fast, high-volume work like subagents, quick edits, and terminal tasks. In early… The post Claude Haiku 5.5 in GitHub Copilot appeared first on The GitHub Blog ."
+  },
+  {
+   "source": "Claude Code releases",
+   "tier": "official",
+   "title": "v2.1.293",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.293",
+   "date": "2026-10-07T18:10+00:00",
+   "summary": "What's changed Added Claude Haiku 5.5 ( claude-haiku-5-5 ), now the default Haiku model on the Anthropic API — 1M context, $0.10/$0.50 per Mtok ($0.50/$2.50 for prompts over 100K) Added agentType to the subagentStatusLine payload, so scripts can tell custom subagent types apart Added isDeferred to $.tool.register for mods: false lists the tool's schema in the prompt from the start instead of…"
+  },
+  {
+   "source": "Windows blogs (Copilot on Windows)",
+   "tier": "official",
+   "title": "Announcing new builds for 7 October 2026",
+   "url": "https://blogs.windows.com/windows-insider/2026/10/07/announcing-new-builds-for-7-october-2026/",
+   "date": "2026-10-07T18:10+00:00",
+   "summary": "Hello Windows Insiders, Today, we’re releasing new Windows 11 Insider Preview builds to the Beta and Experimental channels! Coming straight off the back of our Windows + Surface event, we have some exciting new features entering the Windows Inside The post Announcing new builds for 7 October 2026 appeared first on Windows Blog ."
+  },
+  {
+   "source": "Windows blogs (Copilot on Windows)",
+   "tier": "official",
+   "title": "Pre-order our most powerful Surface devices ever",
+   "url": "https://blogs.windows.com/devices/2026/10/07/pre-order-our-most-powerful-surface-devices-ever/",
+   "date": "2026-10-07T18:00+00:00",
+   "summary": "For more than a decade, Surface has been shaped by the people pushing technology further. Creators rendering complex scenes. Developers building what doesn't exist yet. Designers moving between ideas, models, code, and content. Makers whose work dem The post Pre-order our most powerful Surface devices ever appeared first on Windows Blog ."
+  },
+  {
+   "source": "Windows blogs (Copilot on Windows)",
+   "tier": "official",
+   "title": "Microsoft Execution Containers: Policy-driven containment for AI agents",
+   "url": "https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/",
+   "date": "2026-10-07T18:00+00:00",
+   "summary": "Agents are unlocking enormous productivity gains for customers, but their ability to work across files, networks, and applications can introduce new security risks. This can leave customers feeling like they only have two choices: give agents unrestr The post Microsoft Execution Containers: Policy-driven containment for AI agents appeared first on Windows Blog ."
+  },
+  {
+   "source": "Windows blogs (Copilot on Windows)",
+   "tier": "official",
+   "title": "Building Windows for hybrid intelligence",
+   "url": "https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence/",
+   "date": "2026-10-07T18:00+00:00",
+   "summary": "Agents are creating a foundational shift in how people get things done, unlocking new levels of productivity and capability on the PC. As agents become part of everyday work, they also raise the bar for compute, security, a The post Building Windows for hybrid intelligence appeared first on Windows Blog ."
+  },
+  {
+   "source": "Hugging Face blog",
+   "tier": "official",
+   "title": "Multimodal open d1 decision models for the edge",
+   "url": "https://huggingface.co/blog/LiquidAI/open-d1",
+   "date": "2026-10-07T16:54+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Cloudflare blog",
+   "tier": "official",
+   "title": "Building an evidence-grounded agentic security operations harness on Cloudflare",
+   "url": "https://blog.cloudflare.com/agentic-security-operations/",
+   "date": "2026-10-07T16:30+00:00",
+   "summary": "Cloudflare Managed Defense uses a team of specialized AI agents built on Workers and global network telemetry to analyze security alerts. By separating deterministic evidence collection from model inference, the system delivers grounded recommendations to Managed Defense Analysts."
+  },
+  {
+   "source": "GitHub Copilot changelog",
+   "tier": "official",
+   "title": "Purpose-built model for leaked secret detection",
+   "url": "https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection",
+   "date": "2026-10-07T16:13+00:00",
+   "summary": "Secret protection should keep pace with the way you build software, whether you write code yourself or work with an AI agent. With our new purpose-built model, we’re bringing context-aware… The post Purpose-built model for leaked secret detection appeared first on The GitHub Blog ."
+  },
+  {
+   "source": "Codex CLI releases",
+   "tier": "official",
+   "title": "0.161.0",
+   "url": "https://github.com/openai/codex/releases/tag/rust-v0.161.0",
+   "date": "2026-10-07T16:01+00:00",
+   "summary": "New Features GPT-6.1 Sol is now the default model in the bundled and Amazon Bedrock catalogs. ( #49318 , #49339 ) Amazon Bedrock supports multi-agent V2 and Ultra reasoning on compatible models; Bedrock Mantle also accepts AWS GovCloud regions. ( #49345 , #49813 ) Sign in to MCP servers from an active terminal session with /mcp login . ( #49290 ) Choose your microphone, speaker, and microphone…"
+  },
+  {
+   "source": "GitHub Copilot changelog",
+   "tier": "official",
+   "title": "Local sandboxing for GitHub Copilot now generally available",
+   "url": "https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available",
+   "date": "2026-10-07T15:46+00:00",
+   "summary": "Local sandboxing for GitHub Copilot is now generally available in GitHub Copilot CLI, the GitHub Copilot app, and VS Code sessions using Agent Host. Local sandboxes give developers a secure… The post Local sandboxing for GitHub Copilot now generally available appeared first on The GitHub Blog ."
+  },
+  {
+   "source": "GitHub Copilot changelog",
+   "tier": "official",
+   "title": "Discover local models in GitHub Copilot CLI",
+   "url": "https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli",
+   "date": "2026-10-07T15:46+00:00",
+   "summary": "GitHub Copilot CLI makes it easier to choose a local model without leaving your existing workflow. Starting in CLI version 1.0.94-0, use /model to discover supported models from a running… The post Discover local models in GitHub Copilot CLI appeared first on The GitHub Blog ."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "We're making it easier to identify AI-generated content globally.",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/synth-id-ai-content/",
+   "date": "2026-10-07T14:00+00:00",
+   "summary": "We’re launching a standalone platform to help you easily identify whether online content was created using Google AI or tools from our industry partners."
+  },
+  {
+   "source": "Hugging Face blog",
+   "tier": "official",
+   "title": "One Model Family, Two Gold-Level Results: Fine-Tuning Nemotron for IOI and IMO",
+   "url": "https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026",
+   "date": "2026-10-07T12:45+00:00",
+   "summary": ""
+  },
+  {
+   "source": "OpenAI News",
+   "tier": "official",
+   "title": "Helping teens learn, plan, and shape the future of AI",
+   "url": "https://openai.com/index/teens-learn-and-plan",
+   "date": "2026-10-07T12:00+00:00",
+   "summary": "College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council."
+  },
+  {
+   "source": "Google AI blog",
+   "tier": "official",
+   "title": "Introducing Playground: Create and play custom games",
+   "url": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
+   "date": "2026-10-07T12:00+00:00",
+   "summary": "Playground is a new experimental gaming platform that lets you create, play, and share custom games."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Introducing Playground: Create and play custom games",
+   "url": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
+   "date": "2026-10-07T12:00+00:00",
+   "summary": "Playground is a new experimental gaming platform that lets you create, play, and share custom games."
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "v4.1.23",
+   "url": "https://github.com/cline/cline/releases/tag/v4.1.23",
+   "date": "2026-10-07T07:28+00:00",
+   "summary": "Changed If a model's response ends without a recognized finish reason, Cline asks it to continue once instead of treating the response as complete. Refreshed the model catalog. The Cline recommended list adds GPT-6.1 Sol, and the free list adds Solar Mini 4 and drops DeepSeek V4.1 Flash and space-bunny-alpha. Default models change for 302.AI, AKI.IO, Blue Claw, CoralBricks, CrossModel, DevPass,…"
+  },
+  {
+   "source": "OpenAI News",
+   "tier": "official",
+   "title": "Radisson Hotel Group brings hotel discovery into ChatGPT",
+   "url": "https://openai.com/index/radisson",
+   "date": "2026-10-07T07:00+00:00",
+   "summary": "Radisson partnered with Accenture to build a ChatGPT plugin using OpenAI technology, helping travelers find, compare, and book hotels while planning their trips."
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "SDK v0.0.91",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fsdk%2Fv0.0.91",
+   "date": "2026-10-07T06:00+00:00",
+   "summary": "Responses that end with a missing or unrecognized finish reason are no longer treated as successful completions. AgentModelFinishReason gains unknown (the AI SDK adapter maps unified other and missing reasons to it instead of stop ). Without tool activity, the agent keeps the partial response and continues once with a hidden user message; a second unknown finish fails the run. Queued user…"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "sdk/shared/v0.0.91",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fshared%2Fv0.0.91",
+   "date": "2026-10-07T05:59+00:00",
+   "summary": "@cline/shared@0.0.91"
+  },
+  {
+   "source": "OpenAI News",
+   "tier": "official",
+   "title": "GPT-6 and Intelligent UI for everyone",
+   "url": "https://openai.com/index/gpt-6-for-everyone",
+   "date": "2026-10-07T00:00+00:00",
+   "summary": "GPT‑6 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly."
+  },
+  {
+   "source": "Claude release notes",
+   "tier": "official",
+   "title": "Claude release notes: Oct 07, 2026",
+   "url": "https://docs.claude.com/en/release-notes/overview",
+   "date": "2026-10-07T00:00+00:00",
+   "summary": " We've lowered the price of prompt cache reads on Claude Sonnet 5.5 from $0.20 USD to $0.10 USD per million tokens: 0.05x the base input price instead of 0.1x. Cache writes and all other prices are unchanged. See Prompt caching pricing . We've launched Claude Haiku 5.5 ( claude-haiku-5-5 ), our most capable model tuned for high-volume and latency-sensitive work. It has a 1M token context window , 128k max output tokens, and adaptive thinking with the effort parameter . It's available on the Claude API, Claude in Amazon Bedrock , Claude Platform on AWS , Claude on Google Cloud , and Claude in Microsoft Foundry . See What's new in Claude Haiku 5.5 . Code written for Claude Haiku 4.5 can break on Claude Haiku 5.5. Manual extended thinking ( budget_tokens ) returns a 400 error, and adaptive thinking is on by default, so a response can begin with thinking blocks. The same text also counts…"
+  },
+  {
+   "source": "Codex changelog",
+   "tier": "official",
+   "title": "Codex changelog: Oct 07, 2026",
+   "url": "https://developers.openai.com/codex/changelog",
+   "date": "2026-10-07T00:00+00:00",
+   "summary": "ChatGPT for iOS 1.2026.272 New features Page previews now appear inline in responses. Added support for opening Codex task links directly on iOS. Improvements and bug fixes Redesigned the approval picker with clearer permission choices. Find plugins from a single Plugins entry in the composer’s plus menu. Faster streaming in long threads, with fewer freezes. New tasks keep your selected computer while it reconnects or is offline. Improved worktree support so files and changes match the checkout used on desktop. Fixed task lists remaining empty after connecting. Smoother keyboard transitions when starting tasks and swiping back. Status updates no longer appear as questions that need an answer. Clearer manual pairing code entry, including support for pasting formatted codes. … Codex CLI 0.161.0 pre]:w-full [&>pre]:max-w-full [&>pre]:mb-0 pt-4\"> $ npm install -g @openai/codex@0.161.0 View…"
+  },
+  {
+   "source": "GitHub Copilot changelog",
+   "tier": "official",
+   "title": "Update your IDE to restore agent activity in Copilot usage metrics",
+   "url": "https://github.blog/changelog/2026-10-06-update-your-ide-to-restore-agent-activity-in-copilot-usage-metrics",
+   "date": "2026-10-06T23:43+00:00",
+   "summary": "If your Copilot usage metrics have shown agent activity or agent lines of code falling while Copilot usage kept growing, we’ve found the cause, and a fix is rolling out… The post Update your IDE to restore agent activity in Copilot usage metrics appeared first on The GitHub Blog ."
+  },
+  {
+   "source": "Anthropic News",
+   "tier": "official",
+   "title": "Expanding the Cyber Verification Program",
+   "url": "https://www.anthropic.com/news/cyber-verification-program",
+   "date": "2026-10-06T00:00+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Claude release notes",
+   "tier": "official",
+   "title": "Claude release notes: Oct 06, 2026",
+   "url": "https://docs.claude.com/en/release-notes/overview",
+   "date": "2026-10-06T00:00+00:00",
+   "summary": " We've added capabilities.server_tools to the Models API . GET /v1/models and GET /v1/models/{model_id} now report whether each model accepts the web search and code execution tools. To check whether a model accepts the code execution tool, read capabilities.server_tools.code_execution . The top-level capabilities.code_execution reports whether code can call your request's other tools. See Using the Models API . …"
+  },
+  {
+   "source": "Gemini API changelog",
+   "tier": "official",
+   "title": "Gemini API changelog: Oct 06, 2026",
+   "url": "https://ai.google.dev/gemini-api/docs/changelog",
+   "date": "2026-10-06T00:00+00:00",
+   "summary": "Gemini Nano Banana 2.1 generally available (GA) : Released Gemini Nano Banana 2.1 ( gemini-nano-banana-2.1 ), the latest high-efficiency image generation and conversational editing model. An update to Nano Banana 2 ( gemini-3.1-flash-image ), it maintains Flash-level speed and cost efficiency while delivering significant improvements in visual quality, prompt adherence, multi-turn character consistency, text rendering, and wide and panoramic aspect ratio generation ( 1:4 , 4:1 , 1:8 , 8:1 ) across 1K , 2K , and 4K resolutions. See the Image generation guide to get started. Deprecation announcement : The gemini-3.1-flash-image model is deprecated (no shutdown date announced). Migrate to gemini-nano-banana-2.1 ."
+  },
+  {
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "v2026.9.9",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.9.9",
+   "date": "2026-10-08T08:55+00:00",
+   "summary": "OpenClaw 2026.9.9"
+  },
+  {
+   "source": "Latent Space AINews",
+   "tier": "signal",
+   "title": "[AINews] Claude Haiku 5.5 — better than GPT-6 Luna at the same pricing",
+   "url": "https://www.latent.space/p/ainews-claude-haiku-55-better-than",
+   "date": "2026-10-08T07:27+00:00",
+   "summary": "yay small models"
+  },
+  {
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "openclaw 2026.10.1-beta.1",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.1-beta.1",
+   "date": "2026-10-08T04:22+00:00",
+   "summary": "2026.10.1-beta.1 Changes since 2026.9.8 , the version selected by the npm beta channel before this release. Already-shipped contributions from that stable release are excluded from the record below. Highlights Code Mode can keep small session-scoped values across cells, replies, and Gateway restarts with store and load ( #164086 ). Control UI adds click-to-play YouTube cards, nested Workboards in…"
+  },
+  {
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "openclaw 2026.10.1-beta.2",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.1-beta.2",
+   "date": "2026-10-08T04:09+00:00",
+   "summary": "2026.10.1-beta.2 Changes since 2026.10.1-beta.1 , the previous npm beta-channel version. This is a hotfix beta covering 40 intervening commits, not a repeat of the cumulative October notes. Highlights Updates and Doctor: recover archive migrations and interrupted updates without leaving managed Gateways stopped, and restore Gateway lifecycle commands on macOS 12 and disabled Windows tasks. (…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Quoting Ben Affleck",
+   "url": "https://simonwillison.net/2026/Oct/7/ben-affleck/",
+   "date": "2026-10-07T23:14+00:00",
+   "summary": "I've always been kind of into computers since I was young. And then when film started to move from analog film to digital, I became more interested in that aspect of it. And the visual effects workflow for many years has included machine learning. So I can write like pretty shitty Python scripts and stuff like that because with convolutional neural networks, which were the sort of precursors to…"
+  },
+  {
+   "source": "TestingCatalog",
+   "tier": "signal",
+   "title": "OpenAI rolls out GPT-6 with Intelligent UI in ChatGPT",
+   "url": "https://www.testingcatalog.com/openai-rolls-out-gpt-6-with-intelligent-ui-in-chatgpt/",
+   "date": "2026-10-07T22:33+00:00",
+   "summary": "ChatGPT gains visual answers, interactive tools and faster responses as OpenAI expands GPT-6 globally across paid and free plans."
+  },
+  {
+   "source": "TestingCatalog",
+   "tier": "signal",
+   "title": "Microsoft brings hybrid AI and agent controls to Windows",
+   "url": "https://www.testingcatalog.com/microsoft-brings-hybrid-ai-and-agent-controls-to-windows/",
+   "date": "2026-10-07T22:30+00:00",
+   "summary": "Microsoft outlines local and cloud AI for Windows, with MXC agent containment, upcoming Copilot capabilities and RTX Spark PCs."
+  },
+  {
+   "source": "TestingCatalog",
+   "tier": "signal",
+   "title": "Anthropic launches Claude Haiku 5.5 at lower API prices",
+   "url": "https://www.testingcatalog.com/anthropic-launches-claude-haiku-5-5-at-lower-api-prices/",
+   "date": "2026-10-07T22:28+00:00",
+   "summary": "Claude Haiku 5.5 targets high-volume AI tasks with lower token prices, adjustable effort and availability across major cloud platforms."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "AI favors brands with an active social media presence",
+   "url": "https://www.socialmediatoday.com/news/ai-favors-brands-with-an-active-social-media-presence/832450/",
+   "date": "2026-10-07T18:19-04:00",
+   "summary": "Social platform links appeared in a majority of Google’s artificial intelligence search results, according to a new study."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "LinkedIn shares checklist for B2B marketing campaigns",
+   "url": "https://www.socialmediatoday.com/news/linkedin-shares-checklist-for-b2b-marketing-campaigns/832449/",
+   "date": "2026-10-07T18:13-04:00",
+   "summary": "LinkedIn's latest guide provides notes on how marketers can better align their campaigns with changing discovery behaviors."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Edits gets carousel editing tools",
+   "url": "https://www.socialmediatoday.com/news/edits-gets-carousel-editing-tools/832448/",
+   "date": "2026-10-07T18:11-04:00",
+   "summary": "Users can apply some of the app’s video editing features to enhance carousel layouts, change fonts and add overlays."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Pinterest expands creator content promotions",
+   "url": "https://www.socialmediatoday.com/news/pinterest-expands-creator-content-promotions/832447/",
+   "date": "2026-10-07T17:26-04:00",
+   "summary": "Brands will be able to sponsor creator Pins, boosting exposure and providing more promotional opportunities."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Meta discusses protocols for agentic commerce",
+   "url": "https://www.socialmediatoday.com/news/meta-discusses-protocols-for-agentic-commerce/832446/",
+   "date": "2026-10-07T17:13-04:00",
+   "summary": "The company is trying to ease concerns from e-commerce businesses about how Muse artificial intelligence agents access websites and communicate online."
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Claude Haiku 5.5",
+   "url": "https://simonwillison.net/2026/Oct/7/claude-haiku-5-5/",
+   "date": "2026-10-07T20:56+00:00",
+   "summary": "As previously promised , here's Anthropic's new fast, low cost model: Introducing Claude Haiku 5.5 . The previous Haiku, 4.5, was very much showing its age. It came out almost a year ago , and was priced at $1/million input and $5/million output - relatively expensive even back then, and a full 10x the price of OpenAI's GPT-6 Luna , released last month. The new Haiku exactly matches the price of…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "ChatGPT’s ‘Intelligent UI’ update fills its responses with pictures, charts, and buttons",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1007276/openai-chatgpt-intelligent-ui-gpt-6",
+   "date": "2026-10-07T15:10-04:00",
+   "summary": "OpenAI is launching a new Intelligent UI feature in ChatGPT that allows the chatbot to answer your questions with interactive visuals. The update, which is rolling out to all users alongside GPT-6, gives ChatGPT the ability to combine a text response with diagrams, charts, forms, tappable buttons, and more. In a blog post explaining the change , OpenAI says it trained GPT-6 when to generate…"
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Meta outlines political ad restrictions",
+   "url": "https://www.socialmediatoday.com/news/meta-outlines-political-ad-restrictions/832444/",
+   "date": "2026-10-07T14:56-04:00",
+   "summary": "The company once again plans to limit campaign and candidate-related promotions in the week leading up to the U.S. midterm elections."
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Everything announced at Microsoft’s Surface Laptop Ultra event",
+   "url": "https://www.theverge.com/tech/1007147/microsoft-surface-laptop-ultra-windows-event-everything-announced",
+   "date": "2026-10-07T14:42-04:00",
+   "summary": "Microsoft just wrapped up a big Windows and Surface-focused keynote in San Francisco. The biggest announcement was arguably the release details about the Surface Laptop Ultra , its new laptop that’s powered by Nvidia’s RTX Spark Arm-based chip. The machine will start at $2,599 for a configuration with an 8-core CPU, 24GB of RAM, and 512GB of storage, and it will be released on October 16th. The…"
+  },
+  {
+   "source": "TechCrunch Social",
+   "tier": "signal",
+   "title": "X expands its ‘Gametime’ sports hub beyond the NFL, starting with MLB",
+   "url": "https://techcrunch.com/2026/10/07/x-expands-its-gametime-sports-hub-beyond-the-nfl-starting-with-mlb/",
+   "date": "2026-10-07T18:10+00:00",
+   "summary": "X is turning its NFL-focused Gametime feature into a year-round sports destination, starting with MLB and with other professional leagues to follow."
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Microsoft is giving Copilot more control over Windows and your files",
+   "url": "https://www.theverge.com/tech/1007113/microsoft-windows-copilot-ai-control-search-hybrid-intelligence",
+   "date": "2026-10-07T14:01-04:00",
+   "summary": "At today's Windows and Surface event, Microsoft showed off an upgrade to its Copilot AI system that will give it access to local files on your PC and the ability to take actions across the OS. It's part of an idea Microsoft is calling \"Hybrid Intelligence,\" where apps and tools rely on a mix of local and cloud AI models to accomplish tasks efficiently. To show off how Hybrid Intelligence works,…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Surface RTX Spark Dev Box is available for preorder for $5,999",
+   "url": "https://www.theverge.com/tech/1006915/microsoft-surface-rtx-spark-dev-box-preorder",
+   "date": "2026-10-07T13:46-04:00",
+   "summary": "Microsoft's Nvidia-powered Surface RTX Spark Dev Box is available for preorder now and is slated to ship in November for just about $6,000. It's pricier than the DGX Spark mini PC Nvidia launched last year, but PC prices have been climbing due to shortages of RAM and other components . The Dev Box's flat, 3D-printed anodized aluminum chassis doubles as a heatsink and resembles the top vents on an…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "ChatGPT is getting college planning tools",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1005194/openai-chatgpt-teens-college-planner-notecards",
+   "date": "2026-10-07T12:00-04:00",
+   "summary": "A preview of OpenAI’s College Planner. | Image: OpenAI OpenAI is bringing new tools to ChatGPT for Teens, a mode for teens introduced in August with safeguards and break reminders, to help users with the college application process . \"College Planner brings together application requirements, deadlines, tasks, and financial-aid steps for schools on a student's list in one plan,\" OpenAI says.…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Muse launches on the iPad",
+   "url": "https://www.theverge.com/tech/1006813/muse-ai-agent-ios-app-ipad-support",
+   "date": "2026-10-07T11:37-04:00",
+   "summary": "After launching nearly a month ago and spending several weeks as the top free app in Apple's App Store, the latest update to Meta's Muse iOS app introduces native support for the iPad. A Mac version of Meta's agentic AI tool (designed to compete with OpenClaw, ChatGPT's Dots, and Grok Bot) was released about a week after the original mobile version debuted expanding its usefulness to desktop…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Anti-Patterns in Software Blogging",
+   "url": "https://simonwillison.net/2026/Oct/7/anti-patterns-in-software-blogging/",
+   "date": "2026-10-07T14:53+00:00",
+   "summary": "Anti-Patterns in Software Blogging Some excellent writing advice from Michael Lynch. Michael warns against \"meandering intros\", misjudging your reader's existing knowledge, assuming they'll read your previous posts, and excessive formality. He also warns against overreliance on links as an excuse not to explain terminology. This one hurt! I do this all the time, but I have a nagging suspicion…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Google invests millions in Mark Zuckerberg’s efforts to create a ‘virtual cell’",
+   "url": "https://www.theverge.com/tech/1006766/google-meta-biohub-investment-virtual-cell",
+   "date": "2026-10-07T10:40-04:00",
+   "summary": "Google DeepMind, Meta, and AI drug discovery startup Isomorphic Labs are jointly investing $300 million into an initiative to create a \"virtual cell\" that researchers can use to combat disease, as reported earlier by Reuters . The project is led by Biohub, a nonprofit biomedical research organization founded by Mark Zuckerberg and his wife, Priscilla Chan. It comes as part of a $1.8 billion…"
+  },
+  {
+   "source": "Latent Space AINews",
+   "tier": "signal",
+   "title": "Can a Cloud-Native Harness Make Agents Reliable Beyond the Desktop?",
+   "url": "https://www.latent.space/p/stacklok",
+   "date": "2026-10-07T14:10+00:00",
+   "summary": "Kubernetes co-creators Craig McLuckie and Joe Beda aim to bring agent harnesses fully into the cloud."
+  },
+  {
+   "source": "TestingCatalog",
+   "tier": "signal",
+   "title": "Google prepares Antigravity for Gemini 4 Argon and Concierge",
+   "url": "https://www.testingcatalog.com/google-prepares-antigravity-for-gemini-4-argon-and-concierge/",
+   "date": "2026-10-07T14:04+00:00",
+   "summary": "New Antigravity labels point to Argon rollout preparations as Google explores a voice agent, Auto mode, and visual customization."
+  },
+  {
+   "source": "TestingCatalog",
+   "tier": "signal",
+   "title": "Sesame updates voice agents with their own computers",
+   "url": "https://www.testingcatalog.com/sesame-updates-voice-agents-with-their-own-computers/",
+   "date": "2026-10-07T12:17+00:00",
+   "summary": "Sesame's updated voice assistants gain computer access and agent orchestration as the company previews its plans for all-day AI glasses."
+  },
+  {
+   "source": "TestingCatalog",
+   "tier": "signal",
+   "title": "Claude adds editing in Google Docs, Sheets, and Slides",
+   "url": "https://www.testingcatalog.com/claude-adds-editing-in-google-docs-sheets-and-slides/",
+   "date": "2026-10-07T12:15+00:00",
+   "summary": "Anthropic brings Claude into Google Workspace with a paid-plan sidebar beta and connectors for creating and editing files from chat."
+  },
+  {
+   "source": "TestingCatalog",
+   "tier": "signal",
+   "title": "Maket 2.0 brings AI floor plans and 3D home renders",
+   "url": "https://www.testingcatalog.com/maket-2-0-brings-ai-floor-plans-and-3d-home-renders/",
+   "date": "2026-10-07T12:09+00:00",
+   "summary": ""
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "AI could upend food delivery",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1005726/doordash-ai-agentic-food-delivery-bites",
+   "date": "2026-10-07T08:00-04:00",
+   "summary": "DoorDash, the leading food delivery app, processed 970 million orders in its second quarter this year and generated $4.5 billion in revenue. A 10-person startup called Bites is a blip in comparison: It has just around 300 restaurants signed up in the Bay Area, where it's operating as a pre-seed startup. But this summer, Bites caught DoorDash's attention. In August, a slew of restaurants in the…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "ChatGPT for Teens is an ‘unacceptable risk,’ says Common Sense Media",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1006355/openai-chatgpt-for-teens-common-sense-media",
+   "date": "2026-10-07T05:00-04:00",
+   "summary": "Common Sense Media, a nonprofit that offers reviews of apps, services, and entertainment with a focus on youth safety, today said that OpenAI's ChatGPT for Teens is an \"unacceptable risk.\" ChatGPT for Teens, introduced in August , has guardrails for teens and is designed to help students learn, but Common Sense Media says that the teen protections offered by the feature \"fall short of what the…"
+  },
+  {
+   "source": "Latent Space AINews",
+   "tier": "signal",
+   "title": "[AINews] Quasi-Riemann-Hypothesis: OpenAI publishes 722 math papers solving 90 of the top 500 open math problems; “the most significant moment” in >100 years of mathematics",
+   "url": "https://www.latent.space/p/ainews-quasi-riemann-hypothesis-openai",
+   "date": "2026-10-07T04:55+00:00",
+   "summary": "Our head hurts."
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Quoting Jake Boggan",
+   "url": "https://simonwillison.net/2026/Oct/7/jake-boggan/",
+   "date": "2026-10-07T04:47+00:00",
+   "summary": "I was a graph theory junkie long ago and even moved to Budapest for awhile to study among the greats. While I was there I started working on Barnette's Conjecture which came to occupy my thoughts over the next 24 years of my life, on and off as I worked in many different fields. Last summer I even thought for a few days that I had actually solved it. But it's supposedly proven here - problem 180…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "OpenAI “rogue” agent activities found on Wikimedia projects",
+   "url": "https://simonwillison.net/2026/Oct/7/openai-rogue-agents-wikimedia/",
+   "date": "2026-10-07T00:16+00:00",
+   "summary": "OpenAI “rogue” agent activities found on Wikimedia projects Given how tempting a target wikis are for rogue agent swarms, it's not a huge surprise that Wikipedia found evidence of that activity once they went looking: The Wikimedia Foundation conducted its own investigation to see whether Wikimedia websites had been similarly affected by AI agents, focusing on those operated by OpenAI. We can…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Quoting Victoria Kim",
+   "url": "https://simonwillison.net/2026/Oct/6/victoria-kim/",
+   "date": "2026-10-06T23:58+00:00",
+   "summary": "Since the Medicare breach, OpenAI has put in place additional monitoring to allow “immediate intervention” by staff to stop training if the company’s models access the internet in ways they’re not supposed to, Mr. Kwon [chief strategy officer at OpenAI] said. — Victoria Kim , Reporting from the Australian parliament Tags: accidental-cyberattacks , generative-ai , ai-security-research , openai ,…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "OpenAI drops another batch of mathematical breakthroughs",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1005004/openai-math-release-github",
+   "date": "2026-10-06T19:26-04:00",
+   "summary": "OpenAI has revealed solutions to a number of long-standing mathematics problems produced by an unreleased frontier model in a batch of 722 manuscripts, covering 372 result families that group related papers. It extends a run of breakthroughs that have both impressed and unsettled parts of the mathematical community while raising questions about research ethics and academic conduct. According to…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "llm-openai-decisions 0.1a0",
+   "url": "https://simonwillison.net/2026/Oct/6/llm-openai-decisions/",
+   "date": "2026-10-06T23:04+00:00",
+   "summary": "Release: llm-openai-decisions 0.1a0 OpenAI released their new Jev-style Decisions API , as previously announced at last week's DevDay. Since I already have an llm-typesafe plugin for talking to Jev, I had GPT-6 Astra read the new OpenAI API documentation and build an llm-openai-decisions plugin inspired by llm-typesafe . Unlike Jev, the new gpt-6-luna decision model supports image input in…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "llm-mistral 0.16",
+   "url": "https://simonwillison.net/2026/Oct/6/llm-mistral/",
+   "date": "2026-10-06T21:32+00:00",
+   "summary": "Release: llm-mistral 0.16 Adds support for reasoning models, such as the newly released Mistral Large 4 . Tags: llm , mistral , llm-reasoning"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "A 100x faster* alternative to homebrew",
+   "url": "https://github.com/zerobrewhq/zerobrew",
+   "date": "2026-10-08T03:23+00:00",
+   "summary": "86 points, 70 comments · https://news.ycombinator.com/item?id=50001580"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Meta and Microsoft take steps to reduce employee usage of Claude AI",
+   "url": "https://www.rswebsols.com/news/meta-and-microsoft-take-steps-to-reduce-employee-usage-of-claude-ai/",
+   "date": "2026-10-07T18:49+00:00",
+   "summary": "340 points, 337 comments · https://news.ycombinator.com/item?id=49997161"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Push ifs up and fors down: The idiom, its algebra, and its limits",
+   "url": "https://debasishg.github.io/blog/push-ifs-up-fors-down/",
+   "date": "2026-10-07T18:43+00:00",
+   "summary": "146 points, 66 comments · https://news.ycombinator.com/item?id=49997073"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Claude Haiku 5.5",
+   "url": "https://www.anthropic.com/claude-haiku-5-5",
+   "date": "2026-10-07T18:01+00:00",
+   "summary": "873 points, 418 comments · https://news.ycombinator.com/item?id=49996437"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "GPT‑6 and Intelligent UI for everyone",
+   "url": "https://openai.com/index/gpt-6-for-everyone/",
+   "date": "2026-10-07T18:00+00:00",
+   "summary": "625 points, 345 comments · https://news.ycombinator.com/item?id=49996425"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Docker Agent",
+   "url": "https://github.com/docker/docker-agent",
+   "date": "2026-10-07T17:48+00:00",
+   "summary": "233 points, 109 comments · https://news.ycombinator.com/item?id=49996259"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Study: Claude, ChatGPT Offer Different Shopping Prices Based on Wealth",
+   "url": "https://www.bloomberg.com/news/newsletters/2026-10-07/study-claude-chatgpt-ai-bots-offer-different-shopping-prices-based-on-wealth",
+   "date": "2026-10-07T16:07+00:00",
+   "summary": "96 points, 35 comments · https://news.ycombinator.com/item?id=49994746"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Incident with Git Operations, Pull Requests and Actions – Resolved",
+   "url": "https://www.githubstatus.com/incidents/djlmxz2zd0j7",
+   "date": "2026-10-07T15:17+00:00",
+   "summary": "226 points, 178 comments · https://news.ycombinator.com/item?id=49994027"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "SynthID Detector",
+   "url": "https://synthid.com/",
+   "date": "2026-10-07T14:16+00:00",
+   "summary": "114 points, 92 comments · https://news.ycombinator.com/item?id=49993188"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "AI-assisted proof of optimal packing for 11 squares",
+   "url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized",
+   "date": "2026-10-07T14:10+00:00",
+   "summary": "115 points, 53 comments · https://news.ycombinator.com/item?id=49993121"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Google Playground: Create and play custom games",
+   "url": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
+   "date": "2026-10-07T12:28+00:00",
+   "summary": "144 points, 221 comments · https://news.ycombinator.com/item?id=49991823"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Write Like It's 1866: LLMs Relearn Telegraphese",
+   "url": "https://fiveminutesforward.com/post/2026-10-04-telegraph-test/",
+   "date": "2026-10-07T12:04+00:00",
+   "summary": "90 points, 56 comments · https://news.ycombinator.com/item?id=49991580"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "God of War on PSP, recompiled to WebAssembly and running in the browser",
+   "url": "https://github.com/snuri00/psp-web-recomp",
+   "date": "2026-10-07T11:27+00:00",
+   "summary": "195 points, 104 comments · https://news.ycombinator.com/item?id=49991243"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "PS5 Jailbreaks Are Escalating at an Unprecedented Pace",
+   "url": "https://www.pushsquare.com/news/2026/10/ps5-jailbreaks-are-escalating-at-an-unprecedented-pace-and-sony-must-be-sweating",
+   "date": "2026-10-07T10:24+00:00",
+   "summary": "115 points, 136 comments · https://news.ycombinator.com/item?id=49990763"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "A font recreated from photographs of classic Commodore 64 keycaps",
+   "url": "https://github.com/szabadkai/c64-keyboard-font/",
+   "date": "2026-10-07T09:17+00:00",
+   "summary": "389 points, 64 comments · https://news.ycombinator.com/item?id=49990224"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "ESP32-C3 Adblock",
+   "url": "https://github.com/M-Abozaid/esp32-c3-adblock",
+   "date": "2026-10-07T01:39+00:00",
+   "summary": "185 points, 81 comments · https://news.ycombinator.com/item?id=49986862"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "South Korea says AI agents appear to have been used to hack the country's banks",
+   "url": "https://www.reuters.com/world/south-koreas-lee-says-ai-appears-have-been-used-bank-hacks-2026-10-06/",
+   "date": "2026-10-06T23:50+00:00",
+   "summary": "98 points, 31 comments · https://news.ycombinator.com/item?id=49985861"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "AnyPS5: Port PS5 binaries to PC without emulation (87% system libraries mapped)",
+   "url": "https://github.com/boykopovar/AnyPS5",
+   "date": "2026-10-06T23:28+00:00",
+   "summary": "353 points, 301 comments · https://news.ycombinator.com/item?id=49985664"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Integer multiplication below n log n",
+   "url": "https://github.com/openai/math/tree/main/preprints/Integer-multiplication-below-n-log-n-September-23-2026",
+   "date": "2026-10-06T23:14+00:00",
+   "summary": "110 points, 77 comments · https://news.ycombinator.com/item?id=49985524"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Sharing AI progress in mathematics",
+   "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+   "date": "2026-10-06T22:17+00:00",
+   "summary": "1280 points, 1451 comments · https://news.ycombinator.com/item?id=49984923"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Penguin Mail – open-source Rust email client for Linux with AI",
+   "url": "https://penguin-mail.com/",
+   "date": "2026-10-06T21:59+00:00",
+   "summary": "233 points, 182 comments · https://news.ycombinator.com/item?id=49984716"
+  }
+ ],
+ "errors": [],
+ "manual": [
+  {
+   "name": "xAI news / Grok app updates",
+   "url": "https://x.ai/news",
+   "why": "blocks scripts (403): web search 'Grok' / 'xAI' last 24h"
+  },
+  {
+   "name": "ChatGPT release notes",
+   "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Perplexity changelog",
+   "url": "https://www.perplexity.ai/changelog",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Official X accounts (@AnthropicAI, @OpenAI, @xai, @GoogleDeepMind, @cursor_ai)",
+   "url": "https://x.com",
+   "why": "X needs login / paid API: use web search for big announcements"
+  },
+  {
+   "name": "Social media new features (Instagram @creators/@mosseri, TikTok newsroom, X, LinkedIn, Snapchat)",
+   "url": "https://newsroom.tiktok.com/",
+   "why": "no working RSS (TikTok/WhatsApp/Instagram blogs are HTML, Snap/LinkedIn 404): web search each gather for new features, AI features and creator tools; confirm on the platform's own newsroom/help page"
+  },
+  {
+   "name": "Higgsfield announcements",
+   "url": "https://x.com/higgsfield_ai",
+   "why": "big launches often land on X before the blog"
+  },
+  {
+   "name": "Qwen blog (Alibaba)",
+   "url": "https://qwen.ai/blog",
+   "why": "JS-rendered, no RSS (the old qwenlm.github.io feed stopped in 2025-09): web search 'Qwen' each gather for new open-weight releases"
+  }
+ ]
+}

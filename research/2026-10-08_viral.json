@@ -1,0 +1,64 @@
+{
+ "generated": "2026-10-08T09:31:06+00:00",
+ "reddit": [],
+ "youtube_signal": [
+  {
+   "id": "yt-IpntV--lp2Q",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "El papel de los chicles en Japón 🍬",
+   "channel": "Dehz",
+   "url": "https://www.youtube.com/shorts/IpntV--lp2Q",
+   "views": 1289894,
+   "date": "2026-10-05T22:00:13Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-t8Sm6bF9RHU",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "India Jhoome Che Garbe Ghoome Che | Bhoomi Trivedi | World’s First AI Generated Garba Music Video",
+   "channel": "Bhoomi Trivedi",
+   "url": "https://www.youtube.com/shorts/t8Sm6bF9RHU",
+   "views": 435748,
+   "date": "2026-10-05T13:59:09Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-1OBtpgbTiuE",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "This AI Bible Video Looks So Real",
+   "channel": "Pete Lee",
+   "url": "https://www.youtube.com/shorts/1OBtpgbTiuE",
+   "views": 213273,
+   "date": "2026-10-07T05:33:07Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-Ff3Iv9MtnaI",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "LA CARTERA DE MAMA ES MISTERIOSA? 😳😱Cute 🍇🍏🍒 #divertido #comedia #familiaibañez #shorts",
+   "channel": "Familia Ibañez",
+   "url": "https://www.youtube.com/shorts/Ff3Iv9MtnaI",
+   "views": 124973,
+   "date": "2026-10-06T02:30:40Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-6fu8JkJtQdk",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "JANTAR MANTAR AI VIDEO CONTROVERSY",
+   "channel": "Wens News Network",
+   "url": "https://www.youtube.com/shorts/6fu8JkJtQdk",
+   "views": 121126,
+   "date": "2026-10-06T09:02:42Z",
+   "query": "AI generated video"
+  }
+ ],
+ "errors": [
+  "Reddit: REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET missing in .env"
+ ]
+}

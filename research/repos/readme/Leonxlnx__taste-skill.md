@@ -2,9 +2,9 @@ Taste Skill
 
  The Anti-Slop Frontend Framework for AI Agents 
 
- Thanks to Kimi (Moonshot AI) , our Open Source Friend, for supporting taste-skill! With 2.8T parameters, native vision, and a 1-million-token context window, Kimi K3 delivers frontier performance across long-horizon coding, knowledge work, and reasoning. 
+ &nbsp;
 
- Get a Kimi API key . Taste-skill users get 10% bonus API credits on their first purchase. 
+ From the Taste Skill team: TasteCode , a local desktop workspace for Codex, Claude Code and Grok with a design agent that briefs, builds and visually reviews your UI. Source on GitHub . 
 
  Sponsors 
 
@@ -108,4 +108,5 @@ These produce design images only (no code). Use with ChatGPT Images, Codex image
 ### Which one should I use?
 
 - Start with **taste-skill** for the safest general default. (Now v2 experimental - see what changed in the [CHANGELOG](CHANGELOG.md).)
-- If you
+- If you depend on the exact behavior of the original taste-skill, install **taste-skill-v1** instead. 
+- Use **gpt-taste** when you want the stricter GPT/Codex-

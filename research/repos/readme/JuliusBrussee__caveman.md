@@ -9,7 +9,7 @@
 Cited by **[Adobe Research](https://arxiv.org/abs/2606.24083)** · A/B tested by **[JetBrains](https://blog.jetbrains.com/ai/2026/07/speak-to-ai-agents-like-cavemen-tosave-tokens/)** · Remade for Elasticsearch on **[Elasticsearch Labs](https://www.elastic.co/search-labs/blog/elastic-caveman-ai-token-reduction)** 
 **#1** on [Hacker News](https://news.ycombinator.com/item?id=47647455) · **#1** on GitHub Trending · *"No way this actually works."* [ThePrimeagen](https://www.youtube.com/watch?v=L29q2LRiMRc)
 
-**[How it talks](#how-caveman-talks) · [Install](#install) · [The numbers](#the-numbers) · [The proxy](#big-rock-the-proxy) · [What you get](#what-you-get) · [In the wild](#in-the-wild)**
+**[How it talks](#how-caveman-talks) · [Install](#install) · [The numbers](#the-numbers) · [The proxy](#big-rock-the-proxy) · [The skill](#small-rock-the-skill) · [What you get](#what-you-get) · [In the wild](#in-the-wild)**
 
 ---
 
@@ -41,9 +41,9 @@ Caveman is a voice, not broken grammar. Every reply follows the same structure:
 | **Answer first** | `[thing] [action] [reason]. [next step].` No greeting, no "let me", no recap, no "hope this helps" |
 | **One idea per sentence** | Built on [ASD-STE100](https://www.asd-ste100.org/), the controlled English written for aircraft maintenance manuals: 20 words max, active voice, one term per thing |
 | **Meaning never dropped** | Articles can go. *not*, *never*, *no*, *only* never go. Numbers and units stay exact |
-| **Payload verbatim** | Code, commands, paths, and error messages untouched, character for character |
+| **Payload verbatim** | Code, commands, paths, error messages, and your existing code comments untouched, character for character. Small fix shows the changed lines, not the whole file again |
 | **Quiet tool runs** | No chatter between tool calls. One line per phase, one line with the result |
-| **Knows when to stop** | Security warnings, irreversible actions, step-by-step orders, and confused users get full sentences. Then grunt resumes |
+| **Knows when to stop** | Security warnings, irreversible actions, step-by-step orders, questions back to you, and confused users get full sentences. Then grunt resumes |
 | **Never performs** | No "me think", no caveman prefix. If caveman phrasing isn't shorter, plain wins |
 | **Your prompts stay yours** | Never rewritten. [Research say that backfire](#the-numbers) |
 
@@ -52,33 +52,13 @@ Every reply runs a check before it sends: opener that announces the plan, delete
 ## Install
 
 ```bash
-npx skills add JuliusBrussee/caveman -g
+npm install -g @caveman-ai/cli && caveman setup --install
+caveman claude # or codex · gemini · aider · kilo · qwen · opencode · hermes · openclaw · pi
 ```
 
-Works in Claude Code, Codex, Gemini CLI, Cursor, Windsurf, Cline, Copilot, and [30+ more](./INSTALL.md). Type `/caveman` if it doesn't start on its own. Say `stop caveman` to go back. One rock. That it.
+**This is the proxy, the big rock.** Your agent reads 33.2% fewer input tokens across whole sessions, same answers. It runs on your machine, with your keys and your Claude Pro/Max login. Needs Node.js 22.13+. After the first run, plain `claude` stays caveman'd. One rock. That it.
 
- Other ways in : Claude Code plugin, Gemini, every agent at once, Windows, uninstall 
-
-```bash
-# Claude Code plugin, auto-starts every session
-claude plugin marketplace add JuliusBrussee/caveman && claude plugin install caveman@caveman
-
-# Gemini CLI
-gemini extensions install https://github.com/JuliusBrussee/caveman
-
-# Every agent on your machine at once, plus the Claude Code statusline badge (Node.js 22.13+)
-curl -fsSL https://raw.githubusercontent.com/JuliusBrussee/caveman/v3.1.0/install.sh | bash
-```
-
-Windows, PowerShell 5.1+:
-
-```powershell
-irm https://raw.githubusercontent.com/JuliusBrussee/caveman/v3.1.0/install.ps1 | iex
-```
-
-Changed your mind: `npx -y github:JuliusBrussee/caveman -- --uninstall`
-
-Install broke? Open your agent in this repo and say *"Read CLAUDE.md and INSTALL.md, install caveman for me."* Agent fix own brain.
+[What the proxy does](#big-rock-the-proxy) · Only want shorter answers? [Get just the skill](#small-rock-the-skill)
 
 ## The numbers
 
@@ -101,4 +81,7 @@ Two findings shaped caveman. Adobe found that cavemanning *your* prompt makes an
 | YAML | 20,447 → **178** | **99.1%** | 132,124 → 71,027 | **46.2%** |
 | Test output | 18,806 → **203** | **98.9%** | 150,377 → 108,514 | **27.8%** |
 | JSON | 18,837 → **281** | **98.5%** | 147,975 → 108,939 | **26.4%** |
-| HTML | 21,670 → 21,670 | none yet | 140,6
+| HTML | 21,670 → 21,670 | none yet | 140,687 → 154,641 | 9.9% worse |
+| **All six** | 130,611 → 22,994 | 82.4% | **885,793 → 591,673** | **33.2%** |
+
+**18 of 18 answers right.** *The file* is each benchmark file run through today's compressor on its own. *The session* is the whole agent run, which also carries the system prompt, tool definitions, conversation, and caveman's own rules, so it moves less than the file. The session 
