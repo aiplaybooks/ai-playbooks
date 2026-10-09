@@ -1,0 +1,86 @@
+{
+ "generated": "2026-10-09T09:31:02+00:00",
+ "reddit": [],
+ "youtube_signal": [
+  {
+   "id": "yt-IwTey-8H2ZI",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "#bts",
+   "channel": "MISSION_HUB1",
+   "url": "https://www.youtube.com/shorts/IwTey-8H2ZI",
+   "views": 1393512,
+   "date": "2026-10-07T11:30:21Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-2FuG-t_J1j4",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "‘Jump In Fire’ - LOL! Why Robots Are Made To Do It? Amazing Tech #shorts",
+   "channel": "FactTechz",
+   "url": "https://www.youtube.com/shorts/2FuG-t_J1j4",
+   "views": 680906,
+   "date": "2026-10-08T01:40:07Z",
+   "query": "humanoid robot video"
+  },
+  {
+   "id": "yt-tX_F8RhIatI",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Top 4 Flying Animals That Are NOT Birds! 🙄#shorts #animals #animals #shortvideo #new",
+   "channel": "Unique Fact Official",
+   "url": "https://www.youtube.com/shorts/tX_F8RhIatI",
+   "views": 492346,
+   "date": "2026-10-08T01:00:36Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-BsDEKGw_VRY",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Elon Musk's 1 Billion Robot Prediction Suddenly Looks Different.",
+   "channel": "ejunky66",
+   "url": "https://www.youtube.com/shorts/BsDEKGw_VRY",
+   "views": 219152,
+   "date": "2026-10-08T13:53:16Z",
+   "query": "humanoid robot video"
+  },
+  {
+   "id": "yt-kIVkAJKWvNc",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "ИИ-БЛОГЕР ДЛЯ ТВОЕГО БИЗНЕСА НА ABACUS AI",
+   "channel": "Aleko 🇺🇦",
+   "url": "https://www.youtube.com/shorts/kIVkAJKWvNc",
+   "views": 146928,
+   "date": "2026-10-06T14:10:53Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-MsXR5sNLCaA",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "The Hunt That Changed What We Knew About Early Humans 🏹 | TERRALORE #ancientearth #facts #terralore",
+   "channel": "TERRALORE — Earth's Forgotten Stories",
+   "url": "https://www.youtube.com/shorts/MsXR5sNLCaA",
+   "views": 124724,
+   "date": "2026-10-07T04:51:54Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-1vFWcddGq04",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "WHY FIGURE DESTROYED ITS OWN ROBOTS??  #information",
+   "channel": "Aism India",
+   "url": "https://www.youtube.com/shorts/1vFWcddGq04",
+   "views": 103530,
+   "date": "2026-10-06T13:30:27Z",
+   "query": "humanoid robot video"
+  }
+ ],
+ "errors": [
+  "Reddit: REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET missing in .env"
+ ]
+}

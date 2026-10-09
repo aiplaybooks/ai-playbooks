@@ -6,6 +6,9 @@
 [](cases/)
 [](scripts/verify_promo.py)
 
+**▶ See the films and get onetake Pro → [onetakemotion.com](https://onetakemotion.com)**
+**▶ 看成片、获取 onetake Pro → [onetakemotion.com](https://onetakemotion.com)**
+
  From onetake's own launch film. A prompt bar opens into the ad it asked for; the next prompt collapses into a line that shoots across the desk and opens into a festival screen. No cut. [Full film with sound →](cases/onetake-launch-30s/onetake-launch.mp4) 
 
 ---
@@ -118,7 +121,4 @@ git clone https://github.com/feitangyuan/onetake.git ~/.claude/skills/onetake
 git clone https://github.com/feitangyuan/onetake.git ~/.agents/skills/onetake
 ```
 
-Then ask: *"Make a 15 s launch video for my app"*, *"a feature demo rebuilt from these screenshots, no screen
-recording"*, *"my motion video feels like a slideshow — fix it"*.
-
-**Requires** python3 with `playwright` (chromium), `numpy`, `s
+Then ask: *"Make a 15 s launch video for my app"*, *"a feature demo rebuilt

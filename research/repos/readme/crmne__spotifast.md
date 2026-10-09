@@ -1,45 +1,113 @@
-# Spotifast
+Spotifast 
 
-**Spotify, native and fast.** Spotifast is a Spotify client written in
-Rust with [egui](https://github.com/emilk/egui). It plays music through
+ Spotify, native and fast. A lightweight music app for Linux, macOS, and Windows. 
+
+ Download ·
+ Getting started ·
+ User guide ·
+ Contribute 
+
+Spotifast is a Spotify client written in Rust with
+[egui](https://github.com/emilk/egui). It plays music through
 [librespot](https://github.com/librespot-org/librespot), typically uses
 100–250 MB of RAM, starts in well under a second, and has no browser engine.
-It runs on Linux, macOS, and Windows.
 
 **Playback needs Spotify Premium.** Free accounts can browse and search, but
 cannot play music through Spotifast.
 
+ Watch Spotifast in action 
+
 https://github.com/user-attachments/assets/a5f669ce-b3b7-4f8e-9933-976a78876c7e
 
-**[spotifast.rocks](https://spotifast.rocks/)** has downloads and the full guide:
+[Features](#your-music-on-your-desktop) · [Install](#install) · [First playback](#start-listening) · [Mini player](#the-winamp-mini-player) · [MilkDrop](#music-in-motion) · [Help](#guides-and-help)
 
-- [Getting started](https://spotifast.rocks/getting-started/): sign-in, playback on this computer, themes, fonts, proxies
-- [Everyday use](https://spotifast.rocks/using-spotifast/): keyboard shortcuts, command-line control, updates
-- [Settings and files](https://spotifast.rocks/settings-and-files/) and [Privacy](https://spotifast.rocks/privacy/)
-- [How it connects](https://spotifast.rocks/how-it-connects/) and [What Spotify allows](https://spotifast.rocks/what-spotify-allows/)
-- [Will my account get banned?](https://spotifast.rocks/what-is-spotifast/#will-my-spotify-account-get-banned)
+## Your music, on your desktop
 
-**Want WhatsApp just as fast and native?** [ZapFast](https://zapfast.rocks)
-is Spotifast's sibling. Both are built on
-[fastframe](https://github.com/crmne/fastframe).
+| Feature | What you can do |
+|---|---|
+| **Library and search** | Browse playlists, Liked Songs, albums, artists, and podcasts. Search the catalogue and edit playlists you own. |
+| **Spotify Connect** | Play on this computer or control playback on your other devices. |
+| **Themes** | Choose light, dark, system appearance, or custom colours. On Omarchy, follow your desktop theme. |
+| **Desktop controls** | Use keyboard shortcuts and media keys. Keep music playing from the tray when supported by your desktop and settings. |
+| **Winamp mini player** | Use classic skins with an equalizer, playlist, and animated sound displays. |
+| **MilkDrop** | Watch music-reactive visuals in a separate window or full screen. See platform availability below. |
 
 ## Install
 
-- **macOS:** `brew install --cask crmne/tap/spotifast`, or
- [download the Mac app](https://spotifast.rocks/download/#macos).
-- **Arch Linux:** `yay -S spotifast-bin`
-- **Windows, Flatpak, AppImage, Nix and other Linux:** see the
- [Download page](https://spotifast.rocks/download/).
-- **From source:** see
- [Build from source](https://spotifast.rocks/getting-started/#build-from-source).
+| Platform | Installation |
+|---|---|
+| **macOS** | `brew install --cask crmne/tap/spotifast`, or [download the Mac app](https://spotifast.rocks/download/#macos). |
+| **Arch Linux** | `yay -S spotifast-bin` |
+| **Windows** | Choose your build on the [Download page](https://spotifast.rocks/download/). |
+| **Other Linux** | Find Flatpak, AppImage, Nix, and other options on the [Download page](https://spotifast.rocks/download/). |
+| **From source** | Follow [Build from source](https://spotifast.rocks/getting-started/#build-from-source) for dependencies and commands. |
+
+## Start listening
+
+1. Open Spotifast and choose **Sign in with Spotify**. Approve access in your
+ browser, then return to the app to see your library.
+2. To listen on this computer, open the device menu in the bottom player bar
+ and choose **Set up playback here**, also available in Settings.
+3. Complete the separate playback approval in your browser. Your computer
+ appears as a Spotify Connect device named **Spotifast**.
+
+Library access and local playback have separate approvals. Spotifast remembers
+both using your computer's protected storage. See
+[Getting started](https://spotifast.rocks/getting-started/) for the full walkthrough
+and [How it connects](https://spotifast.rocks/how-it-connects/) for the details.
+
+## The Winamp mini player
+
+A classic look for your music, with Winamp 2 `.wsz` skins, an equalizer,
+a playlist, and animated sound displays. Switch with **Ctrl+M**
+(**Cmd+Shift+M** on macOS), the shrink button, or Settings.
+
+[Explore the mini player](https://spotifast.rocks/winamp/), including skins,
+window sizes, controls, and the return to the main player.
+
+## Music in motion
+
+MilkDrop reacts to music playing on this computer, with more than 10,000
+presets downloaded on first use. Open it from the visualiser button,
+Settings, or the mini player's **V** menu.
+
+Included on **Linux**, **macOS**, and **Windows Intel/AMD** builds.
+It is not included in the Windows on ARM download.
+[Read the MilkDrop guide](https://spotifast.rocks/milkdrop/) for presets,
+controls, and fullscreen mode.
+
+## Guides and help
+
+The complete guide lives at **[spotifast.rocks](https://spotifast.rocks/)**.
+
+| You want to… | Read |
+|---|---|
+| Sign in, set up playback, or configure themes, fonts, and proxies | [Getting started](https://spotifast.rocks/getting-started/) |
+| Learn shortcuts, command-line controls, and updates | [Everyday use](https://spotifast.rocks/using-spotifast/) |
+| Find configuration and stored files | [Settings and files](https://spotifast.rocks/settings-and-files/) |
+| Understand what is stored and sent | [Privacy](https://spotifast.rocks/privacy/) · [How it connects](https://spotifast.rocks/how-it-connects/) |
+| Check Spotify and librespot limitations | [What Spotify allows](https://spotifast.rocks/what-spotify-allows/) |
+| Understand account risk | [Will my account get banned?](https://spotifast.rocks/what-is-spotifast/#will-my-spotify-account-get-banned) |
+| Report a bug or propose a feature | Read [Contributing](CONTRIBUTING.md), then use the [issue forms](https://github.com/crmne/spotifast/issues/new/choose). |
 
 ## Contributing
 
 Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening an issue or pull
-request. To look at the interface without a Spotify account, run
-`cargo run --features demo -- --demo`. Translations live in `assets/i18n/`;
-see [Translating Spotifast](docs/_reference/translating.md). Release
-packaging is described in [PACKAGING.md](PACKAGING.md).
+request. To look at the interface without a Spotify account, run:
+
+```sh
+cargo run --features demo -- --demo
+```
+
+Translations live in `assets/i18n/`; see
+[Translating Spotifast](docs/_reference/translating.md). Release packaging
+is described in [PACKAGING.md](PACKAGING.md).
+
+## More native apps
+
+**Want WhatsApp just as fast and native?** [ZapFast](https://zapfast.rocks)
+is Spotifast's sibling. Both are built on
+[fastframe](https://github.com/crmne/fastframe).
 
 ## Acknowledgements
 

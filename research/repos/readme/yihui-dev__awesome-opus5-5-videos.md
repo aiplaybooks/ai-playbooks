@@ -4,12 +4,12 @@ Viral videos people made with **Claude Opus 5.5**, each with the prompt the crea
 
 Every video here was made by asking Claude Opus 5.5 to write the animation as code (HTML, Canvas, SVG, Three.js and friends). Pick one, copy its prompt, and try it with your own agent.
 
-**[▶ Watch all 475 side by side with live remakes on Skillry](https://skillry.dev/ai-videos/opus-5-5?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos)**
+**[▶ Watch all 513 side by side with live remakes on Skillry](https://skillry.dev/ai-videos/opus-5-5?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos)**
 
-- 475 prompts in [`prompts/`](prompts/) and [`data/videos.json`](data/videos.json)
+- 513 prompts in [`prompts/`](prompts/) and [`data/videos.json`](data/videos.json)
 - 100 highlighted below, one per distinct prompt
 - Every entry links to the creator's original post
-- Latest update (2026-09-29): 86 videos added, mostly motion graphics and explainers
+- Latest update (2026-10-08): 38 videos added, mostly motion graphics and explainers
 
 ## Contents
 
