@@ -1,8 +1,14 @@
-# Does AI recommend your product? Who shows up instead?
+# Refuse black-box GEO scores. Put the evidence back in your hands.
 
-**Enter a domain. Compare how models describe your product, who they recommend, and which sources they cite.**
+**An open-source GEO research tool for AI visibility, reproducible testing, competitors and evidence.**
 
-> **Open the GEO reporting black box. Put evidence in your hands.**
+Enter a domain, compare model answers, inspect citations and repeat the same research later.
+
+> **Why pay $5,000+/year for a GEO SaaS dashboard?**
+>
+> NiubiGEO is open source and self-hosted. Run it with your own model API keys, keep your research data in your environment and inspect the answer behind every observation.
+
+**Model API, hosting and infrastructure costs are separate.**
 
 **[Self-host](#quick-start) · [Official promotion platform](https://niubigeo.ai/) · [AI advisor](https://video.niubistar.com/niubigeo)**
 
@@ -20,6 +26,35 @@ You have built a product, written the docs and worked to get the word out. When 
 
 ---
 
+## Why NiubiGEO exists
+
+GEO tools can turn a complicated question into one unexplained number. NiubiGEO starts with the evidence instead:
+
+```text
+Question → AI model → Original answer → Mentions → Competitors → Citations → Historical run
+```
+
+You can inspect the answer, the conditions, the sources and the next run. A visibility result without its underlying answer is difficult to investigate.
+
+## Self-hosted research and data ownership
+
+Your keywords, competitor lists, positioning questions and research history may be commercially sensitive. Self-hosting lets you choose where the data is stored, who can access it and which model providers receive queries. It does not imply zero data exposure: external model APIs may receive the prompts you send to them.
+
+## A project that keeps moving
+
+NiubiGEO began with one question: **what does AI actually say about a product?** The project now connects multi-model testing, natural discovery, source evidence, repeatable runs and keyword monitoring. The next step is to make changes between runs easier to see.
+
+## Project status
+
+| Stage | Focus | Status |
+| :--- | :--- | :--- |
+| v0.1 | AI visibility testing | Shipped |
+| v0.2 | Evidence and reproducibility | Shipped |
+| v0.2.1 | Multi-provider model connections | Shipped |
+| v0.3 | Keyword monitoring and structured research | Released |
+
+See the [monitoring section](#monitoring) and [release history](https://github.com/Albert-Weasker/niubigeo/releases) for verifiable updates.
+
 ## New in v0.2.1
 
 - **Connect through platform logos**: 16 platform shortcuts open an API key form with the applicable endpoint prefilled.
@@ -27,11 +62,13 @@ You have built a product, written the docs and worked to get the word out. When 
 - **Keep results separate**: answers, citations and failures retain their endpoint, model and search setting, even when model names match.
 - **Browse the full model catalog**: filter by mainstream platform, source and search support. Custom search support is labeled unverified; structured analysis requires JSON Schema support.
 
-[Connection guide](docs/model-connections.md) · [Download v0.2.1](https://github.com/Albert-Weasker/niubigeo/releases/tag/v0.2.1) · [Docker installation](docs/deployment/docker.md)
+[Connection guide](docs/model-connections.md) · [Download v0.3.0](https://github.com/Albert-Weasker/niubigeo/releases/tag/v0.3.0) · [Docker installation](docs/deployment/docker.md)
 
-### Coming in v0.3
+### v0.3 · Keyword Monitoring NEW / BETA
 
-A **competitor detection dashboard** and a **continuous keyword monitoring dashboard** are planned for **late October 2026**. This is a tentative target and may change; these planned dashboards are not included in v0.2.1.
+v0.3 adds a separate Keyword Monitoring module in the workbench: define custom keywords, import batches, classify prompts as Discovery, Alternative, Comparison, Brand or Use case, start from AI Coding/SaaS/GEO/comparison templates, choose hourly/daily/weekly frequency, keep independent history, configure an optional brand and aliases, and compare snapshots in Diff View. [English guide](docs/keyword-monitoring.md) · [中文指南](docs/keyword-monitoring.zh-CN.md).
+
+This release does not include a separate competitor detection dashboard. The current v0.3 scope is keyword monitoring, independent history and change comparison.
 
 ## What can you find out?
 
@@ -53,7 +90,7 @@ A **competitor detection dashboard** and a **continuous keyword monitoring dashb
 To test your own product, you will need Node.js 22.13+ and your own OpenRouter API key:
 
 ```bash
-git clone --branch v0.2.1 --depth 1 https://github.com/Albert-Weasker/niubigeo.git
+git clone --branch v0.3.0 --depth 1 https://github.com/Albert-Weasker/niubigeo.git
 cd niubigeo
 npm ci
 cp .env.example .env
@@ -69,28 +106,4 @@ Open [**http://localhost:8787**](http://localhost:8787) to create your first pro
 
 Prefer a container? Follow the [Docker guide](docs/deployment/docker.md). Existing users should read [Backups and upgrades](docs/upgrade.md).
 
-## How to use it
-
-1. **Enter a domain.** Create a project for your product. It is saved before you start testing.
-2. **Choose your models.** Search for and select one or more models, then set web search separately for each.
-3. **Save your configuration and start a test.** Models answer independently. If one fails, the other results remain available.
-4. **Open the results.** Review descriptions, competitors, keywords and sources. Open the original answer to check a finding.
-5. **Keep observing.** Confirm the keywords you want to test, then run keyword tests. Repeat measurements or set up scheduled monitoring to collect comparable records.
-
-Start with one model, then add more once you know what to look for. Reading the cases is free; testing your own project incurs model and search API charges.
-
-### Talk to the video advisor
-
-The workbench shows a small advisor card by default. Click it to open the [official advisor entry point](https://niubigeo.ai/advisor), which redirects to the [NiubiStar-hosted video advisor](https://video.niubistar.com/niubigeo). You do not need to provide an API key to use the advisor.
-
-The local workbench loads no third-party script, iframe or video for this card, and the link does not include project data or model API keys. Choose which project details to share during your conversation on the external service.
-
-To hide the card, set `NIUBIGEO_VIDEO_ADVISOR_ENABLED=false` in `.env` and restart the server, or recreate the web container with `docker compose up -d`. `0` and `off` also hide it. Local diagnostics continue to work with the card disabled. This link adds no payment requirement and does not change the Apache-2.0 license.
-
-## From one answer to ongoing observation
-
-| What you want to do | What NiubiGEO provides |
-| :--- | :--- |
-| **Manage several products** | Each domain has its own project, configuration, runs and evidence. Switch projects without mixing products into one report. |
-| **Compare models** | Search, filter and select OpenRouter models. Inspect each model’s answer, result and errors, and retry a failed model separately. |
-| **Choose whether to use web search** | Set each model to offline or its supported native search mode. Results retain the actual executi
+## 

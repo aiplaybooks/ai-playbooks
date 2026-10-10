@@ -1,0 +1,87 @@
+{
+  "generated": "2026-10-10T12:30:00+03:00",
+  "candidates": [
+    {
+      "id": "anthropic-oss-scanner-free",
+      "tool": "Claude",
+      "kind": "news",
+      "title": "Anthropic Will Scan Your Open-Source Project for Security Holes — Free",
+      "summary_tr": "Anthropic, kritik açık kaynak projeleri Claude ile tarayıp güvenlik açıklarını raporlayan ücretsiz OSS Scanner'ı duyurdu. Maintainer'lar, anthropics/oss-scanner reposuna bir pull request açarak projeyi kaydettiriyor; rapor yeniden üretme adımları ve önerilen yama içeriyor.",
+      "why_tr": "Geliştirici kitlesi için 'bedava güvenlik taraması' güçlü bir vaat ve repo sahipleri hemen yararlanabilir.",
+      "angle": "what OSS Scanner is + what a report contains + how a maintainer enrolls with one pull request",
+      "tools": ["Claude"],
+      "published": "2026-10-08",
+      "sources": ["https://github.com/anthropics/oss-scanner", "https://red.anthropic.com/oss-scanner"],
+      "hints": ["https://www.theverge.com/ai-artificial-intelligence/1008521/anthropic-open-source-oss-scanner"],
+      "score": 7
+    },
+    {
+      "id": "copilot-local-sandboxing",
+      "tool": "Copilot",
+      "kind": "news",
+      "title": "GitHub Copilot Agents Can Now Be Locked Into a Sandbox — Files, Network and Passwords Off-Limits",
+      "summary_tr": "GitHub Copilot'a 'local sandboxing' geldi: ajanın dosyalara, ağa ve kimlik bilgilerine erişimi kısıtlanabiliyor, ek ücret yok. Aynı haftalık güncellemede VS Code'da ajan oturumlarını yan yana görme de var.",
+      "why_tr": "Ajanların kontrolden çıkması bu hafta konuşulan bir konu; 'ajanını kısıtla' somut ve faydalı bir ipucu.",
+      "angle": "why agents need a leash + what local sandboxing restricts + side-by-side agent sessions in VS Code",
+      "tools": ["Copilot"],
+      "published": "2026-10-09",
+      "sources": ["https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5"],
+      "hints": [],
+      "score": 6
+    },
+    {
+      "id": "workspace-studio-logic-search-steps",
+      "tool": "Google",
+      "kind": "news",
+      "title": "Google Workspace Studio Automations Get If/Else Logic and Drive Search",
+      "summary_tr": "Workspace Studio'ya iç içe koşullar, Gmail'de yanıtları atlama, Meet takvim çıktıları ve Drive'da belge arama adımları ekleniyor. Yayılım 13 Ekim'de başlıyor ve 15 güne kadar sürebiliyor.",
+      "why_tr": "Kod yazmadan iş akışı kuranlara pratik bir otomasyon güncellemesi; ancak niş.",
+      "angle": "4 new steps + one example flow (new email → search Drive → reply) + when it arrives",
+      "tools": ["Google"],
+      "published": "2026-10-09",
+      "sources": ["https://workspaceupdates.googleblog.com/2026/10/new-logic-and-search-steps-in-workspace-Studio-help-expand-automation-capabilities.html"],
+      "hints": [],
+      "score": 5
+    },
+    {
+      "id": "claude-code-hooks-evergreen",
+      "tool": "Claude",
+      "kind": "evergreen",
+      "title": "Claude Code Hooks: Make It Run Your Checks Every Time Without Being Asked",
+      "summary_tr": "Claude Code hook'ları, belirli olaylarda (dosya düzenleme, komut çalıştırma vb.) kendi komutunu otomatik çalıştırmanı sağlıyor. Gönderi, 3 pratik hook fikrini ve nasıl kurulacağını gösterir.",
+      "why_tr": "Claude Code kullananlar için kaydedilesi bir ipucu; hook'ları çoğu kişi bilmiyor.",
+      "angle": "what hooks are + 3 copy-paste uses (auto-format, block risky commands, notify when done) + where to set them",
+      "tools": ["Claude"],
+      "published": null,
+      "sources": ["https://code.claude.com/docs/en/hooks"],
+      "hints": [],
+      "score": 6
+    },
+    {
+      "id": "pack-upwork-proposal-agent",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "5 Prompts That Turn an AI Agent Into Your Upwork Proposal Machine Making $3,000 a Month",
+      "summary_tr": "Upwork/freelance işlerinde teklif yazımını bir AI ajanına devreden 5 promptluk paket: niş seçimi, ilan analizi, teklif yazımı, takip mesajı ve fiyatlandırma.",
+      "why_tr": "Para + yan gelir teması bizim kitlede iyi çalışıyor; somut aylık rakam vaadi var.",
+      "angle": "Niche picker, job-post decoder, winning proposal writer, follow-up sequence, rate-raising script",
+      "tools": ["ChatGPT", "Claude"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 6
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 0, "Claude": 2, "Gemini": 0, "Grok": 0, "Codex": 0, "Cursor": 0, "Copilot": 1,
+    "Perplexity": 0, "Meta AI": 0, "Mistral": 0, "DeepSeek": 0, "Open models": 0, "Apple": 0,
+    "Higgsfield": 0, "Google": 1, "Social media": 0, "Prompt pack": 1
+  },
+  "notes_tr": "Yeni: Anthropic OSS Scanner, Copilot local sandboxing, Workspace Studio adımları + 1 evergreen + 1 pack. Diğer araçlarda web aramaları eski/belirsiz sonuç verdi (ChatGPT, Perplexity, Instagram, WhatsApp, TikTok, YouTube, Apple, Grok, açık modeller). ChatGPT 'audio uploads' resmi kaynaktan doğrulanamadı (help.openai.com 403), eklenmedi. Perplexity changelog 403 verdi, manual kaynaklar kontrol edilemedi. Anthropic'in Philadelphia polisine yanlış ihbar haberi sadece TechCrunch/NBC'de var, resmi Anthropic kaynağı yok, eklenmedi. Bu oturumda Bash'te python çalıştırma izni verilmediği için bu turda yalnızca birkaç arama yapıldı, 25+ araç çağrısı hedefi karşılanamadı.",
+  "sources_changed": [
+    "Kaynak sağlığı: tüm kaynaklar fail_streak 0, hiçbiri 3+ başarısız veya 30 günden eski değil; düzeltme/devre dışı bırakma gerekmedi.",
+    "Python çalıştırma izni verilmediği için news.py --check ile yeni kaynak testi YAPILAMADI; sources.json'a kaynak eklenmedi.",
+    "Not: 'Meta newsroom (AI)' son başarılı çekimi 26 Eylül'de kalmış, yeni 'Meta newsroom (AI + Instagram / WhatsApp / Threads / Facebook)' kaynağı bunun yerini tutuyor; eskisi temizlenebilir.",
+    "Aday olarak düşünülen ama test edilemeyen: github.com/anthropics/oss-scanner/releases.atom ve Mistral help/blog feed'i."
+  ]
+}
