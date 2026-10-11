@@ -1,0 +1,372 @@
+{
+ "generated": "2026-10-11T09:30+00:00",
+ "hours": 36.0,
+ "items": [
+  {
+   "source": "Ollama releases",
+   "tier": "official",
+   "title": "v0.40.3",
+   "url": "https://github.com/ollama/ollama/releases/tag/v0.40.3",
+   "date": "2026-10-11T06:40+00:00",
+   "summary": "What's Changed ollama launch claude no longer shows a warning about Claude connectors by @hoyyeva in #18878 ollama launch codex no longer warns about service tiers by @hoyyeva in #18879 Paused background model upgrade for embedding and other request performance, by @jmorganca in #18908 Full Changelog : v0.40.2...v0.40.3"
+  },
+  {
+   "source": "GitHub Copilot changelog",
+   "tier": "official",
+   "title": "New controls and chat improvements in Copilot for JetBrains",
+   "url": "https://github.blog/changelog/2026-10-10-new-controls-and-chat-improvements-in-copilot-for-jetbrains",
+   "date": "2026-10-10T18:53+00:00",
+   "summary": "This update brings more control over default models and MCP server in GitHub Copilot for JetBrains. It also makes diagnostics easier to address, improves chat navigation and account controls, and… The post New controls and chat improvements in Copilot for JetBrains appeared first on The GitHub Blog ."
+  },
+  {
+   "source": "GitHub Copilot changelog",
+   "tier": "official",
+   "title": "GitHub Copilot weekly releases — October 5",
+   "url": "https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5",
+   "date": "2026-10-09T22:58+00:00",
+   "summary": "This week’s updates make Copilot easier to use across accounts and environments, with more control over what agents can access and how you manage their work. GitHub Copilot Claude Haiku… The post GitHub Copilot weekly releases — October 5 appeared first on The GitHub Blog ."
+  },
+  {
+   "source": "Claude release notes",
+   "tier": "official",
+   "title": "Claude release notes: Oct 09, 2026",
+   "url": "https://docs.claude.com/en/release-notes/overview",
+   "date": "2026-10-09T00:00+00:00",
+   "summary": " You can now let a Claude Managed Agents agent use dynamic workflows , in beta with the managed-agents- …"
+  },
+  {
+   "source": "xAI / Grok API release notes",
+   "tier": "official",
+   "title": "xAI / Grok API release notes: Oct 09, 2026",
+   "url": "https://docs.x.ai/docs/release-notes",
+   "date": "2026-10-09T00:00+00:00",
+   "summary": ""
+  },
+  {
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "openclaw 2026.10.1",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.1",
+   "date": "2026-10-11T07:17+00:00",
+   "summary": "OpenClaw v2026.10.1 3,055 commits · 2,425 pull requests · 402 contributors Changes included in this release The release notes and changelog contain the same content, presented in two formats: Release notes — formatted for people, with expandable sections. Changelog — plain Markdown for AI agents and tools. Thanks @100yenadmin @51Google @609NFT @A1fred-AI @abacha @adamamzalag @adamczhang…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Dwarf Fortress uses version control now",
+   "url": "https://simonwillison.net/2026/Oct/11/dwarf-fortress/",
+   "date": "2026-10-11T00:52+00:00",
+   "summary": "I remember hearing a while ago that Dwarf Fortress didn't use version control. That fact has been lodged in my head, because given its inherent complexity I have trouble imagining a codebase that would benefit from version control more . That's art. I went looking and I'm sad to report that the days without version control appear to have ended. Quoting Tarn Adams over time: March 2013: \"I don't…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Python 3.15.0 added to actions/python-versions",
+   "url": "https://simonwillison.net/2026/Oct/10/python-actions/",
+   "date": "2026-10-10T23:58+00:00",
+   "summary": "Python 3.15.0 added to actions/python-versions Bit of a niche link, but I've been waiting for this for a couple of days - I even told ChatGPT to check for it: Clone https://github.com/actions/python-versions and git pull once an hour until they add the stable 3.15 - then tell me about it Now that this has landed, you can add \"3.15\" to a GitHub Actions testing matrix to run tests against the new…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Satya Nadella says we should assume all AI models are ‘compromised’",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised",
+   "date": "2026-10-10T18:10-04:00",
+   "summary": "In a lengthy post on X , Microsoft's CEO laid out his views on the dangers posed by highly advanced AI models and how to confront those risks. Nadella says we can no longer accept a world where AI is treated as a \"set of nested black boxes\" whose advice and actions we simply accept or reject. He calls for building a more transparent system where models can be contained, observed, and leaves…"
+  },
+  {
+   "source": "Latent Space AINews",
+   "tier": "signal",
+   "title": "[Subscriber Exclusive] NYC Subscriber Meetups!",
+   "url": "https://www.latent.space/p/nyc2026",
+   "date": "2026-10-10T22:07+00:00",
+   "summary": "Tomorrow and Tuesday. If you see this you’re in!"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
+   "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/",
+   "date": "2026-10-10T21:47+00:00",
+   "summary": "In a Saturday morning post, Microsoft's CEO wrote that it’s time “to step back and assess the trust architecture” of AI."
+  },
+  {
+   "source": "TestingCatalog",
+   "tier": "signal",
+   "title": "Anthropic tests Claude Health for web and mysterious \"iggy\"",
+   "url": "https://www.testingcatalog.com/anthropic-tests-claude-health-for-web-and-mysterious-iggy/",
+   "date": "2026-10-10T20:36+00:00",
+   "summary": "Anthropic is developing Claude destinations Arborio and Iggy, with hints of a health connection but no confirmed functions or release dates."
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Apple discloses deal to hire team and license tech from personalized podcast startup Huxe",
+   "url": "https://techcrunch.com/2026/10/10/apple-discloses-deal-to-hire-team-and-license-tech-from-personalized-podcast-startup-huxe/",
+   "date": "2026-10-10T19:50+00:00",
+   "summary": "Is Apple hoping to get into the AI-generated podcast business?"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "DistroKid has been quietly taking down songs in response to UMG lawsuit",
+   "url": "https://www.theverge.com/entertainment/1009309/distrokid-take-down-songs-umg-lawsuit",
+   "date": "2026-10-10T14:52-04:00",
+   "summary": "Artists are taking to social media to complain that DistroKid has unceremoniously removed their work without notice. Now DistroKid has confirmed to The Verge that the takedowns are a direct response to claims made by UMG. The label filed a lawsuit in September claiming that DistroKid has created an \"AI-slop pipeline.\" Artists are saying that their non-AI works are being caught up in the purge,…"
+  },
+  {
+   "source": "TestingCatalog",
+   "tier": "signal",
+   "title": "Anthropic might be developing its own voice models",
+   "url": "https://www.testingcatalog.com/anthropic-might-be-developing-its-own-voice-models/",
+   "date": "2026-10-10T15:08+00:00",
+   "summary": "An internal Claude Voice preview suggests Anthropic is exploring a new interface, while its speech model plans and release timing remain unclear."
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "3 days to TechCrunch Disrupt 2026: Meet the startups before they hit mainstream",
+   "url": "https://techcrunch.com/2026/10/10/3-days-to-disrupt-2026-meet-the-startups-before-they-hit-mainstream/",
+   "date": "2026-10-10T15:00+00:00",
+   "summary": "TechCrunch Disrupt 2026 takes place October 13-15 in San Francisco. Over 300 startups will show what they’ve built to 10,000 tech leaders. Plus, 250+ speakers are ready to share insights across 200+ sessions. Register before doors open to save up to $100 and get a second pass at 50% off."
+  },
+  {
+   "source": "TestingCatalog",
+   "tier": "signal",
+   "title": "OpenAI lists new gpt-rosalind-discovery model in docs",
+   "url": "https://www.testingcatalog.com/openai-lists-new-gpt-rosalind-discovery-model-in-docs/",
+   "date": "2026-10-10T14:57+00:00",
+   "summary": "An unannounced gpt-rosalind-discovery model has appeared on OpenAI's API pricing page next to gpt-rosalind-research."
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Anthropic is cutting off its internal evaluations from the internet",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1009286/anthropic-is-cutting-off-its-internal-evaluations-from-the-internet",
+   "date": "2026-10-10T10:41-04:00",
+   "summary": "After a recent spate of high-profile incidents in which AI agents escaped containment, Anthropic is cutting off internet access for all internal evaluations. In a report Friday, the company detailed \" unintended model actions ,\" including submitting a false tip regarding an unsolved murder, that led to the decision. Although the impact of these behaviors was minimal and we had already turned off…"
+  },
+  {
+   "source": "Latent Space AINews",
+   "tier": "signal",
+   "title": "Building AI for Reliable Execution: Lessons From Industrial Robotics",
+   "url": "https://www.latent.space/p/standard-bots",
+   "date": "2026-10-10T14:04+00:00",
+   "summary": "Inside Standard Bots’ AI stack, pretrained models learn factory tasks from demonstrations and improve through corrections from real deployments."
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Here are the top AI agents that can live in your text messages",
+   "url": "https://techcrunch.com/2026/10/10/all-the-ai-agents-that-can-live-in-your-text-messages/",
+   "date": "2026-10-10T14:00+00:00",
+   "summary": "We created a list of the most notable AI agents that can live in your text messages, from general assistants to agents designed for families, travel, and work."
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "AI agent makers are promising privacy — will they deliver?",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1009051/privacy-ai-agent-promises-openai-meta-muse-dots",
+   "date": "2026-10-10T09:00-04:00",
+   "summary": "At this year's OpenAI DevDay, CEO Sam Altman unveiled the company's new AI agent Dots - and told the crowd that the company wants to \"set a new standard for privacy in frontier AI.\" OpenAI would spend the day taking veiled shots at Meta's Muse, its primary competitor, for failing to keep users' data safe. Yet Muse itself, a couple of months earlier, had launched as a supposedly safer alternative…"
+  },
+  {
+   "source": "Latent Space AINews",
+   "tier": "signal",
+   "title": "[AINews] TypeSafe/Jev at >$100M ARR, $7.5B valuation 3 weeks after launch",
+   "url": "https://www.latent.space/p/ainews-typesafejev-at-100m-arr-75b",
+   "date": "2026-10-10T06:45+00:00",
+   "summary": "Wow."
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Quoting The New York Times",
+   "url": "https://simonwillison.net/2026/Oct/10/the-new-york-times/",
+   "date": "2026-10-10T02:04+00:00",
+   "summary": "Anthropic detailed the activity of its A.I. agents in a blog post on Friday, without naming the targeted websites. But two sources with knowledge of the incidents said Anthropic’s A.I. agents had submitted 20 visa applications through a form available on the State Department’s website. All the applications were incomplete and were not processed, they said. — The New York Times , Anthropic Agents…"
+  },
+  {
+   "source": "Latent Space AINews",
+   "tier": "signal",
+   "title": "Why AlphaFold Didn't Solve Protein Folding — Pushmeet Kohli, Google DeepMind & Sal Candido, Biohub",
+   "url": "https://www.latent.space/p/biohub-deepmind",
+   "date": "2026-10-10T00:31+00:00",
+   "summary": "From the Bitter Lesson of AI scaling to the unsolved mysteries of protein folding, Google DeepMind’s Pushmeet Kohli and Biohub’s Sal Candido are rethinking what it takes to build AI that truly understands biology."
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Anthropic can’t reliably control its AI agents. It’s cutting off its internal evals from the live internet instead",
+   "url": "https://techcrunch.com/2026/10/09/anthropic-cant-reliably-control-its-ai-agents-its-cutting-off-its-internal-evals-from-the-live-internet-instead/",
+   "date": "2026-10-10T00:18+00:00",
+   "summary": "Anthropic said it \"turned off live internet access\" for \"all our internal evaluations\" until further notice."
+  },
+  {
+   "source": "TestingCatalog",
+   "tier": "signal",
+   "title": "Gemini 4 Argon hints emerge as Google tests Carbon checkpoint",
+   "url": "https://www.testingcatalog.com/gemini-4-argon-hints-emerge-as-google-tests-carbon-checkpoint/",
+   "date": "2026-10-09T22:57+00:00",
+   "summary": "Antigravity changes point toward Gemini 4 Argon's public release, while Google employees test Carbon and compare its coding to Claude Opus 5.5."
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Deno is joining Cloudflare",
+   "url": "https://simonwillison.net/2026/Oct/9/deno-is-joining-cloudflare/",
+   "date": "2026-10-09T22:48+00:00",
+   "summary": "Deno is joining Cloudflare The Deno team released the first version of celld back in August - their open source implementation of the Durable Objects pattern from Cloudflare Workers. Today, Cloudflare are acquiring Deno outright, with the goal of building on celld to \"make workerd self-hosting a first-class supported way to build and run apps using the Workers programming model\" (see the…"
+  },
+  {
+   "source": "TestingCatalog",
+   "tier": "signal",
+   "title": "Microsoft launches Decision-1 model in Foundry",
+   "url": "https://www.testingcatalog.com/microsoft-launches-decision-1-model-in-foundry/",
+   "date": "2026-10-09T21:48+00:00",
+   "summary": "Microsoft Decision-1 scores structured AI decisions in Foundry, with input pricing at $0.042 per million tokens and free output tokens."
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "The maker of non-text AI model Jev valued at $7.5B just weeks after launch",
+   "url": "https://techcrunch.com/2026/10/09/the-maker-of-non-text-ai-model-jev-valued-at-7-5b-just-weeks-after-launch/",
+   "date": "2026-10-09T21:41+00:00",
+   "summary": "What has users and large corporations so excited about Jev is TypeSafe’s claim that it works significantly faster and uses far fewer tokens than LLMs."
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "GameBoy on E-Paper ESP32 at 30FPS [video]",
+   "url": "https://www.youtube.com/watch?v=XiZmM6hwwAU",
+   "date": "2026-10-11T03:21+00:00",
+   "summary": "84 points, 22 comments · https://news.ycombinator.com/item?id=50039536"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "500B Tokens Later: Letting AI Agents Decompile a First-Person Shooter",
+   "url": "https://momo5502.com/posts/2026-10-09-game-decompilation/",
+   "date": "2026-10-11T02:02+00:00",
+   "summary": "91 points, 70 comments · https://news.ycombinator.com/item?id=50039092"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: WallHop – 12ft.io is gone, so I built a replacement",
+   "url": "https://wallhop.io/",
+   "date": "2026-10-11T00:46+00:00",
+   "summary": "246 points, 102 comments · https://news.ycombinator.com/item?id=50038634"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "PSPi 6 – Raspberry Pi in a PSP",
+   "url": "https://github.com/othermod/PSPi-Version-6",
+   "date": "2026-10-11T00:45+00:00",
+   "summary": "85 points, 7 comments · https://news.ycombinator.com/item?id=50038623"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Nvidia in talks to acquire US 'open' model startup Reflection AI",
+   "url": "https://www.ft.com/content/052610c5-22b4-4dd4-932e-b7f9f0628b6a",
+   "date": "2026-10-10T18:48+00:00",
+   "summary": "162 points, 105 comments · https://news.ycombinator.com/item?id=50035886"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Vibe coded browser ports of Halo, The Simpsons: Hit And Run, GTA work well",
+   "url": "https://kotaku.com/we-might-be-cooked-as-these-vibe-coded-web-browser-ports-of-halo-the-simpsons-hit-and-run-and-gta-vice-city-seem-to-work-perfectly-2000743300",
+   "date": "2026-10-10T18:11+00:00",
+   "summary": "97 points, 76 comments · https://news.ycombinator.com/item?id=50035561"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Tom Brown used GOP ties to broker a $1.25B/month SpaceX compute deal",
+   "url": "https://wsj.com/tech/ai/tom-brown-athropic-669005ad",
+   "date": "2026-10-10T15:04+00:00",
+   "summary": "134 points, 52 comments · https://news.ycombinator.com/item?id=50033678"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Talorys – A self-hosted personal AI agent on Cloudflare's free tier",
+   "url": "https://github.com/rociiu/talorys",
+   "date": "2026-10-10T10:52+00:00",
+   "summary": "292 points, 133 comments · https://news.ycombinator.com/item?id=50031614"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Lobbying",
+   "url": "https://geohot.github.io//blog/jekyll/update/2026/10/10/lobbying.html",
+   "date": "2026-10-10T04:40+00:00",
+   "summary": "184 points, 68 comments · https://news.ycombinator.com/item?id=50029630"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Telegram Desktop vulnerability allowed any user's file to be stolen",
+   "url": "https://beaksec.github.io/posts/telegram-desktop-one-click-account-takeover/",
+   "date": "2026-10-10T03:02+00:00",
+   "summary": "448 points, 286 comments · https://news.ycombinator.com/item?id=50029123"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Recent AI models struggled to match a human algorithmic innovation",
+   "url": "https://epoch.ai/publications/innovationeval",
+   "date": "2026-10-09T22:14+00:00",
+   "summary": "87 points, 77 comments · https://news.ycombinator.com/item?id=50027257"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Anthropic AI model submits false tip on unsolved Philly murder, police say",
+   "url": "https://www.nbcphiladelphia.com/news/local/anthropic-ai-model-submits-false-tip-on-unsolved-philly-murder-police-say/4477051/",
+   "date": "2026-10-09T22:00+00:00",
+   "summary": "208 points, 154 comments · https://news.ycombinator.com/item?id=50027118"
+  }
+ ],
+ "errors": [],
+ "manual": [
+  {
+   "name": "xAI news / Grok app updates",
+   "url": "https://x.ai/news",
+   "why": "blocks scripts (403): web search 'Grok' / 'xAI' last 24h"
+  },
+  {
+   "name": "ChatGPT release notes",
+   "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Perplexity changelog",
+   "url": "https://www.perplexity.ai/changelog",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Official X accounts (@AnthropicAI, @OpenAI, @xai, @GoogleDeepMind, @cursor_ai)",
+   "url": "https://x.com",
+   "why": "X needs login / paid API: use web search for big announcements"
+  },
+  {
+   "name": "Social media new features (Instagram @creators/@mosseri, TikTok newsroom, X, LinkedIn, Snapchat)",
+   "url": "https://newsroom.tiktok.com/",
+   "why": "no working RSS (TikTok/WhatsApp/Instagram blogs are HTML, Snap/LinkedIn 404): web search each gather for new features, AI features and creator tools; confirm on the platform's own newsroom/help page"
+  },
+  {
+   "name": "Higgsfield announcements",
+   "url": "https://x.com/higgsfield_ai",
+   "why": "big launches often land on X before the blog"
+  },
+  {
+   "name": "Qwen blog (Alibaba)",
+   "url": "https://qwen.ai/blog",
+   "why": "JS-rendered, no RSS (the old qwenlm.github.io feed stopped in 2025-09): web search 'Qwen' each gather for new open-weight releases"
+  }
+ ]
+}

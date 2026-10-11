@@ -1,0 +1,86 @@
+{
+ "generated": "2026-10-11T09:31:10+00:00",
+ "reddit": [],
+ "youtube_signal": [
+  {
+   "id": "yt-mzoFjKJYVD8",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "¿Tu piel puede hacer esto? 😮",
+   "channel": "Dehz",
+   "url": "https://www.youtube.com/shorts/mzoFjKJYVD8",
+   "views": 1128700,
+   "date": "2026-10-08T19:00:25Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-BsDEKGw_VRY",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Elon Musk's 1 Billion Robot Prediction Suddenly Looks Different.",
+   "channel": "ejunky66",
+   "url": "https://www.youtube.com/shorts/BsDEKGw_VRY",
+   "views": 516934,
+   "date": "2026-10-08T13:53:16Z",
+   "query": "humanoid robot video"
+  },
+  {
+   "id": "yt-w31YOI-cXa4",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "भारत की हार पर भड़के रोहित शर्मा! गंभीर और वैभव पर उठे सवाल 😱🏏",
+   "channel": "Sports Cricket Hub ",
+   "url": "https://www.youtube.com/shorts/w31YOI-cXa4",
+   "views": 393976,
+   "date": "2026-10-10T00:59:20Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-o1pGI3M-bWU",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Furnitur Ini Buatan AI? 😱#Catsoftiktok #CatLovers #cat#cute #FunnyCats #catcartoon #fyp",
+   "channel": "Alan-hub",
+   "url": "https://www.youtube.com/shorts/o1pGI3M-bWU",
+   "views": 333327,
+   "date": "2026-10-10T10:00:37Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-OU_boM4kbic",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "¡La chica dejó a todos boquiabiertos al cambiarse de ropa! 😯🤣 #shorts",
+   "channel": "Moment Mango",
+   "url": "https://www.youtube.com/shorts/OU_boM4kbic",
+   "views": 330101,
+   "date": "2026-10-10T20:03:08Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-zLvC2VQCvt8",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "This Robot Runs Up And Jumps Just Like An Athlete",
+   "channel": "History Seeker",
+   "url": "https://www.youtube.com/shorts/zLvC2VQCvt8",
+   "views": 131461,
+   "date": "2026-10-10T00:28:16Z",
+   "query": "humanoid robot video"
+  },
+  {
+   "id": "yt-Mc5naNwJkR8",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "スズキ フロンテクーペ　軽自動車なのに本気でスポーツカーを作った時代 #旧車 #名車",
+   "channel": "クルマ査定士の回想録",
+   "url": "https://www.youtube.com/shorts/Mc5naNwJkR8",
+   "views": 111317,
+   "date": "2026-10-09T10:35:51Z",
+   "query": "AI generated video"
+  }
+ ],
+ "errors": [
+  "Reddit: REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET missing in .env"
+ ]
+}

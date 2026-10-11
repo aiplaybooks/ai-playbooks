@@ -1,0 +1,224 @@
+{
+  "theme": "adaptive",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "ChatGPT GPT-6 Intelligent UI rollout to all users",
+  "caption": "Stop reading long answers. ChatGPT now shows charts, forms and buttons instead 📊\n\nGPT-6's Intelligent UI picks the best format for your answer: charts, forms, diagrams, buttons.\n\n→ Compare two topics as a chart\n→ Build a form that calculates\n→ Get interactive diagrams\n→ Use tappable decision buttons\n\nComment VISUAL and I'll DM you all 4 prompts 📩\n\nFollow @aiplaybooks.daily for AI tools you can use today.\n\n#chatgpt #gpt6 #intelligentui #openai #aitools",
+  "captions": {
+    "instagram": "Stop reading long answers. ChatGPT now shows charts, forms and buttons instead 📊\n\nGPT-6's Intelligent UI picks the best format for your answer: charts, forms, diagrams, buttons.\n\n→ Compare two topics as a chart\n→ Build a form that calculates\n→ Get interactive diagrams\n→ Use tappable decision buttons\n\nComment VISUAL and I'll DM you all 4 prompts 📩\n\nFollow @aiplaybooks.daily for AI tools you can use today.\n\n#chatgpt #gpt6 #intelligentui #openai #aitools",
+    "facebook": "Stop reading long answers. ChatGPT now shows charts, forms and buttons instead 📊\n\nGPT-6's Intelligent UI picks the best format for your answer: charts, forms, diagrams, buttons.\n\n→ Compare two topics as a chart\n→ Build a form that calculates\n→ Get interactive diagrams\n→ Use tappable decision buttons\n\nWhich format will change how you work the most—charts, forms, diagrams, or buttons?\n\nFollow @aiplaybooks.daily for AI tools you can use today.\n\n#chatgpt #gpt6 #intelligentui #openai",
+    "youtube": {
+      "title": "ChatGPT: 4 prompts for charts and forms",
+      "description": "GPT-6's Intelligent UI lets ChatGPT answer with charts, forms, diagrams and buttons instead of text.\n\nTry these 4 prompts:\n\n→ Compare two topics as a chart\n→ Build a form that calculates\n→ Get interactive diagrams\n→ Use tappable decision buttons\n\nRolling out now to all ChatGPT users.\n\n#ChatGPT #GPT6 #OpenAI",
+      "tags": [
+        "chatgpt prompts",
+        "gpt-6 intelligent ui",
+        "ai charts and forms",
+        "interactive answers",
+        "chatgpt productivity",
+        "gpt-6 features",
+        "ai tools",
+        "openai"
+      ]
+    }
+  },
+  "x": "ChatGPT now answers with charts, forms and buttons instead of walls of text 📊\n\nNo more scrolling through paragraphs. GPT-6's Intelligent UI gives you visual answers right in the chat.\n\n#ChatGPT #OpenAI",
+  "first_comment": {
+    "instagram": "Specificity is everything—vague prompts get vague results. Use these with YOUR data: the budget you're planning, the options you're deciding on, the topic you're learning.\n\nWhich one are you trying first?",
+    "facebook": "The secret: be specific. Use YOUR numbers, names and dates—that's when the charts and forms actually save you hours.\n\nWhich format will change your workflow the most?",
+    "youtube": "Try these with specific data—your budget, your schedule, your options. The more detailed, the better the result.\n\nWhich prompt are you using first? Let us know in the comments and subscribe for daily AI playbooks."
+  },
+  "sources": [
+    "https://openai.com/index/gpt-6-for-everyone"
+  ],
+  "dm": {
+    "keyword": "VISUAL"
+  },
+  "comments": [],
+  "cover": {
+    "headline": "ChatGPT now answers with charts, forms and tappable buttons instead of walls of text. 4 prompts to try:",
+    "em": "charts, forms and tappable buttons",
+    "person": "Sam Altman",
+    "layout": "person",
+    "photo_query": [
+      "Sam Altman"
+    ],
+    "photo_pick": null,
+    "icons": [
+      {
+        "slug": "openai",
+        "style": "tile",
+        "pos": "tr",
+        "size": 170
+      }
+    ],
+    "photo": {
+      "file": "File:Sam Altman TechCrunch SF 2019 Day 2 Oct 3 (cropped) (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Sam_Altman_TechCrunch_SF_2019_Day_2_Oct_3_(cropped)_(cropped).jpg",
+      "author": "TechCrunch",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source": "Wikimedia Commons"
+    },
+    "layout_used": "person"
+  },
+  "design": {
+    "mood": "clean dashboard, chart bars and tappable pills, calm teal and amber on deep green",
+    "palette": {
+      "bg": "#0C1614",
+      "bg2": "#122824",
+      "surface": "#142521",
+      "ink": "#EFF8F5",
+      "muted": "#8FB3AA",
+      "accent": "#2FE0B5",
+      "accent2": "#FFB84D"
+    },
+    "fonts": {
+      "display": "Bricolage Grotesque",
+      "body": "Manrope",
+      "mono": "JetBrains Mono"
+    },
+    "display": {
+      "weight": 700,
+      "case": "none",
+      "tracking": -3,
+      "scale": 1.0,
+      "italic_em": false
+    },
+    "shape": {
+      "radius": 26,
+      "border": 2,
+      "shadow": "soft"
+    },
+    "background": {
+      "pattern": "grid",
+      "pattern_opacity": 0.07,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "pill",
+    "prompt": "chat",
+    "art": "<svg viewBox='0 0 900 460' xmlns='http://www.w3.org/2000/svg'><rect x='90' y='40' width='720' height='380' rx='28' fill='var(--surface)' stroke='var(--accent)' stroke-width='3'/><g fill='var(--accent)'><rect x='150' y='260' width='60' height='100' rx='8'/><rect x='240' y='210' width='60' height='150' rx='8' fill='var(--accent2)'/><rect x='330' y='160' width='60' height='200' rx='8'/><rect x='420' y='110' width='60' height='250' rx='8' fill='var(--accent2)'/></g><g fill='none' stroke='var(--muted)' stroke-width='3' stroke-linecap='round'><path d='M150 380 H500'/><path d='M560 120 H760'/><path d='M560 160 H720'/></g><rect x='560' y='220' width='200' height='56' rx='28' fill='var(--accent2)'/><rect x='560' y='300' width='200' height='56' rx='28' fill='none' stroke='var(--accent)' stroke-width='3'/><circle cx='600' cy='248' r='8' fill='var(--bg)'/></svg>",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round'><rect x='3' y='4' width='18' height='16' rx='3'/><path d='M7 16v-4M12 16V8M17 16v-6'/></svg>"
+  },
+  "voice": "af_sarah",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "CHATGPT · GPT-6",
+      "title": "ChatGPT now answers with charts, forms and buttons.",
+      "em": "charts, forms and buttons",
+      "sub": "Intelligent UI in GPT-6: here's who gets it.",
+      "tools": [
+        "ChatGPT"
+      ],
+      "voiceover": "ChatGPT just stopped giving you walls of text. It now answers with charts and buttons."
+    },
+    {
+      "type": "stat",
+      "label": "What's new",
+      "value": "GPT-6 UI",
+      "title": "Intelligent UI: answers you can tap",
+      "sub": "GPT-6 composes text, visuals and interactive elements based on your question.",
+      "voiceover": "It's called Intelligent UI. ChatGPT picks text, visuals or interactive elements to fit your question."
+    },
+    {
+      "type": "list",
+      "label": "What you can get",
+      "title": "Inside one answer",
+      "items": [
+        [
+          "Graphics",
+          "Visual answers for everyday questions"
+        ],
+        [
+          "Charts",
+          "See the numbers, not a paragraph"
+        ],
+        [
+          "Forms",
+          "Fill in details right in the chat"
+        ],
+        [
+          "Tappable buttons",
+          "Interactive tools you use in the conversation"
+        ]
+      ],
+      "voiceover": "Answers can include graphics, charts, forms and tappable buttons, right inside the chat."
+    },
+    {
+      "type": "compare",
+      "label": "Who gets it",
+      "title": "Two models, every plan",
+      "cols": [
+        {
+          "name": "Free and Go",
+          "points": [
+            "GPT-6 Luna",
+            "Rolling out"
+          ]
+        },
+        {
+          "name": "Plus, Pro, Business, Enterprise",
+          "points": [
+            "GPT-6 Sol",
+            "Rolling out"
+          ]
+        }
+      ],
+      "voiceover": "Paid plans run on GPT-6 Sol. Free and Go users get GPT-6 Luna, rolling out now."
+    },
+    {
+      "type": "prompt",
+      "label": "Try 1",
+      "name": "Chart it",
+      "prompt": "Compare [TOPIC A] and [TOPIC B] and show it as a chart I can explore, not a paragraph.",
+      "note": "Turns numbers into a visual.",
+      "voiceover": "Ask it to show a comparison as a chart, and watch what comes back."
+    },
+    {
+      "type": "prompt",
+      "label": "Try 2",
+      "name": "Make a form",
+      "prompt": "Build me a quick form to plan [TRIP / BUDGET / WORKOUT] and calculate the result when I fill it in.",
+      "note": "A tool made on the spot.",
+      "voiceover": "Or ask for a quick form that does the math for you."
+    },
+    {
+      "type": "prompt",
+      "label": "Try 3",
+      "name": "Explore a diagram",
+      "prompt": "Explain how [COMPLEX TOPIC] works as an interactive diagram I can click through step by step.",
+      "note": "Complex topics, easier to learn.",
+      "voiceover": "Learning something hard? Ask for a diagram you can click through."
+    },
+    {
+      "type": "prompt",
+      "label": "Try 4",
+      "name": "Give me buttons",
+      "prompt": "Help me decide on [CHOICE]. Give me tappable options and update the answer as I pick.",
+      "note": "Decisions with buttons.",
+      "voiceover": "Stuck on a decision? Ask for tappable options."
+    },
+    {
+      "type": "cta",
+      "title": "Stop reading walls of text.",
+      "title2": "Ask for the visual.",
+      "lines": [
+        [
+          "Try",
+          "The 4 prompts in your ChatGPT"
+        ],
+        [
+          "Comment",
+          "VISUAL for all of them, copy-ready"
+        ],
+        [
+          "Follow",
+          "@aiplaybooks.daily"
+        ]
+      ],
+      "voiceover": "Try these four prompts, and comment visual to get them all."
+    }
+  ]
+}

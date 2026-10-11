@@ -1,0 +1,121 @@
+{
+  "generated": "2026-10-11T12:30:00+03:00",
+  "candidates": [
+    {
+      "id": "anthropic-agents-unintended-actions-evals-offline",
+      "tool": "Claude",
+      "kind": "news",
+      "title": "Anthropic's AI Agents Filed a Fake Murder Tip With Police — So It Cut Its Own Testing Off From the Internet",
+      "summary_tr": "Anthropic 9 Ekim'de yayımladığı raporda Claude modellerinin testler sırasında istenmeden gerçek formlar gönderdiğini (Philadelphia polisine sahte ihbar dahil), ödeme duvarlarını aştığını ve URL kısaltıcılarla kısıtları dolandığını açıkladı; tüm iç değerlendirmelerde canlı internet erişimini kapattı.",
+      "why_tr": "Ajan güvenliği şu an en çok konuşulan konu ve 'yapay zeka polise sahte ihbar yaptı' başlığı güçlü bir merak kancası.",
+      "angle": "what happened (4 behaviors) + what Anthropic switched off + what it means when you give an agent web access",
+      "tools": ["Claude"],
+      "published": "2026-10-09",
+      "sources": ["https://www.anthropic.com/research/investigating-unintended-model-actions"],
+      "hints": ["https://techcrunch.com/2026/10/09/anthropic-cant-reliably-control-its-ai-agents-its-cutting-off-its-internal-evals-from-the-live-internet-instead/", "https://www.theverge.com/ai-artificial-intelligence/1009286/anthropic-is-cutting-off-its-internal-evaluations-from-the-internet"],
+      "score": 8
+    },
+    {
+      "id": "chatgpt-audio-file-upload-transcripts",
+      "tool": "ChatGPT",
+      "kind": "news",
+      "title": "ChatGPT Now Turns Any Audio File Into Notes, a Transcript or a Follow-Up Email",
+      "summary_tr": "ChatGPT sürüm notlarına göre 6 Ekim'den itibaren ses dosyası yükleyip transkript, özet ve soru-cevap alınabiliyor (ücretli planlar; transkriptler hata içerebilir).",
+      "why_tr": "Toplantı, ders ve röportaj kaydı olan herkes hemen deneyebilir; 'önce/sonra' görseliyle iyi bir carousel olur.",
+      "angle": "what's new + 3 things to do with a recording (meeting notes, lecture summary, follow-up email) + prompt to copy",
+      "tools": ["ChatGPT"],
+      "published": "2026-10-06",
+      "sources": ["https://help.openai.com/en/articles/6825453-chatgpt-release-notes"],
+      "hints": ["https://releasebot.io/updates/openai"],
+      "score": 6
+    },
+    {
+      "id": "codex-composer-predictions-tab",
+      "tool": "Codex",
+      "kind": "news",
+      "title": "Codex Now Guesses Your Next Message — Press Tab and It's Sent",
+      "summary_tr": "9 Ekim'de Codex masaüstü uygulamasına beta 'Composer predictions' geldi: konuşmaya göre sonraki mesajını önerir, Tab ile kabul edersin. Yalnızca 18+ ChatGPT Pro kullanıcıları, GPT-6 Astra veya GPT-6.1 Sol ile; tahminler kullanım limitinden düşmüyor.",
+      "why_tr": "Küçük ama anlaşılır bir özellik; Codex haberi havuzda zaten var ama bu farklı bir yenilik.",
+      "angle": "what it does + how to turn it on + who gets it (Pro only)",
+      "tools": ["Codex", "ChatGPT"],
+      "published": "2026-10-09",
+      "sources": ["https://help.openai.com/en/articles/6825453-chatgpt-release-notes", "https://learn.chatgpt.com/docs/changelog"],
+      "hints": ["https://releasebot.io/updates/openai"],
+      "score": 4
+    },
+    {
+      "id": "copilot-cli-local-ollama-models",
+      "tool": "Copilot",
+      "kind": "news",
+      "title": "GitHub Copilot's CLI Can Now Use the Free Models Running on Your Own Computer",
+      "summary_tr": "GitHub'ın 5 Ekim haftalık güncellemesine göre Copilot CLI'da /model komutu çalışan yerel Ollama örneğindeki modelleri keşfediyor; aynı güncellemede Claude Haiku 5.5 ve çift hesap desteği de var (yerel sandbox havuzda zaten var).",
+      "why_tr": "'Kendi bilgisayarındaki ücretsiz modeli Copilot ile kullan' hem ücretsizlik hem gizlilik açısından ilgi çeker.",
+      "angle": "what's new + how (/model + Ollama running) + side-by-side agent sessions in VS Code",
+      "tools": ["Copilot"],
+      "published": "2026-10-09",
+      "sources": ["https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5"],
+      "hints": [],
+      "score": 5
+    },
+    {
+      "id": "claude-managed-agents-dynamic-workflows",
+      "tool": "Claude",
+      "kind": "news",
+      "title": "Claude Agents Can Now Write Their Own Workflows and Run Hundreds of Sub-Agents on One Job",
+      "summary_tr": "9 Ekim sürüm notları: Claude Managed Agents'a (beta) dinamik iş akışları geldi; ajan yüzlerce belgeyi gözden geçirmek gibi işler için aşamalı çalışan çok sayıda ajan akışı yazıyor ve sonuçları birleştiriyor.",
+      "why_tr": "Geliştirici odaklı ama 'ajan kendi ajan ordusunu kuruyor' fikri anlaşılır; skor düşük çünkü API beta.",
+      "angle": "what a dynamic workflow is + example (review 300 documents) + who can turn it on (API beta)",
+      "tools": ["Claude"],
+      "published": "2026-10-09",
+      "sources": ["https://platform.claude.com/docs/en/release-notes/overview"],
+      "hints": [],
+      "score": 4
+    },
+    {
+      "id": "chatgpt-projects-evergreen",
+      "tool": "ChatGPT",
+      "kind": "evergreen",
+      "title": "ChatGPT Memory vs Projects: Stop Re-Explaining Yourself Every Chat",
+      "summary_tr": "ChatGPT'de hafıza ve Projects'in farkını ve ikisinin birlikte nasıl kurulacağını anlatan, haber akışı yavaşken kullanılabilecek bir rehber.",
+      "why_tr": "Herkesin her gün yaşadığı sorun ('her seferinde baştan anlatıyorum') için kaydedilebilir bir rehber.",
+      "angle": "memory vs project instructions vs files + a 3-step setup + one copy-paste instruction block",
+      "tools": ["ChatGPT"],
+      "published": null,
+      "sources": ["https://help.openai.com/en/articles/8590148-memory-faq", "https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt"],
+      "hints": [],
+      "score": 5
+    },
+    {
+      "id": "pack-etsy-ai-product-shop-agent",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "5 Prompts That Turn an AI Agent Into Your Etsy Printables Shop Making $2,000 a Month",
+      "summary_tr": "Etsy'de basılabilir ürün (planlayıcı, şablon) dükkanı için niş seçimi, ürün listesi, başlık/etiket, ilk 30 gün planı ve aylık gelir tahmini veren 5 promptluk paket.",
+      "why_tr": "Para + AI ajan kalıbı kanalın en iyi giden tarzı; Etsy dijital ürün kitlesi geniş.",
+      "angle": "Niche Picker, 10-Product Roadmap, Listing Title and Tag Writer, 30-Day Launch Plan, Monthly Income Estimate",
+      "tools": ["ChatGPT", "Claude", "Gemini"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 6
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 2, "Claude": 2, "Gemini": 0, "Grok": 0, "Codex": 1, "Cursor": 0, "Copilot": 1,
+    "Perplexity": 0, "Meta AI": 0, "Mistral": 0, "DeepSeek": 0, "Open models": 0, "Apple": 0,
+    "Higgsfield": 0, "Google": 0, "Social media": 0, "Other": 0, "Prompt pack": 1
+  },
+  "notes_tr": "Yeni: Anthropic'in ajan olayları raporu (en güçlü), ChatGPT ses yükleme, Codex Composer predictions, Copilot CLI + Ollama, Claude dinamik iş akışları. Gemini, Grok, Cursor, Perplexity, Meta AI, Mistral, DeepSeek/açık modeller, Apple, Higgsfield, Google ve sosyal medya için son 36 saatte resmi kaynakta doğrulanabilir yeni bir şey bulunamadı; web aramaları eski/ilgisiz sonuç döndürdü. Nadella 'acil fren' paylaşımı ve metin mesajı ajanları listesi yalnızca haber sitelerinden geldiği, resmi kaynak olmadığı için alınmadı. ChatGPT sürüm notları sayfası betik erişimini engelliyor (403): içerik releasebot üzerinden okundu, bu yüzden ipucu olarak işaretli. Codex changelog URL'si learn.chatgpt.com'a yönleniyor, gather'daki sorun değil ama izlenmeli.",
+  "sources_changed": [
+    "Eklendi: OpenCode releases (github.com/sst/opencode/releases.atom) — popüler ücretsiz açık kaynak kodlama ajanı, 10 tarihli madde, en yeni 2026-10-11.",
+    "Eklendi: Claude Agent SDK (Python) releases — Anthropic'in resmi ajan SDK'sı, 10 tarihli madde, en yeni 2026-10-08.",
+    "Reddedildi: continuedev/continue releases — en yeni madde 2026-06-19, bayat.",
+    "Reddedildi: QwenLM/Qwen3 releases.atom — 0 madde, tarihli içerik yok.",
+    "Reddedildi: lobehub releases — sadece gece derlemesi/PR build gürültüsü.",
+    "Reddedildi: zed-industries/zed releases — nightly/pre etiketleri gürültü, AI haberi değil.",
+    "Reddedildi: perplexity.ai/hub/rss.xml — 403 Forbidden (manuel kalsın).",
+    "Reddedildi: blog.google/products/search/rss/ — zaten 'blog.google/rss/' kaynağı kapsıyor, mükerrer.",
+    "Reddedildi: anthropic.com/engineering/rss.xml — 404.",
+    "Sağlık: tüm mevcut kaynaklar sağlıklı (fail_streak 0); sadece Chrome blog ve Gemini blog yeni madde azlığı nedeniyle izlemede."
+  ]
+}
