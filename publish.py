@@ -255,6 +255,7 @@ def upload(p):
     git("add", "-A", "media", "p", cwd=wt)
     if git("status", "--porcelain", cwd=wt):
         git("commit", "-q", "-m", f"media: {p.name}", cwd=wt)
+    if git("rev-list", "--count", "origin/gh-pages..HEAD", cwd=wt) != "0":  # also a commit whose push failed earlier
         git("push", "-q", "origin", "gh-pages", cwd=wt)
         say(f"upload: pushed {len(files)} files to gh-pages")
     say("upload: waiting for GitHub Pages ...")
