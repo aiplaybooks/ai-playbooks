@@ -1,98 +1,95 @@
-[](docs/screenshots/architecture.png)
+**An agent skill that draws diagrams as one self-contained HTML + SVG file, in your brand. 44 diagram types. No shadows. No Mermaid slop.**
 
-[](docs/screenshots/loop.png)
+[](https://github.com/cathrynlavery/diagram-design/stargazers)
+[](https://skills.sh/cathrynlavery/diagram-design/diagram-design)
+[](https://github.com/cathrynlavery/diagram-design/actions/workflows/ci.yml)
+[](CHANGELOG.md)
+[](LICENSE)
 
-*New in 2.0 — the Loop: flywheels with a shared-memory hub. The dashed lines are the write-backs.*
+**[Website](https://diagramdesign.dev) · [Gallery](https://cathrynlavery.github.io/diagram-design/) · [Changelog](CHANGELOG.md)**
 
-*New in 2.3: semantic system patterns and optional accessible motion, while static output stays the default.*
+[Install](#install) · [What it makes](#what-it-makes) · [Quickstart](#quickstart) · [Match your brand](#onboarding-make-it-look-like-your-brand) · [Import](#import-from-drawio-mermaid-or-excalidraw) · [Export](#export-to-png--svg) · [Contributing](#contributing)
 
-*New in 2.5.10: ten more layout grammars — Sankey, fishbone, Wardley map, kanban, user journey, deployment, dependency graph, UML class, story map, and database schema.*
+ npx skills add cathrynlavery/diagram-design 
 
-Editorial diagram types for Claude Code, Codex, Factory Droid, Pi, and Agent Skills-compatible hosts. Self-contained HTML + SVG. No shadows. No Mermaid slop. Semantic patterns describe behavior separately from layout, so a queue, policy trace, or trust boundary can use the nearest existing type without expanding the type count. Static HTML remains the default; optional motion is available for ordered explanations. The skill also redraws draw.io, Mermaid, or Excalidraw sources at a chosen format, size, and detail level.
+Ask your agent in plain words:
 
-No Figma. No generic rounded boxes. No 30-minute color-picking sessions.
+- *"Make me an architecture diagram of my app: frontend, backend, database, Redis cache."*
+- *"I need a quadrant showing Q2 projects by impact vs effort."*
+- *"Give me a sequence of a bearer call with token refresh on 401."*
+- *"Onboard diagram-design to https://yoursite.com"* (pulls your palette and fonts so every diagram after this one matches your site)
 
-Project site: [diagramdesign.dev](https://diagramdesign.dev?utm_source=diagram-design&utm_medium=readme&utm_campaign=github&utm_content=intro)
-
----
-
-## Why I built it
-
-I write at [littlemight.com](https://littlemight.com?utm_source=diagram-design&utm_medium=readme&utm_campaign=github&utm_content=intro) (and run [BestSelf.co](https://bestself.co?utm_source=diagram-design&utm_medium=readme&utm_campaign=github&utm_content=intro) on the side). Every time I needed a diagram — an architecture sketch, a flowchart, a pyramid of what matters most — I'd ask Claude and get back a generic rounded-box thing that looked nothing like the rest of the site. I'd either fight with Figma for 30 minutes or just skip the diagram.
-
-So I built a Claude Code skill for it. Editorial-quality visual types, matched to your brand in 60 seconds by reading your website.
-
-> *The highest-quality move is usually deletion.* Every node earns its place. The accent color is reserved for the 1–2 things the reader should look at first. Target density: 4/10.
+The agent picks the type, states its plan, and writes one `.html` file you can open by double-clicking.
 
 ---
 
-## What it makes
+## Install
 
-Every visual type ships in three static variants: minimal light, minimal dark, and full-editorial. Open any of them directly in a browser. There is no build step, JavaScript, or external image dependency.
+Works with any host that reads Agent Skills, including Cursor, Claude Code, Codex, GitHub Copilot, Gemini CLI, Cline, Windsurf and Amp:
 
- Architecture Components + connections 
- IT current-state Legacy landscape + modernization 
- Flowchart Decision logic 
+```bash
+npx skills add cathrynlavery/diagram-design
+```
 
- Sequence Messages over time 
- State machine States + transitions 
- ER / data model Entities + fields 
+In Claude Code, the plugin marketplace gets you updates and the slash commands:
 
- Timeline Events on an axis 
- Swimlane Cross-functional flow 
- Quadrant Two-axis positioning 
+```text
+/plugin marketplace add cathrynlavery/diagram-design
+/plugin install diagram-design@diagram-design
+```
 
- Radar / spider Multi-axis comparison 
- Loop / flywheel Reinforcing cycle + shared hub 
- Nested Hierarchy by containment 
+Official builds come only from this repository. LittleMight, Cathryn Lavery's company, publishes the plugin directory listings; a listing under any other name is an unofficial copy. [PRIVACY.md](PRIVACY.md) lists what the skill sends over the network.
 
- Tree Parent → children 
- Org chart Ownership + routing 
- Layer stack Stacked abstractions 
+ Claude Code : turn on auto-update 
 
- Venn Set overlap 
- Pyramid / funnel Ranked hierarchy or drop-off 
- Bar chart Categorical comparison 
+After installing, run `/plugin`, open **Marketplaces**, select **diagram-design**, and choose **Enable auto-update**. Claude Code disables auto-update by default for third-party marketplaces; after this toggle, it refreshes the marketplace and installed plugin in the background after startup. Run `/reload-plugins` when prompted, or let the next session load the update.
 
- Treemap Part-of-whole by area 
- Line chart Trends over time 
- Gantt Tasks + phases on a timeline 
+ Cursor , Cline, Gemini CLI, Windsurf, Amp, Zed, Warp, Roo, Kilo and other Agent Skills hosts 
 
- Scatter plot Distribution + correlation 
- High-Level End-to-end stack on a cluster 
- Process Multi-actor sequential workflow 
+The cross-agent [`skills` CLI](https://skills.sh) resolves this repository, detects `skills/diagram-design/SKILL.md`, and installs the whole skill (`references/`, `assets/`, `scripts/`) into every host root you select, including Cursor's:
 
- Medallion Multi-tier data storage 
- Data flow Role-scoped pipeline steps 
- DP integration Sources → core → consumers 
+```bash
+npx skills add cathrynlavery/diagram-design
+```
 
- DP security matrix Per-role access permissions 
- Sankey Quantities that split + merge 
- Fishbone Grouped causes → one effect 
+When the selected roots resolve to more than one skills directory, the CLI asks for an installation method and recommends **Symlink**: one canonical copy, linked into each root, so a later update reaches all of them at once. Pass `--copy` for independent copies per host instead. A selection that resolves to a single directory is copied, because the distinction is immaterial there. Where symlinks are unavailable (Windows without Developer Mode) the CLI falls back to copies and reports which roots it copied.
 
- Wardley map Value chain × evolution 
- Kanban Work in progress by state 
- User journey Stages, actions + sentiment 
+This is a standalone install, separate from the marketplaces below: it does not follow marketplace updates automatically. Pull merged updates with `npx skills update diagram-design`. It also installs the Agent Skill only, so the `/export-diagram`, `/import-mermaid`, `/profile`, and `/doctor` command surfaces stay with the native packages. On a host that has one of the marketplaces below, prefer the marketplace.
 
- Deployment Zones, hosts + artifacts 
- Dependency graph Fan-in, ranks + cycles 
- UML class Classes, operations + typed relations 
+> **One-time migration:** an existing standalone `npx skills add` copy will not start following the Codex marketplace automatically. Remove that standalone copy, then use the Codex marketplace commands. Likewise, uninstall a personal Cowork copy and reinstall Diagram Design from your organization's marketplace. Future marketplace version bumps then flow through each client's native update path.
 
- Story map Backbone × release slices 
- Database schema Physical tables + column FKs 
- Polar chart Cyclic magnitude · linear radius 
+ Codex 
 
- Waterfall Running total + signed bridges 
- Architecture delta Before · Changes · After topology 
- Exploded axonometric Parts pulled apart on one axis 
+```bash
+codex plugin marketplace add cathrynlavery/diagram-design
+codex plugin add diagram-design@diagram-design
+```
 
- Axonometric plan Rooms and buildings on one plate 
- Heatmap Value per row × column cell 
+Codex refreshes configured Git marketplaces at startup. To fetch immediately, run `codex plugin marketplace upgrade diagram-design` and start a new session.
 
-Architecture delta compares synchronized topologies through a Before · Changes · After ledger of added, removed, changed, moved, and rewired objects. See its [reference](skills/diagram-design/references/type-architecture-delta.md) and [order-fulfilment example](skills/diagram-design/assets/example-architecture-delta.html). Attribute-only comparisons remain tables; a single snapshot uses Architecture.
+ GitHub Copilot 
 
-Exploded axonometric draws one object in 2:1 dimetric projection with its parts lifted apart at equal gaps: a [phone teardown](skills/diagram-design/assets/example-exploded-phone.html), an [unboxing](skills/diagram-design/assets/example-exploded-unboxing.html), an [app stack](skills/diagram-design/assets/example-exploded.html), an [AI agent stack](skills/diagram-design/assets/example-exploded-ai-stack.html), or a [mechanical keyboard](skills/diagram-design/assets/example-exploded-keyboard.html). Every coordinate comes from one projection function, and the [animated phone](skills/diagram-design/assets/example-exploded-phone-animated.html) opens assembled and explodes once. See its [reference](skills/diagram-design/references/type-exploded.md).
+```bash
+copilot plugin marketplace add cathrynlavery/diagram-design
+copilot plugin install diagram-design@diagram-design
+```
 
-Axonometric plan uses the same projection for one floor or one site: walls cut at desk height so every room reads from a single view, or buildings on a campus tagged by build phase. See the [office floor](skills/diagram-design/assets/example-axonometric-plan.html), the [campus](skills/diagram-design/assets/example-axonometric-plan-campus.html), the [coffee shop](skills/diagram-design/assets/example-axonometric-plan-coffee-shop.html), the [fulfillment floor](skills/diagram-design/assets/example-axonometric-plan-warehouse.html), the [phased campus animation](skills/diagram-design/assets/example-axonometric-plan-campus-animated.html), and the [reference](skills/diagram-design/references/type-axonometric-plan.md).
+Copilot installs the shared Diagram Design skill plus its doctor, export, import, and profile capabilities from the existing repository marketplace. Confirm discovery with `copilot skill list` (or `/skills` in an interactive session), then ask for a diagram in natural language. To fetch a merged update, run `copilot plugin marketplace update diagram-design`, then `copilot plugin update diagram-design@diagram-design`.
 
-The v2.5.10 release added ten layout grammars. Compare their light
+ Factory Droid 
+
+```bash
+droid plugin marketplace add https://github.com/cathrynlavery/diagram-design
+droid plugin install diagram-design@diagram-design --scope user
+```
+
+Droid tracks Git plugins by commit rather than the manifest's display version. To fetch a merged update, run `droid plugin marketplace update diagram-design`, then `droid plugin update diagram-design@diagram-design --scope user`, and start a new session.
+
+ Claude Cowork (organization marketplace) 
+
+Organization GitHub marketplaces currently require a private or internal repository, so first mirror this public repository into one owned by your organization. In **Organization settings → Plugins**, choose **Add plugin → GitHub**, connect that mirror, and enable **Sync automatically** from the marketplace menu. Automatic sync runs when a pull request containing a plugin version bump is merged to the mirror's default branch; direct pushes do not trigger the webhook. Install Diagram Design from the resulting organization marketplace.
+
+ Pi 
+
+```bash
+pi install https://

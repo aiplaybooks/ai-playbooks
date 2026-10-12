@@ -1,5 +1,6 @@
 Language: 
  English |
+ العربية |
  Português (Brasil) |
  简体中文 |
  繁體中文 |
@@ -12,7 +13,8 @@ Language:
  Deutsch |
  Español |
  Українська |
- Polski 
+ Polski |
+ বাংলা 
 
 > [!WARNING]
 > **Official sources only.** Install ECC only from verified channels: the GitHub repository [github.com/affaan-m/ECC](https://github.com/affaan-m/ECC), the npm packages [`ecc-universal`](https://www.npmjs.com/package/ecc-universal) and [`ecc-agentshield`](https://www.npmjs.com/package/ecc-agentshield), the [GitHub App](https://github.com/apps/ecc-tools), the plugin slug `ecc@ecc`, and the project website [ecc.tools](https://ecc.tools). Third-party re-uploads and unofficial mirrors are not maintained or reviewed by the project and may contain malware.
@@ -62,15 +64,15 @@ Instead of rebuilding that process in every prompt, you install it once and make
 
 > Optimize the context window. Persist everything else.
 
-ECC is MIT-licensed open source. It works best with Claude Code today, has a supported Codex sync path, and provides capability-limited adapters for Cursor, OpenCode, Gemini, Zed, GitHub Copilot, Antigravity, Qwen, and other harnesses. See the [support status matrix](#platform-support) before assuming feature parity.
+ECC is MIT-licensed open source. It works best with Claude Code today, has native Codex and Qoder plugin paths, and provides capability-limited adapters for Cursor, OpenCode, Gemini, Zed, GitHub Copilot, Antigravity, Qwen, and other harnesses. See the [support status matrix](#platform-support) before assuming feature parity.
 
-Access to 68 agents, 293 skills, and 94 legacy command shims, plus hooks, rules, memory, continuous learning, and AgentShield security scanning. The agents are specialized for planning, review, build repair, security, architecture, and domain work.
+Access to 71 agents, 311 skills, and 97 legacy command shims, plus hooks, rules, memory, continuous learning, and AgentShield security scanning. The agents are specialized for planning, review, build repair, security, architecture, and domain work.
 
 | Included | Count | What it gives you |
 | ---------------- | ----------: | ------------------------------------------------------------------------------------ |
-| Agents | 68 agents | Planning, review, build repair, security, architecture, and domain work |
-| Skills | 293 skills | TDD, research, security, docs, frontend, data, ML, operations, and more |
-| Commands | 94 commands | Convenient entry points while ECC moves to a skills-first surface |
+| Agents | 71 agents | Planning, review, build repair, security, architecture, and domain work |
+| Skills | 311 skills | TDD, research, security, docs, frontend, data, ML, operations, and more |
+| Commands | 97 commands | Convenient entry points while ECC moves to a skills-first surface |
 | Hooks and memory | Runtime | Enforcement, session summaries, continuous learning, instincts, and context controls |
 | Rules | Selective | Always-loaded standards you choose by language or project |
 | AgentShield | Included | Scanning for prompts, hooks, MCP config, permissions, secrets, and agent files |
@@ -134,4 +136,4 @@ The examples select [the published ECC 2.2.3 release](https://www.npmjs.com/pack
 
 Yarn Classic 1 does not provide `yarn dlx`; use `npx`, install the package globally, or upgrade Yarn for a temporary one-shot run.
 
-The wizard inventories the official marketplace and every native Claude install scope before making changes, then installs, updates, or safely moves `ecc@ecc` to the scope you choose. Rerun the same command whenever you want to update ECC, change scope, or change its hook profile. This setup wizard currently configures the Claude Code plugin; use the multi-harness wizard belo
+The wizard inventories the official marketplace and every native Claude install scope before making changes, then installs, updates, or safely moves `ecc@ecc` to the scope you choose. Rerun the same command whenever you want to update ECC, change scope, or change its hook profile. This setup wizard currently configures the Claude Code plugin; use t

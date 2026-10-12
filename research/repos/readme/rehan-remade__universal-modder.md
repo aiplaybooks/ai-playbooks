@@ -3,6 +3,7 @@ Skills, tools and a shared knowledge base that let any AI coding agent mod almos
  with fal , tests it in the running game, cuts the video, and writes down what it learned for the next agent.
 
  Coming next: the mod hub. Publish your mods, remix other people's, and make new ones. 
+ Share what you make, get help, and follow along: 
 
 ## Install
 
@@ -15,7 +16,7 @@ Pick your agent. Each gets the same skills (Agent Skills format), the fal MCP se
 | **Gemini CLI** | `gemini extensions install https://github.com/rehan-remade/universal-modder` |
 | **VS Code / Copilot** | Enable `chat.plugins.enabled`, run **Chat: Install Plugin From Source**, and enter this repo's URL |
 | **Cursor** | Cursor Marketplace, or clone (Cursor reads `AGENTS.md` and `.cursor/mcp.json`) |
-| **OpenCode** | Clone and run `opencode` inside it (`opencode.json` adds the skills and the fal MCP server) |
+| **OpenCode** | Clone and run `opencode` inside it (`opencode.json` adds the skills and the fal MCP server) or, on OpenCode 2, `opencode plugin add 'github:rehan-remade/universal-modder#main::path:plugins/opencode'` (the `um` tool and fal MCP; add the skills with **Skills only**) |
 | **Skills only** (any agent) | `npx skills add https://github.com/rehan-remade/universal-modder` |
 | **Anything else** | `git clone https://github.com/rehan-remade/universal-modder` and start your agent inside it |
 
@@ -24,7 +25,12 @@ Copilot, Cursor, OpenCode) and `.claude/skills` (Claude Code) are copies of `ski
 `AGENTS.md`, which `CLAUDE.md` and `GEMINI.md` point to. MCP config is in `.mcp.json`, `.codex/config.toml`,
 `.cursor/mcp.json`, `.vscode/mcp.json` and `opencode.json` (which also points OpenCode at `skills/`).
 
-**The `um` CLI.** Plugin installs and clones put it on PATH. Anywhere else:
+Without a clone, OpenCode 2 installs the plugin in `plugins/opencode/` with `opencode plugin add`: one
+`um_run` tool that passes its arguments straight to the CLI and runs `um` from PATH (see below), plus the
+fal MCP server when `FAL_KEY` is set and none is configured. A clone doesn't need it. See
+`plugins/opencode/README.md`.
+
+**The `um` CLI.** Plugin installs and clones put it on PATH (OpenCode's plugin install doesn't). Anywhere else:
 ```bash
 uv tool install git+https://github.com/rehan-remade/universal-modder # or: pipx install git+...
 ```
@@ -93,8 +99,4 @@ A few notes from the community:
 
  Skill What it does 
 
- mod-any-game The whole loop, hard safety rules, and 12 engine playbooks : Unity, Unreal, .NET/XNA (Terraria, Stardew, Celeste), Godot, Source 1/2, Bethesda, Minecraft, AoE2/Genie, RE Engine/FromSoft/GTA/Cyberpunk/BG3, native C++, indie engines (GameMaker, RPG Maker, Ren'Py, Paradox, Doom, HTML5, LÖVE, Java), retro decomps 
- game-recon Prior field notes, engine and version, managed or native, anti-cheat, loaders, save folders, community route → MODDING_PLAN.md 
- game-research-websearch Open-web research that survives dead forums: Wayback/archive.today, GitHub/code and Nexus/Workshop/Thunderstore APIs, Reddit/YouTube, login-gated handoff, screenshots as evidence 
- reverse-engineering ILSpy / Cpp2IL / Vineflower / Ghidra and IDA over MCP / Cheat Engine / Frida / RenderDoc; reverse-engineer a file format and prove it with a round trip 
- fal-assets Sprites with real transparency, consi
+ mod-any-game The whole loop, hard safety rules, and 12 engine playbooks : Unity, Unreal, .NET/XNA (Terraria, Stardew, Celeste), Godot, Source 1/2, Bethesda, Minecraft, AoE2/Genie, RE Engine/FromSoft/GTA/Cyberpunk/BG3, native C++, indie engines (GameMaker, RPG Maker, Ren'Py, Paradox, Doom, HTML5, LÖVE, 

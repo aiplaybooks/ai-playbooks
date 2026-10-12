@@ -77,6 +77,8 @@ Or install for OpenCode:
 npx claude-mem install --ide opencode
 ```
 
+This works with OpenCode 1.3.4 or later, including OpenCode 2. Restart OpenCode after installing.
+
 Or install for **T3 Code** (Codex and Claude Code providers):
 
 ```bash
@@ -153,6 +155,4 @@ The installer handles dependencies, plugin setup, AI provider configuration, wor
 - **[Search Tools](https://docs.claude-mem.ai/usage/search-tools)** - Query your project history with natural language
 - **[Cloud Sync](https://docs.claude-mem.ai/cloud-sync)** - Back up your memories to cmem.ai — no daemon, the worker syncs on write
 
-### Best Practices
-
-- **[Context Engineering](https://docs.claude-mem.ai/context-engineering)** - AI agent context 
+### Best Practic

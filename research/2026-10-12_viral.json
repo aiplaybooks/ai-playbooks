@@ -1,0 +1,75 @@
+{
+ "generated": "2026-10-12T09:31:02+00:00",
+ "reddit": [],
+ "youtube_signal": [
+  {
+   "id": "yt-QlykUiyfU3Y",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "The 5 Most Dangerous Places in the World!🙄#shorts #mystery #facts #shortvideo #shortsfeed",
+   "channel": "Unique Fact Official",
+   "url": "https://www.youtube.com/shorts/QlykUiyfU3Y",
+   "views": 1559370,
+   "date": "2026-10-10T01:00:34Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-w31YOI-cXa4",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "भारत की हार पर भड़के रोहित शर्मा! गंभीर और वैभव पर उठे सवाल 😱🏏",
+   "channel": "Sports Cricket Hub ",
+   "url": "https://www.youtube.com/shorts/w31YOI-cXa4",
+   "views": 410103,
+   "date": "2026-10-10T00:59:20Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-87WPb2Y_j5o",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "¡Estas Fotos de Bebés Son Demasiado Adorables! 😍📸",
+   "channel": "Twist Mundo",
+   "url": "https://www.youtube.com/shorts/87WPb2Y_j5o",
+   "views": 222811,
+   "date": "2026-10-10T21:30:22Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-FR7suMap7oU",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Sirius vs OG Brawlers Live Action 🔥 #brawlstars",
+   "channel": "KLASH",
+   "url": "https://www.youtube.com/shorts/FR7suMap7oU",
+   "views": 172842,
+   "date": "2026-10-10T15:00:22Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-zLvC2VQCvt8",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "This Robot Runs Up And Jumps Just Like An Athlete",
+   "channel": "History Seeker",
+   "url": "https://www.youtube.com/shorts/zLvC2VQCvt8",
+   "views": 145168,
+   "date": "2026-10-10T00:28:16Z",
+   "query": "humanoid robot video"
+  },
+  {
+   "id": "yt-Mc5naNwJkR8",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "スズキ フロンテクーペ　軽自動車なのに本気でスポーツカーを作った時代 #旧車 #名車",
+   "channel": "クルマ査定士の回想録",
+   "url": "https://www.youtube.com/shorts/Mc5naNwJkR8",
+   "views": 139561,
+   "date": "2026-10-09T10:35:51Z",
+   "query": "AI generated video"
+  }
+ ],
+ "errors": [
+  "Reddit: REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET missing in .env"
+ ]
+}

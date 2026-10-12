@@ -1,0 +1,406 @@
+{
+ "generated": "2026-10-12T09:30+00:00",
+ "hours": 36.0,
+ "items": [
+  {
+   "source": "YouTube official blog",
+   "tier": "official",
+   "title": "What 20,000 creators told us about unleashing Europe’s potential",
+   "url": "https://blog.youtube/news-and-events/europe-creator-consultation-creative-capital-report/",
+   "date": "2026-10-12T07:00+00:00",
+   "summary": "Europe’s creator economy contributes over €8.4 billion to the EU’s GDP – but creators often feel left out of decision making. In “Creative Capital,” our new report on Eu…"
+  },
+  {
+   "source": "OpenCode releases",
+   "tier": "official",
+   "title": "v2.0.27",
+   "url": "https://github.com/anomalyco/opencode/releases/tag/v2.0.27",
+   "date": "2026-10-12T04:16+00:00",
+   "summary": "release: v2.0.27"
+  },
+  {
+   "source": "Ollama releases",
+   "tier": "official",
+   "title": "v0.40.3",
+   "url": "https://github.com/ollama/ollama/releases/tag/v0.40.3",
+   "date": "2026-10-11T06:40+00:00",
+   "summary": "What's Changed ollama launch claude no longer shows a warning about Claude connectors by @hoyyeva in #18878 ollama launch codex no longer warns about service tiers by @hoyyeva in #18879 Paused background model upgrade for embedding and other request performance, by @jmorganca in #18908 Full Changelog : v0.40.2...v0.40.3"
+  },
+  {
+   "source": "OpenCode releases",
+   "tier": "official",
+   "title": "v1.19.0",
+   "url": "https://github.com/anomalyco/opencode/releases/tag/v1.19.0",
+   "date": "2026-10-11T01:39+00:00",
+   "summary": "Core Improvements Run opencode upgrade --major to upgrade to OpenCode 2. Bugfixes Allow the OpenAI ultrafast service tier. Validate PTY connection origins and tickets before checking whether a PTY exists. TUI Improvements Use /update to install OpenCode updates or upgrade to OpenCode 2; updates are no longer installed automatically. Thank you to 1 community contributor: @dc85 : docs(web): add Exo…"
+  },
+  {
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "openclaw 2026.10.2",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.2",
+   "date": "2026-10-12T07:33+00:00",
+   "summary": "2026.10.2 Highlights Updates from 2026.10.1: the first upgrade from stable 2026.10.1 now completes cleanly, successful in-place updates no longer end in errors, and Windows, cloned-filesystem, and private-Node update paths finish instead of stalling or rolling back. ( #168849 , #169031 , #165233 , #166530 , #168968 , #164677 , #165257 ) Thanks @RomneyDa , @jarvisnextgeneration20-lang , and…"
+  },
+  {
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "openclaw 2026.10.1",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.1",
+   "date": "2026-10-12T02:32+00:00",
+   "summary": "OpenClaw v2026.10.1 3,055 commits · 2,425 pull requests · 402 contributors Changes included in this release The release notes and changelog contain the same content, presented in two formats: Release notes — formatted for people, with expandable sections. Changelog — plain Markdown for AI agents and tools. Thanks @100yenadmin @51Google @609NFT @A1fred-AI @abacha @adamamzalag @adamczhang…"
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "X re-builds its third-party usage showcase",
+   "url": "https://www.socialmediatoday.com/news/x-re-builds-its-third-party-usage-showcase/832684/",
+   "date": "2026-10-11T18:19-04:00",
+   "summary": "The platform’s relaunched exhibit website lists official partners, agentic use cases and more in an effort to inspire developers to integrate X data into their apps."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Social media platforms have not ruled out execution livestream",
+   "url": "https://www.socialmediatoday.com/news/social-media-platforms-have-not-ruled-out-execution-livestream/832683/",
+   "date": "2026-10-11T18:14-04:00",
+   "summary": "U.S. Secretary of Defense Pete Hegseth proposed that a December military execution be livestreamed, and many platforms have not yet weighed in, per The Verge."
+  },
+  {
+   "source": "TestingCatalog",
+   "tier": "signal",
+   "title": "Gemini 4 Argon spotted in A/B testing on Antigravity",
+   "url": "https://www.testingcatalog.com/gemini-4-argon-ab-tests-early-outputs/",
+   "date": "2026-10-11T21:58+00:00",
+   "summary": "Users on X say Gemini 4 Argon is appearing in A/B tests, with early outputs showing sharper UI design than Gemini 3.8 Flash."
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Will the HomeView be Apple’s first smart home success?",
+   "url": "https://techcrunch.com/2026/10/11/will-the-homeview-be-apples-first-smart-home-success/",
+   "date": "2026-10-11T21:14+00:00",
+   "summary": "Over the past couple of years, we’ve seen multiple reports that Apple was working on a new smart home product, but now it seems the product has a name and a launch date."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "There is no viable case for widespread generative AI access",
+   "url": "https://www.socialmediatoday.com/news/there-is-no-viable-case-for-widespread-generative-ai-access/832681/",
+   "date": "2026-10-11T16:42-04:00",
+   "summary": "Despite the push to incorporate artificial intelligence into every aspect of social media and online life, the risks far outweigh AI’s narrow use case."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Meta publishes post to counter data center concerns",
+   "url": "https://www.socialmediatoday.com/news/meta-publishes-post-to-counter-data-center-concerns/832679/",
+   "date": "2026-10-11T16:17-04:00",
+   "summary": "The company released an overview from creator Tom Shaw addressing public apprehensions about water usage, energy bills and local job impacts."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Meta removes access verification for developers",
+   "url": "https://www.socialmediatoday.com/news/meta-removes-access-verification-for-developers/832678/",
+   "date": "2026-10-11T16:14-04:00",
+   "summary": "The company is retiring a separate access review process for third-party apps and will rely on Business Verification and App Review instead."
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "48 hours to TechCrunch Disrupt 2026 — hear directly from the people building what’s next",
+   "url": "https://techcrunch.com/2026/10/11/48-hours-to-techcrunch-disrupt-2026-hear-directly-from-the-people-building-whats-next/",
+   "date": "2026-10-11T19:00+00:00",
+   "summary": "Less than 48 hours, TechCrunch Disrupt 2026 starts in San Francisco’s Moscone West. Save up to $100 on your pass before prices increase at the door, plus get 50% on a second pass. Or score other deals."
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Silicon Valley is falling in line with Trump’s attempt to rename AI",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1009406/silicon-valley-is-falling-in-line-with-trumps-attempt-to-rename-ai",
+   "date": "2026-10-11T14:33-04:00",
+   "summary": "When President Donald Trump announced his plans to rebrand artificial intelligence as \" super intelligence ,\" you'd be forgiven for being skeptical that it would catch on. While most of the broader population is sticking with AI, some of Silicon Valley's most powerful are falling in line and trying to give Trump the great AI rebrand he so desires. That Elon Musk was quick to jump on board ,…"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Can the AI industry persuade data center opponents by getting rid of NDAs?",
+   "url": "https://techcrunch.com/2026/10/11/can-the-ai-industry-persuade-data-center-opponents-by-getting-rid-of-ndas/",
+   "date": "2026-10-11T16:52+00:00",
+   "summary": "On Equity, we debate the impact of data center moratoriums and whether the AI industry has a communication problem."
+  },
+  {
+   "source": "9to5Mac",
+   "tier": "signal",
+   "title": "Apple testing two new features for upgraded Apple TV 4K, per report",
+   "url": "https://9to5mac.com/2026/10/11/apple-testing-two-new-features-for-upgraded-apple-tv-4k-per-report/",
+   "date": "2026-10-11T14:27+00:00",
+   "summary": "Apple will hold its “Welcome home” product launch on Tuesday, with the headlining announcement expected to be the new “HomeView” smart display . A new Apple TV 4K is also on the docket for this week, and Apple has tested two new features for it: microphones and an upgraded Siri Remote. 9to5Mac’s Apple event coverage is supported by Sony : Shop Sony’s huge Amazon sale to score big savings on its…"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "These execs think voice AI hasn’t reached its ChatGPT moment yet",
+   "url": "https://techcrunch.com/2026/10/11/these-execs-think-voice-ai-hasnt-reached-its-chatgpt-moment-yet/",
+   "date": "2026-10-11T14:00+00:00",
+   "summary": "Voice AI's often misses important points for its context layer, and causes the whole pipeline to break"
+  },
+  {
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "openclaw 2026.10.5-beta.1",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.5-beta.1",
+   "date": "2026-10-11T13:08+00:00",
+   "summary": "2026.10.5-beta.1 Highlights Safer updates: updates finish across devices, filesystems, Windows elevation, and interrupted activations, and recover from stale leases or changed evidence instead of stranding the install or blocking future updates. ( #164636 , #164769 , #165257 , #165863 , #166548 , #166695 , #168043 , #166394 , #167302 ) Thanks @hrp6vv9mwr-glitch , @MrJanvar , @Shirleyyyhk ,…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Learning to use local AI is exciting, overwhelming, and frustrating",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1008484/learning-local-ai-hermes-qwen-model-mac-studio-testing-diary-progress",
+   "date": "2026-10-11T07:00-04:00",
+   "summary": "Baby’s first local AI agent. | Photo: Antonio G. Di Benedetto / The Verge I'm embarking on a journey I've so far been hesitant to go on: actually using AI on the regular. Giving my most personal data to cloud services has been a major hold up for me, but it's increasingly possible to run powerful models locally to see what they're capable of. Is this tech so useful that it's worth throwing gobs…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Dwarf Fortress uses version control now",
+   "url": "https://simonwillison.net/2026/Oct/11/dwarf-fortress/",
+   "date": "2026-10-11T00:52+00:00",
+   "summary": "I remember hearing a while ago that Dwarf Fortress didn't use version control. That fact has been lodged in my head, because given its inherent complexity I have trouble imagining a codebase that would benefit from version control more . That's art. I went looking and I'm sad to report that the days without version control appear to have ended. Quoting Tarn Adams over time: March 2013: \"I don't…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Python 3.15.0 added to actions/python-versions",
+   "url": "https://simonwillison.net/2026/Oct/10/python-actions/",
+   "date": "2026-10-10T23:58+00:00",
+   "summary": "Python 3.15.0 added to actions/python-versions Bit of a niche link, but I've been waiting for this for a couple of days - I even told ChatGPT to check for it: Clone https://github.com/actions/python-versions and git pull once an hour until they add the stable 3.15 - then tell me about it Now that this has landed, you can add \"3.15\" to a GitHub Actions testing matrix to run tests against the new…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Satya Nadella says we should assume all AI models are ‘compromised’",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1009337/satya-nadella-says-we-should-assume-all-ai-models-are-compromised",
+   "date": "2026-10-10T18:10-04:00",
+   "summary": "In a lengthy post on X , Microsoft's CEO laid out his views on the dangers posed by highly advanced AI models and how to confront those risks. Nadella says we can no longer accept a world where AI is treated as a \"set of nested black boxes\" whose advice and actions we simply accept or reject. He calls for building a more transparent system where models can be contained, observed, and leaves…"
+  },
+  {
+   "source": "Latent Space AINews",
+   "tier": "signal",
+   "title": "[Subscriber Exclusive] NYC Subscriber Meetups!",
+   "url": "https://www.latent.space/p/nyc2026",
+   "date": "2026-10-10T22:07+00:00",
+   "summary": "Tomorrow and Tuesday. If you see this you’re in!"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
+   "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/",
+   "date": "2026-10-10T21:47+00:00",
+   "summary": "In a Saturday morning post, Microsoft's CEO wrote that it’s time “to step back and assess the trust architecture” of AI."
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Zod 4.6.6 compromised by malware?",
+   "url": "https://github.com/colinhacks/zod/commit/d821685ea6732436fcdf786a81d076958471e467",
+   "date": "2026-10-12T07:47+00:00",
+   "summary": "116 points, 31 comments · https://news.ycombinator.com/item?id=50052814"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Attack of the Vibe Coded Photoshop Clones",
+   "url": "https://www.shokunin.studio/blog/2026/10/9/attack-of-the-vibe-coded-photoshop-clones",
+   "date": "2026-10-12T06:35+00:00",
+   "summary": "111 points, 159 comments · https://news.ycombinator.com/item?id=50052156"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "An open-source, clean-room reimplementation of Microsoft Word in pure Rust",
+   "url": "https://github.com/storytold/wordcraft",
+   "date": "2026-10-12T01:57+00:00",
+   "summary": "97 points, 88 comments · https://news.ycombinator.com/item?id=50050370"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Doory – Open-Source Canva",
+   "url": "https://github.com/shaongitbd/doory",
+   "date": "2026-10-12T00:48+00:00",
+   "summary": "111 points, 40 comments · https://news.ycombinator.com/item?id=50049872"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Whatever became of holography? (2011)",
+   "url": "https://www.americanscientist.org/article/whatever-became-of-holography",
+   "date": "2026-10-11T23:50+00:00",
+   "summary": "130 points, 63 comments · https://news.ycombinator.com/item?id=50049411"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Recursive self-improvement through collective intelligence",
+   "url": "https://pub.sakana.ai/mass/",
+   "date": "2026-10-11T22:22+00:00",
+   "summary": "115 points, 66 comments · https://news.ycombinator.com/item?id=50048522"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "The gap in shared understanding of LLM capability is widening",
+   "url": "https://twitter.com/karpathy/status/2109361546505966046",
+   "date": "2026-10-11T20:20+00:00",
+   "summary": "457 points, 652 comments · https://news.ycombinator.com/item?id=50047422"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Chapter 1 of \"Ways of Seeing\" by John Berger (1972)",
+   "url": "https://www.ways-of-seeing.com/ch1",
+   "date": "2026-10-11T18:26+00:00",
+   "summary": "110 points, 18 comments · https://news.ycombinator.com/item?id=50046241"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "NYC's \"Click to Cancel\" rule is now in effect",
+   "url": "https://www.nyc.gov/main/click-to-cancel",
+   "date": "2026-10-11T18:01+00:00",
+   "summary": "471 points, 220 comments · https://news.ycombinator.com/item?id=50045946"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "YouTuber builds 'Flock-like' camera to track police vehicles, gets police visit",
+   "url": "https://www.tomshardware.com/tech-industry/cyber-security/canadian-youtuber-builds-flock-like-camera-to-exclusively-track-police-vehicles-officers-visit-his-home-to-express-privacy-concerns",
+   "date": "2026-10-11T17:40+00:00",
+   "summary": "82 points, 30 comments · https://news.ycombinator.com/item?id=50045735"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "apsw: Another Python SQLite Wrapper",
+   "url": "https://github.com/rogerbinns/apsw",
+   "date": "2026-10-11T16:58+00:00",
+   "summary": "82 points, 19 comments · https://news.ycombinator.com/item?id=50045273"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Terence Tao: Math 2.0 [pdf]",
+   "url": "https://teorth.github.io/tao-web/slides/math-2-0-caltech-2026.pdf",
+   "date": "2026-10-11T13:16+00:00",
+   "summary": "398 points, 423 comments · https://news.ycombinator.com/item?id=50043026"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Valen's Memory Safety: A New Kind of Borrow Checking",
+   "url": "https://verdagon.dev/blog/valen-group-borrowing",
+   "date": "2026-10-11T12:06+00:00",
+   "summary": "159 points, 87 comments · https://news.ycombinator.com/item?id=50042362"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "I paid people to try and follow my README",
+   "url": "https://shkspr.mobi/blog/2026/10/i-paid-people-to-try-and-follow-my-readme/",
+   "date": "2026-10-11T11:47+00:00",
+   "summary": "391 points, 192 comments · https://news.ycombinator.com/item?id=50042219"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Nicolas Cage says he won't work with Amazon again over AI dispute",
+   "url": "https://www.latimes.com/entertainment-arts/business/story/2026-10-10/nicolas-cage-says-he-wont-work-with-amazon-again-over-ai-dispute",
+   "date": "2026-10-11T11:03+00:00",
+   "summary": "89 points, 31 comments · https://news.ycombinator.com/item?id=50041873"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Using AI for just 10 minutes erodes your ability to persist at hard things",
+   "url": "https://vcresearch.berkeley.edu/news/using-ai-just-10-minutes-erodes-your-ability-persist-hard-things",
+   "date": "2026-10-11T10:47+00:00",
+   "summary": "105 points, 109 comments · https://news.ycombinator.com/item?id=50041765"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "GameBoy on E-Paper ESP32 at 30FPS [video]",
+   "url": "https://www.youtube.com/watch?v=XiZmM6hwwAU",
+   "date": "2026-10-11T03:21+00:00",
+   "summary": "142 points, 43 comments · https://news.ycombinator.com/item?id=50039536"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "500B tokens later: Letting AI agents decompile a first-person shooter",
+   "url": "https://momo5502.com/posts/2026-10-09-game-decompilation/",
+   "date": "2026-10-11T02:02+00:00",
+   "summary": "197 points, 139 comments · https://news.ycombinator.com/item?id=50039092"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: WallHop – 12ft.io is gone, so I built a replacement",
+   "url": "https://wallhop.io/",
+   "date": "2026-10-11T00:46+00:00",
+   "summary": "274 points, 121 comments · https://news.ycombinator.com/item?id=50038634"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "PSPi 6 – Raspberry Pi in a PSP",
+   "url": "https://github.com/othermod/PSPi-Version-6",
+   "date": "2026-10-11T00:45+00:00",
+   "summary": "130 points, 14 comments · https://news.ycombinator.com/item?id=50038623"
+  }
+ ],
+ "errors": [
+  "Hugging Face blog: URLError: <urlopen error [WinError 10054] Varolan bir bağlantı uzaktaki bir ana bilgisayar tarafından zorla kapatıldı>"
+ ],
+ "manual": [
+  {
+   "name": "xAI news / Grok app updates",
+   "url": "https://x.ai/news",
+   "why": "blocks scripts (403): web search 'Grok' / 'xAI' last 24h"
+  },
+  {
+   "name": "ChatGPT release notes",
+   "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Perplexity changelog",
+   "url": "https://www.perplexity.ai/changelog",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Official X accounts (@AnthropicAI, @OpenAI, @xai, @GoogleDeepMind, @cursor_ai)",
+   "url": "https://x.com",
+   "why": "X needs login / paid API: use web search for big announcements"
+  },
+  {
+   "name": "Social media new features (Instagram @creators/@mosseri, TikTok newsroom, X, LinkedIn, Snapchat)",
+   "url": "https://newsroom.tiktok.com/",
+   "why": "no working RSS (TikTok/WhatsApp/Instagram blogs are HTML, Snap/LinkedIn 404): web search each gather for new features, AI features and creator tools; confirm on the platform's own newsroom/help page"
+  },
+  {
+   "name": "Higgsfield announcements",
+   "url": "https://x.com/higgsfield_ai",
+   "why": "big launches often land on X before the blog"
+  },
+  {
+   "name": "Qwen blog (Alibaba)",
+   "url": "https://qwen.ai/blog",
+   "why": "JS-rendered, no RSS (the old qwenlm.github.io feed stopped in 2025-09): web search 'Qwen' each gather for new open-weight releases"
+  }
+ ]
+}

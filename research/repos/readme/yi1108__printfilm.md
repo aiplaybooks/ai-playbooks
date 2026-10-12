@@ -1,5 +1,7 @@
 # PRINTFILM
 
+**Languages:** [中文](README.md) | [English](README_EN.md)
+
 [](https://github.com/yi1108/printfilm)
 [](LICENSE)
 

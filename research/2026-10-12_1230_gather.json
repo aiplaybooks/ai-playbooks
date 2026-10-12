@@ -1,0 +1,42 @@
+{
+  "generated": "2026-10-12T12:30:00+03:00",
+  "candidates": [
+    {
+      "id": "cursor-rules-evergreen",
+      "tool": "Cursor",
+      "kind": "evergreen",
+      "title": "Cursor Rules: Write Your Coding Rules Once and Stop Repeating Them Every Chat",
+      "summary_tr": "Cursor'da 4 tür kural var (her zaman, dosyaya bağlı, ajan isteyince, elle çağırma). Kuralları bir kez yazınca her sohbette otomatik uygulanıyor; AGENTS.md de destekleniyor.",
+      "why_tr": "Cursor'da son günlerde haber yok; 'bir kez yaz, hep uygulansın' vaadi kaydet/paylaş getirir.",
+      "angle": "4 rule types explained + where the file lives (.cursor/rules or AGENTS.md) + a copy-paste starter rule",
+      "tools": ["Cursor"],
+      "published": null,
+      "sources": ["https://cursor.com/docs/context/rules"],
+      "hints": [],
+      "score": 6
+    },
+    {
+      "id": "pack-local-business-social-agent",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "5 Prompts That Turn an AI Agent Into a Social Media Manager for Local Businesses Making $3,000 a Month",
+      "summary_tr": "Yerel işletmelere (kafe, berber, diş kliniği) aylık sosyal medya yönetimi satan bir ajan paketi: nişe uygun teklif, 30 günlük içerik takvimi, Reels senaryoları, müşteriye aylık rapor ve fiyat/sözleşme mesajı.",
+      "why_tr": "Sosyal medya + AI ajan + para vaadi bir arada; kitlemizin en çok kaydettiği tür.",
+      "angle": "Local Offer Builder · 30-Day Content Calendar · Reel Script Batch · Monthly Client Report · Pricing & Pitch DM",
+      "tools": ["ChatGPT", "Claude", "Gemini"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 7
+    }
+  ],
+  "coverage": {"ChatGPT": 0, "Claude": 0, "Gemini": 0, "Grok": 0, "Codex": 0, "Cursor": 1, "Copilot": 0, "Perplexity": 0, "Meta AI": 0, "Mistral": 0, "DeepSeek": 0, "Open models": 0, "Apple": 0, "Higgsfield": 0, "Google": 0, "Social media": 0, "Prompt pack": 1},
+  "notes_tr": "Bu gather'da yeni resmi haber çıkmadı: feed'lerde yalnızca küçük sürüm notları ve yorum yazıları vardı, web aramaları çoğunlukla eski (2024-2025) ya da havuzda zaten olan konuları verdi (Muse, Gemini Skills, YouTube 3 dk Shorts = 2024 haberi). Apple 'Welcome home' etkinliği yarın (13 Ekim) - henüz olmadı, söylenti sayıldığı için eklenmedi; etkinlikten sonra bir sonraki gather'da bakılmalı. Gemini 'Map' aracı ve Flare/Glow sesleri yalnızca ikincil kaynakta geçti, resmi doğrulama yok, atlandı. ChatGPT release notes ve Perplexity changelog 403 verdi, kontrol edilemedi. Yeni haber olmadığı için sadece 1 evergreen + 1 prompt paketi eklendi.",
+  "sources_changed": [
+    "Eklendi: The Rundown AI (therundown.ai/feed, signal) - 50 tarihli öğe, en yenisi 11 Ekim, günlük AI bülteni.",
+    "Reddedildi: Continue releases.atom - en yeni öğe 19 Haziran, bayat.",
+    "Reddedildi: Google Search blog feed - AI haberi az, en yeni 5 Ekim, zaten Keyword/Google AI feed'leri kapsıyor.",
+    "Reddedildi: LM Studio bug-tracker releases.atom - tarihli öğe yok, feed değil.",
+    "Kontrol: tüm mevcut kaynaklar sağlıklı (fail_streak<3); Hugging Face tek seferlik bağlantı hatası verdi, izlemede."
+  ]
+}

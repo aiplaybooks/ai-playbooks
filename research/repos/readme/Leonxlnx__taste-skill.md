@@ -8,7 +8,7 @@ Taste Skill
 
  Sponsors 
 
- Fluxion AI provides reliable, cost-efficient access to GPT, Claude, and other leading AI models through one unified API. Save up to 70% compared with official API pricing and get $3 in API credits when you sign up through this link. 
+ Sidrune AI : one API for GPT, Claude, and other leading AI models. Sign up through this link and get $3 in API credit. 
 
  interfaces.dev · A design engineering magazine by Jakub Krehel 
 
@@ -58,6 +58,19 @@ npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-fro
 
 You can also copy any `SKILL.md` into your project or paste it into ChatGPT / Codex conversations.
 
+### Install as a Claude Code plugin
+
+If you only use Claude Code, you can install the whole repo as a plugin from the included `.claude-plugin/` manifests. Every skill is namespaced under `taste-skill:` (for example, `/taste-skill:imagegen-frontend-web`), so they won't collide with your other skills — no `npx skills` step required.
+
+Run these inside Claude Code:
+
+```
+/plugin marketplace add Leonxlnx/taste-skill
+/plugin install taste-skill@taste-skill
+```
+
+Run `/plugin update` later to upgrade installed plugins to new versions. Claude Code also checks for updates automatically at startup.
+
 ### Updating from the previous version
 
 The default `taste-skill` (install name `design-taste-frontend`) is now **v2 (experimental)**, a substantial rewrite of the original v1. If you already have v1 installed, just re-run the install command and you will be upgraded:
@@ -84,29 +97,19 @@ The `Install name` column is the exact value you pass to `--skill`.
 
 | Skill (folder) | Install name | Description |
 | --- | --- | --- |
-| **taste-skill** | `design-taste-frontend` | 🆕 **v2 (experimental)** - substantial rewrite of the default skill. Reads the brief, infers the design language, tunes three dials (VARIANCE / MOTION / DENSITY). Brief inference, design-system map, hard em-dash ban, canonical GSAP code skeletons, redesign-audit protocol, strict pre-flight check. Actively iterating toward v2.0.0 stable. |
-| **taste-skill-v1** | `design-taste-frontend-v1` | The original v1 of taste-skill, preserved for projects depending on its exact behavior. Use only if the v2 default breaks something specific in your workflow. |
-| **gpt-tasteskill** | `gpt-taste` | Stricter variant for GPT/Codex: higher layout variance, stronger GSAP direction, aggressive anti-slop. |
-| **image-to-code-skill** | `image-to-code` | Image-first pipeline: generate site references, analyze them, then implement the frontend to match. |
-| **redesign-skill** | `redesign-existing-projects` | Existing projects: audit the UI first, then fix layout, spacing, hierarchy, styling. |
-| **soft-skill** | `high-end-visual-design` | Polished, calm, expensive UI with softer contrast, whitespace, premium fonts, spring motion. |
-| **output-skill** | `full-output-enforcement` | When the model ships half-finished work: full output, no placeholder comments. |
-| **minimalist-skill** | `minimalist-ui` | Editorial product UI (Notion/Linear vibes), restrained palette, crisp structure. |
-| **brutalist-skill** | `industrial-brutalist-ui` | Hard mechanical language: Swiss type, sharp contrast, experimental layout. |
-| **stitch-skill** | `stitch-design-taste` | Google Stitch-compatible rules, including optional `DESIGN.md` export format. |
+| **[taste-skill](skills/taste-skill/SKILL.md)** | `design-taste-frontend` | 🆕 **v2 (experimental)** - substantial rewrite of the default skill. Reads the brief, infers the design language, tunes three dials (VARIANCE / MOTION / DENSITY). Brief inference, design-system map, hard em-dash ban, canonical GSAP code skeletons, redesign-audit protocol, strict pre-flight check. Actively iterating toward v2.0.0 stable. |
+| **[taste-skill-v1](skills/taste-skill-v1/SKILL.md)** | `design-taste-frontend-v1` | The original v1 of taste-skill, preserved for projects depending on its exact behavior. Use only if the v2 default breaks something specific in your workflow. |
+| **[gpt-tasteskill](skills/gpt-tasteskill/SKILL.md)** | `gpt-taste` | Stricter variant for GPT/Codex: higher layout variance, stronger GSAP direction, aggressive anti-slop. |
+| **[image-to-code-skill](skills/image-to-code-skill/SKILL.md)** | `image-to-code` | Image-first pipeline: generate site references, analyze them, then implement the frontend to match. |
+| **[redesign-skill](skills/redesign-skill/SKILL.md)** | `redesign-existing-projects` | Existing projects: audit the UI first, then fix layout, spacing, hierarchy, styling. |
+| **[soft-skill](skills/soft-skill/SKILL.md)** | `high-end-visual-design` | Polished, calm, expensive UI with softer contrast, whitespace, premium fonts, spring motion. |
+| **[output-skill](skills/output-skill/SKILL.md)** | `full-output-enforcement` | When the model ships half-finished work: full output, no placeholder comments. |
+| **[minimalist-skill](skills/minimalist-skill/SKILL.md)** | `minimalist-ui` | Editorial product UI (Notion/Linear vibes), restrained palette, crisp structure. |
+| **[brutalist-skill](skills/brutalist-skill/SKILL.md)** | `industrial-brutalist-ui` | Hard mechanical language: Swiss type, sharp contrast, experimental layout. |
+| **[stitch-skill](skills/stitch-skill/SKILL.md)** | `stitch-design-taste` | Google Stitch-compatible rules, including optional `DESIGN.md` export format. |
 
 ### Image generation skills
 
 These produce design images only (no code). Use with ChatGPT Images, Codex image mode, or any agent that generates images.
 
-| Skill (folder) | Install name | Description |
-| --- | --- | --- |
-| **imagegen-frontend-web** | `imagegen-frontend-web` | Website comps: hero, landing, multi-section with strong typography, spacing, anti-slop art direction. |
-| **imagegen-frontend-mobile** | `imagegen-frontend-mobile` | Mobile screens and flows: iOS/Android/cross-platform, mockups, readable type, coherent sets. |
-| **brandkit** | `brandkit` | Brand-kit boards: logo directions, palettes, type, identity applications across categories. |
-
-### Which one should I use?
-
-- Start with **taste-skill** for the safest general default. (Now v2 experimental - see what changed in the [CHANGELOG](CHANGELOG.md).)
-- If you depend on the exact behavior of the original taste-skill, install **taste-skill-v1** instead. 
-- Use **gpt-taste** when you want the stricter GPT/Codex-
+| Skill (folder) 
