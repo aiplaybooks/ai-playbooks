@@ -1,0 +1,28 @@
+{
+  "kind": "clip",
+  "source": "https://x.com/JoePompliano/status/2109366062852829444",
+  "credit": "@JoePompliano on X",
+  "topic": "F1 camera tricks",
+  "hook": "Is this F1 pit-lane shot real, or AI? The camera switch looks impossible.",
+  "caption": "Is this F1 pit-lane shot real, or AI? The camera switch looks impossible.\n\nOur take: this shouldn't be possible. A pit-wall camera and one on top of the car seem to switch with no cut you can see.\n\n→ Watch the end, where the footage speeds up\n\nReal footage or AI? One word in the comments 👇\n\nSend this to a friend who watches F1.\n\nFollow @aiplaybooks.daily for daily AI tricks.\n\nCredit: @JoePompliano on X\n\n#f1 #formula1 #ai #motorsport #artificialintelligence",
+  "captions": {
+    "instagram": "Is this F1 pit-lane shot real, or AI? The camera switch looks impossible.\n\nOur take: this shouldn't be possible. A pit-wall camera and one on top of the car seem to switch with no cut you can see.\n\n→ Watch the end, where the footage speeds up\n\nReal footage or AI? One word in the comments 👇\n\nSend this to a friend who watches F1.\n\nFollow @aiplaybooks.daily for daily AI tricks.\n\nCredit: @JoePompliano on X\n\n#f1 #formula1 #ai #motorsport #artificialintelligence",
+    "facebook": "Is this F1 pit-lane shot real, or AI? The camera switch looks impossible.\n\nJoe Pompliano thinks two cameras, one in the pits and one on top of the car, were synced with AI. We say the switch shouldn't be possible at all.\n\nWatch the end, where the footage speeds up. That's the part that doesn't add up.\n\nReal footage or AI? Tell us what you think.\n\nCredit: @JoePompliano on X\n\n#f1 #formula1 #ai",
+    "youtube": {
+      "title": "F1 pit-lane camera switch shouldn't be possible: real or AI?",
+      "description": "Our take: this F1 pit-lane camera switch shouldn't be possible. A camera in the pits and one on top of the car seem to hand the shot over with no visible cut.\n\nWatch the end, where the footage speeds up, and decide for yourself: real footage or AI?\n\nCredit: @JoePompliano on X\n\n#f1 #formula1 #ai #motorsport",
+      "tags": ["f1 camera", "formula 1 camera", "f1 pit lane", "f1 onboard camera", "real or ai video", "f1 ai video"]
+    }
+  },
+  "x": "Is this F1 pit-lane shot real, or AI? The camera switch looks impossible.\n\nOur take: this shouldn't be possible. Real footage or AI? #F1",
+  "first_comment": {
+    "instagram": "Bonus check: pause on the switch and look at the signage in the background. Real footage or AI? One word is enough 👇",
+    "facebook": "Bonus check: pause on the switch and look at the signage in the background. Real footage or AI? One word is enough 👇",
+    "youtube": "Bonus check: pause on the switch and look at the signage in the background. Real footage or AI? Subscribe for daily AI playbooks."
+  },
+  "checked": [
+    "Frames 1-8 (runs/clip-20261013-161520-52829444/frames/): F1 Replay footage of a Red Bull car leaving the pit lane; the view moves through a pit-wall angle, a side angle and the driver's onboard angle (https://x.com/JoePompliano/status/2109366062852829444)",
+    "Pit-lane signage (Singapore Airlines, frame 6) and the F1 Replay watermark on every frame; no tool is named in the post, so no tool search was needed",
+    "The AI claim is Joe Pompliano's guess from his post and was not verified, so the hook asks a question instead of stating it"
+  ]
+}

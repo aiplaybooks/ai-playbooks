@@ -1,0 +1,793 @@
+{
+ "generated": "2026-10-13T09:53+00:00",
+ "hours": 36.0,
+ "items": [
+  {
+   "source": "Codex changelog",
+   "tier": "official",
+   "title": "Codex changelog: Oct 14, 2026",
+   "url": "https://developers.openai.com/codex/changelog",
+   "date": "2026-10-14T00:00+00:00",
+   "summary": ", GPT-5.5 will retire from ChatGPT, ChatGPT Work, and Codex on all plans, including consumer, Business, Enterprise, and Edu plans. This retirement does not apply to the OpenAI API. For Codex with ChatGPT sign-in, choose an available replacement for your plan and client. See GPT-5.5 retirement for migration guidance. Update workspace defaults, saved model settings, managed configurations, custom agents, scheduled tasks, and scripts that still select gpt-5.5 . See GPT-5.5 retirement and workspace model availability for migration guidance."
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "CLI v3.0.71",
+   "url": "https://github.com/cline/cline/releases/tag/cli-v3.0.71",
+   "date": "2026-10-13T08:56+00:00",
+   "summary": "Plugins now load inside the hub instead of a separate node or bun process, so the CLI no longer needs a JavaScript runtime on your PATH to run plugins. A plugin that fails to load no longer silently loses its tools: Cline prints a warning naming the plugin and the error, cline config tools --json lists it as a plugin_failure entry, and the new cline hub plugins shows each plugin's status and last…"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "SDK v0.0.93",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fsdk%2Fv0.0.93",
+   "date": "2026-10-13T08:26+00:00",
+   "summary": "Plugins load in-process through one registry per process instead of a node/bun subprocess, so the compiled CLI and its hub no longer need a runtime on PATH, and plugins can use the Bun global under the Bun-built hub. CLINE_PLUGIN_MODE=sandbox keeps the subprocess sandbox. The registry wraps import, setup, hooks, tools and commands with timeouts and error capture, and tracks each plugin's state…"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "sdk/core/v0.0.93",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fcore%2Fv0.0.93",
+   "date": "2026-10-13T08:26+00:00",
+   "summary": "@cline/core@0.0.93"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "sdk/agents/v0.0.93",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fagents%2Fv0.0.93",
+   "date": "2026-10-13T08:26+00:00",
+   "summary": "@cline/agents@0.0.93"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "sdk/llms/v0.0.93",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fllms%2Fv0.0.93",
+   "date": "2026-10-13T08:26+00:00",
+   "summary": "@cline/llms@0.0.93"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "sdk/shared/v0.0.93",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fshared%2Fv0.0.93",
+   "date": "2026-10-13T08:26+00:00",
+   "summary": "@cline/shared@0.0.93"
+  },
+  {
+   "source": "OpenCode releases",
+   "tier": "official",
+   "title": "v2.0.28",
+   "url": "https://github.com/anomalyco/opencode/releases/tag/v2.0.28",
+   "date": "2026-10-13T08:17+00:00",
+   "summary": "release: v2.0.28"
+  },
+  {
+   "source": "Ollama releases",
+   "tier": "official",
+   "title": "v0.40.4",
+   "url": "https://github.com/ollama/ollama/releases/tag/v0.40.4-rc1",
+   "date": "2026-10-13T05:26+00:00",
+   "summary": "What's Changed llama: update llama.cpp to b11521 for decision models and EmbeddingGemma 2 by @jmorganca in #18917 server: reuse verified manifests and loaded models in inference routes by @dhiltgen in #18947 mlx: compact restored recurrent state after speculative rollback by @dhiltgen in #18955 launch: include installed models in Codex /model picker by @ParthSareen in #18887 MLX, MLX-C: version…"
+  },
+  {
+   "source": "Higgsfield blog",
+   "tier": "official",
+   "title": "How to Put Two Consistent Characters in One AI Video Scene",
+   "url": "https://higgsfield.ai/blog/two-characters-one-scene-ai-video",
+   "date": "2026-10-13T00:52+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Higgsfield blog",
+   "tier": "official",
+   "title": "How to Automate AI Video Creation Without Coding",
+   "url": "https://higgsfield.ai/blog/automate-ai-video-no-code",
+   "date": "2026-10-12T22:23+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Google Workspace Updates blog",
+   "tier": "official",
+   "title": "Find your routine next steps on the post-meeting screen in Google Meet",
+   "url": "http://workspaceupdates.googleblog.com/2026/10/find-your-routine-next-steps-on-post-meeting-screen-in-Google-Meet.html",
+   "date": "2026-10-12T12:17-07:00",
+   "summary": "We are introducing next steps in Google Meet. Powered by Gemini and Workspace Studio, our new capability allows users to automate repetitive post-meeting tasks directly within Google Workspace. Next steps help you transform meeting discussions into definitive actions, like drafting follow-up emails in Gmail or exporting action items to Google Tasks. During busy work days, meetings are frequently…"
+  },
+  {
+   "source": "OpenCode releases",
+   "tier": "official",
+   "title": "vscode-v1.0.0: fix(vscode): launch the V2 CLI without --port (#49084)",
+   "url": "https://github.com/anomalyco/opencode/releases/tag/vscode-v1.0.0",
+   "date": "2026-10-12T18:58+00:00",
+   "summary": "Co-authored-by: uyencss uyencss@users.noreply.github.com Co-authored-by: Aiden Cline aidenpcline@gmail.com"
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Applying technology to understand and treat disease",
+   "url": "https://blog.google/innovation-and-ai/technology/health/ai-health-research/",
+   "date": "2026-10-12T17:30+00:00",
+   "summary": "In collaboration with scientists and research partners, Google is helping to make disease more detectable, treatable, and preventable — with the goal of improving health…"
+  },
+  {
+   "source": "Higgsfield blog",
+   "tier": "official",
+   "title": "Higgsfield Meets Katana: What It Is and How it Works",
+   "url": "https://higgsfield.ai/blog/higgsfield-katana",
+   "date": "2026-10-12T14:31+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Apple Newsroom",
+   "tier": "official",
+   "title": "App Store Indie Games Week kicks off today",
+   "url": "https://www.apple.com/newsroom/2026/10/app-store-indie-games-week-kicks-off-today/",
+   "date": "2026-10-12T13:59+00:00",
+   "summary": "Today, Indie Games Week lights up the App Store with a celebration of the catalog of imaginative games made by independent teams with big dreams."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Google Health: Evolving so you can focus on living better",
+   "url": "https://blog.google/products-and-platforms/products/google-health/google-health-updates/",
+   "date": "2026-10-12T13:00+00:00",
+   "summary": "What’s new from Google Health: Explore the new Fitbit Edge, expanded workout tracking, and dedicated women's health insights."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "From game days to daily life: The familiar faces teaming up with Google Health",
+   "url": "https://blog.google/products-and-platforms/products/google-health/google-health-partnership-athletes-creators/",
+   "date": "2026-10-12T13:00+00:00",
+   "summary": "See the athletes, creators, and wellness experts who are using Google Health to help make our technology better for everyone."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "We’re partnering with Flo Health to elevate women’s health",
+   "url": "https://blog.google/products-and-platforms/products/google-health/commitment-womens-health-flo-health-partnership/",
+   "date": "2026-10-12T13:00+00:00",
+   "summary": "Google Health announces new partnership and deeper commitment to women’s health with Flo Health."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "How we’re making Google Health and Fitbit Air smarter than ever",
+   "url": "https://blog.google/products-and-platforms/products/google-health/fitbit-google-health-updates/",
+   "date": "2026-10-12T13:00+00:00",
+   "summary": "Our most advanced wellness tools, premium metal bands, and deeper app partnerships bring everything you need directly to your wrist."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Google Fitbit Edge: Our all-new smartest fitness tracker ever",
+   "url": "https://blog.google/products-and-platforms/devices/fitbit/google-fitbit-edge/",
+   "date": "2026-10-12T13:00+00:00",
+   "summary": "Pre-order our newest fitness tracker and get access to our most advanced health tools — plus, a week of battery life from a single charge."
+  },
+  {
+   "source": "YouTube official blog",
+   "tier": "official",
+   "title": "What 20,000 creators told us about unleashing Europe’s potential",
+   "url": "https://blog.youtube/news-and-events/europe-creator-consultation-creative-capital-report/",
+   "date": "2026-10-12T07:00+00:00",
+   "summary": "Europe’s creator economy contributes over €8.4 billion to the EU’s GDP – but creators often feel left out of decision making. In “Creative Capital,” our new report on Eu…"
+  },
+  {
+   "source": "OpenCode releases",
+   "tier": "official",
+   "title": "v2.0.27",
+   "url": "https://github.com/anomalyco/opencode/releases/tag/v2.0.27",
+   "date": "2026-10-12T04:16+00:00",
+   "summary": "release: v2.0.27"
+  },
+  {
+   "source": "Latent Space AINews",
+   "tier": "signal",
+   "title": "[AINews] Meta Muse Wonder & Wonder Full: MSL’s Claude 5.5-tier Frontier Model",
+   "url": "https://www.latent.space/p/ainews-meta-muse-wonder-and-wonder",
+   "date": "2026-10-13T09:37+00:00",
+   "summary": "MSL’s emergence as a frontier lab is finally complete."
+  },
+  {
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "v2026.10.5-beta.3",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.5-beta.3",
+   "date": "2026-10-13T08:54+00:00",
+   "summary": "OpenClaw 2026.10.5-beta.3"
+  },
+  {
+   "source": "TestingCatalog",
+   "tier": "signal",
+   "title": "Meta launches Muse Wonder and Wonder Full for AI agents",
+   "url": "https://www.testingcatalog.com/meta-launches-muse-wonder-and-wonder-full-for-ai-agents/",
+   "date": "2026-10-12T22:16+00:00",
+   "summary": "Meta's Muse Wonder models combine Active Memory and Active Focus for personal agents, professional tasks, and sustained coding work."
+  },
+  {
+   "source": "TestingCatalog",
+   "tier": "signal",
+   "title": "Google is preparing Nano Banana 3 Pro upgrade",
+   "url": "https://www.testingcatalog.com/google-is-preparing-nano-banana-3-pro-upgrade/",
+   "date": "2026-10-12T21:42+00:00",
+   "summary": "GemPix 3 Pro references suggest Google is developing a Gemini 4 Argon-based image model that could become Nano Banana 3 Pro."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Snapchat publishes 2026 holiday marketing guide",
+   "url": "https://www.socialmediatoday.com/news/snapchat-publishes-2026-holiday-marketing-guide/832800/",
+   "date": "2026-10-12T16:38-04:00",
+   "summary": "The overview offers statistics and tips on how marketers can connect with gift givers during the upcoming shopping season."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Meta acquires multiple VR patents from Sony",
+   "url": "https://www.socialmediatoday.com/news/meta-acquires-multiple-vr-patents-from-sony/832798/",
+   "date": "2026-10-12T16:34-04:00",
+   "summary": "The two companies transferred 43 U.S. patents related to specific XR applications and displays, according to reporting from Road to VR and ZDNet Korea."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Meta launches advanced Muse Wonder AI models",
+   "url": "https://www.socialmediatoday.com/news/meta-launches-advanced-muse-wonder-ai-models/832795/",
+   "date": "2026-10-12T16:21-04:00",
+   "summary": "The new series of artificial intelligence models are able to undertake more complex tasks, though risks remain in regards to privacy, data safety and human error."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Meta offers updated ad placement control guidance",
+   "url": "https://www.socialmediatoday.com/news/meta-offers-updated-ad-placement-control-guidance/832791/",
+   "date": "2026-10-12T16:07-04:00",
+   "summary": "The revised overview provides options for enabling some level of ongoing control as the company continues to automate its ad display systems."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Threads allows parents to see who their teens have blocked",
+   "url": "https://www.socialmediatoday.com/news/threads-allows-parents-to-see-who-their-teens-have-blocked/832781/",
+   "date": "2026-10-12T15:33-04:00",
+   "summary": "The Meta-owned app has been steadily rolling out supervision tools designed to help protect younger users from harmful activity."
+  },
+  {
+   "source": "Latent Space AINews",
+   "tier": "signal",
+   "title": "How Anthropic’s Dynamic Workflows Coordinate Claude Agents",
+   "url": "https://www.latent.space/p/claude-dynamic-workflows",
+   "date": "2026-10-12T18:18+00:00",
+   "summary": "At AI Engineer New York, Anthropic drew on lessons from Unix and Linux to explain how agents can tackle bigger projects without overwhelming developers."
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Hello Python 3.15, goodbye 3.10, and now I can use 3.11",
+   "url": "https://simonwillison.net/2026/Oct/12/python-3-15/",
+   "date": "2026-10-12T18:15+00:00",
+   "summary": "Python 3.15 is here ! Here's the essential What's new in Python 3.15 guide, this year curated by 3.14 and 3.15 release manager Hugo van Kemenade. As someone who builds open source software that works in every supported Python version, I get to say goodbye to Python 3.10 and start embracing features from Python 3.11. First, some highlights from Python 3.15. Explicit lazy imports I'm most excited…"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Meta releases its first frontier model, Muse Wonder",
+   "url": "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/",
+   "date": "2026-10-12T17:56+00:00",
+   "summary": "Where Muse Spark aimed to be a lightweight model that could perform at low latency, the Wonder models are larger and said to be more capable, with higher benchmark scores and better results on complex tasks like coding."
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "WindBorne wins a hefty US Air Force contract for its balloon data",
+   "url": "https://techcrunch.com/2026/10/12/windborne-wins-a-hefty-us-air-force-contract-for-its-balloon-data/",
+   "date": "2026-10-12T17:19+00:00",
+   "summary": "A Silicon Valley startup that uses weather balloons and AI to predict the weather won a U.S. military contract worth almost $50 million."
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Meta has some Wonder Full new AI models",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1009479/meta-muse-wonder-full-ai-model",
+   "date": "2026-10-12T13:00-04:00",
+   "summary": "Meta is making up for lost time in the AI race. After launching Muse Spark , the first model from its revamped Superintelligence Labs division, and buzzy AI agent Muse , it's now launching two new models it claims can go toe-to-toe with the industry's best. The new models, Muse Wonder and Muse Wonder Full, are available for Muse Code subscribers starting today. Wonder can also be accessed through…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "web-edit 0.1a0",
+   "url": "https://simonwillison.net/2026/Oct/12/web-edit/",
+   "date": "2026-10-12T15:54+00:00",
+   "summary": "Release: web-edit 0.1a0 I was working on a project from my phone using Codex Remote when I found myself wanting to edit a credentials file without round-tripping those credentials through the LLM itself. So... I had Codex and GPT-6 Astra Extra High build this Python web app which provides a web UI for viewing and editing files in a folder. It's intended to be run over Tailscale, so I can have an…"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Honeyjar offers AI tools to improve PR and comms at every company",
+   "url": "https://techcrunch.com/2026/10/12/honeyjar-offers-ai-tools-to-improve-pr-and-comms-at-every-company/",
+   "date": "2026-10-12T15:45+00:00",
+   "summary": "Journalists, entrepreneurs, and even some public relations professionals will tell you that the PR process is broken. But could AI actually make things better?"
+  },
+  {
+   "source": "9to5Mac",
+   "tier": "signal",
+   "title": "Security Bite: This nifty privacy app blurs your Mac screen the second you look away",
+   "url": "https://9to5mac.com/2026/10/12/security-bite-this-nifty-privacy-app-blurs-your-mac-screen-the-second-you-look-away/",
+   "date": "2026-10-12T15:39+00:00",
+   "summary": "9to5Mac Security Bite is exclusively brought to you by Mosyle, the only Apple Unified Platform . Making Apple devices work-ready and enterprise-safe is all we do. Our unique integrated approach to management and security combines state-of-the-art Apple-specific security solutions for fully automated Hardening & Compliance, Next Generation EDR, AI-powered Zero Trust, and exclusive Privilege…"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Microsoft president says UK is best placed to drive AI regulation",
+   "url": "https://techcrunch.com/2026/10/12/microsoft-president-says-uk-is-best-placed-to-drive-ai-regulation/",
+   "date": "2026-10-12T15:31+00:00",
+   "summary": "Microsoft president Brad Smith calls for urgent AI regulation, saying milk and washing machines have more oversight than AI companies."
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "This AI startup says it can generate permit-ready blueprints in minutes",
+   "url": "https://techcrunch.com/2026/10/12/this-ai-startup-says-it-can-generate-permit-ready-blueprints-in-minutes/",
+   "date": "2026-10-12T15:27+00:00",
+   "summary": "Blueprints AI, a bootstrapped startup based in Santa Monica, developed software that produces code-compliant construction blueprints from a photo, PDF, or sketch."
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "TechCrunch Disrupt 2026 starts tomorrow: Your final chance to secure up to $100 ticket savings",
+   "url": "https://techcrunch.com/2026/10/12/techcrunch-disrupt-2026-starts-tomorrow-your-final-chance-to-secure-up-to-100-ticket-savings/",
+   "date": "2026-10-12T14:00+00:00",
+   "summary": "Tomorrow at 8 a.m. PT, it all begins z— 10,000+ founders, investors, and tech operators will gather at San Francisco’s Moscone West for TechCrunch Disrupt 2026 for three days of ideas, connections, and startups shaping what comes next. This is your last 24 hours to secure ticket savings of up to $100, and get 50% off a second."
+  },
+  {
+   "source": "TestingCatalog",
+   "tier": "signal",
+   "title": "Anthropic tests its next model under Claude Opus 5.5",
+   "url": "https://www.testingcatalog.com/anthropic-tests-new-model-opus-5-5-routing-opus-5-6-fable-5-5/",
+   "date": "2026-10-12T13:11+00:00",
+   "summary": "Claude Opus 5.5 appears to be routing some users to a new, unannounced model. Early outputs on X look remarkable. Is it Opus 5.6 or Fable 5.5?"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Microsoft’s new AI chip makes it less reliant on Nvidia’s GPUs",
+   "url": "https://www.theverge.com/news/1009465/microsoft-maia-300-chip-improvements-rollout",
+   "date": "2026-10-12T09:00-04:00",
+   "summary": "Microsoft’s Maia 300 chip. | Image: Microsoft Microsoft is announcing its third-generation Maia in-house AI chip today, designed to be the \"primary AI inference system\" for Microsoft's products and services. Maia 300 not only improves the cost and efficiency of running AI workloads in the cloud, it's also more capable of handling the latest reasoning models and agentic tasks. Maia 300 will start…"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Former Plaud exec raises $26M for AI app that listens to you in the background",
+   "url": "https://techcrunch.com/2026/10/12/former-plaud-exec-raises-26m-for-ai-app-that-listens-to-you-in-the-background/",
+   "date": "2026-10-12T12:47+00:00",
+   "summary": "One of the core promises of AI is that the more it knows about a person, the better it will be able to assist them with tasks and make appropriate suggestions, which, if you'll believe the tech companies, requires apps and devices to listen, watch, or record users' activity all the time and gather all possible context."
+  },
+  {
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "openclaw 2026.10.5-beta.2",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.5-beta.2",
+   "date": "2026-10-12T12:10+00:00",
+   "summary": "2026.10.5-beta.2 Highlights Updates finish and recover: openclaw update settles stale handoff leases, completed receipts, and legacy 2026.9.8 recovery records instead of stopping on update-recovery-pending , keeps the service heap limit and webhook listeners, handles Windows short-name paths, and no longer reports accepted handoffs or successful updates as failures. ( #169038 , #169027 , #168388…"
+  },
+  {
+   "source": "The Rundown AI",
+   "tier": "signal",
+   "title": "This AI factory builds tiny machines from code",
+   "url": "https://www.therundown.ai/articles/this-ai-factory-builds-tiny-machines-from-code",
+   "date": "2026-10-12T09:00+00:00",
+   "summary": "PLUS: Turn a product photo into three matching ads"
+  },
+  {
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "openclaw 2026.10.2",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.2",
+   "date": "2026-10-12T07:33+00:00",
+   "summary": "2026.10.2 Highlights Updates from 2026.10.1: the first upgrade from stable 2026.10.1 now completes cleanly, successful in-place updates no longer end in errors, and Windows, cloned-filesystem, and private-Node update paths finish instead of stalling or rolling back. ( #168849 , #169031 , #165233 , #166530 , #168968 , #164677 , #165257 ) Thanks @RomneyDa , @jarvisnextgeneration20-lang , and…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "datasette-ports 0.4",
+   "url": "https://simonwillison.net/2026/Oct/12/datasette-ports/",
+   "date": "2026-10-12T04:57+00:00",
+   "summary": "Release: datasette-ports 0.4 My plugin for detecting and listing all Datasette instances on the current machine now works with the latest version, and displays the detected PID as well. Knowing the PID makes it easier to attach the new Python 3.15 profiler . Tags: datasette"
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "X rebuilds its third-party usage showcase",
+   "url": "https://www.socialmediatoday.com/news/x-rebuilds-its-third-party-usage-showcase/832684/",
+   "date": "2026-10-11T18:19-04:00",
+   "summary": "The platform’s relaunched exhibit website lists official partners, agentic use cases and more in an effort to inspire developers to integrate X data into their apps."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Social media platforms have not ruled out execution livestream",
+   "url": "https://www.socialmediatoday.com/news/social-media-platforms-have-not-ruled-out-execution-livestream/832683/",
+   "date": "2026-10-11T18:14-04:00",
+   "summary": "U.S. Secretary of Defense Pete Hegseth proposed that a December military execution be livestreamed, and many platforms haven’t yet weighed in."
+  },
+  {
+   "source": "TestingCatalog",
+   "tier": "signal",
+   "title": "Gemini 4 Argon spotted in A/B testing on Antigravity",
+   "url": "https://www.testingcatalog.com/gemini-4-argon-ab-tests-early-outputs/",
+   "date": "2026-10-11T21:58+00:00",
+   "summary": "Users on X say Gemini 4 Argon is appearing in A/B tests, with early outputs showing sharper UI design than Gemini 3.8 Flash."
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Threat of AI share crash puts world financial stability at risk, says IMF",
+   "url": "https://www.theguardian.com/business/2026/oct/13/ai-share-crash-risk-global-imf-debt-corrowing-cyber-attacks",
+   "date": "2026-10-13T05:57+00:00",
+   "summary": "86 points, 87 comments · https://news.ycombinator.com/item?id=50067356"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "A look at the math that OpenAI claims computes faster Fourier transforms",
+   "url": "https://www.argmin.net/p/faster-fourier-transforms",
+   "date": "2026-10-13T02:46+00:00",
+   "summary": "134 points, 98 comments · https://news.ycombinator.com/item?id=50065932"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "AI models can provably hide arbitrary capabilities",
+   "url": "https://arxiv.org/abs/2610.13928",
+   "date": "2026-10-13T02:07+00:00",
+   "summary": "210 points, 106 comments · https://news.ycombinator.com/item?id=50065692"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Blood cells from 80-year-old donor become stem cells with molecular age under 20",
+   "url": "https://doi.org/10.1111/acel.70751",
+   "date": "2026-10-12T23:34+00:00",
+   "summary": "159 points, 105 comments · https://news.ycombinator.com/item?id=50064536"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "I turned my unused Kindle into a photo frame with GPT-6 Astra",
+   "url": "https://nirajrajgor.com/blog/kindle-photo-frame-with-ai",
+   "date": "2026-10-12T23:07+00:00",
+   "summary": "143 points, 97 comments · https://news.ycombinator.com/item?id=50064318"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Janas: Run LLMs larger than RAM by streaming experts from SSD",
+   "url": "https://github.com/prabanta-dev/janas",
+   "date": "2026-10-12T22:05+00:00",
+   "summary": "140 points, 45 comments · https://news.ycombinator.com/item?id=50063717"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "AI is a tool and using it well takes skill",
+   "url": "https://yyhh.org/blog/2026/10/ai-is-a-tool/",
+   "date": "2026-10-12T21:40+00:00",
+   "summary": "414 points, 333 comments · https://news.ycombinator.com/item?id=50063427"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Intel D270 GPU AI Accelerator–Up to 480 GB LPDDR5X",
+   "url": "https://www.intel.com/content/www/us/en/products/details/discrete-gpus/data-center-gpu/d-series.html",
+   "date": "2026-10-12T21:35+00:00",
+   "summary": "205 points, 106 comments · https://news.ycombinator.com/item?id=50063365"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Epic Games tells employees to use AI to get Disney game done",
+   "url": "https://www.avclub.com/epic-games-disney-ai-delay",
+   "date": "2026-10-12T20:07+00:00",
+   "summary": "83 points, 69 comments · https://news.ycombinator.com/item?id=50062237"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Making big downloads resumable in Firefox",
+   "url": "https://lunarwatcher.codeberg.page/til/firefox/resumable-big-downloads.html",
+   "date": "2026-10-12T19:36+00:00",
+   "summary": "203 points, 90 comments · https://news.ycombinator.com/item?id=50061791"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "AI models may be capable of self-replicating without access to a datacenter",
+   "url": "https://www.anthropic.com/research/self-replicating-ai",
+   "date": "2026-10-12T19:25+00:00",
+   "summary": "87 points, 99 comments · https://news.ycombinator.com/item?id=50061603"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "OpenFatigue™ – Open is the new closed",
+   "url": "https://openfatigue.ai/",
+   "date": "2026-10-12T19:08+00:00",
+   "summary": "221 points, 50 comments · https://news.ycombinator.com/item?id=50061278"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Codex CLI installs a persistent, self-updating background daemon by default",
+   "url": "https://github.com/openai/codex/issues/48195",
+   "date": "2026-10-12T18:29+00:00",
+   "summary": "564 points, 273 comments · https://news.ycombinator.com/item?id=50060694"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Just say no to OpenAI and Anthropic",
+   "url": "https://micahflee.com/just-say-no-to-openai-and-anthropic/",
+   "date": "2026-10-12T18:17+00:00",
+   "summary": "159 points, 155 comments · https://news.ycombinator.com/item?id=50060500"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "'AI' Is Not a Tool by Rich Hickey",
+   "url": "https://www.linkedin.com/pulse/ai-tool-rich-hickey-kjl8e",
+   "date": "2026-10-12T18:00+00:00",
+   "summary": "276 points, 142 comments · https://news.ycombinator.com/item?id=50060269"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "AI coding agents generate more code, but not more software",
+   "url": "https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/",
+   "date": "2026-10-12T17:14+00:00",
+   "summary": "335 points, 284 comments · https://news.ycombinator.com/item?id=50059523"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Feds got warrants to use fake cell towers to hunt down Don Lemon's producer",
+   "url": "https://www.wired.com/story/feds-got-warrants-to-use-fake-cell-towers-to-hunt-down-don-lemons-producer/",
+   "date": "2026-10-12T17:08+00:00",
+   "summary": "174 points, 103 comments · https://news.ycombinator.com/item?id=50059446"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Muse Wonder",
+   "url": "https://research.meta.ai/blog/muse-wonder",
+   "date": "2026-10-12T16:48+00:00",
+   "summary": "635 points, 338 comments · https://news.ycombinator.com/item?id=50059115"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Launch HN: Agent37 (YC F26) – Low-cost agent sandboxes for running agents",
+   "url": "https://news.ycombinator.com/item?id=50059096",
+   "date": "2026-10-12T16:46+00:00",
+   "summary": "132 points, 97 comments · https://news.ycombinator.com/item?id=50059096"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Reverse engineer anything with agents, from app behavior down to native binaries",
+   "url": "https://github.com/morluto/rea",
+   "date": "2026-10-12T16:31+00:00",
+   "summary": "91 points, 31 comments · https://news.ycombinator.com/item?id=50058850"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "GLM-Legal",
+   "url": "https://z.ai/blog/glm-legal",
+   "date": "2026-10-12T16:11+00:00",
+   "summary": "562 points, 316 comments · https://news.ycombinator.com/item?id=50058507"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Kevin Kelly's 2016 AI Predictions, 10 Years Later",
+   "url": "https://taylor.town/kk-ai-2026",
+   "date": "2026-10-12T15:16+00:00",
+   "summary": "187 points, 71 comments · https://news.ycombinator.com/item?id=50057668"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Why aren't AI companies being charged for hacking?",
+   "url": "https://mortoray.com/why-arent-ai-companies-being-charged-for-hacking/",
+   "date": "2026-10-12T14:52+00:00",
+   "summary": "322 points, 348 comments · https://news.ycombinator.com/item?id=50057278"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Turn a WiFi 7 Router into a 320Msps Software Defined Radio Receiver",
+   "url": "https://github.com/h0m3us3r/w1700k-sdr",
+   "date": "2026-10-12T12:41+00:00",
+   "summary": "348 points, 91 comments · https://news.ycombinator.com/item?id=50055593"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Incident with Actions, Pull Requests and Issues",
+   "url": "https://www.githubstatus.com/incidents/93njd414rpbx",
+   "date": "2026-10-12T12:23+00:00",
+   "summary": "156 points, 142 comments · https://news.ycombinator.com/item?id=50055375"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Hackers activate automatic defrosting in supermarket fridges across Europe",
+   "url": "https://www.tomshardware.com/tech-industry/cyber-security/unprecedented-cyberattack-cripples-supermarket-fridges-across-europe-as-hackers-activate-automatic-defrosting-delivery-and-store-prices-also-impacted-by-incident",
+   "date": "2026-10-12T12:16+00:00",
+   "summary": "697 points, 817 comments · https://news.ycombinator.com/item?id=50055304"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "QGIS enacts moratorium on AI contributions",
+   "url": "https://github.com/qgis/QGIS-Enhancement-Proposals/pull/387",
+   "date": "2026-10-12T11:22+00:00",
+   "summary": "375 points, 402 comments · https://news.ycombinator.com/item?id=50054751"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Zod 4.6.6 compromised by malware?",
+   "url": "https://github.com/colinhacks/zod/commit/d821685ea6732436fcdf786a81d076958471e467",
+   "date": "2026-10-12T07:47+00:00",
+   "summary": "180 points, 51 comments · https://news.ycombinator.com/item?id=50052814"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "I Found a $90k Remote Code Execution Vulnerability in Google",
+   "url": "https://simonkoeck.com/writeups/google-devsite-flask-session-pickle-rce",
+   "date": "2026-10-12T07:28+00:00",
+   "summary": "212 points, 104 comments · https://news.ycombinator.com/item?id=50052638"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: PS2 games statically recompiled to WebAssembly",
+   "url": "https://github.com/snuri00/ps2-web-recomp",
+   "date": "2026-10-12T06:46+00:00",
+   "summary": "290 points, 155 comments · https://news.ycombinator.com/item?id=50052251"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Postgres isn't slow, your storage is",
+   "url": "https://clickhouse.com/blog/posette-talk-recap-postgres-isnt-slow-your-storage-is",
+   "date": "2026-10-12T06:36+00:00",
+   "summary": "174 points, 184 comments · https://news.ycombinator.com/item?id=50052163"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Attack of the Vibe Coded Photoshop Clones",
+   "url": "https://www.shokunin.studio/blog/2026/10/9/attack-of-the-vibe-coded-photoshop-clones",
+   "date": "2026-10-12T06:35+00:00",
+   "summary": "130 points, 183 comments · https://news.ycombinator.com/item?id=50052156"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Research Firm Calls Anthropic's IPO 'Unprecedented Test of Investor Gullibity'",
+   "url": "https://www.cnbc.com/2026/10/07/anthropic-will-be-most-ridiculous-ipo-of-year-analyst-says.html",
+   "date": "2026-10-12T05:03+00:00",
+   "summary": "240 points, 215 comments · https://news.ycombinator.com/item?id=50051583"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "An open-source, clean-room reimplementation of Microsoft Word in pure Rust",
+   "url": "https://github.com/storytold/wordcraft",
+   "date": "2026-10-12T01:57+00:00",
+   "summary": "100 points, 108 comments · https://news.ycombinator.com/item?id=50050370"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Doory – Open-Source Canva",
+   "url": "https://github.com/shaongitbd/doory",
+   "date": "2026-10-12T00:48+00:00",
+   "summary": "216 points, 76 comments · https://news.ycombinator.com/item?id=50049872"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: Atticus – Hold-to-talk voice assistant for macOS that runs on Claude -p",
+   "url": "https://github.com/SaarthurR/atticus-mac",
+   "date": "2026-10-12T00:15+00:00",
+   "summary": "105 points, 19 comments · https://news.ycombinator.com/item?id=50049588"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "HashiCorp archives the Boundary open source repo",
+   "url": "https://github.com/hashicorp/boundary",
+   "date": "2026-10-12T00:02+00:00",
+   "summary": "84 points, 16 comments · https://news.ycombinator.com/item?id=50049498"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Whatever became of holography? (2011)",
+   "url": "https://www.americanscientist.org/article/whatever-became-of-holography",
+   "date": "2026-10-11T23:50+00:00",
+   "summary": "168 points, 108 comments · https://news.ycombinator.com/item?id=50049411"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Recursive self-improvement through collective intelligence",
+   "url": "https://pub.sakana.ai/mass/",
+   "date": "2026-10-11T22:22+00:00",
+   "summary": "135 points, 79 comments · https://news.ycombinator.com/item?id=50048522"
+  }
+ ],
+ "errors": [
+  "OpenAI News: URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
+  "Claude Code releases: URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
+  "Codex CLI releases: URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
+  "Gemini CLI releases: URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
+  "Google AI blog: URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
+  "Gemini blog: URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
+  "Google Developers blog: URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
+  "Google DeepMind blog: URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
+  "Cursor changelog: URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
+  "GitHub Copilot changelog: URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
+  "Mistral news: URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
+  "Meta newsroom (AI + Instagram / WhatsApp / Threads / Facebook): URLError: <urlopen error [Errno 11001] getaddrinfo failed>"
+ ],
+ "manual": [
+  {
+   "name": "xAI news / Grok app updates",
+   "url": "https://x.ai/news",
+   "why": "blocks scripts (403): web search 'Grok' / 'xAI' last 24h"
+  },
+  {
+   "name": "ChatGPT release notes",
+   "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Perplexity changelog",
+   "url": "https://www.perplexity.ai/changelog",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Official X accounts (@AnthropicAI, @OpenAI, @xai, @GoogleDeepMind, @cursor_ai)",
+   "url": "https://x.com",
+   "why": "X needs login / paid API: use web search for big announcements"
+  },
+  {
+   "name": "Social media new features (Instagram @creators/@mosseri, TikTok newsroom, X, LinkedIn, Snapchat)",
+   "url": "https://newsroom.tiktok.com/",
+   "why": "no working RSS (TikTok/WhatsApp/Instagram blogs are HTML, Snap/LinkedIn 404): web search each gather for new features, AI features and creator tools; confirm on the platform's own newsroom/help page"
+  },
+  {
+   "name": "Higgsfield announcements",
+   "url": "https://x.com/higgsfield_ai",
+   "why": "big launches often land on X before the blog"
+  },
+  {
+   "name": "Qwen blog (Alibaba)",
+   "url": "https://qwen.ai/blog",
+   "why": "JS-rendered, no RSS (the old qwenlm.github.io feed stopped in 2025-09): web search 'Qwen' each gather for new open-weight releases"
+  }
+ ]
+}

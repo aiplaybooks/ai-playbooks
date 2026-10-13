@@ -1,0 +1,75 @@
+{
+ "generated": "2026-10-13T09:54:38+00:00",
+ "reddit": [],
+ "youtube_signal": [
+  {
+   "id": "yt-o1pGI3M-bWU",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Furnitur Ini Buatan AI? 😱#Catsoftiktok #CatLovers #cat#cute #FunnyCats #catcartoon #fyp",
+   "channel": "Alan-hub",
+   "url": "https://www.youtube.com/shorts/o1pGI3M-bWU",
+   "views": 445013,
+   "date": "2026-10-10T10:00:37Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-87WPb2Y_j5o",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "¡Estas Fotos de Bebés Son Demasiado Adorables! 😍📸",
+   "channel": "Twist Mundo",
+   "url": "https://www.youtube.com/shorts/87WPb2Y_j5o",
+   "views": 272110,
+   "date": "2026-10-10T21:30:22Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-fCQKDFlTWBQ",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Lion 🦁 Vs Tiger 🐯 Vs Smilodon 😈 | Who Is The Most Powerful 😱🤯 #shorts",
+   "channel": "The animal adventure in हिन्दी",
+   "url": "https://www.youtube.com/shorts/fCQKDFlTWBQ",
+   "views": 249773,
+   "date": "2026-10-11T06:30:28Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-fefsuxP4tLU",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "En China hay plazas de aparcamiento para personas con sobrepeso",
+   "channel": "Gatito",
+   "url": "https://www.youtube.com/shorts/fefsuxP4tLU",
+   "views": 175181,
+   "date": "2026-10-10T19:00:39Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-7WD04OLj9XY",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "¡Acrobacia peligrosa!😲🚲#catsoftiktok #catLovers#cat #cute #funnycats #catcartoon #fyp",
+   "channel": "iG amor 2c",
+   "url": "https://www.youtube.com/shorts/7WD04OLj9XY",
+   "views": 149048,
+   "date": "2026-10-11T18:30:02Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-M6RlNskJcFE",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Stop Eating These 4 Foods During Navratri Fasting! (Healthy Ayurvedic Swaps)",
+   "channel": "Jivika ",
+   "url": "https://www.youtube.com/shorts/M6RlNskJcFE",
+   "views": 108786,
+   "date": "2026-10-11T15:28:50Z",
+   "query": "AI generated video"
+  }
+ ],
+ "errors": [
+  "Reddit: REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET missing in .env"
+ ]
+}

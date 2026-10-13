@@ -4,12 +4,13 @@ Viral videos people made with **Claude Opus 5.5**, each with the prompt the crea
 
 Every video here was made by asking Claude Opus 5.5 to write the animation as code (HTML, Canvas, SVG, Three.js and friends). Pick one, copy its prompt, and try it with your own agent.
 
-**[▶ Watch all 513 side by side with live remakes on Skillry](https://skillry.dev/ai-videos/opus-5-5?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos)**
+**[▶ Watch all 523 side by side with live remakes on Skillry](https://skillry.dev/ai-videos/opus-5-5?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos)**
 
-- 513 prompts in [`prompts/`](prompts/) and [`data/videos.json`](data/videos.json)
-- 100 highlighted below, one per distinct prompt
+- 853 prompts in [`prompts/`](prompts/) and [`data/videos.json`](data/videos.json), 523 of them with a live remake on Skillry
+- 100 remade videos highlighted below, one per distinct prompt
 - Every entry links to the creator's original post
-- Latest update (2026-10-08): 38 videos added, mostly motion graphics and explainers
+- Latest update (2026-10-12): 10 videos added, mostly explainers and 3d scenes
+- 2026-10-12: 330 more prompts added (see [Latest prompts](#latest-prompts))
 
 ## Contents
 
@@ -17,6 +18,7 @@ Every video here was made by asking Claude Opus 5.5 to write the animation as co
 - [Explainers](#explainers) (16)
 - [3D scenes](#3d-scenes) (14)
 - [Games & interactive](#games--interactive) (12)
+- [Latest prompts](#latest-prompts) (30)
 - [How to use a prompt](#how-to-use-a-prompt)
 - [Credits](#credits)
 
@@ -67,16 +69,14 @@ Every video here was made by asking Claude Opus 5.5 to write the animation as co
  @froessell · Prompt Three.js · Canvas · Physics @aisongman · Prompt Canvas · Pixel art · Playable @Bilimfili1 · Prompt Canvas · SVG 
  @Ved_CJ · Prompt Three.js · Canvas @NoLit64 · Prompt Canvas · Web Audio · Playable @opener_ai · Prompt Canvas · Pixel art · Playable 
 
-## How to use a prompt
+## Latest prompts
 
-1. Open a prompt file and copy the block under **Prompt**.
-2. Paste it into Claude Opus 5.5 (Claude Code, the Claude app, or any agent running Opus 5.5).
-3. Ask it to render the result as a single HTML file, then record the page if you want a video.
+The newest of 330 more prompts, each linking to the creator's post with the video. All of them are in [`prompts/`](prompts/).
 
-Some creators shared only part of their prompt, or only described the result in their post; those files say so.
-
-## Credits
-
-Every video and prompt belongs to its creator, linked from each entry. Previews are short clips hosted for this list. If you are a creator and want an entry changed or removed, open an issue.
-
-Browse the full collection with original and remake side by side at **[skillry.dev/ai-videos/opus-5-5](https://skillry.dev/ai-videos/opus-5-5?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos)**.
+ Motion Graphics Music Machine @adrianduta96 Krakatoa Volcano WebGL Animation @pagustafsson Three.js Castle Above Clouds Experience @YouWareAI 
+ 3D Logo Intro Animation Studio @juancarlos17626 Apple Evolution Motion Graphics @aiRobertDaily Motion Graphics Launch @softal_io 
+ Golden Hour Manor Scene @Thusatharan Interactive Zen Garden HTML Animation @arixxbt Claude Motion: Opus 5.5 Animated Story @N01ennn 
+ Cinematic F1 Pit Stop Animation @rubenssoto_ai Procedural 3D Elephant in HTML @Thusatharan Opus 5.5 Brand Teaser @UtsavChopra30 
+ Deterministic Frame-Based Video Rendering @0xKarmi Temple of Heaven 3D Animation @shunshu32385143 3D Brake Pedal Stress Simulation Animation @chang_ 
+ Opus 5.5 Rust Fframes Audio-Reactive Video @BuildFastWithAI Interactive HTML Presentation with Narration @Drake5112 Saturn V Rocket Interactive 3D Model @aichrislee 
+ SaaS Launch Video Animation @Screeendev Realistic Lava L
