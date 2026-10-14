@@ -1,0 +1,97 @@
+{
+ "generated": "2026-10-14T09:31:24+00:00",
+ "reddit": [],
+ "youtube_signal": [
+  {
+   "id": "yt-nI8uCC4lSuk",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "माता रानी को क्या मदद चाहिए😱 Navratri Special Video | #navratri #jaimatadi #ai #motivation #shorts",
+   "channel": "Desikalakaar Laxman",
+   "url": "https://www.youtube.com/shorts/nI8uCC4lSuk",
+   "views": 2739227,
+   "date": "2026-10-12T03:52:47Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-JDKsGm6JQ7k",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "12 Ele não gosta da banho",
+   "channel": "antonio shorts",
+   "url": "https://www.youtube.com/shorts/JDKsGm6JQ7k",
+   "views": 583248,
+   "date": "2026-10-12T23:45:26Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-10p1H6dMJBE",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "La IA nos INVADE 🙀🥶 #mrrelevante #momentosépicos #culturapop",
+   "channel": "MrRelevante",
+   "url": "https://www.youtube.com/shorts/10p1H6dMJBE",
+   "views": 499697,
+   "date": "2026-10-11T23:12:32Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-twihQqCOHkE",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Even Robots Learned Garba Before Me! 😭🤖😂#garba #robot #navratri #ytshorts #shortsfeed #share #viral",
+   "channel": "The channel of chaos",
+   "url": "https://www.youtube.com/shorts/twihQqCOHkE",
+   "views": 215755,
+   "date": "2026-10-14T03:53:23Z",
+   "query": "humanoid robot video"
+  },
+  {
+   "id": "yt-YFoBxh9X2mo",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "This Bucket Was Quite High #shorts",
+   "channel": "MrGovind Facts ",
+   "url": "https://www.youtube.com/shorts/YFoBxh9X2mo",
+   "views": 192874,
+   "date": "2026-10-12T09:17:11Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-9PICEmtfpWU",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Teaching a humanoid robot to play cornhole with Gemini 4 Argon",
+   "channel": "Google DeepMind",
+   "url": "https://www.youtube.com/shorts/9PICEmtfpWU",
+   "views": 172920,
+   "date": "2026-10-13T15:58:20Z",
+   "query": "humanoid robot video"
+  },
+  {
+   "id": "yt-0uDxVhGWiw0",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "AI ART…",
+   "channel": "NeutralizedClips",
+   "url": "https://www.youtube.com/shorts/0uDxVhGWiw0",
+   "views": 142720,
+   "date": "2026-10-11T18:00:39Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-0YC2GyDupHo",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "THIS COMPANY MADE AN UNBELIEVABLE CLAIM IN THEIR COMMERCIAL 😱😨",
+   "channel": "Zonal",
+   "url": "https://www.youtube.com/shorts/0YC2GyDupHo",
+   "views": 120655,
+   "date": "2026-10-11T22:50:47Z",
+   "query": "AI generated video"
+  }
+ ],
+ "errors": [
+  "Reddit: REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET missing in .env"
+ ]
+}

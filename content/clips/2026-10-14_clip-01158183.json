@@ -1,0 +1,28 @@
+{
+  "kind": "clip",
+  "source": "https://x.com/lexx_aura/status/2109031963701158183",
+  "credit": "@lexx_aura on X",
+  "topic": "AI video",
+  "hook": "Hollywood CGI or one Seedance 2.5 prompt?",
+  "caption": "Hollywood CGI or one Seedance 2.5 prompt?\n\nThe creator says one prompt made this whole street fight, camera moves included.\n\nHollywood still needs a crew, a location and weeks for a shot like this. So the camera move is the fairest test of one prompt against a full crew. Who wins? Vote in the comments 👇\n\nSend this to the friend who still thinks Hollywood can't be beaten.\n\nCredit: @lexx_aura on X\n\n#ai #aivideo #seedance #hollywood",
+  "checked": [
+    "Seedance 2.5 is ByteDance's video model, released 2026-07-31 (https://technode.com/2026/07/31/bytedance-launches-seedance-2-5-video-generation-model/, one search, not ByteDance's own page)",
+    "Tool name and 'Hollywood CGI' framing taken from the post text in the owner brief; https://x.com/lexx_aura/status/2109031963701158183 returned HTTP 402 when fetched, so the post was not re-read",
+    "Frames 1-8 (runs/clip-20261014-131517-01158183/frames/): street fight, blonde figure in black suit vs long-haired figure, tracking camera, motion blur; frame 1 has Japanese/Chinese subtitles, so the source may be film footage. Unverified: the Seedance claim rests on the creator's post alone"
+  ],
+  "captions": {
+    "instagram": "Hollywood CGI or one Seedance 2.5 prompt?\n\nThe creator says one prompt made this whole street fight, camera moves included.\n\nHollywood still needs a crew, a location and weeks for a shot like this. So the camera move is the fairest test of one prompt against a full crew. Who wins? Vote in the comments 👇\n\nSend this to the friend who still thinks Hollywood can't be beaten.\n\nCredit: @lexx_aura on X\n\n#ai #aivideo #seedance #hollywood",
+    "facebook": "Hollywood CGI or one Seedance 2.5 prompt?\n\nA street fight, a camera that never stops moving, and a creator who says one prompt made the whole thing. Hollywood usually needs a crew, a location and weeks for a shot like this.\n\nOur take: the camera move is the hard part, so it's the fairest test of one prompt against a full crew. Which side wins for you? Tell us in the comments.\n\nSend this to the friend who still thinks Hollywood can't be beaten.\n\nCredit: @lexx_aura on X\n\n#ai #aivideo #seedance #hollywood",
+    "youtube": {
+      "title": "Seedance 2.5 vs Hollywood CGI: which one wins?",
+      "description": "Our take: the camera move is the hardest part of a shot like this, so it's the fairest test of one prompt against a full crew. The creator says the whole scene came from a single Seedance 2.5 prompt.\n\nHollywood still needs a crew, a location and weeks for a fight like this. Watch it twice and decide who wins.\n\nCredit: @lexx_aura on X\n\n#seedance25 #aivideo #hollywood",
+      "tags": ["seedance 2.5", "seedance 2.5 vs hollywood", "ai video", "hollywood cgi", "ai fight scene", "ai vs hollywood"]
+    }
+  },
+  "x": "Hollywood CGI or one Seedance 2.5 prompt?\n\nThe creator says one prompt made this fight. Hollywood still needs a crew and weeks. Who wins? 👇\n\n#AI #Seedance",
+  "first_comment": {
+    "instagram": "Bonus tip: start your prompt with the camera move (\"tracking shot, low angle\"), then the action. That's most of the Hollywood look in one line. Which side are you on, Hollywood or Seedance?",
+    "facebook": "Quick tip if you want to try it yourself: start the prompt with the camera move (\"tracking shot, low angle\"), then the action. Hollywood or Seedance, which side are you on?",
+    "youtube": "Quick tip: start your prompt with the camera move, then the action. Hollywood or Seedance, who wins? Subscribe for daily AI playbooks."
+  }
+}

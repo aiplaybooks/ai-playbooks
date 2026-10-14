@@ -1,0 +1,151 @@
+{
+  "generated": "2026-10-14T12:30:00+03:00",
+  "candidates": [
+    {
+      "id": "gemini-4-argon-gemini-app-tasks",
+      "tool": "Gemini",
+      "kind": "news",
+      "title": "Gemini 4 Argon Is Finally in the Gemini App — Chat/Task Toggle, Antigravity on Mac and 40+ Connected Apps",
+      "summary_tr": "Google, 3 Ekim'de duyurup beklettiği Gemini 4 Argon'u 13 Ekim'de Gemini uygulamasında AI Pro ve Ultra abonelerine açtı. Sohbet/görev geçiş düğmesi, macOS uygulamasında Antigravity kodlama arayüzü ve Instacart, OpenTable, Adobe, Shopify gibi 40+ bağlı uygulama geldi. Önceki yazı 'tutuldu' haberiydi, bu yeni: artık kullanılabiliyor.",
+      "why_tr": "Herkes Argon'un gerçekten çıkıp çıkmadığını ve kimin kullanabildiğini merak ediyor; net 'kim, nasıl' cevabı paylaşılır.",
+      "angle": "it's live now + who gets it (Pro/Ultra) + chat vs tasks toggle + Antigravity in the Mac app + 5 things to try",
+      "tools": ["Gemini"],
+      "published": "2026-10-13",
+      "sources": [
+        "https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+        "https://ai.google.dev/gemini-api/docs/changelog"
+      ],
+      "hints": ["https://9to5google.com/2026/10/13/gemini-app-4-argon/", "https://9to5google.com/2026/10/13/gemini-app-macos-antigravity/"],
+      "score": 8
+    },
+    {
+      "id": "x-subscription-grok-cursor-bundle",
+      "tool": "Grok",
+      "kind": "news",
+      "title": "One Subscription Now Gives You Grok, Cursor and X Premium — From Free to $200 a Month",
+      "summary_tr": "xAI, 12 Ekim'de Grok, Cursor ve X Premium'u tek pakette birleştiren 'The X Subscription'ı duyurdu: Free, Plus $8, Premium $30, Super $100, Ultra $200. Premium paketi, eskiden ayrı ayrı toplam $90 olan SuperGrok + Cursor Pro + X Premium+ yerine geçiyor; kullanım havuzu Grok ve Cursor arasında ortak.",
+      "why_tr": "Rakamlar net ve 'ne kadar tasarruf ederim' sorusunu cevaplıyor; Grok ve Cursor kullanıcılarını birden yakalar.",
+      "angle": "the 5 plans in one table + what $30 replaces ($90 before) + who should pick which tier",
+      "tools": ["Grok", "Cursor"],
+      "published": "2026-10-12",
+      "sources": ["https://x.ai/news/x-subscription"],
+      "hints": ["https://techcrunch.com/2026/10/13/spacexsi-bundles-x-premium-grok-and-cursor-into-one-subscription/"],
+      "score": 8
+    },
+    {
+      "id": "google-play-private-vibe-coded-apps",
+      "tool": "Google",
+      "kind": "news",
+      "title": "You Can Now Build Your Own Android App With AI and Install It From Google Play — No Developer Account",
+      "summary_tr": "Google Play, AI Studio ile yaptığın kişisel Android uygulamasını yalnızca standart Google hesabınla Play üzerinden kendi cihazına kurmana izin veriyor (ABD ve seçili pazarlar, 18+). Uygulama özel kalıyor; önümüzdeki aylarda yakınlarınla paylaşma gelecek. Ayrıca Ask Play artık uygulamaları karşılaştırıyor.",
+      "why_tr": "'Cümleyle kendi uygulamanı yap' vaadi çok paylaşılır ve geliştirici hesabı gerekmemesi büyük bir eşik düşürüyor.",
+      "angle": "build in AI Studio → launch from Play on your own phone, no dev account + what stays private + what's coming",
+      "tools": ["Google", "Gemini"],
+      "published": "2026-10-13",
+      "sources": ["https://blog.google/products-and-platforms/platforms/google-play/google-play-updates-october-2026/"],
+      "hints": ["https://techcrunch.com/2026/10/13/google-play-now-supports-private-vibe-coded-apps-built-just-for-you/", "https://www.theverge.com/tech/1009066/google-play-vibe-coded-android-apps-launch"],
+      "score": 8
+    },
+    {
+      "id": "apple-homeview-apple-tv-siri-ai",
+      "tool": "Apple",
+      "kind": "news",
+      "title": "Apple's New $299 HomeView Screen and Apple TV 4K Run Siri AI — and Older Apple TVs Get It Too",
+      "summary_tr": "Apple 13 Ekim'de $299'luk HomeView akıllı ekranı ve $299'luk yeni Apple TV 4K'yı tanıttı; ikisi de Siri AI (beta) ile geliyor. Ön sipariş başladı, satış 13 Kasım'da. Siri AI, Apple TV 4K (2. nesil ve sonrası) için de beta olarak geliyor; HomeView AB'de satılmayacak çünkü orada Siri AI yok.",
+      "why_tr": "Mevcut Apple TV sahipleri 'bende de olur mu' diye bakacak; fiyat ve uyumluluk listesi net ve kaydedilir.",
+      "angle": "what Siri AI does on the TV/HomeView + prices + which old Apple TVs get it + where it's not sold",
+      "tools": ["Apple"],
+      "published": "2026-10-13",
+      "sources": [
+        "https://www.apple.com/newsroom/2026/10/meet-apple-homeview-a-new-way-to-enjoy-entertainment-and-manage-the-home/",
+        "https://www.apple.com/newsroom/2026/10/apple-unveils-the-new-apple-tv-4k/"
+      ],
+      "hints": ["https://9to5mac.com/2026/10/13/siri-ai-coming-to-older-apple-tv-4k-models-heres-whats-compatible/", "https://9to5mac.com/2026/10/13/apple-confirms-homepod-mini-2-wont-have-siri-ai-at-launch/"],
+      "score": 7
+    },
+    {
+      "id": "facebook-your-algorithm-plain-words",
+      "tool": "Social media",
+      "kind": "news",
+      "title": "Facebook Now Lets You Tell Its Algorithm What to Show You — in Your Own Words",
+      "summary_tr": "Meta, Instagram'da başlayan 'Your Algorithm' özelliğini 13 Ekim'de Facebook Feed ve Reels'e getirdi. Gönderinin üç nokta menüsünden ilgi alanı ekleyip çıkarabiliyorsun; 'İlgileniyorum / İlgilenmiyorum' sonrası kendi cümlelerinle anlatıyorsun, öneriler anında değişiyor. Kapsam ve bölgeler belirtilmedi, kademeli açılıyor.",
+      "why_tr": "Herkesin feed'inden şikayeti var; 'algoritmayı sen yönet' adımları pratik ve hem izleyici hem üretici için ilgi çekici.",
+      "angle": "how to open it (three-dot menu) + tell it what you want in plain words + what creators should learn from it",
+      "tools": ["Meta AI", "Facebook"],
+      "published": "2026-10-13",
+      "sources": ["https://about.fb.com/news/2026/10/introducing-your-algorithm-facebook/"],
+      "hints": ["https://techcrunch.com/2026/10/13/facebook-is-giving-users-more-control-over-their-algorithm/", "https://www.theverge.com/tech/1010344/meta-facebook-your-algorithm-ai"],
+      "score": 7
+    },
+    {
+      "id": "ask-youtube-all-us-viewers",
+      "tool": "Social media",
+      "kind": "news",
+      "title": "YouTube's AI Search 'Ask YouTube' Is Now Open to All US Viewers on Phone, Web and TV",
+      "summary_tr": "YouTube, 12 Ekim'de konuşmalı AI arama özelliği Ask YouTube'u ABD'de web, mobil ve TV'de herkese açtı (artık Premium şartı yok, İngilizce). Ayrıntılı soru sorup takip soruları ile sonucu daraltıyorsun; yakında Shorts ve canlı yayın izlerken de çalışacak.",
+      "why_tr": "İçerik üreticileri için izleyicinin artık YouTube'da soru sorarak video bulması önemli; izleyiciler için de pratik bir ipucu.",
+      "angle": "what Ask YouTube is + how to ask a good question and refine it + what it means for creators",
+      "tools": ["Social media", "Google"],
+      "published": "2026-10-12",
+      "sources": ["https://blog.youtube/news-and-events/ask-youtube-web-mobile-tv/"],
+      "hints": ["https://www.socialmediatoday.com/news/youtube-rolls-out-ai-search-chatbot-to-all-us-users/832923/", "https://9to5google.com/2026/10/13/ask-youtube-rolls-out-on-mobile/"],
+      "score": 6
+    },
+    {
+      "id": "cursor-origin-app-marketplace",
+      "tool": "Cursor",
+      "kind": "news",
+      "title": "Cursor Opens an App Store for Its Origin Platform — 20+ Tools Like Linear, Sentry and Semgrep",
+      "summary_tr": "Cursor, 13 Ekim'de Origin App Marketplace'i herkese açık başvurulara açtı. 20'den fazla uygulama (dağıtım, CI, kod inceleme, güvenlik, izleme, proje yönetimi) kurup kaldırılabiliyor; geliştiriciler kendi uygulamalarını Origin API ile gönderebiliyor. Fiyat/bölge bilgisi sayfada yok.",
+      "why_tr": "Cursor kullanan geliştiriciler için 'ajanım artık şu araçlarla da çalışıyor' haberi; niş ama hedef kitleye uygun.",
+      "angle": "what Origin Marketplace is + examples of apps by category + how developers submit",
+      "tools": ["Cursor"],
+      "published": "2026-10-13",
+      "sources": ["https://cursor.com/changelog/origin-app-marketplace"],
+      "hints": [],
+      "score": 5
+    },
+    {
+      "id": "claude-projects-evergreen",
+      "tool": "Claude",
+      "kind": "evergreen",
+      "title": "Claude Projects: Upload Your Files and Rules Once, Every Chat Starts Already Knowing Them",
+      "summary_tr": "Claude Projects ücretsiz hesaplarda bile var (5 proje): bilgi dosyalarını ve özel talimatları bir kez ekliyorsun, projedeki her sohbet bunları kullanıyor. Sohbetler arasında bağlam paylaşılmıyor, yalnızca proje bilgisi paylaşılıyor.",
+      "why_tr": "Her sohbette aynı şeyi tekrar anlatmaktan yorulan herkes için hemen uygulanır bir ipucu; ücretsiz olması da cazip.",
+      "angle": "create a project in 1 minute + what to put in knowledge vs instructions + 3 project ideas (job search, client work, study)",
+      "tools": ["Claude"],
+      "published": null,
+      "sources": ["https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects"],
+      "hints": [],
+      "score": 6
+    },
+    {
+      "id": "pack-linkedin-ghostwriting-agent",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "5 Prompts That Turn an AI Agent Into a LinkedIn Ghostwriting Business Making $3,000 a Month",
+      "summary_tr": "AI ajanıyla LinkedIn ghostwriting işi kurma paketi: nişli müşteri bulma, marka sesi çıkarma, 30 günlük içerik takvimi, yazı üretimi ve teklif mesajı. Aylık $3.000 hedefi ve gerçekçi tahminle.",
+      "why_tr": "Sosyal medya + ajan + para kombinasyonu bizim en iyi çalışan paket tarzımız; yeni bir niş.",
+      "angle": "Client Finder · Brand Voice Extractor · 30-Day Content Calendar · Post Writer · Outreach & Pricing Pitch",
+      "tools": ["ChatGPT", "Claude"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 6
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 0, "Claude": 1, "Gemini": 1, "Grok": 1, "Codex": 0, "Cursor": 1, "Copilot": 0,
+    "Perplexity": 0, "Meta AI": 1, "Mistral": 0, "DeepSeek": 0, "Open models": 0, "Apple": 1,
+    "Higgsfield": 0, "Google": 1, "Social media": 2, "Prompt pack": 1
+  },
+  "notes_tr": "Yeni: Gemini 4 Argon uygulamaya geldi, X Subscription (Grok+Cursor+X), Google Play özel vibe-code uygulamalar, Apple HomeView/Apple TV Siri AI, Facebook Your Algorithm, Ask YouTube, Cursor Origin marketplace. ChatGPT/Codex: GPT-5.5 emekliliği zaten havuzda, yeni resmi haber bulunamadı. Copilot: Gemini 4 Argon Copilot'ta GA (github.blog 13 Ekim) ama Argon haberiyle aynı konu, ayrı aday yapılmadı. Higgsfield: 'Higgsfield 10 dakikalık video' OpenAI sayfası (openai.com/index/higgsfield-longer-videos-voice) 403 verdi, doğrulanamadığı için eklenmedi. Perplexity, DeepSeek, Mistral, Open models: aramalarda yeni ve doğrulanabilir resmi haber çıkmadı. Instagram aramasında yeni özellik bulunamadı. Bu turda 'dışarıdan viral hikaye' aramaları (3) zayıf sonuç verdi.",
+  "sources_changed": [
+    "Eklendi: GitHub Copilot CLI releases (github.com/github/copilot-cli/releases.atom) — resmi, günde birkaç sürüm, test geçti.",
+    "Reddedildi: Aider releases atom — çalışıyor ama son sürüm 2026-02-12, bayat.",
+    "Reddedildi: VentureBeat AI feed — HTTP 429 (betik engeli), manuel kaynak gibi düşünülebilir.",
+    "Reddedildi: anthropic.com/engineering/rss.xml — 404, feed yok.",
+    "Test edildi, zaten listede: Ollama, Simon Willison, Latent Space, Ben's Bites (hepsi sağlıklı, yeni öğe yok)."
+  ]
+}

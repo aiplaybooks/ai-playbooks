@@ -67,7 +67,7 @@ Every screenshot here is the real app at work on public-domain art, rendered off
 
  A badge made of shape layers: a gradient-filled lotus, a star and a dotted ring. Water Lilies , Claude Monet, 1906 
  Pixel-perfect vectors 
- Rectangle, Ellipse, Triangle, Polygon, Line and the Pen tool, with resolution-independent shape layers, gradient fills, and dashed, aligned strokes.
+ Rectangle, Ellipse, Triangle, Polygon, Line and the Pen, Freeform Pen and Curvature Pen tools, with resolution-independent shape layers, gradient fills, and dashed, aligned strokes.
 
  Combine shapes (unite, subtract, intersect, exclude), keep paths in the Paths panel, use them as vector masks, or stroke and fill them. 116 of 116 shape layers in our PSD corpus match Photoshop's pixels.
 
@@ -91,7 +91,4 @@ Every screenshot here is the real app at work on public-domain art, rendered off
 
  Choose a dark Pro theme, the airy Studio themes, or a Classic look.
 
-## Everything in the box
-
- 🧰 52 tools 
- Move · Rect
+## Everything in t
