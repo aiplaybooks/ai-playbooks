@@ -1,0 +1,29 @@
+{
+  "kind": "clip",
+  "source": "https://x.com/knightama/status/2109687535186424189",
+  "credit": "@knightama on X",
+  "topic": "AI vs original",
+  "hook": "Which Ariel is AI? Most people guessed wrong.",
+  "caption": "Which Ariel is AI? Most people guessed wrong.\n\nTop or bottom? Drop your guess in the comments 👇\n\nSame pose, frame by frame. The only thing that changes is the style, and that's harder to read than it looks.\n\nSend this to the friend who says they can spot AI in one second.\n\nFollow @aiplaybooks.daily for an AI test every day.\n\nCredit: @knightama on X\n\n#ai #artificialintelligence #aivideo #realvsai",
+  "captions": {
+    "instagram": "Which Ariel is AI? Most people guessed wrong.\n\nTop or bottom? Drop your guess in the comments 👇\n\nSame pose, frame by frame. The only thing that changes is the style, and that's harder to read than it looks.\n\nSend this to the friend who says they can spot AI in one second.\n\nFollow @aiplaybooks.daily for an AI test every day.\n\nCredit: @knightama on X\n\n#ai #artificialintelligence #aivideo #realvsai",
+    "facebook": "Which Ariel is AI? Most people guessed wrong.\n\nTwo versions of the same Ariel, same pose, frame by frame. One is an AI pencil sketch, the other is the original movie in color. It's harder to call than you'd think, so scroll back and compare before you answer.\n\nTop or bottom: which one did you pick, and what made you pick it? 👇\n\nCredit: @knightama on X\n\n#ai #aivideo #realvsai",
+    "youtube": {
+      "title": "Can you spot the AI Ariel? Most people guessed wrong",
+      "description": "AI pencil sketch vs the original movie frame: can you tell which Ariel is AI? Most viewers guess wrong, and the difference is subtler than a quick glance suggests.\nTry this first: pause on the frame and compare the edges and shading before you decide. Slowing down beats trusting your first reaction.\nTell us your guess in the comments: top or bottom?\n\nCredit: @knightama on X\n\n#ai #artificialintelligence #realvsai #aivideo",
+      "tags": ["ai vs original", "which is ai", "ai or real", "real vs ai", "ai pencil test", "little mermaid ai", "ai art vs real", "ai generated video"]
+    }
+  },
+  "x": "Which Ariel is AI? Most people guessed wrong.\n\nTop or bottom? Reply with your guess 👇\n\n#AI #AIvideo",
+  "first_comment": {
+    "instagram": "The answer: the top sketch is the AI pencil test, the bottom one is the original movie in color. Try this first: pause on any frame and check the edges and shading before you trust your eyes. Did you get it right?",
+    "facebook": "The answer: the top sketch is the AI pencil test, the bottom one is the original movie in color. Try this first: pause on any frame and check the edges and shading before you decide. Did you get it right?",
+    "youtube": "The answer: the top sketch is the AI pencil test, the bottom one is the original movie in color. Did you get it right? Subscribe for daily AI playbooks."
+  },
+  "checked": [
+    "https://x.com/knightama/status/2109687535186424189: post text says the Ariel pencil test was made with AI and the color version is the original movie footage; author @knightama",
+    "runs/clip-20261014-161510-86424189/frames/frame_1.jpg to frame_8.jpg: top half labeled AI GENERATED (pencil sketch), bottom half labeled ORIGINAL MOVIE (color Ariel), same pose throughout",
+    "No tool or model named in the post, so no tool search needed",
+    "Owner revision note 'Most people guessed wrong' used as the hook's second sentence; post text 'some of you spotted it right away' is consistent with it"
+  ]
+}
