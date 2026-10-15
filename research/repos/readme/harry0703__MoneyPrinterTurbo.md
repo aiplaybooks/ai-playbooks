@@ -54,13 +54,24 @@
 
  星图 AstraFlow 
 
- 感谢 星图 AstraFlow 赞助本项目！ 
+ 感谢 星图 AstraFlow 赞助本项目！ 点击领取 50 元算力金 
  🎬 视频模型一站式调用 ：聚合 MiniMax-H3，Seedance-2.5 等主流视频生成模型，文案生成 + 视频生成一个平台全搞定，无需多端注册、多处对接 
  🚀 200+ 大模型一键调用，新模型当日上架 ：聚合 DeepSeek V4.1、Kimi K3、Qwen 3.8 Max、GLM 5.3 等 200+ 主流大模型，新模型上线当天即可接入 
  💰 UCloud 上市公司出品，调用计费透明可控 ：按 Key 级别计费，调用明细全程可查 
- 🎁 MoneyPrinterTurbo 用户专属福利 ：通过 专属推广链接 注册，即享新用户赠送额度，开箱即用！ 点击领取 50 元算力金 
+ 🎁 MoneyPrinterTurbo 用户专属福利 ：通过 专属推广链接 注册，即享新用户赠送额度，开箱即用！
 
- 感谢 Fluxion AI 赞助本项目！ 一个入口，接入并管理全球主流 AI 模型。 面向个人开发者、技术团队与企业，通过统一 API 接入主流模型，多线路动态调度提升可用性，模型表现、响应时间与费用透明可查。根据不同模型与线路， API 调用成本较官方或基准价格可降低 40%～98% 。通过 专属链接注册 ，即可获得 &#36;3 API 额度 。
+ 感谢 Sidrune AI 赞助本项目！ 一个入口，接入并管理全球主流 AI 模型。 Sidrune AI 面向个人开发者、技术团队与企业，通过统一 API 接入并管理全球主流 AI 模型，多线路动态调度提升可用性，模型表现、响应时间与费用透明可查。根据不同模型与线路， API 调用成本较官方或基准价格可降低 40%～98% 。通过 专属链接注册 ，即可获得 &#36;3 API 额度 。
+
+ RunningHub API 
+
+ 感谢 RunningHub API 赞助本项目！ 
+ • Seedance 满血版 API 接入 全网骨折价 ，在线工具低至 0.21元/秒 ，节省 60%-80%成本 ！ 
+ • 超稳定高并发高 折扣 ，随用随充按需弹性付费，不捆绑不排队不抽卡 
+ • 无限画布、ComfyUI、Agent 等在线工具从剧本到成片全链路制作 
+ • 一站式接入LLM API、多模态API、工作流API、Al应用 
+ • 400+ 主流模型（ 支持国际版权限 ）8000+版本 任选 
+ • 数千家企业信赖， 500万C端月活 验证 
+ 折扣与免费测试可联系 zhenyuedong@haima.me ，或 查看模型与接口 。
 
  录咖 AI 
 
@@ -97,8 +108,4 @@
 
 - [x] 支持上传自己的 **本地图片和视频**，也可从 [Pexels（免费）](https://www.pexels.com/api/)、[Pixabay（免费）](https://pixabay.com/api/docs/) 和 [Coverr](https://coverr.co/developers?ctx=header_navigation) 获取高清库存素材
 - [x] 支持 [秘塔 MiniMax H3](https://metaso.cn/minimax-h3/?s=MPT) 文生视频，可生成 `768P`/`2K`、4～15 秒的原始素材，并适配 `9:16`、`16:9` 和 `1:1` 三种画幅
-- [x] 支持 [胜算云 AI 视频](https://www.shengsuanyun.com/?from=CH_XUQ4OTSK)，可生成多段 AI 视频素材，并沿用项目的配音、字幕和剪辑流程合成成片
-- [x] 原生接入 [火山引擎方舟 Seedance](https://console.volcengine.com/ark/region:ark+cn-beijing/apikey)，可根据脚本片段生成连贯的视频画面
-- [x] 支持 [WaveSpeed AI](https://wavespeed.ai) 文生视频，可根据脚本关键词快速生成原创素材
-- [x] 支持 [OFox](https://ofox.ai) 多模型文生视频，一个 API Key 即可调用 Seedance、Wan 等模型
-- [x] 通过异步 [MuA
+- [x] 支持 [胜算云 AI 视频](https

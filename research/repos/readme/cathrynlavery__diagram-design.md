@@ -1,4 +1,4 @@
-**An agent skill that draws diagrams as one self-contained HTML + SVG file, in your brand. 44 diagram types. No shadows. No Mermaid slop.**
+**An agent skill that draws diagrams as one self-contained HTML + SVG file, in your brand. 45 diagram types. No shadows. No Mermaid slop.**
 
 [](https://github.com/cathrynlavery/diagram-design/stargazers)
 [](https://skills.sh/cathrynlavery/diagram-design/diagram-design)

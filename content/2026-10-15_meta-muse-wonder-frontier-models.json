@@ -1,0 +1,243 @@
+{
+  "theme": "adaptive",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Meta Muse Wonder",
+  "caption": "Meta's new AI remembers you across chats, and tries another route when a task gets stuck.\n\nMeta just announced Muse Wonder and Muse Wonder Full (October 12). Muse Wonder is its most capable model for personal and professional agent tasks. Two features stand out: Active Memory keeps context about you between conversations, and Active Focus works around blockers and checks in before important actions.\n\n→ Muse Wonder: live in Meta's Model API and Muse Code\n→ Muse Wonder Full: for Muse Code subscribers\n→ Muse app: coming soon, subscribers first\n→ Prices and usage limits: not on the announcement page yet\n\nWould you let an AI remember you across chats? Yes or no? 👇\nComment MUSE and I'll DM you the announcement page 📩\n\nFollow @aiplaybooks.daily for the AI news that changes what you can do.\n\n#ai #artificialintelligence #meta #aiagents #technology",
+  "captions": {
+    "instagram": "Meta's new AI remembers you across chats, and tries another route when a task gets stuck.\n\nMeta just announced Muse Wonder and Muse Wonder Full (October 12). Muse Wonder is its most capable model for personal and professional agent tasks. Two features stand out: Active Memory keeps context about you between conversations, and Active Focus works around blockers and checks in before important actions.\n\n→ Muse Wonder: live in Meta's Model API and Muse Code\n→ Muse Wonder Full: for Muse Code subscribers\n→ Muse app: coming soon, subscribers first\n→ Prices and usage limits: not on the announcement page yet\n\nWould you let an AI remember you across chats? Yes or no? 👇\nComment MUSE and I'll DM you the announcement page 📩\n\nFollow @aiplaybooks.daily for the AI news that changes what you can do.\n\n#ai #artificialintelligence #meta #aiagents #technology",
+    "facebook": "Meta's new AI remembers you across chats, and tries another route when a task gets stuck.\n\nMeta announced Muse Wonder and Muse Wonder Full on October 12. The idea: an AI that doesn't start from zero every time you open a chat. Active Memory keeps the context about you that matters, and Active Focus is what happens when the first try fails: it works around the blocker and checks with you before anything important.\n\nMuse Wonder is live now in Meta's Model API and Muse Code. Muse Wonder Full is for Muse Code subscribers, and the Muse app is coming soon. Meta hasn't published prices, usage limits or benchmark scores yet, so wait for real tests before you switch.\n\nWould you trust an AI to remember you across all your chats? Tell us why or why not below.\n\nFollow @aiplaybooks.daily for daily AI news.\n\n#ai #meta #aiagents",
+    "youtube": {
+      "title": "Meta Muse Wonder: an AI that remembers you across chats",
+      "description": "Meta Muse Wonder is a new AI model with Active Memory, which keeps context about you across conversations, and Active Focus, which tries another approach when a task gets hard. It's live in Meta's Model API and Muse Code.\n\nOur take: the memory feature is the one to watch. But Meta hasn't published prices, usage limits or benchmark scores yet, so judge it with your own tests.\n\nMuse Wonder Full is for Muse Code subscribers, and the Muse app is coming soon, subscribers first. Announced October 12, 2026.\n\nFollow @aiplaybooks.daily for daily AI news you can use.\n\n#metaai #aiagents #ai",
+      "tags": [
+        "meta muse wonder",
+        "muse wonder full",
+        "meta ai model",
+        "meta ai agents",
+        "ai agent memory",
+        "active memory ai",
+        "meta model api",
+        "ai agents 2026"
+      ]
+    }
+  },
+  "x": "Meta's new AI remembers you across chats, and tries another route when a task gets stuck.\n\nMuse Wonder is live in Meta's Model API and Muse Code. Prices and limits aren't out yet.\n\n#AI #Meta",
+  "first_comment": {
+    "instagram": "Try this first if you have Muse Code or the Model API: pick a task you already got stuck on and see if Active Focus finds a second route. Memory or focus, which would you test first? 👇",
+    "facebook": "Try this first if you have Muse Code or the Model API: pick a task you already got stuck on and see if Active Focus finds a second route. Memory or focus, which would you test first?",
+    "youtube": "Try this first if you have Muse Code or the Model API: pick a task you already got stuck on and see if Active Focus finds a second route. Memory or focus, which would you test first? Subscribe for daily AI playbooks."
+  },
+  "sources": [
+    "https://research.meta.ai/blog/muse-wonder"
+  ],
+  "dm": {
+    "keyword": "MUSE"
+  },
+  "cover": {
+    "headline": "Meta just released an AI built to remember you across chats and keep working until the job is done:",
+    "em": "remember you across chats",
+    "person": "Mark Zuckerberg",
+    "layout": "scene_person",
+    "photo_query": [
+      "server data center",
+      "smartphone chat app"
+    ],
+    "photo_pick": {
+      "url": "https://live.staticflickr.com/3738/11387253605_0bedea27d0_b.jpg",
+      "page": "https://www.flickr.com/photos/26087974@N05/11387253605",
+      "author": "Cory M. Grenier",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source": "Flickr",
+      "file": "Data Center"
+    },
+    "icons": [
+      {
+        "slug": "meta",
+        "style": "tile",
+        "pos": "tr",
+        "size": 170
+      }
+    ],
+    "photo": {
+      "file": "Data Center",
+      "page": "https://www.flickr.com/photos/26087974@N05/11387253605",
+      "author": "Cory M. Grenier",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source": "Flickr"
+    },
+    "layout_used": "scene_person",
+    "person_photo": {
+      "file": "File:Mark Zuckerberg 2019 (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Mark_Zuckerberg_2019_(cropped).jpg",
+      "author": "Anthony Quintano from Westminster, United States",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source": "Wikimedia Commons"
+    }
+  },
+  "design": {
+    "mood": "deep-space blue night, a glowing memory orbit of connected nodes, soft electric blue and warm coral glow",
+    "palette": {
+      "bg": "#070B1E",
+      "bg2": "#101C45",
+      "surface": "#121B3D",
+      "ink": "#EEF3FF",
+      "muted": "#8C9BC8",
+      "accent": "#4C8DFF",
+      "accent2": "#FF7A6B"
+    },
+    "fonts": {
+      "display": "Sora",
+      "body": "Inter",
+      "mono": "JetBrains Mono"
+    },
+    "display": {
+      "weight": 700,
+      "case": "none",
+      "tracking": -2,
+      "scale": 1.0,
+      "italic_em": false
+    },
+    "shape": {
+      "radius": 26,
+      "border": 2,
+      "shadow": "glow"
+    },
+    "background": {
+      "pattern": "rings",
+      "pattern_opacity": 0.1,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "pill",
+    "prompt": "chat",
+    "art": "<svg viewBox='0 0 900 460' xmlns='http://www.w3.org/2000/svg'><g fill='none' stroke-width='3'><circle cx='450' cy='230' r='60' fill='var(--surface)' stroke='var(--accent)'/><circle cx='450' cy='230' r='120' stroke='var(--muted)' stroke-dasharray='6 10'/><circle cx='450' cy='230' r='185' stroke='var(--muted)' stroke-dasharray='3 12'/></g><circle cx='450' cy='230' r='20' fill='var(--accent)'/><g stroke='var(--accent2)' stroke-width='3'><line x1='450' y1='230' x2='330' y2='150'/><line x1='450' y1='230' x2='590' y2='120'/><line x1='450' y1='230' x2='610' y2='330'/><line x1='450' y1='230' x2='300' y2='320'/></g><g fill='var(--accent2)'><circle cx='330' cy='150' r='14'/><circle cx='590' cy='120' r='14'/><circle cx='610' cy='330' r='14'/><circle cx='300' cy='320' r='14'/></g><g fill='var(--surface)' stroke='var(--accent)' stroke-width='3'><rect x='110' y='60' width='120' height='60' rx='22'/><rect x='690' y='320' width='120' height='60' rx='22'/></g><path d='M640 60 q60 0 60 50 t-60 50' fill='none' stroke='var(--accent)' stroke-width='4' stroke-linecap='round'/></svg>",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 4a8 8 0 1 0 8 8'/><path d='M12 8a4 4 0 1 0 4 4'/><circle cx='12' cy='12' r='1'/></svg>"
+  },
+  "voice": "am_adam",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "META · MUSE WONDER",
+      "title": "Meta's new AI remembers you and doesn't give up.",
+      "em": "remembers you",
+      "sub": "Muse Wonder and Muse Wonder Full, announced October 12.",
+      "tools": [
+        "Meta AI"
+      ],
+      "voiceover": "Meta just released an AI built to remember you and keep working until the job is done."
+    },
+    {
+      "type": "facts",
+      "label": "What launched",
+      "title": "Two new models, one big push",
+      "items": [
+        [
+          "Muse Wonder",
+          "Meta's most capable model for personal and professional agent tasks"
+        ],
+        [
+          "Muse Wonder Full",
+          "The bigger sibling, for Muse Code subscribers"
+        ],
+        [
+          "Announced",
+          "October 12, 2026"
+        ],
+        [
+          "Training",
+          "Meta's gigawatt-scale Prometheus data center"
+        ]
+      ],
+      "voiceover": "Meet Muse Wonder and Muse Wonder Full, announced October twelfth."
+    },
+    {
+      "type": "stat",
+      "label": "Feature 1",
+      "value": "Active Memory",
+      "title": "It keeps context about you across conversations",
+      "sub": "And pulls up the details that matter for the task you're on.",
+      "voiceover": "Active Memory keeps important context about you across conversations, then retrieves what fits the task."
+    },
+    {
+      "type": "stat",
+      "label": "Feature 2",
+      "value": "Active Focus",
+      "title": "Hard task? It tries another way",
+      "sub": "Works around blockers, adapts to new info, and checks in before important actions.",
+      "voiceover": "Active Focus means it tries other approaches when it hits a wall, and checks in before big actions."
+    },
+    {
+      "type": "list",
+      "label": "Where to try it",
+      "title": "Where you can use it right now",
+      "items": [
+        [
+          "Meta Model API",
+          "Muse Wonder is available now"
+        ],
+        [
+          "Muse Code",
+          "Muse Wonder is available now"
+        ],
+        [
+          "Muse Code subscribers",
+          "Get Muse Wonder Full"
+        ],
+        [
+          "Muse app",
+          "Coming soon, subscribers first"
+        ]
+      ],
+      "voiceover": "Wonder is live in Meta's Model API and Muse Code. Full is for Muse Code subscribers."
+    },
+    {
+      "type": "limits",
+      "label": "Fine print",
+      "title": "What Meta hasn't said yet",
+      "items": [
+        [
+          "Prices",
+          "Not stated on the announcement page"
+        ],
+        [
+          "Usage limits",
+          "Not stated either"
+        ],
+        [
+          "Benchmarks",
+          "Claims state-of-the-art, but no scores in the post"
+        ],
+        [
+          "Safety report",
+          "Promised soon"
+        ]
+      ],
+      "cta": "Wait for real tests before you switch.",
+      "voiceover": "Meta hasn't shared prices, limits or benchmark scores yet, so wait for real tests."
+    },
+    {
+      "type": "cta",
+      "title": "Memory plus focus.",
+      "title2": "That's Meta's bet on agents.",
+      "lines": [
+        [
+          "Watch",
+          "The Muse app rollout, coming soon"
+        ],
+        [
+          "Comment",
+          "MUSE for the announcement page"
+        ],
+        [
+          "Follow",
+          "@aiplaybooks.daily for daily AI news"
+        ]
+      ],
+      "voiceover": "Memory plus focus is Meta's bet on agents. Comment MUSE and follow for more."
+    }
+  ]
+}

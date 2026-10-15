@@ -1,0 +1,102 @@
+{
+  "generated": "2026-10-15T16:55:00+03:00",
+  "candidates": [
+    {
+      "id": "google-universal-cart-gemini-search",
+      "tool": "Google",
+      "kind": "news",
+      "title": "Google's AI Shopping Cart Is Live — It Tracks Price Drops and Finds Promo Codes Across Stores",
+      "summary_tr": "Google, Universal Cart'ı 15 Ekim'de ABD'de Search (AI Mode) ve Gemini uygulamasında açtı: farklı mağazalardan ürünleri tek sepette toplar, fiyat düşüşü ve stok bildirimi verir, Wallet'taki kart avantajlarına göre kod önerir, Google Pay ile ödeme yaptırır.",
+      "why_tr": "Herkesin işine yarayan para tasarrufu haberi, tatil alışveriş sezonu öncesi paylaşılabilir.",
+      "angle": "What's new + how it works (one cart, price-drop alerts, promo codes, Google Pay) + how to try it in Gemini/AI Mode + US only",
+      "tools": ["Google", "Gemini"],
+      "published": "2026-10-15",
+      "sources": ["https://blog.google/products-and-platforms/products/shopping/universal-cart-launch/"],
+      "hints": ["https://www.theverge.com/tech/1011797/google-ai-universal-cart-shopping-tool-launch"],
+      "score": 8
+    },
+    {
+      "id": "whatsapp-guest-calling-links",
+      "tool": "Social media",
+      "kind": "news",
+      "title": "You Can Now Invite Anyone to a WhatsApp Call — Even People Without WhatsApp",
+      "summary_tr": "WhatsApp, Aramalar sekmesinden oluşturulan linkle hesabı olmayan kişileri de aramaya davet etmeyi açtı. Konuklar bilgisayar tarayıcısından girer, ev sahibi onaylar; 32 kişiye kadar, uçtan uca şifreli ve süre sınırı yok.",
+      "why_tr": "Milyarlarca WhatsApp kullanıcısını ilgilendiren, hemen denenebilir bir özellik.",
+      "angle": "What's new + steps (Calls tab > + > create link > share) + what guests can and can't do + Google/Outlook calendar plugin later in 2026",
+      "tools": ["WhatsApp"],
+      "published": "2026-10-14",
+      "sources": ["https://about.fb.com/news/2026/10/introducing-whatsapp-guest-calling/"],
+      "hints": ["https://www.socialmediatoday.com/news/whatsapp-provides-chat-guest-links-for-non-users/833058/"],
+      "score": 7
+    },
+    {
+      "id": "youtube-music-ai-labels",
+      "tool": "Social media",
+      "kind": "news",
+      "title": "YouTube Music Now Puts an 'AI' Badge on Songs Made With Generative AI",
+      "summary_tr": "YouTube Music, şarkıyı çalarken ekranda 'AI' rozeti göstermeye başladı; dokununca 'Made with AI' açıklaması çıkıyor. Besteyi ve vokali üretken yapay zekayla yapılan parçalar etiketleniyor, etiketler ileride ana YouTube uygulamasına da gelecek.",
+      "why_tr": "Yapay zeka müziği tartışması çok konuşuluyor, yaratıcılar ve dinleyiciler için paylaşılır.",
+      "angle": "What's new + where the badge shows + how YouTube decides what counts + what creators using AI music should know",
+      "tools": ["YouTube"],
+      "published": "2026-10-14",
+      "sources": ["https://blog.youtube/news-and-events/youtube-music-ai-labels/"],
+      "hints": ["https://9to5google.com/2026/10/14/youtube-music-ai-label/", "https://www.theverge.com/ai-artificial-intelligence/1011369/youtube-music-ai-label"],
+      "score": 7
+    },
+    {
+      "id": "copilot-hydrafusion-max",
+      "tool": "Copilot",
+      "kind": "news",
+      "title": "GitHub Copilot Can Now Run Four AI Models on One Task — and Pick the Best Answer",
+      "summary_tr": "GitHub, HydraFusion'ı güncelledi: Claude Opus 5.5, GPT-6 Astra, GPT-6.1 Sol ve GPT-6 Luna havuzundan modeller taslak yazıyor, eleştirmen modeller çalışma alanını inceliyor, gerekirse onarım isteniyor. Daha derin düşünen yeni 'Max' seçeneği var; Pro, Pro+, Business ve Enterprise'da, deneysel özellikler açıkken.",
+      "why_tr": "Birden çok modeli birlikte çalıştıran fikir ilgi çekici, kodlama kitlemize doğrudan hitap ediyor.",
+      "angle": "What HydraFusion is + the 4-model pool + draft/judge/critique flow + HydraFusion Max + how to turn on preview features",
+      "tools": ["Copilot", "Claude", "ChatGPT"],
+      "published": "2026-10-14",
+      "sources": ["https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option"],
+      "hints": [],
+      "score": 6
+    },
+    {
+      "id": "perplexity-projects-evergreen",
+      "tool": "Perplexity",
+      "kind": "evergreen",
+      "title": "Perplexity Projects: Upload Your Files and Rules Once, Every Search Follows Them",
+      "summary_tr": "Perplexity Projects'te talimat (8.000 karaktere kadar) ve dosyaları (proje başına 10.000 dosya, 5 GB, dosya başına 100 MB) bir kez yüklersin; projedeki her sorgu bunları kullanır. Başkalarıyla paylaşılabilir.",
+      "why_tr": "Perplexity haberi az geldiği için taze bir konu; 'bir kez ayarla' formatı bizde iyi çalışıyor.",
+      "angle": "Why Projects + how to create one + what to put in instructions + sharing roles + 3 starter instruction prompts",
+      "tools": ["Perplexity"],
+      "published": null,
+      "sources": ["https://www.perplexity.ai/help-center/en/articles/10352961-what-are-spaces"],
+      "hints": [],
+      "score": 6
+    },
+    {
+      "id": "pack-subscription-bill-audit-agent",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "5 Prompts That Turn an AI Agent Into Your Bill-and-Subscription Auditor Saving You $1,200 a Year",
+      "summary_tr": "Banka ekstresindeki abonelikleri ve faturaları tarayıp iptal edilecekleri, pazarlık edilecekleri ve daha ucuz alternatifleri çıkaran 5 promptluk paket; yılda 1.200 dolar tasarruf vaadi.",
+      "why_tr": "Para tasarrufu teması her zaman yüksek etkileşim alıyor.",
+      "angle": "Statement audit, cancel-or-keep scorecard, bill negotiation script, cheaper-alternative finder, monthly savings tracker",
+      "tools": ["ChatGPT", "Claude", "Gemini"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 7
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 0, "Claude": 0, "Gemini": 0, "Grok": 0, "Codex": 0, "Cursor": 0, "Copilot": 1,
+    "Perplexity": 1, "Meta AI": 0, "Mistral": 0, "DeepSeek": 0, "Open models": 0, "Apple": 0,
+    "Higgsfield": 0, "Google": 1, "Social media": 2
+  },
+  "notes_tr": "Yeni: Google Universal Cart, WhatsApp misafir arama, YouTube Music AI etiketi, Copilot HydraFusion Max, Perplexity Projects (evergreen) ve bir prompt paketi. ChatGPT/Codex'te yalnızca GPT-5.5 emekliliği var (havuzda zaten). Cursor Origin marketplace havuzda. Claude'da yalnızca OpenTelemetry (geliştirici nişi) ve Haziran-ABD seçim yazısı var, atlandı. Grok, DeepSeek, Qwen/Kimi/GLM ve Mistral için web aramaları 10 Ekim sonrası bir şey bulamadı. Apple: HomePod mini'de Siri AI olmaması küçük haber, HomeView zaten havuzda. Higgsfield blogu yalnızca 3 Ekim AI Influencer'ı gösterdi (eski). Gemini AI Plus'ın Kasım'da Pro'yu kaybetmesi resmi kaynak bulunamadığı için alınmadı. Apple Newsroom ve ChatGPT release notes sayfaları bu oturumda okunamadı (403/boş).",
+  "sources_changed": [
+    "Reddedildi: lmstudio-bug-tracker releases.atom — içinde tarihli öğe yok.",
+    "Reddedildi: QwenLM/Qwen3 releases.atom — içinde tarihli öğe yok.",
+    "Reddedildi: Perplexity hub RSS — 403 Forbidden (betikleri engelliyor), manuel kalıyor.",
+    "Reddedildi: Chrome blog feed — çalışıyor ama en yeni öğe 24 Eylül, zaten kaynak listesinde.",
+    "Test edildi, zaten listede: TestingCatalog, 9to5Google, Codex ve Gemini CLI releases.atom — hepsi sağlıklı; sağlık raporunda fail_streak >= 3 olan kaynak yok."
+  ]
+}

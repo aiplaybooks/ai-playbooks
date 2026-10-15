@@ -1,0 +1,97 @@
+{
+ "generated": "2026-10-15T13:35:30+00:00",
+ "reddit": [],
+ "youtube_signal": [
+  {
+   "id": "yt-twihQqCOHkE",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Even Robots Learned Garba Before Me! 😭🤖😂#garba #robot #navratri #ytshorts #shortsfeed #share #viral",
+   "channel": "The channel of chaos",
+   "url": "https://www.youtube.com/shorts/twihQqCOHkE",
+   "views": 937804,
+   "date": "2026-10-14T03:53:23Z",
+   "query": "humanoid robot video"
+  },
+  {
+   "id": "yt-1yQdoGIOc5Y",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "హైదరాబాద్ వీధుల్లో రోబోల బతుకమ్మ! #dasara #dussehra #telugushorts  #shorts #viral #dance #bathukamma",
+   "channel": "Ai Prapancham",
+   "url": "https://www.youtube.com/shorts/1yQdoGIOc5Y",
+   "views": 278888,
+   "date": "2026-10-13T00:30:37Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-9PICEmtfpWU",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Teaching a humanoid robot to play cornhole with Gemini 4 Argon",
+   "channel": "Google DeepMind",
+   "url": "https://www.youtube.com/shorts/9PICEmtfpWU",
+   "views": 275201,
+   "date": "2026-10-13T15:58:20Z",
+   "query": "humanoid robot video"
+  },
+  {
+   "id": "yt-6EOO23azu00",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "🤖new short video human robot robotic short video #humanrobot #YouTube short video Ajay photo artist",
+   "channel": "Ajay photo artist",
+   "url": "https://www.youtube.com/shorts/6EOO23azu00",
+   "views": 243358,
+   "date": "2026-10-14T04:12:31Z",
+   "query": "humanoid robot video"
+  },
+  {
+   "id": "yt-c_D7c5KfNDI",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Are these simulations \"AI\"",
+   "channel": "Jeremy Carrasco",
+   "url": "https://www.youtube.com/shorts/c_D7c5KfNDI",
+   "views": 162069,
+   "date": "2026-10-13T20:56:00Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-gykY1DV2jRg",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Jab Legends Mile Robot Se! ft. Salman & Sachin 🤯  #cricket #shorts #sachin #salman",
+   "channel": "viratofficial-e18",
+   "url": "https://www.youtube.com/shorts/gykY1DV2jRg",
+   "views": 130579,
+   "date": "2026-10-14T16:46:30Z",
+   "query": "humanoid robot video"
+  },
+  {
+   "id": "yt-CAyYx_c0-eI",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "How Does This Potato Sorting Machine Work?",
+   "channel": "Epic9 Explain",
+   "url": "https://www.youtube.com/shorts/CAyYx_c0-eI",
+   "views": 116300,
+   "date": "2026-10-13T04:45:16Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-g3ph6vsGlk4",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Pregnancy Report में Transverse Position क्या है? 😱 | Doctor Dost Special Episode #DoctorDosr-05",
+   "channel": "DOCTOR DOST",
+   "url": "https://www.youtube.com/shorts/g3ph6vsGlk4",
+   "views": 108229,
+   "date": "2026-10-13T05:01:24Z",
+   "query": "AI generated video"
+  }
+ ],
+ "errors": [
+  "Reddit: REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET missing in .env"
+ ]
+}

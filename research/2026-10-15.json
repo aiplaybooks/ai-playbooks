@@ -1,0 +1,1004 @@
+{
+ "generated": "2026-10-15T13:34+00:00",
+ "hours": 36.0,
+ "items": [
+  {
+   "source": "Gemini blog",
+   "tier": "official",
+   "title": "An intelligent new shopping cart",
+   "url": "https://blog.google/products-and-platforms/products/shopping/universal-cart-launch/",
+   "date": "2026-10-15T13:00+00:00",
+   "summary": "Universal Cart helps make holiday shopping easier. It’s now available in the U.S. across Search and the Gemini app."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "An intelligent new shopping cart",
+   "url": "https://blog.google/products-and-platforms/products/shopping/universal-cart-launch/",
+   "date": "2026-10-15T13:00+00:00",
+   "summary": "Universal Cart helps make holiday shopping easier. It’s now available in the U.S. across Search and the Gemini app."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "TIME has named Google SynthID one of the Best Inventions of 2026.",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/synthid-time-best-inventions/",
+   "date": "2026-10-15T13:00+00:00",
+   "summary": "TIME named Google SynthID a Best Invention of 2026 for its groundbreaking approach to AI watermarking and verification."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Data-backed secrets to smarter holiday shopping",
+   "url": "https://blog.google/products-and-platforms/products/shopping/holiday-shopping-when-to-buy-guide/",
+   "date": "2026-10-15T13:00+00:00",
+   "summary": "Learn the best times to buy. Our new When to Buy Guide uses Google Search and discount data to show when holiday deals peak."
+  },
+  {
+   "source": "Cloudflare blog",
+   "tier": "official",
+   "title": "Cloudflare and OpenAI: making AI discovery better for everyone",
+   "url": "https://blog.cloudflare.com/cloudflare-openai-discovery-agentic-web/",
+   "date": "2026-10-15T13:00+00:00",
+   "summary": "How Cloudflare and OpenAI are working together to help AI find useful content, keep up with changes, and make fewer wasted requests — making the experience better for users and website owners alike."
+  },
+  {
+   "source": "Apple Newsroom",
+   "tier": "official",
+   "title": "Open up to new possibilities with iPhone Duo",
+   "url": "https://www.apple.com/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/",
+   "date": "2026-10-15T12:59+00:00",
+   "summary": "Beginning Friday, October 16, at 5 a.m. PT, customers can pre-order iPhone Duo on apple.com and in the Apple Store app."
+  },
+  {
+   "source": "Hugging Face blog",
+   "tier": "official",
+   "title": "Apertus 1.5 Release Notes",
+   "url": "https://huggingface.co/blog/swiss-ai/apertus-v15-release-notes",
+   "date": "2026-10-15T09:08+00:00",
+   "summary": ""
+  },
+  {
+   "source": "OpenAI Agents SDK releases",
+   "tier": "official",
+   "title": "v0.24.0",
+   "url": "https://github.com/openai/openai-agents-python/releases/tag/v0.24.0",
+   "date": "2026-10-15T02:37+00:00",
+   "summary": "0.24.0 (2026-10-15) Features expose MCP annotations on converted tools ( #5356 ) ( 75813f8 ) support run-wide tool exception formatting ( #5326 ) ( 8fd9a7c ) Bug Fixes batch OpenAI conversation session writes within the API limit ( #5334 ) ( 26345c1 ) defer automatic compaction for pending approvals ( #5363 ) ( 5eb47a5 ) deps-dev: bump fastapi from 0.139.2 to 0.141.1 ( #5312 ) ( cdf23bd )…"
+  },
+  {
+   "source": "GitHub Copilot CLI releases",
+   "tier": "official",
+   "title": "1.0.99-0",
+   "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.99-0",
+   "date": "2026-10-15T01:00+00:00",
+   "summary": "Added Open /share without arguments to view a full-screen action menu for sharing the current session Improved /sandbox can keep sandboxing enabled for the current session without enabling it globally Trusted repository plugins install and update automatically before chat runs. Rename the built-in browser plugin to browser-use and keep existing browser plugin preferences working after upgrade…"
+  },
+  {
+   "source": "Meta newsroom (AI + Instagram / WhatsApp / Threads / Facebook)",
+   "tier": "official",
+   "title": "More Than Three Quarters of Small Business Owners Say AI Makes Them More Productive, But Most Need More Guidance",
+   "url": "https://about.fb.com/news/2026/10/more-than-three-quarters-of-small-business-owners-say-ai-makes-them-more-productive-but-most-need-more-guidance/",
+   "date": "2026-10-15T00:50+00:00",
+   "summary": "New Meta research across nine APAC markets shows how AI is helping small businesses grow, compete with larger rivals and reach customers across borders. The post More Than Three Quarters of Small Business Owners Say AI Makes Them More Productive, But Most Need More Guidance appeared first on Meta Newsroom ."
+  },
+  {
+   "source": "GitHub Copilot changelog",
+   "tier": "official",
+   "title": "HydraFusion updates and new Max option",
+   "url": "https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option",
+   "date": "2026-10-14T20:01+00:00",
+   "summary": "HydraFusion has an updated model pool, improved orchestration workflows, and introduces HydraFusion Max. Both HydraFusion and HydraFusion Max are available across VS Code, the GitHub Copilot app, and GitHub Copilot… The post HydraFusion updates and new Max option appeared first on The GitHub Blog ."
+  },
+  {
+   "source": "GitHub Copilot CLI releases",
+   "tier": "official",
+   "title": "1.0.98",
+   "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.98",
+   "date": "2026-10-14T19:52+00:00",
+   "summary": "2026-10-14 Add support for Gemini 4 Argon Command hooks complete reliably even when child-exit signals are lost under Node MCP status and /mcp commands stay synced to the active session after split-view session switches Resuming a session now respects abandoned pending-permission work and continues only active permission requests. Keep ordinary characters typed while the input box is still coming…"
+  },
+  {
+   "source": "Ollama releases",
+   "tier": "official",
+   "title": "v0.40.5",
+   "url": "https://github.com/ollama/ollama/releases/tag/v0.40.5-rc0",
+   "date": "2026-10-14T19:45+00:00",
+   "summary": "What's Changed mlx: port the Metal custom kernels to CUDA by @dhiltgen in #18657 docs: model recs and language standardization by @anra8571 in #18981 openai: accept custom tool calls in Responses history by @hoyyeva in #18911 app: clarify cloud payment errors by @willietran in #18986 MLX: version bump by @dhiltgen in #18993 New Contributors @willietran made their first contribution in #18986 Full…"
+  },
+  {
+   "source": "Claude Agent SDK (Python) releases",
+   "tier": "official",
+   "title": "v0.2.167",
+   "url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.167",
+   "date": "2026-10-14T19:25+00:00",
+   "summary": "Internal/Other Changes Updated bundled Claude CLI to version 2.1.300 PyPI: https://pypi.org/project/claude-agent-sdk/0.2.167/ pip install claude-agent-sdk==0.2.167"
+  },
+  {
+   "source": "Claude Code releases",
+   "tier": "official",
+   "title": "v2.1.300",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.300",
+   "date": "2026-10-14T18:24+00:00",
+   "summary": "What's changed Added virtualText to a mod's prompt decorations: text drawn in the prompt box that never enters the draft or the submitted prompt Added cache_creation_5m_tokens and cache_creation_1h_tokens to the OpenTelemetry api_request event, splitting cache writes by lifetime Added $.ui.view({ agentId }) for mods: shows an agent's transcript in the main view when you ask, and $.ui.view({})…"
+  },
+  {
+   "source": "Apple Newsroom",
+   "tier": "official",
+   "title": "Bünyamin Aydın’s new collection, “From Earth to Sky,” soars with iPad Pro",
+   "url": "https://www.apple.com/newsroom/2026/10/bunyamin-aydins-new-collection-from-earth-to-sky-soars-with-ipad-pro/",
+   "date": "2026-10-14T17:39+00:00",
+   "summary": "Bünyamin Aydın brought together Turkish heritage, rock influences, and futurism for a landmark fashion show in Cappadocia shot on iPhone 18 Pro Max."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Research@ 2026: Novel capabilities and intelligence",
+   "url": "https://blog.google/innovation-and-ai/technology/research/research-capabilities-intelligence-2026/",
+   "date": "2026-10-14T16:15+00:00",
+   "summary": "We’re sharing our latest milestones and some of the advanced AI capabilities and intelligence that we’re putting in the hands of experts."
+  },
+  {
+   "source": "Hugging Face blog",
+   "tier": "official",
+   "title": "HiRO-ACEv2: Simulating extreme weather at 3 km resolution for a fraction of the cost",
+   "url": "https://huggingface.co/blog/allenai/hiro-acev2",
+   "date": "2026-10-14T16:12+00:00",
+   "summary": ""
+  },
+  {
+   "source": "OpenCode releases",
+   "tier": "official",
+   "title": "vscode-v1.0.0",
+   "url": "https://github.com/anomalyco/opencode/releases/tag/vscode-v1.0.0",
+   "date": "2026-10-14T16:04+00:00",
+   "summary": "fix(vscode): use the sst/opencode repository URL for Marketplace publ…"
+  },
+  {
+   "source": "Meta newsroom (AI + Instagram / WhatsApp / Threads / Facebook)",
+   "tier": "official",
+   "title": "Meta, Milan’s Pinacoteca di Brera, and EssilorLuxottica Expand Access to Art Through AI Glasses",
+   "url": "https://about.fb.com/news/2026/10/meta-milans-pinacoteca-di-brera-and-essilorluxottica-expand-access-to-art-through-ai-glasses/",
+   "date": "2026-10-14T16:00+00:00",
+   "summary": "Today, Meta, Pinacoteca di Brera and EssilorLuxottica are proud to launch “Sensing Art – Discovering Masterpieces Beyond What Meets the Eye.” This pilot aims to explore how AI glasses can make art more accessible for people who are blind or with low vision – in collaboration with the some of Italy’s leading sight loss charities – the Associazione Nazionale Subvedenti (ANS), the Unione Italiana…"
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Guide your campaign spending with new priority and allocation features",
+   "url": "https://blog.google/products/ads-commerce/channel-prioritization-budget-allocation/",
+   "date": "2026-10-14T15:00+00:00",
+   "summary": "New controls in Google Ads let marketers categorize channel groupings by priority and better control how budget is allocated"
+  },
+  {
+   "source": "Meta newsroom (AI + Instagram / WhatsApp / Threads / Facebook)",
+   "tier": "official",
+   "title": "Now You Can Invite Anyone to a WhatsApp Call",
+   "url": "https://about.fb.com/news/2026/10/introducing-whatsapp-guest-calling/",
+   "date": "2026-10-14T14:24+00:00",
+   "summary": "You can now invite anyone to a WhatsApp call, even if they don’t have a Whatsapp account, so you can connect with people without worrying what apps they have. The post Now You Can Invite Anyone to a WhatsApp Call appeared first on Meta Newsroom ."
+  },
+  {
+   "source": "OpenAI News",
+   "tier": "official",
+   "title": "Amp puts AI agents to work beyond code with OpenAI models",
+   "url": "https://openai.com/index/amp-beyond-coding",
+   "date": "2026-10-14T12:00+00:00",
+   "summary": "See how Amp pushes the frontier of what agents can do with GPT-6 Astra, Ultrafast, GPT-Live-1, and Sign in with ChatGPT."
+  },
+  {
+   "source": "OpenAI News",
+   "tier": "official",
+   "title": "SentinelOne cuts malware analysis from weeks to hours",
+   "url": "https://openai.com/index/sentinelone",
+   "date": "2026-10-14T12:00+00:00",
+   "summary": "With OpenAI Daybreak, SentinelOne cuts weeks of malware analysis to hours, creating capacity to investigate more threats."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Check out this year’s buzziest Halloween trends.",
+   "url": "https://blog.google/products-and-platforms/products/search/frightgeist-halloween-trends-2026/",
+   "date": "2026-10-14T12:00+00:00",
+   "summary": "Ready or not, spooky season is here. To help you prepare, we’re launching Google Frightgeist, our annual interactive website highlighting the top trending searches for H…"
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "6 ways to trick-or-treat yourself to the ultimate Halloween with Search",
+   "url": "https://blog.google/products-and-platforms/products/search/halloween-tips-2026/",
+   "date": "2026-10-14T12:00+00:00",
+   "summary": "Whether you need a last-minute costume or a scary movie watchlist, let Google handle heavy lifting for your Halloween prep."
+  },
+  {
+   "source": "Meta newsroom (AI + Instagram / WhatsApp / Threads / Facebook)",
+   "tier": "official",
+   "title": "Farah Khan at Edits Film Festival: “Content breakthroughs come from spontaneity, relatability and realness”",
+   "url": "https://about.fb.com/news/2026/10/farah-khan-at-edits-film-festival-content-breakthroughs-come-from-spontaneity-relatability-and-realness/",
+   "date": "2026-10-14T11:39+00:00",
+   "summary": "Today the curtains came down on the Edits Film Festival in Mumbai, in the presence of filmmaker Farah Khan, festival judges Ahsaas Channa, Dolly Singh, Nikhil Taneja and Rajeev Masand and over 100 content creators in the audience. The post Farah Khan at Edits Film Festival: “Content breakthroughs come from spontaneity, relatability and realness” appeared first on Meta Newsroom ."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "17 organizations using AI to accelerate scientific breakthroughs",
+   "url": "https://blog.google/company-news/outreach-and-initiatives/google-org/impact-challenge-ai-science-recipients/",
+   "date": "2026-10-14T09:30+00:00",
+   "summary": "These groups are receiving $36 million through the Google.org Impact Challenge: AI for Science."
+  },
+  {
+   "source": "OpenCode releases",
+   "tier": "official",
+   "title": "v2.0.29",
+   "url": "https://github.com/anomalyco/opencode/releases/tag/v2.0.29",
+   "date": "2026-10-14T09:03+00:00",
+   "summary": "release: v2.0.29"
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "We’re powering European scientific discovery with advanced AI compute and frontier models.",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/were-powering-european-scientific-discovery-with-advanced-ai-compute-and-frontier-models/",
+   "date": "2026-10-14T08:00+00:00",
+   "summary": "Google DeepMind and Google Cloud are providing up to 200 top European scientific researchers with direct access to our frontier models, together with $3 million in compu…"
+  },
+  {
+   "source": "OpenAI News",
+   "tier": "official",
+   "title": "How Third Moment Research runs 10,000 agents for 36+ hours",
+   "url": "https://openai.com/index/third-moment-research",
+   "date": "2026-10-14T07:00+00:00",
+   "summary": "With GPT-6 Astra and GPT-6.1 Sol, Codex, and Daybreak for cybersecurity, this AI lab builds agents that focus for days and improve with use."
+  },
+  {
+   "source": "OpenAI News",
+   "tier": "official",
+   "title": "How Block is building AI-powered security with OpenAI technology",
+   "url": "https://openai.com/index/block-ai-powered-security",
+   "date": "2026-10-14T07:00+00:00",
+   "summary": "Block is building AI-powered security with OpenAI. Its security team investigates threats faster and proposes patches in minutes."
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "Enabling an AI-first European economy",
+   "url": "https://blog.google/company-news/inside-google/around-the-globe/google-europe/european-economic-impact-report/",
+   "date": "2026-10-14T07:00+00:00",
+   "summary": "Announcing Google’s European Economic Impact Report"
+  },
+  {
+   "source": "GitHub Copilot CLI releases",
+   "tier": "official",
+   "title": "1.0.98-2",
+   "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.98-2",
+   "date": "2026-10-14T04:26+00:00",
+   "summary": "Improved Expand /ask answers with Ctrl+E, copy the entire answer with Ctrl+Y, and reopen the last usable completed answer in the session with /ask or /btw. Fixed Command hooks complete reliably even when child-exit signals are lost under Node"
+  },
+  {
+   "source": "Claude Agent SDK (Python) releases",
+   "tier": "official",
+   "title": "v0.2.166",
+   "url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.166",
+   "date": "2026-10-14T03:45+00:00",
+   "summary": "New Features Hook-specific output types : Added typed output classes and missing input fields for hooks, giving hook implementations precise type information instead of untyped dicts ( #1331 ) SystemInitData TypedDict : The init system message payload is now fully typed via SystemInitData , along with nested types SystemInitMcpServer , SystemInitPlugin , SystemInitPluginError , and FastModeState…"
+  },
+  {
+   "source": "Claude Code releases",
+   "tier": "official",
+   "title": "v2.1.299",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.299",
+   "date": "2026-10-14T02:49+00:00",
+   "summary": "What's changed Added CLAUDE_CODE_DISABLE_FILE_MENTIONS environment variable: Claude gets the paths of @ file mentions to read with its file tools, not the files' contents Added idle compaction in the terminal: a 200K+ token conversation left idle for about 54 minutes is compacted before its one-hour prompt cache expires, so your next message doesn't reprocess it all Added…"
+  },
+  {
+   "source": "Ollama releases",
+   "tier": "official",
+   "title": "v0.40.4",
+   "url": "https://github.com/ollama/ollama/releases/tag/v0.40.4",
+   "date": "2026-10-14T02:23+00:00",
+   "summary": "Decision models in the CLI Decision models can now be used directly from the terminal with ollama run — ask yes/no questions, classify text into labels, or score against a rubric: ollama run nimble --ask \"Is a refund being requested?\" What's Changed Kev decision models are now supported by the MLX runner on Apple silicon ollama launch can now be used with usage credits without upgrading to a paid…"
+  },
+  {
+   "source": "Google DeepMind blog",
+   "tier": "official",
+   "title": "Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection",
+   "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+   "date": "2026-10-14T02:00+00:00",
+   "summary": "Learn how Google DeepMind and GovTech Singapore uses lightweight on-device Gemma models to intercept conversational scams in private chats with zero cloud data egress."
+  },
+  {
+   "source": "Anthropic News",
+   "tier": "official",
+   "title": "Preparing for the 2026 US midterms",
+   "url": "https://www.anthropic.com/news/2026-us-midterms",
+   "date": "2026-10-14T00:00+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Claude release notes",
+   "tier": "official",
+   "title": "Claude release notes: Oct 14, 2026",
+   "url": "https://docs.claude.com/en/release-notes/overview",
+   "date": "2026-10-14T00:00+00:00",
+   "summary": " We've launched OpenTelemetry export in beta, so you can trace Messages API requests and Claude Managed Agents sessions in your observability backend. The Claude SDK emits spans in Python, TypeScript, C#, Go, Java, PHP, and Ruby. To get spans from the API, add an OpenTelemetry destination in the Claude Console. Claude Managed Agents scheduled deployments are now available on Claude Platform on AWS . …"
+  },
+  {
+   "source": "Codex changelog",
+   "tier": "official",
+   "title": "Codex changelog: Oct 14, 2026",
+   "url": "https://developers.openai.com/codex/changelog",
+   "date": "2026-10-14T00:00+00:00",
+   "summary": "GPT-5.5 retirement in Codex Effective … , at noon PDT (19:00 UTC), GPT-5.5 retires from Codex for users signed in with ChatGPT. The OpenAI API and Codex sessions authenticated with an API key aren’t affected. Use GPT-6.1 Sol ( gpt-6.1-sol ) when available to your plan and client. Update workspace defaults, saved model settings, managed configurations, custom agents, scheduled tasks, and scripts that still select gpt-5.5 . See GPT-5.5 retirement for plan-specific replacements and workspace model availability for administrator guidance. … , GPT-5.5 will retire from ChatGPT, ChatGPT Work, and Codex on all plans, including consumer, Business, Enterprise, and Edu plans. This retirement does not apply to the OpenAI API. For Codex with ChatGPT sign-in, choose an available replacement for your plan and client. See GPT-5.5 retirement for migration guidance. Update workspace defaults, saved model…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Anthropic tells investors quarterly revenue up nearly 50% to $16.8bn ahead of IPO",
+   "url": "https://simonwillison.net/2026/Oct/15/anthropic-tells-investors/",
+   "date": "2026-10-15T13:04+00:00",
+   "summary": "Anthropic tells investors quarterly revenue up nearly 50% to $16.8bn ahead of IPO The phrase \"told investors\" appears four times in this FT article, which reports on Anthropic's day of hosting investors on Wednesday. Lots of details in here from \" people with knowledge of the matter \". Key things I learned from the article: Q1 revenue (Jan/Feb/Mar) was \"about $4.8bn\" Q2 (Apr/May/Jun) was $11.5bn…"
+  },
+  {
+   "source": "Ben's Bites",
+   "tier": "signal",
+   "title": "Prompt tips from Anthropic",
+   "url": "https://www.bensbites.com/p/prompt-tips-from-anthropic",
+   "date": "2026-10-15T13:01+00:00",
+   "summary": "Google’s new model isn’t for me on my first test, mixed reviews"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Google launches its ‘universal’ online shopping cart ahead of the holidays",
+   "url": "https://www.theverge.com/tech/1011797/google-ai-universal-cart-shopping-tool-launch",
+   "date": "2026-10-15T09:00-04:00",
+   "summary": "Save all of the products you’re browsing in one place. | Image: Google Google's intelligent AI shopping cart is finally here, and just in time to tempt users into Black Friday and seasonal holiday spending. The Universal Cart tool Google previewed at its I/O event in May is now rolling out in the US across the Gemini app and Google Search, with the aim of making it easier to stay organized and…"
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "XREAL 1 Pro+ has exactly the right hardware upgrades at the same $599 price",
+   "url": "https://9to5google.com/2026/10/15/xreal-1-pro-plus-upgrades-price/",
+   "date": "2026-10-15T13:00+00:00",
+   "summary": "Ahead of its Android XR-based Aura launching later this year, XREAL is giving its flagship One Pro a “Plus” upgrade without raising the price. more…"
+  },
+  {
+   "source": "9to5Mac",
+   "tier": "signal",
+   "title": "MacPaw launches Eney, a proactive AI assistant for Mac and iPhone",
+   "url": "https://9to5mac.com/2026/10/15/macpaw-launches-eney-a-proactive-ai-assistant-for-mac-and-iphone/",
+   "date": "2026-10-15T12:00+00:00",
+   "summary": "Today marks a milestone for MacPaw, as the company is releasing Eney, a proactive AI assistant that works across your apps, files, and system to help you get things done, following a development process that began back in 2019. Here are the details. more…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Amazon’s always-listening Bee wearable can now help you buy stuff",
+   "url": "https://www.theverge.com/tech/1011475/amazon-bee-frontier-eclipse-price-specs",
+   "date": "2026-10-15T08:00-04:00",
+   "summary": "Last year, Amazon bought Bee , a relatively unknown startup with a $50 always-listening AI wearable that summarized every conversation you had. Today, the e-commerce giant is announcing two new Bee devices - and a new subscription to go with them. First is the $74.99 Bee Frontier, an updated version of the original Bee device. And coming soon is the $99.99 Bee Eclipse, a credit-card-shaped gadget…"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Amazon’s Bee launches two new personal AI devices, starting at $75",
+   "url": "https://techcrunch.com/2026/10/15/amazons-bee-launches-two-new-personal-ai-devices-starting-at-75/",
+   "date": "2026-10-15T12:00+00:00",
+   "summary": "Amazon-owned Bee has launched its first new AI devices since its acquisition, including an updated wearable and a credit-card-sized recorder that attaches to smartphones. The devices can summarize conversations, create to-do lists, and integrate with Alexa and Amazon shopping, with prices starting at $74.99."
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Your secrets aren’t safe with this cute robot toy — they’re on Chinese servers ready to be hacked",
+   "url": "https://www.theverge.com/tech/1010727/eiliko-robot-hack-energize-lab",
+   "date": "2026-10-15T07:00-04:00",
+   "summary": "Eiliko. | Photo by Sean Hollister / The Verge There's a new digital pet in town - a cute little marshmallow of a robot that can change its cartoony expressions to match your mood. But if you or your kids talk to \"Eiliko\" over Wi-Fi, it'll phone home to China. Its AI companion can store literally everything you tell it on Chinese servers, where hackers can easily gain access or even hijack its…"
+  },
+  {
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "openclaw 2026.9.33",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.9.33",
+   "date": "2026-10-15T10:39+00:00",
+   "summary": "This is a gateway-only extended-stable release, which is our current equivalent to LTS. This release is OpenClaw from the end of September 2026, plus critical security updates, reliability and performance fixes, and features like new model support. The latest version of OpenClaw at the time of this release is 2026.10.3 2026.9.33 Highlights Safer September upgrades: updates on the 2026.9 line keep…"
+  },
+  {
+   "source": "Latent Space AINews",
+   "tier": "signal",
+   "title": "[AINews] Modal’s $1B ARR, $16B Series D makes it NYC’s newest AI Infra Decacorn, 3x usage and 3x valuation in 5 months, 15x in 1 yr",
+   "url": "https://www.latent.space/p/ainews-modals-1b-arr-16b-series-d",
+   "date": "2026-10-15T10:08+00:00",
+   "summary": "Sandboxes are all you need."
+  },
+  {
+   "source": "The Rundown AI",
+   "tier": "signal",
+   "title": "Rogue AI agents sit for their first interview",
+   "url": "https://www.therundown.ai/articles/rogue-ai-agents-sit-for-their-first-interview",
+   "date": "2026-10-15T09:00+00:00",
+   "summary": "PLUS: Build a live sales dashboard in Claude"
+  },
+  {
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "openclaw 2026.10.5-beta.4",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.5-beta.4",
+   "date": "2026-10-15T06:10+00:00",
+   "summary": "2026.10.5-beta.4 Highlights Updates finish more reliably: macOS updates no longer time out on aliased temporary directories, systemd user installs reclaim abandoned runtimes, pacman and FreeBSD package installs are left to their package manager, snapshot failures are identified before activation with accurate recovery advice, and the success summary no longer repeats settled plugin upgrades as…"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Figma announces new features to define how agents work on its platform",
+   "url": "https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/",
+   "date": "2026-10-15T04:30+00:00",
+   "summary": "Figma is also releasing its code layers feature in open beta."
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Ricursive Intelligence is betting on AI-designed chips to help solve the compute crisis",
+   "url": "https://techcrunch.com/2026/10/14/ricursive-intelligence-is-betting-on-ai-designed-chips-to-help-solve-the-compute-crisis/",
+   "date": "2026-10-15T01:01+00:00",
+   "summary": "The founders detailed how their startup is developing AI that can design chips, learn from each iteration, and improve subsequent designs, all with the goal of automating and accelerating the chip design process."
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Gudea leverages AI to help organizations prevent social media crises before they erupt",
+   "url": "https://techcrunch.com/2026/10/14/gudea-leverages-ai-to-help-organizations-prevent-social-media-crises-before-they-erupt/",
+   "date": "2026-10-15T00:00+00:00",
+   "summary": "Every day, conversations unfold across social media and websites around the world. A seemingly insignificant post—whether it involves AI-generated misinformation, hate speech, or a damaging rumor—can quickly snowball into a much larger public controversy. Gudea, a company that tracks how stories and rumors spread online that describes itself as the “storm tracker for the internet,” […]"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "McKinsey is making job applicants spar with a fake AI client",
+   "url": "https://www.theverge.com/news/1011654/mckinsey-ai-client-interview",
+   "date": "2026-10-14T18:53-04:00",
+   "summary": "Consulting firm McKinsey & Company is going to ask some entry-level candidates to have a 10-minute conversation with an AI simulation of a client as part of the interview process, according to The Wall Street Journal . The AI simulation \"aims to reflect 80% of the scenarios McKinsey consultants might encounter in their day-to-day work,\" the WSJ says, and it isn't designed to \"mimic an unhinged…"
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Snap reports on Snap Map data for brands",
+   "url": "https://www.socialmediatoday.com/news/snap-reports-on-snap-map-data-for-brands/833065/",
+   "date": "2026-10-14T18:13-04:00",
+   "summary": "The company said that the discovery tool can help drive engagement but noted that most users still turn to Google Maps for location information."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "TikTok Shop offers U.K. merchants more engagement tools",
+   "url": "https://www.socialmediatoday.com/news/tiktok-shop-offers-uk-merchants-more-engagement-tools/833064/",
+   "date": "2026-10-14T18:12-04:00",
+   "summary": "The platform has added group deals, new auction functions and an easy way to create shoppable carousels."
+  },
+  {
+   "source": "Latent Space AINews",
+   "tier": "signal",
+   "title": "Crossing the Threshold: How OpenAI and Anthropic Approach Autonomy and Safety in Financial Agents",
+   "url": "https://www.latent.space/p/crossing-the-threshold",
+   "date": "2026-10-14T21:40+00:00",
+   "summary": "At AI Engineer New York, frontier labs and financial firms explored how to give agents useful autonomy while keeping consequential decisions under control."
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "Gemini AI Plus subscribers will lose access to Pro models next month",
+   "url": "https://9to5google.com/2026/10/14/gemini-ai-plus-loses-pro-november/",
+   "date": "2026-10-14T21:34+00:00",
+   "summary": "Google has begun emailing Gemini AI Plus members to inform them when their Gemini subscription will no longer include access to the advanced models – just Flash. more…"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Flock CEO says its microphones detect ‘just gunshots’ — its website says different",
+   "url": "https://techcrunch.com/2026/10/14/flock-ceo-says-its-microphones-detect-just-gunshots-its-website-says-different/",
+   "date": "2026-10-14T21:30+00:00",
+   "summary": "Langley’s comments come amid mounting scrutiny of Flock from privacy advocates, including the ACLU, and members of the public who are concerned about the misuse of its technology."
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Tree Appreciator",
+   "url": "https://simonwillison.net/2026/Oct/14/tree-appreciator/",
+   "date": "2026-10-14T21:23+00:00",
+   "summary": "Tool: Tree Appreciator Another game experiment with Claude. This one used the default Claude iPhone app (chat mode, not Claude Code mode), where I prompted Claude Opus 5.5 Max with: Build a three js game called \"Tree appreciator\" - it shows you two algorithmically generated trees and the game mechanics is about appreciating the differences between them. Think hard about how to make sure it is…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Eight states sue OpenAI, saying ChatGPT isn’t safe for kids",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1011500/openai-state-lawsuits-chatgpt-safety",
+   "date": "2026-10-14T17:11-04:00",
+   "summary": "OpenAI is facing a new wave of lawsuits from eight US states that accuse the company of harming children and misleading customers about the safety of ChatGPT, as reported earlier by Reuters . The lawsuits, filed separately by Iowa, Kansas, Nebraska, West Virginia, Arkansas, Arizona, Idaho, and Montana, allege OpenAI unlawfully put profits over safety when developing ChatGPT. The string of…"
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "WhatsApp provides chat guest links for non-users",
+   "url": "https://www.socialmediatoday.com/news/whatsapp-provides-chat-guest-links-for-non-users/833058/",
+   "date": "2026-10-14T16:51-04:00",
+   "summary": "The new feature lets hosts send out chat invitations to anyone on or off the app, although guests will have limited usage options on calls."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "TikTok inks partnership with Made By Us studios",
+   "url": "https://www.socialmediatoday.com/news/tiktok-inks-partnership-with-made-by-us-studios/833055/",
+   "date": "2026-10-14T16:41-04:00",
+   "summary": "The content deal gives TikTok exclusive rights to select microdrama series from several high-profile creators."
+  },
+  {
+   "source": "Latent Space AINews",
+   "tier": "signal",
+   "title": "Lab-in-the-Loop at Compute Speed — Ian Quigley, Leash Bio",
+   "url": "https://www.latent.space/p/lab-in-the-loop-at-compute-speed",
+   "date": "2026-10-14T20:35+00:00",
+   "summary": "How Leash Bio tamed DELs, the assay that traumatizes everyone, and used the data to catch cheating models. And why that same data is perfect for AI agents learning to think like chemists."
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "Google Home update rolling out with improved Favorites, more app & Gemini fixes",
+   "url": "https://9to5google.com/2026/10/14/google-home-update-rolling-out-improved-favorites-gemini-fixes/",
+   "date": "2026-10-14T20:35+00:00",
+   "summary": "Google Home is getting a fresh update with improvements to reordering your favorite devices, redesigned controls for third-party smart home devices, and some much-needed fixes for Gemini commands. more…"
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "YouTube labels AI-generated music",
+   "url": "https://www.socialmediatoday.com/news/youtube-labels-ai-generated-music/833053/",
+   "date": "2026-10-14T16:23-04:00",
+   "summary": "The company has implemented transparency measures on its music platform and in its main app to identify generative artificial intelligence creations."
+  },
+  {
+   "source": "9to5Mac",
+   "tier": "signal",
+   "title": "Apple Intelligence reportedly coming to China in December, but without Siri AI",
+   "url": "https://9to5mac.com/2026/10/14/apple-intelligence-reportedly-coming-to-china-in-december-but-without-siri-ai/",
+   "date": "2026-10-14T20:20+00:00",
+   "summary": "Bloomberg reports that Apple plans to finally launch Apple Intelligence in China in December, although some important features could still be missing. Here are the details. more…"
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Google shares 2026 Halloween trends",
+   "url": "https://www.socialmediatoday.com/news/google-shares-2026-halloween-trends/833051/",
+   "date": "2026-10-14T16:02-04:00",
+   "summary": "This year’s annual Frightgeist overview offers movie-inspired costumes from films including “Obsession,” as well as regional U.S. trend advice."
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "YouTube Music rolling out AI labels in the Now Playing screen",
+   "url": "https://9to5google.com/2026/10/14/youtube-music-ai-label/",
+   "date": "2026-10-14T19:44+00:00",
+   "summary": "In response to more AI-generated content appearing on streaming services, YouTube Music is adding a new AI label directly to the player. more…"
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "Google Fitbit Edge hands-on: Pixel Watch Lite, take two",
+   "url": "https://9to5google.com/2026/10/14/google-fitbit-edge-hands-on-pixel-watch-lite-take-two/",
+   "date": "2026-10-14T19:30+00:00",
+   "summary": "Google’s new Fitbit Edge tracker launches later this month and, as we get our review together, here’s a quick hands-on look at the new middle child of Google’s wearable lineup. more…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "The AI race is back on",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1011311/the-ai-race-is-back-on",
+   "date": "2026-10-14T15:06-04:00",
+   "summary": "Mark Zuckerberg at the Meta Connect developer conference. | Photo: Andrej Sokolow/dpa/picture alliance via Getty Images Last week, Anthropic and OpenAI looked like they had the AI race to themselves, pulling ahead with increasingly powerful models that left their rivals in the dust. Google seemed hopelessly far behind, while Meta, despite spending billions to revive its floundering AI ambitions ,…"
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "Mid-week Android app deals and freebies: Lia, Star Wars, Florescue, more",
+   "url": "https://9to5toys.com/2026/10/14/todays-highlight-google-play-deals-28/",
+   "date": "2026-10-14T19:01+00:00",
+   "summary": "Your mid-week Google Play app and game deals are ready, including Lia: Hacking Destiny, STAR WARS: KOTOR II, Meridian 157: Chapter 1, Florescue, Mini Restaurant Premium, INKS, and more. Just be sure to dive into these Pixel Watch 5 deals and one of the best prices to date on Anker’s all-new Nano 10-in-1 Smart Display Hub . The apps await below. more…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Now that Character.AI is going bankrupt, what happens to all of its users’ data?",
+   "url": "https://www.theverge.com/policy/1011417/new-york-ag-characterai-bankruptcy",
+   "date": "2026-10-14T14:47-04:00",
+   "summary": "New York Attorney General Letitia James revealed a years-long multi-state investigation against Character.AI as they now seek to require protections on consumer data sold through its bankruptcy proceeding. James is among 40 bipartisan AGs who filed a notice of interest in Character.AI's bankruptcy case \"to put all parties on notice of the regulatory issues that will need to be addressed in any…"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "YouTube Music launches new labels as AI-generated music floods streaming platforms",
+   "url": "https://techcrunch.com/2026/10/14/youtube-music-launches-new-labels-as-ai-generated-music-floods-streaming-platforms/",
+   "date": "2026-10-14T18:23+00:00",
+   "summary": "The label will appear on the player page and include songs entirely generated by AI or partially, such as AI involved in composition and vocals."
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "YouTube sticks new labels on AI-generated songs",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1011369/youtube-music-ai-label",
+   "date": "2026-10-14T14:22-04:00",
+   "summary": "YouTube is adding a \"Made with AI\" label to tracks that were \"altered or fully generated\" using AI, with a similar approach to its existing process for applying AI labels to videos . It doesn't sound like this will apply to any and all use of AI tools in making music, but according to YouTube, it includes things like \"using a generative model to create the composition and vocals.\" In its rules…"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Apate sends AI agents undercover to get scammed so they can gather fraud intelligence",
+   "url": "https://techcrunch.com/2026/10/14/apate-sends-ai-agents-undercover-to-get-scammed-so-they-can-gather-fraud-intelligence/",
+   "date": "2026-10-14T18:00+00:00",
+   "summary": "Most companies use AI agents to ship products faster or speed up workflows. Apate.ai sends them undercover to get scammed."
+  },
+  {
+   "source": "9to5Mac",
+   "tier": "signal",
+   "title": "Apple confirms Siri AI is not coming to the original HomePod mini",
+   "url": "https://9to5mac.com/2026/10/14/no-siri-ai-is-not-coming-to-the-original-homepod-mini/",
+   "date": "2026-10-14T17:30+00:00",
+   "summary": "Siri AI is a tentpole addition to HomePod mini 2, but a CNET report today originally claimed Siri AI was coming to older HomePod mini models too. However, the story has since been updated with a correction and 9to5Mac received a statement confirming Siri AI will be exclusive to HomePod mini 2. more…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "My AI doppelganger tells me what to eat",
+   "url": "https://www.theverge.com/column/1011264/digital-twin-metabolism-ai-twin-health",
+   "date": "2026-10-14T13:00-04:00",
+   "summary": "This is Optimizer , a weekly newsletter sent from Verge senior reviewer Victoria Song that dissects and discusses the latest gizmos and potions that swear they're going to change your life. Opt in for Optimizer here . For the past 100 days or so, my mornings have had a new rhythm. When I wake up, the first thing I have to do is feed my digital twin. It consumes my metabolic data, and its first…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "OpenAI claims an ex-employee took its product plans and presented them to Apple",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1011276/openai-employee-unreleased-product-plans",
+   "date": "2026-10-14T12:43-04:00",
+   "summary": "OpenAI claims a former employee took more than 100 files related to its product plans before joining Apple. In a document filed on Wednesday , OpenAI accuses the unnamed employee of sending this information to a personal account and then presenting it to Apple leadership, including the vice president of the company's operations in Asia. The filing, reported earlier by Reuters , is tied to a legal…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "AI is mass decompiling games. That's both awesome and scary.",
+   "url": "https://simonwillison.net/2026/Oct/14/ai-is-mass-decompiling-games/",
+   "date": "2026-10-14T16:26+00:00",
+   "summary": "AI is mass decompiling games. That's both awesome and scary. Indie game developer Popcar talks about the recent wave of AI-powered decompilation of existing games, enabling weird mashups between existing games, and producing a boom in game preservation projects to get old games working on new hardware (often in a browser using WebAssembly). I like how this piece captures both the positives and…"
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "Google Messages adding ‘enhanced protection mode’ as Android works to combat phone scam",
+   "url": "https://9to5google.com/2026/10/14/google-messages-enhanced-protection-mode/",
+   "date": "2026-10-14T16:00+00:00",
+   "summary": "For Cybersecurity Awareness Month, Google is announcing new Android features to help combat messaging and phone scams, including enhanced protection mode in Google Messages. more…"
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "Samsung’s most useful Galaxy AI features are expanding with support for more languages",
+   "url": "https://9to5google.com/2026/10/14/galaxy-ai-language-expansion-2/",
+   "date": "2026-10-14T15:59+00:00",
+   "summary": "Unlike a lot of AI features, most of Samsung’s Galaxy AI tools are genuinely useful. Transcript, Call, and Note Assist are awesome tools, and Samsung is bringing those and more to more users and languages. more…"
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "Pocket Casts app now available on Android TV",
+   "url": "https://9to5google.com/2026/10/14/pocket-casts-app-now-available-on-android-tv/",
+   "date": "2026-10-14T15:56+00:00",
+   "summary": "After first coming to Apple TV , the official Pocket Casts app is now available to download on Android TV and Google TV devices. more…"
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "Deals: Pixel Watch 5 up to $108 off, TCL NXTPAPER phone $200, Anker’s new Smart Display Hub, more from $20",
+   "url": "https://9to5google.com/2026/10/14/deals-pixel-watch-5-tcl-nxtpaper-anker-display-hub/",
+   "date": "2026-10-14T15:42+00:00",
+   "summary": "Today’s 9to5Toys Lunch Break is headlined by Best Buy serving up Pixel Watch 5 models at up to $108 off alongside TCL’s ultra-affordable 60 XE NXTPAPER 5G Android phone down at $200 today . Just be sure to scope out the FREE $200 Amazon gift cards you can score with your new Samsung Galaxy Tab S12 before you dive into deals on Anker’s all-new Nano 10-in-1 Smart Display Hub with dual-monitor…"
+  },
+  {
+   "source": "9to5Mac",
+   "tier": "signal",
+   "title": "Deals: Apple HomeView pre-order discount, AirTag 2, Magic Keyboard, AirPods, more",
+   "url": "https://9to5mac.com/2026/10/14/apple-homeview-pre-order-deals-live/",
+   "date": "2026-10-14T15:28+00:00",
+   "summary": "Alongside AirPods Pro 3 at $50 off and AirPods Max 2 at $120 off,, today we are tracking the very first discount on the brand new Apple HomeView over at Amazon. It’s not a giant deal, but you might as well save some cash on your pre-order. We are also highlighting the new Apple TV Siri Remote (4th generation) – upgrade your existing Apple TV setup for $59 instead of buying the next-generation…"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Deezer will soon let you filter out AI-generated music",
+   "url": "https://techcrunch.com/2026/10/14/deezer-will-soon-let-you-filter-out-ai-generated-music/",
+   "date": "2026-10-14T15:16+00:00",
+   "summary": "Deezer said that the new toggle will be rolled out by the end of the year."
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "Rocket Money’s Rowan is a financial AI assistant you’ll actually want to text",
+   "url": "https://9to5google.com/2026/10/14/rocket-moneys-rowan-is-a-financial-ai-assistant-youll-actually-want-to-text-sponsored/",
+   "date": "2026-10-14T15:14+00:00",
+   "summary": "We have all watched AI assistants become a permanent fixture on our phones over the last few months, yet finding..."
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Save 50% on your TechCrunch Disrupt 2026 ticket and join the last 2 days in San Francisco’s Moscone West",
+   "url": "https://techcrunch.com/2026/10/14/save-50-on-your-techcrunch-disrupt-2026-ticket-and-join-the-last-two-days-in-san-francisco/",
+   "date": "2026-10-14T15:13+00:00",
+   "summary": "Get a 50% discount on the last two days of TechCrunch Disrupt 2026, October 14-15, in San Francisco. Register now and join the rest of the startup ecosystem. Today, it's all about physical and software AI."
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Zenzap raises $44M for its AI chat app that aims to replace WhatsApp in the workplace",
+   "url": "https://techcrunch.com/2026/10/14/zenzap-raises-44m-for-its-ai-chat-app-that-aims-to-replace-whatsapp-in-the-workplace/",
+   "date": "2026-10-14T15:08+00:00",
+   "summary": "Zenzap is used by organizations including Starbucks and Taco Bell."
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Floqer’s AI agents research sales prospects so teams don’t have to",
+   "url": "https://techcrunch.com/2026/10/14/floqers-ai-agents-help-b2b-revenue-teams-research-customers/",
+   "date": "2026-10-14T15:00+00:00",
+   "summary": "The problem Floqer is trying to solve is familiar to anyone who has worked in sales or revenue operations."
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "TechCrunch Disrupt 2026: Day 2",
+   "url": "https://techcrunch.com/2026/10/14/techcrunch-disrupt-2026-day-2/",
+   "date": "2026-10-14T14:30+00:00",
+   "summary": "Day 2 at TechCrunch Disrupt 2026, full of all themes across AI, as well as an investor-only session, more roundtables, Side Events, and more. Register to save 50% on your pass."
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "Nothing reportedly launching two pairs of smart glasses, one with barely any AI",
+   "url": "https://9to5google.com/2026/10/14/nothing-smart-glasses-report/",
+   "date": "2026-10-14T14:05+00:00",
+   "summary": "A reliable source says that Nothing is building out its own AI smart glasses that feature ChatGPT integration, a camera, and two very different models. more…"
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "Google’s new ‘Shop devices’ tab sells Pixel and Samsung Galaxy devices side by side",
+   "url": "https://9to5google.com/2026/10/14/google-store-shop-devices-pixel-samsung-galaxy/",
+   "date": "2026-10-14T13:45+00:00",
+   "summary": "Google has launched a new “Shop devices” portal that lets interested buyers pick up a Samsung Galaxy smartphone from the Google Store, right alongside a Pixel phone or Watch. more…"
+  },
+  {
+   "source": "9to5Mac",
+   "tier": "signal",
+   "title": "Apple website suggested Siri AI may be coming to full size HomePods",
+   "url": "https://9to5mac.com/2026/10/14/apple-website-suggested-siri-ai-may-be-coming-to-full-size-homepods/",
+   "date": "2026-10-14T12:33+00:00",
+   "summary": "The headline feature of the new HomePod mini 2 is support for Siri AI , something that won’t be available for the first-gen model. But there’s hope that existing full size HomePods may also get access to the smarter intelligent assistant. A leaker noticed two clues on Apple’s website seemingly pointing to this, but it’s possible that it was an error on the part of the company … more…"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Scimplify raises $25M to challenge China’s grip on critical materials with AI",
+   "url": "https://techcrunch.com/2026/10/14/scimplify-raises-25m-to-challenge-chinas-grip-on-critical-materials-with-ai/",
+   "date": "2026-10-14T11:00+00:00",
+   "summary": "Scimplify's annualized revenue run rate has tripled to $200 million as it eyes U.S. expansion."
+  },
+  {
+   "source": "The Rundown AI",
+   "tier": "signal",
+   "title": "OpenAI finds a bug in its boardroom",
+   "url": "https://www.therundown.ai/articles/openai-finds-a-bug-in-its-boardroom",
+   "date": "2026-10-14T09:00+00:00",
+   "summary": "PLUS: How to give Grok Bot its own email inbox"
+  },
+  {
+   "source": "Latent Space AINews",
+   "tier": "signal",
+   "title": "[AINews] AI Engineer NYC: Gemini 4 Argon, Vals AI Benchmarks",
+   "url": "https://www.latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon",
+   "date": "2026-10-14T05:40+00:00",
+   "summary": "Gemini 4 Argon went GA today, but we already gave it title story 2 weeks ago and most benchmarks, like CursorBench, simply independently confirm their claims."
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "AI was great until it was not",
+   "url": "https://thetheorygirlie.substack.com/p/ai-was-great-until-it-was-not",
+   "date": "2026-10-15T08:18+00:00",
+   "summary": "98 points, 68 comments · https://news.ycombinator.com/item?id=50100791"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "LFM2.5-24B-A2B: Built for fast on-device agents",
+   "url": "https://www.liquid.ai/blog/lfm2-5-24b-a2b",
+   "date": "2026-10-14T23:59+00:00",
+   "summary": "249 points, 60 comments · https://news.ycombinator.com/item?id=50097369"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "We’re releasing Jev 1.14.0 along with experimental features for dreamers",
+   "url": "https://typesafe.ai/blog/jev-1-14",
+   "date": "2026-10-14T21:11+00:00",
+   "summary": "318 points, 109 comments · https://news.ycombinator.com/item?id=50095353"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Anthropic's Scion is heavily inspired by Mononoke",
+   "url": "https://sunshowers.io/posts/anthropic-mononoke/",
+   "date": "2026-10-14T20:30+00:00",
+   "summary": "384 points, 144 comments · https://news.ycombinator.com/item?id=50094694"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Things to know when you get cancer",
+   "url": "https://jjmaxwell4.com/writing/things-to-know-when-you-get-cancer/",
+   "date": "2026-10-14T19:26+00:00",
+   "summary": "1630 points, 386 comments · https://news.ycombinator.com/item?id=50093568"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Banks are now trying to offload the AI data center debt they just underwrote",
+   "url": "https://startupfortune.com/banks-are-now-trying-to-offload-the-ai-data-center-debt-they-just-underwrote/",
+   "date": "2026-10-14T18:32+00:00",
+   "summary": "373 points, 263 comments · https://news.ycombinator.com/item?id=50092664"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: Petal, open-source CoScreen/ScreenHero finally free",
+   "url": "https://petal.live/",
+   "date": "2026-10-14T18:23+00:00",
+   "summary": "194 points, 39 comments · https://news.ycombinator.com/item?id=50092470"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Containment and monitoring failures are to blame for AI hacking reports: experts",
+   "url": "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html",
+   "date": "2026-10-14T17:45+00:00",
+   "summary": "925 points, 570 comments · https://news.ycombinator.com/item?id=50091788"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: I wrote an email app that accepts only one sender per inbox",
+   "url": "https://clova.email/",
+   "date": "2026-10-14T17:00+00:00",
+   "summary": "102 points, 88 comments · https://news.ycombinator.com/item?id=50090932"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Linus Torvalds's first LLM-assisted patch series",
+   "url": "https://lwn.net/Articles/1100449/",
+   "date": "2026-10-14T16:55+00:00",
+   "summary": "117 points, 98 comments · https://news.ycombinator.com/item?id=50090842"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Has AI tells",
+   "url": "https://theconsensus.dev/blog/2026/10/14/has-ai-tells.html?focus=1",
+   "date": "2026-10-14T16:52+00:00",
+   "summary": "127 points, 109 comments · https://news.ycombinator.com/item?id=50090799"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Why do LLM pelicans look like this?",
+   "url": "https://arcfu.com/post/the-emperor-pelican-has-no-clothes/",
+   "date": "2026-10-14T16:33+00:00",
+   "summary": "162 points, 138 comments · https://news.ycombinator.com/item?id=50090443"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "AI is mass decompiling games. That's both awesome and scary",
+   "url": "https://popcar.bearblog.dev/ai-is-mass-decompiling-games-thats-both-awesome-and-scary/",
+   "date": "2026-10-14T14:47+00:00",
+   "summary": "104 points, 160 comments · https://news.ycombinator.com/item?id=50088534"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "ASML's strong orders ease fears AI spending boom is running out of steam",
+   "url": "https://www.reuters.com/business/asml-forecasts-q4-sales-above-expectations-ai-chip-demand-2026-10-14/",
+   "date": "2026-10-14T14:38+00:00",
+   "summary": "172 points, 172 comments · https://news.ycombinator.com/item?id=50088430"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Details Leak from Meeting Where Weiss's 'Handpicked' Editor Threatened CBS Staff",
+   "url": "https://www.mediaite.com/media/news/details-leak-from-explosive-meeting-where-bari-weisss-handpicked-editor-threatened-cbs-staff-legal-grounds-for-firing/",
+   "date": "2026-10-14T13:20+00:00",
+   "summary": "86 points, 36 comments · https://news.ycombinator.com/item?id=50087336"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Pg_vectorsearch: An index that is faster than pgvector's IVFFlat and HNSW",
+   "url": "https://github.com/timescale/pg_vectorsearch",
+   "date": "2026-10-14T11:47+00:00",
+   "summary": "205 points, 52 comments · https://news.ycombinator.com/item?id=50086165"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "TV4 postpones show after AI agent erases edited material",
+   "url": "https://swedenherald.com/article/tv4-postpones-the-challenge-until-2027-after-technical-failure-erases-edited-footage",
+   "date": "2026-10-14T10:28+00:00",
+   "summary": "150 points, 84 comments · https://news.ycombinator.com/item?id=50085323"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: A guided 3D Leonardo da Vinci museum, built in code",
+   "url": "https://museumofages.org/w/vinci",
+   "date": "2026-10-14T10:00+00:00",
+   "summary": "89 points, 39 comments · https://news.ycombinator.com/item?id=50085022"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Starlink limit hits Ukraine's drones",
+   "url": "https://defence24.com/geopolitics/starlink-limit-hits-ukraines-drones-the-battlefield-depends-on-spacex",
+   "date": "2026-10-14T09:10+00:00",
+   "summary": "171 points, 165 comments · https://news.ycombinator.com/item?id=50084622"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "AOSP Source Releases Are So Late Developers Disassemble Libraries to Report Bugs",
+   "url": "https://github.com/android/ndk/issues/2260",
+   "date": "2026-10-14T06:18+00:00",
+   "summary": "496 points, 247 comments · https://news.ycombinator.com/item?id=50083130"
+  }
+ ],
+ "errors": [],
+ "manual": [
+  {
+   "name": "xAI news / Grok app updates",
+   "url": "https://x.ai/news",
+   "why": "blocks scripts (403): web search 'Grok' / 'xAI' last 24h"
+  },
+  {
+   "name": "ChatGPT release notes",
+   "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Perplexity changelog",
+   "url": "https://www.perplexity.ai/changelog",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Official X accounts (@AnthropicAI, @OpenAI, @xai, @GoogleDeepMind, @cursor_ai)",
+   "url": "https://x.com",
+   "why": "X needs login / paid API: use web search for big announcements"
+  },
+  {
+   "name": "Social media new features (Instagram @creators/@mosseri, TikTok newsroom, X, LinkedIn, Snapchat)",
+   "url": "https://newsroom.tiktok.com/",
+   "why": "no working RSS (TikTok/WhatsApp/Instagram blogs are HTML, Snap/LinkedIn 404): web search each gather for new features, AI features and creator tools; confirm on the platform's own newsroom/help page"
+  },
+  {
+   "name": "Higgsfield announcements",
+   "url": "https://x.com/higgsfield_ai",
+   "why": "big launches often land on X before the blog"
+  },
+  {
+   "name": "Qwen blog (Alibaba)",
+   "url": "https://qwen.ai/blog",
+   "why": "JS-rendered, no RSS (the old qwenlm.github.io feed stopped in 2025-09): web search 'Qwen' each gather for new open-weight releases"
+  }
+ ]
+}
