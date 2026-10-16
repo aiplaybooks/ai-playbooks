@@ -1,0 +1,97 @@
+{
+ "generated": "2026-10-16T12:02:37+00:00",
+ "reddit": [],
+ "youtube_signal": [
+  {
+   "id": "yt-twihQqCOHkE",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Even Robots Learned Garba Before Me! 😭🤖😂#garba #robot #navratri #ytshorts #shortsfeed #share #viral",
+   "channel": "The channel of chaos",
+   "url": "https://www.youtube.com/shorts/twihQqCOHkE",
+   "views": 996062,
+   "date": "2026-10-14T03:53:23Z",
+   "query": "humanoid robot video"
+  },
+  {
+   "id": "yt-9PICEmtfpWU",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Teaching a humanoid robot to play cornhole with Gemini 4 Argon",
+   "channel": "Google DeepMind",
+   "url": "https://www.youtube.com/shorts/9PICEmtfpWU",
+   "views": 321787,
+   "date": "2026-10-13T15:58:20Z",
+   "query": "humanoid robot video"
+  },
+  {
+   "id": "yt-6EOO23azu00",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "🤖new short video human robot robotic short video #humanrobot #YouTube short video Ajay photo artist",
+   "channel": "Ajay photo artist",
+   "url": "https://www.youtube.com/shorts/6EOO23azu00",
+   "views": 269479,
+   "date": "2026-10-14T04:12:31Z",
+   "query": "humanoid robot video"
+  },
+  {
+   "id": "yt-gykY1DV2jRg",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Jab Legends Mile Robot Se! ft. Salman & Sachin 🤯  #cricket #shorts #sachin #salman",
+   "channel": "viratofficial-e18",
+   "url": "https://www.youtube.com/shorts/gykY1DV2jRg",
+   "views": 246797,
+   "date": "2026-10-14T16:46:30Z",
+   "query": "humanoid robot video"
+  },
+  {
+   "id": "yt-c_D7c5KfNDI",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Are these simulations \"AI\"",
+   "channel": "Jeremy Carrasco",
+   "url": "https://www.youtube.com/shorts/c_D7c5KfNDI",
+   "views": 187747,
+   "date": "2026-10-13T20:56:00Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-ZexPoKw0s7o",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "13 Tecnicas que vão salvar sua vida",
+   "channel": "antonio shorts",
+   "url": "https://www.youtube.com/shorts/ZexPoKw0s7o",
+   "views": 175351,
+   "date": "2026-10-13T19:00:29Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-4TxseRbyXKs",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Allah tala ki madad I AI generated video#viralvideo #islamic #prayer",
+   "channel": "Viral islam0569",
+   "url": "https://www.youtube.com/shorts/4TxseRbyXKs",
+   "views": 134849,
+   "date": "2026-10-15T01:00:37Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-4IQdDmucRgE",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "The secret behind Yamal magic trick #yamal #funny",
+   "channel": "H4X Studio ",
+   "url": "https://www.youtube.com/shorts/4IQdDmucRgE",
+   "views": 110363,
+   "date": "2026-10-14T19:14:05Z",
+   "query": "AI generated video"
+  }
+ ],
+ "errors": [
+  "Reddit: REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET missing in .env"
+ ]
+}

@@ -1,4 +1,5 @@
-**English** · [简体中文](README_zh.md) · [繁體中文](README_zh-TW.md) · [日本語](README_ja.md) · [한국어](README_ko.md) · [Türkçe](README_tr.md) · [Русский](README_ru.md) · [Tiếng Việt](README_vi.md) · [ไทย](README_th.md) · [Deutsch](README_de.md) · [Español](README_es.md) · [Français](README_fr.md) · [Українська](README_uk.md) · [Polski](README_pl.md) · [Português (Brasil)](README_pt-BR.md) · [العربية](README_ar.md) · [فارسی](README_fa.md) · [Bahasa Indonesia](README_id.md) · [Italiano](README_it.md)
+**English** · [简体中文](docs/readme/README_zh.md) · [繁體中文](docs/readme/README_zh-TW.md) · [日本語](docs/readme/README_ja.md) · [한국어](docs/readme/README_ko.md) · [Türkçe](docs/readme/README_tr.md) · [Русский](docs/readme/README_ru.md) · [Tiếng Việt](docs/readme/README_vi.md) · [ไทย](docs/readme/README_th.md) · [Deutsch](docs/readme/README_de.md) · [Español](docs/readme/README_es.md) · [Français](docs/readme/README_fr.md) · [Українська](docs/readme/README_uk.md) · [Polski](docs/readme/README_pl.md) · [Português (Brasil)](docs/readme/README_pt-BR.md) · [العربية](docs/readme/README_ar.md) · [فارسی](docs/readme/README_fa.md) · [Bahasa Indonesia](docs/readme/README_id.md) · [Italiano](docs/readme/README_it.md)
+· [Ελληνικά](docs/readme/README_el.md)
 
 # REA: Reverse Engineer Anything
 
@@ -19,6 +20,12 @@
 
  npx rea-agents setup 
 
+> [!IMPORTANT]
+> Get REA from [morluto/rea](https://github.com/morluto/rea),
+> [rea.tools](https://rea.tools/), or the [rea-agents npm package](https://www.npmjs.com/package/rea-agents).
+> Follow the installation and release links from these official sources. A similar
+> repository name or copied README does not establish that a download is official.
+
  Join the Reverse Engineering Community 
 
  Discord · Q&amp;A · Show and Tell 
@@ -34,6 +41,11 @@ Setup registers REA with your agent and installs matching workflow instructions.
 > **[Visit the REA website](https://rea.tools/)** for setup instructions, illustrated guides, and real case studies.
 
 ## Quick start
+
+On Linux, Ghidra, JADX, firmware tool launches and static JavaScript/Electron
+analysis require a procps-compatible `ps` on REA's `PATH` for process ownership
+checks. Recovery steps are in `docs/installation.md` under
+"Linux owned-process prerequisite".
 
 ### Set up your agent
 
@@ -125,10 +137,4 @@ REA requires Node.js 22.x (>=22.19), 24.x (>=24.11), or 26+, plus npm.
 Additional tools and host support depend on the target:
 
 | Target | What REA returns | Requirements and guide |
-| ---------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
-| Native binaries | Pseudocode, assembly, strings, symbols, calls and references | Hopper, Ghidra or IDA; [native analysis](https://rea.tools/guides/native/) |
-| Offline ELF layout | Sections, segments, original symbols/relocations and static mitigation candidates | Caller-supplied pwntools on Linux x64; [binary diagnostics](docs/binary-diagnostics.md) |
-| Go binaries | Embedded compiler version, modules, replacements and build settings | Built-in static ELF/PE/thin Mach-O inspection; no Go installation required |
-| WASM artifact | Validation, sections, exact import/export WAT forms and decoded WAT | Caller-supplied WABT 1.0.42; `inspect_wasm_artifact` |
-| EVM bytecode | Dispatch selectors, byte offsets, inferred arguments and mutability | Local raw/hex carrier on Linux x64; [offline EVM guide](docs/evm-bytecode.md) |
-| SQLite datab
+| ---------------------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------

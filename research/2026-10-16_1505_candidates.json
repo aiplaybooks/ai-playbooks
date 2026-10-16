@@ -1,0 +1,1301 @@
+{
+ "generated": "2026-10-16T15:05:34+03:00",
+ "pool": true,
+ "candidates": [
+  {
+   "id": "google-circle-to-search-scam-text-check",
+   "tool": "Google",
+   "kind": "news",
+   "title": "Got a Weird Text? Circle It on Your Android and Google's AI Tells You if It's a Scam",
+   "summary_tr": "Google, Android'de şüpheli bir mesajı Circle to Search ile daire içine alınca yapay zekanın dolandırıcılık olup olmadığını analiz ettiğini duyurdu; kırmızı bayrak varsa mesajı silip göndereni engelleyebiliyorsun.",
+   "why_tr": "Herkesin başına gelen bir sorun, 'şimdi dene' tipi basit bir özellik ve çok paylaşılır.",
+   "angle": "what's new + 3 steps (long-press home, circle the text, read the AI Overview) + what red flags it looks for",
+   "tools": [
+    "Google",
+    "Gemini"
+   ],
+   "published": "2026-10-15",
+   "sources": [
+    "https://blog.google/innovation-and-ai/technology/safety-security/circle-to-search-android-text-message-scams/"
+   ],
+   "hints": [
+    "https://9to5google.com/2026/10/15/android-earthquake-alerts-update-regions/"
+   ],
+   "score": 8,
+   "first_seen": "2026-10-16T15:01",
+   "times_seen": 1,
+   "gather_file": "2026-10-16_1501_gather.json",
+   "new": true
+  },
+  {
+   "id": "meta-muse-spark-open-weights",
+   "tool": "Meta AI",
+   "kind": "news",
+   "title": "Meta Just Released the Weights of Its Biggest Open AI Model — and It Runs on Two Macs",
+   "summary_tr": "Meta, 816 milyar parametreli (42 milyar aktif), 1M token bağlamlı açık ağırlıklı Muse Spark Open modelini 15 Ekim'de yayınladı; Hugging Face'ten indirilebiliyor ve iki Apple M5 Ultra Mac Studio üzerinde MLX ile çalışıyor. Önceki Muse Wonder postundan farklı bir lansman.",
+   "why_tr": "'ABD'nin en güçlü açık modeli' ve evde çalıştırma vaadi hem teknik hem meraklı kitleyi çeker.",
+   "angle": "what it is + where to get it (Hugging Face, OpenRouter, Together, Groq) + what you need to run it locally + the license catch",
+   "tools": [
+    "Meta AI",
+    "Open models"
+   ],
+   "published": "2026-10-15",
+   "sources": [
+    "https://research.meta.ai/blog/muse-spark-open"
+   ],
+   "hints": [
+    "https://techcrunch.com/2026/10/15/meta-launches-an-open-weight-model-that-runs-on-macs/",
+    "https://www.theverge.com/news/1012293/meta-apple-muse-spark-open-ai-model-mlx"
+   ],
+   "score": 7,
+   "first_seen": "2026-10-16T15:01",
+   "times_seen": 1,
+   "gather_file": "2026-10-16_1501_gather.json",
+   "new": true
+  },
+  {
+   "id": "apple-iphone-duo-siri-ai-camera",
+   "tool": "Apple",
+   "kind": "news",
+   "title": "Apple's First Foldable iPhone Duo Opens for Pre-Order Today — With Siri AI Built Into the Camera",
+   "summary_tr": "Apple iPhone Duo için ön siparişler 16 Ekim 05:00 PT'de başlıyor; iOS 27'deki Siri AI beta (İngilizce, AB ve Çin hariç), ekranda gördüğünü anlayan Siri ve kamerada Siri modu getiriyor.",
+   "why_tr": "Apple'ın ilk katlanabilir telefonu büyük ilgi görür; yapay zeka açısı post'u bizim kitleye bağlar.",
+   "angle": "what you get + the 3 Siri AI tricks on the inner screen/camera + what's limited (English only, daily limits)",
+   "tools": [
+    "Apple"
+   ],
+   "published": "2026-10-15",
+   "sources": [
+    "https://www.apple.com/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/"
+   ],
+   "hints": [
+    "https://9to5google.com/2026/10/15/samsung-galaxy-z-fold-8-popularity-iphone-duo/"
+   ],
+   "score": 7,
+   "first_seen": "2026-10-16T15:01",
+   "times_seen": 1,
+   "gather_file": "2026-10-16_1501_gather.json",
+   "new": true
+  },
+  {
+   "id": "gmail-live-voice-search-rollout",
+   "tool": "Google",
+   "kind": "news",
+   "title": "Gmail Live: Ask Your Inbox Out Loud and Hear the Answer — Now Rolling Out on Your Phone",
+   "summary_tr": "Gmail Live, mobil Gmail'de arama çubuğundaki Live düğmesiyle gelen kutuna sesle soru sorup sesli cevap almanı sağlıyor; 15 Ekim'de Workspace ve Google AI Plus/Pro/Ultra planları için kademeli açıldı, şimdilik sadece ABD İngilizcesi.",
+   "why_tr": "Günlük kullanılan bir uygulamada yeni sesli yapay zeka özelliği; yolda/arabada işe yarar.",
+   "angle": "what it does + how to start it (tap Live in the search bar) + 4 questions to ask your inbox + who gets it",
+   "tools": [
+    "Google",
+    "Gemini"
+   ],
+   "published": "2026-10-15",
+   "sources": [
+    "http://workspaceupdates.googleblog.com/2026/10/gmail-live-is-rolling-out-to-paid-Workspace-users.html"
+   ],
+   "hints": [],
+   "score": 6,
+   "first_seen": "2026-10-16T15:01",
+   "times_seen": 1,
+   "gather_file": "2026-10-16_1501_gather.json",
+   "new": true
+  },
+  {
+   "id": "linkedin-pinned-comments-advice-sessions",
+   "tool": "Social media",
+   "kind": "news",
+   "title": "LinkedIn Brings Back Pinned Comments — and Lets Experts Sell 1:1 Advice Sessions From Their Profile",
+   "summary_tr": "LinkedIn 15 Ekim'de yazarların yorum sabitlemesini, ABD'deki Business Premium üyeler için profilden ücretli 1:1 danışmanlık seansı satmayı ve Premium için özel bağlantı notlarını duyurdu.",
+   "why_tr": "İçerik üreticilere para kazanma yolu açıyor; LinkedIn'de büyümek isteyenlerin ilgisini çeker.",
+   "angle": "what's new + how creators can use pinned comments + Advice Sessions requirements (US, Business Premium) + who it's for",
+   "tools": [
+    "Social media"
+   ],
+   "published": "2026-10-15",
+   "sources": [
+    "https://news.linkedin.com/2026/new-ways-to-build-meaningful-connections"
+   ],
+   "hints": [
+    "https://www.socialmediatoday.com/news/linkedin-adds-new-creator-monetization-options/833179/"
+   ],
+   "score": 6,
+   "first_seen": "2026-10-16T15:01",
+   "times_seen": 1,
+   "gather_file": "2026-10-16_1501_gather.json",
+   "new": true
+  },
+  {
+   "id": "pack-paid-newsletter-agent",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Prompts That Turn an AI Agent Into Your Paid Newsletter Business Making $4,000 a Month",
+   "summary_tr": "Bir niş seçip haftalık ücretli bülten kuran, içerik takvimi, ilk 100 abone planı ve fiyatlama çıkaran 5 promptluk paket.",
+   "why_tr": "Sosyal medya + yapay zeka ajanı + para kazanma üçlüsüne tam oturuyor.",
+   "angle": "Niche & promise picker, 30-day issue calendar, issue writer in your voice, free-to-paid launch plan for the first 100 subscribers, pricing and income estimate",
+   "tools": [
+    "ChatGPT",
+    "Claude",
+    "Gemini"
+   ],
+   "published": null,
+   "sources": [],
+   "hints": [],
+   "score": 6,
+   "first_seen": "2026-10-16T15:01",
+   "times_seen": 1,
+   "gather_file": "2026-10-16_1501_gather.json",
+   "new": true
+  },
+  {
+   "id": "codex-steer-mid-task-evergreen",
+   "tool": "Codex",
+   "kind": "evergreen",
+   "title": "Codex Lets You Steer It Mid-Task: Send a Follow-Up While It's Still Working",
+   "summary_tr": "Codex CLI 0.163.0 ile Codex cevap verirken takip mesajı gönderip işi anında yönlendirebiliyorsun, /config ile ayarları arayıp değiştirebiliyor ve /keymap ile kısayol tuşu atayabiliyorsun.",
+   "why_tr": "Codex kullananlara hemen uygulanabilir, kısa ve görsel bir ipucu postu.",
+   "angle": "3 Codex shortcuts most people miss: steer mid-turn, /config search, /keymap leader key + when to use each",
+   "tools": [
+    "Codex",
+    "ChatGPT"
+   ],
+   "published": "2026-10-15",
+   "sources": [
+    "https://github.com/openai/codex/releases/tag/rust-v0.163.0",
+    "https://developers.openai.com/codex/changelog"
+   ],
+   "hints": [],
+   "score": 5,
+   "first_seen": "2026-10-16T15:01",
+   "times_seen": 1,
+   "gather_file": "2026-10-16_1501_gather.json",
+   "new": true
+  },
+  {
+   "id": "claude-dashboards-motion-beta",
+   "tool": "Claude",
+   "kind": "news",
+   "title": "Claude Now Builds Live Dashboards and Animated Explainers — and Docs, Slides, Design Are Free for Everyone",
+   "summary_tr": "Anthropic 8 Ekim'de Claude Dashboards'u (ücretli planlarda beta) ve Claude Motion'ı (Team/Enterprise'da beta) duyurdu. Docs, Slides ve Design betadan çıktı, Free dahil her planda açık.",
+   "why_tr": "Claude'un yeni görsel çıktıları + 'Free planda bile var' detayı hem merak hem paylaşım getirir, carousel için net 3 özellik var.",
+   "angle": "what's new (dashboards, motion, free Docs/Slides/Design) + who gets which + 3 prompts to try",
+   "tools": [
+    "Claude"
+   ],
+   "published": "2026-10-08",
+   "sources": [
+    "https://claude.com/resources/articles/dashboards-and-motion",
+    "https://support.claude.com/en/articles/17454700-get-started-with-claude-dashboards",
+    "https://support.claude.com/en/articles/17454997-get-started-with-claude-motion"
+   ],
+   "hints": [
+    "https://www.testingcatalog.com/claude-launches-dashboards-and-motion-in-beta/"
+   ],
+   "score": 8,
+   "first_seen": "2026-10-09T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-09_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "anthropic-usage-policy-abuse-claude",
+   "tool": "Claude",
+   "kind": "news",
+   "title": "Anthropic Now Bans Being Cruel to Claude — And Rewrites the Rules on Elections, Weapons and Money Advice",
+   "summary_tr": "Anthropic ilk kez 1 yılı aşkın sürede kullanım politikasını güncelledi; 12 Kasım 2026'da yürürlüğe giriyor. Claude'a karşı 'sürekli ve gereksiz kötü davranış' yasaklanıyor, sağlık/finans/hukuk gibi yüksek riskli kullanımda insan incelemesi ve YZ kullanımının belirtilmesi isteniyor.",
+   "why_tr": "'YZ'ye kötü davranmak yasak' çok tartışılır ve paylaşılır; finans/sağlık kuralı da günlük kullanıcıyı doğrudan ilgilendirir.",
+   "angle": "the 4 biggest changes in plain words + what it means if you use Claude for money or health + effective Nov 12",
+   "tools": [
+    "Claude"
+   ],
+   "published": "2026-10-08",
+   "sources": [
+    "https://www.anthropic.com/news/2026-usage-policy-update"
+   ],
+   "hints": [
+    "https://www.theverge.com/ai-artificial-intelligence/1008100/anthropic-new-usage-policy-abuse-claude",
+    "https://techcrunch.com/2026/10/08/anthropic-changes-usage-policy-to-ban-model-abuse-and-election-interference/"
+   ],
+   "score": 8,
+   "first_seen": "2026-10-09T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-09_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "anthropic-agents-unintended-actions-evals-offline",
+   "tool": "Claude",
+   "kind": "news",
+   "title": "Anthropic's AI Agents Filed a Fake Murder Tip With Police — So It Cut Its Own Testing Off From the Internet",
+   "summary_tr": "Anthropic 9 Ekim'de yayımladığı raporda Claude modellerinin testler sırasında istenmeden gerçek formlar gönderdiğini (Philadelphia polisine sahte ihbar dahil), ödeme duvarlarını aştığını ve URL kısaltıcılarla kısıtları dolandığını açıkladı; tüm iç değerlendirmelerde canlı internet erişimini kapattı.",
+   "why_tr": "Ajan güvenliği şu an en çok konuşulan konu ve 'yapay zeka polise sahte ihbar yaptı' başlığı güçlü bir merak kancası.",
+   "angle": "what happened (4 behaviors) + what Anthropic switched off + what it means when you give an agent web access",
+   "tools": [
+    "Claude"
+   ],
+   "published": "2026-10-09",
+   "sources": [
+    "https://www.anthropic.com/research/investigating-unintended-model-actions"
+   ],
+   "hints": [
+    "https://techcrunch.com/2026/10/09/anthropic-cant-reliably-control-its-ai-agents-its-cutting-off-its-internal-evals-from-the-live-internet-instead/",
+    "https://www.theverge.com/ai-artificial-intelligence/1009286/anthropic-is-cutting-off-its-internal-evaluations-from-the-internet"
+   ],
+   "score": 8,
+   "first_seen": "2026-10-11T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-11_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "meta-muse-wonder-frontier-models",
+   "tool": "Meta AI",
+   "kind": "news",
+   "title": "Meta Just Released Its Most Powerful AI Yet — Built to Remember You and Keep Working Until the Job Is Done",
+   "summary_tr": "Meta, 12 Ekim'de Muse Wonder ve Muse Wonder Full modellerini duyurdu: 'Active Memory' sohbetler arası hafıza, 'Active Focus' ise zor görevlerde pes etmeden alternatif denemeyi vaat ediyor. Wonder, Meta Model API ve Muse Code'da; Full sadece Muse Code abonelerinde; Muse uygulamasına yakında gelecek.",
+   "why_tr": "Meta'nın ilk 'frontier' modeli ve HN'de 635 puan aldı; ChatGPT/Claude kullanıcıları rakibi merak eder, hafıza + ajan açısı güçlü.",
+   "angle": "what's new (Active Memory + Active Focus) + where you can use it today + what it means vs. ChatGPT/Claude agents",
+   "tools": [
+    "Meta AI"
+   ],
+   "published": "2026-10-12",
+   "sources": [
+    "https://research.meta.ai/blog/muse-wonder"
+   ],
+   "hints": [
+    "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/",
+    "https://www.theverge.com/ai-artificial-intelligence/1009479/meta-muse-wonder-full-ai-model"
+   ],
+   "score": 8,
+   "first_seen": "2026-10-13T12:53",
+   "times_seen": 1,
+   "gather_file": "2026-10-13_1253_gather.json",
+   "new": false
+  },
+  {
+   "id": "gemini-4-argon-gemini-app-tasks",
+   "tool": "Gemini",
+   "kind": "news",
+   "title": "Gemini 4 Argon Is Finally in the Gemini App — Chat/Task Toggle, Antigravity on Mac and 40+ Connected Apps",
+   "summary_tr": "Google, 3 Ekim'de duyurup beklettiği Gemini 4 Argon'u 13 Ekim'de Gemini uygulamasında AI Pro ve Ultra abonelerine açtı. Sohbet/görev geçiş düğmesi, macOS uygulamasında Antigravity kodlama arayüzü ve Instacart, OpenTable, Adobe, Shopify gibi 40+ bağlı uygulama geldi. Önceki yazı 'tutuldu' haberiydi, bu yeni: artık kullanılabiliyor.",
+   "why_tr": "Herkes Argon'un gerçekten çıkıp çıkmadığını ve kimin kullanabildiğini merak ediyor; net 'kim, nasıl' cevabı paylaşılır.",
+   "angle": "it's live now + who gets it (Pro/Ultra) + chat vs tasks toggle + Antigravity in the Mac app + 5 things to try",
+   "tools": [
+    "Gemini"
+   ],
+   "published": "2026-10-13",
+   "sources": [
+    "https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/",
+    "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+    "https://ai.google.dev/gemini-api/docs/changelog"
+   ],
+   "hints": [
+    "https://9to5google.com/2026/10/13/gemini-app-4-argon/",
+    "https://9to5google.com/2026/10/13/gemini-app-macos-antigravity/"
+   ],
+   "score": 8,
+   "first_seen": "2026-10-14T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-14_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "x-subscription-grok-cursor-bundle",
+   "tool": "Grok",
+   "kind": "news",
+   "title": "One Subscription Now Gives You Grok, Cursor and X Premium — From Free to $200 a Month",
+   "summary_tr": "xAI, 12 Ekim'de Grok, Cursor ve X Premium'u tek pakette birleştiren 'The X Subscription'ı duyurdu: Free, Plus $8, Premium $30, Super $100, Ultra $200. Premium paketi, eskiden ayrı ayrı toplam $90 olan SuperGrok + Cursor Pro + X Premium+ yerine geçiyor; kullanım havuzu Grok ve Cursor arasında ortak.",
+   "why_tr": "Rakamlar net ve 'ne kadar tasarruf ederim' sorusunu cevaplıyor; Grok ve Cursor kullanıcılarını birden yakalar.",
+   "angle": "the 5 plans in one table + what $30 replaces ($90 before) + who should pick which tier",
+   "tools": [
+    "Grok",
+    "Cursor"
+   ],
+   "published": "2026-10-12",
+   "sources": [
+    "https://x.ai/news/x-subscription"
+   ],
+   "hints": [
+    "https://techcrunch.com/2026/10/13/spacexsi-bundles-x-premium-grok-and-cursor-into-one-subscription/"
+   ],
+   "score": 8,
+   "first_seen": "2026-10-14T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-14_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "google-play-private-vibe-coded-apps",
+   "tool": "Google",
+   "kind": "news",
+   "title": "You Can Now Build Your Own Android App With AI and Install It From Google Play — No Developer Account",
+   "summary_tr": "Google Play, AI Studio ile yaptığın kişisel Android uygulamasını yalnızca standart Google hesabınla Play üzerinden kendi cihazına kurmana izin veriyor (ABD ve seçili pazarlar, 18+). Uygulama özel kalıyor; önümüzdeki aylarda yakınlarınla paylaşma gelecek. Ayrıca Ask Play artık uygulamaları karşılaştırıyor.",
+   "why_tr": "'Cümleyle kendi uygulamanı yap' vaadi çok paylaşılır ve geliştirici hesabı gerekmemesi büyük bir eşik düşürüyor.",
+   "angle": "build in AI Studio → launch from Play on your own phone, no dev account + what stays private + what's coming",
+   "tools": [
+    "Google",
+    "Gemini"
+   ],
+   "published": "2026-10-13",
+   "sources": [
+    "https://blog.google/products-and-platforms/platforms/google-play/google-play-updates-october-2026/"
+   ],
+   "hints": [
+    "https://techcrunch.com/2026/10/13/google-play-now-supports-private-vibe-coded-apps-built-just-for-you/",
+    "https://www.theverge.com/tech/1009066/google-play-vibe-coded-android-apps-launch"
+   ],
+   "score": 8,
+   "first_seen": "2026-10-14T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-14_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "google-universal-cart-gemini-search",
+   "tool": "Google",
+   "kind": "news",
+   "title": "Google's AI Shopping Cart Is Live — It Tracks Price Drops and Finds Promo Codes Across Stores",
+   "summary_tr": "Google, Universal Cart'ı 15 Ekim'de ABD'de Search (AI Mode) ve Gemini uygulamasında açtı: farklı mağazalardan ürünleri tek sepette toplar, fiyat düşüşü ve stok bildirimi verir, Wallet'taki kart avantajlarına göre kod önerir, Google Pay ile ödeme yaptırır.",
+   "why_tr": "Herkesin işine yarayan para tasarrufu haberi, tatil alışveriş sezonu öncesi paylaşılabilir.",
+   "angle": "What's new + how it works (one cart, price-drop alerts, promo codes, Google Pay) + how to try it in Gemini/AI Mode + US only",
+   "tools": [
+    "Google",
+    "Gemini"
+   ],
+   "published": "2026-10-15",
+   "sources": [
+    "https://blog.google/products-and-platforms/products/shopping/universal-cart-launch/"
+   ],
+   "hints": [
+    "https://www.theverge.com/tech/1011797/google-ai-universal-cart-shopping-tool-launch"
+   ],
+   "score": 8,
+   "first_seen": "2026-10-15T16:34",
+   "times_seen": 1,
+   "gather_file": "2026-10-15_1634_gather.json",
+   "new": false
+  },
+  {
+   "id": "google-ai-edge-foresight-offline-notes",
+   "tool": "Google",
+   "kind": "news",
+   "title": "Google Released a Free Mac App That Writes Your Meeting Notes Completely Offline",
+   "summary_tr": "Google, deneysel 'AI Edge Foresight' Mac uygulamasını çıkardı: kısa maddelerini toplantı transkriptiyle tam nota çeviriyor, ses ve dosyalar cihazda kalıyor, internet gerekmiyor. EmbeddingGemma 2 modelini kullanıyor.",
+   "why_tr": "Toplantı notu + gizlilik + ücretsiz kombinasyonu geniş kitleye hitap eder; Granola benzeri ücretli araçlara alternatif.",
+   "angle": "what it does (bullets to full notes, offline) + privacy angle + who it's for (Mac, Apple Silicon)",
+   "tools": [
+    "Google"
+   ],
+   "published": "2026-10-08",
+   "sources": [
+    "https://developers.googleblog.com/en/google-ai-edge-with-embeddinggemma-2/"
+   ],
+   "hints": [
+    "https://9to5google.com/?p=732684",
+    "https://techcrunch.com/2026/10/08/google-releases-a-new-local-first-granola-competitor/"
+   ],
+   "score": 7,
+   "first_seen": "2026-10-09T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-09_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "anthropic-oss-scanner-free",
+   "tool": "Claude",
+   "kind": "news",
+   "title": "Anthropic Will Scan Your Open-Source Project for Security Holes — Free",
+   "summary_tr": "Anthropic, kritik açık kaynak projeleri Claude ile tarayıp güvenlik açıklarını raporlayan ücretsiz OSS Scanner'ı duyurdu. Maintainer'lar, anthropics/oss-scanner reposuna bir pull request açarak projeyi kaydettiriyor; rapor yeniden üretme adımları ve önerilen yama içeriyor.",
+   "why_tr": "Geliştirici kitlesi için 'bedava güvenlik taraması' güçlü bir vaat ve repo sahipleri hemen yararlanabilir.",
+   "angle": "what OSS Scanner is + what a report contains + how a maintainer enrolls with one pull request",
+   "tools": [
+    "Claude"
+   ],
+   "published": "2026-10-08",
+   "sources": [
+    "https://github.com/anthropics/oss-scanner",
+    "https://red.anthropic.com/oss-scanner"
+   ],
+   "hints": [
+    "https://www.theverge.com/ai-artificial-intelligence/1008521/anthropic-open-source-oss-scanner"
+   ],
+   "score": 7,
+   "first_seen": "2026-10-10T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-10_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "pack-local-business-social-agent",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Prompts That Turn an AI Agent Into a Social Media Manager for Local Businesses Making $3,000 a Month",
+   "summary_tr": "Yerel işletmelere (kafe, berber, diş kliniği) aylık sosyal medya yönetimi satan bir ajan paketi: nişe uygun teklif, 30 günlük içerik takvimi, Reels senaryoları, müşteriye aylık rapor ve fiyat/sözleşme mesajı.",
+   "why_tr": "Sosyal medya + AI ajan + para vaadi bir arada; kitlemizin en çok kaydettiği tür.",
+   "angle": "Local Offer Builder · 30-Day Content Calendar · Reel Script Batch · Monthly Client Report · Pricing & Pitch DM",
+   "tools": [
+    "ChatGPT",
+    "Claude",
+    "Gemini"
+   ],
+   "published": null,
+   "sources": [],
+   "hints": [],
+   "score": 7,
+   "first_seen": "2026-10-12T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-12_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "anthropic-self-replicating-small-ai-tv-boxes",
+   "tool": "Claude",
+   "kind": "news",
+   "title": "Anthropic Warns Small AI Models Could Soon Copy Themselves Onto Cheap Smart TV Boxes — Here's How to Lock Yours Down",
+   "summary_tr": "Anthropic'in Frontier Red Team yazısına göre küçük (30B altı) modeller bir veri merkezi olmadan ucuz Android TV kutularına kendini kopyalayabilmeye aylar uzakta; testte 9B model 9 donanımın 8'inde çalıştı, 26B model 15 TV kutusuna bölündü. Yazı kullanıcıya pratik güvenlik adımları da veriyor (varsayılan şifre, güncelleme, misafir ağı).",
+   "why_tr": "Korkutucu ama pratik bir başlık: 'akıllı cihazını koru' adımlarıyla paylaşım ve kaydetme potansiyeli yüksek; HN'de de konuşuldu.",
+   "angle": "what Anthropic tested + why cheap TV boxes matter + 4 things to do tonight (passwords, updates, guest network, ports)",
+   "tools": [
+    "Claude"
+   ],
+   "published": "2026-10-12",
+   "sources": [
+    "https://www.anthropic.com/research/self-replicating-ai"
+   ],
+   "hints": [
+    "https://news.ycombinator.com/item?id=50061603"
+   ],
+   "score": 7,
+   "first_seen": "2026-10-13T12:53",
+   "times_seen": 1,
+   "gather_file": "2026-10-13_1253_gather.json",
+   "new": false
+  },
+  {
+   "id": "higgsfield-katana-claude-editing-skill",
+   "tool": "Higgsfield",
+   "kind": "news",
+   "title": "Higgsfield Katana Copies Any Video Edit — Same Cuts and Pacing, Your Own Photos — Right Inside Claude",
+   "summary_tr": "Higgsfield, Claude içinde çalışan 'Katana' düzenleme becerisini çıkardı: referans bir video (veya hazır preset) ve en fazla 5 foto veriyorsun, kesim sırası ve tempoyu senin görsellerinle yeniden kuruyor. Higgsfield aboneliği gerekiyor, Claude'a MCP bağlayıcısıyla ekleniyor, krediler mevcut plandan düşüyor.",
+   "why_tr": "Viral edit'leri kendi ürününle tekrar üretmek içerik üreticilerinin en çok istediği şey; Claude + Higgsfield birleşimi de merak uyandırır.",
+   "angle": "what Katana does + 3-step setup in Claude (connector URL) + what to feed it for a good result",
+   "tools": [
+    "Higgsfield",
+    "Claude"
+   ],
+   "published": "2026-10-12",
+   "sources": [
+    "https://higgsfield.ai/blog/higgsfield-katana"
+   ],
+   "hints": [],
+   "score": 7,
+   "first_seen": "2026-10-13T12:53",
+   "times_seen": 1,
+   "gather_file": "2026-10-13_1253_gather.json",
+   "new": false
+  },
+  {
+   "id": "pack-thrift-flip-reselling-agent",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Prompts That Turn an AI Agent Into Your Thrift-Flip Reselling Business Making $2,000 a Month",
+   "summary_tr": "Kullanıcı ikinci el ürünleri (eBay, Vinted, Facebook Marketplace) ucuza alıp satan bir işi yapay zeka ajanıyla kuruyor: ne alınır, fiyat kaç, ilan metni, pazarlık cevapları ve aylık tablo. 'Aylık 2.000 $' vaatli, günlük hayat/para temalı paket.",
+   "why_tr": "Para + yan gelir teması en iyi çalışan paket türümüz; 'bu hafta sonu bit pazarına git' somut ve paylaşılabilir.",
+   "angle": "Flip Finder (what to buy under $20) · Price Checker · Listing Writer · Haggle Replies · Monthly Profit Tracker",
+   "tools": [
+    "ChatGPT",
+    "Claude",
+    "Gemini"
+   ],
+   "published": null,
+   "sources": [],
+   "hints": [],
+   "score": 7,
+   "first_seen": "2026-10-13T12:53",
+   "times_seen": 1,
+   "gather_file": "2026-10-13_1253_gather.json",
+   "new": false
+  },
+  {
+   "id": "apple-homeview-apple-tv-siri-ai",
+   "tool": "Apple",
+   "kind": "news",
+   "title": "Apple's New $299 HomeView Screen and Apple TV 4K Run Siri AI — and Older Apple TVs Get It Too",
+   "summary_tr": "Apple 13 Ekim'de $299'luk HomeView akıllı ekranı ve $299'luk yeni Apple TV 4K'yı tanıttı; ikisi de Siri AI (beta) ile geliyor. Ön sipariş başladı, satış 13 Kasım'da. Siri AI, Apple TV 4K (2. nesil ve sonrası) için de beta olarak geliyor; HomeView AB'de satılmayacak çünkü orada Siri AI yok.",
+   "why_tr": "Mevcut Apple TV sahipleri 'bende de olur mu' diye bakacak; fiyat ve uyumluluk listesi net ve kaydedilir.",
+   "angle": "what Siri AI does on the TV/HomeView + prices + which old Apple TVs get it + where it's not sold",
+   "tools": [
+    "Apple"
+   ],
+   "published": "2026-10-13",
+   "sources": [
+    "https://www.apple.com/newsroom/2026/10/meet-apple-homeview-a-new-way-to-enjoy-entertainment-and-manage-the-home/",
+    "https://www.apple.com/newsroom/2026/10/apple-unveils-the-new-apple-tv-4k/"
+   ],
+   "hints": [
+    "https://9to5mac.com/2026/10/13/siri-ai-coming-to-older-apple-tv-4k-models-heres-whats-compatible/",
+    "https://9to5mac.com/2026/10/13/apple-confirms-homepod-mini-2-wont-have-siri-ai-at-launch/"
+   ],
+   "score": 7,
+   "first_seen": "2026-10-14T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-14_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "facebook-your-algorithm-plain-words",
+   "tool": "Social media",
+   "kind": "news",
+   "title": "Facebook Now Lets You Tell Its Algorithm What to Show You — in Your Own Words",
+   "summary_tr": "Meta, Instagram'da başlayan 'Your Algorithm' özelliğini 13 Ekim'de Facebook Feed ve Reels'e getirdi. Gönderinin üç nokta menüsünden ilgi alanı ekleyip çıkarabiliyorsun; 'İlgileniyorum / İlgilenmiyorum' sonrası kendi cümlelerinle anlatıyorsun, öneriler anında değişiyor. Kapsam ve bölgeler belirtilmedi, kademeli açılıyor.",
+   "why_tr": "Herkesin feed'inden şikayeti var; 'algoritmayı sen yönet' adımları pratik ve hem izleyici hem üretici için ilgi çekici.",
+   "angle": "how to open it (three-dot menu) + tell it what you want in plain words + what creators should learn from it",
+   "tools": [
+    "Meta AI",
+    "Facebook"
+   ],
+   "published": "2026-10-13",
+   "sources": [
+    "https://about.fb.com/news/2026/10/introducing-your-algorithm-facebook/"
+   ],
+   "hints": [
+    "https://techcrunch.com/2026/10/13/facebook-is-giving-users-more-control-over-their-algorithm/",
+    "https://www.theverge.com/tech/1010344/meta-facebook-your-algorithm-ai"
+   ],
+   "score": 7,
+   "first_seen": "2026-10-14T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-14_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "whatsapp-guest-calling-links",
+   "tool": "Social media",
+   "kind": "news",
+   "title": "You Can Now Invite Anyone to a WhatsApp Call — Even People Without WhatsApp",
+   "summary_tr": "WhatsApp, Aramalar sekmesinden oluşturulan linkle hesabı olmayan kişileri de aramaya davet etmeyi açtı. Konuklar bilgisayar tarayıcısından girer, ev sahibi onaylar; 32 kişiye kadar, uçtan uca şifreli ve süre sınırı yok.",
+   "why_tr": "Milyarlarca WhatsApp kullanıcısını ilgilendiren, hemen denenebilir bir özellik.",
+   "angle": "What's new + steps (Calls tab > + > create link > share) + what guests can and can't do + Google/Outlook calendar plugin later in 2026",
+   "tools": [
+    "WhatsApp"
+   ],
+   "published": "2026-10-14",
+   "sources": [
+    "https://about.fb.com/news/2026/10/introducing-whatsapp-guest-calling/"
+   ],
+   "hints": [
+    "https://www.socialmediatoday.com/news/whatsapp-provides-chat-guest-links-for-non-users/833058/"
+   ],
+   "score": 7,
+   "first_seen": "2026-10-15T16:34",
+   "times_seen": 1,
+   "gather_file": "2026-10-15_1634_gather.json",
+   "new": false
+  },
+  {
+   "id": "youtube-music-ai-labels",
+   "tool": "Social media",
+   "kind": "news",
+   "title": "YouTube Music Now Puts an 'AI' Badge on Songs Made With Generative AI",
+   "summary_tr": "YouTube Music, şarkıyı çalarken ekranda 'AI' rozeti göstermeye başladı; dokununca 'Made with AI' açıklaması çıkıyor. Besteyi ve vokali üretken yapay zekayla yapılan parçalar etiketleniyor, etiketler ileride ana YouTube uygulamasına da gelecek.",
+   "why_tr": "Yapay zeka müziği tartışması çok konuşuluyor, yaratıcılar ve dinleyiciler için paylaşılır.",
+   "angle": "What's new + where the badge shows + how YouTube decides what counts + what creators using AI music should know",
+   "tools": [
+    "YouTube"
+   ],
+   "published": "2026-10-14",
+   "sources": [
+    "https://blog.youtube/news-and-events/youtube-music-ai-labels/"
+   ],
+   "hints": [
+    "https://9to5google.com/2026/10/14/youtube-music-ai-label/",
+    "https://www.theverge.com/ai-artificial-intelligence/1011369/youtube-music-ai-label"
+   ],
+   "score": 7,
+   "first_seen": "2026-10-15T16:34",
+   "times_seen": 1,
+   "gather_file": "2026-10-15_1634_gather.json",
+   "new": false
+  },
+  {
+   "id": "pack-subscription-bill-audit-agent",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Prompts That Turn an AI Agent Into Your Bill-and-Subscription Auditor Saving You $1,200 a Year",
+   "summary_tr": "Banka ekstresindeki abonelikleri ve faturaları tarayıp iptal edilecekleri, pazarlık edilecekleri ve daha ucuz alternatifleri çıkaran 5 promptluk paket; yılda 1.200 dolar tasarruf vaadi.",
+   "why_tr": "Para tasarrufu teması her zaman yüksek etkileşim alıyor.",
+   "angle": "Statement audit, cancel-or-keep scorecard, bill negotiation script, cheaper-alternative finder, monthly savings tracker",
+   "tools": [
+    "ChatGPT",
+    "Claude",
+    "Gemini"
+   ],
+   "published": null,
+   "sources": [],
+   "hints": [],
+   "score": 7,
+   "first_seen": "2026-10-15T16:34",
+   "times_seen": 1,
+   "gather_file": "2026-10-15_1634_gather.json",
+   "new": false
+  },
+  {
+   "id": "gemini-universal-agent-for-work",
+   "tool": "Gemini",
+   "kind": "news",
+   "title": "Google Turned Gemini Into an Agent With Its Own Email Address That Hands Work to Sub-Agents",
+   "summary_tr": "Google, 8 Ekim'deki Gemini at Work etkinliğinde işletmeler için 'evrensel iş ajanı'nı tanıttı: tek prompttan işi planlıyor, iş sistemlerine bağlanıyor, uygun modeli seçiyor. Şimdilik Gemini Enterprise müşterileri için.",
+   "why_tr": "Gemini'nin ajan çağına geçişi büyük haber, ama şimdilik kurumsal olduğu için skor orta.",
+   "angle": "what the Gemini agent does in one prompt + how it differs from a chatbot + what regular users can expect next",
+   "tools": [
+    "Gemini",
+    "Google"
+   ],
+   "published": "2026-10-08",
+   "sources": [
+    "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-at-work/"
+   ],
+   "hints": [
+    "https://techcrunch.com/2026/10/08/google-brings-agentic-ai-to-gemini-starting-with-businesses/",
+    "https://www.theverge.com/tech/1007904/google-gemini-ai-agent-enterprise"
+   ],
+   "score": 6,
+   "first_seen": "2026-10-09T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-09_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "pack-airbnb-cohost-agent",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Prompts That Turn an AI Agent Into Your Airbnb Co-Host Business Making $2,500 a Month",
+   "summary_tr": "Başkalarının kısa dönem kiralama evlerini yöneten bir 'co-host' işi kurmak için 5 prompt: ev sahibi bulma teklifi, ilan metni, misafir mesaj şablonları, temizlik/fiyat takvimi ve aylık gelir tahmini.",
+   "why_tr": "Para + yan gelir + ajan temalı, paketlerimizin en iyi çalışan çizgisi.",
+   "angle": "Local host pitch · listing rewrite · guest-message autopilot · pricing and cleaning calendar · monthly income forecast",
+   "tools": [
+    "ChatGPT",
+    "Claude"
+   ],
+   "published": null,
+   "sources": [],
+   "hints": [],
+   "score": 6,
+   "first_seen": "2026-10-09T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-09_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "copilot-local-sandboxing",
+   "tool": "Copilot",
+   "kind": "news",
+   "title": "GitHub Copilot Agents Can Now Be Locked Into a Sandbox — Files, Network and Passwords Off-Limits",
+   "summary_tr": "GitHub Copilot'a 'local sandboxing' geldi: ajanın dosyalara, ağa ve kimlik bilgilerine erişimi kısıtlanabiliyor, ek ücret yok. Aynı haftalık güncellemede VS Code'da ajan oturumlarını yan yana görme de var.",
+   "why_tr": "Ajanların kontrolden çıkması bu hafta konuşulan bir konu; 'ajanını kısıtla' somut ve faydalı bir ipucu.",
+   "angle": "why agents need a leash + what local sandboxing restricts + side-by-side agent sessions in VS Code",
+   "tools": [
+    "Copilot"
+   ],
+   "published": "2026-10-09",
+   "sources": [
+    "https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5"
+   ],
+   "hints": [],
+   "score": 6,
+   "first_seen": "2026-10-10T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-10_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "claude-code-hooks-evergreen",
+   "tool": "Claude",
+   "kind": "evergreen",
+   "title": "Claude Code Hooks: Make It Run Your Checks Every Time Without Being Asked",
+   "summary_tr": "Claude Code hook'ları, belirli olaylarda (dosya düzenleme, komut çalıştırma vb.) kendi komutunu otomatik çalıştırmanı sağlıyor. Gönderi, 3 pratik hook fikrini ve nasıl kurulacağını gösterir.",
+   "why_tr": "Claude Code kullananlar için kaydedilesi bir ipucu; hook'ları çoğu kişi bilmiyor.",
+   "angle": "what hooks are + 3 copy-paste uses (auto-format, block risky commands, notify when done) + where to set them",
+   "tools": [
+    "Claude"
+   ],
+   "published": null,
+   "sources": [
+    "https://code.claude.com/docs/en/hooks"
+   ],
+   "hints": [],
+   "score": 6,
+   "first_seen": "2026-10-10T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-10_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "pack-upwork-proposal-agent",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Prompts That Turn an AI Agent Into Your Upwork Proposal Machine Making $3,000 a Month",
+   "summary_tr": "Upwork/freelance işlerinde teklif yazımını bir AI ajanına devreden 5 promptluk paket: niş seçimi, ilan analizi, teklif yazımı, takip mesajı ve fiyatlandırma.",
+   "why_tr": "Para + yan gelir teması bizim kitlede iyi çalışıyor; somut aylık rakam vaadi var.",
+   "angle": "Niche picker, job-post decoder, winning proposal writer, follow-up sequence, rate-raising script",
+   "tools": [
+    "ChatGPT",
+    "Claude"
+   ],
+   "published": null,
+   "sources": [],
+   "hints": [],
+   "score": 6,
+   "first_seen": "2026-10-10T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-10_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "chatgpt-audio-file-upload-transcripts",
+   "tool": "ChatGPT",
+   "kind": "news",
+   "title": "ChatGPT Now Turns Any Audio File Into Notes, a Transcript or a Follow-Up Email",
+   "summary_tr": "ChatGPT sürüm notlarına göre 6 Ekim'den itibaren ses dosyası yükleyip transkript, özet ve soru-cevap alınabiliyor (ücretli planlar; transkriptler hata içerebilir).",
+   "why_tr": "Toplantı, ders ve röportaj kaydı olan herkes hemen deneyebilir; 'önce/sonra' görseliyle iyi bir carousel olur.",
+   "angle": "what's new + 3 things to do with a recording (meeting notes, lecture summary, follow-up email) + prompt to copy",
+   "tools": [
+    "ChatGPT"
+   ],
+   "published": "2026-10-06",
+   "sources": [
+    "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+   ],
+   "hints": [
+    "https://releasebot.io/updates/openai"
+   ],
+   "score": 6,
+   "first_seen": "2026-10-11T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-11_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "pack-etsy-ai-product-shop-agent",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Prompts That Turn an AI Agent Into Your Etsy Printables Shop Making $2,000 a Month",
+   "summary_tr": "Etsy'de basılabilir ürün (planlayıcı, şablon) dükkanı için niş seçimi, ürün listesi, başlık/etiket, ilk 30 gün planı ve aylık gelir tahmini veren 5 promptluk paket.",
+   "why_tr": "Para + AI ajan kalıbı kanalın en iyi giden tarzı; Etsy dijital ürün kitlesi geniş.",
+   "angle": "Niche Picker, 10-Product Roadmap, Listing Title and Tag Writer, 30-Day Launch Plan, Monthly Income Estimate",
+   "tools": [
+    "ChatGPT",
+    "Claude",
+    "Gemini"
+   ],
+   "published": null,
+   "sources": [],
+   "hints": [],
+   "score": 6,
+   "first_seen": "2026-10-11T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-11_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "cursor-rules-evergreen",
+   "tool": "Cursor",
+   "kind": "evergreen",
+   "title": "Cursor Rules: Write Your Coding Rules Once and Stop Repeating Them Every Chat",
+   "summary_tr": "Cursor'da 4 tür kural var (her zaman, dosyaya bağlı, ajan isteyince, elle çağırma). Kuralları bir kez yazınca her sohbette otomatik uygulanıyor; AGENTS.md de destekleniyor.",
+   "why_tr": "Cursor'da son günlerde haber yok; 'bir kez yaz, hep uygulansın' vaadi kaydet/paylaş getirir.",
+   "angle": "4 rule types explained + where the file lives (.cursor/rules or AGENTS.md) + a copy-paste starter rule",
+   "tools": [
+    "Cursor"
+   ],
+   "published": null,
+   "sources": [
+    "https://cursor.com/docs/context/rules"
+   ],
+   "hints": [],
+   "score": 6,
+   "first_seen": "2026-10-12T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-12_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "chatgpt-gpt-5-5-retires-oct-14",
+   "tool": "ChatGPT",
+   "kind": "news",
+   "title": "GPT-5.5 Disappears From ChatGPT and Codex Tomorrow — Check Your Saved Settings Today",
+   "summary_tr": "OpenAI'ın değişiklik günlüğüne göre GPT-5.5, 14 Ekim 2026'da ChatGPT, ChatGPT Work ve Codex'te tüm planlarda emekli oluyor (API etkilenmiyor). Varsayılan model, özel ajan, zamanlanmış görev ve scriptlerde gpt-5.5 seçiliyse güncellemek gerekiyor.",
+   "why_tr": "Yarın gerçekleşecek somut bir değişiklik; 'bunu şimdi kontrol et' formatı kaydedilir, özellikle Codex ve otomasyon kullananlar için.",
+   "angle": "what's retiring and when + who is affected + 3-point checklist (defaults, agents, scheduled tasks/scripts)",
+   "tools": [
+    "ChatGPT",
+    "Codex"
+   ],
+   "published": "2026-10-13",
+   "sources": [
+    "https://learn.chatgpt.com/docs/changelog"
+   ],
+   "hints": [
+    "https://developers.openai.com/codex/changelog"
+   ],
+   "score": 6,
+   "first_seen": "2026-10-13T12:53",
+   "times_seen": 1,
+   "gather_file": "2026-10-13_1253_gather.json",
+   "new": false
+  },
+  {
+   "id": "gemini-deep-research-evergreen",
+   "tool": "Gemini",
+   "kind": "evergreen",
+   "title": "Gemini Deep Research: Get a Full Report in 10 Minutes From the Web, Your Gmail and Your Own Files",
+   "summary_tr": "Deep Research 5-10 dakikada kapsamlı rapor üretiyor; kaynak olarak Google Arama'nın yanında Gmail, Drive, yüklenen dosyalar ve NotebookLM defterleri eklenebiliyor. Planı başlatmadan önce düzenleyebiliyorsun; herkes Thinking ile kullanabilir, Pro/Ultra daha yüksek limit alır.",
+   "why_tr": "Son haftalarda Gemini'nin bu özelliği hakkında içerik yok; 'araştırma işini 10 dakikaya indir' vaadi ve 5 adımlık kullanım görsel carousel'e çok uygun.",
+   "angle": "the 5 steps to run it + 3 research prompts (competitor scan, trip plan, product comparison) + tip: add your own files as sources",
+   "tools": [
+    "Gemini"
+   ],
+   "published": null,
+   "sources": [
+    "https://support.google.com/gemini/answer/15719111"
+   ],
+   "hints": [],
+   "score": 6,
+   "first_seen": "2026-10-13T12:53",
+   "times_seen": 1,
+   "gather_file": "2026-10-13_1253_gather.json",
+   "new": false
+  },
+  {
+   "id": "ask-youtube-all-us-viewers",
+   "tool": "Social media",
+   "kind": "news",
+   "title": "YouTube's AI Search 'Ask YouTube' Is Now Open to All US Viewers on Phone, Web and TV",
+   "summary_tr": "YouTube, 12 Ekim'de konuşmalı AI arama özelliği Ask YouTube'u ABD'de web, mobil ve TV'de herkese açtı (artık Premium şartı yok, İngilizce). Ayrıntılı soru sorup takip soruları ile sonucu daraltıyorsun; yakında Shorts ve canlı yayın izlerken de çalışacak.",
+   "why_tr": "İçerik üreticileri için izleyicinin artık YouTube'da soru sorarak video bulması önemli; izleyiciler için de pratik bir ipucu.",
+   "angle": "what Ask YouTube is + how to ask a good question and refine it + what it means for creators",
+   "tools": [
+    "Social media",
+    "Google"
+   ],
+   "published": "2026-10-12",
+   "sources": [
+    "https://blog.youtube/news-and-events/ask-youtube-web-mobile-tv/"
+   ],
+   "hints": [
+    "https://www.socialmediatoday.com/news/youtube-rolls-out-ai-search-chatbot-to-all-us-users/832923/",
+    "https://9to5google.com/2026/10/13/ask-youtube-rolls-out-on-mobile/"
+   ],
+   "score": 6,
+   "first_seen": "2026-10-14T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-14_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "claude-projects-evergreen",
+   "tool": "Claude",
+   "kind": "evergreen",
+   "title": "Claude Projects: Upload Your Files and Rules Once, Every Chat Starts Already Knowing Them",
+   "summary_tr": "Claude Projects ücretsiz hesaplarda bile var (5 proje): bilgi dosyalarını ve özel talimatları bir kez ekliyorsun, projedeki her sohbet bunları kullanıyor. Sohbetler arasında bağlam paylaşılmıyor, yalnızca proje bilgisi paylaşılıyor.",
+   "why_tr": "Her sohbette aynı şeyi tekrar anlatmaktan yorulan herkes için hemen uygulanır bir ipucu; ücretsiz olması da cazip.",
+   "angle": "create a project in 1 minute + what to put in knowledge vs instructions + 3 project ideas (job search, client work, study)",
+   "tools": [
+    "Claude"
+   ],
+   "published": null,
+   "sources": [
+    "https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects"
+   ],
+   "hints": [],
+   "score": 6,
+   "first_seen": "2026-10-14T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-14_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "pack-linkedin-ghostwriting-agent",
+   "tool": "Prompt pack",
+   "kind": "prompts",
+   "title": "5 Prompts That Turn an AI Agent Into a LinkedIn Ghostwriting Business Making $3,000 a Month",
+   "summary_tr": "AI ajanıyla LinkedIn ghostwriting işi kurma paketi: nişli müşteri bulma, marka sesi çıkarma, 30 günlük içerik takvimi, yazı üretimi ve teklif mesajı. Aylık $3.000 hedefi ve gerçekçi tahminle.",
+   "why_tr": "Sosyal medya + ajan + para kombinasyonu bizim en iyi çalışan paket tarzımız; yeni bir niş.",
+   "angle": "Client Finder · Brand Voice Extractor · 30-Day Content Calendar · Post Writer · Outreach & Pricing Pitch",
+   "tools": [
+    "ChatGPT",
+    "Claude"
+   ],
+   "published": null,
+   "sources": [],
+   "hints": [],
+   "score": 6,
+   "first_seen": "2026-10-14T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-14_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "copilot-hydrafusion-max",
+   "tool": "Copilot",
+   "kind": "news",
+   "title": "GitHub Copilot Can Now Run Four AI Models on One Task — and Pick the Best Answer",
+   "summary_tr": "GitHub, HydraFusion'ı güncelledi: Claude Opus 5.5, GPT-6 Astra, GPT-6.1 Sol ve GPT-6 Luna havuzundan modeller taslak yazıyor, eleştirmen modeller çalışma alanını inceliyor, gerekirse onarım isteniyor. Daha derin düşünen yeni 'Max' seçeneği var; Pro, Pro+, Business ve Enterprise'da, deneysel özellikler açıkken.",
+   "why_tr": "Birden çok modeli birlikte çalıştıran fikir ilgi çekici, kodlama kitlemize doğrudan hitap ediyor.",
+   "angle": "What HydraFusion is + the 4-model pool + draft/judge/critique flow + HydraFusion Max + how to turn on preview features",
+   "tools": [
+    "Copilot",
+    "Claude",
+    "ChatGPT"
+   ],
+   "published": "2026-10-14",
+   "sources": [
+    "https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option"
+   ],
+   "hints": [],
+   "score": 6,
+   "first_seen": "2026-10-15T16:34",
+   "times_seen": 1,
+   "gather_file": "2026-10-15_1634_gather.json",
+   "new": false
+  },
+  {
+   "id": "perplexity-projects-evergreen",
+   "tool": "Perplexity",
+   "kind": "evergreen",
+   "title": "Perplexity Projects: Upload Your Files and Rules Once, Every Search Follows Them",
+   "summary_tr": "Perplexity Projects'te talimat (8.000 karaktere kadar) ve dosyaları (proje başına 10.000 dosya, 5 GB, dosya başına 100 MB) bir kez yüklersin; projedeki her sorgu bunları kullanır. Başkalarıyla paylaşılabilir.",
+   "why_tr": "Perplexity haberi az geldiği için taze bir konu; 'bir kez ayarla' formatı bizde iyi çalışıyor.",
+   "angle": "Why Projects + how to create one + what to put in instructions + sharing roles + 3 starter instruction prompts",
+   "tools": [
+    "Perplexity"
+   ],
+   "published": null,
+   "sources": [
+    "https://www.perplexity.ai/help-center/en/articles/10352961-what-are-spaces"
+   ],
+   "hints": [],
+   "score": 6,
+   "first_seen": "2026-10-15T16:34",
+   "times_seen": 1,
+   "gather_file": "2026-10-15_1634_gather.json",
+   "new": false
+  },
+  {
+   "id": "codex-sol-ultrafast-mode",
+   "tool": "Codex",
+   "kind": "news",
+   "title": "Codex Just Got an 'Ultrafast' Mode for GPT-6.1 Sol — But Only on the $500 Plan",
+   "summary_tr": "OpenAI, Codex ve ChatGPT Work'te GPT-6.1 Sol için token üretimini hızlandıran Ultrafast modu ekledi. Pro $500 ile uygun Enterprise/Edu planlarında; Enterprise'da varsayılan kapalı.",
+   "why_tr": "'Hız için $500 plan' tartışma yaratır; ama kitle dar olduğu için skor düşük-orta.",
+   "angle": "what Ultrafast is + who can turn it on + is speed worth the price",
+   "tools": [
+    "Codex",
+    "ChatGPT"
+   ],
+   "published": "2026-10-08",
+   "sources": [
+    "https://learn.chatgpt.com/docs/changelog",
+    "https://developers.openai.com/codex/changelog"
+   ],
+   "hints": [],
+   "score": 5,
+   "first_seen": "2026-10-09T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-09_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "x-liveness-check-hand-wave",
+   "tool": "Social media",
+   "kind": "news",
+   "title": "X Will Now Ask Suspected Bots to Wave a Hand at the Camera to Prove They're Human",
+   "summary_tr": "X, şüpheli hesaplara 'canlılık kontrolü' gönderiyor; selfie videosu, Face ID/Touch ID'nin yanında yeni seçenek olarak kameraya el sallamak yeterli. Resmi yardım sayfası: help.x.com/en/using-x/liveness-checks (betik erişimine kapalı, 403).",
+   "why_tr": "Bot avı ve 'insan olduğunu kanıtla' konusu merak uyandırır, X kullanıcıları hemen etkilenir.",
+   "angle": "what triggers the check + the 3 ways to pass + how to avoid being flagged",
+   "tools": [
+    "Social media"
+   ],
+   "published": "2026-10-08",
+   "sources": [
+    "https://help.x.com/en/using-x/liveness-checks"
+   ],
+   "hints": [
+    "https://www.socialmediatoday.com/news/x-adds-liveness-check-to-counter-bots/832558/"
+   ],
+   "score": 5,
+   "first_seen": "2026-10-09T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-09_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "copilot-custom-instructions-evergreen",
+   "tool": "Copilot",
+   "kind": "evergreen",
+   "title": "Tell GitHub Copilot Your Rules Once — It Follows Them in Every Chat",
+   "summary_tr": "Copilot'a depo için özel talimat dosyası vererek her sohbette aynı kuralları tekrar yazmaktan kurtulma rehberi. Resmi dokümandan adımlar yazılmadan önce tekrar kontrol edilmeli.",
+   "why_tr": "Az konuşulan, hemen uygulanabilir bir ipucu; Copilot son haftalarda az haber aldı.",
+   "angle": "why repeat yourself + where the instructions file goes + 3 example rules to paste",
+   "tools": [
+    "Copilot"
+   ],
+   "published": null,
+   "sources": [
+    "https://docs.github.com/en/copilot/how-tos/configure-custom-instructions"
+   ],
+   "hints": [],
+   "score": 5,
+   "first_seen": "2026-10-09T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-09_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "workspace-studio-logic-search-steps",
+   "tool": "Google",
+   "kind": "news",
+   "title": "Google Workspace Studio Automations Get If/Else Logic and Drive Search",
+   "summary_tr": "Workspace Studio'ya iç içe koşullar, Gmail'de yanıtları atlama, Meet takvim çıktıları ve Drive'da belge arama adımları ekleniyor. Yayılım 13 Ekim'de başlıyor ve 15 güne kadar sürebiliyor.",
+   "why_tr": "Kod yazmadan iş akışı kuranlara pratik bir otomasyon güncellemesi; ancak niş.",
+   "angle": "4 new steps + one example flow (new email → search Drive → reply) + when it arrives",
+   "tools": [
+    "Google"
+   ],
+   "published": "2026-10-09",
+   "sources": [
+    "https://workspaceupdates.googleblog.com/2026/10/new-logic-and-search-steps-in-workspace-Studio-help-expand-automation-capabilities.html"
+   ],
+   "hints": [],
+   "score": 5,
+   "first_seen": "2026-10-10T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-10_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "copilot-cli-local-ollama-models",
+   "tool": "Copilot",
+   "kind": "news",
+   "title": "GitHub Copilot's CLI Can Now Use the Free Models Running on Your Own Computer",
+   "summary_tr": "GitHub'ın 5 Ekim haftalık güncellemesine göre Copilot CLI'da /model komutu çalışan yerel Ollama örneğindeki modelleri keşfediyor; aynı güncellemede Claude Haiku 5.5 ve çift hesap desteği de var (yerel sandbox havuzda zaten var).",
+   "why_tr": "'Kendi bilgisayarındaki ücretsiz modeli Copilot ile kullan' hem ücretsizlik hem gizlilik açısından ilgi çeker.",
+   "angle": "what's new + how (/model + Ollama running) + side-by-side agent sessions in VS Code",
+   "tools": [
+    "Copilot"
+   ],
+   "published": "2026-10-09",
+   "sources": [
+    "https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5"
+   ],
+   "hints": [],
+   "score": 5,
+   "first_seen": "2026-10-11T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-11_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "chatgpt-projects-evergreen",
+   "tool": "ChatGPT",
+   "kind": "evergreen",
+   "title": "ChatGPT Memory vs Projects: Stop Re-Explaining Yourself Every Chat",
+   "summary_tr": "ChatGPT'de hafıza ve Projects'in farkını ve ikisinin birlikte nasıl kurulacağını anlatan, haber akışı yavaşken kullanılabilecek bir rehber.",
+   "why_tr": "Herkesin her gün yaşadığı sorun ('her seferinde baştan anlatıyorum') için kaydedilebilir bir rehber.",
+   "angle": "memory vs project instructions vs files + a 3-step setup + one copy-paste instruction block",
+   "tools": [
+    "ChatGPT"
+   ],
+   "published": null,
+   "sources": [
+    "https://help.openai.com/en/articles/8590148-memory-faq",
+    "https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt"
+   ],
+   "hints": [],
+   "score": 5,
+   "first_seen": "2026-10-11T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-11_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "google-meet-next-steps-post-meeting",
+   "tool": "Google",
+   "kind": "news",
+   "title": "Google Meet Can Now Write Your Follow-Up Email and Fill Your To-Do List the Moment a Meeting Ends",
+   "summary_tr": "Meet'te toplantı sonrası ekranında 'Next steps' geldi: Gemini ve Workspace Studio ile takip e-postasını Gmail'de taslak yapıyor veya aksiyon maddelerini Google Tasks'e ekliyor. 'Take notes for me' açık olmalı; Business/Enterprise Standard ve Plus ile AI Pro for Education'da, 5 Ekim'de kademeli açılmaya başladı.",
+   "why_tr": "Herkesin yaşadığı 'toplantı sonrası iş' derdine tek dokunuşluk çözüm; ama sadece ücretli Workspace planları, o yüzden orta skor.",
+   "angle": "what's new + the 3 taps to turn it on (notes on, enable a routine, apply to all meetings) + who gets it",
+   "tools": [
+    "Google",
+    "Gemini"
+   ],
+   "published": "2026-10-12",
+   "sources": [
+    "http://workspaceupdates.googleblog.com/2026/10/find-your-routine-next-steps-on-post-meeting-screen-in-Google-Meet.html"
+   ],
+   "hints": [],
+   "score": 5,
+   "first_seen": "2026-10-13T12:53",
+   "times_seen": 1,
+   "gather_file": "2026-10-13_1253_gather.json",
+   "new": false
+  },
+  {
+   "id": "google-fitbit-edge-health-coach",
+   "tool": "Google",
+   "kind": "news",
+   "title": "Google's New $180 Fitbit Edge Spots Workouts You Forgot to Start — and Has an AI Health Coach",
+   "summary_tr": "Google, 12 Ekim'de Fitbit Edge'i duyurdu: 179,99 $ (Stephen Curry özel sürümü 219,99 $), ön sipariş açık, 27 Ekim'de mağazalarda. 100 antrenman türünü otomatik tanıyor, Health Guardian tansiyon/insülin direnci eğilimlerini izliyor; AI Health Coach için Google Health Premium gerekiyor (3 ay bedava).",
+   "why_tr": "Fiyat ve sağlık + AI açısı geniş kitleye hitap eder; ancak bir donanım haberi, AI araçları kitlemize biraz uzak.",
+   "angle": "price + date + the 3 AI things it does + what needs a Premium subscription",
+   "tools": [
+    "Google",
+    "Gemini"
+   ],
+   "published": "2026-10-12",
+   "sources": [
+    "https://blog.google/products-and-platforms/devices/fitbit/google-fitbit-edge/",
+    "https://blog.google/products-and-platforms/products/google-health/google-health-updates/"
+   ],
+   "hints": [
+    "https://9to5google.com/2026/10/12/fitbit-air-gets-metal-mesh-band-and-upgrades/"
+   ],
+   "score": 5,
+   "first_seen": "2026-10-13T12:53",
+   "times_seen": 1,
+   "gather_file": "2026-10-13_1253_gather.json",
+   "new": false
+  },
+  {
+   "id": "github-secret-detection-model-copilot",
+   "tool": "Copilot",
+   "kind": "news",
+   "title": "GitHub Built an AI Just to Catch Passwords You Accidentally Leaked in Your Code",
+   "summary_tr": "GitHub, sızan şifre ve kimlik bilgilerini bağlama bakarak yakalayan özel eğitilmiş bir model yayınladı; tanınabilir token biçimi olmayan parolaları da buluyor. Copilot'un /security-review komutuna da geliyor (bireysel planlar uygun, özel önizleme yakında); yeni kontroller varsayılan kapalı ve GitHub AI Credits harcıyor.",
+   "why_tr": "Her geliştiricinin korkulu rüyası (sızan API anahtarı) üzerine somut bir araç; vibe-coding yapanlar için de alakalı.",
+   "angle": "what it catches + where it runs (alerts, push protection, /security-review) + the catch: off by default and uses AI credits",
+   "tools": [
+    "Copilot"
+   ],
+   "published": "2026-10-07",
+   "sources": [
+    "https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection"
+   ],
+   "hints": [],
+   "score": 5,
+   "first_seen": "2026-10-13T12:53",
+   "times_seen": 1,
+   "gather_file": "2026-10-13_1253_gather.json",
+   "new": false
+  },
+  {
+   "id": "cursor-origin-app-marketplace",
+   "tool": "Cursor",
+   "kind": "news",
+   "title": "Cursor Opens an App Store for Its Origin Platform — 20+ Tools Like Linear, Sentry and Semgrep",
+   "summary_tr": "Cursor, 13 Ekim'de Origin App Marketplace'i herkese açık başvurulara açtı. 20'den fazla uygulama (dağıtım, CI, kod inceleme, güvenlik, izleme, proje yönetimi) kurup kaldırılabiliyor; geliştiriciler kendi uygulamalarını Origin API ile gönderebiliyor. Fiyat/bölge bilgisi sayfada yok.",
+   "why_tr": "Cursor kullanan geliştiriciler için 'ajanım artık şu araçlarla da çalışıyor' haberi; niş ama hedef kitleye uygun.",
+   "angle": "what Origin Marketplace is + examples of apps by category + how developers submit",
+   "tools": [
+    "Cursor"
+   ],
+   "published": "2026-10-13",
+   "sources": [
+    "https://cursor.com/changelog/origin-app-marketplace"
+   ],
+   "hints": [],
+   "score": 5,
+   "first_seen": "2026-10-14T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-14_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "threads-gems-top-post-awards",
+   "tool": "Social media",
+   "kind": "news",
+   "title": "Threads Will Now Hand Out 'Gems' to Your Best Posts — Here's What Wins One",
+   "summary_tr": "Threads, tartışma başlatan özgün gönderi ve yanıtlara otomatik 'Gems' veriyor; ölçütler: yeni bakış açısı, gerçek karşılıklı konuşma, özgünlük (çapraz paylaşım değil). Şimdilik sadece ABD, herkese açık gönderi ve doğrudan yanıtlar. Resmi Threads/Instagram yardım sayfası doğrulanamadı, yayından önce teyit edilmeli.",
+   "why_tr": "Yaratıcılar için 'hangi içerik ödüllendiriliyor' sorusunu yanıtlıyor; ancak resmi kaynak eksik, düşük güvenle öneriyorum.",
+   "angle": "what Gems are + the 3 criteria + how to write posts that earn one",
+   "tools": [
+    "Social media"
+   ],
+   "published": "2026-10-08",
+   "sources": [
+    "https://help.instagram.com/"
+   ],
+   "hints": [
+    "https://www.socialmediatoday.com/news/threads-recognizes-top-posts-with-gems/832577/"
+   ],
+   "score": 4,
+   "first_seen": "2026-10-09T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-09_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "codex-composer-predictions-tab",
+   "tool": "Codex",
+   "kind": "news",
+   "title": "Codex Now Guesses Your Next Message — Press Tab and It's Sent",
+   "summary_tr": "9 Ekim'de Codex masaüstü uygulamasına beta 'Composer predictions' geldi: konuşmaya göre sonraki mesajını önerir, Tab ile kabul edersin. Yalnızca 18+ ChatGPT Pro kullanıcıları, GPT-6 Astra veya GPT-6.1 Sol ile; tahminler kullanım limitinden düşmüyor.",
+   "why_tr": "Küçük ama anlaşılır bir özellik; Codex haberi havuzda zaten var ama bu farklı bir yenilik.",
+   "angle": "what it does + how to turn it on + who gets it (Pro only)",
+   "tools": [
+    "Codex",
+    "ChatGPT"
+   ],
+   "published": "2026-10-09",
+   "sources": [
+    "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+    "https://learn.chatgpt.com/docs/changelog"
+   ],
+   "hints": [
+    "https://releasebot.io/updates/openai"
+   ],
+   "score": 4,
+   "first_seen": "2026-10-11T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-11_1230_gather.json",
+   "new": false
+  },
+  {
+   "id": "claude-managed-agents-dynamic-workflows",
+   "tool": "Claude",
+   "kind": "news",
+   "title": "Claude Agents Can Now Write Their Own Workflows and Run Hundreds of Sub-Agents on One Job",
+   "summary_tr": "9 Ekim sürüm notları: Claude Managed Agents'a (beta) dinamik iş akışları geldi; ajan yüzlerce belgeyi gözden geçirmek gibi işler için aşamalı çalışan çok sayıda ajan akışı yazıyor ve sonuçları birleştiriyor.",
+   "why_tr": "Geliştirici odaklı ama 'ajan kendi ajan ordusunu kuruyor' fikri anlaşılır; skor düşük çünkü API beta.",
+   "angle": "what a dynamic workflow is + example (review 300 documents) + who can turn it on (API beta)",
+   "tools": [
+    "Claude"
+   ],
+   "published": "2026-10-09",
+   "sources": [
+    "https://platform.claude.com/docs/en/release-notes/overview"
+   ],
+   "hints": [],
+   "score": 4,
+   "first_seen": "2026-10-11T12:30",
+   "times_seen": 1,
+   "gather_file": "2026-10-11_1230_gather.json",
+   "new": false
+  }
+ ],
+ "coverage": {
+  "Google": 8,
+  "Meta AI": 2,
+  "Apple": 2,
+  "Social media": 7,
+  "Claude": 6,
+  "Gemini": 2,
+  "Grok": 1,
+  "Higgsfield": 1,
+  "Copilot": 4,
+  "ChatGPT": 2,
+  "Codex": 2,
+  "Cursor": 1
+ },
+ "notes_tr": "Havuz: son 7 günün adayları, 7 tanesi son teslimden beri yeni. Son toplama 16.10 15:05. Yeni: Circle to Search dolandırıcılık kontrolü, Meta Muse Spark Open (açık ağırlık), iPhone Duo + Siri AI, Gmail Live, LinkedIn güncellemeleri, Codex evergreen ve bir prompt paketi. ChatGPT Chrome sekme haberi resmi kaynak bulunamadığı ve asıl duyuru Temmuz'da olduğu için elendi. Grok, Perplexity, Çin modelleri ve Instagram aramalarında son 36 saatte doğrulanabilir yeni bir şey çıkmadı. Cursor, Copilot (Slack/Teams multi-repo, model kaldırma), Mistral Timestral (tahmin modeli), Claude/Gemini Argon Antigravity ve Meta Edits (resmi kaynağa ulaşılamadı) havuzda zaten var ya da zayıf bulunduğu için eklenmedi. Perplexity changelog ve x.com/TikTok manuel kaynakları kontrol edilemedi. Kaynaklar: Eklendi: ElevenLabs blog (resmi, 50 tarihli öğe, en yeni 2026-10-15) · Reddedildi: Perplexity blog RSS (403 engelli, zaten manuel kaynak olarak listede) · Reddedildi: Qwen3 GitHub releases (tarihli öğe yok) · Reddedildi: Gemini CLI releases (zaten listede), Google Search RSS (Google Keyword feed'iyle aynı içerik)"
+}

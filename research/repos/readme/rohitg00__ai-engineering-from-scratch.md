@@ -4,7 +4,7 @@ Implement model internals, retrieval pipelines, and agent runtimes. Test them, i
 
 Free, open source, MIT. Learn on the website, with a coding agent, or by running local code.
 
-> 528 lessons. 20 phases. Python, TypeScript, Rust, Julia.
+> 542 lessons. 20 phases. Python, TypeScript, Rust, Julia.
 
  Read in your language 
 

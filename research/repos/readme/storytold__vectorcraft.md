@@ -30,6 +30,10 @@ VectorCraft
 
  Pen and Direct Selection : real Bézier anchors and handles, plus a contextual task bar 
 
+ 3D Revolve : smooth vector shading, caps and a rotation gizmo · examples/still-life.vectorcraft 
+
+ Dimension tool : lengths, angles and radii that follow the art they measure · examples/bracket-drawing.vectorcraft 
+
  Perspective Grid : art attached to its planes stays editable in perspective · examples/perspective-city.vectorcraft 
 
  Multiple artboards, light theme : Pathfinder · Gradient Mesh · live radial Repeat · Envelope Distort · examples/feature-sheet.vectorcraft 
@@ -45,6 +49,8 @@ exposes to agents, and exported by VectorCraft's own renderer. The source files 
  Dusk : gradient sky, glowing sun, layered mountains 
 
  Live Blends : 70 steps, smooth colour, editable spines 
+
+ Still Life : four revolved profiles with smooth vector shading 
 
  Radial Repeat : a live mandala 
 
@@ -115,12 +121,4 @@ Register the MCP server with Claude Code:
 claude mcp add vectorcraft -- /path/to/vectorcraft-cli mcp
 ```
 
-To keep an agent to one project's files, give it folders to read and write (the same flags as PhotoCraft):
-
-```sh
-claude mcp add vectorcraft -- /path/to/vectorcraft-cli mcp --automation-read-root /work/project --automation-write-root /work/project
-```
-
-The details are in [`docs/mcp.md`](docs/mcp.md) and [`docs/control-protocol.md`](docs/control-protocol.md).
-
-For the e
+To keep an agent to one project's files, give it folders to read and write (the same fla

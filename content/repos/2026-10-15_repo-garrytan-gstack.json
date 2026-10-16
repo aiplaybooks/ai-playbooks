@@ -1,0 +1,42 @@
+{
+  "kind": "repo",
+  "repo": {
+    "full_name": "garrytan/gstack",
+    "url": "https://github.com/garrytan/gstack",
+    "stars": 136633,
+    "license": "MIT",
+    "language": "TypeScript",
+    "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA"
+  },
+  "topic": "gstack: the Y Combinator CEO's Claude Code setup",
+  "hook": [
+    "🚨The Y Combinator CEO just open sourced his exact Claude Code setup. It's FR££.",
+    "23 specialists: CEO, designer, eng manager, QA, release engineer.",
+    "All slash commands. MIT license.",
+    "Already at 136K+ GitHub stars."
+  ],
+  "hook_pattern": "Insider's exact setup",
+  "dm": {
+    "keyword": "TEAM",
+    "mode": "direct"
+  },
+  "fb_comment": "🔗 gstack on GitHub:\nhttps://github.com/garrytan/gstack\n\n⭐ 136K+ stars · MIT license · TypeScript\n💻 Installs into Claude Code in about 30 seconds\nStart here: run /office-hours after setup\n\nFollow AI Playbooks for a new FR££ AI tool every day 🙏",
+  "caption": "🚨The Y Combinator CEO open sourced his exact Claude Code setup. It's FR££.\n23 specialists: CEO, designer, eng manager, QA, release engineer.\nAll slash commands. MIT license.\nAlready at 136K+ GitHub stars.\n\nComment TEAM and I'll DM you the repo link 📩\n\n📦 garrytan/gstack on GitHub\n\nFollow @aiplaybooks.daily, we post a FR££ AI tool every day.\n\n#ai #claudecode #github #opensource #aiagents",
+  "captions": {
+    "instagram": "🚨The Y Combinator CEO open sourced his exact Claude Code setup. It's FR££.\n23 specialists: CEO, designer, eng manager, QA, release engineer.\nAll slash commands. MIT license.\nAlready at 136K+ GitHub stars.\n\nComment TEAM and I'll DM you the repo link 📩\n\n📦 garrytan/gstack on GitHub\n\nFollow @aiplaybooks.daily, we post a FR££ AI tool every day.\n\n#ai #claudecode #github #opensource #aiagents",
+    "facebook": "🚨The Y Combinator CEO open sourced his exact Claude Code setup. It's FR££.\n\n23 specialists: CEO, designer, eng manager, QA, release engineer. All slash commands. MIT license.\n\nAlready at 136K+ GitHub stars. The full link is in the first comment 👇\n\nWhich of the 23 would you try first: CEO, designer or QA?\n\n#claudecode #github #opensource"
+  },
+  "x": "🚨The Y Combinator CEO open sourced his exact Claude Code setup. It's FR££.\n23 specialists: CEO, designer, eng manager, QA.\n📦 garrytan/gstack on GitHub\n#ClaudeCode #opensource",
+  "first_comment": {
+    "instagram": "Setup takes about 30 seconds inside Claude Code. Then run /office-hours first.\nWhich of the 23 would you try first: CEO, QA or release? 👇\nComment TEAM and I'll DM you the link 📩"
+  },
+  "sources": [
+    "https://github.com/garrytan/gstack"
+  ],
+  "checked": [
+    "Garry Tan is President & CEO of Y Combinator -> README",
+    "23 specialists + 8 power tools, slash commands, MIT -> README",
+    "136495 stars, MIT, TypeScript, pushed 2026-10-15 -> GitHub API",
+    "~30 sec setup -> README install section"
+  ]
+}

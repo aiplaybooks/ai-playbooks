@@ -79,9 +79,8 @@ The shipped checkpoints work zero-shot, but fine-tuning on decisions from your o
 
 **[nandhakishorm.github.io/laya](https://nandhakishorm.github.io/laya/)**: guides for [prediction hooks](https://nandhakishorm.github.io/laya/hooks/), [schema-driven decisions](https://nandhakishorm.github.io/laya/structured/), [Docker](https://nandhakishorm.github.io/laya/docker/) and [LangChain and LangGraph](https://nandhakishorm.github.io/laya/langchain/), plus a full [API reference](https://nandhakishorm.github.io/laya/reference/).
 
-## What's new in 0.4.4
+## What's new in 0.4.8
 
-* **laya-go**: a pure-Go tokenizer and language detection, standard library only, with its own
- advisory parity lane that re-records every golden from the Python package at each commit and
- fails on a skipped test (#1145).
-* *
+* **`laya-go` runs the model.** `agent.Open`, `Predict`, `PredictBatch` and `PredictLong` answer
+ typed questions over an `infer.Session`, and a nested `laya-go/onnx` module (its own `go.mod`,
+ cgo) runs a fused `laya.onnx` on
