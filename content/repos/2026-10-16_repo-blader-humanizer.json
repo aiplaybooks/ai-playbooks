@@ -1,0 +1,23 @@
+{
+  "kind": "repo",
+  "repo": {"full_name": "blader/humanizer", "url": "https://github.com/blader/humanizer", "stars": 57473, "license": "MIT", "language": "Python", "description": "Agent skill that removes signs of AI-generated writing from text"},
+  "topic": "Humanizer: FR££ skill that makes AI writing sound human",
+  "hook": ["I JUST FOUND A FR££ SKILL THAT MAKES CLAUDE'S WRITING STOP SOUNDING LIKE AI.",
+           "It checks 26 AI-writing patterns.",
+           "No paid humanizer. No rewrite by hand.",
+           "Already at 57K+ GitHub stars."],
+  "hook_pattern": "CAPS discovery",
+  "dm": {"keyword": "HUMAN", "mode": "direct"},
+  "fb_comment": "🔗 Humanizer on GitHub:\nhttps://github.com/blader/humanizer\n\n⭐ 57K+ stars · MIT license · Python\n💻 Works in Claude Code, Codex, Gemini CLI and Claude.ai\nStart here: https://github.com/blader/humanizer#installation\n\nFollow AI Playbooks for a new FR££ AI tool every day 🙏",
+  "caption": "I JUST FOUND A FR££ SKILL THAT MAKES CLAUDE'S WRITING STOP SOUNDING LIKE AI.\nIt checks 26 AI-writing patterns.\nNo paid humanizer. No rewrite by hand.\nAlready at 57K+ GitHub stars.\n\n📦 blader/humanizer on GitHub\nComment HUMAN and I'll DM you the link 📩\n\nFollow @aiplaybooks.daily, we post a FR££ AI tool every day.\n\n#ai #aitools #claudecode #claudeskills #opensource",
+  "captions": {
+    "instagram": "I JUST FOUND A FR££ SKILL THAT MAKES CLAUDE'S WRITING STOP SOUNDING LIKE AI.\nIt checks 26 AI-writing patterns.\nNo paid humanizer. No rewrite by hand.\nAlready at 57K+ GitHub stars.\n\n📦 blader/humanizer on GitHub\nComment HUMAN and I'll DM you the link 📩\n\nFollow @aiplaybooks.daily, we post a FR££ AI tool every day.\n\n#ai #aitools #claudecode #claudeskills #opensource",
+    "facebook": "I JUST FOUND A FR££ SKILL THAT MAKES CLAUDE'S WRITING STOP SOUNDING LIKE AI.\nIt checks 26 AI-writing patterns.\nNo paid humanizer. No rewrite by hand.\nAlready at 57K+ GitHub stars.\n\nIt's blader/humanizer on GitHub, an open source agent skill that works in Claude Code, Codex, Gemini CLI and Claude.ai. FR££ and MIT licensed, and it does the rewrite for you.\n\nLink in the first comment 👇\n\nDo you edit your AI drafts by hand, or do you post them as they are?\n\n#ai #claudecode #claudeskills #opensource"
+  },
+  "x": "I JUST FOUND A FR££ SKILL THAT MAKES CLAUDE'S WRITING STOP SOUNDING LIKE AI.\nChecks 26 AI-writing patterns. No paid humanizer.\n📦 blader/humanizer on GitHub\n#ClaudeCode",
+  "first_comment": {
+    "instagram": "Easiest test: take one paragraph from an AI draft and run it through the skill, then compare the two.\nComment HUMAN for the link 📩\nWhich AI do you write with most: Claude, ChatGPT or Gemini? 👇"
+  },
+  "sources": ["https://github.com/blader/humanizer"],
+  "checked": ["26 patterns -> README", "16/16 blind test -> README", "MIT, Python, 57,473 stars -> GitHub API", "works in Claude Code, Codex, Gemini CLI, Claude.ai -> README install section", "not archived, release v3.1.0 2026-09-28 -> API"]
+}
