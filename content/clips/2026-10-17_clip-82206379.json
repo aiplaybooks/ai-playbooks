@@ -1,0 +1,29 @@
+{
+  "kind": "clip",
+  "source": "https://x.com/normandipalo/status/2110054176382206379",
+  "credit": "@normandipalo on X",
+  "topic": "Robots",
+  "hook": "This humanoid robot learned cornhole from one AI model and one video of a person.",
+  "caption": "This humanoid robot learned cornhole from one AI model and one video of a person.\n\nGemini Argon watched someone throw, then took control of the Apollo robot, built its own simulation and trained its own throws.\n\nThe split screen shows the real robot next to the sim it trained in.\n\nWould you let a robot beat you at cornhole? 👇\n\nSend this to the friend who says robots still can't do anything useful.\n\nFollow @aiplaybooks.daily for daily AI tricks.\n\nCredit: @normandipalo on X\n\n#ai #robot #robotics #artificialintelligence #technology",
+  "captions": {
+    "instagram": "This humanoid robot learned cornhole from one AI model and one video of a person.\n\nGemini Argon watched someone throw, then took control of the Apollo robot, built its own simulation and trained its own throws.\n\nThe split screen shows the real robot next to the sim it trained in.\n\nWould you let a robot beat you at cornhole? 👇\n\nSend this to the friend who says robots still can't do anything useful.\n\nFollow @aiplaybooks.daily for daily AI tricks.\n\nCredit: @normandipalo on X\n\n#ai #robot #robotics #artificialintelligence #technology",
+    "facebook": "This humanoid robot learned cornhole from one AI model and one video of a person.\n\nGemini Argon watched someone throw, then took control of the Apollo robot. It built its own simulation and trained its own throws, and the split screen shows the real robot next to the sim it trained in.\n\nWould you bet on a robot in your next game of cornhole? Tell us in the comments.\n\nSend this to the friend who says robots still can't do anything useful.\n\nCredit: @normandipalo on X\n\n#ai #robot #robotics",
+    "youtube": {
+      "title": "Humanoid robot learns cornhole from one video of a person",
+      "description": "Our take: the robot never got a hand-written throwing routine. It watched someone throw, built a simulation and trained its own throws there.\n\nHumanoid robot learning cornhole from one video: Gemini Argon, the Apollo robot and the simulation it built for itself.\n\nCredit: @normandipalo on X\n\n#robotics #humanoidrobots #ai",
+      "tags": ["humanoid robot", "robot learns", "gemini argon", "apollo robot", "robot cornhole", "robot simulation", "ai robot"]
+    }
+  },
+  "x": "This humanoid robot learned cornhole from one AI model and one video of a person.\n\nGemini Argon built its own simulation, then trained its own throws. Via @normandipalo\n\n#robotics #ai",
+  "first_comment": {
+    "instagram": "Bonus: the throws were trained in a simulation the robot built for itself.\nWhat should it learn next, juggling or folding laundry? 👇",
+    "facebook": "Bonus: the throws were trained in a simulation the robot built for itself.\nWhat should it learn next, juggling or folding laundry?",
+    "youtube": "Bonus: the throws were trained in a simulation the robot built for itself.\nWhat should it learn next, juggling or folding laundry? Subscribe for daily AI playbooks."
+  },
+  "checked": [
+    "Post text (https://x.com/normandipalo/status/2110054176382206379): Gemini Argon, Apollo humanoid, one video of a person, sim env + sysID + trained launches; credit @normandipalo.",
+    "Frames 1-8: Google DeepMind credit on the researcher (frame 1); split screen real Apollo cam vs MuJoCo sim (frame 2); UI prompt reads 'Gemini 4 Argon' (frame 5).",
+    "Web search (standard), no official Google page found: coverage of Google's Gemini 4 Argon announcement (https://interestingengineering.com/videos/googles-gemini-4-argon-taught-a-humanoid-robot-to-play-cornhole, https://cryptobriefing.com/gemini-4-argon-robot-cornhole/). Confirms the Apptronik Apollo test and seven cornhole shots in a row. Caveat: one write-up says the robot needed a few real throws before the run, so 'one video' is the creator's claim, not independently confirmed; the hook uses it as the creator's claim and the caption says 'watched a video'.",
+    "Owner revision ('This robot learned it from one model') applied to the hook; strategy directive (hook = guess prompt <= 7 words) not used because the owner's revision takes priority."
+  ]
+}

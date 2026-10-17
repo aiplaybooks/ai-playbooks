@@ -1,0 +1,780 @@
+{
+ "generated": "2026-10-17T09:30+00:00",
+ "hours": 36.0,
+ "items": [
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "Desktop v0.0.48",
+   "url": "https://github.com/cline/cline/releases/tag/desktop-v0.0.48",
+   "date": "2026-10-17T04:34+00:00",
+   "summary": "GPT-6 models (such as gpt-6-sol and gpt-6.1-sol ) work on OpenAI and Azure OpenAI-compatible endpoints. Before, every request was rejected because Cline sent max_tokens instead of max_completion_tokens The Cline provider's default model is Claude Sonnet 5.5 again, which is back at the top of Cline's recommended list Refreshed the model catalog. Adds the CommandCode and Reflection providers.…"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "CLI v3.0.73",
+   "url": "https://github.com/cline/cline/releases/tag/cli-v3.0.73",
+   "date": "2026-10-17T03:59+00:00",
+   "summary": "GPT-6 models (such as gpt-6-sol and gpt-6.1-sol ) work on OpenAI and Azure OpenAI-compatible endpoints. Before, every request was rejected because Cline sent max_tokens instead of max_completion_tokens With no model chosen, the Cline provider uses Claude Sonnet 5.5 again, which is back at the top of Cline's recommended list Refreshed the model catalog. Adds the CommandCode and Reflection…"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "SDK v0.0.95",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fsdk%2Fv0.0.95",
+   "date": "2026-10-17T03:00+00:00",
+   "summary": "OpenAI-compatible requests for GPT-6 models ( gpt-6-sol , gpt-6.1-sol , gpt-6-1-sol , and later gpt-5 through gpt-9 ids) send max_completion_tokens instead of max_tokens , so OpenAI and Azure no longer reject them. Azure's gpt-35-turbo keeps max_tokens The hub daemon records which client started it ( CLINE_HUB_LAUNCHER_CLIENT , CLINE_HUB_LAUNCHER_VERSION , CLINE_HUB_LAUNCHER_TRANSPORT ) and…"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "sdk/core/v0.0.95",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fcore%2Fv0.0.95",
+   "date": "2026-10-17T02:59+00:00",
+   "summary": "@cline/core@0.0.95"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "sdk/agents/v0.0.95",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fagents%2Fv0.0.95",
+   "date": "2026-10-17T02:59+00:00",
+   "summary": "@cline/agents@0.0.95"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "sdk/llms/v0.0.95",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fllms%2Fv0.0.95",
+   "date": "2026-10-17T02:59+00:00",
+   "summary": "@cline/llms@0.0.95"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "sdk/shared/v0.0.95",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fshared%2Fv0.0.95",
+   "date": "2026-10-17T02:59+00:00",
+   "summary": "@cline/shared@0.0.95"
+  },
+  {
+   "source": "Ollama releases",
+   "tier": "official",
+   "title": "v0.40.6",
+   "url": "https://github.com/ollama/ollama/releases/tag/v0.40.6",
+   "date": "2026-10-17T00:58+00:00",
+   "summary": "What's Changed win: prevent orphaned runners by @dhiltgen in #18500 gguf: add the q2_0 tensor and file types by @jmorganca in #18967 Launch clef in Ollama's cloud by @jberg5 in #19036 use identifiers for --ask mode question keys by @jberg5 in #19041 Full Changelog : v0.40.5...v0.40.6-rc0"
+  },
+  {
+   "source": "DeepSeek updates",
+   "tier": "official",
+   "title": "DeepSeek updates: Oct 17, 2026",
+   "url": "https://api-docs.deepseek.com/updates",
+   "date": "2026-10-17T00:00+00:00",
+   "summary": "​ Opening up the in-house search API ​ DeepSeek's web and API search capabilities are powered by our in-house DeepSeek search engine, which reliably handles hundreds of millions of search requests from around the world every day. DeepSeek Search is an AI-native general-purpose search engine that indexes hundreds of billions of web pages, supports multilingual search, and returns highly relevant, authoritative, and timely results in real time. It filters SEO spam, GEO manipulation, and low-quality AIGC through strict detection mechanisms, ensuring authoritative and trustworthy information for users and LLMs. For usage details, see the Search & Fetch guide . DeepSeek-V4.1-Flash-1017 Update ​ DeepSeek V4.1 Flash has been upgraded to DeepSeek-V4.1-Flash-1017. The official web and APP models have also been updated to the new version. The API calling method and pricing remain unchanged —…"
+  },
+  {
+   "source": "GitHub Copilot CLI releases",
+   "tier": "official",
+   "title": "1.0.100-1",
+   "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.100-1",
+   "date": "2026-10-16T22:41+00:00",
+   "summary": "Improved Use the unified Sessions browser by default for /sessions, /session, and /resume. Session browsing now caps account discovery at 500 records and respects Retry-After hints for automatic refresh timing. Fixed Sandbox host-rule traffic now honors HTTPS_PROXY and HTTP_PROXY when no sandbox proxy is configured Voice dictation no longer inserts language markers like into transcript text"
+  },
+  {
+   "source": "OpenCode releases",
+   "tier": "official",
+   "title": "v2.0.32",
+   "url": "https://github.com/anomalyco/opencode/releases/tag/v2.0.32",
+   "date": "2026-10-16T22:16+00:00",
+   "summary": "release: v2.0.32"
+  },
+  {
+   "source": "Claude Code releases",
+   "tier": "official",
+   "title": "v2.1.302",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.302",
+   "date": "2026-10-16T20:53+00:00",
+   "summary": "What's changed Added CLAUDE_CODE_AUTO_MODE_MODEL to choose the model the client-side auto mode classifier uses; it does not change the model for server-side auto mode Added an Idle compaction row to /config for turning idle compaction off or back on; the notices shown after an idle compaction now say how to turn it off Added a notice to /design-sync and /design-login that standalone Claude Design…"
+  },
+  {
+   "source": "GitHub Copilot CLI releases",
+   "tier": "official",
+   "title": "1.0.100-0",
+   "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.100-0",
+   "date": "2026-10-16T20:10+00:00",
+   "summary": "Improved Prompt to update the sandbox proxy certificate authority when masked hosts change Fixed Managed plugins update activation in existing sessions when managed policy changes Sessions no longer stall for minutes when an MCP server hangs while loading tools. Gemini tool calls no longer fail when array parameters define enum values Gemini chats no longer fail after earlier tool results contain…"
+  },
+  {
+   "source": "Apple Developer News",
+   "tier": "official",
+   "title": "Strengthening App Review Guidelines against nonconsensual intimate imagery and bait-and-switch apps",
+   "url": "https://developer.apple.com/news/?id=vvzx6cul",
+   "date": "2026-10-16T13:00-07:00",
+   "summary": "The App Review Guidelines are a core part of the safe and trusted experience that the App Store strives to offer users around the world — and the foundation of that trust is clear standards that are consistently enforced. As outlined in our App Review Guidelines, pornographic material has long been prohibited on the App Store — this includes apps that generate nudity or sexually explicit imagery,…"
+  },
+  {
+   "source": "OpenAI News",
+   "tier": "official",
+   "title": "How Itaú is building generative AI for its entire customer base",
+   "url": "https://openai.com/index/itau-generative-ai",
+   "date": "2026-10-16T19:00+00:00",
+   "summary": "With ia.i, a conversational interface, and the IARA governance platform, Itaú is applying its AI First strategy to customers and employees — in one of Brazil’s most regulated sectors."
+  },
+  {
+   "source": "Goose releases",
+   "tier": "official",
+   "title": "v1.55.0",
+   "url": "https://github.com/aaif-goose/goose/releases/tag/v1.55.0",
+   "date": "2026-10-16T17:07+00:00",
+   "summary": "✨ Features AIgateway declarative provider #12528 Propagate W3C trace context from ACP prompts to MCP tool calls #12697 Surface provider x-request-id on responses and errors #12587 Honor supports_vision declared on custom provider models #12769 Use live model metadata for OpenAI reasoning and prefer the Responses API #12568 Cap auto-compaction at 225k tokens by default #12790 Improve askai bot…"
+  },
+  {
+   "source": "Google Keyword blog (all products)",
+   "tier": "official",
+   "title": "We’re sharing 3 tips to study smarter with Gemini Notebook.",
+   "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/three-tips-study-gemini-notebook/",
+   "date": "2026-10-16T16:00+00:00",
+   "summary": "Master your exams with Google Gemini Notebook’s new 60-second video overviews and interactive quiz formats. Try these study tools at notebook.google."
+  },
+  {
+   "source": "GitHub Copilot CLI releases",
+   "tier": "official",
+   "title": "1.0.99-3",
+   "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.99-3",
+   "date": "2026-10-16T15:08+00:00",
+   "summary": "Added Add --disable-client-telemetry flag to turn off client telemetry uploads from the CLI Fixed Sandboxed shell commands now explain credential-proxy certificate trust failures and can offer an approved rerun outside the sandbox. Keep saved /diff review comments when reopening an unchanged diff in the same session, with an explicit discard action. Plugin enable, disable, update, and uninstall…"
+  },
+  {
+   "source": "OpenCode releases",
+   "tier": "official",
+   "title": "pr-56106-video: chore(release): drop the separate opencode-beta release repo (#56083)",
+   "url": "https://github.com/anomalyco/opencode/releases/tag/pr-56106-video",
+   "date": "2026-10-16T13:54+00:00",
+   "summary": "Co-authored-by: thdxr 826656+thdxr@users.noreply.github.com"
+  },
+  {
+   "source": "OpenCode releases",
+   "tier": "official",
+   "title": "v2.0.31",
+   "url": "https://github.com/anomalyco/opencode/releases/tag/v2.0.31",
+   "date": "2026-10-16T12:37+00:00",
+   "summary": "release: v2.0.31"
+  },
+  {
+   "source": "OpenCode releases",
+   "tier": "official",
+   "title": "v1.19.3",
+   "url": "https://github.com/anomalyco/opencode/releases/tag/v1.19.3",
+   "date": "2026-10-16T12:31+00:00",
+   "summary": "Core Improvements Configure model reasoning options to generate reasoning variants, replacing catalog variants while preserving your configured variant overrides."
+  },
+  {
+   "source": "ElevenLabs blog",
+   "tier": "official",
+   "title": "AI voice agent integrations: CRM and help desk guide",
+   "url": "https://elevenlabs.io/blog/ai-voice-agent-integrations",
+   "date": "2026-10-16T12:00+00:00",
+   "summary": "Learn about AI voice agent integrations with Salesforce, HubSpot, Zendesk, and more. Discover how agents read and update records mid-call and set up tools."
+  },
+  {
+   "source": "ElevenLabs blog",
+   "tier": "official",
+   "title": "ElevenLabs’ commitment to security, privacy, and responsible AI: certified and renewed",
+   "url": "https://elevenlabs.io/blog/certification-renewals",
+   "date": "2026-10-16T12:00+00:00",
+   "summary": "ElevenLabs renewed its ISO, SOC 2, and PCI DSS certifications and added SOC 2 Type I and FedRAMP 20x Class A for enterprise trust."
+  },
+  {
+   "source": "ElevenLabs blog",
+   "tier": "official",
+   "title": "NTT Docomo Business trials conversational AI in Aizuwakamatsu with ElevenLabs",
+   "url": "https://elevenlabs.io/blog/ntt-docomo-conversational-ai",
+   "date": "2026-10-16T12:00+00:00",
+   "summary": "NTT Docomo Business is piloting an ElevenAgents voice platform in Fukushima to support older residents with natural Japanese speech. (137 characters)"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "v4.1.25",
+   "url": "https://github.com/cline/cline/releases/tag/v4.1.25",
+   "date": "2026-10-16T06:39+00:00",
+   "summary": "Added Cline Cloud sessions, rolling out gradually: run a task in a hosted sandbox on a GitHub repo and branch you pick. Turn it on in Settings. Cloud tasks show in Recent and History with their status, notify you when they finish, and keep running after you close your editor. Changed With no model chosen, the Cline provider now uses Gemini 4 Argon, the new first model in Cline's recommended list.…"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "SDK v0.0.94",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fsdk%2Fv0.0.94",
+   "date": "2026-10-16T03:51+00:00",
+   "summary": "Plugins now run only in worker threads (the default, CLINE_PLUGIN_MODE=worker ) or in the subprocess sandbox ( sandbox ). The in_process mode is removed, along with its silent fallback. A host that ships no plugin-sandbox-bootstrap.js fails every plugin load with PluginBootstrapMissingError , which names CLINE_PLUGIN_BOOTSTRAP_PATH , instead of quietly running plugins inside the hub. The hub…"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "sdk/shared/v0.0.94",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fshared%2Fv0.0.94",
+   "date": "2026-10-16T03:50+00:00",
+   "summary": "@cline/shared@0.0.94"
+  },
+  {
+   "source": "OpenCode releases",
+   "tier": "official",
+   "title": "v1.19.2",
+   "url": "https://github.com/anomalyco/opencode/releases/tag/v1.19.2",
+   "date": "2026-10-16T02:30+00:00",
+   "summary": "Core Bugfixes OpenCode 1 now stays on the 1.x release line: update checks use only the npm opencode-ai latest version, so 1.x installs are never offered a 2.x build as a regular update. Upgrading to OpenCode 2 remains a separate, explicit choice through the 2.0 offer in /update or opencode upgrade --major . Fix upgrades for installs managed by yarn. Skip 1.x updates for Homebrew Core installs,…"
+  },
+  {
+   "source": "GitHub Copilot changelog",
+   "tier": "official",
+   "title": "Multi-repository support and other improvements for GitHub in Slack and Teams",
+   "url": "https://github.blog/changelog/2026-10-15-copilot-in-slack-and-teams-adds-model-and-repository-updates",
+   "date": "2026-10-16T02:16+00:00",
+   "summary": "@GitHub in Slack and Teams now supports working across multiple repositories in a single conversation. Whether you’re creating issues, opening pull requests, or investigating bugs, you can work across repositories… The post Multi-repository support and other improvements for GitHub in Slack and Teams appeared first on The GitHub Blog ."
+  },
+  {
+   "source": "Hugging Face blog",
+   "tier": "official",
+   "title": "Scaling Indic Pretraining: 2.8 Trillion Tokens and an Open Data Generation Pipeline",
+   "url": "https://huggingface.co/blog/nvidia/scaling-indic-pretraining",
+   "date": "2026-10-16T01:44+00:00",
+   "summary": ""
+  },
+  {
+   "source": "GitHub Copilot CLI releases",
+   "tier": "official",
+   "title": "1.0.99-2",
+   "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.99-2",
+   "date": "2026-10-16T00:49+00:00",
+   "summary": "Improved Show a clear notice when administrator-managed settings override your selected model Enable semantic code search by default for online sessions. Fixed Sandboxed commands on Linux start more reliably without intermittent loopback setup failures Back from MCP resource details stays on the list during live metadata refreshes Native chats can start and finish while optional managed plugin…"
+  },
+  {
+   "source": "OpenAI News",
+   "tier": "official",
+   "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
+   "url": "https://openai.com/index/stack-overflow-chatgpt-plugin",
+   "date": "2026-10-16T00:00+00:00",
+   "summary": "Two engineers shipped Stack Overflow for Agents in a few weeks with Codex, and its ChatGPT plugin helped drive up to 10× growth in agent creation."
+  },
+  {
+   "source": "OpenAI News",
+   "tier": "official",
+   "title": "Benefit Street Partners answers questions faster with Codex",
+   "url": "https://openai.com/index/benefit-street-partners",
+   "date": "2026-10-16T00:00+00:00",
+   "summary": "Anant Kumar builds tools to compare loan valuations and analyze credit agreements, using Codex for code review and faster follow-ups."
+  },
+  {
+   "source": "Cursor changelog",
+   "tier": "official",
+   "title": "Cloud Agent Canvases and Environment Improvements",
+   "url": "https://cursor.com/changelog/cloud-agent-canvases-and-environments",
+   "date": "2026-10-16T00:00+00:00",
+   "summary": "Cloud agents can now build and share interactive canvases. The Environments API is available in beta, environments support up to 300 repos, and large environments load 5x faster."
+  },
+  {
+   "source": "Hugging Face blog",
+   "tier": "official",
+   "title": "Welcome Beam: a 501B open model you can own, customize, and scale",
+   "url": "https://huggingface.co/blog/reflection-beam",
+   "date": "2026-10-16T00:00+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Ollama blog",
+   "tier": "official",
+   "title": "Reflection's Beam is freely available on Ollama for a limited time",
+   "url": "https://ollama.com/blog/reflection-beam",
+   "date": "2026-10-16T00:00+00:00",
+   "summary": "Reflection's first open-weight model is now available on Ollama, and free for a limited time only. Beam is designed for software engineering, reasoning, and long-running agentic tasks. Access Beam through Ollama Cloud."
+  },
+  {
+   "source": "Codex CLI releases",
+   "tier": "official",
+   "title": "0.163.0",
+   "url": "https://github.com/openai/codex/releases/tag/rust-v0.163.0",
+   "date": "2026-10-15T21:33+00:00",
+   "summary": "New Features Open /config to search preferences across categories, change supported settings immediately, and see which changes require a restart. ( #52990 , #53429 ) Send a follow-up while Codex is responding to steer it immediately. Interrupting a turn also stops active Code Mode cells and their nested tool calls. ( #51812 , #51835 ) Configure a leader key in /keymap . The default is Ctrl+X ,…"
+  },
+  {
+   "source": "Anthropic News",
+   "tier": "official",
+   "title": "An update on independent evaluators",
+   "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+   "date": "2026-10-15T00:00+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Claude release notes",
+   "tier": "official",
+   "title": "Claude release notes: Oct 15, 2026",
+   "url": "https://docs.claude.com/en/release-notes/overview",
+   "date": "2026-10-15T00:00+00:00",
+   "summary": " The Compliance API now returns the text each organization member saved as Instructions for Claude in claude.ai and as Global instructions in Cowork, in beta for Claude Enterprise organizations. Call GET /v1/compliance/organizations/{org_uuid}/user_preferences with your existing Compliance Access Key and the read:compliance_user_data scope. See List user preferences . Fast mode is out of research preview for Claude Opus 5.5, and you no longer need to request access. Requests to Claude Opus 5.5 no longer require the fast-mode- …"
+  },
+  {
+   "source": "Codex changelog",
+   "tier": "official",
+   "title": "Codex changelog: Oct 15, 2026",
+   "url": "https://developers.openai.com/codex/changelog",
+   "date": "2026-10-15T00:00+00:00",
+   "summary": "Codex CLI 0.163.0 pre]:w-full [&>pre]:max-w-full [&>pre]:mb-0 pt-4\"> $ npm install -g @openai/codex@0.163.0 View details New Features Open /config to search preferences across categories, change supported settings immediately, and see which changes require a restart. ( #52990 , #53429 ) Send a follow-up while Codex is responding to steer it immediately. Interrupting a turn also stops active Code Mode cells and their nested tool calls. ( #51812 , #51835 ) Configure a leader key in /keymap . The default is Ctrl+X , shortcut hints stay open until you choose or cancel, and voice mute moves to F9 . ( #52273 ) Restart a managed background server from /daemon . Codex warns about work the restart could interrupt, then reconnects automatically. ( #53173 ) Codex can run independent read-only tools in parallel, including skill, memory, and conversation-history lookups. ( #52245 ) Daybreak is…"
+  },
+  {
+   "source": "Latent Space AINews",
+   "tier": "signal",
+   "title": "[AINews] High Taste Testers Ep. 1",
+   "url": "https://www.latent.space/p/ainews-high-taste-testers-ep-1",
+   "date": "2026-10-17T07:47+00:00",
+   "summary": "a quiet day lets us pilot a new show"
+  },
+  {
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "v2026.10.10-beta.2",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.10-beta.2",
+   "date": "2026-10-17T01:51+00:00",
+   "summary": "openclaw 2026.10.10-beta.2"
+  },
+  {
+   "source": "9to5Mac",
+   "tier": "signal",
+   "title": "Apple’s new App Store rules crack down on AI nudification and ‘bait-and-switch’ apps",
+   "url": "https://9to5mac.com/2026/10/16/apples-new-app-store-rules-crack-down-on-ai-nudification-and-bait-and-switch-apps/",
+   "date": "2026-10-16T22:17+00:00",
+   "summary": "Apple updated its App Review Guidelines today with a series of changes meant to strengthen protections against harmful content and deceptive app review practices. Here are the details. more…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Quoting Addy Osmani, Morgan Westlee Lunt, and Qing Wang",
+   "url": "https://simonwillison.net/2026/Oct/16/code-review/",
+   "date": "2026-10-16T22:06+00:00",
+   "summary": "We think \"did a human read the code?\" is an imprecise proxy for \"what could go wrong with this change, and which check—automated or human—is the right one to catch it?\" Asking that question also changed when review happens. Before, review was a gate at the end of the road: write the code, open a PR, wait for your colleague. Now, review runs continuously, more like spellcheck while you write. Most…"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Replit is no longer working with Anthropic, CEO says",
+   "url": "https://techcrunch.com/2026/10/16/replit-is-no-longer-working-with-anthropic-ceo-says/",
+   "date": "2026-10-16T21:22+00:00",
+   "summary": "Masad said the decision was made for a number of different reasons, including cost. Replit announced a partnership with OpenAI in August, but there was never any indication that it was no longer with Anthropic."
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "Pixelated 121: Is Googlebook the first real post-smartphone PC?",
+   "url": "https://9to5google.com/2026/10/16/pixelated-121-is-googlebook-the-first-real-post-smartphone-pc/",
+   "date": "2026-10-16T21:00+00:00",
+   "summary": "Welcome to Pixelated episode 121. This week, Abner, Damien, and Will dive deep into Google’s new laptop platform, Googlebook. From hardware impressions across review units to making sense of the earliest days of desktop Android, there’s a ton of ground to cover. What sort of future awaits Googlebook, and is it right for what you want out of a laptop? You’ll need to listen to find out. Enjoy the…"
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "Android 17 QPR2 Beta 7.1 rolling out for Pixel",
+   "url": "https://9to5google.com/2026/10/16/android-17-qpr2-beta-7-1-pixel/",
+   "date": "2026-10-16T20:25+00:00",
+   "summary": "Google is rolling out Android 17 QPR2 Beta 7.1 today a week after the last preview for Pixel devices, which did not feature major user-facing changes. more…"
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "Google’s Universal Cart puts a shopping cart everywhere, including Search homepage, Chrome",
+   "url": "https://9to5google.com/2026/10/16/google-universal-cart-shopping-icon/",
+   "date": "2026-10-16T19:47+00:00",
+   "summary": "Yesterday, Google started rolling out its Universal Cart, and the company is very prominently placing it in Search, AI Mode, Chrome, and the Gemini app. more…"
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "Friday’s Android app deals and freebies: Majesty, Boxville 2, Dungeon Defense, Mythic Trials 2, more",
+   "url": "https://9to5toys.com/2026/10/16/todays-highlight-google-play-deals-30/",
+   "date": "2026-10-16T18:57+00:00",
+   "summary": "Friday’s best Google Play app and game deals are ready, including Majesty: The Fantasy Kingdom, Majesty－The Northern Expansion, Boxville 2, Dungeon Defense, Mythic Trials 2, Tempest: Pirate RPG Premium, The Tiny Bang Story: Premium, MiniChess by Kasparov, and more. Just be sure to dive into Nothing’s Glyph Matrix-equipped Phone (3) at up to $300 off and Best Buy’s 1-day Windows Copilot+ PC flash…"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "India becomes the latest country to report rogue AI agent activity",
+   "url": "https://techcrunch.com/2026/10/16/india-becomes-the-latest-country-to-report-rogue-ai-agent-activity/",
+   "date": "2026-10-16T17:52+00:00",
+   "summary": "The agents got in through credentials and connection settings left exposed in app configurations, public code repositories, and overly permissive cloud roles."
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "ChatGPT gets deeper Google Chrome integration including control over tabs",
+   "url": "https://9to5google.com/2026/10/16/chatgpt-gets-deeper-google-chrome-integration-including-control-over-tabs/",
+   "date": "2026-10-16T17:50+00:00",
+   "summary": "OpenAI this week announced deeper integration between ChatGPT and Google Chrome, including the ability to hand control over your tabs to the AI assistant. more…"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "An Nvidia insider-turned-VC on why robotics hasn’t hit its ChatGPT moment, yet",
+   "url": "https://techcrunch.com/video/a-nvidia-insider-turned-vc-on-why-robotics-hasnt-hit-its-chatgpt-moment-yet/",
+   "date": "2026-10-16T16:30+00:00",
+   "summary": "Amulya Vishwanath, who spent seven years leading product marketing for NVIDIA’s robotics platforms, says robotics is currently in its “Lego era,” with the basic building blocks like actuators, robotic hands, software, and safety standards still being rebuilt. This view runs counter to those who believe that robotics, powered by a general foundation model, is about to have […]"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Physical AI is more than robots, says the Nvidia veteran now investing in it",
+   "url": "https://techcrunch.com/podcast/physical-ai-is-more-than-robots-says-the-nvidia-veteran-now-investing-in-it/",
+   "date": "2026-10-16T16:30+00:00",
+   "summary": "Amulya Vishwanath, who spent seven years leading product marketing for NVIDIA’s robotics platforms, says robotics is currently in its “Lego era,” with the basic building blocks like actuators, robotic hands, software, and safety standards still being rebuilt. This view runs counter to those who believe that robotics, powered by a general foundation model, is about to have […]"
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "iPhone Duo orders are delayed into 2027; here are the Android foldables you should try instead",
+   "url": "https://9to5google.com/2026/10/16/iphone-duo-pre-order-delay-android-foldable-alternatives/",
+   "date": "2026-10-16T16:10+00:00",
+   "summary": "The iPhone Duo is already delayed for months just hours after pre-orders have opened, leaving those interested in foldables unable to get Apple’s take anytime soon. If you’re seriously interested in a foldable, though, may I interest you in some Android alternatives? more…"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Elorian’s first AI model wants to reason with images, not just about them",
+   "url": "https://techcrunch.com/2026/10/16/elorians-first-ai-model-wants-to-reason-with-images-not-just-about-them/",
+   "date": "2026-10-16T16:01+00:00",
+   "summary": "According to Elorian's evaluations, Glimpse outperforms even GPT-6 Astra on scientific chart reasoning and short-form video captioning, with competitive results on other visual reasoning tasks."
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "Deals: Nothing Phone (3) up to $300 off, Lenovo Android Idea Tab $142, Best Buy 1-day laptop sale up to $500 off, more",
+   "url": "https://9to5google.com/2026/10/16/deals-nothing-phone-3-lenovo-android-idea-tab-laptops/",
+   "date": "2026-10-16T15:43+00:00",
+   "summary": "The Moto Tag 2 Android Find Hub trackers are still down at the lowest prices we have tracked, but today’s 9to5Toys Lunch Break is headlined by Nothing’s Glyph Matrix-equipped Phone (3) up to $300 off the original price alongside Best Buy’s 1-day Windows Copilot+ PC flash sale with up to $500 off touchscreen laptops and desktops . We also have $500 off Lenovo’s 2K OLED touchscreen Yoga 7i 2-in-1…"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Jev is Vercel’s fastest-adopted AI model ever",
+   "url": "https://techcrunch.com/2026/10/16/jev-is-vercels-fastest-adopted-ai-model-ever/",
+   "date": "2026-10-16T15:33+00:00",
+   "summary": "The data comes from Vercel's AI gateway, a unified API service similar to OpenRouter."
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "Google says fix for Android Auto’s missing signal icon is rolling out, and it actually is [U]",
+   "url": "https://9to5google.com/2026/10/16/android-auto-signal-icon-fix/",
+   "date": "2026-10-16T15:01+00:00",
+   "summary": "After weeks of back and forth, Google has officially confirmed a fix is rolling out for Android Auto’s missing signal icon. more…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "A week with RTX Spark: everything we’ve learned using Nvidia’s new laptops",
+   "url": "https://www.theverge.com/tech/1012748/nvidia-rtx-spark-windows-arm-laptops-asus-hp-lenovo-impressions",
+   "date": "2026-10-16T11:00-04:00",
+   "summary": "Nvidia’s new SoC is available in Windows laptops from six different manufacturers. We’ve collectively tested four of them so far. | Photo: Antonio G. Di Benedetto / The Verge Nvidia's RTX Spark N1X processor is finally here, and we've been collectively testing a small fortune's worth of powerful laptops sporting this new \"superchip.\" RTX Spark is designed to be a high-performing Arm-based SoC for…"
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "Google restricts every free AI Pro trial from Pixel & more compared to paid subscribers",
+   "url": "https://9to5google.com/2026/10/16/google-restricts-every-free-ai-pro-trial-from-pixel-more-compared-to-paid-subscribers/",
+   "date": "2026-10-16T14:40+00:00",
+   "summary": "Google hands out extended free trials to its AI Pro subscription frequently with new smartphone purchases and more, but trial users end up getting less access compared to paid subscribers in what is a bit of a misleading situation. more…"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Mark Wahlberg on using AI in film ‘the right way’ and being open to an AI clone carrying on his legacy",
+   "url": "https://techcrunch.com/2026/10/16/mark-wahlberg-on-using-ai-in-film-the-right-way-and-being-open-to-an-ai-clone-carrying-on-his-legacy/",
+   "date": "2026-10-16T14:26+00:00",
+   "summary": "Actor and angel investor Mark Wahlberg says he's OK with using AI in filmmaking, provided it's used \"to enhance what you're doing.\""
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Meta’s new terms may allow it to train AI on news sites for free",
+   "url": "https://www.theverge.com/tech/1012846/meta-business-terms-scrape-news-publishers",
+   "date": "2026-10-16T10:02-04:00",
+   "summary": "Meta's new terms appear to give it permission to crawl and scrape websites \"associated\" with the businesses that use its platforms - including online publishers, according to a report from Nieman Lab . The new terms , which go into effect on October 30th, say Meta can use this outside content to \"develop, improve, research,\" and \"train\" its AI products. While Meta spokesperson Daniel Roberts says…"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Veritas expands its anti-counterfeit chip to jewelry, trophies, and fragrance bottles",
+   "url": "https://techcrunch.com/2026/10/16/veritas-is-building-a-chip-to-verify-luxury-goods/",
+   "date": "2026-10-16T14:00+00:00",
+   "summary": "Counterfeiters are getting better at replicating brands' marks and passing off dupes, known as \"superfakes,\" as genuine items. A startup called Veritas wants to tackle the problem with its own chip that verifies goods."
+  },
+  {
+   "source": "9to5Mac",
+   "tier": "signal",
+   "title": "Security Bite: Americans are contradicting themselves around privacy",
+   "url": "https://9to5mac.com/2026/10/16/security-bite-americans-are-contradicting-themselves-around-privacy/",
+   "date": "2026-10-16T13:52+00:00",
+   "summary": "9to5Mac Security Bite is exclusively brought to you by Mosyle, the only Apple Unified Platform . Making Apple devices work-ready and enterprise-safe is all we do. Our unique integrated approach to management and security combines state-of-the-art Apple-specific security solutions for fully automated Hardening & Compliance, Next Generation EDR, AI-powered Zero Trust, and exclusive Privilege…"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Replit’s CEO says the future of work is the ‘self-driving company’",
+   "url": "https://techcrunch.com/2026/10/16/replits-ceo-says-the-future-of-work-is-the-self-driving-company/",
+   "date": "2026-10-16T12:55+00:00",
+   "summary": "Replit CEO Amjad Masad envisions a future of “self-driving companies,” where AI agents handle day-to-day tasks and people focus on higher-level decisions."
+  },
+  {
+   "source": "Latent Space AINews",
+   "tier": "signal",
+   "title": "[AINews] Agents disprove Polysemanticity; greatly improve Interpretability & Alignment",
+   "url": "https://www.latent.space/p/ainews-agents-disprove-polysemanticity",
+   "date": "2026-10-16T04:16+00:00",
+   "summary": "Nick Cammarata out of nowhere with some major claims!"
+  },
+  {
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "openclaw 2026.10.4",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.4",
+   "date": "2026-10-16T03:04+00:00",
+   "summary": "2026.10.4 Highlights The Gateway keeps running after the computer sleeps or the system clock jumps, instead of restarting itself because its ownership heartbeat looked stale. ( #170790 ) Thanks @AnvinaLI , @sgh6688 , @waynegault , and @RomneyDa . Gateway shutdown and restart no longer hang on a stalled transcript worker or in-flight session lifecycle events. ( #170493 , #170555 ) Thanks…"
+  },
+  {
+   "source": "9to5Google",
+   "tier": "signal",
+   "title": "Gemini 4 Argon is now rolling out to Google’s Antigravity for AI Pro subscribers",
+   "url": "https://9to5google.com/2026/10/15/gemini-4-argon-is-now-rolling-out-to-googles-antigravity-for-ai-pro-subscribers/",
+   "date": "2026-10-16T01:10+00:00",
+   "summary": "Google is now rolling out support for Gemini 4 Argon to Antigravity, its AI coding tool. more…"
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "When it came to Cal AI’s viral success, a small army of influencers paid off",
+   "url": "https://techcrunch.com/2026/10/15/when-it-came-to-cal-ais-viral-success-a-small-army-of-influencers-paid-off/",
+   "date": "2026-10-15T23:44+00:00",
+   "summary": "The company generated over $30 million in revenue in two years and was acquired by MyFitnessPal for an undisclosed amount of money in March."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Trump cancels livestream execution of Hasan",
+   "url": "https://www.socialmediatoday.com/news/trump-cancels-livestream-execution-of-hasan/833194/",
+   "date": "2026-10-15T19:17-04:00",
+   "summary": "The U.S. president walked back an earlier plan to broadcast the military firing squad, saying in a Truth Social post that many people “would rather not watch him die.”"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "ChatGPT can peek at your Chrome tabs now",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1012510/openai-chatgpt-google-chrome-tabs",
+   "date": "2026-10-15T18:43-04:00",
+   "summary": "OpenAI's ChatGPT Atlas browser is gone , but now ChatGPT's Google Chrome extension is getting some upgrades that allow it to use the browser tabs you already have open. With the extension installed, OpenAI says ChatGPT can now view your browser tabs when you tag Chrome in ChatGPT's web or desktop app, posting a demo video showing someone asking ChatGPT to compare the three tabs they have open…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Sega pulls Total War: Shogun 2 remaster from sale following disastrous launch",
+   "url": "https://www.theverge.com/games/1012512/sega-total-war-shogun-2-remaster-pulled",
+   "date": "2026-10-15T18:35-04:00",
+   "summary": "Sega is removing Total War: Shogun 2 - Complete Edition from storefronts following a disastrous launch where users complained about issues like bugs and upscaling that appears to have been done by AI. Complete Edition , a remaster of the 2011 strategy game, launched on Tuesday, and it bundled the main game and all of its DLC with promised upgrades including \"improved visuals,\" \"1440p and 4K UI…"
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Meta adds audio links and reference Reels to Edits",
+   "url": "https://www.socialmediatoday.com/news/meta-adds-audio-links-and-reference-reels-to-edits/833192/",
+   "date": "2026-10-15T18:00-04:00",
+   "summary": "The company continues to build out its video editing app with custom kit options and additional insights for creators."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "TikTok shares holiday sales data",
+   "url": "https://www.socialmediatoday.com/news/tiktok-shares-holiday-sales-data/833191/",
+   "date": "2026-10-15T17:58-04:00",
+   "summary": "The company said in-app sales surpassed $500 million between Black Friday Cyber Monday last year and users are currently looking for holiday inspiration."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "X partners with Genius Sports on NFL data",
+   "url": "https://www.socialmediatoday.com/news/x-partners-with-genius-sports-on-nfl-data/833190/",
+   "date": "2026-10-15T17:54-04:00",
+   "summary": "The deal will let app users access real-time statistics and insights via X’s NFL Gametime feed."
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "The tech backlash is now in theaters",
+   "url": "https://www.theverge.com/entertainment/1012438/hollywood-tech-backlash-you-can-see-everything-musk-the-social-reckoning-artificial",
+   "date": "2026-10-15T17:39-04:00",
+   "summary": "Though movies about disruptive tech founders are nothing new, 2026 has been unusually stacked with features that take a much more critical look at how Silicon Valley is reshaping our reality. Aaron Sorkin's The Social Reckoning frames Mark Zuckerberg as a robotic villain whose ambitions are destabilizing society . Nathan Fielder and Lance Oppenheim's You Can See Everything paints a damning…"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "DeepSeek-v4.1-Flash-1017",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "date": "2026-10-17T08:21+00:00",
+   "summary": "97 points, 33 comments · https://news.ycombinator.com/item?id=50129045"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "I never authorized an integration that scans my secrets",
+   "url": "https://github.com/home-assistant/home-assistant.io/issues/49314",
+   "date": "2026-10-16T20:33+00:00",
+   "summary": "220 points, 191 comments · https://news.ycombinator.com/item?id=50124251"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "FLUX 3 Image Klein",
+   "url": "https://bfl.ai/blog/flux-3-image-klein",
+   "date": "2026-10-16T19:47+00:00",
+   "summary": "166 points, 45 comments · https://news.ycombinator.com/item?id=50123580"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "How the Claude Code team does code review",
+   "url": "https://claude.dev/blog/solving-code-review-at-anthropic/",
+   "date": "2026-10-16T19:04+00:00",
+   "summary": "345 points, 324 comments · https://news.ycombinator.com/item?id=50122951"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "You could have invented transformers from memory",
+   "url": "https://alexwang.ai/posts/associative-memory/",
+   "date": "2026-10-16T19:01+00:00",
+   "summary": "299 points, 69 comments · https://news.ycombinator.com/item?id=50122878"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Claude reveals ECDSA curve origins",
+   "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+   "date": "2026-10-16T18:55+00:00",
+   "summary": "865 points, 323 comments · https://news.ycombinator.com/item?id=50122800"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Llama.cpp on a jailbroken PS5: run any GGUF model natively on the console",
+   "url": "https://github.com/cobanov/PS5LM",
+   "date": "2026-10-16T18:32+00:00",
+   "summary": "288 points, 72 comments · https://news.ycombinator.com/item?id=50122431"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Anthropic assigned highest junk credit rating in June",
+   "url": "https://www.ft.com/content/5a310aee-f555-4266-874c-b1b4db20186d",
+   "date": "2026-10-16T18:11+00:00",
+   "summary": "253 points, 76 comments · https://news.ycombinator.com/item?id=50122112"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Designing more efficient quantum circuits with Claude",
+   "url": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+   "date": "2026-10-16T18:00+00:00",
+   "summary": "140 points, 32 comments · https://news.ycombinator.com/item?id=50121939"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Anthropic Console overcharged my card 100x due to internationalization input bug",
+   "url": "https://news.ycombinator.com/item?id=50121562",
+   "date": "2026-10-16T17:31+00:00",
+   "summary": "87 points, 36 comments · https://news.ycombinator.com/item?id=50121562"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "90% of US working hours are spent on tasks not covered well by AI benchmarks",
+   "url": "https://www.mercor.com/research/labor-index/benchmark-map/",
+   "date": "2026-10-16T17:08+00:00",
+   "summary": "500 points, 419 comments · https://news.ycombinator.com/item?id=50121179"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Inside Polymarket's paid quote-retweet esports program",
+   "url": "https://www.readergrev.com/p/polymarket-paid-quote-retweet-esports-investigation",
+   "date": "2026-10-16T15:56+00:00",
+   "summary": "96 points, 59 comments · https://news.ycombinator.com/item?id=50120010"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Postgres 19 delayed after AI reviewers find more bugs than humans can fix",
+   "url": "https://www.theregister.com/databases/2026/10/16/postgres-19-delayed-after-ai-reviewers-find-more-bugs-than-humans-can-fix/5303471",
+   "date": "2026-10-16T15:55+00:00",
+   "summary": "198 points, 77 comments · https://news.ycombinator.com/item?id=50119991"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: Gemini 4 Argon plays StarCraft",
+   "url": "https://starskirmish.com/bench/v0-2/",
+   "date": "2026-10-16T14:18+00:00",
+   "summary": "222 points, 99 comments · https://news.ycombinator.com/item?id=50118688"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Any window from your Mac, on your iPhone and iPad",
+   "url": "https://github.com/Saffsanity/sill",
+   "date": "2026-10-16T01:43+00:00",
+   "summary": "253 points, 75 comments · https://news.ycombinator.com/item?id=50112739"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "BeBox is a Haiku application that emulates Be Inc.'s BeBox",
+   "url": "https://github.com/johnrash/bebox",
+   "date": "2026-10-15T23:22+00:00",
+   "summary": "89 points, 32 comments · https://news.ycombinator.com/item?id=50111742"
+  }
+ ],
+ "errors": [],
+ "manual": [
+  {
+   "name": "xAI news / Grok app updates",
+   "url": "https://x.ai/news",
+   "why": "blocks scripts (403): web search 'Grok' / 'xAI' last 24h"
+  },
+  {
+   "name": "ChatGPT release notes",
+   "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Perplexity changelog",
+   "url": "https://www.perplexity.ai/changelog",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Official X accounts (@AnthropicAI, @OpenAI, @xai, @GoogleDeepMind, @cursor_ai)",
+   "url": "https://x.com",
+   "why": "X needs login / paid API: use web search for big announcements"
+  },
+  {
+   "name": "Social media new features (Instagram @creators/@mosseri, TikTok newsroom, X, LinkedIn, Snapchat)",
+   "url": "https://newsroom.tiktok.com/",
+   "why": "no working RSS (TikTok/WhatsApp/Instagram blogs are HTML, Snap/LinkedIn 404): web search each gather for new features, AI features and creator tools; confirm on the platform's own newsroom/help page"
+  },
+  {
+   "name": "Higgsfield announcements",
+   "url": "https://x.com/higgsfield_ai",
+   "why": "big launches often land on X before the blog"
+  },
+  {
+   "name": "Qwen blog (Alibaba)",
+   "url": "https://qwen.ai/blog",
+   "why": "JS-rendered, no RSS (the old qwenlm.github.io feed stopped in 2025-09): web search 'Qwen' each gather for new open-weight releases"
+  }
+ ]
+}

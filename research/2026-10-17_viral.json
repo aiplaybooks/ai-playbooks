@@ -1,0 +1,108 @@
+{
+ "generated": "2026-10-17T09:31:01+00:00",
+ "reddit": [],
+ "youtube_signal": [
+  {
+   "id": "yt-VhZaXKHqZQE",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Bro looks AI generated 😭",
+   "channel": "John Casterline",
+   "url": "https://www.youtube.com/shorts/VhZaXKHqZQE",
+   "views": 3641528,
+   "date": "2026-10-15T20:28:00Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-CZC9zO7kz64",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "سر الريمونتادا التاريخية! 😂🔥 مورينيو وخلطته السحرية من 3-1 إلى 4-3! 🤯⚽ #shorts",
+   "channel": "Counter-Press",
+   "url": "https://www.youtube.com/shorts/CZC9zO7kz64",
+   "views": 284410,
+   "date": "2026-10-15T13:24:50Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-gykY1DV2jRg",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Jab Legends Mile Robot Se! ft. Salman & Sachin 🤯  #cricket #shorts #sachin #salman",
+   "channel": "viratofficial-e18",
+   "url": "https://www.youtube.com/shorts/gykY1DV2jRg",
+   "views": 266939,
+   "date": "2026-10-14T16:46:30Z",
+   "query": "humanoid robot video"
+  },
+  {
+   "id": "yt-Rf4UYT2-96g",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "😱 माँ का दूध हर पल कैसे बदलता है? विज्ञान के पीछे छिपा कुदरत का हैरान करने वाला रहस्य! #shortvideo",
+   "channel": "Muhammed Sajid",
+   "url": "https://www.youtube.com/shorts/Rf4UYT2-96g",
+   "views": 226446,
+   "date": "2026-10-15T17:39:55Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-OFVBiAxtl24",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "This AI fish tricked almost everyone",
+   "channel": "Jeremy Carrasco",
+   "url": "https://www.youtube.com/shorts/OFVBiAxtl24",
+   "views": 149154,
+   "date": "2026-10-16T21:03:11Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-4TxseRbyXKs",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Allah tala ki madad I AI generated video#viralvideo #islamic #prayer",
+   "channel": "Viral islam0569",
+   "url": "https://www.youtube.com/shorts/4TxseRbyXKs",
+   "views": 135438,
+   "date": "2026-10-15T01:00:37Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-4IQdDmucRgE",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "The secret behind Yamal magic trick #yamal #funny",
+   "channel": "H4X Studio ",
+   "url": "https://www.youtube.com/shorts/4IQdDmucRgE",
+   "views": 128621,
+   "date": "2026-10-14T19:14:05Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-ceQaLl1powU",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Sen. Blackburn AI video raising legal question",
+   "channel": "WKRN News 2",
+   "url": "https://www.youtube.com/shorts/ceQaLl1powU",
+   "views": 125978,
+   "date": "2026-10-15T23:22:00Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-XfQfFYCuK9I",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "FASHION ROBOTS NOW vs THEN ✨😮 #nowvsthen #robot #fashion #model #supermodel #catwalk #edit #shorts",
+   "channel": "Runway World",
+   "url": "https://www.youtube.com/shorts/XfQfFYCuK9I",
+   "views": 125393,
+   "date": "2026-10-15T12:27:55Z",
+   "query": "humanoid robot video"
+  }
+ ],
+ "errors": [
+  "Reddit: REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET missing in .env"
+ ]
+}
