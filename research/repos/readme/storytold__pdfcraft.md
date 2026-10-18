@@ -97,7 +97,7 @@ Open **Organize pages** to see every page at once:
 **Saves you can trust:**
 - *Incremental:* the original bytes stay byte-for-byte intact.
 - *Atomic:* the file is written to a temporary copy, then swapped in.
-- *Verified:* independently checked with qpdf.
+- *Verified:* independently checked with qpdf, on every CI run.
 
 When open documents exceed the window width, scroll over the tab strip with the mouse wheel or trackpad, or use its horizontal scrollbar. Opening or switching to a document brings its tab into view.
 
@@ -115,6 +115,4 @@ Nothing quietly disappears along the way:
 - links and named destinations are rewired to the copied pages;
 - form fields stay interactive;
 - layers keep their on/off defaults;
-- attachments come along.
-
-Every pa
+- attachments come

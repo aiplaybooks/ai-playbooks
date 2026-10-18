@@ -1,0 +1,380 @@
+{
+ "generated": "2026-10-18T09:30+00:00",
+ "hours": 36.0,
+ "items": [
+  {
+   "source": "Ollama releases",
+   "tier": "official",
+   "title": "v0.40.7",
+   "url": "https://github.com/ollama/ollama/releases/tag/v0.40.7-rc0",
+   "date": "2026-10-18T00:28+00:00",
+   "summary": "What's Changed openai: allow Responses effort on non-thinking models by @hoyyeva in #19010 llama-server: let llama-server infer the draft speculative type by @dhiltgen in #19064 mlx: add PPLX Decider v1.2 support by @dhiltgen in #19072 Full Changelog : v0.40.6...v0.40.7-rc0"
+  },
+  {
+   "source": "Ollama releases",
+   "tier": "official",
+   "title": "v0.40.6",
+   "url": "https://github.com/ollama/ollama/releases/tag/v0.40.6",
+   "date": "2026-10-17T15:29+00:00",
+   "summary": "What's Changed win: prevent orphaned runners by @dhiltgen in #18500 gguf: add the q2_0 tensor and file types by @jmorganca in #18967 Launch clef in Ollama's cloud by @jberg5 in #19036 use identifiers for --ask mode question keys by @jberg5 in #19041 Full Changelog : v0.40.5...v0.40.6-rc0"
+  },
+  {
+   "source": "Higgsfield blog",
+   "tier": "official",
+   "title": "Higgsfield Community: Where Your AI Work Goes After You Generate It",
+   "url": "https://higgsfield.ai/blog/higgsfield-community",
+   "date": "2026-10-17T15:28+00:00",
+   "summary": ""
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "Desktop v0.0.48",
+   "url": "https://github.com/cline/cline/releases/tag/desktop-v0.0.48",
+   "date": "2026-10-17T04:34+00:00",
+   "summary": "GPT-6 models (such as gpt-6-sol and gpt-6.1-sol ) work on OpenAI and Azure OpenAI-compatible endpoints. Before, every request was rejected because Cline sent max_tokens instead of max_completion_tokens The Cline provider's default model is Claude Sonnet 5.5 again, which is back at the top of Cline's recommended list Refreshed the model catalog. Adds the CommandCode and Reflection providers.…"
+  },
+  {
+   "source": "ComfyUI releases",
+   "tier": "official",
+   "title": "v0.41.3",
+   "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.41.3",
+   "date": "2026-10-17T04:26+00:00",
+   "summary": "ComfyUI v0.41.3"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "CLI v3.0.73",
+   "url": "https://github.com/cline/cline/releases/tag/cli-v3.0.73",
+   "date": "2026-10-17T03:59+00:00",
+   "summary": "GPT-6 models (such as gpt-6-sol and gpt-6.1-sol ) work on OpenAI and Azure OpenAI-compatible endpoints. Before, every request was rejected because Cline sent max_tokens instead of max_completion_tokens With no model chosen, the Cline provider uses Claude Sonnet 5.5 again, which is back at the top of Cline's recommended list Refreshed the model catalog. Adds the CommandCode and Reflection…"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "SDK v0.0.95",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fsdk%2Fv0.0.95",
+   "date": "2026-10-17T03:00+00:00",
+   "summary": "OpenAI-compatible requests for GPT-6 models ( gpt-6-sol , gpt-6.1-sol , gpt-6-1-sol , and later gpt-5 through gpt-9 ids) send max_completion_tokens instead of max_tokens , so OpenAI and Azure no longer reject them. Azure's gpt-35-turbo keeps max_tokens The hub daemon records which client started it ( CLINE_HUB_LAUNCHER_CLIENT , CLINE_HUB_LAUNCHER_VERSION , CLINE_HUB_LAUNCHER_TRANSPORT ) and…"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "sdk/core/v0.0.95",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fcore%2Fv0.0.95",
+   "date": "2026-10-17T02:59+00:00",
+   "summary": "@cline/core@0.0.95"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "sdk/agents/v0.0.95",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fagents%2Fv0.0.95",
+   "date": "2026-10-17T02:59+00:00",
+   "summary": "@cline/agents@0.0.95"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "sdk/llms/v0.0.95",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fllms%2Fv0.0.95",
+   "date": "2026-10-17T02:59+00:00",
+   "summary": "@cline/llms@0.0.95"
+  },
+  {
+   "source": "Cline releases",
+   "tier": "official",
+   "title": "sdk/shared/v0.0.95",
+   "url": "https://github.com/cline/cline/releases/tag/sdk%2Fshared%2Fv0.0.95",
+   "date": "2026-10-17T02:59+00:00",
+   "summary": "@cline/shared@0.0.95"
+  },
+  {
+   "source": "DeepSeek updates",
+   "tier": "official",
+   "title": "DeepSeek updates: Oct 17, 2026",
+   "url": "https://api-docs.deepseek.com/updates",
+   "date": "2026-10-17T00:00+00:00",
+   "summary": "​ Opening up the in-house search API ​ DeepSeek's web and API search capabilities are powered by our in-house DeepSeek search engine, which reliably handles hundreds of millions of search requests from around the world every day. DeepSeek Search is an AI-native general-purpose search engine that indexes hundreds of billions of web pages, supports multilingual search, and returns highly relevant, authoritative, and timely results in real time. It filters SEO spam, GEO manipulation, and low-quality AIGC through strict detection mechanisms, ensuring authoritative and trustworthy information for users and LLMs. For usage details, see the Search & Fetch guide . DeepSeek-V4.1-Flash-1017 Update ​ DeepSeek V4.1 Flash has been upgraded to DeepSeek-V4.1-Flash-1017. The official web and APP models have also been updated to the new version. The API calling method and pricing remain unchanged —…"
+  },
+  {
+   "source": "GitHub Copilot CLI releases",
+   "tier": "official",
+   "title": "1.0.100-1",
+   "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.100-1",
+   "date": "2026-10-16T22:41+00:00",
+   "summary": "Improved Use the unified Sessions browser by default for /sessions, /session, and /resume. Session browsing now caps account discovery at 500 records and respects Retry-After hints for automatic refresh timing. Fixed Sandbox host-rule traffic now honors HTTPS_PROXY and HTTP_PROXY when no sandbox proxy is configured Voice dictation no longer inserts language markers like into transcript text"
+  },
+  {
+   "source": "OpenCode releases",
+   "tier": "official",
+   "title": "v2.0.32",
+   "url": "https://github.com/anomalyco/opencode/releases/tag/v2.0.32",
+   "date": "2026-10-16T22:16+00:00",
+   "summary": "release: v2.0.32"
+  },
+  {
+   "source": "TechCrunch Social",
+   "tier": "signal",
+   "title": "Meta removes language that raised scraping and AI training concerns",
+   "url": "https://techcrunch.com/2026/10/17/meta-removes-language-that-raised-scraping-and-ai-training-concerns/",
+   "date": "2026-10-17T21:31+00:00",
+   "summary": "A Meta spokesperson insisted that the updated terms did not reflect a change in the way Meta crawls the web."
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Meta removes language that raised scraping and AI training concerns",
+   "url": "https://techcrunch.com/2026/10/17/meta-removes-language-that-raised-scraping-and-ai-training-concerns/",
+   "date": "2026-10-17T21:31+00:00",
+   "summary": "A Meta spokesperson insisted that the updated terms did not reflect a change in the way Meta crawls the web."
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Inline rendering with document​.currentScript",
+   "url": "https://simonwillison.net/2026/Oct/17/document-currentscript/",
+   "date": "2026-10-17T21:11+00:00",
+   "summary": "Inline rendering with document​.currentScript Lean Rada describes a neat trick that takes advantage of the document.currentScript property. You can use that to drop in a tiny inline element that replaces itself when the page loads: The year is document.currentScript.replaceWith( new Date().getFullYear()) If you define a shortcut function like this:…"
+  },
+  {
+   "source": "TechCrunch Social",
+   "tier": "signal",
+   "title": "TikTok permanently bans ‘Musk’ documentary advertising account",
+   "url": "https://techcrunch.com/2026/10/17/tiktok-permanently-bans-musk-documentary-advertising-account/",
+   "date": "2026-10-17T20:55+00:00",
+   "summary": "A four-hour documentary about Elon Musk continues to meet resistance from social media platforms."
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Anthropic says its workforce has become less junior and is spending more time in meetings",
+   "url": "https://techcrunch.com/2026/10/17/anthropic-says-its-workforce-has-become-less-junior-and-is-spending-more-time-in-meetings/",
+   "date": "2026-10-17T20:21+00:00",
+   "summary": "The composition of Anthropic’s workforce and the type of work getting done have changed significantly in the past year."
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Replit makes OpenAI its default over Anthropic, CEO says",
+   "url": "https://techcrunch.com/2026/10/17/replit-is-no-longer-working-with-anthropic-ceo-says/",
+   "date": "2026-10-17T18:48+00:00",
+   "summary": "Over the weekend, Masad clarified that OpenAI would replace Anthropic as its default model provider. Claude will still be available to customers on the platform."
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Meta removes language that may have allowed it to scrape news sites",
+   "url": "https://www.theverge.com/tech/1013409/meta-removes-language-that-may-have-allowed-it-to-scrape-news-sites",
+   "date": "2026-10-17T11:04-04:00",
+   "summary": "After backlash, Meta is updating its terms again to remove language that suggested it could scrape content from sites, including news sites, to train its AI. Specifically, the following language no longer appears on the commercial terms page : … Meta may use any content from such domains, web pages, or URLs to provide, develop, improve, research, train, and maintain the integrity of, the Meta…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "web-edit 0.1a2",
+   "url": "https://simonwillison.net/2026/Oct/17/web-edit/",
+   "date": "2026-10-17T13:16+00:00",
+   "summary": "Release: web-edit 0.1a2 web-edit ( previously ) is my tiny web app for browsing and editing files in a folder. I mainly built it for editing files on different machines via Tailscale. I added a \"copy to clipboard\" option for both text and image data. I needed this because I was running pelican prompts on a laptop from my phone (here's DeepSeek 4.1 Flash 1017 ) and I wanted an easy way to copy the…"
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "Websites are closing their doors to AI agents",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web",
+   "date": "2026-10-17T09:00-04:00",
+   "summary": "Autonomous agents are the hottest thing in AI. OpenAI, Meta, Google, Instinct, and others promise their agents can scour the internet on your behalf, doing anything from booking a dinner reservation and cleaning out your inbox to buying new shoes. But what happens when the rest of the internet won't play nice? In recent weeks, users of services like Meta's Muse, xAI's Grok, OpenAI's Dots, and…"
+  },
+  {
+   "source": "TestingCatalog",
+   "tier": "signal",
+   "title": "Anthropic prepares to release Claude Fable 5.5 next week",
+   "url": "https://www.testingcatalog.com/anthropic-several-models-coming-fable-5-5-reaches-partners/",
+   "date": "2026-10-17T12:52+00:00",
+   "summary": "Partners reportedly have Claude Fable 5.5, while six new codenames, including Odango and Onigiri, surface in Devin CLI and a GitHub model picker."
+  },
+  {
+   "source": "TestingCatalog",
+   "tier": "signal",
+   "title": "ICYMI: Meta's Muse Spark Open is optimized for new Mac Studio",
+   "url": "https://www.testingcatalog.com/icymi-metas-muse-spark-open-is-optimized-for-new-mac-studio/",
+   "date": "2026-10-17T12:23+00:00",
+   "summary": "Muse Spark Open combines 816B parameters, a 1M-token context window and local Mac deployment for coding and agentic work."
+  },
+  {
+   "source": "9to5Mac",
+   "tier": "signal",
+   "title": "Apple weekend deals: HomeView, new Apple TV 4K, AirPods, MacBook, mini, more",
+   "url": "https://9to5mac.com/2026/10/17/apple-weekend-deals-homeview-new-apple-tv-airpods/",
+   "date": "2026-10-17T12:18+00:00",
+   "summary": "Alongside the ongoing $50 price drop on AirPods Pro 3, this weekend’s Apple deals are headlined by pre-order discounts on the new HomeView (if you’re quick about it) and the first deal on the next-gen Apple TV 4K (or just grab the new Apple TV Siri Remote to upgrade your existing setup for a whole lot less). Beyond that, the all-time low on AirTag 2 carries through alongside some seriously…"
+  },
+  {
+   "source": "Latent Space AINews",
+   "tier": "signal",
+   "title": "[AINews] High Taste Testers Ep. 1",
+   "url": "https://www.latent.space/p/ainews-high-taste-testers-ep-1",
+   "date": "2026-10-17T07:47+00:00",
+   "summary": "a quiet day lets us pilot a new show"
+  },
+  {
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "v2026.10.10-beta.2",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.10-beta.2",
+   "date": "2026-10-17T01:51+00:00",
+   "summary": "openclaw 2026.10.10-beta.2"
+  },
+  {
+   "source": "9to5Mac",
+   "tier": "signal",
+   "title": "Apple’s new App Store rules crack down on AI nudification and ‘bait-and-switch’ apps",
+   "url": "https://9to5mac.com/2026/10/16/apples-new-app-store-rules-crack-down-on-ai-nudification-and-bait-and-switch-apps/",
+   "date": "2026-10-16T22:17+00:00",
+   "summary": "Apple updated its App Review Guidelines today with a series of changes meant to strengthen protections against harmful content and deceptive app review practices. Here are the details. more…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "Quoting Addy Osmani, Morgan Westlee Lunt, and Qing Wang",
+   "url": "https://simonwillison.net/2026/Oct/16/code-review/",
+   "date": "2026-10-16T22:06+00:00",
+   "summary": "We think \"did a human read the code?\" is an imprecise proxy for \"what could go wrong with this change, and which check—automated or human—is the right one to catch it?\" Asking that question also changed when review happens. Before, review was a gate at the end of the road: write the code, open a PR, wait for your colleague. Now, review runs continuously, more like spellcheck while you write. Most…"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "DeepSeek search and fetch – $0.75 per 1000 successful requests",
+   "url": "https://api-docs.deepseek.com/guides/search/",
+   "date": "2026-10-18T06:50+00:00",
+   "summary": "169 points, 76 comments · https://news.ycombinator.com/item?id=50138531"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping",
+   "url": "https://sphinx-six-theta.vercel.app/",
+   "date": "2026-10-18T04:33+00:00",
+   "summary": "120 points, 30 comments · https://news.ycombinator.com/item?id=50137950"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Israeli settlers attack European diplomatic cars in West Bank beat French mayor",
+   "url": "https://www.lemonde.fr/en/international/article/2026/10/17/israeli-settlers-attack-european-diplomatic-cars-in-west-bank-beat-french-mayor-say-witnesses_6758711_4.html",
+   "date": "2026-10-17T17:49+00:00",
+   "summary": "130 points, 18 comments · https://news.ycombinator.com/item?id=50133274"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Codex Desktop continuously generates Crashpad pending dumps",
+   "url": "https://github.com/openai/codex/issues/25921",
+   "date": "2026-10-17T17:45+00:00",
+   "summary": "131 points, 49 comments · https://news.ycombinator.com/item?id=50133231"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "OpenAI discloses four more rogue incidents",
+   "url": "https://fortune.com/2026/10/16/openai-discloses-four-more-rogue-incidents-involving-financial-medical-and-government-data/",
+   "date": "2026-10-17T16:31+00:00",
+   "summary": "125 points, 153 comments · https://news.ycombinator.com/item?id=50132502"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Amazon uses AI to monitor union risk in UK warehouses",
+   "url": "https://www.opendemocracy.net/amazon-ai-surveillance-monitor-union-activity-uk-warehouses-birmingham-coventry-atlas-sutton-coldfield/",
+   "date": "2026-10-17T16:04+00:00",
+   "summary": "164 points, 58 comments · https://news.ycombinator.com/item?id=50132278"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: Esp32sim – Run ESP32 firmware in the browser",
+   "url": "https://github.com/mikroverk/esp32sim",
+   "date": "2026-10-17T13:51+00:00",
+   "summary": "164 points, 32 comments · https://news.ycombinator.com/item?id=50131189"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: High-quality duck audio synthesizer",
+   "url": "https://celphase.github.io/duck-pond/",
+   "date": "2026-10-17T13:28+00:00",
+   "summary": "134 points, 29 comments · https://news.ycombinator.com/item?id=50131006"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "DeepSeek: DeepSeek v4.1 Flash 1017",
+   "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
+   "date": "2026-10-17T08:37+00:00",
+   "summary": "514 points, 5 comments · https://news.ycombinator.com/item?id=50129121"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "DeepSeek-v4.1-Flash-1017",
+   "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "date": "2026-10-17T08:21+00:00",
+   "summary": "856 points, 652 comments · https://news.ycombinator.com/item?id=50129045"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: Llmspeed – feel how fast a local LLM runs before you buy the hardware",
+   "url": "https://llmspeed.dev/",
+   "date": "2026-10-17T04:36+00:00",
+   "summary": "292 points, 81 comments · https://news.ycombinator.com/item?id=50127979"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Source code of the Estonian online voting system",
+   "url": "https://github.com/valimised/ivxv",
+   "date": "2026-10-17T03:18+00:00",
+   "summary": "210 points, 189 comments · https://news.ycombinator.com/item?id=50127586"
+  }
+ ],
+ "errors": [],
+ "manual": [
+  {
+   "name": "xAI news / Grok app updates",
+   "url": "https://x.ai/news",
+   "why": "blocks scripts (403): web search 'Grok' / 'xAI' last 24h"
+  },
+  {
+   "name": "ChatGPT release notes",
+   "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Perplexity changelog",
+   "url": "https://www.perplexity.ai/changelog",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Official X accounts (@AnthropicAI, @OpenAI, @xai, @GoogleDeepMind, @cursor_ai)",
+   "url": "https://x.com",
+   "why": "X needs login / paid API: use web search for big announcements"
+  },
+  {
+   "name": "Social media new features (Instagram @creators/@mosseri, TikTok newsroom, X, LinkedIn, Snapchat)",
+   "url": "https://newsroom.tiktok.com/",
+   "why": "no working RSS (TikTok/WhatsApp/Instagram blogs are HTML, Snap/LinkedIn 404): web search each gather for new features, AI features and creator tools; confirm on the platform's own newsroom/help page"
+  },
+  {
+   "name": "Higgsfield announcements",
+   "url": "https://x.com/higgsfield_ai",
+   "why": "big launches often land on X before the blog"
+  },
+  {
+   "name": "Qwen blog (Alibaba)",
+   "url": "https://qwen.ai/blog",
+   "why": "JS-rendered, no RSS (the old qwenlm.github.io feed stopped in 2025-09): web search 'Qwen' each gather for new open-weight releases"
+  }
+ ]
+}

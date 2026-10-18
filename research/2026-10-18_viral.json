@@ -1,0 +1,86 @@
+{
+ "generated": "2026-10-18T09:31:20+00:00",
+ "reddit": [],
+ "youtube_signal": [
+  {
+   "id": "yt-VhZaXKHqZQE",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Bro looks AI generated 😭",
+   "channel": "John Casterline",
+   "url": "https://www.youtube.com/shorts/VhZaXKHqZQE",
+   "views": 4046464,
+   "date": "2026-10-15T20:28:00Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-m-ghEZtxET4",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Cute baby funny comedy ai videos #shorts",
+   "channel": "Little Star",
+   "url": "https://www.youtube.com/shorts/m-ghEZtxET4",
+   "views": 803495,
+   "date": "2026-10-16T02:33:17Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-_Ajhi6LWkfg",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "How to Safely Remove & Clean Fridge Door Rubber Seal | Refrigerator Gasket Cleaning #shorts",
+   "channel": "Fixit Master",
+   "url": "https://www.youtube.com/shorts/_Ajhi6LWkfg",
+   "views": 539584,
+   "date": "2026-10-15T11:13:22Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-CZC9zO7kz64",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "سر الريمونتادا التاريخية! 😂🔥 مورينيو وخلطته السحرية من 3-1 إلى 4-3! 🤯⚽ #shorts",
+   "channel": "Counter-Press",
+   "url": "https://www.youtube.com/shorts/CZC9zO7kz64",
+   "views": 376891,
+   "date": "2026-10-15T13:24:50Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-OFVBiAxtl24",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "This AI fish tricked almost everyone",
+   "channel": "Jeremy Carrasco",
+   "url": "https://www.youtube.com/shorts/OFVBiAxtl24",
+   "views": 359772,
+   "date": "2026-10-16T21:03:11Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-XfQfFYCuK9I",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "FASHION ROBOTS NOW vs THEN ✨😮 #nowvsthen #robot #fashion #model #supermodel #catwalk #edit #shorts",
+   "channel": "Runway World",
+   "url": "https://www.youtube.com/shorts/XfQfFYCuK9I",
+   "views": 232831,
+   "date": "2026-10-15T12:27:55Z",
+   "query": "humanoid robot video"
+  },
+  {
+   "id": "yt-L741i-Yn2XM",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "¡GTA REAL! 🎮😱|#Catsoftiktok #CatLovers #cat #cute #FunnyCats #catcartoon #fyp",
+   "channel": "nuvrixa",
+   "url": "https://www.youtube.com/shorts/L741i-Yn2XM",
+   "views": 178740,
+   "date": "2026-10-16T12:30:05Z",
+   "query": "AI generated video"
+  }
+ ],
+ "errors": [
+  "Reddit: REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET missing in .env"
+ ]
+}

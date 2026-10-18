@@ -1,0 +1,32 @@
+{
+  "kind": "clip",
+  "source": "https://x.com/YapayZekaSerisi/status/2111104253817155607",
+  "credit": "@YapayZekaSerisi on X",
+  "topic": "AI video",
+  "hook": "Guess the prompt for this flying supercar",
+  "caption": "Guess the prompt for this flying supercar\n\nEvery shot here is generated with Kling 4.0: a silver car hovers past a McDonald's drive-thru, then over Paris and London.\n\nWhat would you type to get this shot? Check our guess in the comments 👇\n\nSend this to the friend who still says AI video looks fake.\n\nFollow @aiplaybooks.daily for a new AI trick every day.\n\nCredit: @YapayZekaSerisi on X\n\n#ai #aivideo #klingai #kling4 #aivideogenerator",
+  "captions": {
+    "instagram": "Guess the prompt for this flying supercar\n\nEvery shot here is generated with Kling 4.0: a silver car hovers past a McDonald's drive-thru, then over Paris and London.\n\nWhat would you type to get this shot? Check our guess in the comments 👇\n\nSend this to the friend who still says AI video looks fake.\n\nFollow @aiplaybooks.daily for a new AI trick every day.\n\nCredit: @YapayZekaSerisi on X\n\n#ai #aivideo #klingai #kling4 #aivideogenerator",
+    "facebook": "Guess the prompt for this flying supercar\n\nA silver car hovers past a McDonald's drive-thru, then over Paris and London. Every shot is generated with Kling 4.0, Kling AI's new model.\n\nWe posted our guess at the prompt in the comments. How close would yours get? Tell us in a few words.\n\nCredit: @YapayZekaSerisi on X\n\n#klingai #aivideo #ai",
+    "youtube": {
+      "title": "Kling 4.0 flying supercar: guess the prompt",
+      "description": "Every shot here is generated with Kling 4.0, and the car flies from a McDonald's drive-thru to Paris and London. We think the hard part is the camera move, not the car, so try guessing the prompt first.\n\nOur guess at the prompt is in the comments.\n\nCredit: @YapayZekaSerisi on X\n\n#klingai #kling4 #aivideo",
+      "tags": ["kling ai", "kling 4.0", "ai video", "text to video", "ai flying car", "ai video generator", "guess the prompt"]
+    }
+  },
+  "x": "Guess the prompt for this flying supercar 🚗\n\nEvery shot is generated with Kling 4.0. Could you tell from a phone screen? #aivideo",
+  "first_comment": {
+    "instagram": "Tip: put the camera move first in your prompt, then the car. Which shot would you test first, the drive-thru or Paris? 👇",
+    "facebook": "Tip: put the camera move first in your prompt, then the car. Which shot would you test first, the drive-thru or Paris?",
+    "youtube": "Tip: put the camera move first in your prompt, then the car. Which shot would you test first, the drive-thru or Paris? Subscribe for daily AI playbooks."
+  },
+  "comments": [
+    "Our guess at the prompt (not the creator's, so check it against what you think):\n\nCinematic 4K shot, a sleek silver flying supercar with glowing rear thrusters and a low aerodynamic body, hovering above a city street at dusk, fog and exhaust vapor rising from beneath the wheels, smooth camera tracking past the car, photorealistic, shallow depth of field, then cut to the same car hovering beside a McDonald's drive-thru and over Paris streets."
+  ],
+  "checked": [
+    "Clip frames 1-8 (runs/clip-20261018-131529-17155607/frames): every shot is an AI-generated flying car with a visible KlingAI 4.0 watermark, so 'every shot is generated' holds",
+    "Post text (https://x.com/YapayZekaSerisi/status/2111104253817155607): 'Made with @Kling_ai ... generated with Kling AI's new Kling 4.0 model'",
+    "Kling 4.0 rollout status, web search 2026-10-18: Flash in limited early access since 2026-09-28, full model promised for October (https://letsdatascience.com/news/kling-ai-opens-kling-40-to-all-users-d9dc6422, https://pixverse.ai/en/blog/kling-4-release-date)",
+    "Car is not named as a Tesla in the clip itself; the post's 'TESLA ROADSTER' label is the creator's, so the hook says 'flying supercar' and the caption does not name a brand"
+  ]
+}
