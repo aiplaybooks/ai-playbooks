@@ -1,0 +1,130 @@
+{
+ "generated": "2026-10-19T09:31:10+00:00",
+ "reddit": [],
+ "youtube_signal": [
+  {
+   "id": "yt-vMQq_QIqVtY",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Bigg Boss Season 10 Telugu | Day 41 Saturday review |Nagarjuna",
+   "channel": "Ankitha Sings",
+   "url": "https://www.youtube.com/shorts/vMQq_QIqVtY",
+   "views": 1277658,
+   "date": "2026-10-17T05:11:48Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-g9bvD3on33I",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Trucco Rinfrescante 😱 #Catsoftiktok #CatLovers #cat #cute #FunnyCats #catcartoon #fyp",
+   "channel": "Zoro",
+   "url": "https://www.youtube.com/shorts/g9bvD3on33I",
+   "views": 1211919,
+   "date": "2026-10-17T06:15:32Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-GHGkOGmIgmg",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "বোধন শেষে মায়ের আগমন মর্ত্যলোকে 🔱🙏🏻",
+   "channel": "Joyful Mind 😀",
+   "url": "https://www.youtube.com/shorts/GHGkOGmIgmg",
+   "views": 1170695,
+   "date": "2026-10-17T11:52:37Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-Er17lmwy74c",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "माता रानी को हमसे क्या मदद चाहिए😱 Navratri special video🙏 #navratrispecial #jaimatadi #ai #shorts",
+   "channel": "Desikalakaar Laxman",
+   "url": "https://www.youtube.com/shorts/Er17lmwy74c",
+   "views": 817454,
+   "date": "2026-10-18T03:45:57Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-LklF_4posn8",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "野沢雅子、悟空AIボイス無断利用にガチ激怒#野沢雅子 #ドラゴンボール #ai音声",
+   "channel": "バズ速",
+   "url": "https://www.youtube.com/shorts/LklF_4posn8",
+   "views": 351017,
+   "date": "2026-10-17T03:54:16Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-kgQ496cOGgo",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "AI Humanoid Robots Are Rising… When Will Humans Lose Control? 🤖",
+   "channel": "ejunky66",
+   "url": "https://www.youtube.com/shorts/kgQ496cOGgo",
+   "views": 230548,
+   "date": "2026-10-18T12:58:25Z",
+   "query": "humanoid robot video"
+  },
+  {
+   "id": "yt-zeguJ3y8Hzs",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Remembering Chopin | His Music Still Moves Us",
+   "channel": "The Sound of Genius",
+   "url": "https://www.youtube.com/shorts/zeguJ3y8Hzs",
+   "views": 222416,
+   "date": "2026-10-16T20:36:15Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-mTwY5kKbDzk",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "QUIEN ES EL? 😱 #divertido #funny #comedia #humor # #casosdefamilia #familiaibañez",
+   "channel": "Familia Ibañez",
+   "url": "https://www.youtube.com/shorts/mTwY5kKbDzk",
+   "views": 216518,
+   "date": "2026-10-18T00:34:51Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-Yq1OVoT4Kec",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "அன்னதானத்தின் உண்மையான மகிமை | புளியோதரை | traditional cooking | Shortsfeed | AI video",
+   "channel": "Deepa Cooking channel ",
+   "url": "https://www.youtube.com/shorts/Yq1OVoT4Kec",
+   "views": 194262,
+   "date": "2026-10-18T18:52:06Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-L741i-Yn2XM",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "¡GTA REAL! 🎮😱|#Catsoftiktok #CatLovers #cat #cute #FunnyCats #catcartoon #fyp",
+   "channel": "nuvrixa",
+   "url": "https://www.youtube.com/shorts/L741i-Yn2XM",
+   "views": 181252,
+   "date": "2026-10-16T12:30:05Z",
+   "query": "AI generated video"
+  },
+  {
+   "id": "yt-mg3ajJZH_y4",
+   "source": "youtube",
+   "downloadable": false,
+   "title": "Você Está Pegando Seu Gato do Jeito Errado! 😱",
+   "channel": "GhoshtyShorts9x",
+   "url": "https://www.youtube.com/shorts/mg3ajJZH_y4",
+   "views": 120023,
+   "date": "2026-10-18T11:00:45Z",
+   "query": "AI generated video"
+  }
+ ],
+ "errors": [
+  "Reddit: REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET missing in .env"
+ ]
+}

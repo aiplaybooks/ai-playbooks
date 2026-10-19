@@ -1,0 +1,88 @@
+{
+  "generated": "2026-10-19T12:45:00+03:00",
+  "candidates": [
+    {
+      "id": "higgsfield-cli-terminal-video",
+      "tool": "Higgsfield",
+      "kind": "news",
+      "title": "You Can Now Generate AI Video From Your Terminal — Higgsfield Just Released an Open-Source CLI",
+      "summary_tr": "Higgsfield, 35+ görsel/video modelini (Seedance 2.5 dahil) terminalden çalıştıran açık kaynak CLI'ı yayınladı; tek komutla kurulup tarayıcı girişiyle çalışıyor, AI ajanları için --json çıktısı var. Ücretli abonelik ve plan kredisi gerekiyor.",
+      "why_tr": "Kodlama ajanı kullanan kitle için 'ajanına video yaptır' fikri, Seedance 2.5 ilgisiyle birleşince paylaşılabilir.",
+      "angle": "what's new + 3 install options + the 4 commands (login, generate image, animate it, cost check before spending) + draft mode costs 15 credits vs 80",
+      "tools": ["Higgsfield", "Seedance 2.5", "Claude", "Codex"],
+      "published": "2026-10-19",
+      "sources": ["https://higgsfield.ai/blog/higgsfield-cli"],
+      "hints": [],
+      "score": 7
+    },
+    {
+      "id": "linkedin-digital-business-card",
+      "tool": "Social media",
+      "kind": "news",
+      "title": "LinkedIn Is Rolling Out a Digital Business Card You Can Add to Your Phone Wallet",
+      "summary_tr": "LinkedIn, tasarlanabilir ve QR kodlu bir dijital kartvizit çıkarıyor; telefon cüzdanına eklenebiliyor ve yüz yüze tanışılan kişilerle bağlantı kurmak için kullanılıyor. Önümüzdeki aylarda küresel olarak açılacak (duyuru 15 Ekim).",
+      "why_tr": "Freelancer ve ajans kitlesine yönelik, uygulaması basit bir sosyal medya özelliği.",
+      "angle": "what's new + what's on the card (headshot, role, QR) + 3 places to use it (events, DMs, email signature) + rolling out globally over the coming months",
+      "tools": ["LinkedIn"],
+      "published": "2026-10-15",
+      "sources": ["https://news.linkedin.com/2026/new-ways-to-build-meaningful-connections"],
+      "hints": ["https://www.socialmediatoday.com/news/linkedin-adds-digital-business-cards/833306/"],
+      "score": 5
+    },
+    {
+      "id": "chatgpt-projects-evergreen",
+      "tool": "ChatGPT",
+      "kind": "evergreen",
+      "title": "ChatGPT Projects: Keep Your Files, Rules and Chats for One Job in One Place",
+      "summary_tr": "ChatGPT Projects ile bir iş için dosyaları, özel talimatları ve sohbetleri tek yerde toplayıp her yeni sohbetin bağlamla başlamasını sağlama rehberi; ücretsiz ve ücretli planlarda var.",
+      "why_tr": "Claude ve Perplexity Projects gönderilerinin ChatGPT karşılığı, günlük kullanıcıya hemen uygulanabilir bir verim ipucu.",
+      "angle": "make a project + write project instructions that beat global ones + upload files + move old chats in + 3 starter setups (job search, budget, content)",
+      "tools": ["ChatGPT"],
+      "published": null,
+      "sources": ["https://help.openai.com/en/articles/10169521-projects-in-chatgpt"],
+      "hints": [],
+      "score": 5
+    },
+    {
+      "id": "pack-resume-job-application-agent",
+      "tool": "Prompt pack",
+      "kind": "prompts",
+      "title": "5 Prompts That Turn an AI Agent Into a Resume and Job-Application Service Making $2,500 a Month",
+      "summary_tr": "AI ajanını CV yenileme ve iş başvurusu hizmetine çeviren 5 promptluk paket: müşteri alımı, CV yeniden yazımı, ilan eşleştirme, mülakat provası ve fiyatlandırma; aylık 2.500 dolar hedefli.",
+      "why_tr": "Para + günlük hayat temasına uyuyor; iş arayan çok kişi var ve yan gelir fikri olarak paylaşılır.",
+      "angle": "Client Finder, Resume Rewriter, Job-Match Tailor, Interview Coach, Pricing & Packages Planner",
+      "tools": ["ChatGPT", "Claude"],
+      "published": null,
+      "sources": [],
+      "hints": [],
+      "score": 6
+    }
+  ],
+  "coverage": {
+    "ChatGPT": 1,
+    "Claude": 0,
+    "Gemini": 0,
+    "Grok": 0,
+    "Codex": 0,
+    "Cursor": 0,
+    "Copilot": 0,
+    "Perplexity": 0,
+    "Meta AI": 0,
+    "Mistral": 0,
+    "DeepSeek": 0,
+    "Open models": 0,
+    "Apple": 0,
+    "Higgsfield": 1,
+    "Google": 0,
+    "Social media": 1,
+    "Prompt pack": 1
+  },
+  "notes_tr": "Yeni: Higgsfield CLI (resmi blog, 19 Ekim), LinkedIn dijital kartvizit (resmi duyuru 15 Ekim), ChatGPT Projects evergreen ve bir prompt paketi. Elenenler: YouTube'un aramada AI cevapları testi (resmi sayfa doğrulanamadı, Ask YouTube zaten havuzda), Meta Muse küçük işletme kullanımları (resmi Meta sayfası bulunamadı, lansman 29 Eylül), OpenAI 'Aurora' görsel modeli (sadece Arena testi, söylenti), Anthropic kamu yararı fonu (finansman), Gemini Live Guided Vision (1 Ekim, eski). Claude, Gemini, Grok, Codex, Cursor, Copilot, Perplexity, Mistral, Apple, açık modeller için son 36 saatte resmi yeni haber bulunamadı; web aramaları zayıf sonuç verdi.",
+  "sources_changed": [
+    "Eklendi: Zed releases (github.com/zed-industries/zed/releases.atom, official) - popüler AI kod editörü; nightly/staging/pre sürümler skip ile filtrelendi.",
+    "Reddedildi: Continue releases atom - çalışıyor ama son sürüm 19 Haziran, bayat.",
+    "Reddedildi: Kilo Code releases atom - çalışıyor ama neredeyse hepsi pre-release/CI gürültüsü.",
+    "Reddedildi: Anthropic engineering rss.xml (404), LM Studio blog rss (404), Qwen3 GitHub releases (feed değil).",
+    "Sağlık kontrolü: tüm kaynaklar ok, fail_streak >= 3 olan yok; Chrome blog feed çalışıyor ama son öğe 24 Eylül (30 günden yeni)."
+  ]
+}

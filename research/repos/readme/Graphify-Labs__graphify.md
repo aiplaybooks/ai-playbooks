@@ -1,8 +1,8 @@
 Read this in other languages 
 
-🇺🇸 English | 🇨🇳 简体中文 | 🇯🇵 日本語 | 🇰🇷 한국어 | 🇩🇪 Deutsch | 🇫🇷 Français | 🇪🇸 Español | 🇮🇳 हिन्दी | 🇧🇷 Português | 🇷🇺 Русский | 🇸🇦 العربية | 🇮🇷 فارسی | 🇮🇹 Italiano | 🇵🇱 Polski | 🇳🇱 Nederlands | 🇹🇷 Türkçe | 🇺🇦 Українська | 🇻🇳 Tiếng Việt | 🇮🇩 Bahasa Indonesia | 🇸🇪 Svenska | 🇬🇷 Ελληνικά | 🇷🇴 Română | 🇨🇿 Čeština | 🇫🇮 Suomi | 🇩🇰 Dansk | 🇳🇴 Norsk | 🇭🇺 Magyar | 🇹🇭 ภาษาไทย | 🇺🇿 Oʻzbekcha | 🇹🇼 繁體中文 | 🇵🇭 Filipino | 🇮🇱 עברית 
+ English | 简体中文 | 日本語 | 한국어 | Deutsch | Français | Español | हिन्दी | Português | Русский | العربية | فارسی | Italiano | Polski | Nederlands | Türkçe | Українська | Tiếng Việt | Bahasa Indonesia | Svenska | Ελληνικά | Română | Čeština | Suomi | Dansk | Norsk | Magyar | ภาษาไทย | Oʻzbekcha | 繁體中文 | Filipino | עברית 
 
- Try the graphify platform free for 14 days: app.graphify.com 
+ Cut agent token spend by 80%. Graphify Cloud is always-on memory that governs your agents, keeps code quality high, and proves correctness with formal verification. Start a free 14-day trial &rarr; 
 
 Type `/graphify` in your AI coding assistant and it maps your entire project (code, docs, PDFs, images, videos) into a **knowledge graph** you can **query instead of grepping** through files.
 
@@ -10,15 +10,16 @@ Type `/graphify` in your AI coding assistant and it maps your entire project (co
 - **Every edge is explained.** Each connection is tagged `EXTRACTED` (explicit in the source) or `INFERRED` (resolved by graphify), so you can tell what was read directly from what was inferred.
 - **Not a vector index.** No embeddings, no vector store: a real graph you traverse. Ask a question, trace the path between two things, or explain one concept.
 
-> Want this always-on, updating in the background across your code, docs, and meetings rather than only on demand? That is what we are building at **[graphify.com](https://graphify.com)**, and early access is open now at **[app.graphify.com](https://app.graphify.com/login)**.
+> [!NOTE]
+> **Want this always-on?** [Graphify Cloud](https://app.graphify.com/login) keeps the graph live across your entire SDLC: monorepo and cross-repo support, formal verification, and code review with a bird's-eye view of your SDLC, plus connectors for Sentry, Jira, and more so incidents and tickets sit in the same graph as your code. **[Start a free 14-day trial at app.graphify.com](https://app.graphify.com/login)**.
 
  The FastAPI codebase mapped by graphify. Every node is a concept, colors are detected communities, and the whole thing is clickable in graph.html. 
 
-**Get started** (30 seconds):
+**Get started** (30 seconds). Needs Python 3.10+ and uv (or pipx):
 
 ```bash
 uv tool install graphifyy # install the CLI (or: pipx install graphifyy)
-graphify install # register the skill with your AI assistant
+graphify install # detects your assistant and registers the skill
 ```
 
 Then, in your AI assistant:
@@ -31,16 +32,16 @@ That's it. You get **three files**:
 
 ```
 graphify-out/
-├── graph.html open in any browser — click nodes, filter, search
+├── graph.html open in any browser: click nodes, filter, search
 ├── GRAPH_REPORT.md the highlights: key concepts, surprising connections, suggested questions
-└── graph.json the full graph — query it anytime without re-reading your files
+└── graph.json the full graph: query it anytime without re-reading your files
 ```
 
 The persisted graph includes `graph.schema_version` so integrations can detect
 incompatible format changes, plus `graph.graphify_version` identifying the
 Graphify release that produced it.
 
-**Works in** Claude Code, Cursor, Codex, Gemini CLI, GitHub Copilot, and 15+ more — [pick your platform](#install).
+**One install, any assistant, any OS.** Claude Code, Cursor, Codex, Gemini CLI, GitHub Copilot, and 20+ more, on macOS, Linux, and Windows: [pick your platform](#install).
 
 ---
 
@@ -80,9 +81,12 @@ What you get out of the box:
 | **Beyond code** | Docs, PDFs, images, and video/audio all map into the same graph |
 | **Local-first** | Code is parsed locally with tree-sitter (no LLM, nothing leaves your machine); only the semantic pass over docs/media calls a backend, and only if you configure one |
 
+> [!TIP]
+> Running this across many repos or a monorepo? [Graphify Cloud](https://app.graphify.com/login) does it continuously and cuts agent token spend by 80%, with cross-repo links, SDLC-wide code review, formal verification, and Sentry/Jira connectors. [Start a free 14-day trial &rarr;](https://app.graphify.com/login)
+
 ---
 
-## Benchmarks
+## Benchmarks: 0.497 recall@10, 0 LLM credits
 
 | Benchmark | Metric | graphify | Field |
 |---|---|---|---|
@@ -96,40 +100,11 @@ Every system ran on the same harness with the same model and budgets, scored by 
 
 ---
 
-## Prerequisites
+## Documentation
 
-| Requirement | Minimum | Check | Install |
-|---|---|---|---|
-| Python | 3.10+ | `python --version` | [python.org](https://www.python.org/downloads/) |
-| uv *(recommended)* | any | `uv --version` | `curl -LsSf https://astral.sh/uv/install.sh \| sh` |
-| pipx *(alternative)* | any | `pipx --version` | `pip install pipx` |
+Full guides and reference live at **[docs.graphify.com](https://docs.graphify.com)**:
 
-**macOS quick install (Homebrew):**
-```bash
-brew install python@3.12 uv
-```
-
-**Windows quick install:**
-```powershell
-winget install astral-sh.uv
-```
-
-**Ubuntu/Debian:**
-```bash
-sudo apt install python3.12 python3-pip pipx
-# or install uv:
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-
----
-
-## Install
-
-> **Official package:** The PyPI package is `graphifyy` (double-y). Other `graphify*` packages on PyPI are not affiliated. The CLI command is still `graphify`.
-
-The official source repository is [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify).
-
-**Step 1 — install the package:**
-
-```bash
-# Recommended (isolated env; if 'graphify' isn't found after, run: uv tool upd
+- **[Quickstart](https://docs.graphify.com/quickstart)**: build your first graph
+- **[CLI reference](https://docs.graphify.com/reference/overview)**: every command and flag
+- **[Ask better graph questions](https://docs.graphify.com/guides/querying)**: querying patterns
+- **[Configurati

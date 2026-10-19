@@ -11,7 +11,8 @@ Turn anything you want to understand, plan, or share into an interactive visual.
  Scenario guide &nbsp;·&nbsp;
  Community &nbsp;·&nbsp;
  简体中文 &nbsp;·&nbsp;
- 日本語 
+ 日本語 &nbsp;·&nbsp;
+ 한국어 
 
  ❤️ Partners & sponsors: Kimi Work · Supercode · OpenLux 
 
@@ -40,7 +41,25 @@ Then continue: “Add authentication”, “Highlight the cache-miss path”, or
 
 **No repository is required:** start with a description, or ask your agent to read a repository for a source-backed architecture diagram.
 
-[Choose your agent](https://archify.si/start.html?agent=cursor&type=architecture) · [Installation details and update checks](#quick-start)
+[Choose your agent](https://archify.si/start.html?agent=cursor&type=architecture) · [Installation details and update checks](#quick-start) · [Create and check diagrams with your agent](https://archify.si/agent-diagrams)
+
+## Ask a question, get a one-page answer
+
+Not every answer is one diagram. Ask your agent to answer as a page and Archify builds an **explainer**: the conclusion first, then one panel per question, with tables, steps, charts, code and validated diagrams.
+
+[](https://archify.si/cases/explainer/tls-first-visit.html)
+
+- **Conclusion first.** The answer and its reasons lead; every panel takes one question.
+- **Diagrams that explain.** Steps sit beside the diagram they walk through and light its parts as you read. Click any node to open the full interactive view.
+- **Easy to check.** Claims cite numbered sources; repository excerpts are pinned to a commit and open in a source card.
+- **Easy to share.** One HTML file with four styles and light or dark themes. Export a PNG, WebP or JPG long image, or print to PDF. Ask about any panel to get a follow-up your agent can use to revise just that panel.
+
+```text
+Use Archify to answer as one page: our API's P99 went from 80 ms to 600 ms
+while the mean barely moved. What is the likely cause, and how should we investigate?
+```
+
+Live examples: [First HTTPS visit](https://archify.si/cases/explainer/tls-first-visit.html) · [P99 latency (Chinese)](https://archify.si/cases/explainer/p99-tail-latency.html) · [How Archify finalize keeps the last good file, read from this repository (Chinese)](https://archify.si/cases/explainer/finalize-delivery.html) · [First rental checklist (Chinese)](https://archify.si/cases/explainer/first-rental.html)
 
 ## ❤️ Sponsors
 
@@ -52,11 +71,11 @@ Then continue: “Add authentication”, “Highlight the cache-miss path”, or
  OpenLux 
  Thank you to OpenLux for sponsoring this project! OpenLux is an all-in-one AI platform for businesses, bringing together leading AI models from major providers worldwide. With fast, reliable service and responsive technical support, OpenLux offers base pricing for Claude, OpenAI, and Gemini models as low as 8.82%, 4%, and 8% of official rates, respectively. Exclusive offer for Archify users: Sign up through our referral link and enjoy up to 7.5% off credit top-ups! Get started with OpenLux → 
 
- ZTURBO 
- Fast, stable connectivity for developers and AI users. New users can try the service for free and receive an exclusive bonus on their first top-up. Supports Windows, macOS, iOS, and Android; long-term plans work out to less than ¥1 per day. Free trial · First top-up bonus · Multi-device connectivity Try ZTURBO → 
-
  PackyCode 
  Access leading AI models through PackyCode with one API endpoint and one API key. Enjoy automatic failover and dedicated high-speed routes for Codex and Claude Code. Get started with $1 in free credits, a discount on your first top-up, and savings of up to 80% on eligible routes. Pay in RMB with no currency conversion markups or extra top-up fees. Get started with PackyCode → 
+
+ AICodeMirror 
+ Thank you to AICodeMirror for sponsoring Archify! AICodeMirror provides API relay services for Claude, Codex, and Gemini, with enterprise-grade concurrency, invoice issuance, and 24/7 technical support. Codex pricing starts at 7% of standard rates, with additional top-up discounts. Exclusive offer for Archify users: Register through our referral link to receive 20% off your first top-up. Try AICodeMirror → 
 
  Infistar.cc 
  Thank you to Infistar.cc for sponsoring Archify! One API key covers text, image, and video creation with GPT, Claude, Gemini, DeepSeek, Qwen, Kling, and other models, without switching groups. Model API pricing starts at 1% of official rates, and AI images start at ¥0.06 each. Exclusive offer for Archify users: Sign up through our referral link for $5 in trial credits and a special offer on your first top-up. Try Infistar → 
@@ -67,23 +86,4 @@ Then continue: “Add authentication”, “Highlight the cache-miss path”, or
 
 ## Show what matters
 
-| Explain an agent workflow | Follow a cache miss | Explore service relationships |
-|---|---|---|
-| [](https://archify.si/gallery/artifacts/agent-tool-call.workflow.html?theme=dark&present=1#focus=planner&reach=downstream) | [](https://archify.si/gallery/artifacts/cache-miss.sequence.html?theme=dark&present=1#route=web~db) | [](https://archify.si/gallery/artifacts/production-deployment.architecture.html?theme=dark&present=1#lens=backend~database) |
-| Trace everything downstream of one step. | Highlight the path from web app to database. | Focus on authored backend and database connections. |
-
-The [Proof Lab](https://archify.si/gallery.html) contains all 11 checked-in scenarios, their JSON sources, and validation receipts.
-
-### Understand a real repository
-
- CODE → DIAGRAM · A source-backed system map 
-
-[](https://archify.si/cases/mco-runtime.architecture.html?theme=dark&present=1)
-
-Archify traced [`mco-org/mco`](https://github.com/mco-org/mco) at `9f1a1cf` and produced this checked map. **[Open it ↗](https://archify.si/cases/mco-runtime.architecture.html?theme=dark&present=1)** · [trace reach ↗](https://archify.si/cases/mco-runtime.architecture.html?theme=dark#focus=router&reach=downstream) · [typed source](docs/cases/mco-runtime.architecture.json)
-
-### Easy to extend. More ways to make it yours.
-
- COMMUNITY STORIES · Selected examples shared by users 
-
-**Keep building after the diagram is generated.** Archify is open source and its output is standalone HTML. Ask your agent to adapt it, connect useful links, or add interactions for your own workflow. Community creations already span team collaboration, travel planning, legal citation checks, contract review, and incident retrospectives. These are 
+| Explain an agent workflow | F

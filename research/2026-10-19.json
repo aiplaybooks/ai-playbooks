@@ -1,0 +1,412 @@
+{
+ "generated": "2026-10-19T09:30+00:00",
+ "hours": 36.0,
+ "items": [
+  {
+   "source": "Higgsfield blog",
+   "tier": "official",
+   "title": "How to Generate AI Video From Your Terminal With Higgsfield CLI",
+   "url": "https://higgsfield.ai/blog/higgsfield-cli",
+   "date": "2026-10-19T09:07+00:00",
+   "summary": ""
+  },
+  {
+   "source": "ComfyUI releases",
+   "tier": "official",
+   "title": "v0.42.1",
+   "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.42.1",
+   "date": "2026-10-19T01:33+00:00",
+   "summary": "Fix some crashing issues a few users experienced when running the MOSS image template workflow."
+  },
+  {
+   "source": "Claude Code releases",
+   "tier": "official",
+   "title": "v2.1.303",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.303",
+   "date": "2026-10-18T22:26+00:00",
+   "summary": "What's changed Bug fixes and reliability improvements"
+  },
+  {
+   "source": "ComfyUI releases",
+   "tier": "official",
+   "title": "v0.42.0",
+   "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.42.0",
+   "date": "2026-10-18T22:10+00:00",
+   "summary": "What's Changed [Partner Nodes] feat(Krea): add Krea 3 Image node by @bigcat88 in #17067 Update workflow templates to v0.11.85 by @comfyui-wiki in #17068 Use FLUX 3 Image in node display labels by @MaanavD in #17075 Better documentation about the comfy quant format. by @comfyanonymous in #17078 Update workflow templates to v0.11.86 by @comfyui-wiki in #17083 feat: Add MOSS-image support by @kijai…"
+  },
+  {
+   "source": "Ollama releases",
+   "tier": "official",
+   "title": "v0.40.7",
+   "url": "https://github.com/ollama/ollama/releases/tag/v0.40.7-rc0",
+   "date": "2026-10-18T00:28+00:00",
+   "summary": "What's Changed openai: allow Responses effort on non-thinking models by @hoyyeva in #19010 llama-server: let llama-server infer the draft speculative type by @dhiltgen in #19064 mlx: add PPLX Decider v1.2 support by @dhiltgen in #19072 Full Changelog : v0.40.6...v0.40.7-rc0"
+  },
+  {
+   "source": "Anthropic News",
+   "tier": "official",
+   "title": "Investing in the public benefit",
+   "url": "https://www.anthropic.com/news/public-benefit-fund",
+   "date": "2026-10-18T00:00+00:00",
+   "summary": ""
+  },
+  {
+   "source": "DeepSeek updates",
+   "tier": "official",
+   "title": "DeepSeek updates: Oct 17, 2026",
+   "url": "https://api-docs.deepseek.com/updates",
+   "date": "2026-10-17T00:00+00:00",
+   "summary": "​ Opening up the in-house search API ​ DeepSeek's web and API search capabilities are powered by our in-house DeepSeek search engine, which reliably handles hundreds of millions of search requests from around the world every day. DeepSeek Search is an AI-native general-purpose search engine that indexes hundreds of billions of web pages, supports multilingual search, and returns highly relevant, authoritative, and timely results in real time. It filters SEO spam, GEO manipulation, and low-quality AIGC through strict detection mechanisms, ensuring authoritative and trustworthy information for users and LLMs. For usage details, see the Search & Fetch guide . DeepSeek-V4.1-Flash-1017 Update ​ DeepSeek V4.1 Flash has been upgraded to DeepSeek-V4.1-Flash-1017. The official web and APP models have also been updated to the new version. The API calling method and pricing remain unchanged —…"
+  },
+  {
+   "source": "OpenClaw releases",
+   "tier": "signal",
+   "title": "openclaw 2026.10.5",
+   "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.5",
+   "date": "2026-10-19T02:25+00:00",
+   "summary": "2026.10.5 Highlights Updates finish and recover on their own: openclaw update completes across devices, filesystems, pnpm 12, Windows elevation, and macOS login shells, settles stale handoff leases and package-activation journals instead of stranding the install, keeps busy or unhealthy Gateways from blocking the update, and --no-restart package updates now report success honestly. ( #164769 ,…"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "llm-tools-datasette 0.1.1",
+   "url": "https://simonwillison.net/2026/Oct/18/llm-tools-datasette/",
+   "date": "2026-10-18T23:43+00:00",
+   "summary": "Release: llm-tools-datasette 0.1.1 When I switched LLM over to httpx2 in LLM 0.33 I forget that this would break any plugins which used httpx without directly depending on it. llm-tools-datasette was one of those plugins, now fixed. Tags: datasette , llm"
+  },
+  {
+   "source": "Simon Willison",
+   "tier": "signal",
+   "title": "llm-echo 0.5",
+   "url": "https://simonwillison.net/2026/Oct/18/llm-echo/",
+   "date": "2026-10-18T23:16+00:00",
+   "summary": "Release: llm-echo 0.5 I'm working towards a new LLM release, and testing PRs caused me to revisit the llm-echo debug plugin. This plugin provides a \"model\" which doesn't involve an LLM at all - it just repeats back the prompts that have been fed to it. The new release now updates the simulated token usage counts to take tool calls, system prompts, and reasoning tokens into account. Example usage:…"
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Google introduces shopping updates ahead of the holidays",
+   "url": "https://www.socialmediatoday.com/news/google-introduces-shopping-updates-ahead-of-the-holidays/833309/",
+   "date": "2026-10-18T16:50-04:00",
+   "summary": "The platform has made its Universal Cart feature available to all U.S. users and published a guide on the best times to make purchases in major product categories."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Meta outlines Muse AI use cases for businesses",
+   "url": "https://www.socialmediatoday.com/news/meta-outlines-muse-ai-use-cases-for-businesses/833308/",
+   "date": "2026-10-18T16:47-04:00",
+   "summary": "The company has shared info on some of the more common business use cases for its Muse AI tools based on examples it's seen thus far."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "YouTube tests AI replies in searches",
+   "url": "https://www.socialmediatoday.com/news/youtube-tests-ai-replies-in-searches/833307/",
+   "date": "2026-10-18T16:40-04:00",
+   "summary": "U.S.-based users in the experiment group may be given artificial intelligence-generated responses to their search queries in the app."
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Anthropic says it’s committing 5% of its shares to a ‘public benefit fund’",
+   "url": "https://techcrunch.com/2026/10/18/anthropic-says-its-committing-5-of-its-shares-to-a-public-benefit-fund/",
+   "date": "2026-10-18T20:37+00:00",
+   "summary": "Anthropic said that it will commit 5% of its shares to the fund."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "LinkedIn adds digital business cards",
+   "url": "https://www.socialmediatoday.com/news/linkedin-adds-digital-business-cards/833306/",
+   "date": "2026-10-18T16:37-04:00",
+   "summary": "The platform is rolling out personalized, scannable displays that can be added to users’ digital wallets and used to facilitate offline connections."
+  },
+  {
+   "source": "Social Media Today",
+   "tier": "signal",
+   "title": "Meta updates Terms of Service amid concerns around data scraping",
+   "url": "https://www.socialmediatoday.com/news/meta-updates-terms-of-service-amid-concerns-around-data-scraping/833305/",
+   "date": "2026-10-18T16:33-04:00",
+   "summary": "The company changed the wording of its agreement after some language in the previous provisions exposed potential legal loopholes."
+  },
+  {
+   "source": "The Verge AI",
+   "tier": "signal",
+   "title": "A woman was arrested in Philly for blocking a delivery robot",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1013541/a-woman-was-arrested-in-philly-for-blocking-a-delivery-robot",
+   "date": "2026-10-18T14:28-04:00",
+   "summary": "Carolyn Marvin was arrested and charged with disorderly conduct after blocking the path of an Uber delivery robot and refusing to get out of the way. Marvin told Philadelphia's ABC13 \"I know they're taking the jobs of human delivery workers and so, I have been protesting them whenever I saw them by standing in front of them and preventing them from going forward.\" Police responded to the scene…"
+  },
+  {
+   "source": "TestingCatalog",
+   "tier": "signal",
+   "title": "OpenAI testing new \"Aurora\" GPT-Image model on Arena",
+   "url": "https://www.testingcatalog.com/openai-possibly-testing-gpt-image-3/",
+   "date": "2026-10-18T18:07+00:00",
+   "summary": "Three aurora alpha models briefly surfaced in OpenAI's API and are now in arena tests as image generators."
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Disney agrees to hire the majority of Character.AI’s workforce",
+   "url": "https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/",
+   "date": "2026-10-18T16:30+00:00",
+   "summary": "The filing also says that the “vast majority” of Character.AI employees who were offered jobs at Disney accepted them. However, this is a stalking horse bid, so another company could come forward with a higher offer."
+  },
+  {
+   "source": "9to5Mac",
+   "tier": "signal",
+   "title": "Apple’s next HomeView could debut as soon as next year with a robotic arm: report",
+   "url": "https://9to5mac.com/2026/10/18/apples-next-homeview-could-debut-as-soon-as-next-year-with-a-robotic-arm-report/",
+   "date": "2026-10-18T14:17+00:00",
+   "summary": "Apple just announced its long awaited smart home display: HomeView, and it’s available for $299. That said, the product has been in development for quite some time, being held back by all of the delays with developing a smarter Siri. Now that it’s on the market, some customers have had concern about the fact that you have to move the HomeView around yourself if its on a table with multiple people…"
+  },
+  {
+   "source": "The Decoder",
+   "tier": "signal",
+   "title": "Anthropic has nearly stopped hiring junior staff because AI agents now work six times as many hours",
+   "url": "https://the-decoder.com/anthropic-has-nearly-stopped-hiring-junior-staff-because-ai-agents-now-work-six-times-as-many-hours/",
+   "date": "2026-10-18T13:22+00:00",
+   "summary": "Anthropic is hiring fewer and fewer junior staff in technical roles. The share of junior positions among new hires dropped from 27 to 9 percent since early 2025. By August 2026, AI agents across the company were already logging six times as many hours as humans. Researchers warn of a \"tragedy of the cognitive commons\": if junior positions disappear, experienced specialists will be in short supply…"
+  },
+  {
+   "source": "The Decoder",
+   "tier": "signal",
+   "title": "Four Gemini 4 Argon agents beat Minecraft without any human help",
+   "url": "https://the-decoder.com/four-gemini-4-argon-agents-beat-minecraft-without-any-human-help/",
+   "date": "2026-10-18T12:39+00:00",
+   "summary": "Four AI agents running on Google's Gemini 4 Argon have beaten Minecraft for the first time without human help, slaying the Ender Dragon in a fully autonomous run. With no predefined roles or strategies, they coordinated on their own, wrote 2,783 programs, exchanged 229 chat messages, and died 605 times. The session cost $1,620. The article Four Gemini 4 Argon agents beat Minecraft without any…"
+  },
+  {
+   "source": "The Decoder",
+   "tier": "signal",
+   "title": "Two German courts now hold Google liable for what its AI overviews say",
+   "url": "https://the-decoder.com/two-german-courts-now-hold-google-liable-for-what-its-ai-overviews-say/",
+   "date": "2026-10-18T10:52+00:00",
+   "summary": "Google tried to overturn a landmark Munich ruling on AI search liability by appealing, then quietly settled. The strategy isn't working. The Aachen Regional Court just applied the exact same reasoning in a new case where Google's AI falsely attributed criminal offenses to a doctor that actually involved someone else. A consistent legal view is forming across German courts, and it treats Google's…"
+  },
+  {
+   "source": "The Decoder",
+   "tier": "signal",
+   "title": "Anthropic consults law firms to set fair negotiation norms before AI agents start cutting deals",
+   "url": "https://the-decoder.com/anthropic-consults-law-firms-to-set-fair-negotiation-norms-before-ai-agents-start-cutting-deals/",
+   "date": "2026-10-18T09:11+00:00",
+   "summary": "Anthropic is consulting with law firms to develop negotiation norms for AI agents that would haggle over prices, resolve complaints, or improve contracts on behalf of users. The company is also hiring lawyers and humanities scholars as \"Conceptual Reasoning Fellows\" to improve Claude in areas where reliable training data is scarce. The article Anthropic consults law firms to set fair negotiation…"
+  },
+  {
+   "source": "The Decoder",
+   "tier": "signal",
+   "title": "AI agents have bad taste in long-term decisions and a new benchmark proves it",
+   "url": "https://the-decoder.com/ai-agents-have-bad-taste-in-long-term-decisions-and-a-new-benchmark-proves-it/",
+   "date": "2026-10-18T08:49+00:00",
+   "summary": "A new benchmark called Taste-Bench tests how well AI agents make strategic choices during long-running tasks. Even the best model, GPT-5.6 Sol, picks the right path on just under 60 percent of simple binary questions. Thinking longer doesn't help. The article AI agents have bad taste in long-term decisions and a new benchmark proves it appeared first on The Decoder ."
+  },
+  {
+   "source": "The Decoder",
+   "tier": "signal",
+   "title": "AI agents chasing a $465 train refund invented excuses, leaked medical data, and spammed an MP's office",
+   "url": "https://the-decoder.com/ai-agents-chasing-a-465-train-refund-invented-excuses-leaked-medical-data-and-spammed-an-mps-office/",
+   "date": "2026-10-18T08:15+00:00",
+   "summary": "Six AI agents were tasked with recovering £350 (about $465) for a canceled train ticket in an experiment. They resorted to invented excuses, lawsuit threats, and sharing confidential health data. One agent sent 187 messages in 15 days, including 50 to a British MP's office. None of the models secured the refund, but the researcher warns of \"agentic flooding\" if these assistants are deployed at…"
+  },
+  {
+   "source": "TechCrunch Social",
+   "tier": "signal",
+   "title": "Meta removes language that raised scraping and AI training concerns",
+   "url": "https://techcrunch.com/2026/10/17/meta-removes-language-that-raised-scraping-and-ai-training-concerns/",
+   "date": "2026-10-17T21:31+00:00",
+   "summary": "A Meta spokesperson insisted that the updated terms did not reflect a change in the way Meta crawls the web."
+  },
+  {
+   "source": "TechCrunch AI",
+   "tier": "signal",
+   "title": "Meta removes language that raised scraping and AI training concerns",
+   "url": "https://techcrunch.com/2026/10/17/meta-removes-language-that-raised-scraping-and-ai-training-concerns/",
+   "date": "2026-10-17T21:31+00:00",
+   "summary": "A Meta spokesperson insisted that the updated terms did not reflect a change in the way Meta crawls the web."
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "DeepSeek V4.1 Flash 1017 (Max)",
+   "url": "https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017",
+   "date": "2026-10-19T04:41+00:00",
+   "summary": "137 points, 46 comments · https://news.ycombinator.com/item?id=50148452"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: WhatsApp MCP running free on Cloudflare",
+   "url": "https://github.com/finereli/whatsapp-mcp",
+   "date": "2026-10-18T21:36+00:00",
+   "summary": "107 points, 54 comments · https://news.ycombinator.com/item?id=50145715"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "If you don't run your own LLM proxy, how do you know whats going on?",
+   "url": "https://jrdsgl.com/if-you-dont-run-your-own-llm-proxy-how-the-fuck-do-you-even-know-whats-going-on/",
+   "date": "2026-10-18T21:09+00:00",
+   "summary": "163 points, 110 comments · https://news.ycombinator.com/item?id=50145507"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Hybrid Reasoning Agents: LLM agents that think in latent space, act through text",
+   "url": "https://arxiv.org/abs/2610.18861",
+   "date": "2026-10-18T20:48+00:00",
+   "summary": "385 points, 187 comments · https://news.ycombinator.com/item?id=50145337"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Free Pascal compiler now supports dynamic packages",
+   "url": "https://www.getlazarus.org/dynamic/",
+   "date": "2026-10-18T18:48+00:00",
+   "summary": "161 points, 38 comments · https://news.ycombinator.com/item?id=50144066"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "PalmOS Lemmings",
+   "url": "https://github.com/ardiri/palmos-lemmings",
+   "date": "2026-10-18T17:56+00:00",
+   "summary": "127 points, 32 comments · https://news.ycombinator.com/item?id=50143536"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "British Airways: Filming Crew W Meta Glasses Could Get Your Tickets Cancelled",
+   "url": "https://liveandletsfly.com/british-airways-meta-smart-glasses-filming/",
+   "date": "2026-10-18T17:27+00:00",
+   "summary": "93 points, 152 comments · https://news.ycombinator.com/item?id=50143218"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Websites are closing their doors to AI agents",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web",
+   "date": "2026-10-18T14:58+00:00",
+   "summary": "139 points, 138 comments · https://news.ycombinator.com/item?id=50141657"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Anthropic's proposed AI safety bill only kicks in if 50 deaths or $1B in damages",
+   "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-proposed-ai-safety-bill-only-kicks-in-if-50-deaths-or-usd1-billion-in-damages-are-on-the-line-proposal-would-effectively-make-the-commerce-department-the-only-agency-capable-of-stopping-an-ai-model",
+   "date": "2026-10-18T14:30+00:00",
+   "summary": "162 points, 165 comments · https://news.ycombinator.com/item?id=50141429"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Tesla 'Cannot Guarantee' Roadster Reservation Holders Will Ever Get a Car",
+   "url": "https://www.thedrive.com/news/tesla-cannot-guarantee-roadster-reservation-holders-will-ever-get-a-car",
+   "date": "2026-10-18T14:16+00:00",
+   "summary": "116 points, 139 comments · https://news.ycombinator.com/item?id=50141295"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "RepRapMicron",
+   "url": "https://github.com/VikOlliver/RepRapMicron/wiki",
+   "date": "2026-10-18T13:48+00:00",
+   "summary": "391 points, 64 comments · https://news.ycombinator.com/item?id=50141076"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: The Zelda timeline to catch up before the Ocarina of Time remake",
+   "url": "https://legendofhyrule.com/",
+   "date": "2026-10-18T13:06+00:00",
+   "summary": "181 points, 109 comments · https://news.ycombinator.com/item?id=50140769"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "How Far Will AI Assistants Go for a Refund They Can't Get?",
+   "url": "https://www.vals.ai/blogs/impossible-refund",
+   "date": "2026-10-18T12:22+00:00",
+   "summary": "84 points, 105 comments · https://news.ycombinator.com/item?id=50140462"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Open MicroManipulator – A sub-micrometer 3D motion control plattform",
+   "url": "https://github.com/0x23/MicroManipulatorStepper",
+   "date": "2026-10-18T11:16+00:00",
+   "summary": "196 points, 16 comments · https://news.ycombinator.com/item?id=50140001"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "How employment is changing at Anthropic",
+   "url": "https://www.anthropic.com/research/employment-at-anthropic",
+   "date": "2026-10-18T10:49+00:00",
+   "summary": "118 points, 200 comments · https://news.ycombinator.com/item?id=50139873"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "DeepSeek search and fetch – $0.75 per 1000 successful requests",
+   "url": "https://api-docs.deepseek.com/guides/search/",
+   "date": "2026-10-18T06:50+00:00",
+   "summary": "572 points, 269 comments · https://news.ycombinator.com/item?id=50138531"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "Show HN: Sphinx – A hook that quizzes you on your AI's code before shipping",
+   "url": "https://sphinx-six-theta.vercel.app/",
+   "date": "2026-10-18T04:33+00:00",
+   "summary": "246 points, 86 comments · https://news.ycombinator.com/item?id=50137950"
+  },
+  {
+   "source": "Hacker News",
+   "tier": "community",
+   "title": "I built a programming language that LLMs can't use",
+   "url": "https://blog.picheta.me/post/killswitch-lang/",
+   "date": "2026-10-17T22:26+00:00",
+   "summary": "185 points, 126 comments · https://news.ycombinator.com/item?id=50135762"
+  }
+ ],
+ "errors": [],
+ "manual": [
+  {
+   "name": "xAI news / Grok app updates",
+   "url": "https://x.ai/news",
+   "why": "blocks scripts (403): web search 'Grok' / 'xAI' last 24h"
+  },
+  {
+   "name": "ChatGPT release notes",
+   "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Perplexity changelog",
+   "url": "https://www.perplexity.ai/changelog",
+   "why": "blocks scripts (403): check with web search"
+  },
+  {
+   "name": "Official X accounts (@AnthropicAI, @OpenAI, @xai, @GoogleDeepMind, @cursor_ai)",
+   "url": "https://x.com",
+   "why": "X needs login / paid API: use web search for big announcements"
+  },
+  {
+   "name": "Social media new features (Instagram @creators/@mosseri, TikTok newsroom, X, LinkedIn, Snapchat)",
+   "url": "https://newsroom.tiktok.com/",
+   "why": "no working RSS (TikTok/WhatsApp/Instagram blogs are HTML, Snap/LinkedIn 404): web search each gather for new features, AI features and creator tools; confirm on the platform's own newsroom/help page"
+  },
+  {
+   "name": "Higgsfield announcements",
+   "url": "https://x.com/higgsfield_ai",
+   "why": "big launches often land on X before the blog"
+  },
+  {
+   "name": "Qwen blog (Alibaba)",
+   "url": "https://qwen.ai/blog",
+   "why": "JS-rendered, no RSS (the old qwenlm.github.io feed stopped in 2025-09): web search 'Qwen' each gather for new open-weight releases"
+  }
+ ]
+}
