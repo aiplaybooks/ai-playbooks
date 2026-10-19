@@ -1,0 +1,235 @@
+{
+  "theme": "adaptive",
+  "brand": "AI Playbooks",
+  "handle": "@aiplaybooks.daily",
+  "topic": "Claude solves NIST curve seed mystery",
+  "caption": "Nobody explained the NSA's crypto seeds for 25 years. Claude just worked them out.\n\nNIST adopted the elliptic curves in 2000, P-256 included. The NSA supplied the seeds, and no one ever published how they were picked.\n\nClaude guessed they came from a weak 1990s random number generator, scanned for its pattern, then recovered the hidden state. It's not a break of any cryptography. But a simple, reproducible process makes a hidden backdoor much less plausible.\n\n→ the seeds match lrand48, seeded with timestamps from 1997-98\n→ four seeds had zero top bits in all 20 words: a 1-in-5,810 chance\n→ the $36,864 bounty goes to charity\n\nDo you trust a standard more when its seeds can be explained? Tell us below 👇\n\nComment CRYPTO and we'll DM you Anthropic's write-up 📩\n\nFollow @aiplaybooks.daily for daily AI news.\n\n#ai #artificialintelligence #cryptography #cybersecurity",
+  "captions": {
+    "instagram": "Nobody explained the NSA's crypto seeds for 25 years. Claude just worked them out.\n\nNIST adopted the elliptic curves in 2000, P-256 included. The NSA supplied the seeds, and no one ever published how they were picked.\n\nClaude guessed they came from a weak 1990s random number generator, scanned for its pattern, then recovered the hidden state. It's not a break of any cryptography. But a simple, reproducible process makes a hidden backdoor much less plausible.\n\n→ the seeds match lrand48, seeded with timestamps from 1997-98\n→ four seeds had zero top bits in all 20 words: a 1-in-5,810 chance\n→ the $36,864 bounty goes to charity\n\nDo you trust a standard more when its seeds can be explained? Tell us below 👇\n\nComment CRYPTO and we'll DM you Anthropic's write-up 📩\n\nFollow @aiplaybooks.daily for daily AI news.\n\n#ai #artificialintelligence #cryptography #cybersecurity",
+    "facebook": "Nobody explained the NSA's crypto seeds for 25 years. Claude just worked them out.\n\nIn 2000, NIST adopted the elliptic curves, P-256 included. The NSA supplied the seeds behind them, and no one ever published how they were chosen.\n\nClaude guessed they came from a weak 1990s random number generator, scanned for its output pattern, then recovered the hidden state. It's not a break of any cryptography. But a simple, reproducible process makes a hidden backdoor much less plausible.\n\nWould a reproducible explanation be enough for you to trust a standard? Tell us what you think 👇\n\nFollow @aiplaybooks.daily for AI news you can actually use.\n\n#ai #cryptography #cybersecurity",
+    "youtube": {
+      "title": "Claude solved a 25-year-old NSA crypto mystery in under 30 minutes",
+      "description": "NIST's elliptic curves have carried the NSA's unexplained seeds since 2000. Claude's answer: they came from a weak 1990s random number generator, not a hash.\n\nIt's not a break of any cryptography. But a simple, reproducible process makes a hidden backdoor much less plausible.\n\nThe $36,864 bounty is being donated to the Internet Security Research Group.\n\n#cryptography #cybersecurity #ai",
+      "tags": [
+        "claude nist curve seeds",
+        "nsa elliptic curve seeds",
+        "p-256 nsa backdoor",
+        "lrand48 nist",
+        "claude cryptography",
+        "ai cryptography research"
+      ]
+    }
+  },
+  "x": "Nobody explained the NSA's crypto seeds for 25 years. Claude just worked them out 🔐\n\nIt's not a break. But a hidden backdoor just got much less plausible.\n\n#cryptography",
+  "first_comment": {
+    "instagram": "The number that gave it away: four seeds had zero top bits in all 20 words, a 1-in-5,810 chance. That's why they weren't hash outputs.\n\nComment CRYPTO and we'll DM you Anthropic's write-up 📩\n\nWhich would you trust more: a published explanation or one anyone can reproduce?",
+    "facebook": "The number that gave it away: four seeds had zero top bits in all 20 words, a 1-in-5,810 chance. That's why they weren't hash outputs.\n\nWhich would you trust more: a published explanation or one anyone can reproduce?",
+    "youtube": "The number that gave it away: four seeds had zero top bits in all 20 words, a 1-in-5,810 chance. That's why they weren't hash outputs.\n\nSubscribe for daily AI playbooks. Which part surprised you most?"
+  },
+  "sources": [
+    "https://www.anthropic.com/research/ecdsa-curve-origins"
+  ],
+  "dm": {
+    "keyword": "CRYPTO"
+  },
+  "cover": {
+    "headline": "Claude just solved a 25-year-old NSA crypto mystery in under 30 minutes. Here's how:",
+    "em": "25-year-old NSA crypto mystery",
+    "person": "Dario Amodei",
+    "layout": "scene_person",
+    "photo_query": [
+      "padlock keyboard",
+      "encryption code"
+    ],
+    "photo_pick": {
+      "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg1NDU5OTQtaW1hZ2Uta3d2dmR5N3cuanBn.jpg",
+      "page": "https://www.rawpixel.com/image/5908216/image-background-public-domain-laptop",
+      "author": "unknown",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "rawpixel",
+      "file": "Free password lock laptop image"
+    },
+    "icons": [
+      {
+        "slug": "claude",
+        "style": "tile",
+        "pos": "tr",
+        "size": 170
+      }
+    ],
+    "photo": {
+      "file": "Free password lock laptop image",
+      "page": "https://www.rawpixel.com/image/5908216/image-background-public-domain-laptop",
+      "author": "unknown",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "rawpixel"
+    },
+    "layout_used": "scene_person",
+    "person_photo": {
+      "file": "File:Dario Amodei at TechCrunch Disrupt 2023 01 (cropped).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Dario_Amodei_at_TechCrunch_Disrupt_2023_01_(cropped).jpg",
+      "author": "TechCrunch",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "source": "Wikimedia Commons"
+    }
+  },
+  "design": {
+    "mood": "cold cryptanalyst's terminal, deep teal-black with amber warning glow, hex dumps and a magnifier",
+    "palette": {
+      "bg": "#08110F",
+      "bg2": "#10201C",
+      "surface": "#122622",
+      "ink": "#EAF5F1",
+      "muted": "#87A59C",
+      "accent": "#2EE6C5",
+      "accent2": "#FFB547"
+    },
+    "fonts": {
+      "display": "Space Grotesk",
+      "body": "Inter",
+      "mono": "IBM Plex Mono"
+    },
+    "display": {
+      "weight": 700,
+      "case": "none",
+      "tracking": -2,
+      "scale": 1.0,
+      "italic_em": false
+    },
+    "shape": {
+      "radius": 10,
+      "border": 2,
+      "shadow": "hard"
+    },
+    "background": {
+      "pattern": "scanlines",
+      "pattern_opacity": 0.09,
+      "glow": true,
+      "gradient": true
+    },
+    "label": "mono",
+    "prompt": "terminal",
+    "art": "<svg viewBox='0 0 900 460' xmlns='http://www.w3.org/2000/svg'><rect x='120' y='50' width='660' height='360' rx='14' fill='var(--surface)' stroke='var(--accent)' stroke-width='3'/><line x1='120' y1='100' x2='780' y2='100' stroke='var(--accent)' stroke-width='3'/><g fill='var(--accent2)'><circle cx='150' cy='75' r='8'/><circle cx='178' cy='75' r='8'/><circle cx='206' cy='75' r='8'/></g><g font-family='monospace' font-size='28' fill='var(--accent)'><text x='155' y='160'>seed = 0x9d2e...</text><text x='155' y='210' fill='var(--muted)'>lrand48(t) &gt;&gt; 17</text><text x='155' y='260' fill='var(--muted)'>0000 0000 0000 0000</text></g><g stroke='var(--accent2)' stroke-width='4' fill='none'><circle cx='620' cy='300' r='46'/><line x1='654' y1='334' x2='720' y2='390' stroke-linecap='round'/></g><text x='155' y='340' font-family='monospace' font-size='28' fill='var(--accent2)'>&gt; state recovered_</text></svg>",
+    "icon": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='11' width='14' height='9' rx='2'/><path d='M8 11V8a4 4 0 0 1 7.5-2'/><circle cx='12' cy='15.5' r='1'/></svg>"
+  },
+  "voice": "am_eric",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "CLAUDE · NIST CURVE SEEDS",
+      "title": "Claude solved a 25-year-old crypto mystery in under 30 minutes.",
+      "em": "25-year-old crypto mystery",
+      "sub": "Where did NIST's elliptic curve seeds come from?",
+      "tools": [
+        "Claude"
+      ],
+      "voiceover": "Claude just solved a twenty-five-year-old cryptography mystery in under thirty minutes."
+    },
+    {
+      "type": "stat",
+      "label": "The mystery",
+      "value": "Since 2000",
+      "title": "Nobody knew how the NSA's curve seeds were chosen",
+      "sub": "NIST adopted the curves, including P-256, in 2000. No explanation was ever published.",
+      "voiceover": "The NSA supplied the seeds behind NIST's curves, P-256 included. No one ever explained how they were picked."
+    },
+    {
+      "type": "steps",
+      "label": "How Claude did it",
+      "title": "Three moves to the answer",
+      "steps": [
+        [
+          "Guess",
+          "The seeds came from a weak 1990s random number generator"
+        ],
+        [
+          "Scan",
+          "Claude wrote a scanner for that generator's output pattern"
+        ],
+        [
+          "Recover",
+          "Lattice reduction recovered the hidden state"
+        ]
+      ],
+      "voiceover": "Claude guessed a weak nineties random generator, scanned for its pattern, then recovered the hidden state."
+    },
+    {
+      "type": "facts",
+      "label": "What it found",
+      "title": "Not a hash after all",
+      "items": [
+        [
+          "Generator",
+          "The C library's `lrand48`"
+        ],
+        [
+          "Seeded with",
+          "Unix timestamps"
+        ],
+        [
+          "Dates",
+          "May 1997 to April 1998"
+        ],
+        [
+          "The tell",
+          "Four seeds had zero top bits in all 20 words, a 1-in-5,810 chance"
+        ]
+      ],
+      "voiceover": "The seeds weren't hash outputs. They came from lrand48, seeded with timestamps from 1997 and 1998."
+    },
+    {
+      "type": "compare",
+      "label": "Meaning",
+      "title": "What it does and doesn't mean",
+      "cols": [
+        {
+          "name": "It does",
+          "points": [
+            "Make a hidden backdoor much less plausible",
+            "Show the seeds came from a simple, reproducible process"
+          ]
+        },
+        {
+          "name": "It doesn't",
+          "points": [
+            "Break any cryptography",
+            "Explain every base point",
+            "Need any action from you"
+          ]
+        }
+      ],
+      "voiceover": "It's not a break. But a simple, reproducible process makes a hidden backdoor much less plausible."
+    },
+    {
+      "type": "stat",
+      "label": "The bounty",
+      "value": "$36,864",
+      "title": "Prize money goes to charity",
+      "sub": "Donated to the Internet Security Research Group. Anthropic's Frontier Red Team, October 16, 2026.",
+      "voiceover": "The thirty-six thousand dollar bounty is being donated to the Internet Security Research Group."
+    },
+    {
+      "type": "cta",
+      "title": "Real research work,",
+      "title2": "done in half an hour.",
+      "lines": [
+        [
+          "Read",
+          "Anthropic's write-up, sent by DM"
+        ],
+        [
+          "Comment",
+          "CRYPTO and we'll DM you the page"
+        ],
+        [
+          "Follow",
+          "@aiplaybooks.daily for daily AI news"
+        ]
+      ],
+      "voiceover": "Comment CRYPTO for the write-up, and follow for more AI news."
+    }
+  ]
+}
