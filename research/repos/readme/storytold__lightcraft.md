@@ -5,7 +5,7 @@ LightCraft
  English ·
  简体中文 
 
- Photo library and raw development; an open-source, clean-room reimplementation of Adobe Lightroom, rebuilt in pure Rust. 
+ Photo library and raw development; an open-source, non-destructive photo library and raw developer, built in pure Rust. 
  Native on macOS, Windows and Linux. In the browser via WebAssembly. Drivable end to end by AI agents over MCP.
 
  LightCraft on getartcraft.com ·
@@ -68,7 +68,7 @@ Split-tone shadows, midtones and highlights independently with drag-anywhere col
 
 ## Before & after
 
-Hold \\ to peek at the original, press Y for side by side, or Shift + Y for a
+Press \\ to toggle the Before view, Y for side by side, or Shift + Y for a
 split view. Every image below is a real screenshot of LightCraft, captured automatically by an agent through the
 [control channel](#built-for-agents).
 
@@ -82,15 +82,19 @@ split view. Every image below is a real screenshot of LightCraft, captured autom
 
 Paint with a **Brush** (size, feather, flow, density, erase), drop **Linear** and **Radial Gradients** with draggable
 pins, or select by **Luminance Range**, **Color Range**, **Sky**, **Subject** and **Background**. Combine components
-with **Add / Subtract / Intersect**, invert any of them, and dial in 15 local adjustments per mask (Temp, Tint,
-Exposure, Contrast, Highlights, Shadows, Whites, Blacks, Texture, Clarity, Dehaze, Hue, Saturation, Sharpness, Noise)
-plus an overall Amount.
+with **Add / Subtract / Intersect**, invert any of them, and dial in 17 local adjustments per mask (Temp, Tint,
+Exposure, Contrast, Highlights, Shadows, Whites, Blacks, Texture, Clarity, Dehaze, Hue, Saturation, Sharpness, Noise,
+Moiré, Defringe), plus an overall Amount.
+
+Desktop **Object** and **Describe** masks use SAM 3 for click-based and text-prompt selection, with a separately
+installed model; see [model setup and terms](docs/ai-masks.md). Subject, Sky and Background selections still use
+classical heuristics. Existing model-generated masks render and export without the model installed.
 
  A radial "Sun glow" mask (Temp +40, Exposure +0.50) layered over a linear "Sky" mask. Photo from LightCraft's procedurally generated demo library. 
 
 ## Presets, profiles & the Color Mixer
 
-Eighteen hand-built presets ship in the box (*Golden Hour, Teal & Orange, Faded Matte, Selenium Tone, Crisp
+Forty-one hand-built presets ship in the box (*Golden Hour, Teal & Orange, Faded Matte, Selenium Tone, Crisp
 Landscape* and more), each with an **Amount** slider from 0 to 200 %. Save your own from any group of settings, mark
 favourites, and copy, paste or sync edits across a whole selection with exactly the groups you choose.
 
@@ -111,7 +115,4 @@ Then tone it with Color Grading for selenium, sepia or split-tone prints.
 ## Organize everything
 
 A library that stays out of your way: **All Photos**, **Recently Added**, **Picks**, **By Date**, **Albums** nested in
-**Folders**, and **Recently Deleted**. Rate with 0 – 5 , flag with P / X /
- U , colour-label with 6 – 9 . Search understands fields:
-`rating:>3 flag:pick iso:>800 camera:x2 date:2026-04 keyword:mountains`. Every view sorts by capture date,
-import date, edit date, name, rating, size or at random (a stable shuffle; View → Sort → Reshuffle for a new one). The justif
+**Folders**, and **Rece

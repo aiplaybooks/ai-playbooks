@@ -1,8 +1,8 @@
 VectorCraft 
 
- Vector illustration; an open-source, clean-room reimplementation of Adobe Illustrator, rebuilt in pure Rust. 
+ Vector illustration; an open-source, modern vector art application, built in pure Rust. 
 
- A fast, open-source, clean-room take on the Adobe Illustrator workflow. It runs natively on
+ A fast, open-source vector illustration workflow. It runs natively on
  macOS, Windows, Linux and FreeBSD, and in the browser via WebAssembly. Built by the ArtCraft team.
 
  VectorCraft on getartcraft.com ·
@@ -62,7 +62,7 @@ exposes to agents, and exported by VectorCraft's own renderer. The source files 
 
 ## Why VectorCraft
 
-- **Familiar.** Illustrator's layout, tools, menus, panels and shortcuts: the Pen, Direct Selection,
+- **Familiar.** A familiar layout, tools, menus, panels and shortcuts: the Pen, Direct Selection,
  Pathfinder, Smart Guides, Appearance, Swatches, Layers and more. You already know how to use it.
 - **Fast.** Multithreaded SIMD rendering off the UI thread. 20,000 shapes render in about 27 ms at
  full retina resolution while the interface stays at 120 fps.
@@ -78,6 +78,8 @@ exposes to agents, and exported by VectorCraft's own renderer. The source files 
 
 ## Quick start
 
+For posters and sewing patterns, see [Print a large poster across multiple pages](docs/print-tiling.md).
+
 ```sh
 git clone https://github.com/storytold/vectorcraft
 cd vectorcraft
@@ -92,6 +94,8 @@ cargo xtask bundle # dist/VectorCraft.app (macOS)
 cd apps/vectorcraft-web && trunk build --release # web build → dist/web
 cargo xtask ci # fmt, clippy, tests, layering, wasm, vendor names
 ```
+
+For text and custom letter shapes, see [Typography and Custom Lettering](docs/typography-lettering.md).
 
 Japanese fonts come from [storytold/craft-fonts](https://github.com/storytold/craft-fonts), an optional
 build input (releases always use it): `CRAFT_FONTS_DIR="$PWD/../craft-fonts" cargo run --release -p vectorcraft` (an absolute path).
@@ -109,16 +113,7 @@ drag-and-drop, set **Preferences › Performance › Linux Display Server** to *
 the app with `WAYLAND_DISPLAY= vectorcraft`: the window then opens through XWayland, where drops work
 (see [`docs/development.md`](docs/development.md#linux-wayland-and-x11)).
 
-On Linux under KDE Plasma 6.3 or later with Wayland, a drawing tablet's pen moves the cursor but VectorCraft doesn't
-respond to it yet (#491). Open the window through XWayland instead, with the same preference or `WAYLAND_DISPLAY= vectorcraft` (see
-[`docs/development.md`](docs/development.md#linux-wayland-and-x11)).
-
-### Use it from Claude Code and other agents
-
-Register the MCP server with Claude Code:
-
-```sh
-claude mcp add vectorcraft -- /path/to/vectorcraft-cli mcp
-```
-
-To keep an agent to one project's files, give it folders to read and write (the same fla
+On Linux with Wayland, under KDE Plasma 6.3 or later and under GNOME, VectorCraft doesn't respond to a drawing tablet's
+pen yet (#491, #2028). Open the window through XWayland instead, where the pen works as a mouse: set the same
+preference to **X11 (XWayland)**, or to **X11 (XWayland) When a Pen Is Attached** to use XWayland only when a pen is
+attached as VectorCraft starts, and restart; or start 

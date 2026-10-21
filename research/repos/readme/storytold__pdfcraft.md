@@ -1,6 +1,6 @@
 PdfCraft 
 
- The PDF workbench; an open-source, clean-room reimplementation of Adobe Acrobat, rebuilt in pure Rust. 
+ The PDF workbench; an open-source, modern PDF reader and editor, built in pure Rust. 
  Read, organize, combine, split and secure PDFs in a fast, native app, written in Rust from the ground up. 
  macOS · Windows · Linux · FreeBSD · the web
 
@@ -115,4 +115,6 @@ Nothing quietly disappears along the way:
 - links and named destinations are rewired to the copied pages;
 - form fields stay interactive;
 - layers keep their on/off defaults;
-- attachments come
+- attachments come along.
+
+Every pag

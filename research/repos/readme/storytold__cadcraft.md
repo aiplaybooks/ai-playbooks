@@ -1,8 +1,8 @@
 CADCraft 
 
- Computer-aided design and drafting; an open-source, clean-room reimplementation of Autodesk AutoCAD, rebuilt in pure Rust. 
+ Computer-aided design and drafting; an open-source, modern 2D and 3D CAD application, built in pure Rust. 
 
- A fast, open-source take on the AutoCAD workflow: the command line, object snaps, layers,
+ A fast, open-source CAD workflow: the command line, object snaps, layers,
  dimensions, hatches, blocks and DXF drawings you already know. It runs natively on macOS,
  Windows, Linux and FreeBSD, and in the browser via WebAssembly. 
  By the ArtCraft team. 
@@ -100,4 +100,4 @@ cadcraft-cli mcp
 cadcraft-cli mcp --connect 127.0.0.1:7979
 
 # One-shot headless runs:
-cadcraft-cli run --sample --script '
+cadcraft-cli run --sample --script 'CIRCLE 22,3 1\n' --save out.dxf -

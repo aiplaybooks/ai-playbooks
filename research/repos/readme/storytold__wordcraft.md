@@ -1,8 +1,8 @@
 WordCraft 
 
- Writing and document design; an open-source, clean-room reimplementation of Microsoft Word, rebuilt in pure Rust. 
+ Writing and document design; an open-source, modern word processor, built in pure Rust. 
 
- A fast, open-source word processor with the Word workflow you already know: the ribbon, styles,
+ A fast, open-source word processor with a familiar workflow: the ribbon, styles,
  tables, track changes, references and mail merge. It reads and writes .docx, runs natively on
  macOS, Windows, Linux and BSD, and in the browser via WebAssembly. 
  By the ArtCraft team. 
@@ -46,10 +46,10 @@ Every screenshot below is WordCraft itself, rendered offscreen by its own UI tes
 
 ## Why WordCraft
 
-- **Familiar.** Word's ribbon tabs, groups, shortcuts and behaviour: Enter continues a list,
+- **Familiar.** Ribbon tabs, groups, shortcuts and behaviour: Enter continues a list,
  Tab demotes it, Ctrl/⌘+B bolds the word under the caret, the Styles gallery previews styles live,
  F4 repeats, F7 checks spelling, F8 extends the selection.
-- **Your files.** Opens and saves .docx (OOXML), and also .odt, .rtf, .html, .md, .tex (LaTeX), .txt; opens Word 97-2003 .doc; exports PDF
+- **Your files.** Opens and saves .docx (OOXML), and also .odt, .rtf, .html, .md, .tex (LaTeX), .txt; opens legacy 97-2003 .doc; exports PDF
  with real, selectable text, links and bookmarks.
 - **Fast.** Paragraph layout is cached, so typing in a 188-page document re-lays it out in about
  1.4 ms; pages render on demand.
@@ -78,7 +78,7 @@ Every screenshot below is WordCraft itself, rendered offscreen by its own UI tes
 | **Review** | Spelling and grammar with suggestions (English and Polish, by each run's language), thesaurus, word count, comments in margin balloons or a pane, track changes, accept/reject, compare documents, restrict editing, accessibility checker, document inspector |
 | **Mailings** | Mail merge from CSV, merge fields, address block, greeting line, rules, preview, finish to a document; envelopes and labels |
 | **View** | Print layout, web layout, draft, read mode, focus, zoom, one/multiple pages, page width, Navigation pane, rulers, gridlines, dark mode; interface in English, 简体中文, 繁體中文, 日本語, Português (Brasil), Español, Українська, Српски / Srpski, Eesti, Türkçe, Русский, Italiano, Deutsch, Polski, Čeština, Magyar, Français, Български, Tiếng Việt, 한국어 or Svenska (follows the system language by default) |
-| **Files** | .docx read/write (opens in Word), Word 97-2003 .doc import, PDF export, .odt, .rtf, .html, .md, .tex, .txt import/export, page images |
+| **Files** | .docx read/write, legacy 97-2003 .doc import, PDF export, .odt, .rtf, .html, .md, .tex, .txt import/export, page images |
 
 The honest picture, area by area, is in [ROADMAP.md](ROADMAP.md), the
 [parity assessment](docs/target-app-parity.md) and the generated
@@ -89,4 +89,5 @@ The honest picture, area by area, is in [ROADMAP.md](ROADMAP.md), the
 ```sh
 git clone https://github.com/storytold/wordcraft
 cd wordcraft
-cargo run --release -p wordcraft -- --sample # the desktop
+cargo run --release -p wordcraft -- --sample # the desktop app with the sample document
+cargo run --release -p wordcra

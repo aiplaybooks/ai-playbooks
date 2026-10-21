@@ -1,5 +1,5 @@
 **English** · [简体中文](docs/readme/README_zh.md) · [繁體中文](docs/readme/README_zh-TW.md) · [日本語](docs/readme/README_ja.md) · [한국어](docs/readme/README_ko.md) · [Türkçe](docs/readme/README_tr.md) · [Русский](docs/readme/README_ru.md) · [Tiếng Việt](docs/readme/README_vi.md) · [ไทย](docs/readme/README_th.md) · [Deutsch](docs/readme/README_de.md) · [Español](docs/readme/README_es.md) · [Français](docs/readme/README_fr.md) · [Українська](docs/readme/README_uk.md) · [Polski](docs/readme/README_pl.md) · [Português (Brasil)](docs/readme/README_pt-BR.md) · [العربية](docs/readme/README_ar.md) · [فارسی](docs/readme/README_fa.md) · [Bahasa Indonesia](docs/readme/README_id.md) · [Italiano](docs/readme/README_it.md)
-· [Ελληνικά](docs/readme/README_el.md)
+· [Ελληνικά](docs/readme/README_el.md) · [മലയാളം](docs/readme/README_ml.md)
 
 # REA: Reverse Engineer Anything
 
@@ -106,6 +106,14 @@ For a CLI installed with `npm install --global` or `bun add --global`:
 rea update
 ```
 
+`rea --update` is an alias for this verified workflow and accepts the same global
+output flags. Use `rea update` when combining it with other command controls.
+
+Updater commands retain at most 4 MiB of stdout and stderr combined. Oversized
+metadata replies are rejected after the command exits; verbose installs continue
+with bounded diagnostics. Human progress output respects terminal backpressure
+and waits for submitted writes to finish.
+
 Bun global updates require Bun 1.2.17 or later. With an older Bun release,
 upgrade Bun manually before running `rea update`.
 
@@ -129,12 +137,4 @@ REA returns findings with their evidence. The agent uses them to ask follow-up
 questions, explain the behavior, or write and test an implementation.
 CLI commands use the same workflows.
 
-[Open the full-size figure](website/public/assets/figures/rea-investigation-flow.svg).
-
-## What you can analyze
-
-REA requires Node.js 22.x (>=22.19), 24.x (>=24.11), or 26+, plus npm.
-Additional tools and host support depend on the target:
-
-| Target | What REA returns | Requirements and guide |
-| ---------------------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------
+[Open the full-size figure](website/public/asse

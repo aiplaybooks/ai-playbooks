@@ -10,6 +10,7 @@
 [](https://www.modelscope.cn/models/Edge0/Edge0-8B-A1B-preview)
 [](https://arxiv.org/abs/2609.18063)
 [](https://github.com/Edge0-AI/Edge0)
+[](https://edge0.ai/discord)
 [](LICENSE)
 
 English | [中文](README_zh.md) | [日本語](README_ja.md) | [Español](README_es.md) | [Français](README_fr.md)
@@ -101,5 +102,4 @@ The loss of the edge0 pipeline is small: **3.9 points on average for
 edge0-35b, 2.8 for edge0-8b** (MMLU-Pro is even above the base). Max 100:
 
 | Benchmark | edge0-35b (int4) | Qwen3.6-35B-A3B (fp16) | edge0-8b (int4) | Ling 3.0 tiny (fp16) |
-|---|---:|---:|---:|---:|
-| AIME 2026 | 86.6 |
+|---|---:|---:|--
